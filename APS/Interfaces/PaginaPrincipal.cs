@@ -32,7 +32,6 @@ namespace APS.Interfaces
             lWelcome.Text = "¡Bienvenido, " + user.NombreUser + "!";
 
             lNewAct.Visible = user.InsertarPantalla("ACTIVIDADES");
-            lNewAct.Enabled = true;
             lNuevoProy.Visible = user.InsertarPantalla("PROYECTOS");
             
 
@@ -65,22 +64,11 @@ namespace APS.Interfaces
         {
             FPerfil perfil = new FPerfil(user);
             this.Visible = false;
+            this.Close();
             perfil.ShowDialog();
             this.Visible = true;
+
         }
 
-
-        private void goNuevaActividad()
-        {
-            NuevaActividad newAct = new NuevaActividad(user);
-            this.Visible = false;
-            newAct.ShowDialog();
-            this.Visible = true;
-        }
-
-        private void lNewAct_Click(object sender, EventArgs e)
-        {
-            goNuevaActividad();
-        }
     }
 }

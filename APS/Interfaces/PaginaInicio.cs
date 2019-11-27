@@ -34,10 +34,16 @@ namespace APS.Interfaces
                 user = new Usuario(email);
                 labelError.Text = "";
 
-
-                //Comprobar contraseña con IDUMA
-                UsuarioJSON userJSON = IDUMA.Acceso(email, pwd);
-                
+                if (user.Rol.NombreRol == "ONG")
+                {
+                    //Comprobar contraseña con nuestra BBDD
+                    user = new Usuario(email, pwd);
+                }
+                else
+                {
+                    //Comprobar contraseña con IDUMA
+                    UsuarioJSON userJSON = IDUMA.Acceso(email, pwd);
+                }
 
                 MessageBox.Show("Login Correctamente");
 
@@ -68,6 +74,7 @@ namespace APS.Interfaces
             PaginaPrincipal mainWindow = new PaginaPrincipal(user);
             this.Visible = false;
             mainWindow.ShowDialog();
+            this.Close();
             this.Visible = true;
         }
 

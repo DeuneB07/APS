@@ -47,7 +47,7 @@
             // b_aceptarReg
             // 
             this.b_aceptarReg.Location = new System.Drawing.Point(337, 237);
-            this.b_aceptarReg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.b_aceptarReg.Margin = new System.Windows.Forms.Padding(2);
             this.b_aceptarReg.Name = "b_aceptarReg";
             this.b_aceptarReg.Size = new System.Drawing.Size(62, 23);
             this.b_aceptarReg.TabIndex = 0;
@@ -58,7 +58,7 @@
             // b_ONGReg
             // 
             this.b_ONGReg.Location = new System.Drawing.Point(28, 237);
-            this.b_ONGReg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.b_ONGReg.Margin = new System.Windows.Forms.Padding(2);
             this.b_ONGReg.Name = "b_ONGReg";
             this.b_ONGReg.Size = new System.Drawing.Size(62, 23);
             this.b_ONGReg.TabIndex = 1;
@@ -69,7 +69,7 @@
             // b_cancelarReg
             // 
             this.b_cancelarReg.Location = new System.Drawing.Point(418, 237);
-            this.b_cancelarReg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.b_cancelarReg.Margin = new System.Windows.Forms.Padding(2);
             this.b_cancelarReg.Name = "b_cancelarReg";
             this.b_cancelarReg.Size = new System.Drawing.Size(62, 23);
             this.b_cancelarReg.TabIndex = 2;
@@ -100,7 +100,7 @@
             // t_correoReg
             // 
             this.t_correoReg.Location = new System.Drawing.Point(160, 36);
-            this.t_correoReg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.t_correoReg.Margin = new System.Windows.Forms.Padding(2);
             this.t_correoReg.Name = "t_correoReg";
             this.t_correoReg.Size = new System.Drawing.Size(278, 20);
             this.t_correoReg.TabIndex = 5;
@@ -108,7 +108,7 @@
             // t_pwdReg
             // 
             this.t_pwdReg.Location = new System.Drawing.Point(160, 72);
-            this.t_pwdReg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.t_pwdReg.Margin = new System.Windows.Forms.Padding(2);
             this.t_pwdReg.Name = "t_pwdReg";
             this.t_pwdReg.PasswordChar = '*';
             this.t_pwdReg.Size = new System.Drawing.Size(278, 20);
@@ -141,7 +141,7 @@
             // tUsuario
             // 
             this.tUsuario.Location = new System.Drawing.Point(160, 119);
-            this.tUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tUsuario.Name = "tUsuario";
             this.tUsuario.Size = new System.Drawing.Size(77, 20);
             this.tUsuario.TabIndex = 10;
@@ -159,15 +159,15 @@
             // tDNI
             // 
             this.tDNI.Location = new System.Drawing.Point(160, 147);
-            this.tDNI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tDNI.Margin = new System.Windows.Forms.Padding(2);
             this.tDNI.Name = "tDNI";
             this.tDNI.Size = new System.Drawing.Size(77, 20);
             this.tDNI.TabIndex = 12;
             // 
             // dateTimePickerFechNacimiento
             // 
-            this.dateTimePickerFechNacimiento.Location = new System.Drawing.Point(345, 118);
-            this.dateTimePickerFechNacimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFechNacimiento.Location = new System.Drawing.Point(347, 116);
+            this.dateTimePickerFechNacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFechNacimiento.Name = "dateTimePickerFechNacimiento";
             this.dateTimePickerFechNacimiento.Size = new System.Drawing.Size(151, 20);
             this.dateTimePickerFechNacimiento.TabIndex = 13;
@@ -201,7 +201,7 @@
             this.Controls.Add(this.b_cancelarReg);
             this.Controls.Add(this.b_ONGReg);
             this.Controls.Add(this.b_aceptarReg);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Registro";
             this.Text = "Registro";
             this.ResumeLayout(false);
