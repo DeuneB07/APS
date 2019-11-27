@@ -74,6 +74,7 @@ namespace APS.Interfaces
             PaginaPrincipal mainWindow = new PaginaPrincipal(user);
             this.Visible = false;
             mainWindow.ShowDialog();
+            this.Close();
             this.Visible = true;
         }
 

@@ -124,7 +124,7 @@
             this.Controls.Add(this.bIniciar_PagIni);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PaginaInicio";
-            this.Text = "PaginaInicio";
+            this.Text = "Pagina Inicio";
             this.ResumeLayout(false);
             this.PerformLayout();
 

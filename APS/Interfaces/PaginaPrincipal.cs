@@ -64,8 +64,10 @@ namespace APS.Interfaces
         {
             FPerfil perfil = new FPerfil(user);
             this.Visible = false;
+            this.Close();
             perfil.ShowDialog();
             this.Visible = true;
+
         }
 
     }
