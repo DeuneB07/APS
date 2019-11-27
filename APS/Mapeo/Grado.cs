@@ -54,6 +54,15 @@ namespace APS.Mapeo
             nombreGrado = (String)tupla[1];
         }
 
+        public Grado(String nombreGrado, Boolean b)
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            String sel = "SELECT ID_Grado FROM Grados where nombreGrado='" + nombreGrado + "');";
+            Object[] tupla = miBD.Select(sel)[0];
+            ID_grado = (int)tupla[0];
+            this.nombreGrado = nombreGrado;
+        }
+
         public Grado(String nombreGrado)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);

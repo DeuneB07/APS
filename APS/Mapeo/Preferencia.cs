@@ -86,6 +86,17 @@ namespace APS.Mapeo
             competencias = null;
         }
 
+        public Preferencia(String nombre_preferencia, Usuario user, bool t)
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            String sel = "Select ID_Preferencia FROM Preferencias WHERE nombre_preferencia = '" + nombre_preferencia + "' and emailUser ='" + user.Email + "';";
+            Object[] tupla = miBD.Select(sel)[0];
+            ID_preferencia = (int)tupla[0];
+            this.nombre_preferencia = nombre_preferencia;
+            this.user = user;
+            competencias = null;
+        }
+
         public Preferencia(String nombre_preferencia, Usuario user)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
@@ -224,6 +235,23 @@ namespace APS.Mapeo
                 miBD.Delete(del);
                 competencias.Remove(c);
             }
+        }
+
+        public void RemovePreferencia()
+        {
+             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+             String del = "DELETE FROM PREFERENCIAS WHERE ID_Preferencia=" + this.ID_Preferencia + ";";
+             miBD.Delete(del);
+
+            ID_preferencia = -1;
+            nombre_preferencia = null;
+            user = null;
+            grado = null;
+            asig = null;
+            horasPosibles = -1;
+            //turno = null;
+            //tipoAct = null;
+            //competencias= null
         }
 
         public override string ToString()

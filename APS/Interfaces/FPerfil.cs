@@ -39,6 +39,7 @@ namespace APS.Interfaces
             lDNI2.Text = user.DNI;
             lNombre2.Text = user.Nombre + " " + user.Apellido1 + " " + user.Apellido2;
             lMail2.Text = user.Email;
+            lFecha2.Text = user.FechaNac;
             cargarAsignaturas();
             cargarGrados();
         }
@@ -49,6 +50,7 @@ namespace APS.Interfaces
             lDNI2.Text = user.DNI;
             lNombre2.Text = user.Nombre + " " + user.Apellido1 + " " + user.Apellido2;
             lMail2.Text = user.Email;
+            lFecha2.Text = user.FechaNac;
             cargarAsignaturas();
             lGrados.Visible = false;
             lGradosUno.Visible = false;
@@ -62,6 +64,7 @@ namespace APS.Interfaces
             lNombre2.Text = user.Nombre;
             lMail2.Text = user.Email;
 
+            
             bPreferencias.Visible = false;
             lFecha.Visible = false;
             lFecha2.Visible = false;
@@ -80,6 +83,7 @@ namespace APS.Interfaces
             lDNI2.Text = user.DNI;
             lNombre2.Text = user.Nombre + " " + user.Apellido1 + " " + user.Apellido2;
             lMail2.Text = user.Email;
+            lFecha2.Text = user.FechaNac;
 
             lAsignaturas.Visible = false;
             listAsignaturas.Visible = false;
@@ -95,6 +99,7 @@ namespace APS.Interfaces
             lDNI2.Text = user.DNI;
             lNombre2.Text = user.Nombre + user.Apellido1 + user.Apellido2;
             lMail2.Text = user.Email;
+            lFecha2.Text = user.FechaNac;
 
             lDNI.Visible = false;
             lDNI2.Visible = false;
@@ -183,6 +188,14 @@ namespace APS.Interfaces
             ventana.ShowDialog();
             this.Close();
             
+        }
+
+        private void bPreferencias_Click(object sender, EventArgs e)
+        {
+            FPreferencias ventana = new FPreferencias(user);
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Visible = true;
         }
     }
 }

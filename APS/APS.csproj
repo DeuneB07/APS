@@ -52,6 +52,18 @@
   <ItemGroup>
     <Compile Include="BD\BDException.cs" />
     <Compile Include="BD\BDLibrary.cs" />
+    <Compile Include="Interfaces\FAnadirPreferencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\FAnadirPreferencias.Designer.cs">
+      <DependentUpon>FAnadirPreferencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\FPreferencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\FPreferencias.Designer.cs">
+      <DependentUpon>FPreferencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\NuevaActividad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +94,12 @@
     <Compile Include="Interfaces\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\VerPreferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\VerPreferencia.Designer.cs">
+      <DependentUpon>VerPreferencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="JSON\IDUMA.cs" />
     <Compile Include="JSON\CursoJSON.cs" />
     <Compile Include="JSON\Program.cs" />
@@ -107,8 +125,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WePassDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Interfaces\FAnadirPreferencias.resx">
+      <DependentUpon>FAnadirPreferencias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\FPerfil.resx">
       <DependentUpon>FPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\FPreferencias.resx">
+      <DependentUpon>FPreferencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\NuevaActividad.resx">
       <DependentUpon>NuevaActividad.cs</DependentUpon>
@@ -121,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\VerPreferencia.resx">
+      <DependentUpon>VerPreferencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

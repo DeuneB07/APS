@@ -161,6 +161,7 @@
             this.bPreferencias.TabIndex = 11;
             this.bPreferencias.Text = "Ver Preferencias";
             this.bPreferencias.UseVisualStyleBackColor = true;
+            this.bPreferencias.Click += new System.EventHandler(this.bPreferencias_Click);
             // 
             // bBaja
             // 
