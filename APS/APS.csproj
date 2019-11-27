@@ -52,6 +52,12 @@
   <ItemGroup>
     <Compile Include="BD\BDException.cs" />
     <Compile Include="BD\BDLibrary.cs" />
+    <Compile Include="Interfaces\NuevaActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NuevaActividad.Designer.cs">
+      <DependentUpon>NuevaActividad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\FPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </Compile>
     <EmbeddedResource Include="Interfaces\FPerfil.resx">
       <DependentUpon>FPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NuevaActividad.resx">
+      <DependentUpon>NuevaActividad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\PaginaInicio.resx">
       <DependentUpon>PaginaInicio.cs</DependentUpon>
