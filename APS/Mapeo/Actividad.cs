@@ -166,15 +166,15 @@ namespace APS.Mapeo
 
         public Actividad(String nombreAct, String descAct, int numPlazas, int numHoras, TurnoE turno,
                  String fechaInicio, String fechaFin, String lugar, Usuario organizador,
-                EstadoActividadE estadoAct)
+                EstadoActividadE estadoAct, AmbitoTrabajoE ambito, TipoTrabajoE trabajo)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             String ins = "INSERT INTO Actividades (nombreAct,descripcionAct,numPlazas,numHoras, turno,"
-                    + "fechaInicio, fechaFin,lugar,emailOrganizador,estadoAct) "
+                    + "fechaInicio, fechaFin,lugar,emailOrganizador,estadoAct,ambitoTrabajo,tipoTrabajo) "
                     + "VALUES ('" + nombreAct + "','"
                     + descAct + "'," + numPlazas + "," + numHoras + ",'" + turno.ToString() + "','"
                     + fechaInicio + "','" + fechaFin + "','" + lugar + "','" + organizador.Email + "','"
-                    + estadoAct + "');";
+                    + estadoAct + "','" + ambitoTrabajo+"','"+tipoTrabajo+"');";
             miBD.Insert(ins);
             this.ID_actividad = (int)miBD.SelectScalar("SELECT max(ID_Actividad) FROM Actividades;");
             this.nombreAct = nombreAct;
@@ -187,6 +187,8 @@ namespace APS.Mapeo
             this.lugar = lugar;
             this.organizador = organizador;
             this.estadoAct = estadoAct;
+            this.ambitoTrabajo = ambito;
+            this.tipoTrabajo = trabajo;
             competencias = null;
         }
 

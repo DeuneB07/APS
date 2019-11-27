@@ -54,6 +54,7 @@
             this.listTurno = new System.Windows.Forms.ListBox();
             this.listAmbito = new System.Windows.Forms.ListBox();
             this.listTrabajo = new System.Windows.Forms.ListBox();
+            this.labelError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelOrganizador
@@ -182,6 +183,7 @@
             this.bCancelar.TabIndex = 13;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
+            this.bCancelar.Click += new System.EventHandler(this.bCancelar_Click);
             // 
             // tOrganizador
             // 
@@ -285,11 +287,24 @@
             this.listTrabajo.Size = new System.Drawing.Size(138, 20);
             this.listTrabajo.TabIndex = 26;
             // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.BackColor = System.Drawing.Color.Transparent;
+            this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(52, 561);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(44, 17);
+            this.labelError.TabIndex = 27;
+            this.labelError.Text = "error";
+            // 
             // NuevaActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 606);
+            this.Controls.Add(this.labelError);
             this.Controls.Add(this.listTrabajo);
             this.Controls.Add(this.listAmbito);
             this.Controls.Add(this.listTurno);
@@ -351,5 +366,6 @@
         private System.Windows.Forms.ListBox listTurno;
         private System.Windows.Forms.ListBox listAmbito;
         private System.Windows.Forms.ListBox listTrabajo;
+        private System.Windows.Forms.Label labelError;
     }
 }
