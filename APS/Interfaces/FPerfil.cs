@@ -30,6 +30,7 @@ namespace APS.Interfaces
             lNombre2.Text = user.Nombre + " " + user.Apellido1 + " " + user.Apellido2;
             lMail2.Text = user.Email;
             cargarAsignaturas();
+            cargarGrados();
             
 
         }
@@ -38,7 +39,22 @@ namespace APS.Interfaces
         {
             foreach(Asignatura a in user.Asignaturas)
             {
-                listAsignaturas.Items.Add(a);
+                listAsignaturas.Items.Add(a.NombreAsig);
+            }
+            
+        }
+
+        private void cargarGrados()
+        {
+            List<Grado> gradoUser = user.Grados;
+            if (user.Grados.Count == 0) lGradosUno.Text = "No hay Grados Actuales";
+            else if (user.Grados.Count == 1) lGradosUno.Text = user.Grados.ElementAt(1).NombreGrado;
+            else
+            {
+                foreach (Grado a in user.Grados)
+                {
+                    listGrados.Items.Add(a.NombreGrado);
+                }
             }
             
         }
