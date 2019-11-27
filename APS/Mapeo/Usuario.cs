@@ -55,7 +55,7 @@ namespace APS.Mapeo
             rol = new Rol((String)tupla[4]);
             if(tupla[5].ToString()!="")fechaNac = tupla[5].ToString();
             //imagen = null;
-            grados
+            grados = null;
             preferencias = null;
             asignaturas = null;
             if (tupla[7].ToString() != "") nombre =(String) tupla[7];
@@ -113,6 +113,7 @@ namespace APS.Mapeo
             this.situacion = situacion;
             preferencias = null;
             asignaturas = null;
+            grados = null;
         }
 
         public Usuario(String e, String p, String name, Rol r)
@@ -127,6 +128,7 @@ namespace APS.Mapeo
             rol = r;
             preferencias = null;
             asignaturas = null;
+            grados = null;
         }
 
         public String Email
@@ -299,6 +301,15 @@ namespace APS.Mapeo
             {
                 if (asignaturas == null) asignaturas = Asignatura.ListaAsignaturas(this);
                 return asignaturas;
+            }
+        }
+
+        public List<Grado> Grados
+        {
+            get
+            {
+                if (grados == null) grados = Grado.ListaGrados(this);
+                return grados;
             }
         }
 

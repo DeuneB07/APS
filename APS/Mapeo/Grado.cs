@@ -28,6 +28,20 @@ namespace APS.Mapeo
             return lista;
         }
 
+        public static List<Grado> ListaGrados(Usuario user)
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Grado> lista = new List<Grado>();
+
+            foreach (Object[] tupla in miBD.Select("Select ID_Grado from Grados JOIN (Asignaturas JOIN Rel_User_Asig ON idAsig=ID_Asignatura) ON ID_Grado=idGrado WHERE emailUser = '" + user.Email + "';"))
+            {
+                int id = (int)tupla[0];
+                Grado g = new Grado(id);
+                lista.Add(g);
+            }
+            return lista;
+        }
+
         public Grado(int id)
         {
             // Crea el objeto cargando sus valores de la base de datos
