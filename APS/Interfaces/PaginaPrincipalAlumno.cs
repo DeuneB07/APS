@@ -20,19 +20,23 @@ namespace APS.Interfaces
         {
             InitializeComponent();
             this.user = user;
-            lWelcome.Text = "¡Bienvenido, " + user.NombreUser + "!";
-
-
-
-
+            lWelcome.Text = "¡Bienvenido, " + user.Email + "!";
         }
 
         private void bLogout_Click(object sender, EventArgs e)
         {
+            crearCierreSesion();
+        }
 
-            //EmergenteCierre emCierre = new EmergenteCierre();
+        private void crearCierreSesion()
+        {
+            DialogResult emCierreDialog;
+            string mensaje = "¿Quieres cerrar la sesión actual?";
+            string caption = "¡AVISO!";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
 
-            this.Close();
+            if (emCierreDialog == DialogResult.Yes) this.Close();
         }
     }
 }

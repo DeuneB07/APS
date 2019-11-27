@@ -70,7 +70,7 @@
             this.pTodas.Location = new System.Drawing.Point(4, 22);
             this.pTodas.Name = "pTodas";
             this.pTodas.Padding = new System.Windows.Forms.Padding(3);
-            this.pTodas.Size = new System.Drawing.Size(572, 229);
+            this.pTodas.Size = new System.Drawing.Size(621, 309);
             this.pTodas.TabIndex = 1;
             this.pTodas.Text = "Todas";
             this.pTodas.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@
             this.pProyectos.Location = new System.Drawing.Point(4, 22);
             this.pProyectos.Name = "pProyectos";
             this.pProyectos.Padding = new System.Windows.Forms.Padding(3);
-            this.pProyectos.Size = new System.Drawing.Size(572, 229);
+            this.pProyectos.Size = new System.Drawing.Size(621, 309);
             this.pProyectos.TabIndex = 2;
             this.pProyectos.Text = "Proyectos";
             this.pProyectos.UseVisualStyleBackColor = true;
@@ -90,7 +90,7 @@
             this.pValoracion.Location = new System.Drawing.Point(4, 22);
             this.pValoracion.Name = "pValoracion";
             this.pValoracion.Padding = new System.Windows.Forms.Padding(3);
-            this.pValoracion.Size = new System.Drawing.Size(572, 229);
+            this.pValoracion.Size = new System.Drawing.Size(621, 309);
             this.pValoracion.TabIndex = 3;
             this.pValoracion.Text = "Valoración";
             this.pValoracion.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@
             // 
             // pictureUser
             // 
-            this.pictureUser.Location = new System.Drawing.Point(699, 12);
+            this.pictureUser.Location = new System.Drawing.Point(697, 12);
             this.pictureUser.Name = "pictureUser";
             this.pictureUser.Size = new System.Drawing.Size(83, 78);
             this.pictureUser.TabIndex = 2;
@@ -119,7 +119,7 @@
             this.lPerfil.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lPerfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lPerfil.Location = new System.Drawing.Point(715, 105);
+            this.lPerfil.Location = new System.Drawing.Point(706, 105);
             this.lPerfil.Name = "lPerfil";
             this.lPerfil.Size = new System.Drawing.Size(45, 19);
             this.lPerfil.TabIndex = 3;
@@ -131,7 +131,7 @@
             this.lMensajes.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMensajes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lMensajes.Location = new System.Drawing.Point(715, 143);
+            this.lMensajes.Location = new System.Drawing.Point(706, 143);
             this.lMensajes.Name = "lMensajes";
             this.lMensajes.Size = new System.Drawing.Size(71, 19);
             this.lMensajes.TabIndex = 4;
@@ -143,7 +143,7 @@
             this.lHistorial.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lHistorial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lHistorial.Location = new System.Drawing.Point(715, 124);
+            this.lHistorial.Location = new System.Drawing.Point(706, 124);
             this.lHistorial.Name = "lHistorial";
             this.lHistorial.Size = new System.Drawing.Size(65, 19);
             this.lHistorial.TabIndex = 5;
@@ -157,9 +157,9 @@
             this.bLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.bLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bLogout.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bLogout.Location = new System.Drawing.Point(719, 165);
+            this.bLogout.Location = new System.Drawing.Point(689, 175);
             this.bLogout.Name = "bLogout";
-            this.bLogout.Size = new System.Drawing.Size(63, 53);
+            this.bLogout.Size = new System.Drawing.Size(99, 33);
             this.bLogout.TabIndex = 6;
             this.bLogout.Text = "Cerrar Sesión";
             this.bLogout.UseVisualStyleBackColor = true;
