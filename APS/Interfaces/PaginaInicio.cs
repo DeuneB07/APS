@@ -15,10 +15,14 @@ namespace APS.Interfaces
 {
     public partial class PaginaInicio : Form
     {
+
+        Usuario user;
+
         public PaginaInicio()
         {
             InitializeComponent();
             labelError.Text = "";
+            user = null;
         }
 
         private void bIniciar_PagIni_Click(object sender, EventArgs e)
@@ -27,7 +31,7 @@ namespace APS.Interfaces
             {
                 string email = t_correoPagIni.Text;
                 string pwd = t_pwdPagIni.Text;
-                Usuario user = new Usuario(email);
+                user = new Usuario(email);
                 labelError.Text = "";
 
                 if (user.Rol.NombreRol == "ONG")
@@ -42,6 +46,8 @@ namespace APS.Interfaces
                 }
 
                 MessageBox.Show("Login Correctamente");
+
+                goPaginaPrincipal();
 
             }catch(Exception ex)
             {
@@ -61,6 +67,15 @@ namespace APS.Interfaces
             this.Visible = false;
             registro.ShowDialog();
             this.Visible = true;
+        }
+
+        private void goPaginaPrincipal()
+        {
+            PaginaPrincipalAlumno mainWindow = new PaginaPrincipalAlumno(user);
+            this.Visible = false;
+            mainWindow.ShowDialog();
+            this.Visible = true;
+
         }
 
     }

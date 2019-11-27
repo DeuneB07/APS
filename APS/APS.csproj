@@ -58,6 +58,12 @@
     <Compile Include="Interfaces\PaginaInicio.Designer.cs">
       <DependentUpon>PaginaInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\PaginaPrincipalAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\PaginaPrincipalAlumno.Designer.cs">
+      <DependentUpon>PaginaPrincipalAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </Compile>
     <EmbeddedResource Include="Interfaces\PaginaInicio.resx">
       <DependentUpon>PaginaInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\PaginaPrincipalAlumno.resx">
+      <DependentUpon>PaginaPrincipalAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
