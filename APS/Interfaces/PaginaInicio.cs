@@ -71,33 +71,10 @@ namespace APS.Interfaces
 
         private void goPaginaPrincipal()
         {
-      
-            if (user.Rol.NombreRol == "Estudiante") { 
-                PaginaPrincipalAlumno mainWindow = new PaginaPrincipalAlumno(user);
-                this.Visible = false;
-                mainWindow.ShowDialog();
-                this.Visible = true;
-            } /*else if(user.Rol.NombreRol == "ONG") {
-                PaginaPrincipalONG mainWindow = new PaginaPrincipalONG(user);
-                this.Visible = false;
-                mainWindow.ShowDialog();
-                this.Visible = true;
-            } else if (user.Rol.NombreRol == "GESTOR") {   
-                PaginaPrincipalGestor mainWindow = new PaginaPrincipalGestor(user);
-                this.Visible = false;
-                mainWindow.ShowDialog();
-                this.Visible = true;
-            } else if (user.Rol.NombreRol == "PAS") {
-                PaginaPrincipalPAS mainWindow = new PaginaPrincipalPAS(user);
-                this.Visible = false;
-                mainWindow.ShowDialog();
-                this.Visible = true;
-            }*/
-
-
-
-
-
+            PaginaPrincipal mainWindow = new PaginaPrincipal(user);
+            this.Visible = false;
+            mainWindow.ShowDialog();
+            this.Visible = true;
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APS.Mapeo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,44 @@ namespace APS.Interfaces
 {
     public partial class FPerfil : Form
     {
-        public FPerfil()
+
+        Usuario user;
+
+        public FPerfil(Usuario user)
         {
             InitializeComponent();
+            this.user = user;
+
+            bAceptarC.Visible = false;
+            bCancelarC.Visible = false;
+            textNombreUser.Visible = false;
+
+            lUserNoun2.Text = user.NombreUser;
+            lDNI2.Text = user.DNI;
+            //lNombre2.Text = user.Nombre + " " + user.Apellido1 + " " + user.Apellido2;
+            lMail2.Text = user.Email;
+            //lAsignaturas
+
+        }
+
+        private void bModPerfil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bAceptarC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bCancelarC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bBaja_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

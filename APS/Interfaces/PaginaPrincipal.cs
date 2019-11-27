@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace APS.Interfaces
 {
-    public partial class PaginaPrincipalAlumno : Form
+    public partial class PaginaPrincipal : Form
     {
 
         Usuario user;
 
-        public PaginaPrincipalAlumno(Mapeo.Usuario user)
+        public PaginaPrincipal(Mapeo.Usuario user)
         {
             InitializeComponent();
             this.user = user;
@@ -26,8 +26,13 @@ namespace APS.Interfaces
             if (!user.AccesoPantalla("TODAS")) tabUser.Controls.Remove(this.pTodas);
             if (!user.AccesoPantalla("PROYECTOS")) tabUser.Controls.Remove(this.pProyectos);
             if (!user.AccesoPantalla("VALORACION")) tabUser.Controls.Remove(this.pValoracion);
+            if (!user.AccesoPantalla("PENDIENTES")) tabUser.Controls.Remove(this.pPendientes);
+            if (!user.AccesoPantalla("REVISION")) tabUser.Controls.Remove(this.pRevision);
 
             lWelcome.Text = "¡Bienvenido, " + user.NombreUser + "!";
+
+            lNewAct.Visible = user.InsertarPantalla("ACTIVIDADES");
+            lNuevoProy.Visible = user.InsertarPantalla("PROYECTOS");
             
 
 
@@ -48,11 +53,6 @@ namespace APS.Interfaces
             emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
 
             if (emCierreDialog == DialogResult.Yes) this.Close();
-        }
-
-        private void pTodas_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void lPerfil_Click(object sender, EventArgs e)

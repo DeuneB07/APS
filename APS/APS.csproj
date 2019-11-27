@@ -52,17 +52,23 @@
   <ItemGroup>
     <Compile Include="BD\BDException.cs" />
     <Compile Include="BD\BDLibrary.cs" />
+    <Compile Include="Interfaces\FPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\FPerfil.Designer.cs">
+      <DependentUpon>FPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\PaginaInicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaces\PaginaInicio.Designer.cs">
       <DependentUpon>PaginaInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\PaginaPrincipalAlumno.cs">
+    <Compile Include="Interfaces\PaginaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\PaginaPrincipalAlumno.Designer.cs">
-      <DependentUpon>PaginaPrincipalAlumno.cs</DependentUpon>
+    <Compile Include="Interfaces\PaginaPrincipal.Designer.cs">
+      <DependentUpon>PaginaPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Registro.cs">
       <SubType>Form</SubType>
@@ -95,11 +101,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WePassDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Interfaces\FPerfil.resx">
+      <DependentUpon>FPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\PaginaInicio.resx">
       <DependentUpon>PaginaInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\PaginaPrincipalAlumno.resx">
-      <DependentUpon>PaginaPrincipalAlumno.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\PaginaPrincipal.resx">
+      <DependentUpon>PaginaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
