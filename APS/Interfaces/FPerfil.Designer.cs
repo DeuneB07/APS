@@ -144,7 +144,7 @@
             // bModPerfil
             // 
             this.bModPerfil.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bModPerfil.Location = new System.Drawing.Point(71, 361);
+            this.bModPerfil.Location = new System.Drawing.Point(68, 361);
             this.bModPerfil.Name = "bModPerfil";
             this.bModPerfil.Size = new System.Drawing.Size(98, 23);
             this.bModPerfil.TabIndex = 10;
