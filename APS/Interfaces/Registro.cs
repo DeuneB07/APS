@@ -51,6 +51,9 @@ namespace APS.Interfaces
 
                 //Registra al usuario en la BBDD
                 Usuario user = new Usuario(userJSON.UserEmail, new Rol(userJSON.CategoryName), userJSON.Nombre, userJSON.PrimerApellido, userJSON.SegundoApellido, userJSON.Situation);
+                if (tUsuario.Text != "") user.NombreUser = tUsuario.Text;
+                if (tDNI.Text != "") user.DNI = tDNI.Text;
+                if (dateTimePickerFechNacimiento.Value.ToShortDateString() != DateTime.Today.ToShortDateString()) user.FechaNac = dateTimePickerFechNacimiento.Value.ToShortDateString();
 
                 MessageBox.Show("Usuario creado correctamente");
 
@@ -62,12 +65,13 @@ namespace APS.Interfaces
             }
             
         }
-        
+
+
         /*
         private void b_ONGReg_Click(object sender, EventArgs e)
         {
             //Comprobar
         }*/
-        
+
     }
 }

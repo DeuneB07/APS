@@ -20,7 +20,18 @@ namespace APS.Interfaces
         {
             InitializeComponent();
             this.user = user;
-            lWelcome.Text = "¡Bienvenido, " + user.Email + "!";
+
+            tabUser.Visible = true;
+            if (!user.AccesoPantalla("MATCH")) tabUser.Controls.Remove(this.pMatch);
+            if (!user.AccesoPantalla("TODAS")) tabUser.Controls.Remove(this.pTodas);
+            if (!user.AccesoPantalla("PROYECTOS")) tabUser.Controls.Remove(this.pProyectos);
+            if (!user.AccesoPantalla("VALORACION")) tabUser.Controls.Remove(this.pValoracion);
+
+            lWelcome.Text = "¡Bienvenido, " + user.NombreUser + "!";
+            
+
+
+
         }
 
         private void bLogout_Click(object sender, EventArgs e)
@@ -38,5 +49,24 @@ namespace APS.Interfaces
 
             if (emCierreDialog == DialogResult.Yes) this.Close();
         }
+
+        private void pTodas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lPerfil_Click(object sender, EventArgs e)
+        {
+            goPerfilUsuario();
+        }
+
+        private void goPerfilUsuario()
+        {
+            FPerfil perfil = new FPerfil(user);
+            this.Visible = false;
+            perfil.ShowDialog();
+            this.Visible = true;
+        }
+
     }
 }

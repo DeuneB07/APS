@@ -49,67 +49,82 @@
             this.tabUser.Controls.Add(this.pTodas);
             this.tabUser.Controls.Add(this.pProyectos);
             this.tabUser.Controls.Add(this.pValoracion);
-            this.tabUser.Location = new System.Drawing.Point(32, 59);
+            this.tabUser.HotTrack = true;
+            this.tabUser.Location = new System.Drawing.Point(43, 73);
+            this.tabUser.Margin = new System.Windows.Forms.Padding(4);
             this.tabUser.Name = "tabUser";
             this.tabUser.SelectedIndex = 0;
-            this.tabUser.Size = new System.Drawing.Size(629, 335);
+            this.tabUser.Size = new System.Drawing.Size(839, 412);
             this.tabUser.TabIndex = 0;
             // 
             // pMatch
-            // 
-            this.pMatch.Location = new System.Drawing.Point(4, 22);
-            this.pMatch.Name = "pMatch";
-            this.pMatch.Padding = new System.Windows.Forms.Padding(3);
-            this.pMatch.Size = new System.Drawing.Size(621, 309);
-            this.pMatch.TabIndex = 0;
-            this.pMatch.Text = "Match";
-            this.pMatch.UseVisualStyleBackColor = true;
+            //
+                this.pMatch.Location = new System.Drawing.Point(4, 25);
+                this.pMatch.Margin = new System.Windows.Forms.Padding(4);
+                this.pMatch.Name = "pMatch";
+                this.pMatch.Padding = new System.Windows.Forms.Padding(4);
+                this.pMatch.Size = new System.Drawing.Size(831, 383);
+                this.pMatch.TabIndex = 0;
+                this.pMatch.Text = "Match";
+                this.pMatch.UseVisualStyleBackColor = true;
+
             // 
             // pTodas
             // 
-            this.pTodas.Location = new System.Drawing.Point(4, 22);
-            this.pTodas.Name = "pTodas";
-            this.pTodas.Padding = new System.Windows.Forms.Padding(3);
-            this.pTodas.Size = new System.Drawing.Size(621, 309);
-            this.pTodas.TabIndex = 1;
-            this.pTodas.Text = "Todas";
-            this.pTodas.UseVisualStyleBackColor = true;
+
+                this.pTodas.Location = new System.Drawing.Point(4, 25);
+                this.pTodas.Margin = new System.Windows.Forms.Padding(4);
+                this.pTodas.Name = "pTodas";
+                this.pTodas.Padding = new System.Windows.Forms.Padding(4);
+                this.pTodas.Size = new System.Drawing.Size(831, 383);
+                this.pTodas.TabIndex = 1;
+                this.pTodas.Text = "Todas";
+                this.pTodas.UseVisualStyleBackColor = true;
+                this.pTodas.Click += new System.EventHandler(this.pTodas_Click);
+            
             // 
             // pProyectos
-            // 
-            this.pProyectos.Location = new System.Drawing.Point(4, 22);
-            this.pProyectos.Name = "pProyectos";
-            this.pProyectos.Padding = new System.Windows.Forms.Padding(3);
-            this.pProyectos.Size = new System.Drawing.Size(621, 309);
-            this.pProyectos.TabIndex = 2;
-            this.pProyectos.Text = "Proyectos";
-            this.pProyectos.UseVisualStyleBackColor = true;
+            //
+
+                this.pProyectos.Location = new System.Drawing.Point(4, 25);
+                this.pProyectos.Margin = new System.Windows.Forms.Padding(4);
+                this.pProyectos.Name = "pProyectos";
+                this.pProyectos.Padding = new System.Windows.Forms.Padding(4);
+                this.pProyectos.Size = new System.Drawing.Size(831, 383);
+                this.pProyectos.TabIndex = 2;
+                this.pProyectos.Text = "Proyectos";
+
             // 
             // pValoracion
             // 
-            this.pValoracion.Location = new System.Drawing.Point(4, 22);
-            this.pValoracion.Name = "pValoracion";
-            this.pValoracion.Padding = new System.Windows.Forms.Padding(3);
-            this.pValoracion.Size = new System.Drawing.Size(621, 309);
-            this.pValoracion.TabIndex = 3;
-            this.pValoracion.Text = "Valoración";
-            this.pValoracion.UseVisualStyleBackColor = true;
+
+                this.pValoracion.Location = new System.Drawing.Point(4, 25);
+                this.pValoracion.Margin = new System.Windows.Forms.Padding(4);
+                this.pValoracion.Name = "pValoracion";
+                this.pValoracion.Padding = new System.Windows.Forms.Padding(4);
+                this.pValoracion.Size = new System.Drawing.Size(831, 383);
+                this.pValoracion.TabIndex = 3;
+                this.pValoracion.Text = "Valoración";
+                this.pValoracion.UseVisualStyleBackColor = true;
+
             // 
             // lWelcome
             // 
             this.lWelcome.AutoSize = true;
             this.lWelcome.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lWelcome.Location = new System.Drawing.Point(46, 20);
+            this.lWelcome.Location = new System.Drawing.Point(61, 25);
+            this.lWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lWelcome.Name = "lWelcome";
-            this.lWelcome.Size = new System.Drawing.Size(0, 23);
+            this.lWelcome.Size = new System.Drawing.Size(0, 29);
             this.lWelcome.TabIndex = 1;
             // 
             // pictureUser
             // 
-            this.pictureUser.Location = new System.Drawing.Point(697, 12);
+            this.pictureUser.Location = new System.Drawing.Point(932, 15);
+            this.pictureUser.Margin = new System.Windows.Forms.Padding(4);
             this.pictureUser.Name = "pictureUser";
-            this.pictureUser.Size = new System.Drawing.Size(83, 78);
+            this.pictureUser.Size = new System.Drawing.Size(111, 96);
             this.pictureUser.TabIndex = 2;
             this.pictureUser.TabStop = false;
             // 
@@ -119,11 +134,13 @@
             this.lPerfil.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lPerfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lPerfil.Location = new System.Drawing.Point(706, 105);
+            this.lPerfil.Location = new System.Drawing.Point(953, 129);
+            this.lPerfil.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lPerfil.Name = "lPerfil";
-            this.lPerfil.Size = new System.Drawing.Size(45, 19);
+            this.lPerfil.Size = new System.Drawing.Size(54, 24);
             this.lPerfil.TabIndex = 3;
             this.lPerfil.Text = "Perfil";
+            this.lPerfil.Click += new System.EventHandler(this.lPerfil_Click);
             // 
             // lMensajes
             // 
@@ -131,9 +148,10 @@
             this.lMensajes.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMensajes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lMensajes.Location = new System.Drawing.Point(706, 143);
+            this.lMensajes.Location = new System.Drawing.Point(953, 176);
+            this.lMensajes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lMensajes.Name = "lMensajes";
-            this.lMensajes.Size = new System.Drawing.Size(71, 19);
+            this.lMensajes.Size = new System.Drawing.Size(90, 24);
             this.lMensajes.TabIndex = 4;
             this.lMensajes.Text = "Mensajes";
             // 
@@ -143,9 +161,10 @@
             this.lHistorial.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lHistorial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lHistorial.Location = new System.Drawing.Point(706, 124);
+            this.lHistorial.Location = new System.Drawing.Point(953, 153);
+            this.lHistorial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lHistorial.Name = "lHistorial";
-            this.lHistorial.Size = new System.Drawing.Size(65, 19);
+            this.lHistorial.Size = new System.Drawing.Size(82, 24);
             this.lHistorial.TabIndex = 5;
             this.lHistorial.Text = "Historial";
             // 
@@ -157,9 +176,10 @@
             this.bLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.bLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bLogout.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bLogout.Location = new System.Drawing.Point(689, 175);
+            this.bLogout.Location = new System.Drawing.Point(959, 203);
+            this.bLogout.Margin = new System.Windows.Forms.Padding(4);
             this.bLogout.Name = "bLogout";
-            this.bLogout.Size = new System.Drawing.Size(99, 33);
+            this.bLogout.Size = new System.Drawing.Size(84, 65);
             this.bLogout.TabIndex = 6;
             this.bLogout.Text = "Cerrar Sesión";
             this.bLogout.UseVisualStyleBackColor = true;
@@ -167,9 +187,9 @@
             // 
             // PaginaPrincipalAlumno
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.bLogout);
             this.Controls.Add(this.lHistorial);
             this.Controls.Add(this.lMensajes);
@@ -177,6 +197,7 @@
             this.Controls.Add(this.pictureUser);
             this.Controls.Add(this.lWelcome);
             this.Controls.Add(this.tabUser);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PaginaPrincipalAlumno";
             this.Text = "Pagina Principal";
             this.tabUser.ResumeLayout(false);
