@@ -21,6 +21,7 @@ namespace APS.Mapeo
         private String apellido2;
         private String situacion;
         //private File imagen;
+        private List<Grado> grados; //Lazzy
         private List<Preferencia> preferencias; //Lazzy
         private List<Asignatura> asignaturas; //Lazzy
 
@@ -30,11 +31,10 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Usuario> lista = new List<Usuario>();
 
-            foreach (object[] tupla in miBD.Select("SELECT email,password FROM Usuario;"))
+            foreach (object[] tupla in miBD.Select("SELECT email FROM Usuario;"))
             {
                 String email = (String)tupla[0];
-                String p = (String)tupla[1];
-                Usuario u = new Usuario(email, p);
+                Usuario u = new Usuario(email);
                 lista.Add(u);
             }
             return lista;
@@ -55,6 +55,7 @@ namespace APS.Mapeo
             rol = new Rol((String)tupla[4]);
             if(tupla[5].ToString()!="")fechaNac = tupla[5].ToString();
             //imagen = null;
+            grados
             preferencias = null;
             asignaturas = null;
             if (tupla[7].ToString() != "") nombre =(String) tupla[7];
@@ -171,6 +172,54 @@ namespace APS.Mapeo
             }
         }
 
+        public String Nombre
+        {
+            get { return nombre; }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                miBD.Update("UPDATE Usuario SET nombre = '" + value
+                     + "' WHERE email ='" + this.email + "';");
+                nombre = value;
+            }
+        }
+
+        public String Apellido1
+        {
+            get { return apellido1; }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                miBD.Update("UPDATE Usuario SET apellido1 = '" + value
+                     + "' WHERE email ='" + this.email + "';");
+                apellido1 = value;
+            }
+        }
+
+        public String Apellido2
+        {
+            get { return apellido2; }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                miBD.Update("UPDATE Usuario SET apellido2 = '" + value
+                     + "' WHERE email ='" + this.email + "';");
+                apellido2 = value;
+            }
+        }
+
+        public String Situacion
+        {
+            get { return situacion; }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                miBD.Update("UPDATE Usuario SET situacion = '" + value
+                     + "' WHERE email ='" + this.email + "';");
+                situacion = value;
+            }
+        }
+
         public String FechaNac
         {
             get { return fechaNac; }
@@ -192,6 +241,10 @@ namespace APS.Mapeo
             DNI = nombreUser = null;
             fechaNac = null;
             //imagen = null;
+            nombre = null;
+            apellido1 = null;
+            apellido2 = null;
+            situacion = null;
             rol = null;
         }
 

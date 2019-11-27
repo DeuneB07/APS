@@ -27,10 +27,20 @@ namespace APS.Interfaces
 
             lUserNoun2.Text = user.NombreUser;
             lDNI2.Text = user.DNI;
-            //lNombre2.Text = user.Nombre + " " + user.Apellido1 + " " + user.Apellido2;
+            lNombre2.Text = user.Nombre + " " + user.Apellido1 + " " + user.Apellido2;
             lMail2.Text = user.Email;
-            //lAsignaturas
+            cargarAsignaturas();
+            
 
+        }
+
+        private void cargarAsignaturas()
+        {
+            foreach(Asignatura a in user.Asignaturas)
+            {
+                listAsignaturas.Items.Add(a);
+            }
+            
         }
 
         private void bModPerfil_Click(object sender, EventArgs e)
