@@ -154,13 +154,10 @@ namespace APS.Interfaces
             bAceptarC.Visible = false;
             bCancelarC.Visible = false;
 
-            if(textNombreUser.Text != "")
-            {
-                lUserNoun2.Text = textNombreUser.Text;
-                user.NombreUser = lUserNoun2.ToString();
-            }
-            lUserNoun2.Visible = true;
             textNombreUser.Visible = false;
+            lUserNoun2.Text = textNombreUser.Text;
+            user.NombreUser = lUserNoun2.ToString();
+            lUserNoun2.Visible = true;
         }
 
         private void bCancelarC_Click(object sender, EventArgs e)
@@ -178,11 +175,6 @@ namespace APS.Interfaces
         private void bBaja_Click(object sender, EventArgs e)
         {
             user.BorraUsuario();
-
-            PaginaInicio ventana = new PaginaInicio();
-            ventana.ShowDialog();
-            this.Close();
-
         }
     }
 }
