@@ -127,7 +127,7 @@ namespace APS.Interfaces
             else if (user.Grados.Count == 1)
             {
                 listGrados.Visible = false;
-                lGradosUno.Text = user.Grados.ElementAt(1).NombreGrado;
+                lGradosUno.Text = user.Grados.ElementAt(0).NombreGrado;
             }
             else
             {

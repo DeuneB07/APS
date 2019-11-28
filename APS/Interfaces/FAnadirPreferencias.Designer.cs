@@ -57,10 +57,9 @@
             // bConfirmar
             // 
             this.bConfirmar.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bConfirmar.Location = new System.Drawing.Point(156, 486);
-            this.bConfirmar.Margin = new System.Windows.Forms.Padding(4);
+            this.bConfirmar.Location = new System.Drawing.Point(117, 395);
             this.bConfirmar.Name = "bConfirmar";
-            this.bConfirmar.Size = new System.Drawing.Size(167, 28);
+            this.bConfirmar.Size = new System.Drawing.Size(125, 23);
             this.bConfirmar.TabIndex = 16;
             this.bConfirmar.Text = "Confirmar";
             this.bConfirmar.UseVisualStyleBackColor = true;
@@ -69,10 +68,9 @@
             // bCancelar
             // 
             this.bCancelar.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCancelar.Location = new System.Drawing.Point(464, 486);
-            this.bCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.bCancelar.Location = new System.Drawing.Point(348, 395);
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(167, 28);
+            this.bCancelar.Size = new System.Drawing.Size(125, 23);
             this.bCancelar.TabIndex = 17;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
@@ -82,10 +80,9 @@
             // 
             this.lComp.AutoSize = true;
             this.lComp.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lComp.Location = new System.Drawing.Point(48, 265);
-            this.lComp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lComp.Location = new System.Drawing.Point(36, 215);
             this.lComp.Name = "lComp";
-            this.lComp.Size = new System.Drawing.Size(98, 18);
+            this.lComp.Size = new System.Drawing.Size(78, 14);
             this.lComp.TabIndex = 18;
             this.lComp.Text = "Competencias:";
             // 
@@ -93,10 +90,9 @@
             // 
             this.lTipo.AutoSize = true;
             this.lTipo.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTipo.Location = new System.Drawing.Point(439, 158);
-            this.lTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lTipo.Location = new System.Drawing.Point(329, 128);
             this.lTipo.Name = "lTipo";
-            this.lTipo.Size = new System.Drawing.Size(114, 18);
+            this.lTipo.Size = new System.Drawing.Size(94, 14);
             this.lTipo.TabIndex = 19;
             this.lTipo.Text = "Tipo de Actividad:";
             // 
@@ -104,10 +100,9 @@
             // 
             this.lTurno.AutoSize = true;
             this.lTurno.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTurno.Location = new System.Drawing.Point(484, 112);
-            this.lTurno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lTurno.Location = new System.Drawing.Point(363, 91);
             this.lTurno.Name = "lTurno";
-            this.lTurno.Size = new System.Drawing.Size(47, 18);
+            this.lTurno.Size = new System.Drawing.Size(37, 14);
             this.lTurno.TabIndex = 20;
             this.lTurno.Text = "Turno:";
             // 
@@ -115,10 +110,9 @@
             // 
             this.lGrado.AutoSize = true;
             this.lGrado.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lGrado.Location = new System.Drawing.Point(48, 112);
-            this.lGrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lGrado.Location = new System.Drawing.Point(36, 91);
             this.lGrado.Name = "lGrado";
-            this.lGrado.Size = new System.Drawing.Size(50, 18);
+            this.lGrado.Size = new System.Drawing.Size(40, 14);
             this.lGrado.TabIndex = 21;
             this.lGrado.Text = "Grado:";
             // 
@@ -126,10 +120,9 @@
             // 
             this.lHoras.AutoSize = true;
             this.lHoras.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lHoras.Location = new System.Drawing.Point(439, 209);
-            this.lHoras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lHoras.Location = new System.Drawing.Point(329, 170);
             this.lHoras.Name = "lHoras";
-            this.lHoras.Size = new System.Drawing.Size(119, 18);
+            this.lHoras.Size = new System.Drawing.Size(95, 14);
             this.lHoras.TabIndex = 22;
             this.lHoras.Text = "Número de Horas:";
             // 
@@ -137,10 +130,9 @@
             // 
             this.lAsig.AutoSize = true;
             this.lAsig.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAsig.Location = new System.Drawing.Point(48, 185);
-            this.lAsig.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lAsig.Location = new System.Drawing.Point(36, 150);
             this.lAsig.Name = "lAsig";
-            this.lAsig.Size = new System.Drawing.Size(79, 18);
+            this.lAsig.Size = new System.Drawing.Size(63, 14);
             this.lAsig.TabIndex = 23;
             this.lAsig.Text = "Asignatura:";
             // 
@@ -148,20 +140,18 @@
             // 
             this.lNombrePref.AutoSize = true;
             this.lNombrePref.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lNombrePref.Location = new System.Drawing.Point(48, 44);
-            this.lNombrePref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lNombrePref.Location = new System.Drawing.Point(36, 36);
             this.lNombrePref.Name = "lNombrePref";
-            this.lNombrePref.Size = new System.Drawing.Size(133, 18);
+            this.lNombrePref.Size = new System.Drawing.Size(108, 14);
             this.lNombrePref.TabIndex = 24;
             this.lNombrePref.Text = "Nombre Preferencia:";
             // 
             // comboGrado
             // 
             this.comboGrado.FormattingEnabled = true;
-            this.comboGrado.Location = new System.Drawing.Point(76, 133);
-            this.comboGrado.Margin = new System.Windows.Forms.Padding(4);
+            this.comboGrado.Location = new System.Drawing.Point(57, 108);
             this.comboGrado.Name = "comboGrado";
-            this.comboGrado.Size = new System.Drawing.Size(256, 24);
+            this.comboGrado.Size = new System.Drawing.Size(193, 21);
             this.comboGrado.TabIndex = 25;
             this.comboGrado.SelectedIndexChanged += new System.EventHandler(this.comboGrado_SelectedIndexChanged);
             // 
@@ -182,10 +172,9 @@
             // 
             // comboAsig
             // 
-            this.comboAsig.Location = new System.Drawing.Point(76, 206);
-            this.comboAsig.Margin = new System.Windows.Forms.Padding(4);
+            this.comboAsig.Location = new System.Drawing.Point(57, 167);
             this.comboAsig.Name = "comboAsig";
-            this.comboAsig.Size = new System.Drawing.Size(256, 24);
+            this.comboAsig.Size = new System.Drawing.Size(193, 21);
             this.comboAsig.TabIndex = 26;
             // 
             // comboTurno
@@ -194,23 +183,19 @@
             this.comboTurno.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.comboTurno.Location = new System.Drawing.Point(572, 103);
-            this.comboTurno.Margin = new System.Windows.Forms.Padding(4);
+            this.comboTurno.Location = new System.Drawing.Point(429, 84);
             this.comboTurno.Name = "comboTurno";
-            this.comboTurno.Size = new System.Drawing.Size(133, 24);
+            this.comboTurno.Size = new System.Drawing.Size(101, 21);
             this.comboTurno.TabIndex = 27;
             // 
             // comboTipo
             // 
             this.comboTipo.FormattingEnabled = true;
             this.comboTipo.Items.AddRange(new object[] {
-            "Formación",
-            "Investigación",
             "Voluntariado"});
-            this.comboTipo.Location = new System.Drawing.Point(572, 154);
-            this.comboTipo.Margin = new System.Windows.Forms.Padding(4);
+            this.comboTipo.Location = new System.Drawing.Point(429, 125);
             this.comboTipo.Name = "comboTipo";
-            this.comboTipo.Size = new System.Drawing.Size(133, 24);
+            this.comboTipo.Size = new System.Drawing.Size(101, 21);
             this.comboTipo.TabIndex = 28;
             // 
             // comboHoras
@@ -247,29 +232,25 @@
             "28",
             "29",
             "30"});
-            this.comboHoras.Location = new System.Drawing.Point(572, 206);
-            this.comboHoras.Margin = new System.Windows.Forms.Padding(4);
+            this.comboHoras.Location = new System.Drawing.Point(429, 167);
             this.comboHoras.Name = "comboHoras";
-            this.comboHoras.Size = new System.Drawing.Size(133, 24);
+            this.comboHoras.Size = new System.Drawing.Size(101, 21);
             this.comboHoras.TabIndex = 29;
             // 
             // listCompetencias
             // 
             this.listCompetencias.FormattingEnabled = true;
-            this.listCompetencias.ItemHeight = 16;
-            this.listCompetencias.Location = new System.Drawing.Point(156, 302);
-            this.listCompetencias.Margin = new System.Windows.Forms.Padding(4);
+            this.listCompetencias.Location = new System.Drawing.Point(117, 245);
             this.listCompetencias.Name = "listCompetencias";
             this.listCompetencias.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listCompetencias.Size = new System.Drawing.Size(473, 148);
+            this.listCompetencias.Size = new System.Drawing.Size(356, 121);
             this.listCompetencias.TabIndex = 30;
             // 
             // textNombreComp
             // 
-            this.textNombreComp.Location = new System.Drawing.Point(201, 36);
-            this.textNombreComp.Margin = new System.Windows.Forms.Padding(4);
+            this.textNombreComp.Location = new System.Drawing.Point(151, 29);
             this.textNombreComp.Name = "textNombreComp";
-            this.textNombreComp.Size = new System.Drawing.Size(504, 22);
+            this.textNombreComp.Size = new System.Drawing.Size(379, 20);
             this.textNombreComp.TabIndex = 31;
             // 
             // gradosTableAdapter
@@ -278,9 +259,9 @@
             // 
             // FAnadirPreferencias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 554);
+            this.ClientSize = new System.Drawing.Size(599, 450);
             this.Controls.Add(this.textNombreComp);
             this.Controls.Add(this.listCompetencias);
             this.Controls.Add(this.comboHoras);
@@ -297,7 +278,6 @@
             this.Controls.Add(this.lComp);
             this.Controls.Add(this.bCancelar);
             this.Controls.Add(this.bConfirmar);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FAnadirPreferencias";
             this.Text = "Introduzca Preferencia";
             this.Load += new System.EventHandler(this.FAnadirPreferencias_Load);

@@ -37,7 +37,7 @@ namespace APS.Mapeo
             {
                 int id = (int)tupla[0];
                 Grado g = new Grado(id);
-                lista.Add(g);
+                if(!lista.Contains(g)) lista.Add(g);
             }
             return lista;
         }

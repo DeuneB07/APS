@@ -21,9 +21,19 @@ namespace APS.Interfaces
             InitializeComponent();
             this.user = user;
 
+            cargarTipoActividad();
             cargarCompetencias();
             cargarGrados();
             cargarAsignaturas();
+        }
+
+        private void cargarTipoActividad()
+        {
+            if (user.Rol.NombreRol.Equals("Estudiante"))
+            {
+                comboTipo.Items.Add("Formación");
+                comboTipo.Items.Add("Investigación");
+            }
         }
 
         private void cargarCompetencias()
