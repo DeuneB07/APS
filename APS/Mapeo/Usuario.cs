@@ -96,7 +96,7 @@ namespace APS.Mapeo
             }
             catch (Exception ex)
             {
-                throw new BDException("Error: Usuario o Contraseña incorrecto "+ex.Message);
+                throw new BDException("Error: Usuario o Contraseña incorrecto ");
             }
         }
 

@@ -16,9 +16,9 @@ namespace APS.Interfaces
     {
         private Usuario ong;
         private Actividad act;
-        private Usuario user;
         public GestorGestionaActividad(Usuario ong,Actividad act)
         {
+            this.Visible = true;
             InitializeComponent();
             this.ong = ong;
             this.act = act;

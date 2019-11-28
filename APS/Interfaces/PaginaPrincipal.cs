@@ -35,6 +35,9 @@ namespace APS.Interfaces
             lNewAct.Visible = user.InsertarPantalla("ACTIVIDADES");
             lNuevoProy.Visible = user.InsertarPantalla("PROYECTOS");
 
+            //this.gradosTableAdapter.Fill(this.wePassDataSet.Grados);
+            //this.actividadesTableAdapter.Fill(this.wePassDataSet.Actividades);
+
             //cargarTodasActividades();
 
         }
@@ -104,6 +107,36 @@ namespace APS.Interfaces
             NuevaActividad newAct = new NuevaActividad(user);
             this.Visible = false;
             newAct.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void PaginaPrincipal_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'wePassDataSet.Actividades' Puede moverla o quitarla según sea necesario.
+            this.actividadesTableAdapter.Fill(this.wePassDataSet.Actividades);
+            // TODO: esta línea de código carga datos en la tabla 'wePassDataSet.Grados' Puede moverla o quitarla según sea necesario.
+            this.gradosTableAdapter.Fill(this.wePassDataSet.Grados);
+
+        }
+
+        private void listGrados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*
+            Grado g = (Grado)listGrados.SelectedItem;
+            
+            foreach(Asignatura a in Asignatura.ListaAsignaturas(g))
+            {
+
+            }*/
+        }
+
+        private void bGestionar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(this.dataGridViewPendientes.SelectedRows[0].Cells[0].Value.ToString());
+            Actividad pendiente = new Actividad(id);
+            GestorGestionaActividad gestorGestionaActividad = new GestorGestionaActividad(user, pendiente);
+            this.Visible = false;
+            gestorGestionaActividad.ShowDialog();
             this.Visible = true;
         }
     }
