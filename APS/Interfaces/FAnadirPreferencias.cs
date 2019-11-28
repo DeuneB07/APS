@@ -106,7 +106,7 @@ namespace APS.Interfaces
             comboAsig.Items.Clear();
             foreach(Asignatura a in Asignatura.ListaAsignaturas(g))
             {
-                /*if(user.Asignaturas.Contains(a))*/ comboAsig.Items.Add(a);
+                if(user.Asignaturas.Contains(a)) comboAsig.Items.Add(a);
             }
             comboAsig.DisplayMember = "nombreAsig";
         }

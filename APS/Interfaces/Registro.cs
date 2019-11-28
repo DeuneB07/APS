@@ -60,7 +60,7 @@ namespace APS.Interfaces
                 user.AddGrado(medicina); //id 5 => Medicina
                 foreach(CursoJSON c in userJSON.Courses)
                 {
-                    MessageBox.Show(c.Name);
+                    
                     Asignatura a = new Asignatura(medicina, c.Name);
                     if (a.ID_Asig != -1) user.AddAsignatura(a);
                 }

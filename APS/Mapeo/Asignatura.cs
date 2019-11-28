@@ -50,7 +50,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Asignatura> lista = new List<Asignatura>();
 
-            foreach (object[] tupla in miBD.Select("SELECT idAsig FROM Asignaturas WHERE idGrado=" + g.ID_Grado + ";"))
+            foreach (object[] tupla in miBD.Select("SELECT ID_Asignatura FROM Asignaturas WHERE idGrado=" + g.ID_Grado + ";"))
             {
                 int id = (int)tupla[0];
                 Asignatura a = new Asignatura(id);
@@ -84,6 +84,7 @@ namespace APS.Mapeo
             {
                 Object[] tupla = lista[0];
                 ID_asig = (int)tupla[0];
+                Console.WriteLine("hla");
                 nombreAsig = (String)tupla[1];
                 grado = new Grado((int)tupla[2]);
             }
@@ -113,7 +114,7 @@ namespace APS.Mapeo
         {
             get { return ID_asig; }
             set {
-                throw new BDException("Error: no se puede modificar el ID_Asignatura, es autoindexado");
+                
             }
         }
 
