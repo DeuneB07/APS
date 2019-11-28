@@ -94,6 +94,12 @@
     <Compile Include="Interfaces\PaginaPrincipal.Designer.cs">
       <DependentUpon>PaginaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Prueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Prueba.Designer.cs">
+      <DependentUpon>Prueba.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\PaginaPrincipal.resx">
       <DependentUpon>PaginaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Prueba.resx">
+      <DependentUpon>Prueba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>

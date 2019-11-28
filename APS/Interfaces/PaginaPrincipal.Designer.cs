@@ -66,7 +66,7 @@
             // 
             this.pMatch.Location = new System.Drawing.Point(4, 22);
             this.pMatch.Name = "pMatch";
-            this.pMatch.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pMatch.Padding = new System.Windows.Forms.Padding(3);
             this.pMatch.Size = new System.Drawing.Size(637, 331);
             this.pMatch.TabIndex = 0;
             this.pMatch.Text = "Match";
@@ -76,7 +76,7 @@
             // 
             this.pTodas.Location = new System.Drawing.Point(4, 22);
             this.pTodas.Name = "pTodas";
-            this.pTodas.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pTodas.Padding = new System.Windows.Forms.Padding(3);
             this.pTodas.Size = new System.Drawing.Size(637, 331);
             this.pTodas.TabIndex = 1;
             this.pTodas.Text = "Todas";
@@ -86,7 +86,7 @@
             // 
             this.pProyectos.Location = new System.Drawing.Point(4, 22);
             this.pProyectos.Name = "pProyectos";
-            this.pProyectos.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pProyectos.Padding = new System.Windows.Forms.Padding(3);
             this.pProyectos.Size = new System.Drawing.Size(637, 331);
             this.pProyectos.TabIndex = 2;
             this.pProyectos.Text = "Proyectos";
@@ -95,7 +95,7 @@
             // 
             this.pValoracion.Location = new System.Drawing.Point(4, 22);
             this.pValoracion.Name = "pValoracion";
-            this.pValoracion.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pValoracion.Padding = new System.Windows.Forms.Padding(3);
             this.pValoracion.Size = new System.Drawing.Size(637, 331);
             this.pValoracion.TabIndex = 3;
             this.pValoracion.Text = "Valoración";
@@ -105,7 +105,7 @@
             // 
             this.pPendientes.Location = new System.Drawing.Point(4, 22);
             this.pPendientes.Name = "pPendientes";
-            this.pPendientes.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pPendientes.Padding = new System.Windows.Forms.Padding(3);
             this.pPendientes.Size = new System.Drawing.Size(637, 331);
             this.pPendientes.TabIndex = 4;
             this.pPendientes.Text = "Pendientes";
@@ -115,7 +115,7 @@
             // 
             this.pRevision.Location = new System.Drawing.Point(4, 22);
             this.pRevision.Name = "pRevision";
-            this.pRevision.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pRevision.Padding = new System.Windows.Forms.Padding(3);
             this.pRevision.Size = new System.Drawing.Size(637, 331);
             this.pRevision.TabIndex = 5;
             this.pRevision.Text = "Revisión";

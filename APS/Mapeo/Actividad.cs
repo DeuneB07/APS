@@ -23,8 +23,8 @@ namespace APS.Mapeo
         private int numPlazas;
         private int numHoras;
         private TurnoE turno;
-        private String fechaInicio;
-        private String fechaFin;
+        private DateTime fechaInicio;
+        private DateTime fechaFin;
         private String lugar;
         private Usuario organizador;
         private Usuario responsable;
@@ -111,8 +111,13 @@ namespace APS.Mapeo
             numPlazas = (int)tupla[3];
             numHoras = (int)tupla[4];
             Enum.TryParse<TurnoE>((String)tupla[5],true,out turno);
-            fechaInicio = ((DateTime)tupla[6]).ToString();
-            fechaFin = ((DateTime)tupla[7]).ToString();
+
+            string[] fechaIn = tupla[6].ToString().Split('-');
+            fechaInicio = new DateTime(int.Parse(fechaIn[0]), int.Parse(fechaIn[1]), int.Parse(fechaIn[2]));
+            
+            string[] fechaFinal = tupla[7].ToString().Split('-');
+            fechaFin = new DateTime(int.Parse(fechaFinal[0]), int.Parse(fechaFinal[1]), int.Parse(fechaFinal[2]));
+            
             lugar = (String)tupla[8];
             organizador = new Usuario((String)tupla[9]);
             if (!(tupla[10].Equals(null))) responsable = new Usuario((String)tupla[10]);
@@ -129,14 +134,14 @@ namespace APS.Mapeo
         }
 
         public Actividad(String nombreAct, String descAct, int numPlazas, int numHoras, TurnoE turno,
-                         String fechaInicio, String fechaFin, String lugar, Usuario organizador,
+                         DateTime fechaInicio, DateTime fechaFin, String lugar, Usuario organizador,
                          Usuario responsable, Grado grado, Asignatura asig, TipoActividadE tipoAct,
                          Proyecto proy, double notaMedia, EstadoActividadE estadoAct, String imagen, TipoTrabajoE tipoTrabajo, AmbitoTrabajoE ambitoTrabajo)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             String ins = "INSERT INTO Actividades VALUES ('" + nombreAct + "','"
                         + descAct + "'," + numPlazas + "," + numHoras + ",'" + turno.ToString() + "','"
-                        + fechaInicio + "','" + fechaFin + "','" + lugar + "','" + organizador.Email + "','"
+                        + fechaInicio.ToShortDateString() + "','" + fechaFin.ToShortDateString() + "','" + lugar + "','" + organizador.Email + "','"
                         + responsable.Email + "'," + grado.ID_Grado + "," + asig.ID_Asig + ",'"
                         + tipoAct.ToString() + "'," + proy.ID_Proyecto + "," + notaMedia + ",'" + estadoAct + "','"
                         + "101" + "','"+tipoTrabajo.ToString()+"','"+ambitoTrabajo.ToString()+"');";
@@ -165,7 +170,7 @@ namespace APS.Mapeo
         }
 
         public Actividad(String nombreAct, String descAct, int numPlazas, int numHoras, TurnoE turno,
-                 String fechaInicio, String fechaFin, String lugar, Usuario organizador,
+                 DateTime fechaInicio, DateTime fechaFin, String lugar, Usuario organizador,
                 EstadoActividadE estadoAct, AmbitoTrabajoE ambito, TipoTrabajoE trabajo)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
@@ -173,7 +178,7 @@ namespace APS.Mapeo
                     + "fechaInicio, fechaFin,lugar,emailOrganizador,estadoAct,ambitoTrabajo,tipoTrabajo) "
                     + "VALUES ('" + nombreAct + "','"
                     + descAct + "'," + numPlazas + "," + numHoras + ",'" + turno.ToString() + "','"
-                    + fechaInicio + "','" + fechaFin + "','" + lugar + "','" + organizador.Email + "','"
+                    + fechaInicio.ToShortDateString() + "','" + fechaFin.ToShortDateString() + "','" + lugar + "','" + organizador.Email + "','"
                     + estadoAct + "','" + ambitoTrabajo+"','"+tipoTrabajo+"');";
             miBD.Insert(ins);
             this.ID_actividad = (int)miBD.SelectScalar("SELECT max(ID_Actividad) FROM Actividades;");
@@ -266,26 +271,26 @@ namespace APS.Mapeo
             }
         }
 
-        public String FechaInicio
+        public DateTime FechaInicio
         {
             get { return fechaInicio; }
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Actividades SET fechaInicio='" + value + "' "
+                String up = "UPDATE Actividades SET fechaInicio='" + value.ToShortDateString() + "' "
                         + "WHERE ID_Actividad=" + this.ID_actividad + ";";
                 miBD.Update(up);
                 this.fechaInicio = value;
             }
         }
 
-        public String FechaFin
+        public DateTime FechaFin
         {
             get { return fechaFin; }
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Actividades SET fechaFin='" + value + "' "
+                String up = "UPDATE Actividades SET fechaFin='" + value.ToShortDateString() + "' "
                         + "WHERE ID_Actividad=" + this.ID_actividad + ";";
                 miBD.Update(up);
                 this.fechaFin = value;
@@ -491,8 +496,8 @@ namespace APS.Mapeo
             numPlazas = -1;
             numHoras = -1;
             //turno = null;
-            fechaInicio = null;
-            fechaFin = null;
+            fechaInicio = DateTime.Today;
+            fechaFin = DateTime.Today;
             lugar = null;
             organizador = null;
             responsable = null;
@@ -511,7 +516,7 @@ namespace APS.Mapeo
         {
             return "Actividad [ID_Actividad=" + ID_Actividad + ", nombreAct=" + nombreAct + ", descAct=" + descAct
         + ", numPlazas=" + numPlazas + ", numHoras=" + numHoras + ", turno=" + turno + ", fechaInicio="
-        + fechaInicio + ", fechaFin=" + fechaFin + ", lugar=" + lugar + ", organizador=" + organizador
+        + fechaInicio.ToShortDateString() + ", fechaFin=" + fechaFin.ToShortDateString() + ", lugar=" + lugar + ", organizador=" + organizador
         + ", responsable=" + responsable + ", grado=" + grado + ", asig=" + asig + ", tipoAct=" + tipoAct
         + ", proyecto=" + proyecto + ", notaMedia=" + notaMedia + ", estadoAct=" + estadoAct + ", imagen="
         + imagen + ", tipoTrabajo="+ tipoTrabajo+", ambitoTrabajo= "+ ambitoTrabajo+ "]";

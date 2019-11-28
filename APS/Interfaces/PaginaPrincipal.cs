@@ -35,6 +35,33 @@ namespace APS.Interfaces
             lNewAct.Visible = user.InsertarPantalla("ACTIVIDADES");
             lNuevoProy.Visible = user.InsertarPantalla("PROYECTOS");
 
+            //cargarTodasActividades();
+
+        }
+
+        private void cargarTodasActividades()
+        {
+
+
+            Panel panel;
+            Label lNombreAct;
+            Label lDescripcionAct;
+
+            foreach (Actividad act in Actividad.ListaActividades())
+            {
+                panel = new Panel();
+                lNombreAct = new Label();
+                lDescripcionAct = new Label();
+
+                lNombreAct.Text = act.NombreAct;
+                lDescripcionAct.Text = act.DescAct;
+                
+                panel.Controls.Add(lNombreAct);
+                panel.Controls.Add(lDescripcionAct);
+
+                pTodas.Controls.Add(panel);
+            }
+            
         }
 
         private void bLogout_Click(object sender, EventArgs e)
