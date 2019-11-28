@@ -21,9 +21,9 @@ namespace APS.Interfaces
         {
             InitializeComponent();
             this.ong = ong;
-            tOrganizador.Visible = false;
+            tOrganizador.Enabled = false;
             tOrganizador.Text = ong.Nombre;
-            
+            labelError.Text = "";
 
         }
 
@@ -46,7 +46,7 @@ namespace APS.Interfaces
 
             }catch(Exception ex)
             {
-                labelError.Text = ex.Message;
+                labelError.Text = "ERROR: Faltan Parámetros o son incorrectos";
             }
 
         }

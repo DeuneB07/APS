@@ -293,7 +293,7 @@
             this.labelError.BackColor = System.Drawing.Color.Transparent;
             this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(52, 561);
+            this.labelError.Location = new System.Drawing.Point(48, 576);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(44, 17);
             this.labelError.TabIndex = 27;
@@ -303,7 +303,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 606);
+            this.ClientSize = new System.Drawing.Size(657, 629);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.listTrabajo);
             this.Controls.Add(this.listAmbito);

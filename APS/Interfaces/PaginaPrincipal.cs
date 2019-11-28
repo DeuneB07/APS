@@ -78,7 +78,7 @@ namespace APS.Interfaces
         {
             NuevaActividad newAct = new NuevaActividad(user);
             this.Visible = false;
-            newAct.Show();
+            newAct.ShowDialog();
             this.Visible = true;
         }
     }
