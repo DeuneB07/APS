@@ -55,6 +55,16 @@ namespace APS.Interfaces
                 if (tDNI.Text != "") user.DNI = tDNI.Text;
                 if (dateTimePickerFechNacimiento.Value.ToShortDateString() != DateTime.Today.ToShortDateString()) user.FechaNac = dateTimePickerFechNacimiento.Value.ToShortDateString();
 
+                //Esta mockup son usuarios de medicina siempre
+                Grado medicina = new Grado(5);
+                user.AddGrado(medicina); //id 5 => Medicina
+                foreach(CursoJSON c in userJSON.Courses)
+                {
+                    MessageBox.Show(c.Name);
+                    Asignatura a = new Asignatura(medicina, c.Name);
+                    if (a.ID_Asig != -1) user.AddAsignatura(a);
+                }
+
                 MessageBox.Show("Usuario creado correctamente");
 
                 this.Close();

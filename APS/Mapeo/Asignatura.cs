@@ -72,6 +72,23 @@ namespace APS.Mapeo
 		    grado = new Grado((int) tupla[2]);
         }
 
+        public Asignatura(Grado g, String nameAsig)
+        {
+            // Crea el objeto cargando sus valores de la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+
+            List<Object[]> lista = miBD.Select("SELECT * FROM Asignaturas "
+                    + "WHERE nombreAsig='" + nameAsig+ "' and idGrado="+g.ID_Grado+";");
+            ID_Asig = -1;
+            if (lista.Count == 1)
+            {
+                Object[] tupla = lista[0];
+                ID_asig = (int)tupla[0];
+                nombreAsig = (String)tupla[1];
+                grado = new Grado((int)tupla[2]);
+            }
+        }
+
         public Asignatura(String nA, Grado g, Boolean self)
         {
             // Crea el objeto y lo selecciona de la base de datos

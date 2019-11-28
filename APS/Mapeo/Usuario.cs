@@ -314,13 +314,24 @@ namespace APS.Mapeo
             }
         }
 
+        public void AddGrado(Grado g)
+        {
+            if (!this.Grados.Contains(g))
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                String ins = "INSERT INTO Rel_User_Grado VALUES ('" + this.Email + "'," + g.ID_Grado + ");";
+                miBD.Insert(ins);
+                Grados.Add(g);
+            }
+        }
+
         public void AddAsignatura(Asignatura a)
         {
             if (asignaturas == null) asignaturas = Asignatura.ListaAsignaturas(this);
             if (!this.Asignaturas.Contains(a))
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String ins = "INSERT INTO Rel_User_ASig VALUES ('" + this.Email + "'," + a.ID_Asig + ");";
+                String ins = "INSERT INTO Rel_User_Asig VALUES ('" + this.Email + "'," + a.ID_Asig + ");";
                 miBD.Insert(ins);
                 asignaturas.Add(a);
             }
