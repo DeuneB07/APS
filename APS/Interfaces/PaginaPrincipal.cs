@@ -29,13 +29,11 @@ namespace APS.Interfaces
             if (!user.AccesoPantalla("PENDIENTES")) tabUser.Controls.Remove(this.pPendientes);
             if (!user.AccesoPantalla("REVISION")) tabUser.Controls.Remove(this.pRevision);
 
-            lWelcome.Text = "¡Bienvenido, " + user.NombreUser + "!";
+            if(user.NombreUser != null) lWelcome.Text = "¡Bienvenido, " + user.Nombre + " " + user.Apellido1 + "!";
+            else lWelcome.Text = "¡Bienvenido, " + user.NombreUser + "!";
 
             lNewAct.Visible = user.InsertarPantalla("ACTIVIDADES");
             lNuevoProy.Visible = user.InsertarPantalla("PROYECTOS");
-            
-
-
 
         }
 

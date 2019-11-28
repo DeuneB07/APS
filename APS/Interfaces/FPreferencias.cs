@@ -20,10 +20,7 @@ namespace APS.Interfaces
         {
             InitializeComponent();
             this.user = user;
-            
-
             cargarPreferencias();
-            MessageBox.Show("hola");
         }
 
         private void cargarPreferencias()
@@ -38,21 +35,33 @@ namespace APS.Interfaces
         {
             FAnadirPreferencias ventAnadir = new FAnadirPreferencias(user);
             ventAnadir.ShowDialog();
+            cargarPreferencias();
         }
 
         private void bVerPref_Click(object sender, EventArgs e)
         {
-            VerPreferencia ventAnadir = new VerPreferencia(new Preferencia(listPreferencias.SelectedItem.ToString(), user, true));
-            ventAnadir.ShowDialog();
+            try
+            {
+                VerPreferencia ventAnadir = new VerPreferencia(new Preferencia(listPreferencias.SelectedItem.ToString(), user, true));
+                ventAnadir.ShowDialog();
+            } catch(NullReferenceException)
+            {
+                MessageBox.Show("Debe seleccionar una Preferencia", "ATENCIÓN", MessageBoxButtons.OK);
+            }
+            
         }
 
         private void bBorrarPref_Click(object sender, EventArgs e)
         {
-            if(listPreferencias.SelectedItem != null)
+            try
             {
                 Preferencia p = new Preferencia(listPreferencias.SelectedItem.ToString(), user);
                 p.RemovePreferencia();
                 cargarPreferencias();
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Debe seleccionar una Preferencia", "ATENCIÓN", MessageBoxButtons.OK);
             }
         }
 

@@ -45,8 +45,6 @@ namespace APS.Interfaces
                     UsuarioJSON userJSON = IDUMA.Acceso(email, pwd);
                 }
 
-                MessageBox.Show("Login Correctamente");
-
                 goPaginaPrincipal();
 
             }catch(Exception ex)

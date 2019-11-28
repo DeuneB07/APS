@@ -210,6 +210,7 @@
             this.Controls.Add(this.lComp);
             this.Controls.Add(this.bConfirmar);
             this.Name = "VerPreferencia";
+            this.Text = "Añadir Preferencias";
             this.ResumeLayout(false);
             this.PerformLayout();
 

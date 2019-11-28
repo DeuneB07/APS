@@ -25,7 +25,7 @@ namespace APS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        [global::System.Configuration.DefaultSettingValueAttribute("DESKTOP-S90N4GL")]
         public string BD_SERVER {
             get {
                 return ((string)(this["BD_SERVER"]));
