@@ -19,6 +19,7 @@ namespace APS.Interfaces
         public FPerfil(Usuario user)
         {
             InitializeComponent();
+            this.Visible = true;
             this.user = user;
 
             bAceptarC.Visible = false;

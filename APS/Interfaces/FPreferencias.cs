@@ -20,16 +20,17 @@ namespace APS.Interfaces
         {
             InitializeComponent();
             this.user = user;
+            
 
             cargarPreferencias();
-
+            MessageBox.Show("hola");
         }
 
         private void cargarPreferencias()
         {
             foreach(Preferencia pref in user.Preferencias)
             {
-                listPreferencias.Items.Add(pref.Nombre_Preferencia);
+                listPreferencias.Items.Add(pref);
             }
         }
 
@@ -59,5 +60,6 @@ namespace APS.Interfaces
         {
             this.Close();
         }
+
     }
 }

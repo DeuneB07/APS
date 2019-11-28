@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using BDLibrary;
 using APS.BD;
+using static APS.Mapeo.Actividad;
 
 namespace APS.Mapeo
 {
@@ -17,8 +18,10 @@ namespace APS.Mapeo
         private Grado grado;
         private Asignatura asig;
         private int horasPosibles;
-        private Actividad.TurnoE turno;
-        private Actividad.TipoActividadE tipoAct;
+        private TurnoE turno;
+        private TipoActividadE tipoAct;
+        private TipoTrabajoE tipoTrabajo;
+        private AmbitoTrabajoE ambitoTrabajo;
 
         private List<Competencia> competencias;   //lazzy
 
@@ -43,7 +46,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Preferencia> lista = new List<Preferencia>();
 
-            foreach (Object[] tupla in miBD.Select("SELECT ID_Preferencia FROM Preferencias WHERE emailUsuario='"+user.Email+"';"))
+            foreach (Object[] tupla in miBD.Select("SELECT ID_Preferencia FROM Preferencias WHERE emailUser='"+user.Email+"';"))
             {
                 int id = (int)tupla[0];
                 Preferencia p = new Preferencia(id);
@@ -59,30 +62,14 @@ namespace APS.Mapeo
                         + "WHERE ID_Preferencia=" + id + ";")[0];
             ID_preferencia = (int)tupla[0];
             nombre_preferencia = (String)tupla[1];
-            if (tupla[2] != null)
-            {
-                user = new Usuario((String)tupla[2]);
-            }
-            if (tupla[3] != null)
-            {
-                grado = new Grado((int)tupla[3]);
-            }
-            if (tupla[4] != null)
-            {
-                asig = new Asignatura((int)tupla[4]);
-            }
-            if(tupla[5] != null)
-            {
-                horasPosibles = (int)tupla[5];
-            }
-            if (tupla[6] != null)
-            {
-                Enum.TryParse<Actividad.TurnoE>((String)tupla[6], true, out turno);
-            }
-            if (tupla[7] != null)
-            {
-                Enum.TryParse<Actividad.TipoActividadE>((String)tupla[7], true, out tipoAct);
-            }
+            if ((string) tupla[2] != "") user = new Usuario((String)tupla[2]);
+            if ((string) tupla[3] != "") grado = new Grado((int)tupla[3]);
+            if ((string) tupla[4] != "") asig = new Asignatura((int)tupla[4]);
+            if((string)tupla[5] != "") horasPosibles = (int)tupla[5];
+            if (tupla[6].ToString() != "") Enum.TryParse<Actividad.TurnoE>((String)tupla[6], true, out turno);
+            if (tupla[7].ToString() != "") Enum.TryParse<Actividad.TipoActividadE>((String)tupla[7], true, out tipoAct);
+            if (tupla[8].ToString() != "") Enum.TryParse<Actividad.TipoActividadE>((String)tupla[7], true, out tipoAct);
+            if (tupla[9].ToString() != "") Enum.TryParse<Actividad.TipoActividadE>((String)tupla[7], true, out tipoAct);
             competencias = null;
         }
 
