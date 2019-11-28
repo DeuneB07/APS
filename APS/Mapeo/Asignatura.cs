@@ -45,6 +45,21 @@ namespace APS.Mapeo
 
         }
 
+        public static List<Asignatura> ListaAsignaturas(Grado g)
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Asignatura> lista = new List<Asignatura>();
+
+            foreach (object[] tupla in miBD.Select("SELECT idAsig FROM Asignaturas WHERE idGrado=" + g.ID_Grado + ";"))
+            {
+                int id = (int)tupla[0];
+                Asignatura a = new Asignatura(id);
+                lista.Add(a);
+            }
+            return lista;
+
+        }
+
         public Asignatura(int id)
         {
             // Crea el objeto cargando sus valores de la base de datos

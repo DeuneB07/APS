@@ -34,7 +34,7 @@ namespace APS.Interfaces
                 user = new Usuario(email);
                 labelError.Text = "";
 
-                if (user.Rol.NombreRol == "ONG")
+                if (user.Rol.NombreRol == "GESTOR" || user.Rol.NombreRol == "ONG")
                 {
                     //Comprobar contraseña con nuestra BBDD
                     user = new Usuario(email, pwd);

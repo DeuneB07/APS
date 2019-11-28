@@ -64,6 +64,12 @@
     <Compile Include="Interfaces\FPreferencias.Designer.cs">
       <DependentUpon>FPreferencias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\GestorGestionaActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorGestionaActividad.designer.cs">
+      <DependentUpon>GestorGestionaActividad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\NuevaActividad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\FPreferencias.resx">
       <DependentUpon>FPreferencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorGestionaActividad.resx">
+      <DependentUpon>GestorGestionaActividad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\NuevaActividad.resx">
       <DependentUpon>NuevaActividad.cs</DependentUpon>
