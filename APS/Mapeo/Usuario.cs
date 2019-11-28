@@ -296,6 +296,14 @@ namespace APS.Mapeo
             }
         }
 
+        public void RemovePrefrencia(Preferencia p)
+        {
+            if (this.Preferencias.Contains(p))
+            {
+                preferencias.Remove(p);
+            }
+        }
+
         public List<Asignatura> Asignaturas
         {
             get

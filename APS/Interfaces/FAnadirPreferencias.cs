@@ -40,8 +40,9 @@ namespace APS.Interfaces
         {
             foreach(Competencia c in Competencia.ListaCompetencias())
             {
-                listCompetencias.Items.Add(c.NombreComp);
+                listCompetencias.Items.Add(c);
             }
+            listCompetencias.DisplayMember = "nombreComp";
         }
 
         private void cargarGrados()
@@ -66,9 +67,8 @@ namespace APS.Interfaces
         {
             try
             {
-                string[] asig = comboAsig.SelectedItem.ToString().Split('-');
-                Asignatura a = new Asignatura(asig[0], new Grado(asig[1], true));
-                Grado g = new Grado(comboGrado.SelectedItem.ToString(), true);
+                Asignatura a = (Asignatura)comboAsig.SelectedItem;
+                Grado g = (Grado)comboGrado.SelectedItem;
 
                 Preferencia p = new Preferencia(textNombreComp.Text, user);
                 p.Grado = g;
@@ -83,10 +83,15 @@ namespace APS.Interfaces
 
                 if (comboHoras.Text != "") p.HorasPosibles = int.Parse(comboHoras.Text);
 
-                foreach (String c in listCompetencias.SelectedItems)
+                foreach (Competencia c in listCompetencias.SelectedItems)
                 {
-                    p.AddCompetencia(new Competencia(c, null));
+                    p.AddCompetencia(c);
                 }
+
+                user.AddPreferencia(p);
+                MessageBox.Show("Preferencia insertada con éxito");
+                this.Close();
+
             }catch(Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);

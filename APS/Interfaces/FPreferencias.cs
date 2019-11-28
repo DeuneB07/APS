@@ -35,6 +35,7 @@ namespace APS.Interfaces
         {
             FAnadirPreferencias ventAnadir = new FAnadirPreferencias(user);
             ventAnadir.ShowDialog();
+            listPreferencias.Items.Clear();
             cargarPreferencias();
         }
 
@@ -42,7 +43,7 @@ namespace APS.Interfaces
         {
             try
             {
-                VerPreferencia ventAnadir = new VerPreferencia(new Preferencia(listPreferencias.SelectedItem.ToString(), user, true));
+                VerPreferencia ventAnadir = new VerPreferencia((Preferencia) listPreferencias.SelectedItem);
                 ventAnadir.ShowDialog();
             } catch(NullReferenceException)
             {
@@ -55,9 +56,11 @@ namespace APS.Interfaces
         {
             try
             {
-                Preferencia p = new Preferencia(listPreferencias.SelectedItem.ToString(), user);
+                Preferencia p = (Preferencia)listPreferencias.SelectedItem;
+                listPreferencias.Items.Remove(p);
                 p.RemovePreferencia();
-                cargarPreferencias();
+                user.RemovePrefrencia(p);
+                //cargarPreferencias();
             }
             catch (NullReferenceException)
             {

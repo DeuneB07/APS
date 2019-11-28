@@ -33,7 +33,7 @@ namespace APS.Mapeo
 
             foreach (Object[] tupla in miBD.Select("SELECT ID_Preferencia FROM Rel_Preferencia_Competencia WHERE idCompetencia=" + c.ID_Competencia + ";"))
             {
-                int id = (int)tupla[0];
+                int id = int.Parse((string)tupla[0]);
                 Preferencia p = new Preferencia(id);
                 lista.Add(p);
             }
@@ -48,7 +48,7 @@ namespace APS.Mapeo
 
             foreach (Object[] tupla in miBD.Select("SELECT ID_Preferencia FROM Preferencias WHERE emailUser='"+user.Email+"';"))
             {
-                int id = (int)tupla[0];
+                int id = int.Parse(tupla[0].ToString());
                 Preferencia p = new Preferencia(id);
                 lista.Add(p);
             }
@@ -62,14 +62,14 @@ namespace APS.Mapeo
                         + "WHERE ID_Preferencia=" + id + ";")[0];
             ID_preferencia = (int)tupla[0];
             nombre_preferencia = (String)tupla[1];
-            if ((string) tupla[2] != "") user = new Usuario((String)tupla[2]);
-            if ((string) tupla[3] != "") grado = new Grado((int)tupla[3]);
-            if ((string) tupla[4] != "") asig = new Asignatura((int)tupla[4]);
-            if((string)tupla[5] != "") horasPosibles = (int)tupla[5];
-            if (tupla[6].ToString() != "") Enum.TryParse<Actividad.TurnoE>((String)tupla[6], true, out turno);
-            if (tupla[7].ToString() != "") Enum.TryParse<Actividad.TipoActividadE>((String)tupla[7], true, out tipoAct);
-            if (tupla[8].ToString() != "") Enum.TryParse<Actividad.TipoActividadE>((String)tupla[7], true, out tipoAct);
-            if (tupla[9].ToString() != "") Enum.TryParse<Actividad.TipoActividadE>((String)tupla[7], true, out tipoAct);
+            if ( tupla[2].ToString() != "") user = new Usuario((String)tupla[2]);
+            if ( tupla[3].ToString() != "") grado = new Grado((int.Parse(tupla[3].ToString())));
+            if ( tupla[4].ToString() != "") asig = new Asignatura(int.Parse(tupla[4].ToString()));
+            if( tupla[5].ToString() != "") horasPosibles = int.Parse(tupla[5].ToString());
+            if (tupla[6].ToString() != "") Enum.TryParse<Actividad.TurnoE>(tupla[6].ToString(), true, out turno);
+            if (tupla[7].ToString() != "") Enum.TryParse<Actividad.TipoActividadE>(tupla[7].ToString(), true, out tipoAct);
+            if (tupla[8].ToString() != "") Enum.TryParse<Actividad.TipoActividadE>(tupla[7].ToString(), true, out tipoAct);
+            if (tupla[9].ToString() != "") Enum.TryParse<Actividad.TipoActividadE>(tupla[7].ToString(), true, out tipoAct);
             competencias = null;
         }
 
@@ -78,7 +78,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             String sel = "Select ID_Preferencia FROM Preferencias WHERE nombre_preferencia = '" + nombre_preferencia + "' and emailUser ='" + user.Email + "';";
             Object[] tupla = miBD.Select(sel)[0];
-            ID_preferencia = (int)tupla[0];
+            ID_preferencia = int.Parse(tupla[0].ToString());
             this.nombre_preferencia = nombre_preferencia;
             this.user = user;
             competencias = null;
@@ -89,7 +89,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             String ins = "INSERT INTO Preferencias (nombre_preferencia,emailUser) VALUES ('"+ nombre_preferencia +"','"+user.Email+"');";
             miBD.Insert(ins);
-            ID_preferencia= (int)miBD.SelectScalar("SELECT max(ID_Preferencia) FROM Preferencias;");
+            ID_preferencia= int.Parse(miBD.SelectScalar("SELECT max(ID_Preferencia) FROM Preferencias;").ToString());
             this.nombre_preferencia = nombre_preferencia;
             this.user = user;
             competencias = null;

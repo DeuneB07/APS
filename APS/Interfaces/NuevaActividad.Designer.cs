@@ -332,7 +332,7 @@
             this.Controls.Add(this.labelNombreAct);
             this.Controls.Add(this.labelOrganizador);
             this.Name = "NuevaActividad";
-            this.Text = "Form1";
+            this.Text = "º";
             this.ResumeLayout(false);
             this.PerformLayout();
 
