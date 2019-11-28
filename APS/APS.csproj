@@ -52,6 +52,12 @@
   <ItemGroup>
     <Compile Include="BD\BDException.cs" />
     <Compile Include="BD\BDLibrary.cs" />
+    <Compile Include="Interfaces\Cartel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Cartel.Designer.cs">
+      <DependentUpon>Cartel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\FAnadirPreferencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WePassDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Interfaces\Cartel.resx">
+      <DependentUpon>Cartel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\FAnadirPreferencias.resx">
       <DependentUpon>FAnadirPreferencias.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +211,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_20170220_225138.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mascot_allsides.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
