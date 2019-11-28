@@ -64,11 +64,22 @@ namespace APS.Interfaces
         {
             FPerfil perfil = new FPerfil(user);
             this.Visible = false;
-            this.Close();
             perfil.ShowDialog();
             this.Visible = true;
 
         }
 
+        private void lNewAct_Click(object sender, EventArgs e)
+        {
+            goNuevaActividad();
+        }
+
+        private void goNuevaActividad()
+        {
+            NuevaActividad newAct = new NuevaActividad(user);
+            this.Visible = false;
+            newAct.Show();
+            this.Visible = true;
+        }
     }
 }

@@ -82,16 +82,17 @@ namespace APS.Mapeo
                     email = password = null;
                     throw new BDException("Error: Usuario o Contraseña incorrecto");
                 }
-                if (tupla[2].ToString()=="")
-                {
-                    dni = (String)tupla[2];
-                }
-                nombreUser = (String)tupla[3];
+                if (tupla[2].ToString()!="") dni = (String)tupla[2];
+                if(tupla[3].ToString()!="")nombreUser = (String)tupla[3];
                 rol = new Rol((String)tupla[4]);
-                if (tupla[5].ToString()=="")fechaNac = ((DateTime)tupla[5]).ToString();
+                if (tupla[5].ToString()!="") fechaNac = tupla[5].ToString();
                 //imagen = null;
                 preferencias = null;
                 asignaturas = null;
+                if (tupla[7].ToString() != "") nombre = (String)tupla[7];
+                if (tupla[8].ToString() != "") apellido1 = (String)tupla[8];
+                if (tupla[9].ToString() != "") apellido2 = (String)tupla[9];
+                if (tupla[10].ToString() != "") situacion = (String)tupla[10];
             }
             catch (Exception ex)
             {

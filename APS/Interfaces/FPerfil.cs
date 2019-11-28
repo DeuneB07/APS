@@ -25,11 +25,11 @@ namespace APS.Interfaces
             bCancelarC.Visible = false;
             textNombreUser.Visible = false;
 
-            if (user.Rol.NombreRol.Equals("Estudiante")) cargarPerfilAlumno();
+            if (user.Rol.NombreRol.ToUpper().Equals("ESTUDIANTE")) cargarPerfilAlumno();
             if (user.Rol.NombreRol.Equals("PDI")) cargarPerfilPDI();
             if (user.Rol.NombreRol.Equals("PAS")) cargarPerfilPAS();
             if (user.Rol.NombreRol.Equals("ONG")) cargarPerfilONG();
-            if (user.Rol.NombreRol.Equals("Gestor")) cargarPerfilGestor();
+            if (user.Rol.NombreRol.ToUpper().Equals("GESTOR")) cargarPerfilGestor();
 
         }
 
@@ -161,8 +161,8 @@ namespace APS.Interfaces
 
             if(textNombreUser.Text != "")
             {
-                lUserNoun2.Text = textNombreUser.Text;
-                user.NombreUser = lUserNoun2.ToString();
+                user.NombreUser = textNombreUser.Text;
+                lUserNoun2.Text = user.NombreUser;
             }
             lUserNoun2.Visible = true;
             textNombreUser.Visible = false;
@@ -185,6 +185,7 @@ namespace APS.Interfaces
             user.BorraUsuario();
 
             PaginaInicio ventana = new PaginaInicio();
+            this.Visible = false;
             ventana.ShowDialog();
             this.Close();
             
@@ -196,6 +197,11 @@ namespace APS.Interfaces
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;
+        }
+
+        private void bAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
