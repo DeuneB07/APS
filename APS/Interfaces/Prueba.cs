@@ -1,4 +1,5 @@
 ﻿using APS.Mapeo;
+using APS.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,63 +17,38 @@ namespace APS.Interfaces
         public Prueba()
         {
             InitializeComponent();
-
-            //tabPage1.AutoScroll = true;
-            //cargarTodasActividades();
             cargarCosas();
         }
 
+
         private void cargarCosas()
         {
-            int index = 0;
-            foreach (Asignatura a in Asignatura.ListaAsignaturas(new Usuario("jmmunoz@uma.es")))
+
+            List<Asignatura> la = Asignatura.ListaAsignaturas();
+            //Console.WriteLine("HOLAAAA: "+la.Count);
+            Cartel[] carteles = new Cartel[la.Count];
+            tabPage1.Controls.Add(panel1);
+
+            int c = 0;
+            foreach(Asignatura a in la)
             {
-                index++;
-                Panel panel = grandChildPanel;
+                carteles[c] = new Cartel();
+                carteles[c].Titulo = a.NombreAsig;
+                carteles[c].Description = a.Grado.NombreGrado;
+                carteles[c].ImagenActividad = Resources.mascot_allsides;
 
-                Label l2 = label1;
-                Label l3 = label2;
-                l2.Text = a.NombreAsig;
-                l3.Text = a.Grado.NombreGrado;
-
-                ChildPanel.Controls.Add(panel);
-                panel.Top = grandChildPanel.Top + grandChildPanel.Height;
-                ChildPanel.Height = grandChildPanel.Height*index;
-                vScrollBar1.Maximum = ChildPanel.Height;
-            }
-        }
-
-        private void cargarTodasActividades()
-        {
-            
-            int c = 1;
-
-            foreach (Asignatura a in Asignatura.ListaAsignaturas(new Usuario("jmmunoz@uma.es")))
-            {
-                Panel panel = new Panel();
-                panel.AutoSize = true;
-
+                //if (tabPage1.Controls.Count > 0)
+                //{
+                //    tabPage1.Controls.Clear();
+                //}
+                //else
                 
-                Label lNombreAct = new Label();
-                Label lDescripcionAct = new Label();
-                lNombreAct.AutoSize = true;
-                lDescripcionAct.AutoSize = true;
-
-                lNombreAct.Text = a.NombreAsig;
-                lDescripcionAct.Text = a.Grado.ToString();
-
-                panel.Controls.Add(lNombreAct);
-                panel.Controls.Add(lDescripcionAct);
-
-                //tabPage1.Controls.Add(panel);
-                panel.AutoSize = true;
+                panel1.Controls.Add(carteles[c]);
+                carteles[c].Location = new Point(carteles[c].Location.X, (carteles[c].Size.Height * c)+50);
+                
+                Console.WriteLine("TAAAAAAM: " + (c));
+                c++;
             }
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
