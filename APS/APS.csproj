@@ -64,6 +64,12 @@
     <Compile Include="Interfaces\FAnadirPreferencias.Designer.cs">
       <DependentUpon>FAnadirPreferencias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\InicioPersExterno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\InicioPersExterno.Designer.cs">
+      <DependentUpon>InicioPersExterno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\iDumaInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\GestorGestionaActividad.resx">
       <DependentUpon>GestorGestionaActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\InicioPersExterno.resx">
+      <DependentUpon>InicioPersExterno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\NuevaActividad.resx">
       <DependentUpon>NuevaActividad.cs</DependentUpon>

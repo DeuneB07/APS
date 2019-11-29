@@ -21,67 +21,33 @@ namespace APS.Interfaces
         public PaginaInicio()
         {
             InitializeComponent();
-            labelError.Text = "";
             user = null;
-        }
-        
-        private void bIniciar_PagIni_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                string email = "";
-                string pwd = "";
-                user = new Usuario(email);
-                labelError.Text = "";
-
-                if (user.Rol.NombreRol == "GESTOR" || user.Rol.NombreRol == "ONG")
-                {
-                    //Comprobar contraseña con nuestra BBDD
-                    user = new Usuario(email, pwd);
-                }
-                else
-                {
-                    //Comprobar contraseña con IDUMA
-                    UsuarioJSON userJSON = IDUMA.Acceso(email, pwd);
-                }
-
-                goPaginaPrincipal();
-
-            }catch(Exception ex)
-            {
-                labelError.Text = ex.Message;
-            }
-            
-        }
-
-        private void bRegistrar_PagIni_Click(object sender, EventArgs e)
-        {
-            goRegistro();
-        }
-
-        private void goRegistro()
-        {
-            Registro registro = new Registro();
-            this.Visible = false;
-            registro.ShowDialog();
-            this.Visible = true;
-        }
-
-        private void goPaginaPrincipal()
-        {
-            PaginaPrincipal mainWindow = new PaginaPrincipal(user);
-            this.Visible = false;
-            mainWindow.ShowDialog();
-            this.Visible = true;
         }
 
         private void bPersonalUMA_Click(object sender, EventArgs e)
         {
+            this.GoPersonalUMA();
+        }
+
+        private void GoPersonalUMA()
+        {
             iDumaInicio panel = new iDumaInicio();
             this.Visible = false;
             panel.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void bPersonalExt_Click(object sender, EventArgs e)
+        {
+            this.GoInicioPersExterno();
+        }
+
+        private void GoInicioPersExterno()
+        {
+            InicioPersExterno pagina = new InicioPersExterno();
             this.Visible = false;
+            pagina.ShowDialog();
+            this.Visible = true;
         }
     }
 }

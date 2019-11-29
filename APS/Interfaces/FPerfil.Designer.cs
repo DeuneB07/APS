@@ -255,6 +255,7 @@
             // 
             // bCancelarC
             // 
+            this.bCancelarC.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bCancelarC.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCancelarC.Location = new System.Drawing.Point(664, 444);
             this.bCancelarC.Margin = new System.Windows.Forms.Padding(4);
@@ -311,7 +312,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.bCancelarC;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.bAtras);
             this.Controls.Add(this.textNombreUser);

@@ -85,14 +85,14 @@ namespace APS.Interfaces
 
         private void lPerfil_Click(object sender, EventArgs e)
         {
-            goPerfilUsuario();
+            this.GoPerfilUsuario();
         }
 
-        private void goPerfilUsuario()
+        private void GoPerfilUsuario()
         {
-            FPerfil newForm1 = new FPerfil(user);
+            FPerfil pagina = new FPerfil(user);
             this.Visible = false;
-            newForm1.ShowDialog();
+            pagina.ShowDialog();
             this.Visible = true;
         }
 

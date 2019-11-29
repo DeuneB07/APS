@@ -45,7 +45,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Object[]> lista = miBD.Select("SELECT * FROM Usuario "
                     + "WHERE email='" + e + "';");
-            if (lista.Count == 0) throw new BDException("El email y/o contraseña no son correctas");
+            if (lista.Count == 0 ) throw new BDException("El email y/o contraseña no son correctas");
             Object[] tupla = lista[0];
 
             email = (String)tupla[0];

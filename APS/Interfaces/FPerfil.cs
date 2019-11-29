@@ -20,7 +20,7 @@ namespace APS.Interfaces
         {
 
             InitializeComponent();
-            this.Visible = true;
+            //this.Visible = true;
             this.user = user;
 
             bAceptarC.Visible = false;
