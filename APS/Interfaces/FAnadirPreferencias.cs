@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static APS.Mapeo.Actividad;
 
 namespace APS.Interfaces
 {
@@ -73,13 +74,14 @@ namespace APS.Interfaces
                 Preferencia p = new Preferencia(textNombreComp.Text, user);
                 p.Grado = g;
                 p.Asignatura = a;
+                TipoActividadE res;
 
                 if (comboTurno.Text.Equals("AM")) p.Turno = Actividad.TurnoE.AM;
                 else if (comboTurno.Text.Equals("PM")) p.Turno = Actividad.TurnoE.PM;
 
-                if (comboTipo.Text.Equals("Voluntariado")) p.TipoActividad = Actividad.TipoActividadE.VOLUTARIADO;
-                else if (comboTipo.Text.Equals("Formación")) p.TipoActividad = Actividad.TipoActividadE.FORMACION;
-                else if (comboTipo.Text.Equals("Investigación")) p.TipoActividad = Actividad.TipoActividadE.INVESTIGACION;
+                Enum.TryParse<TipoActividadE>(comboTipo.Text, true, out res);
+                p.TipoActividad = res;
+
 
                 if (comboHoras.Text != "") p.HorasPosibles = int.Parse(comboHoras.Text);
 

@@ -10,11 +10,11 @@ namespace APS.Mapeo
         private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
         private static string BD_NAME = Properties.Settings.Default.BD_NAME;
 
-        public enum TipoActividadE { FORMACION, INVESTIGACION, VOLUTARIADO };
+        public enum TipoActividadE { FORMACION, INVESTIGACION, VOLUNTARIADO };
         public enum EstadoActividadE { PENDIENTES, EN_REVISION_PROFESOR, EN_REVISION_ONG, PREINICIO, FINALIZADO };
         public enum TurnoE { AM, PM }
-        public enum TipoTrabajoE { }
-        public enum AmbitoTrabajoE { }
+        public enum TipoTrabajoE {SALUD,}
+        public enum AmbitoTrabajoE {INMIGRACION,SIN_HOGAR,POBREZA,DISCAPACIDAD,TERCERA_EDAD}
 
 
         private int ID_actividad;

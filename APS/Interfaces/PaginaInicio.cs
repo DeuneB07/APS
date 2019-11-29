@@ -24,13 +24,14 @@ namespace APS.Interfaces
             labelError.Text = "";
             user = null;
         }
-
+        
         private void bIniciar_PagIni_Click(object sender, EventArgs e)
         {
             try
             {
-                string email = t_correoPagIni.Text;
-                string pwd = t_pwdPagIni.Text;
+
+                string email = "";
+                string pwd = "";
                 user = new Usuario(email);
                 labelError.Text = "";
 
@@ -51,7 +52,7 @@ namespace APS.Interfaces
             {
                 labelError.Text = ex.Message;
             }
-
+            
         }
 
         private void bRegistrar_PagIni_Click(object sender, EventArgs e)
@@ -75,5 +76,12 @@ namespace APS.Interfaces
             this.Visible = true;
         }
 
+        private void bPersonalUMA_Click(object sender, EventArgs e)
+        {
+            iDumaInicio panel = new iDumaInicio();
+            this.Visible = false;
+            panel.ShowDialog();
+            this.Visible = false;
+        }
     }
 }

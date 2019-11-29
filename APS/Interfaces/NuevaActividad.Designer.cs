@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevaActividad));
             this.labelOrganizador = new System.Windows.Forms.Label();
             this.labelNombreAct = new System.Windows.Forms.Label();
             this.labelDescripcion = new System.Windows.Forms.Label();
@@ -331,8 +332,9 @@
             this.Controls.Add(this.labelDescripcion);
             this.Controls.Add(this.labelNombreAct);
             this.Controls.Add(this.labelOrganizador);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NuevaActividad";
-            this.Text = "º";
+            this.Text = "Nueva Actividad";
             this.ResumeLayout(false);
             this.PerformLayout();
 

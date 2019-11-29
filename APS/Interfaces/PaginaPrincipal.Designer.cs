@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaginaPrincipal));
             this.tabUser = new System.Windows.Forms.TabControl();
             this.pMatch = new System.Windows.Forms.TabPage();
             this.pTodas = new System.Windows.Forms.TabPage();
@@ -58,6 +59,12 @@
             this.pProyectos = new System.Windows.Forms.TabPage();
             this.pValoracion = new System.Windows.Forms.TabPage();
             this.pPendientes = new System.Windows.Forms.TabPage();
+            this.bGestionar = new System.Windows.Forms.Button();
+            this.dataGridViewPendientes = new System.Windows.Forms.DataGridView();
+            this.iDActividadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreActDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionActDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailOrganizadorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRevision = new System.Windows.Forms.TabPage();
             this.lWelcome = new System.Windows.Forms.Label();
             this.pictureUser = new System.Windows.Forms.PictureBox();
@@ -69,12 +76,6 @@
             this.lNewAct = new System.Windows.Forms.Label();
             this.gradosTableAdapter = new APS.WePassDataSetTableAdapters.GradosTableAdapter();
             this.actividadesTableAdapter = new APS.WePassDataSetTableAdapters.ActividadesTableAdapter();
-            this.dataGridViewPendientes = new System.Windows.Forms.DataGridView();
-            this.iDActividadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreActDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionActDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailOrganizadorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bGestionar = new System.Windows.Forms.Button();
             this.tabUser.SuspendLayout();
             this.pTodas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActividades)).BeginInit();
@@ -83,8 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradosBindingSource)).BeginInit();
             this.pPendientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPendientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
             this.SuspendLayout();
             // 
             // tabUser
@@ -328,6 +329,57 @@
             this.pPendientes.Text = "Pendientes";
             this.pPendientes.UseVisualStyleBackColor = true;
             // 
+            // bGestionar
+            // 
+            this.bGestionar.Location = new System.Drawing.Point(730, 28);
+            this.bGestionar.Name = "bGestionar";
+            this.bGestionar.Size = new System.Drawing.Size(86, 23);
+            this.bGestionar.TabIndex = 2;
+            this.bGestionar.Text = "Gestionar";
+            this.bGestionar.UseVisualStyleBackColor = true;
+            this.bGestionar.Click += new System.EventHandler(this.bGestionar_Click);
+            // 
+            // dataGridViewPendientes
+            // 
+            this.dataGridViewPendientes.AutoGenerateColumns = false;
+            this.dataGridViewPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPendientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDActividadDataGridViewTextBoxColumn,
+            this.nombreActDataGridViewTextBoxColumn1,
+            this.descripcionActDataGridViewTextBoxColumn1,
+            this.emailOrganizadorDataGridViewTextBoxColumn1});
+            this.dataGridViewPendientes.DataSource = this.actividadesBindingSource;
+            this.dataGridViewPendientes.Location = new System.Drawing.Point(34, 18);
+            this.dataGridViewPendientes.Name = "dataGridViewPendientes";
+            this.dataGridViewPendientes.RowTemplate.Height = 24;
+            this.dataGridViewPendientes.Size = new System.Drawing.Size(655, 366);
+            this.dataGridViewPendientes.TabIndex = 0;
+            // 
+            // iDActividadDataGridViewTextBoxColumn
+            // 
+            this.iDActividadDataGridViewTextBoxColumn.DataPropertyName = "ID_Actividad";
+            this.iDActividadDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDActividadDataGridViewTextBoxColumn.Name = "iDActividadDataGridViewTextBoxColumn";
+            this.iDActividadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreActDataGridViewTextBoxColumn1
+            // 
+            this.nombreActDataGridViewTextBoxColumn1.DataPropertyName = "nombreAct";
+            this.nombreActDataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.nombreActDataGridViewTextBoxColumn1.Name = "nombreActDataGridViewTextBoxColumn1";
+            // 
+            // descripcionActDataGridViewTextBoxColumn1
+            // 
+            this.descripcionActDataGridViewTextBoxColumn1.DataPropertyName = "descripcionAct";
+            this.descripcionActDataGridViewTextBoxColumn1.HeaderText = "Descripcion";
+            this.descripcionActDataGridViewTextBoxColumn1.Name = "descripcionActDataGridViewTextBoxColumn1";
+            // 
+            // emailOrganizadorDataGridViewTextBoxColumn1
+            // 
+            this.emailOrganizadorDataGridViewTextBoxColumn1.DataPropertyName = "emailOrganizador";
+            this.emailOrganizadorDataGridViewTextBoxColumn1.HeaderText = "ONG";
+            this.emailOrganizadorDataGridViewTextBoxColumn1.Name = "emailOrganizadorDataGridViewTextBoxColumn1";
+            // 
             // pRevision
             // 
             this.pRevision.Location = new System.Drawing.Point(4, 25);
@@ -451,57 +503,6 @@
             // 
             this.actividadesTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewPendientes
-            // 
-            this.dataGridViewPendientes.AutoGenerateColumns = false;
-            this.dataGridViewPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPendientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDActividadDataGridViewTextBoxColumn,
-            this.nombreActDataGridViewTextBoxColumn1,
-            this.descripcionActDataGridViewTextBoxColumn1,
-            this.emailOrganizadorDataGridViewTextBoxColumn1});
-            this.dataGridViewPendientes.DataSource = this.actividadesBindingSource;
-            this.dataGridViewPendientes.Location = new System.Drawing.Point(34, 18);
-            this.dataGridViewPendientes.Name = "dataGridViewPendientes";
-            this.dataGridViewPendientes.RowTemplate.Height = 24;
-            this.dataGridViewPendientes.Size = new System.Drawing.Size(655, 366);
-            this.dataGridViewPendientes.TabIndex = 0;
-            // 
-            // iDActividadDataGridViewTextBoxColumn
-            // 
-            this.iDActividadDataGridViewTextBoxColumn.DataPropertyName = "ID_Actividad";
-            this.iDActividadDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDActividadDataGridViewTextBoxColumn.Name = "iDActividadDataGridViewTextBoxColumn";
-            this.iDActividadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreActDataGridViewTextBoxColumn1
-            // 
-            this.nombreActDataGridViewTextBoxColumn1.DataPropertyName = "nombreAct";
-            this.nombreActDataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.nombreActDataGridViewTextBoxColumn1.Name = "nombreActDataGridViewTextBoxColumn1";
-            // 
-            // descripcionActDataGridViewTextBoxColumn1
-            // 
-            this.descripcionActDataGridViewTextBoxColumn1.DataPropertyName = "descripcionAct";
-            this.descripcionActDataGridViewTextBoxColumn1.HeaderText = "Descripcion";
-            this.descripcionActDataGridViewTextBoxColumn1.Name = "descripcionActDataGridViewTextBoxColumn1";
-            // 
-            // emailOrganizadorDataGridViewTextBoxColumn1
-            // 
-            this.emailOrganizadorDataGridViewTextBoxColumn1.DataPropertyName = "emailOrganizador";
-            this.emailOrganizadorDataGridViewTextBoxColumn1.HeaderText = "ONG";
-            this.emailOrganizadorDataGridViewTextBoxColumn1.Name = "emailOrganizadorDataGridViewTextBoxColumn1";
-            // 
-            // bGestionar
-            // 
-            this.bGestionar.Location = new System.Drawing.Point(730, 28);
-            this.bGestionar.Name = "bGestionar";
-            this.bGestionar.Size = new System.Drawing.Size(86, 23);
-            this.bGestionar.TabIndex = 2;
-            this.bGestionar.Text = "Gestionar";
-            this.bGestionar.UseVisualStyleBackColor = true;
-            this.bGestionar.Click += new System.EventHandler(this.bGestionar_Click);
-            // 
             // PaginaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -516,6 +517,7 @@
             this.Controls.Add(this.pictureUser);
             this.Controls.Add(this.lWelcome);
             this.Controls.Add(this.tabUser);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PaginaPrincipal";
             this.Text = "Pagina Principal";
@@ -529,8 +531,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradosBindingSource)).EndInit();
             this.pPendientes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPendientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

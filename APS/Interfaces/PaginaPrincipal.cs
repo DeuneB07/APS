@@ -91,7 +91,9 @@ namespace APS.Interfaces
         private void goPerfilUsuario()
         {
             FPerfil newForm1 = new FPerfil(user);
-            newForm1.Show();
+            this.Visible = false;
+            newForm1.ShowDialog();
+            this.Visible = true;
         }
 
         private void lNewAct_Click(object sender, EventArgs e)

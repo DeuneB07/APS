@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FPreferencias));
             this.bAnadirPref = new System.Windows.Forms.Button();
             this.bRetornar = new System.Windows.Forms.Button();
             this.bBorrarPref = new System.Windows.Forms.Button();
@@ -39,7 +40,7 @@
             // 
             this.bAnadirPref.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAnadirPref.Location = new System.Drawing.Point(16, 494);
-            this.bAnadirPref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bAnadirPref.Margin = new System.Windows.Forms.Padding(4);
             this.bAnadirPref.Name = "bAnadirPref";
             this.bAnadirPref.Size = new System.Drawing.Size(131, 28);
             this.bAnadirPref.TabIndex = 12;
@@ -51,7 +52,7 @@
             // 
             this.bRetornar.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bRetornar.Location = new System.Drawing.Point(579, 494);
-            this.bRetornar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bRetornar.Margin = new System.Windows.Forms.Padding(4);
             this.bRetornar.Name = "bRetornar";
             this.bRetornar.Size = new System.Drawing.Size(131, 28);
             this.bRetornar.TabIndex = 13;
@@ -63,7 +64,7 @@
             // 
             this.bBorrarPref.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bBorrarPref.Location = new System.Drawing.Point(381, 494);
-            this.bBorrarPref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bBorrarPref.Margin = new System.Windows.Forms.Padding(4);
             this.bBorrarPref.Name = "bBorrarPref";
             this.bBorrarPref.Size = new System.Drawing.Size(167, 28);
             this.bBorrarPref.TabIndex = 14;
@@ -75,7 +76,7 @@
             // 
             this.bVerPref.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bVerPref.Location = new System.Drawing.Point(184, 494);
-            this.bVerPref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bVerPref.Margin = new System.Windows.Forms.Padding(4);
             this.bVerPref.Name = "bVerPref";
             this.bVerPref.Size = new System.Drawing.Size(167, 28);
             this.bVerPref.TabIndex = 15;
@@ -88,7 +89,7 @@
             this.listPreferencias.FormattingEnabled = true;
             this.listPreferencias.ItemHeight = 16;
             this.listPreferencias.Location = new System.Drawing.Point(16, 15);
-            this.listPreferencias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listPreferencias.Margin = new System.Windows.Forms.Padding(4);
             this.listPreferencias.Name = "listPreferencias";
             this.listPreferencias.Size = new System.Drawing.Size(692, 452);
             this.listPreferencias.TabIndex = 16;
@@ -103,7 +104,8 @@
             this.Controls.Add(this.bBorrarPref);
             this.Controls.Add(this.bRetornar);
             this.Controls.Add(this.bAnadirPref);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FPreferencias";
             this.Text = "Tus Preferencias";
             this.ResumeLayout(false);

@@ -20,18 +20,18 @@ namespace APS.Interfaces
         {
 
             InitializeComponent();
-                this.Visible = true;
-                this.user = user;
+            this.Visible = true;
+            this.user = user;
 
-                bAceptarC.Visible = false;
-                bCancelarC.Visible = false;
-                textNombreUser.Visible = false;
+            bAceptarC.Visible = false;
+            bCancelarC.Visible = false;
+            textNombreUser.Visible = false;
                 
-                if (user.Rol.NombreRol.ToUpper().Equals("ESTUDIANTE")) cargarPerfilAlumno();
-                if (user.Rol.NombreRol.Equals("PDI")) cargarPerfilPDI();
-                if (user.Rol.NombreRol.Equals("PAS")) cargarPerfilPAS();
-                if (user.Rol.NombreRol.Equals("ONG")) cargarPerfilONG();
-                if (user.Rol.NombreRol.ToUpper().Equals("GESTOR")) cargarPerfilGestor();
+            if (user.Rol.NombreRol.ToUpper().Equals("ESTUDIANTE")) cargarPerfilAlumno();
+            if (user.Rol.NombreRol.Equals("PDI")) cargarPerfilPDI();
+            if (user.Rol.NombreRol.Equals("PAS")) cargarPerfilPAS();
+            if (user.Rol.NombreRol.Equals("ONG")) cargarPerfilONG();
+            if (user.Rol.NombreRol.ToUpper().Equals("GESTOR")) cargarPerfilGestor();
             
 
         }

@@ -35,7 +35,6 @@ namespace APS.Interfaces
                 carteles[c] = new Cartel();
                 carteles[c].Titulo = a.NombreAsig;
                 carteles[c].Description = a.Grado.NombreGrado;
-                carteles[c].ImagenActividad = Resources.mascot_allsides;
 
                 //if (tabPage1.Controls.Count > 0)
                 //{
