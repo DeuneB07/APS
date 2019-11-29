@@ -18,25 +18,27 @@ namespace APS.Interfaces
         private Actividad act;
         public GestorGestionaActividad(Usuario ong,Actividad act)
         {
-            this.Visible = true;
+            
             InitializeComponent();
+            this.Visible = true;
             this.ong = ong;
             this.act = act;
             labelOrganizador.Visible = false;
             labelOrganizador.Text = ong.Nombre;
             labelNombreActividad.Visible = false;
             labelNombreActividad.Text = act.NombreAct;
-
+            /*
             cargarGrados();
-            cargarAsignaturas();
+            cargarAsignaturas();*/
         }
 
         private void cargarGrados()
         {
             foreach (Grado g in Grado.ListaGrados())
             {
-                comboGrado.Items.Add(g.NombreGrado);
+                comboGrado.Items.Add(g);
             }
+            comboGrado.DisplayMember = "nombreGrado";
         }
 
         private void cargarAsignaturas()
@@ -44,19 +46,18 @@ namespace APS.Interfaces
             Grado g = (Grado) comboGrado.SelectedItem;
             foreach (Asignatura a in Asignatura.ListaAsignaturas(g))
             {
-                comboAsig.Items.Add(a.NombreAsig + "-" + a.Grado.NombreGrado);
+                comboAsig.Items.Add(a);
             }
+            comboAsig.DisplayMember = "nombreAsig";
         }
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
             try
             {
-               
 
-                string[] asig = comboAsig.SelectedItem.ToString().Split('-');
-                Asignatura a = new Asignatura(asig[0], new Grado(asig[1], true));
-                Grado g = new Grado(comboGrado.SelectedItem.ToString(), true);
+                Asignatura a = (Asignatura)comboAsig.SelectedItem;
+                Grado g = (Grado)comboGrado.SelectedItem;
 
                 TipoTrabajoE trabajo;
                 Enum.TryParse<TipoTrabajoE>(comboResponsable.SelectedItem.ToString(), true, out trabajo);
@@ -78,11 +79,6 @@ namespace APS.Interfaces
         private void Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void Aceptar_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void comboGrado_SelectedIndexChanged(object sender, EventArgs e)

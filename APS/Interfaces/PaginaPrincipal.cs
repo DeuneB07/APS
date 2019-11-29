@@ -16,7 +16,7 @@ namespace APS.Interfaces
 
         Usuario user;
 
-        public PaginaPrincipal(Mapeo.Usuario user)
+        public PaginaPrincipal(Usuario user)
         {
             InitializeComponent();
             this.user = user;
@@ -90,11 +90,8 @@ namespace APS.Interfaces
 
         private void goPerfilUsuario()
         {
-            FPerfil perfil = new FPerfil(user);
-            this.Visible = false;
-            perfil.ShowDialog();
-            this.Visible = true;
-
+            FPerfil newForm1 = new FPerfil(user);
+            newForm1.Show();
         }
 
         private void lNewAct_Click(object sender, EventArgs e)
@@ -132,12 +129,22 @@ namespace APS.Interfaces
 
         private void bGestionar_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(this.dataGridViewPendientes.SelectedRows[0].Cells[0].Value.ToString());
-            Actividad pendiente = new Actividad(id);
-            GestorGestionaActividad gestorGestionaActividad = new GestorGestionaActividad(user, pendiente);
-            this.Visible = false;
-            gestorGestionaActividad.ShowDialog();
-            this.Visible = true;
+            try
+            {
+                if (this.dataGridViewPendientes.SelectedRows.Count == 0)
+                {
+                    throw new Exception("Ninguna actividad seleccionada");
+                }
+                int id = int.Parse(this.dataGridViewPendientes.SelectedRows[0].Cells[1].Value.ToString());
+                Actividad pendiente = new Actividad(id);
+                GestorGestionaActividad gestorGestionaActividad = new GestorGestionaActividad(user, pendiente);
+                this.Visible = false;
+                gestorGestionaActividad.ShowDialog();
+                this.Visible = true;
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

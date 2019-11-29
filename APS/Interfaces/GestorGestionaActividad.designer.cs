@@ -58,7 +58,7 @@
             // BoxOrganizador
             // 
             this.BoxOrganizador.Location = new System.Drawing.Point(243, 41);
-            this.BoxOrganizador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BoxOrganizador.Margin = new System.Windows.Forms.Padding(4);
             this.BoxOrganizador.Name = "BoxOrganizador";
             this.BoxOrganizador.Size = new System.Drawing.Size(176, 22);
             this.BoxOrganizador.TabIndex = 1;
@@ -76,7 +76,7 @@
             // BoxNombreActividad
             // 
             this.BoxNombreActividad.Location = new System.Drawing.Point(243, 90);
-            this.BoxNombreActividad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BoxNombreActividad.Margin = new System.Windows.Forms.Padding(4);
             this.BoxNombreActividad.Name = "BoxNombreActividad";
             this.BoxNombreActividad.Size = new System.Drawing.Size(176, 22);
             this.BoxNombreActividad.TabIndex = 3;
@@ -124,18 +124,18 @@
             // Aceptar
             // 
             this.Aceptar.Location = new System.Drawing.Point(168, 407);
-            this.Aceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Aceptar.Margin = new System.Windows.Forms.Padding(4);
             this.Aceptar.Name = "Aceptar";
             this.Aceptar.Size = new System.Drawing.Size(100, 28);
             this.Aceptar.TabIndex = 12;
             this.Aceptar.Text = "Aceptar";
             this.Aceptar.UseVisualStyleBackColor = true;
-            this.Aceptar.Click += new System.EventHandler(this.Aceptar_Click_1);
+            this.Aceptar.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // Cancelar
             // 
             this.Cancelar.Location = new System.Drawing.Point(381, 407);
-            this.Cancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(100, 28);
             this.Cancelar.TabIndex = 13;
@@ -158,7 +158,7 @@
             // 
             this.comboGrado.FormattingEnabled = true;
             this.comboGrado.Location = new System.Drawing.Point(243, 139);
-            this.comboGrado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboGrado.Margin = new System.Windows.Forms.Padding(4);
             this.comboGrado.Name = "comboGrado";
             this.comboGrado.Size = new System.Drawing.Size(176, 24);
             this.comboGrado.TabIndex = 29;
@@ -167,7 +167,7 @@
             // comboAsig
             // 
             this.comboAsig.Location = new System.Drawing.Point(243, 185);
-            this.comboAsig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboAsig.Margin = new System.Windows.Forms.Padding(4);
             this.comboAsig.Name = "comboAsig";
             this.comboAsig.Size = new System.Drawing.Size(176, 24);
             this.comboAsig.TabIndex = 30;
@@ -175,7 +175,7 @@
             // comboTipoAct
             // 
             this.comboTipoAct.Location = new System.Drawing.Point(243, 288);
-            this.comboTipoAct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboTipoAct.Margin = new System.Windows.Forms.Padding(4);
             this.comboTipoAct.Name = "comboTipoAct";
             this.comboTipoAct.Size = new System.Drawing.Size(176, 24);
             this.comboTipoAct.TabIndex = 31;
@@ -183,7 +183,7 @@
             // comboResponsable
             // 
             this.comboResponsable.Location = new System.Drawing.Point(243, 234);
-            this.comboResponsable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboResponsable.Margin = new System.Windows.Forms.Padding(4);
             this.comboResponsable.Name = "comboResponsable";
             this.comboResponsable.Size = new System.Drawing.Size(176, 24);
             this.comboResponsable.TabIndex = 32;
@@ -208,7 +208,7 @@
             this.Controls.Add(this.labelNombreActividad);
             this.Controls.Add(this.BoxOrganizador);
             this.Controls.Add(this.labelOrganizador);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GestorGestionaActividad";
             this.Text = "Actividad ...";
             this.ResumeLayout(false);

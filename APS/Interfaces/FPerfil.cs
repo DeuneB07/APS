@@ -18,19 +18,21 @@ namespace APS.Interfaces
 
         public FPerfil(Usuario user)
         {
+
             InitializeComponent();
-            this.Visible = true;
-            this.user = user;
+                this.Visible = true;
+                this.user = user;
 
-            bAceptarC.Visible = false;
-            bCancelarC.Visible = false;
-            textNombreUser.Visible = false;
-
-            if (user.Rol.NombreRol.ToUpper().Equals("ESTUDIANTE")) cargarPerfilAlumno();
-            if (user.Rol.NombreRol.Equals("PDI")) cargarPerfilPDI();
-            if (user.Rol.NombreRol.Equals("PAS")) cargarPerfilPAS();
-            if (user.Rol.NombreRol.Equals("ONG")) cargarPerfilONG();
-            if (user.Rol.NombreRol.ToUpper().Equals("GESTOR")) cargarPerfilGestor();
+                bAceptarC.Visible = false;
+                bCancelarC.Visible = false;
+                textNombreUser.Visible = false;
+                
+                if (user.Rol.NombreRol.ToUpper().Equals("ESTUDIANTE")) cargarPerfilAlumno();
+                if (user.Rol.NombreRol.Equals("PDI")) cargarPerfilPDI();
+                if (user.Rol.NombreRol.Equals("PAS")) cargarPerfilPAS();
+                if (user.Rol.NombreRol.Equals("ONG")) cargarPerfilONG();
+                if (user.Rol.NombreRol.ToUpper().Equals("GESTOR")) cargarPerfilGestor();
+            
 
         }
 
@@ -201,11 +203,6 @@ namespace APS.Interfaces
         }
 
         private void bAtras_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
