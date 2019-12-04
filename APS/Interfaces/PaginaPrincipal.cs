@@ -137,7 +137,7 @@ namespace APS.Interfaces
                 {
                     throw new Exception("Ninguna actividad seleccionada");
                 }
-                int id = int.Parse(this.dataGridViewPendientes.SelectedRows[0].Cells[1].Value.ToString());
+                int id = int.Parse(this.dataGridViewPendientes.SelectedRows[0].Cells[0].Value.ToString());
                 Actividad pendiente = new Actividad(id);
                 GestorGestionaActividad gestorGestionaActividad = new GestorGestionaActividad(user, pendiente);
                 this.Visible = false;

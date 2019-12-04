@@ -14,22 +14,23 @@ namespace APS.Interfaces
 {
     public partial class GestorGestionaActividad : Form
     {
-        private Usuario ong;
+        private Usuario user;
         private Actividad act;
-        public GestorGestionaActividad(Usuario ong,Actividad act)
+        public GestorGestionaActividad(Usuario user,Actividad act)
         {
             
             InitializeComponent();
-            this.Visible = true;
-            this.ong = ong;
+            this.user = user;
+            Usuario ong = act.Organizador;
             this.act = act;
-            labelOrganizador.Visible = false;
-            labelOrganizador.Text = ong.Nombre;
-            labelNombreActividad.Visible = false;
-            labelNombreActividad.Text = act.NombreAct;
-            /*
+            BoxOrganizador.Enabled = false;
+            BoxOrganizador.Text = ong.Nombre;
+            BoxNombreActividad.Enabled = false;
+            BoxNombreActividad.Text = act.NombreAct;
+            
             cargarGrados();
-            cargarAsignaturas();*/
+            cargarAsignaturas();
+            cargarResponsables();
         }
 
         private void cargarGrados()
@@ -43,10 +44,20 @@ namespace APS.Interfaces
 
         private void cargarAsignaturas()
         {
-            Grado g = (Grado) comboGrado.SelectedItem;
-            foreach (Asignatura a in Asignatura.ListaAsignaturas(g))
+            if (comboGrado.SelectedItem!=null)
             {
-                comboAsig.Items.Add(a);
+                Grado g = (Grado)comboGrado.SelectedItem;
+                foreach (Asignatura a in Asignatura.ListaAsignaturas(g))
+                {
+                    comboAsig.Items.Add(a);
+                }
+            }
+            else
+            {
+                foreach (Asignatura a in Asignatura.ListaAsignaturas())
+                {
+                    comboAsig.Items.Add(a);
+                }
             }
             comboAsig.DisplayMember = "nombreAsig";
         }
@@ -83,7 +94,29 @@ namespace APS.Interfaces
 
         private void comboGrado_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboAsig.Items.Clear();
             cargarAsignaturas();
+        }
+
+        private void cargarResponsables()
+        {
+            comboResponsable.Items.Clear();
+            if (comboAsig.SelectedItem != null)
+            {
+                Asignatura a = (Asignatura)comboAsig.SelectedItem;
+                foreach (Usuario u in Usuario.ListaResponsables(a))
+                {
+                    comboResponsable.Items.Add(u);
+                }
+            }
+            else
+            {
+                foreach (Usuario u in Usuario.ListaResponsables())
+                {
+                    comboResponsable.Items.Add(u);
+                }
+            }
+            comboResponsable.DisplayMember = "email";
         }
     }
 }

@@ -49,6 +49,7 @@
             this.bRegistrar.TabIndex = 3;
             this.bRegistrar.Text = "Registrarse";
             this.bRegistrar.UseVisualStyleBackColor = false;
+            this.bRegistrar.Click += new System.EventHandler(this.bRegistrar_Click);
             // 
             // bIniciar
             // 

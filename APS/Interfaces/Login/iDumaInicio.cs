@@ -22,7 +22,15 @@ namespace APS.Interfaces
             labelError.Text = "";
         }
 
-        private void bEntrar_Click(object sender, EventArgs e)
+        private void goPaginaPrincipal()
+        {
+            PaginaPrincipal pagPrinc = new PaginaPrincipal(user);
+            this.Visible = false;
+            pagPrinc.ShowDialog();
+            this.Close();
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -42,14 +50,6 @@ namespace APS.Interfaces
             {
                 labelError.Text = ex.Message;
             }
-        }
-
-        private void goPaginaPrincipal()
-        {
-            PaginaPrincipal pagPrinc = new PaginaPrincipal(user);
-            this.Visible = false;
-            pagPrinc.ShowDialog();
-            this.Close();
         }
     }
 }

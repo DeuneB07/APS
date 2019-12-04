@@ -37,14 +37,9 @@ namespace APS.Interfaces
             try
             {
                 //Comprobar que no está registrado el email en la BBDD
-                try
+                if ((new Usuario(correo)).Email != null)
                 {
-                    new Usuario(correo);
                     throw new Exception("Existe el usuario con el mismo correo");
-                }
-                catch (BDException ex)
-                {
-                    
                 }
 
                 UsuarioJSON userJSON = IDUMA.Acceso(correo, pwd);

@@ -40,28 +40,64 @@ namespace APS.Mapeo
             return lista;
         }
 
+        public static List<Usuario> ListaResponsables(Asignatura a)
+        {
+            // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Usuario> lista = new List<Usuario>();
+
+            foreach (object[] tupla in miBD.Select("SELECT email FROM Usuario WHERE nombreRol='PDI';"))
+            {
+                String email = (String)tupla[0];
+                Usuario u = new Usuario(email);
+                if (u.Asignaturas.Contains(a))
+                {
+                    lista.Add(u);
+                }
+            }
+            return lista;
+        }
+
+        public static List<Usuario> ListaResponsables()
+        {
+            // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Usuario> lista = new List<Usuario>();
+
+            foreach (object[] tupla in miBD.Select("SELECT email FROM Usuario WHERE nombreRol='PDI';"))
+            {
+                String email = (String)tupla[0];
+                Usuario u = new Usuario(email);
+                lista.Add(u);
+            }
+            return lista;
+        }
+
         public Usuario(String e)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Object[]> lista = miBD.Select("SELECT * FROM Usuario "
                     + "WHERE email='" + e + "';");
-            if (lista.Count == 0 ) throw new BDException("El email y/o contraseña no son correctas");
-            Object[] tupla = lista[0];
+            this.email = null;
+            if (lista.Count > 0)
+            {
+                Object[] tupla = lista[0];
 
-            email = (String)tupla[0];
-            if(tupla[1].ToString()!="") password = (String)tupla[1];
-            if(tupla[2].ToString()!="") dni = (String)tupla[2];
-            if(tupla[3].ToString()!="") nombreUser = (String)tupla[3];
-            rol = new Rol((String)tupla[4]);
-            if(tupla[5].ToString()!="")fechaNac = tupla[5].ToString();
-            //imagen = null;
-            grados = null;
-            preferencias = null;
-            asignaturas = null;
-            if (tupla[7].ToString() != "") nombre =(String) tupla[7];
-            if (tupla[8].ToString() != "") apellido1 = (String)tupla[8];
-            if (tupla[9].ToString() != "") apellido2 = (String)tupla[9];
-            if (tupla[10].ToString() != "") situacion = (String)tupla[10];
+                email = (String)tupla[0];
+                if (tupla[1].ToString() != "") password = (String)tupla[1];
+                if (tupla[2].ToString() != "") dni = (String)tupla[2];
+                if (tupla[3].ToString() != "") nombreUser = (String)tupla[3];
+                rol = new Rol((String)tupla[4]);
+                if (tupla[5].ToString() != "") fechaNac = tupla[5].ToString();
+                //imagen = null;
+                grados = null;
+                preferencias = null;
+                asignaturas = null;
+                if (tupla[7].ToString() != "") nombre = (String)tupla[7];
+                if (tupla[8].ToString() != "") apellido1 = (String)tupla[8];
+                if (tupla[9].ToString() != "") apellido2 = (String)tupla[9];
+                if (tupla[10].ToString() != "") situacion = (String)tupla[10];
+            }
         }
 
         public Usuario(String e, String p)

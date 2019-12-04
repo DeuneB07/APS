@@ -58,52 +58,52 @@
     <Compile Include="Interfaces\Cartel.Designer.cs">
       <DependentUpon>Cartel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\FAnadirPreferencias.cs">
+    <Compile Include="Interfaces\Perfil\FAnadirPreferencias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\FAnadirPreferencias.Designer.cs">
+    <Compile Include="Interfaces\Perfil\FAnadirPreferencias.Designer.cs">
       <DependentUpon>FAnadirPreferencias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\InicioPersExterno.cs">
+    <Compile Include="Interfaces\Login\InicioPersExterno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\InicioPersExterno.Designer.cs">
+    <Compile Include="Interfaces\Login\InicioPersExterno.Designer.cs">
       <DependentUpon>InicioPersExterno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\iDumaInicio.cs">
+    <Compile Include="Interfaces\Login\iDumaInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\iDumaInicio.Designer.cs">
+    <Compile Include="Interfaces\Login\iDumaInicio.Designer.cs">
       <DependentUpon>iDumaInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\FPreferencias.cs">
+    <Compile Include="Interfaces\Perfil\FPreferencias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\FPreferencias.Designer.cs">
+    <Compile Include="Interfaces\Perfil\FPreferencias.Designer.cs">
       <DependentUpon>FPreferencias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\GestorGestionaActividad.cs">
+    <Compile Include="Interfaces\Gestión Actividades\GestorGestionaActividad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\GestorGestionaActividad.designer.cs">
+    <Compile Include="Interfaces\Gestión Actividades\GestorGestionaActividad.designer.cs">
       <DependentUpon>GestorGestionaActividad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\NuevaActividad.cs">
+    <Compile Include="Interfaces\Gestión Actividades\NuevaActividad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\NuevaActividad.Designer.cs">
+    <Compile Include="Interfaces\Gestión Actividades\NuevaActividad.Designer.cs">
       <DependentUpon>NuevaActividad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\FPerfil.cs">
+    <Compile Include="Interfaces\Perfil\FPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\FPerfil.Designer.cs">
+    <Compile Include="Interfaces\Perfil\FPerfil.Designer.cs">
       <DependentUpon>FPerfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\PaginaInicio.cs">
+    <Compile Include="Interfaces\Login\PaginaInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\PaginaInicio.Designer.cs">
+    <Compile Include="Interfaces\Login\PaginaInicio.Designer.cs">
       <DependentUpon>PaginaInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\PaginaPrincipal.cs">
@@ -118,16 +118,16 @@
     <Compile Include="Interfaces\Prueba.Designer.cs">
       <DependentUpon>Prueba.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Registro.cs">
+    <Compile Include="Interfaces\Login\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Registro.Designer.cs">
+    <Compile Include="Interfaces\Login\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\VerPreferencia.cs">
+    <Compile Include="Interfaces\Perfil\VerPreferencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\VerPreferencia.Designer.cs">
+    <Compile Include="Interfaces\Perfil\VerPreferencia.Designer.cs">
       <DependentUpon>VerPreferencia.cs</DependentUpon>
     </Compile>
     <Compile Include="JSON\IDUMA.cs" />
@@ -158,28 +158,28 @@
     <EmbeddedResource Include="Interfaces\Cartel.resx">
       <DependentUpon>Cartel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\FAnadirPreferencias.resx">
+    <EmbeddedResource Include="Interfaces\Perfil\FAnadirPreferencias.resx">
       <DependentUpon>FAnadirPreferencias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\iDumaInicio.resx">
+    <EmbeddedResource Include="Interfaces\Login\iDumaInicio.resx">
       <DependentUpon>iDumaInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\FPerfil.resx">
+    <EmbeddedResource Include="Interfaces\Perfil\FPerfil.resx">
       <DependentUpon>FPerfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\FPreferencias.resx">
+    <EmbeddedResource Include="Interfaces\Perfil\FPreferencias.resx">
       <DependentUpon>FPreferencias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\GestorGestionaActividad.resx">
+    <EmbeddedResource Include="Interfaces\Gestión Actividades\GestorGestionaActividad.resx">
       <DependentUpon>GestorGestionaActividad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\InicioPersExterno.resx">
+    <EmbeddedResource Include="Interfaces\Login\InicioPersExterno.resx">
       <DependentUpon>InicioPersExterno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\NuevaActividad.resx">
+    <EmbeddedResource Include="Interfaces\Gestión Actividades\NuevaActividad.resx">
       <DependentUpon>NuevaActividad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\PaginaInicio.resx">
+    <EmbeddedResource Include="Interfaces\Login\PaginaInicio.resx">
       <DependentUpon>PaginaInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\PaginaPrincipal.resx">
@@ -188,10 +188,10 @@
     <EmbeddedResource Include="Interfaces\Prueba.resx">
       <DependentUpon>Prueba.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Registro.resx">
+    <EmbeddedResource Include="Interfaces\Login\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\VerPreferencia.resx">
+    <EmbeddedResource Include="Interfaces\Perfil\VerPreferencia.resx">
       <DependentUpon>VerPreferencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

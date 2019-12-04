@@ -106,11 +106,11 @@ namespace APS.Mapeo
             Object[] tupla = miBD.Select("SELECT * FROM Actividades "
                     + "WHERE ID_Actividad=" + id + ";")[0];
             ID_actividad = (int)tupla[0];
-            nombreAct = (String)tupla[1];
-            descAct = (String)tupla[2];
+            nombreAct = tupla[1].ToString();
+            descAct = tupla[2].ToString();
             numPlazas = (int)tupla[3];
             numHoras = (int)tupla[4];
-            Enum.TryParse<TurnoE>((String)tupla[5],true,out turno);
+            Enum.TryParse<TurnoE>(tupla[5].ToString(),true,out turno);
 
             string[] fechaIn = tupla[6].ToString().Split('-');
             fechaInicio = new DateTime(int.Parse(fechaIn[0]), int.Parse(fechaIn[1]), int.Parse(fechaIn[2]));
@@ -118,18 +118,18 @@ namespace APS.Mapeo
             string[] fechaFinal = tupla[7].ToString().Split('-');
             fechaFin = new DateTime(int.Parse(fechaFinal[0]), int.Parse(fechaFinal[1]), int.Parse(fechaFinal[2]));
             
-            lugar = (String)tupla[8];
-            organizador = new Usuario((String)tupla[9]);
-            if (!(tupla[10].Equals(null))) responsable = new Usuario((String)tupla[10]);
-            if (!tupla[11].Equals(null)) grado = new Grado((int)tupla[11]);
-            if (!(tupla[12].Equals(null))) asig = new Asignatura((int)tupla[12]);
-            if (!(tupla[13].Equals(null))) Enum.TryParse<TipoActividadE>((String)tupla[13],true,out tipoAct);
-            if (!(tupla[14].Equals(null))) proyecto = new Proyecto((int)tupla[14]);
-            if (!(tupla[15].Equals(null))) notaMedia = Double.Parse((String)tupla[15]);
+            lugar = tupla[8].ToString();
+            organizador = new Usuario(tupla[9].ToString());
+            if (!(tupla[10].ToString().Equals(""))) responsable = new Usuario(tupla[10].ToString());
+            if (!(tupla[11].ToString().Equals(""))) grado = new Grado((int)tupla[11]);
+            if (!(tupla[12].ToString().Equals(""))) asig = new Asignatura((int)tupla[12]);
+            if (!(tupla[13].ToString().Equals(""))) Enum.TryParse<TipoActividadE>((String)tupla[13],true,out tipoAct);
+            if (!(tupla[14].ToString().Equals(""))) proyecto = new Proyecto((int)tupla[14]);
+            if (!(tupla[15].ToString().Equals(""))) notaMedia = Double.Parse((String)tupla[15]);
             Enum.TryParse<EstadoActividadE>((String)tupla[16],true,out estadoAct);
             imagen = null;
-            if (!(tupla[17].Equals(null))) Enum.TryParse<TipoTrabajoE>((String)tupla[17], true,out tipoTrabajo);
-            if (!(tupla[18].Equals(null))) Enum.TryParse<AmbitoTrabajoE>((String)tupla[18], true,out ambitoTrabajo);
+            if (!(tupla[17].ToString().Equals(""))) Enum.TryParse<TipoTrabajoE>((String)tupla[17], true,out tipoTrabajo);
+            if (!(tupla[18].ToString().Equals(""))) Enum.TryParse<AmbitoTrabajoE>((String)tupla[18], true,out ambitoTrabajo);
             competencias = null;
         }
 

@@ -56,5 +56,18 @@ namespace APS.Interfaces
             pagina.ShowDialog();
             this.Close();
         }
+
+        private void bRegistrar_Click(object sender, EventArgs e)
+        {
+            GoRegistro();
+        }
+
+        private void GoRegistro()
+        {
+            Registro registro = new Registro();
+            this.Visible = false;
+            registro.ShowDialog();
+            this.Close();
+        }
     }
 }
