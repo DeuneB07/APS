@@ -227,7 +227,7 @@ namespace APS.Mapeo
         public void RemovePreferencia()
         {
              SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-             String del = "DELETE FROM PREFERENCIAS WHERE ID_Preferencia=" + this.ID_Preferencia + ";";
+             String del = "DELETE FROM Preferencias WHERE ID_Preferencia=" + this.ID_Preferencia + ";";
              miBD.Delete(del);
 
             ID_preferencia = -1;

@@ -64,7 +64,7 @@ namespace APS.Interfaces
 
         private void GoRegistro()
         {
-            Registro registro = new Registro();
+            RegistroONG registro = new RegistroONG();
             this.Visible = false;
             registro.ShowDialog();
             this.Close();

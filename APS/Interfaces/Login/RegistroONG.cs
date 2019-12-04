@@ -16,9 +16,9 @@ using System.Windows.Forms;
 
 namespace APS.Interfaces
 {
-    public partial class Registro : Form
+    public partial class RegistroONG : Form
     {
-        public Registro()
+        public RegistroONG()
         {
             InitializeComponent();
             labelError.Text = "";

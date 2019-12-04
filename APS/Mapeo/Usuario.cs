@@ -79,7 +79,7 @@ namespace APS.Mapeo
             List<Object[]> lista = miBD.Select("SELECT * FROM Usuario "
                     + "WHERE email='" + e + "';");
             this.email = null;
-            if (lista.Count > 0)
+            if (lista.Count == 1)
             {
                 Object[] tupla = lista[0];
 

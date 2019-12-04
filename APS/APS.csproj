@@ -58,6 +58,12 @@
     <Compile Include="Interfaces\Cartel.Designer.cs">
       <DependentUpon>Cartel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Login\RegistroUMA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Login\RegistroUMA.Designer.cs">
+      <DependentUpon>RegistroUMA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Perfil\FAnadirPreferencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,11 +124,11 @@
     <Compile Include="Interfaces\Prueba.Designer.cs">
       <DependentUpon>Prueba.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Login\Registro.cs">
+    <Compile Include="Interfaces\Login\RegistroONG.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Login\Registro.Designer.cs">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <Compile Include="Interfaces\Login\RegistroONG.Designer.cs">
+      <DependentUpon>RegistroONG.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Perfil\VerPreferencia.cs">
       <SubType>Form</SubType>
@@ -158,6 +164,9 @@
     <EmbeddedResource Include="Interfaces\Cartel.resx">
       <DependentUpon>Cartel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Login\RegistroUMA.resx">
+      <DependentUpon>RegistroUMA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Perfil\FAnadirPreferencias.resx">
       <DependentUpon>FAnadirPreferencias.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,8 +197,8 @@
     <EmbeddedResource Include="Interfaces\Prueba.resx">
       <DependentUpon>Prueba.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Login\Registro.resx">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\Login\RegistroONG.resx">
+      <DependentUpon>RegistroONG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Perfil\VerPreferencia.resx">
       <DependentUpon>VerPreferencia.cs</DependentUpon>

@@ -58,8 +58,8 @@ namespace APS.Interfaces
             {
                 Preferencia p = (Preferencia)listPreferencias.SelectedItem;
                 listPreferencias.Items.Remove(p);
-                p.RemovePreferencia();
                 user.RemovePrefrencia(p);
+                p.RemovePreferencia();
                 //cargarPreferencias();
             }
             catch (NullReferenceException)

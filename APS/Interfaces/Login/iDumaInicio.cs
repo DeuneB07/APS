@@ -22,14 +22,6 @@ namespace APS.Interfaces
             labelError.Text = "";
         }
 
-        private void goPaginaPrincipal()
-        {
-            PaginaPrincipal pagPrinc = new PaginaPrincipal(user);
-            this.Visible = false;
-            pagPrinc.ShowDialog();
-            this.Close();
-        }
-
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             try
@@ -37,19 +29,43 @@ namespace APS.Interfaces
 
                 string email = tIdentificacion.Text;
                 string pwd = tPassword.Text;
-                user = new Usuario(email);
                 labelError.Text = "";
 
                 //Comprobar contraseña con IDUMA
                 UsuarioJSON userJSON = IDUMA.Acceso(email, pwd);
-
-                goPaginaPrincipal();
-
+                user = new Usuario(userJSON.UserEmail);
+          
+                if (user.Email == null)
+                {
+                    GoRegistro(userJSON);
+                }
+                else
+                {
+                    GoPaginaPrincipal();
+                }
+                this.Close();
             }
             catch (Exception ex)
             {
                 labelError.Text = ex.Message;
             }
         }
+
+        private void GoPaginaPrincipal()
+        {
+            PaginaPrincipal pagPrinc = new PaginaPrincipal(user);
+            this.Visible = false;
+            pagPrinc.ShowDialog();
+            this.Close();
+        }
+
+        private void GoRegistro(UsuarioJSON userJSON)
+        {
+            RegistroUMA registro = new RegistroUMA(userJSON);
+            this.Visible = false;
+            registro.ShowDialog();
+            this.Visible = true;
+        }
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace APS.Interfaces
 {
-    partial class Registro
+    partial class RegistroONG
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroONG));
             this.b_aceptarReg = new System.Windows.Forms.Button();
             this.b_ONGReg = new System.Windows.Forms.Button();
             this.b_cancelarReg = new System.Windows.Forms.Button();
@@ -177,7 +177,7 @@
             this.labelFechNacimiento.TabIndex = 14;
             this.labelFechNacimiento.Text = "Fecha Nacimiento:";
             // 
-            // Registro
+            // RegistroONG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,7 +198,7 @@
             this.Controls.Add(this.b_aceptarReg);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Registro";
+            this.Name = "RegistroONG";
             this.Text = "Registro";
             this.ResumeLayout(false);
             this.PerformLayout();
