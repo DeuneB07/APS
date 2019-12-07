@@ -179,8 +179,8 @@ namespace APS.Interfaces
             bAceptarC.Visible = false;
             bCancelarC.Visible = false;
             lUserNoun2.Visible = true;
-
             textNombreUser.Visible = false;
+
         }
 
         private void bBaja_Click(object sender, EventArgs e)

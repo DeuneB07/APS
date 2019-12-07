@@ -47,11 +47,11 @@
             this.lGradosUno = new System.Windows.Forms.Label();
             this.listGrados = new System.Windows.Forms.ListBox();
             this.bAceptarC = new System.Windows.Forms.Button();
-            this.bCancelarC = new System.Windows.Forms.Button();
             this.lNombreUser = new System.Windows.Forms.Label();
             this.lUserNoun2 = new System.Windows.Forms.Label();
             this.textNombreUser = new System.Windows.Forms.TextBox();
             this.bAtras = new System.Windows.Forms.Button();
+            this.bCancelarC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
             this.SuspendLayout();
             // 
@@ -253,19 +253,6 @@
             this.bAceptarC.UseVisualStyleBackColor = true;
             this.bAceptarC.Click += new System.EventHandler(this.bAceptarC_Click);
             // 
-            // bCancelarC
-            // 
-            this.bCancelarC.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bCancelarC.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCancelarC.Location = new System.Drawing.Point(664, 444);
-            this.bCancelarC.Margin = new System.Windows.Forms.Padding(4);
-            this.bCancelarC.Name = "bCancelarC";
-            this.bCancelarC.Size = new System.Drawing.Size(167, 28);
-            this.bCancelarC.TabIndex = 19;
-            this.bCancelarC.Text = "Cancelar Cambios";
-            this.bCancelarC.UseVisualStyleBackColor = true;
-            this.bCancelarC.Click += new System.EventHandler(this.bCancelarC_Click);
-            // 
             // lNombreUser
             // 
             this.lNombreUser.AutoSize = true;
@@ -290,7 +277,7 @@
             // 
             // textNombreUser
             // 
-            this.textNombreUser.Location = new System.Drawing.Point(212, 148);
+            this.textNombreUser.Location = new System.Drawing.Point(212, 150);
             this.textNombreUser.Margin = new System.Windows.Forms.Padding(4);
             this.textNombreUser.Name = "textNombreUser";
             this.textNombreUser.Size = new System.Drawing.Size(132, 22);
@@ -308,16 +295,28 @@
             this.bAtras.UseVisualStyleBackColor = true;
             this.bAtras.Click += new System.EventHandler(this.bAtras_Click);
             // 
+            // bCancelarC
+            // 
+            this.bCancelarC.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCancelarC.Location = new System.Drawing.Point(655, 444);
+            this.bCancelarC.Margin = new System.Windows.Forms.Padding(4);
+            this.bCancelarC.Name = "bCancelarC";
+            this.bCancelarC.Size = new System.Drawing.Size(167, 28);
+            this.bCancelarC.TabIndex = 24;
+            this.bCancelarC.Text = "Aceptar Cambios";
+            this.bCancelarC.UseVisualStyleBackColor = true;
+            this.bCancelarC.Click += new System.EventHandler(this.bCancelarC_Click);
+            // 
             // FPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.bCancelarC);
             this.Controls.Add(this.bAtras);
             this.Controls.Add(this.textNombreUser);
             this.Controls.Add(this.lUserNoun2);
             this.Controls.Add(this.lNombreUser);
-            this.Controls.Add(this.bCancelarC);
             this.Controls.Add(this.bAceptarC);
             this.Controls.Add(this.listGrados);
             this.Controls.Add(this.lGradosUno);
@@ -366,10 +365,10 @@
         private System.Windows.Forms.Label lGradosUno;
         private System.Windows.Forms.ListBox listGrados;
         private System.Windows.Forms.Button bAceptarC;
-        private System.Windows.Forms.Button bCancelarC;
         private System.Windows.Forms.Label lNombreUser;
         private System.Windows.Forms.Label lUserNoun2;
         private System.Windows.Forms.TextBox textNombreUser;
         private System.Windows.Forms.Button bAtras;
+        private System.Windows.Forms.Button bCancelarC;
     }
 }
