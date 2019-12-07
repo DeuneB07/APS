@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APS.Mapeo;
 
 namespace APS.Interfaces
 {
     public partial class Cartel : UserControl
     {
-        public Cartel()
+
+        private Asignatura a;
+
+        public Cartel(Asignatura a)
         {
             InitializeComponent();
+            this.a = a;
+            this.labelTitulo.Text = a.NombreAsig;
+            this.lDescripcion.Text = a.Grado.NombreGrado;
         }
 
         #region Properties
@@ -44,5 +51,11 @@ namespace APS.Interfaces
         }
 
         #endregion
+
+        private void bVerMas_Click(object sender, EventArgs e)
+        {
+            PruebaVer pa = new PruebaVer(this.a);
+            pa.ShowDialog();
+        }
     }
 }

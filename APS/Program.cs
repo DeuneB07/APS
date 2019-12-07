@@ -18,7 +18,7 @@ namespace APS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PaginaInicio());
+            Application.Run(new Prueba());
         }
 
 
