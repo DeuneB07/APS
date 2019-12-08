@@ -131,6 +131,13 @@ namespace APS.Interfaces
 
         private void visualizarVisible()
         {
+            cModiGrado.Items.Clear();
+            cModiAsig.Items.Clear();
+            cModiTurno.Items.Clear();
+            cModiTipoAct.Items.Clear();
+            cModiHoras.Items.Clear();
+            cModiTipoTrab.Items.Clear();
+            cModAmb.Items.Clear();
             bConfirmar.Visible = true;
             bModificar.Visible = true;
             lShowGrado.Visible = true;
@@ -235,7 +242,7 @@ namespace APS.Interfaces
 
         private void bModiConf_Click(object sender, EventArgs e)
         {
-
+            
             try
             {
                 //UPDATES
@@ -244,11 +251,11 @@ namespace APS.Interfaces
 
                 Grado g = (Grado)cModiGrado.SelectedItem;
                 Asignatura a = (Asignatura)cModiAsig.SelectedItem;
-                if (!g.Equals(p.Grado)) p.Grado = g;
-                if (!a.Equals(p.Asignatura)) p.Asignatura = a;
+                if (g != null ) p.Grado = g;
+                if (a != null ) p.Asignatura = a;
 
                 //HORAS
-                if (cModiHoras.Text != "" && !cModiHoras.Equals(p.HorasPosibles.ToString())) p.HorasPosibles = int.Parse(cModiHoras.Text);
+                if (cModiHoras.Text != "" && !cModiHoras.Text.Equals(p.HorasPosibles.ToString())) p.HorasPosibles = int.Parse(cModiHoras.Text);
 
                 //ENUMERACIONES
                 TipoActividadE resTipo;
@@ -269,13 +276,13 @@ namespace APS.Interfaces
                 if (!cModAmb.Text.Equals("") && !cModAmb.Text.Equals(p.AmbitoTrabajo.ToString())) p.AmbitoTrabajo = resAmbTrabajo;
 
                 //COMPETENCIAS
-                foreach (Competencia cA in p.Competencias) p.RemoveCompetencia(cA);
-                foreach (Competencia cNew in listModiCompetencias.SelectedItems) p.AddCompetencia(cNew); 
+               foreach (Competencia cA in listCompetencias.Items) p.RemoveCompetencia(cA);
+               foreach (Competencia cNew in listModiCompetencias.SelectedItems) p.AddCompetencia(cNew); 
             
             } catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-                if (p != null) p.RemovePreferencia();
+                Console.Write(ex.StackTrace);
             }
             //Cambiamos Modo
             modificarInvisible();
