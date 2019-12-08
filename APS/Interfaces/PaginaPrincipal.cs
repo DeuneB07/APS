@@ -41,6 +41,7 @@ namespace APS.Interfaces
 
             cargarTodasActividades();
             cargarPendientesActividades();
+            cargarRevisionActividades();
         }
 
         private void cargarTodasActividades()
@@ -61,6 +62,21 @@ namespace APS.Interfaces
                 actividades.Add(act);
             }
             this.dataGridViewPendientes.DataSource = actividades;
+        }
+
+        private void cargarRevisionActividades()
+        {
+            List<Actividad> actividades = new List<Actividad>();
+            foreach(Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.EN_REVISION_PROFESOR))
+            {
+                actividades.Add(act);
+            }
+            foreach(Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.EN_REVISION_ONG))
+            {
+                actividades.Add(act);
+            }
+            actividades.Sort();
+            this.dataGridViewActividades.DataSource = actividades;
         }
 
         private void bLogout_Click(object sender, EventArgs e)

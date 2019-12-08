@@ -34,21 +34,17 @@
             this.pMatch = new System.Windows.Forms.TabPage();
             this.pTodas = new System.Windows.Forms.TabPage();
             this.dataGridViewActividades = new System.Windows.Forms.DataGridView();
-            this.actividadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wePassDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wePassDataSet = new APS.WePassDataSet();
             this.labelGrado = new System.Windows.Forms.Label();
             this.listGrados = new System.Windows.Forms.ListBox();
             this.gradosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wePassDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wePassDataSet = new APS.WePassDataSet();
             this.pProyectos = new System.Windows.Forms.TabPage();
             this.pValoracion = new System.Windows.Forms.TabPage();
             this.pPendientes = new System.Windows.Forms.TabPage();
             this.bGestionar = new System.Windows.Forms.Button();
             this.dataGridViewPendientes = new System.Windows.Forms.DataGridView();
-            this.iDActividadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreActDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionActDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailOrganizadorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actividadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pRevision = new System.Windows.Forms.TabPage();
             this.lWelcome = new System.Windows.Forms.Label();
             this.pictureUser = new System.Windows.Forms.PictureBox();
@@ -60,16 +56,19 @@
             this.lNewAct = new System.Windows.Forms.Label();
             this.gradosTableAdapter = new APS.WePassDataSetTableAdapters.GradosTableAdapter();
             this.actividadesTableAdapter = new APS.WePassDataSetTableAdapters.ActividadesTableAdapter();
+            this.dataGridViewRevision = new System.Windows.Forms.DataGridView();
             this.tabUser.SuspendLayout();
             this.pTodas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActividades)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gradosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gradosBindingSource)).BeginInit();
             this.pPendientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPendientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).BeginInit();
+            this.pRevision.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRevision)).BeginInit();
             this.SuspendLayout();
             // 
             // tabUser
@@ -122,21 +121,6 @@
             this.dataGridViewActividades.Size = new System.Drawing.Size(783, 338);
             this.dataGridViewActividades.TabIndex = 2;
             // 
-            // actividadesBindingSource
-            // 
-            this.actividadesBindingSource.DataMember = "Actividades";
-            this.actividadesBindingSource.DataSource = this.wePassDataSetBindingSource;
-            // 
-            // wePassDataSetBindingSource
-            // 
-            this.wePassDataSetBindingSource.DataSource = this.wePassDataSet;
-            this.wePassDataSetBindingSource.Position = 0;
-            // 
-            // wePassDataSet
-            // 
-            this.wePassDataSet.DataSetName = "WePassDataSet";
-            this.wePassDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // labelGrado
             // 
             this.labelGrado.AutoSize = true;
@@ -162,6 +146,16 @@
             // 
             this.gradosBindingSource.DataMember = "Grados";
             this.gradosBindingSource.DataSource = this.wePassDataSetBindingSource;
+            // 
+            // wePassDataSetBindingSource
+            // 
+            this.wePassDataSetBindingSource.DataSource = this.wePassDataSet;
+            this.wePassDataSetBindingSource.Position = 0;
+            // 
+            // wePassDataSet
+            // 
+            this.wePassDataSet.DataSetName = "WePassDataSet";
+            this.wePassDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pProyectos
             // 
@@ -210,14 +204,7 @@
             // 
             // dataGridViewPendientes
             // 
-            this.dataGridViewPendientes.AutoGenerateColumns = false;
             this.dataGridViewPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPendientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDActividadDataGridViewTextBoxColumn,
-            this.nombreActDataGridViewTextBoxColumn1,
-            this.descripcionActDataGridViewTextBoxColumn1,
-            this.emailOrganizadorDataGridViewTextBoxColumn1});
-            this.dataGridViewPendientes.DataSource = this.actividadesBindingSource;
             this.dataGridViewPendientes.Location = new System.Drawing.Point(34, 18);
             this.dataGridViewPendientes.Name = "dataGridViewPendientes";
             this.dataGridViewPendientes.RowTemplate.Height = 24;
@@ -225,33 +212,14 @@
             this.dataGridViewPendientes.TabIndex = 0;
             this.dataGridViewPendientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPendientes_CellDoubleClick);
             // 
-            // iDActividadDataGridViewTextBoxColumn
+            // actividadesBindingSource
             // 
-            this.iDActividadDataGridViewTextBoxColumn.DataPropertyName = "ID_Actividad";
-            this.iDActividadDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDActividadDataGridViewTextBoxColumn.Name = "iDActividadDataGridViewTextBoxColumn";
-            this.iDActividadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreActDataGridViewTextBoxColumn1
-            // 
-            this.nombreActDataGridViewTextBoxColumn1.DataPropertyName = "nombreAct";
-            this.nombreActDataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.nombreActDataGridViewTextBoxColumn1.Name = "nombreActDataGridViewTextBoxColumn1";
-            // 
-            // descripcionActDataGridViewTextBoxColumn1
-            // 
-            this.descripcionActDataGridViewTextBoxColumn1.DataPropertyName = "descripcionAct";
-            this.descripcionActDataGridViewTextBoxColumn1.HeaderText = "Descripcion";
-            this.descripcionActDataGridViewTextBoxColumn1.Name = "descripcionActDataGridViewTextBoxColumn1";
-            // 
-            // emailOrganizadorDataGridViewTextBoxColumn1
-            // 
-            this.emailOrganizadorDataGridViewTextBoxColumn1.DataPropertyName = "emailOrganizador";
-            this.emailOrganizadorDataGridViewTextBoxColumn1.HeaderText = "ONG";
-            this.emailOrganizadorDataGridViewTextBoxColumn1.Name = "emailOrganizadorDataGridViewTextBoxColumn1";
+            this.actividadesBindingSource.DataMember = "Actividades";
+            this.actividadesBindingSource.DataSource = this.wePassDataSetBindingSource;
             // 
             // pRevision
             // 
+            this.pRevision.Controls.Add(this.dataGridViewRevision);
             this.pRevision.Location = new System.Drawing.Point(4, 25);
             this.pRevision.Margin = new System.Windows.Forms.Padding(4);
             this.pRevision.Name = "pRevision";
@@ -373,6 +341,15 @@
             // 
             this.actividadesTableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridViewRevision
+            // 
+            this.dataGridViewRevision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRevision.Location = new System.Drawing.Point(99, 22);
+            this.dataGridViewRevision.Name = "dataGridViewRevision";
+            this.dataGridViewRevision.RowTemplate.Height = 24;
+            this.dataGridViewRevision.Size = new System.Drawing.Size(655, 366);
+            this.dataGridViewRevision.TabIndex = 1;
+            // 
             // PaginaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -396,13 +373,15 @@
             this.pTodas.ResumeLayout(false);
             this.pTodas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActividades)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gradosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gradosBindingSource)).EndInit();
             this.pPendientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPendientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).EndInit();
+            this.pRevision.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRevision)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,9 +415,6 @@
         private WePassDataSetTableAdapters.ActividadesTableAdapter actividadesTableAdapter;
         private System.Windows.Forms.Button bGestionar;
         private System.Windows.Forms.DataGridView dataGridViewPendientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDActividadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreActDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionActDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailOrganizadorDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dataGridViewRevision;
     }
 }

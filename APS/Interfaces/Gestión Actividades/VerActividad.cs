@@ -30,9 +30,9 @@ namespace APS.Interfaces.Gestión_Actividades
             dateTimePickerFechaIni.Value = actividad.FechaInicio;
             dateTimePickerFechaFin.Value = actividad.FechaFin;
             tLugar.Text = actividad.Lugar;
-            listTurno.SelectedItem = actividad.Turno.ToString();
-            listAmbito.SelectedItem = actividad.AmbitoTrabajo.ToString();
-            listTrabajo.SelectedItem = actividad.TipoTrabajo.ToString();
+            listTurno.Text = actividad.Turno.ToString();
+            listAmbito.Text = actividad.AmbitoTrabajo.ToString();
+            listTrabajo.Text = actividad.TipoTrabajo.ToString();
 
         }
 

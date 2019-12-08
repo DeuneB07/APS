@@ -23,9 +23,19 @@ namespace APS.Interfaces
             this.user = user;
             Usuario ong = act.Organizador;
             this.act = act;
-            tOrganizador.Text = ong.Nombre;
+
+            tOrganizador.Text = act.Organizador.Nombre;
             tNombreAct.Text = act.NombreAct;
-            
+            tDescripcion.Text = act.DescAct;
+            tNumPlazas.Text = act.NumPlazas.ToString();
+            tNumHoras.Text = act.NumHoras.ToString();
+            dateTimePickerFechaIni.Value = act.FechaInicio;
+            dateTimePickerFechaFin.Value = act.FechaFin;
+            tLugar.Text = act.Lugar;
+            listTurno.Text = act.Turno.ToString();
+            listAmbito.Text = act.AmbitoTrabajo.ToString();
+            listTrabajo.Text = act.TipoTrabajo.ToString();
+
             cargarGrados();
             cargarAsignaturas();
             cargarResponsables();
