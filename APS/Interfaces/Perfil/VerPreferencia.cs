@@ -207,9 +207,14 @@ namespace APS.Interfaces
                 listCompetencias.DisplayMember = "nombreComp";
             } else
             {
+                int index = 0;
                 foreach (Competencia c in Competencia.ListaCompetencias())
                 {
                     listModiCompetencias.Items.Add(c);
+                    if (listCompetencias.Items.Contains(c)) {
+                        listModiCompetencias.SetSelected(index, true);
+                    }
+                    index++;
                
                 }
                 listModiCompetencias.DisplayMember = "nombreComp";
