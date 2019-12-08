@@ -43,7 +43,7 @@ namespace APS.Interfaces
         {
             try
             {
-                VerPreferencia ventAnadir = new VerPreferencia((Preferencia) listPreferencias.SelectedItem);
+                VerPreferencia ventAnadir = new VerPreferencia((Preferencia) listPreferencias.SelectedItem, user);
                 ventAnadir.ShowDialog();
             } catch(NullReferenceException)
             {

@@ -124,9 +124,9 @@ namespace APS.Interfaces
         private void PaginaPrincipal_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'wePassDataSet.Actividades' Puede moverla o quitarla según sea necesario.
-            this.actividadesTableAdapter.Fill(this.wePassDataSet.Actividades);
+            //this.actividadesTableAdapter.Fill(this.wePassDataSet.Actividades);
             // TODO: esta línea de código carga datos en la tabla 'wePassDataSet.Grados' Puede moverla o quitarla según sea necesario.
-            this.gradosTableAdapter.Fill(this.wePassDataSet.Grados);
+            //this.gradosTableAdapter.Fill(this.wePassDataSet.Grados);
 
         }
 

@@ -43,10 +43,22 @@
             this.lShowTurno = new System.Windows.Forms.Label();
             this.lShowPreferencia = new System.Windows.Forms.Label();
             this.lShowGrado = new System.Windows.Forms.Label();
-            this.l = new System.Windows.Forms.Label();
+            this.lAmbTrab = new System.Windows.Forms.Label();
             this.lTipoTrab = new System.Windows.Forms.Label();
             this.lAmbTrab2 = new System.Windows.Forms.Label();
             this.lTipoTrab2 = new System.Windows.Forms.Label();
+            this.bModificar = new System.Windows.Forms.Button();
+            this.cModiGrado = new System.Windows.Forms.ComboBox();
+            this.cModiAsig = new System.Windows.Forms.ComboBox();
+            this.cModiTurno = new System.Windows.Forms.ComboBox();
+            this.cModAmb = new System.Windows.Forms.ComboBox();
+            this.cModiTipoTrab = new System.Windows.Forms.ComboBox();
+            this.cModiHoras = new System.Windows.Forms.ComboBox();
+            this.cModiTipoAct = new System.Windows.Forms.ComboBox();
+            this.tModiNombre = new System.Windows.Forms.TextBox();
+            this.bModiConf = new System.Windows.Forms.Button();
+            this.bModiCancelar = new System.Windows.Forms.Button();
+            this.listModiCompetencias = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // listCompetencias
@@ -131,7 +143,7 @@
             // bConfirmar
             // 
             this.bConfirmar.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bConfirmar.Location = new System.Drawing.Point(218, 415);
+            this.bConfirmar.Location = new System.Drawing.Point(341, 415);
             this.bConfirmar.Name = "bConfirmar";
             this.bConfirmar.Size = new System.Drawing.Size(125, 23);
             this.bConfirmar.TabIndex = 32;
@@ -193,15 +205,15 @@
             this.lShowGrado.Size = new System.Drawing.Size(0, 14);
             this.lShowGrado.TabIndex = 52;
             // 
-            // l
+            // lAmbTrab
             // 
-            this.l.AutoSize = true;
-            this.l.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l.Location = new System.Drawing.Point(317, 239);
-            this.l.Name = "l";
-            this.l.Size = new System.Drawing.Size(99, 14);
-            this.l.TabIndex = 53;
-            this.l.Text = "Ámbito de Trabajo:";
+            this.lAmbTrab.AutoSize = true;
+            this.lAmbTrab.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAmbTrab.Location = new System.Drawing.Point(317, 239);
+            this.lAmbTrab.Name = "lAmbTrab";
+            this.lAmbTrab.Size = new System.Drawing.Size(99, 14);
+            this.lAmbTrab.TabIndex = 53;
+            this.lAmbTrab.Text = "Ámbito de Trabajo:";
             // 
             // lTipoTrab
             // 
@@ -231,15 +243,133 @@
             this.lTipoTrab2.Size = new System.Drawing.Size(0, 14);
             this.lTipoTrab2.TabIndex = 56;
             // 
+            // bModificar
+            // 
+            this.bModificar.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bModificar.Location = new System.Drawing.Point(110, 415);
+            this.bModificar.Name = "bModificar";
+            this.bModificar.Size = new System.Drawing.Size(125, 23);
+            this.bModificar.TabIndex = 57;
+            this.bModificar.Text = "Modificar";
+            this.bModificar.UseVisualStyleBackColor = true;
+            this.bModificar.Click += new System.EventHandler(this.bModificar_Click);
+            // 
+            // cModiGrado
+            // 
+            this.cModiGrado.FormattingEnabled = true;
+            this.cModiGrado.Location = new System.Drawing.Point(50, 101);
+            this.cModiGrado.Name = "cModiGrado";
+            this.cModiGrado.Size = new System.Drawing.Size(226, 21);
+            this.cModiGrado.TabIndex = 58;
+            this.cModiGrado.SelectedIndexChanged += new System.EventHandler(this.cModiGrado_SelectedIndexChanged);
+            // 
+            // cModiAsig
+            // 
+            this.cModiAsig.FormattingEnabled = true;
+            this.cModiAsig.Location = new System.Drawing.Point(50, 163);
+            this.cModiAsig.Name = "cModiAsig";
+            this.cModiAsig.Size = new System.Drawing.Size(226, 21);
+            this.cModiAsig.TabIndex = 59;
+            // 
+            // cModiTurno
+            // 
+            this.cModiTurno.FormattingEnabled = true;
+            this.cModiTurno.Location = new System.Drawing.Point(425, 84);
+            this.cModiTurno.Name = "cModiTurno";
+            this.cModiTurno.Size = new System.Drawing.Size(101, 21);
+            this.cModiTurno.TabIndex = 60;
+            // 
+            // cModAmb
+            // 
+            this.cModAmb.FormattingEnabled = true;
+            this.cModAmb.Location = new System.Drawing.Point(425, 239);
+            this.cModAmb.Name = "cModAmb";
+            this.cModAmb.Size = new System.Drawing.Size(101, 21);
+            this.cModAmb.TabIndex = 61;
+            // 
+            // cModiTipoTrab
+            // 
+            this.cModiTipoTrab.FormattingEnabled = true;
+            this.cModiTipoTrab.Location = new System.Drawing.Point(425, 198);
+            this.cModiTipoTrab.Name = "cModiTipoTrab";
+            this.cModiTipoTrab.Size = new System.Drawing.Size(101, 21);
+            this.cModiTipoTrab.TabIndex = 62;
+            // 
+            // cModiHoras
+            // 
+            this.cModiHoras.FormattingEnabled = true;
+            this.cModiHoras.Location = new System.Drawing.Point(425, 156);
+            this.cModiHoras.Name = "cModiHoras";
+            this.cModiHoras.Size = new System.Drawing.Size(101, 21);
+            this.cModiHoras.TabIndex = 63;
+            // 
+            // cModiTipoAct
+            // 
+            this.cModiTipoAct.FormattingEnabled = true;
+            this.cModiTipoAct.Location = new System.Drawing.Point(425, 118);
+            this.cModiTipoAct.Name = "cModiTipoAct";
+            this.cModiTipoAct.Size = new System.Drawing.Size(101, 21);
+            this.cModiTipoAct.TabIndex = 64;
+            // 
+            // tModiNombre
+            // 
+            this.tModiNombre.Location = new System.Drawing.Point(149, 26);
+            this.tModiNombre.Name = "tModiNombre";
+            this.tModiNombre.Size = new System.Drawing.Size(377, 20);
+            this.tModiNombre.TabIndex = 65;
+            // 
+            // bModiConf
+            // 
+            this.bModiConf.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bModiConf.Location = new System.Drawing.Point(110, 415);
+            this.bModiConf.Name = "bModiConf";
+            this.bModiConf.Size = new System.Drawing.Size(125, 23);
+            this.bModiConf.TabIndex = 66;
+            this.bModiConf.Text = "Confirmar";
+            this.bModiConf.UseVisualStyleBackColor = true;
+            this.bModiConf.Click += new System.EventHandler(this.bModiConf_Click);
+            // 
+            // bModiCancelar
+            // 
+            this.bModiCancelar.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bModiCancelar.Location = new System.Drawing.Point(341, 415);
+            this.bModiCancelar.Name = "bModiCancelar";
+            this.bModiCancelar.Size = new System.Drawing.Size(125, 23);
+            this.bModiCancelar.TabIndex = 67;
+            this.bModiCancelar.Text = "Cancelar";
+            this.bModiCancelar.UseVisualStyleBackColor = true;
+            this.bModiCancelar.Click += new System.EventHandler(this.bModiCancelar_Click);
+            // 
+            // listModiCompetencias
+            // 
+            this.listModiCompetencias.FormattingEnabled = true;
+            this.listModiCompetencias.Location = new System.Drawing.Point(110, 288);
+            this.listModiCompetencias.Name = "listModiCompetencias";
+            this.listModiCompetencias.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listModiCompetencias.Size = new System.Drawing.Size(356, 121);
+            this.listModiCompetencias.TabIndex = 68;
+            // 
             // VerPreferencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(558, 450);
+            this.Controls.Add(this.listModiCompetencias);
+            this.Controls.Add(this.bModiCancelar);
+            this.Controls.Add(this.bModiConf);
+            this.Controls.Add(this.tModiNombre);
+            this.Controls.Add(this.cModiTipoAct);
+            this.Controls.Add(this.cModiHoras);
+            this.Controls.Add(this.cModiTipoTrab);
+            this.Controls.Add(this.cModAmb);
+            this.Controls.Add(this.cModiTurno);
+            this.Controls.Add(this.cModiAsig);
+            this.Controls.Add(this.cModiGrado);
+            this.Controls.Add(this.bModificar);
             this.Controls.Add(this.lTipoTrab2);
             this.Controls.Add(this.lAmbTrab2);
             this.Controls.Add(this.lTipoTrab);
-            this.Controls.Add(this.l);
+            this.Controls.Add(this.lAmbTrab);
             this.Controls.Add(this.lShowGrado);
             this.Controls.Add(this.lShowPreferencia);
             this.Controls.Add(this.lShowTurno);
@@ -278,9 +408,21 @@
         private System.Windows.Forms.Label lShowTurno;
         private System.Windows.Forms.Label lShowPreferencia;
         private System.Windows.Forms.Label lShowGrado;
-        private System.Windows.Forms.Label l;
+        private System.Windows.Forms.Label lAmbTrab;
         private System.Windows.Forms.Label lTipoTrab;
         private System.Windows.Forms.Label lAmbTrab2;
         private System.Windows.Forms.Label lTipoTrab2;
+        private System.Windows.Forms.Button bModificar;
+        private System.Windows.Forms.ComboBox cModiGrado;
+        private System.Windows.Forms.ComboBox cModiAsig;
+        private System.Windows.Forms.ComboBox cModiTurno;
+        private System.Windows.Forms.ComboBox cModAmb;
+        private System.Windows.Forms.ComboBox cModiTipoTrab;
+        private System.Windows.Forms.ComboBox cModiHoras;
+        private System.Windows.Forms.ComboBox cModiTipoAct;
+        private System.Windows.Forms.TextBox tModiNombre;
+        private System.Windows.Forms.Button bModiConf;
+        private System.Windows.Forms.Button bModiCancelar;
+        private System.Windows.Forms.ListBox listModiCompetencias;
     }
 }
