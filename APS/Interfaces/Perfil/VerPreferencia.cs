@@ -20,12 +20,12 @@ namespace APS.Interfaces
             this.p = p;
 
             this.Text = "Preferencia: " + p.Nombre_Preferencia;
-            lShowGrado.Text = p.Grado.NombreGrado;
-            lShowHoras.Text = p.HorasPosibles.ToString();
+            if(p.Grado!=null) lShowGrado.Text = p.Grado.NombreGrado;
+            if(p.HorasPosibles!=0) lShowHoras.Text = p.HorasPosibles.ToString();
             lShowNoun.Text = p.Nombre_Preferencia;
             lShowTipo.Text = p.TipoActividad.ToString();
             lShowTurno.Text = p.Turno.ToString();
-            lShowPreferencia.Text = p.Asignatura.NombreAsig;
+            if(p.Asignatura!=null) lShowPreferencia.Text = p.Asignatura.NombreAsig;
             cargarCompetencias();
 
         }

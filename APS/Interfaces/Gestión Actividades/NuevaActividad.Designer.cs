@@ -1,4 +1,6 @@
-﻿namespace APS.Interfaces
+﻿using APS.Mapeo;
+
+namespace APS.Interfaces
 {
     partial class NuevaActividad
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevaActividad));
             this.labelOrganizador = new System.Windows.Forms.Label();
             this.labelNombreAct = new System.Windows.Forms.Label();
@@ -54,8 +57,14 @@
             this.tImagen = new System.Windows.Forms.TextBox();
             this.listTurno = new System.Windows.Forms.ListBox();
             this.listAmbito = new System.Windows.Forms.ListBox();
+            this.actividadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listTrabajo = new System.Windows.Forms.ListBox();
             this.labelError = new System.Windows.Forms.Label();
+            this.ambitoTrabajoEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoTrabajoEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.actividadBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ambitoTrabajoEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoTrabajoEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelOrganizador
@@ -256,6 +265,7 @@
             this.listTurno.FormattingEnabled = true;
             this.listTurno.ItemHeight = 16;
             this.listTurno.Items.AddRange(new object[] {
+            "AMBAS",
             "MAÑANA",
             "TARDE"});
             this.listTurno.Location = new System.Drawing.Point(247, 430);
@@ -268,25 +278,34 @@
             this.listAmbito.FormattingEnabled = true;
             this.listAmbito.ItemHeight = 16;
             this.listAmbito.Items.AddRange(new object[] {
-            "SALUD",
-            "INMIGRACIÓN",
+            "TODAS",
+            "INMIGRACION",
             "POBREZA",
-            "HAMBRUNA"});
+            "TERCERA_EDAD",
+            "SIN_HOGAR",
+            "DISCAPACIDAD"});
             this.listAmbito.Location = new System.Drawing.Point(243, 472);
             this.listAmbito.Name = "listAmbito";
             this.listAmbito.Size = new System.Drawing.Size(138, 20);
             this.listAmbito.TabIndex = 25;
+            // 
+            // actividadBindingSource
+            // 
+            this.actividadBindingSource.DataSource = typeof(APS.Mapeo.Actividad);
             // 
             // listTrabajo
             // 
             this.listTrabajo.FormattingEnabled = true;
             this.listTrabajo.ItemHeight = 16;
             this.listTrabajo.Items.AddRange(new object[] {
-            "EVENTO"});
+            Actividad.TipoTrabajoE.TODAS,
+            Actividad.TipoTrabajoE.SALUD,
+            Actividad.TipoTrabajoE.EVENTO});
             this.listTrabajo.Location = new System.Drawing.Point(243, 503);
             this.listTrabajo.Name = "listTrabajo";
             this.listTrabajo.Size = new System.Drawing.Size(138, 20);
             this.listTrabajo.TabIndex = 26;
+            
             // 
             // labelError
             // 
@@ -299,6 +318,14 @@
             this.labelError.Size = new System.Drawing.Size(44, 17);
             this.labelError.TabIndex = 27;
             this.labelError.Text = "error";
+            // 
+            // ambitoTrabajoEBindingSource
+            // 
+            this.ambitoTrabajoEBindingSource.DataSource = typeof(APS.Mapeo.Actividad.AmbitoTrabajoE);
+            // 
+            // tipoTrabajoEBindingSource
+            // 
+            this.tipoTrabajoEBindingSource.DataSource = typeof(APS.Mapeo.Actividad.TipoTrabajoE);
             // 
             // NuevaActividad
             // 
@@ -335,6 +362,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NuevaActividad";
             this.Text = "Nueva Actividad";
+            ((System.ComponentModel.ISupportInitialize)(this.actividadBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ambitoTrabajoEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoTrabajoEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,5 +399,8 @@
         private System.Windows.Forms.ListBox listAmbito;
         private System.Windows.Forms.ListBox listTrabajo;
         private System.Windows.Forms.Label labelError;
+        private System.Windows.Forms.BindingSource ambitoTrabajoEBindingSource;
+        private System.Windows.Forms.BindingSource tipoTrabajoEBindingSource;
+        private System.Windows.Forms.BindingSource actividadBindingSource;
     }
 }

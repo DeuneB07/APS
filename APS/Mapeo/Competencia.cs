@@ -45,6 +45,21 @@ namespace APS.Mapeo
             return lista;
         }
 
+        public static List<Competencia> ListaCompetencias(Grado g)
+        {
+            List<Competencia> lista = new List<Competencia>();
+            // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+
+            foreach (Object[] tupla in miBD.Select("SELECT idCompetencia FROM Rel_Grado_Competencia "
+                                        + "WHERE ID_Grado = " + g.ID_Grado + ";"))
+            {
+                int id = (int)tupla[0];
+                lista.Add(new Competencia(id));
+            }
+            return lista;
+        }
+
         public static List<Competencia> ListaCompetencias(Preferencia p)
         {
             List<Competencia> lista = new List<Competencia>();

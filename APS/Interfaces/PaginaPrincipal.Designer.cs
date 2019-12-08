@@ -34,22 +34,6 @@
             this.pMatch = new System.Windows.Forms.TabPage();
             this.pTodas = new System.Windows.Forms.TabPage();
             this.dataGridViewActividades = new System.Windows.Forms.DataGridView();
-            this.nombreActDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionActDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numPlazasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numHorasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lugarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailOrganizadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emaiResponsableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoActDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notaMediaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imagenDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tipoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ambitoTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actividadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wePassDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wePassDataSet = new APS.WePassDataSet();
@@ -131,127 +115,12 @@
             // 
             // dataGridViewActividades
             // 
-            this.dataGridViewActividades.AutoGenerateColumns = false;
             this.dataGridViewActividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewActividades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombreActDataGridViewTextBoxColumn,
-            this.descripcionActDataGridViewTextBoxColumn,
-            this.numPlazasDataGridViewTextBoxColumn,
-            this.numHorasDataGridViewTextBoxColumn,
-            this.turnoDataGridViewTextBoxColumn,
-            this.fechaInicioDataGridViewTextBoxColumn,
-            this.fechaFinDataGridViewTextBoxColumn,
-            this.lugarDataGridViewTextBoxColumn,
-            this.emailOrganizadorDataGridViewTextBoxColumn,
-            this.emaiResponsableDataGridViewTextBoxColumn,
-            this.tipoActDataGridViewTextBoxColumn,
-            this.idProyDataGridViewTextBoxColumn,
-            this.notaMediaDataGridViewTextBoxColumn,
-            this.imagenDataGridViewImageColumn,
-            this.tipoTrabajoDataGridViewTextBoxColumn,
-            this.ambitoTrabajoDataGridViewTextBoxColumn});
-            this.dataGridViewActividades.DataSource = this.actividadesBindingSource;
-            this.dataGridViewActividades.Location = new System.Drawing.Point(34, 55);
+            this.dataGridViewActividades.Location = new System.Drawing.Point(34, 65);
             this.dataGridViewActividades.Name = "dataGridViewActividades";
             this.dataGridViewActividades.RowTemplate.Height = 24;
             this.dataGridViewActividades.Size = new System.Drawing.Size(783, 338);
             this.dataGridViewActividades.TabIndex = 2;
-            // 
-            // nombreActDataGridViewTextBoxColumn
-            // 
-            this.nombreActDataGridViewTextBoxColumn.DataPropertyName = "nombreAct";
-            this.nombreActDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreActDataGridViewTextBoxColumn.Name = "nombreActDataGridViewTextBoxColumn";
-            // 
-            // descripcionActDataGridViewTextBoxColumn
-            // 
-            this.descripcionActDataGridViewTextBoxColumn.DataPropertyName = "descripcionAct";
-            this.descripcionActDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionActDataGridViewTextBoxColumn.Name = "descripcionActDataGridViewTextBoxColumn";
-            // 
-            // numPlazasDataGridViewTextBoxColumn
-            // 
-            this.numPlazasDataGridViewTextBoxColumn.DataPropertyName = "numPlazas";
-            this.numPlazasDataGridViewTextBoxColumn.HeaderText = "Nº Plazas";
-            this.numPlazasDataGridViewTextBoxColumn.Name = "numPlazasDataGridViewTextBoxColumn";
-            // 
-            // numHorasDataGridViewTextBoxColumn
-            // 
-            this.numHorasDataGridViewTextBoxColumn.DataPropertyName = "numHoras";
-            this.numHorasDataGridViewTextBoxColumn.HeaderText = "Nº Horas";
-            this.numHorasDataGridViewTextBoxColumn.Name = "numHorasDataGridViewTextBoxColumn";
-            // 
-            // turnoDataGridViewTextBoxColumn
-            // 
-            this.turnoDataGridViewTextBoxColumn.DataPropertyName = "turno";
-            this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
-            this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
-            // 
-            // fechaInicioDataGridViewTextBoxColumn
-            // 
-            this.fechaInicioDataGridViewTextBoxColumn.DataPropertyName = "fechaInicio";
-            this.fechaInicioDataGridViewTextBoxColumn.HeaderText = "Fecha Inicio";
-            this.fechaInicioDataGridViewTextBoxColumn.Name = "fechaInicioDataGridViewTextBoxColumn";
-            // 
-            // fechaFinDataGridViewTextBoxColumn
-            // 
-            this.fechaFinDataGridViewTextBoxColumn.DataPropertyName = "fechaFin";
-            this.fechaFinDataGridViewTextBoxColumn.HeaderText = "Fecha Fin";
-            this.fechaFinDataGridViewTextBoxColumn.Name = "fechaFinDataGridViewTextBoxColumn";
-            // 
-            // lugarDataGridViewTextBoxColumn
-            // 
-            this.lugarDataGridViewTextBoxColumn.DataPropertyName = "lugar";
-            this.lugarDataGridViewTextBoxColumn.HeaderText = "Lugar";
-            this.lugarDataGridViewTextBoxColumn.Name = "lugarDataGridViewTextBoxColumn";
-            // 
-            // emailOrganizadorDataGridViewTextBoxColumn
-            // 
-            this.emailOrganizadorDataGridViewTextBoxColumn.DataPropertyName = "emailOrganizador";
-            this.emailOrganizadorDataGridViewTextBoxColumn.HeaderText = "ONG";
-            this.emailOrganizadorDataGridViewTextBoxColumn.Name = "emailOrganizadorDataGridViewTextBoxColumn";
-            // 
-            // emaiResponsableDataGridViewTextBoxColumn
-            // 
-            this.emaiResponsableDataGridViewTextBoxColumn.DataPropertyName = "emaiResponsable";
-            this.emaiResponsableDataGridViewTextBoxColumn.HeaderText = "Responsable";
-            this.emaiResponsableDataGridViewTextBoxColumn.Name = "emaiResponsableDataGridViewTextBoxColumn";
-            // 
-            // tipoActDataGridViewTextBoxColumn
-            // 
-            this.tipoActDataGridViewTextBoxColumn.DataPropertyName = "tipoAct";
-            this.tipoActDataGridViewTextBoxColumn.HeaderText = "Tipo Actividad";
-            this.tipoActDataGridViewTextBoxColumn.Name = "tipoActDataGridViewTextBoxColumn";
-            // 
-            // idProyDataGridViewTextBoxColumn
-            // 
-            this.idProyDataGridViewTextBoxColumn.DataPropertyName = "idProy";
-            this.idProyDataGridViewTextBoxColumn.HeaderText = "idProy";
-            this.idProyDataGridViewTextBoxColumn.Name = "idProyDataGridViewTextBoxColumn";
-            // 
-            // notaMediaDataGridViewTextBoxColumn
-            // 
-            this.notaMediaDataGridViewTextBoxColumn.DataPropertyName = "notaMedia";
-            this.notaMediaDataGridViewTextBoxColumn.HeaderText = "Nota Media";
-            this.notaMediaDataGridViewTextBoxColumn.Name = "notaMediaDataGridViewTextBoxColumn";
-            // 
-            // imagenDataGridViewImageColumn
-            // 
-            this.imagenDataGridViewImageColumn.DataPropertyName = "imagen";
-            this.imagenDataGridViewImageColumn.HeaderText = "imagen";
-            this.imagenDataGridViewImageColumn.Name = "imagenDataGridViewImageColumn";
-            // 
-            // tipoTrabajoDataGridViewTextBoxColumn
-            // 
-            this.tipoTrabajoDataGridViewTextBoxColumn.DataPropertyName = "tipoTrabajo";
-            this.tipoTrabajoDataGridViewTextBoxColumn.HeaderText = "Tipo Trabajo";
-            this.tipoTrabajoDataGridViewTextBoxColumn.Name = "tipoTrabajoDataGridViewTextBoxColumn";
-            // 
-            // ambitoTrabajoDataGridViewTextBoxColumn
-            // 
-            this.ambitoTrabajoDataGridViewTextBoxColumn.DataPropertyName = "ambitoTrabajo";
-            this.ambitoTrabajoDataGridViewTextBoxColumn.HeaderText = "Ambito Trabajo";
-            this.ambitoTrabajoDataGridViewTextBoxColumn.Name = "ambitoTrabajoDataGridViewTextBoxColumn";
             // 
             // actividadesBindingSource
             // 
@@ -354,6 +223,7 @@
             this.dataGridViewPendientes.RowTemplate.Height = 24;
             this.dataGridViewPendientes.Size = new System.Drawing.Size(655, 366);
             this.dataGridViewPendientes.TabIndex = 0;
+            this.dataGridViewPendientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPendientes_CellDoubleClick);
             // 
             // iDActividadDataGridViewTextBoxColumn
             // 
@@ -564,22 +434,6 @@
         private System.Windows.Forms.DataGridView dataGridViewActividades;
         private System.Windows.Forms.BindingSource actividadesBindingSource;
         private WePassDataSetTableAdapters.ActividadesTableAdapter actividadesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreActDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionActDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numPlazasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numHorasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turnoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaFinDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lugarDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailOrganizadorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emaiResponsableDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoActDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn notaMediaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn imagenDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoTrabajoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ambitoTrabajoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button bGestionar;
         private System.Windows.Forms.DataGridView dataGridViewPendientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDActividadDataGridViewTextBoxColumn;

@@ -23,14 +23,13 @@ namespace APS.Interfaces
             this.user = user;
             Usuario ong = act.Organizador;
             this.act = act;
-            BoxOrganizador.Enabled = false;
-            BoxOrganizador.Text = ong.Nombre;
-            BoxNombreActividad.Enabled = false;
-            BoxNombreActividad.Text = act.NombreAct;
+            tOrganizador.Text = ong.Nombre;
+            tNombreAct.Text = act.NombreAct;
             
             cargarGrados();
             cargarAsignaturas();
             cargarResponsables();
+            cargarCompetencias();
         }
 
         private void cargarGrados()
@@ -44,6 +43,7 @@ namespace APS.Interfaces
 
         private void cargarAsignaturas()
         {
+            comboAsig.Items.Clear();
             if (comboGrado.SelectedItem!=null)
             {
                 Grado g = (Grado)comboGrado.SelectedItem;
@@ -62,40 +62,10 @@ namespace APS.Interfaces
             comboAsig.DisplayMember = "nombreAsig";
         }
 
-        private void Aceptar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                Asignatura a = (Asignatura)comboAsig.SelectedItem;
-                Grado g = (Grado)comboGrado.SelectedItem;
-
-                TipoTrabajoE trabajo;
-                Enum.TryParse<TipoTrabajoE>(comboResponsable.SelectedItem.ToString(), true, out trabajo);
-
-                TipoActividadE tipo;
-                Enum.TryParse<TipoActividadE>(comboTipoAct.SelectedItem.ToString(), true, out tipo);
-
-                MessageBox.Show("Actividad modificada correctamente.");
-                this.Close();
-
-            }
-            catch (Exception ex)
-            {
-                labelError.Text = ex.Message;
-            }
-
-        }
-
-        private void Cancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void comboGrado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboAsig.Items.Clear();
             cargarAsignaturas();
+            cargarCompetencias();
         }
 
         private void cargarResponsables()
@@ -117,6 +87,106 @@ namespace APS.Interfaces
                 }
             }
             comboResponsable.DisplayMember = "email";
+        }
+
+        public void cargarCompetencias()
+        {
+            listCompetencias.Items.Clear();
+            if (comboGrado.SelectedItem != null)
+            {
+                Grado g = (Grado)comboGrado.SelectedItem;
+                foreach(Competencia c in Competencia.ListaCompetencias(g))
+                {
+                    listCompetencias.Items.Add(c);
+                }
+            }
+            else
+            {
+                foreach(Competencia c in Competencia.ListaCompetencias())
+                {
+                    listCompetencias.Items.Add(c);
+                }
+            }
+            listCompetencias.DisplayMember = "nombreComp";
+        }
+
+        private void Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Aceptar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Grado g = (Grado)comboGrado.SelectedItem;
+                Asignatura a = (Asignatura)comboAsig.SelectedItem;
+
+                TipoActividadE tipo;
+                Enum.TryParse<TipoActividadE>(comboTipoAct.SelectedItem.ToString(), true, out tipo);
+
+                Usuario responsable = null;
+                if (!tipo.ToString().Equals("VOLUNTARIADO"))
+                {
+                    if (comboResponsable.SelectedItem == null) throw new Exception("Debe tener un responsable");
+                    responsable = (Usuario)comboResponsable.SelectedItem;
+                }
+
+                List<Competencia> comps = new List<Competencia>();
+                foreach(Competencia c in listCompetencias.SelectedItems)
+                {
+                    comps.Add(c);
+                }
+
+                //ACTUALIZAR EN LA BD
+                if(g!=null) act.Grado = g;
+                if(a!= null) act.Asignatura = a;
+                act.TipoAct = tipo;
+                if(responsable!=null) act.Responsable = responsable;
+                foreach(Competencia c in comps)
+                {
+                    act.AddCompetencia(c);
+                }
+
+                if (tipo.ToString().Equals("VOLUNTARIADO"))
+                {
+                    act.EstadoAct = EstadoActividadE.PREINICIO;
+                    MessageBox.Show("Actividad gestionada correctamente.\n La actividad voluntaria pasa a formar parte de las actividades PREINICIO");
+                }
+                else
+                {
+                    act.EstadoAct = EstadoActividadE.EN_REVISION_PROFESOR;
+                    MessageBox.Show("Actividad gestionada correctamente.\n La actividad pasará a ser revisada por el profesor responsable.");
+                }
+               
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                labelError.Text = ex.Message;
+            }
+
+        }
+
+        private void comboAsig_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarResponsables();
+        }
+
+        private void comboTipoAct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TipoActividadE tipo;
+            Enum.TryParse<TipoActividadE>(comboTipoAct.SelectedItem.ToString(), true, out tipo);
+            if (tipo.ToString().Equals("VOLUNTARIADO"))
+            {
+                comboResponsable.Items.Clear();
+                comboResponsable.Enabled = false;
+            }
+            else
+            {
+                comboResponsable.Enabled = true;
+            }
         }
     }
 }

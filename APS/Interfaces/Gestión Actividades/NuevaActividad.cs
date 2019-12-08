@@ -34,7 +34,7 @@ namespace APS.Interfaces
                 TurnoE turno;
                 Enum.TryParse<TurnoE>(listTurno.SelectedItem.ToString(), true, out turno);
                 AmbitoTrabajoE ambito;
-                Enum.TryParse<AmbitoTrabajoE>(listAmbito.SelectedItem.ToString(),true, out ambito);
+                Enum.TryParse(listAmbito.SelectedItem.ToString(),true, out ambito);
                 TipoTrabajoE trabajo;
                 Enum.TryParse<TipoTrabajoE>(listTrabajo.SelectedItem.ToString(),true,out trabajo);
 
@@ -42,11 +42,13 @@ namespace APS.Interfaces
                                             tLugar.Text,ong,EstadoActividadE.PENDIENTES,ambito,trabajo);
 
                 MessageBox.Show("Actividad creada correctamente.\n La actividad pasará a trámite del gestor del sistema");
+                MessageBox.Show("ambito; " + ambito + " trabajo: " + trabajo);
                 this.Close();
+
 
             }catch(Exception ex)
             {
-                labelError.Text = "ERROR: Faltan Parámetros o son incorrectos";
+                labelError.Text = "ERROR: Faltan Parámetros o son incorrectos. \n"+ex.Message;
             }
 
         }
@@ -55,5 +57,6 @@ namespace APS.Interfaces
         {
             this.Close();
         }
+
     }
 }

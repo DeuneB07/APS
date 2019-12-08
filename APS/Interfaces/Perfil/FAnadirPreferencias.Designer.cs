@@ -181,8 +181,9 @@
             // 
             this.comboTurno.FormattingEnabled = true;
             this.comboTurno.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
+            "Ambas",
+            "Mañana",
+            "Tarde"});
             this.comboTurno.Location = new System.Drawing.Point(429, 84);
             this.comboTurno.Name = "comboTurno";
             this.comboTurno.Size = new System.Drawing.Size(101, 21);
@@ -192,7 +193,10 @@
             // 
             this.comboTipo.FormattingEnabled = true;
             this.comboTipo.Items.AddRange(new object[] {
-            "Voluntariado"});
+            "Todas",
+            "Voluntariado",
+            "Formacion",
+            "Investigacion"});
             this.comboTipo.Location = new System.Drawing.Point(429, 125);
             this.comboTipo.Name = "comboTipo";
             this.comboTipo.Size = new System.Drawing.Size(101, 21);

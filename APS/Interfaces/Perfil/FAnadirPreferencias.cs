@@ -66,21 +66,24 @@ namespace APS.Interfaces
 
         private void bConfirmar_Click(object sender, EventArgs e)
         {
+            Preferencia p = null;
             try
             {
                 Asignatura a = (Asignatura)comboAsig.SelectedItem;
                 Grado g = (Grado)comboGrado.SelectedItem;
 
-                Preferencia p = new Preferencia(textNombreComp.Text, user);
-                p.Grado = g;
-                p.Asignatura = a;
-                TipoActividadE res;
+                p = new Preferencia(textNombreComp.Text, user);
+                if(!comboGrado.Text.Equals("")) p.Grado = g;
+                if(!comboAsig.Text.Equals("")) p.Asignatura = a;
 
-                if (comboTurno.Text.Equals("AM")) p.Turno = Actividad.TurnoE.AM;
-                else if (comboTurno.Text.Equals("PM")) p.Turno = Actividad.TurnoE.PM;
+                TipoActividadE resTipo;
+                TurnoE resTurno;
 
-                Enum.TryParse<TipoActividadE>(comboTipo.Text, true, out res);
-                p.TipoActividad = res;
+                Enum.TryParse<TurnoE>(comboTurno.Text, true, out resTurno);
+                if(!comboTurno.Text.Equals("")) p.Turno = resTurno;
+
+                Enum.TryParse<TipoActividadE>(comboTipo.Text, true, out resTipo);
+                if(!comboTipo.Text.Equals("")) p.TipoActividad = resTipo;
 
 
                 if (comboHoras.Text != "") p.HorasPosibles = int.Parse(comboHoras.Text);
@@ -97,6 +100,7 @@ namespace APS.Interfaces
             }catch(Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+                if (p != null) p.RemovePreferencia();
             }
         }
 

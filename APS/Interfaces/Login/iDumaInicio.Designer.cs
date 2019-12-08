@@ -86,6 +86,7 @@
             this.tPassword.Name = "tPassword";
             this.tPassword.Size = new System.Drawing.Size(258, 21);
             this.tPassword.TabIndex = 11;
+            this.tPassword.UseSystemPasswordChar = true;
             // 
             // labelError
             // 

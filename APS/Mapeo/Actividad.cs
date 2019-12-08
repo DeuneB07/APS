@@ -10,11 +10,11 @@ namespace APS.Mapeo
         private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
         private static string BD_NAME = Properties.Settings.Default.BD_NAME;
 
-        public enum TipoActividadE { FORMACION, INVESTIGACION, VOLUNTARIADO };
-        public enum EstadoActividadE { PENDIENTES, EN_REVISION_PROFESOR, EN_REVISION_ONG, PREINICIO, FINALIZADO };
-        public enum TurnoE { AM, PM }
-        public enum TipoTrabajoE {SALUD,}
-        public enum AmbitoTrabajoE {INMIGRACION,SIN_HOGAR,POBREZA,DISCAPACIDAD,TERCERA_EDAD}
+        public enum TipoActividadE {TODAS,FORMACION,INVESTIGACION,VOLUNTARIADO};
+        public enum EstadoActividadE { PENDIENTES,EN_REVISION_PROFESOR,EN_REVISION_ONG,PREINICIO,FINALIZADO};
+        public enum TurnoE {AMBAS,MAÑANA,TARDE }
+        public enum TipoTrabajoE {TODAS,SALUD,EVENTO}
+        public enum AmbitoTrabajoE {TODAS,INMIGRACION,SIN_HOGAR,POBREZA,DISCAPACIDAD,TERCERA_EDAD}
 
 
         private int ID_actividad;
@@ -91,7 +91,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Actividad> lista = new List<Actividad>();
 
-            foreach (Object[] tupla in miBD.Select("SELECT ID_Actividad FROM Actividades WHERE estadoAct='" + estadoAct.ToString() + ";"))
+            foreach (Object[] tupla in miBD.Select("SELECT ID_Actividad FROM Actividades WHERE estadoAct='" + estadoAct.ToString() + "';"))
             {
                 int id = (int)tupla[0];
                 Actividad a = new Actividad(id);
@@ -144,7 +144,7 @@ namespace APS.Mapeo
                         + fechaInicio.ToShortDateString() + "','" + fechaFin.ToShortDateString() + "','" + lugar + "','" + organizador.Email + "','"
                         + responsable.Email + "'," + grado.ID_Grado + "," + asig.ID_Asig + ",'"
                         + tipoAct.ToString() + "'," + proy.ID_Proyecto + "," + notaMedia + ",'" + estadoAct + "','"
-                        + "101" + "','"+tipoTrabajo.ToString()+"','"+ambitoTrabajo.ToString()+"');";
+                        + "101" + "','"+ambitoTrabajo.ToString()+"','"+tipoTrabajo.ToString()+"');";
             miBD.Insert(ins);
             this.ID_actividad = (int)miBD.SelectScalar("SELECT max(ID_Actividad) FROM Actividades;");
             this.nombreAct = nombreAct;
@@ -179,7 +179,7 @@ namespace APS.Mapeo
                     + "VALUES ('" + nombreAct + "','"
                     + descAct + "'," + numPlazas + "," + numHoras + ",'" + turno.ToString() + "','"
                     + fechaInicio.ToShortDateString() + "','" + fechaFin.ToShortDateString() + "','" + lugar + "','" + organizador.Email + "','"
-                    + estadoAct + "','" + ambitoTrabajo+"','"+tipoTrabajo+"');";
+                    + estadoAct + "','" + ambito.ToString()+"','"+trabajo.ToString()+"');";
             miBD.Insert(ins);
             this.ID_actividad = (int)miBD.SelectScalar("SELECT max(ID_Actividad) FROM Actividades;");
             this.nombreAct = nombreAct;

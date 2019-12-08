@@ -1,4 +1,5 @@
-﻿using APS.Mapeo;
+﻿using APS.Interfaces.Gestión_Actividades;
+using APS.Mapeo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,7 @@ namespace APS.Interfaces
             if (!user.AccesoPantalla("PENDIENTES")) tabUser.Controls.Remove(this.pPendientes);
             if (!user.AccesoPantalla("REVISION")) tabUser.Controls.Remove(this.pRevision);
 
-            if(user.NombreUser != null) lWelcome.Text = "¡Bienvenido, " + user.Nombre + " " + user.Apellido1 + "!";
+            if (user.NombreUser != null) lWelcome.Text = "¡Bienvenido, " + user.Nombre + " " + user.Apellido1 + "!";
             else lWelcome.Text = "¡Bienvenido, " + user.NombreUser + "!";
 
             lNewAct.Visible = user.InsertarPantalla("ACTIVIDADES");
@@ -38,33 +39,28 @@ namespace APS.Interfaces
             //this.gradosTableAdapter.Fill(this.wePassDataSet.Grados);
             //this.actividadesTableAdapter.Fill(this.wePassDataSet.Actividades);
 
-            //cargarTodasActividades();
-
+            cargarTodasActividades();
+            cargarPendientesActividades();
         }
 
         private void cargarTodasActividades()
         {
-
-
-            Panel panel;
-            Label lNombreAct;
-            Label lDescripcionAct;
-
-            foreach (Actividad act in Actividad.ListaActividades())
+            List<Actividad> actividades = new List<Actividad>();
+            foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.PREINICIO))
             {
-                panel = new Panel();
-                lNombreAct = new Label();
-                lDescripcionAct = new Label();
-
-                lNombreAct.Text = act.NombreAct;
-                lDescripcionAct.Text = act.DescAct;
-                
-                panel.Controls.Add(lNombreAct);
-                panel.Controls.Add(lDescripcionAct);
-
-                pTodas.Controls.Add(panel);
+                actividades.Add(act);
             }
-            
+            this.dataGridViewActividades.DataSource = actividades;
+        }
+
+        private void cargarPendientesActividades()
+        {
+            List<Actividad> actividades = new List<Actividad>();
+            foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.PENDIENTES))
+            {
+                actividades.Add(act);
+            }
+            this.dataGridViewPendientes.DataSource = actividades;
         }
 
         private void bLogout_Click(object sender, EventArgs e)
@@ -143,10 +139,24 @@ namespace APS.Interfaces
                 this.Visible = false;
                 gestorGestionaActividad.ShowDialog();
                 this.Visible = true;
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void dataGridViewPendientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = e.RowIndex;
+            int id = int.Parse(this.dataGridViewPendientes.Rows[i].Cells[0].Value.ToString());
+            Actividad pendiente = new Actividad(id);
+            VerActividad verActividad = new VerActividad(user, pendiente);
+            this.Visible = false;
+            verActividad.ShowDialog();
+            this.Visible = true;
+            cargarTodasActividades();
+            cargarPendientesActividades();
         }
     }
 }

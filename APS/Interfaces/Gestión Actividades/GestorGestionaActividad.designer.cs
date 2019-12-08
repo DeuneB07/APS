@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelOrganizador = new System.Windows.Forms.Label();
-            this.BoxOrganizador = new System.Windows.Forms.TextBox();
-            this.labelNombreActividad = new System.Windows.Forms.Label();
-            this.BoxNombreActividad = new System.Windows.Forms.TextBox();
             this.labelGrado = new System.Windows.Forms.Label();
             this.labelAsignatura = new System.Windows.Forms.Label();
             this.labelResponsable = new System.Windows.Forms.Label();
@@ -43,48 +39,40 @@
             this.comboAsig = new System.Windows.Forms.ComboBox();
             this.comboTipoAct = new System.Windows.Forms.ComboBox();
             this.comboResponsable = new System.Windows.Forms.ComboBox();
+            this.listTrabajo = new System.Windows.Forms.ListBox();
+            this.listAmbito = new System.Windows.Forms.ListBox();
+            this.listTurno = new System.Windows.Forms.ListBox();
+            this.tLugar = new System.Windows.Forms.TextBox();
+            this.dateTimePickerFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFechaIni = new System.Windows.Forms.DateTimePicker();
+            this.tNumHoras = new System.Windows.Forms.TextBox();
+            this.tNumPlazas = new System.Windows.Forms.TextBox();
+            this.tDescripcion = new System.Windows.Forms.RichTextBox();
+            this.tNombreAct = new System.Windows.Forms.TextBox();
+            this.tOrganizador = new System.Windows.Forms.TextBox();
+            this.labelTipo = new System.Windows.Forms.Label();
+            this.labelAmbito = new System.Windows.Forms.Label();
+            this.labelTurno = new System.Windows.Forms.Label();
+            this.labelLugar = new System.Windows.Forms.Label();
+            this.labelFechaFin = new System.Windows.Forms.Label();
+            this.labelFechaInicio = new System.Windows.Forms.Label();
+            this.labelNumHoras = new System.Windows.Forms.Label();
+            this.labelNumPlazas = new System.Windows.Forms.Label();
+            this.labelDescripcion = new System.Windows.Forms.Label();
+            this.labelNombreAct = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.listCompetencias = new System.Windows.Forms.ListBox();
+            this.lblCompetencias = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // labelOrganizador
-            // 
-            this.labelOrganizador.AutoSize = true;
-            this.labelOrganizador.Location = new System.Drawing.Point(67, 41);
-            this.labelOrganizador.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelOrganizador.Name = "labelOrganizador";
-            this.labelOrganizador.Size = new System.Drawing.Size(91, 17);
-            this.labelOrganizador.TabIndex = 0;
-            this.labelOrganizador.Text = "Organizador:";
-            // 
-            // BoxOrganizador
-            // 
-            this.BoxOrganizador.Location = new System.Drawing.Point(243, 41);
-            this.BoxOrganizador.Margin = new System.Windows.Forms.Padding(4);
-            this.BoxOrganizador.Name = "BoxOrganizador";
-            this.BoxOrganizador.Size = new System.Drawing.Size(176, 22);
-            this.BoxOrganizador.TabIndex = 1;
-            // 
-            // labelNombreActividad
-            // 
-            this.labelNombreActividad.AutoSize = true;
-            this.labelNombreActividad.Location = new System.Drawing.Point(67, 90);
-            this.labelNombreActividad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelNombreActividad.Name = "labelNombreActividad";
-            this.labelNombreActividad.Size = new System.Drawing.Size(123, 17);
-            this.labelNombreActividad.TabIndex = 2;
-            this.labelNombreActividad.Text = "Nombre Actividad:";
-            // 
-            // BoxNombreActividad
-            // 
-            this.BoxNombreActividad.Location = new System.Drawing.Point(243, 90);
-            this.BoxNombreActividad.Margin = new System.Windows.Forms.Padding(4);
-            this.BoxNombreActividad.Name = "BoxNombreActividad";
-            this.BoxNombreActividad.Size = new System.Drawing.Size(176, 22);
-            this.BoxNombreActividad.TabIndex = 3;
             // 
             // labelGrado
             // 
             this.labelGrado.AutoSize = true;
-            this.labelGrado.Location = new System.Drawing.Point(67, 139);
+            this.labelGrado.Location = new System.Drawing.Point(85, 129);
             this.labelGrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelGrado.Name = "labelGrado";
             this.labelGrado.Size = new System.Drawing.Size(52, 17);
@@ -94,7 +82,7 @@
             // labelAsignatura
             // 
             this.labelAsignatura.AutoSize = true;
-            this.labelAsignatura.Location = new System.Drawing.Point(67, 188);
+            this.labelAsignatura.Location = new System.Drawing.Point(66, 175);
             this.labelAsignatura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAsignatura.Name = "labelAsignatura";
             this.labelAsignatura.Size = new System.Drawing.Size(80, 17);
@@ -104,7 +92,7 @@
             // labelResponsable
             // 
             this.labelResponsable.AutoSize = true;
-            this.labelResponsable.Location = new System.Drawing.Point(67, 238);
+            this.labelResponsable.Location = new System.Drawing.Point(51, 283);
             this.labelResponsable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelResponsable.Name = "labelResponsable";
             this.labelResponsable.Size = new System.Drawing.Size(95, 17);
@@ -114,7 +102,7 @@
             // labelTipoActividad
             // 
             this.labelTipoActividad.AutoSize = true;
-            this.labelTipoActividad.Location = new System.Drawing.Point(67, 292);
+            this.labelTipoActividad.Location = new System.Drawing.Point(45, 227);
             this.labelTipoActividad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTipoActividad.Name = "labelTipoActividad";
             this.labelTipoActividad.Size = new System.Drawing.Size(101, 17);
@@ -123,7 +111,7 @@
             // 
             // Aceptar
             // 
-            this.Aceptar.Location = new System.Drawing.Point(168, 407);
+            this.Aceptar.Location = new System.Drawing.Point(501, 602);
             this.Aceptar.Margin = new System.Windows.Forms.Padding(4);
             this.Aceptar.Name = "Aceptar";
             this.Aceptar.Size = new System.Drawing.Size(100, 28);
@@ -134,13 +122,14 @@
             // 
             // Cancelar
             // 
-            this.Cancelar.Location = new System.Drawing.Point(381, 407);
+            this.Cancelar.Location = new System.Drawing.Point(642, 602);
             this.Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(100, 28);
             this.Cancelar.TabIndex = 13;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = true;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // labelError
             // 
@@ -148,7 +137,7 @@
             this.labelError.BackColor = System.Drawing.Color.Transparent;
             this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(67, 407);
+            this.labelError.Location = new System.Drawing.Point(45, 501);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(44, 17);
             this.labelError.TabIndex = 28;
@@ -157,7 +146,7 @@
             // comboGrado
             // 
             this.comboGrado.FormattingEnabled = true;
-            this.comboGrado.Location = new System.Drawing.Point(243, 139);
+            this.comboGrado.Location = new System.Drawing.Point(165, 129);
             this.comboGrado.Margin = new System.Windows.Forms.Padding(4);
             this.comboGrado.Name = "comboGrado";
             this.comboGrado.Size = new System.Drawing.Size(176, 24);
@@ -166,62 +155,333 @@
             // 
             // comboAsig
             // 
-            this.comboAsig.Location = new System.Drawing.Point(243, 185);
+            this.comboAsig.Location = new System.Drawing.Point(165, 175);
             this.comboAsig.Margin = new System.Windows.Forms.Padding(4);
             this.comboAsig.Name = "comboAsig";
             this.comboAsig.Size = new System.Drawing.Size(176, 24);
             this.comboAsig.TabIndex = 30;
+            this.comboAsig.SelectedIndexChanged += new System.EventHandler(this.comboAsig_SelectedIndexChanged);
             // 
             // comboTipoAct
             // 
-            this.comboTipoAct.Location = new System.Drawing.Point(243, 288);
+            this.comboTipoAct.Items.AddRange(new object[] {
+            "TODAS",
+            "VOLUNTARIADO",
+            "FORMACION",
+            "INVESTIGACION"});
+            this.comboTipoAct.Location = new System.Drawing.Point(165, 227);
             this.comboTipoAct.Margin = new System.Windows.Forms.Padding(4);
             this.comboTipoAct.Name = "comboTipoAct";
             this.comboTipoAct.Size = new System.Drawing.Size(176, 24);
             this.comboTipoAct.TabIndex = 31;
+            this.comboTipoAct.SelectedIndexChanged += new System.EventHandler(this.comboTipoAct_SelectedIndexChanged);
             // 
             // comboResponsable
             // 
-            this.comboResponsable.Location = new System.Drawing.Point(243, 234);
+            this.comboResponsable.Location = new System.Drawing.Point(165, 280);
             this.comboResponsable.Margin = new System.Windows.Forms.Padding(4);
             this.comboResponsable.Name = "comboResponsable";
             this.comboResponsable.Size = new System.Drawing.Size(176, 24);
             this.comboResponsable.TabIndex = 32;
             // 
+            // listTrabajo
+            // 
+            this.listTrabajo.Enabled = false;
+            this.listTrabajo.FormattingEnabled = true;
+            this.listTrabajo.ItemHeight = 16;
+            this.listTrabajo.Items.AddRange(new object[] {
+            "TODAS",
+            "SALUD",
+            "EVENTO"});
+            this.listTrabajo.Location = new System.Drawing.Point(166, 484);
+            this.listTrabajo.Name = "listTrabajo";
+            this.listTrabajo.Size = new System.Drawing.Size(138, 20);
+            this.listTrabajo.TabIndex = 72;
+            // 
+            // listAmbito
+            // 
+            this.listAmbito.Enabled = false;
+            this.listAmbito.FormattingEnabled = true;
+            this.listAmbito.ItemHeight = 16;
+            this.listAmbito.Items.AddRange(new object[] {
+            "TODAS",
+            "INMIGRACION",
+            "POBREZA",
+            "TERCERA_EDAD",
+            "SIN_HOGAR",
+            "DISCAPACIDAD"});
+            this.listAmbito.Location = new System.Drawing.Point(166, 453);
+            this.listAmbito.Name = "listAmbito";
+            this.listAmbito.Size = new System.Drawing.Size(138, 20);
+            this.listAmbito.TabIndex = 71;
+            // 
+            // listTurno
+            // 
+            this.listTurno.Enabled = false;
+            this.listTurno.FormattingEnabled = true;
+            this.listTurno.ItemHeight = 16;
+            this.listTurno.Items.AddRange(new object[] {
+            "AMBAS",
+            "MAÑANA",
+            "TARDE"});
+            this.listTurno.Location = new System.Drawing.Point(170, 411);
+            this.listTurno.Name = "listTurno";
+            this.listTurno.Size = new System.Drawing.Size(120, 20);
+            this.listTurno.TabIndex = 70;
+            // 
+            // tLugar
+            // 
+            this.tLugar.Enabled = false;
+            this.tLugar.Location = new System.Drawing.Point(170, 370);
+            this.tLugar.Name = "tLugar";
+            this.tLugar.Size = new System.Drawing.Size(196, 22);
+            this.tLugar.TabIndex = 69;
+            // 
+            // dateTimePickerFechaFin
+            // 
+            this.dateTimePickerFechaFin.Enabled = false;
+            this.dateTimePickerFechaFin.Location = new System.Drawing.Point(166, 326);
+            this.dateTimePickerFechaFin.Name = "dateTimePickerFechaFin";
+            this.dateTimePickerFechaFin.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerFechaFin.TabIndex = 68;
+            // 
+            // dateTimePickerFechaIni
+            // 
+            this.dateTimePickerFechaIni.Enabled = false;
+            this.dateTimePickerFechaIni.Location = new System.Drawing.Point(166, 286);
+            this.dateTimePickerFechaIni.Name = "dateTimePickerFechaIni";
+            this.dateTimePickerFechaIni.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerFechaIni.TabIndex = 67;
+            // 
+            // tNumHoras
+            // 
+            this.tNumHoras.Enabled = false;
+            this.tNumHoras.Location = new System.Drawing.Point(166, 245);
+            this.tNumHoras.Name = "tNumHoras";
+            this.tNumHoras.Size = new System.Drawing.Size(56, 22);
+            this.tNumHoras.TabIndex = 66;
+            // 
+            // tNumPlazas
+            // 
+            this.tNumPlazas.Enabled = false;
+            this.tNumPlazas.Location = new System.Drawing.Point(166, 207);
+            this.tNumPlazas.Name = "tNumPlazas";
+            this.tNumPlazas.Size = new System.Drawing.Size(56, 22);
+            this.tNumPlazas.TabIndex = 65;
+            // 
+            // tDescripcion
+            // 
+            this.tDescripcion.Enabled = false;
+            this.tDescripcion.Location = new System.Drawing.Point(170, 113);
+            this.tDescripcion.Name = "tDescripcion";
+            this.tDescripcion.Size = new System.Drawing.Size(182, 72);
+            this.tDescripcion.TabIndex = 64;
+            this.tDescripcion.Text = "";
+            // 
+            // tNombreAct
+            // 
+            this.tNombreAct.Enabled = false;
+            this.tNombreAct.Location = new System.Drawing.Point(170, 72);
+            this.tNombreAct.Name = "tNombreAct";
+            this.tNombreAct.Size = new System.Drawing.Size(182, 22);
+            this.tNombreAct.TabIndex = 63;
+            // 
+            // tOrganizador
+            // 
+            this.tOrganizador.Enabled = false;
+            this.tOrganizador.Location = new System.Drawing.Point(170, 27);
+            this.tOrganizador.Name = "tOrganizador";
+            this.tOrganizador.Size = new System.Drawing.Size(182, 22);
+            this.tOrganizador.TabIndex = 62;
+            // 
+            // labelTipo
+            // 
+            this.labelTipo.AutoSize = true;
+            this.labelTipo.Location = new System.Drawing.Point(67, 484);
+            this.labelTipo.Name = "labelTipo";
+            this.labelTipo.Size = new System.Drawing.Size(93, 17);
+            this.labelTipo.TabIndex = 61;
+            this.labelTipo.Text = "Tipo Trabajo:";
+            // 
+            // labelAmbito
+            // 
+            this.labelAmbito.AutoSize = true;
+            this.labelAmbito.Location = new System.Drawing.Point(52, 453);
+            this.labelAmbito.Name = "labelAmbito";
+            this.labelAmbito.Size = new System.Drawing.Size(108, 17);
+            this.labelAmbito.TabIndex = 60;
+            this.labelAmbito.Text = "Ambito Trabajo:";
+            // 
+            // labelTurno
+            // 
+            this.labelTurno.AutoSize = true;
+            this.labelTurno.Location = new System.Drawing.Point(111, 411);
+            this.labelTurno.Name = "labelTurno";
+            this.labelTurno.Size = new System.Drawing.Size(50, 17);
+            this.labelTurno.TabIndex = 59;
+            this.labelTurno.Text = "Turno:";
+            // 
+            // labelLugar
+            // 
+            this.labelLugar.AutoSize = true;
+            this.labelLugar.Location = new System.Drawing.Point(111, 370);
+            this.labelLugar.Name = "labelLugar";
+            this.labelLugar.Size = new System.Drawing.Size(49, 17);
+            this.labelLugar.TabIndex = 58;
+            this.labelLugar.Text = "Lugar:";
+            // 
+            // labelFechaFin
+            // 
+            this.labelFechaFin.AutoSize = true;
+            this.labelFechaFin.Location = new System.Drawing.Point(86, 326);
+            this.labelFechaFin.Name = "labelFechaFin";
+            this.labelFechaFin.Size = new System.Drawing.Size(74, 17);
+            this.labelFechaFin.TabIndex = 57;
+            this.labelFechaFin.Text = "Fecha Fin:";
+            // 
+            // labelFechaInicio
+            // 
+            this.labelFechaInicio.AutoSize = true;
+            this.labelFechaInicio.Location = new System.Drawing.Point(73, 286);
+            this.labelFechaInicio.Name = "labelFechaInicio";
+            this.labelFechaInicio.Size = new System.Drawing.Size(87, 17);
+            this.labelFechaInicio.TabIndex = 56;
+            this.labelFechaInicio.Text = "Fecha Inicio:";
+            // 
+            // labelNumHoras
+            // 
+            this.labelNumHoras.AutoSize = true;
+            this.labelNumHoras.Location = new System.Drawing.Point(56, 245);
+            this.labelNumHoras.Name = "labelNumHoras";
+            this.labelNumHoras.Size = new System.Drawing.Size(104, 17);
+            this.labelNumHoras.TabIndex = 55;
+            this.labelNumHoras.Text = "Número Horas:";
+            // 
+            // labelNumPlazas
+            // 
+            this.labelNumPlazas.AutoSize = true;
+            this.labelNumPlazas.Location = new System.Drawing.Point(52, 207);
+            this.labelNumPlazas.Name = "labelNumPlazas";
+            this.labelNumPlazas.Size = new System.Drawing.Size(108, 17);
+            this.labelNumPlazas.TabIndex = 54;
+            this.labelNumPlazas.Text = "Número Plazas:";
+            // 
+            // labelDescripcion
+            // 
+            this.labelDescripcion.AutoSize = true;
+            this.labelDescripcion.Location = new System.Drawing.Point(21, 127);
+            this.labelDescripcion.Name = "labelDescripcion";
+            this.labelDescripcion.Size = new System.Drawing.Size(147, 17);
+            this.labelDescripcion.TabIndex = 53;
+            this.labelDescripcion.Text = "Descripción Actividad:";
+            // 
+            // labelNombreAct
+            // 
+            this.labelNombreAct.AutoSize = true;
+            this.labelNombreAct.Location = new System.Drawing.Point(41, 72);
+            this.labelNombreAct.Name = "labelNombreAct";
+            this.labelNombreAct.Size = new System.Drawing.Size(123, 17);
+            this.labelNombreAct.TabIndex = 52;
+            this.labelNombreAct.Text = "Nombre Actividad:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(73, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 17);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "Organizador:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.listTrabajo);
+            this.panel1.Controls.Add(this.listAmbito);
+            this.panel1.Controls.Add(this.listTurno);
+            this.panel1.Controls.Add(this.tLugar);
+            this.panel1.Controls.Add(this.dateTimePickerFechaFin);
+            this.panel1.Controls.Add(this.dateTimePickerFechaIni);
+            this.panel1.Controls.Add(this.tNumHoras);
+            this.panel1.Controls.Add(this.tNumPlazas);
+            this.panel1.Controls.Add(this.tDescripcion);
+            this.panel1.Controls.Add(this.tNombreAct);
+            this.panel1.Controls.Add(this.tOrganizador);
+            this.panel1.Controls.Add(this.labelTipo);
+            this.panel1.Controls.Add(this.labelAmbito);
+            this.panel1.Controls.Add(this.labelTurno);
+            this.panel1.Controls.Add(this.labelLugar);
+            this.panel1.Controls.Add(this.labelFechaFin);
+            this.panel1.Controls.Add(this.labelFechaInicio);
+            this.panel1.Controls.Add(this.labelNumHoras);
+            this.panel1.Controls.Add(this.labelNumPlazas);
+            this.panel1.Controls.Add(this.labelNombreAct);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(388, 541);
+            this.panel1.TabIndex = 73;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.listCompetencias);
+            this.panel2.Controls.Add(this.lblCompetencias);
+            this.panel2.Controls.Add(this.comboResponsable);
+            this.panel2.Controls.Add(this.comboTipoAct);
+            this.panel2.Controls.Add(this.comboAsig);
+            this.panel2.Controls.Add(this.labelError);
+            this.panel2.Controls.Add(this.comboGrado);
+            this.panel2.Controls.Add(this.labelTipoActividad);
+            this.panel2.Controls.Add(this.labelResponsable);
+            this.panel2.Controls.Add(this.labelAsignatura);
+            this.panel2.Controls.Add(this.labelGrado);
+            this.panel2.Location = new System.Drawing.Point(401, 15);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(360, 537);
+            this.panel2.TabIndex = 74;
+            // 
+            // listCompetencias
+            // 
+            this.listCompetencias.FormattingEnabled = true;
+            this.listCompetencias.ItemHeight = 16;
+            this.listCompetencias.Location = new System.Drawing.Point(165, 334);
+            this.listCompetencias.Name = "listCompetencias";
+            this.listCompetencias.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listCompetencias.Size = new System.Drawing.Size(176, 100);
+            this.listCompetencias.TabIndex = 34;
+            // 
+            // lblCompetencias
+            // 
+            this.lblCompetencias.AutoSize = true;
+            this.lblCompetencias.Location = new System.Drawing.Point(45, 337);
+            this.lblCompetencias.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCompetencias.Name = "lblCompetencias";
+            this.lblCompetencias.Size = new System.Drawing.Size(101, 17);
+            this.lblCompetencias.TabIndex = 33;
+            this.lblCompetencias.Text = "Competencias:";
+            // 
             // GestorGestionaActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 450);
-            this.Controls.Add(this.comboResponsable);
-            this.Controls.Add(this.comboTipoAct);
-            this.Controls.Add(this.comboAsig);
-            this.Controls.Add(this.comboGrado);
-            this.Controls.Add(this.labelError);
+            this.ClientSize = new System.Drawing.Size(770, 643);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.labelDescripcion);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Aceptar);
-            this.Controls.Add(this.labelTipoActividad);
-            this.Controls.Add(this.labelResponsable);
-            this.Controls.Add(this.labelAsignatura);
-            this.Controls.Add(this.labelGrado);
-            this.Controls.Add(this.BoxNombreActividad);
-            this.Controls.Add(this.labelNombreActividad);
-            this.Controls.Add(this.BoxOrganizador);
-            this.Controls.Add(this.labelOrganizador);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GestorGestionaActividad";
             this.Text = "Actividad ...";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelOrganizador;
-        private System.Windows.Forms.TextBox BoxOrganizador;
-        private System.Windows.Forms.Label labelNombreActividad;
-        private System.Windows.Forms.TextBox BoxNombreActividad;
         private System.Windows.Forms.Label labelGrado;
         private System.Windows.Forms.Label labelAsignatura;
         private System.Windows.Forms.Label labelResponsable;
@@ -233,5 +493,31 @@
         private System.Windows.Forms.ComboBox comboAsig;
         private System.Windows.Forms.ComboBox comboTipoAct;
         private System.Windows.Forms.ComboBox comboResponsable;
+        private System.Windows.Forms.ListBox listTrabajo;
+        private System.Windows.Forms.ListBox listAmbito;
+        private System.Windows.Forms.ListBox listTurno;
+        private System.Windows.Forms.TextBox tLugar;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFechaFin;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFechaIni;
+        private System.Windows.Forms.TextBox tNumHoras;
+        private System.Windows.Forms.TextBox tNumPlazas;
+        private System.Windows.Forms.RichTextBox tDescripcion;
+        private System.Windows.Forms.TextBox tNombreAct;
+        private System.Windows.Forms.TextBox tOrganizador;
+        private System.Windows.Forms.Label labelTipo;
+        private System.Windows.Forms.Label labelAmbito;
+        private System.Windows.Forms.Label labelTurno;
+        private System.Windows.Forms.Label labelLugar;
+        private System.Windows.Forms.Label labelFechaFin;
+        private System.Windows.Forms.Label labelFechaInicio;
+        private System.Windows.Forms.Label labelNumHoras;
+        private System.Windows.Forms.Label labelNumPlazas;
+        private System.Windows.Forms.Label labelDescripcion;
+        private System.Windows.Forms.Label labelNombreAct;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblCompetencias;
+        private System.Windows.Forms.ListBox listCompetencias;
     }
 }
