@@ -12,9 +12,9 @@ namespace APS.Mapeo
 
         public enum TipoActividadE {TODAS,FORMACION,INVESTIGACION,VOLUNTARIADO};
         public enum EstadoActividadE { PENDIENTES,EN_REVISION_PROFESOR,EN_REVISION_ONG,PREINICIO,FINALIZADO};
-        public enum TurnoE {AMBAS,MAÑANA,TARDE }
-        public enum TipoTrabajoE {TODAS,SALUD,EVENTO}
-        public enum AmbitoTrabajoE {TODAS,INMIGRACION,SIN_HOGAR,POBREZA,DISCAPACIDAD,TERCERA_EDAD}
+        public enum TurnoE {AMBAS,MAÑANA,TARDE};
+        public enum TipoTrabajoE {TODAS,SALUD,EVENTO};
+        public enum AmbitoTrabajoE {TODAS,INMIGRACION,SIN_HOGAR,POBREZA,DISCAPACIDAD,TERCERA_EDAD};
 
 
         private int ID_actividad;

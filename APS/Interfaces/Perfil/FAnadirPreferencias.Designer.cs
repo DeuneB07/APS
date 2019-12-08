@@ -49,6 +49,10 @@
             this.listCompetencias = new System.Windows.Forms.ListBox();
             this.textNombreComp = new System.Windows.Forms.TextBox();
             this.gradosTableAdapter = new APS.WePassDataSetTableAdapters.GradosTableAdapter();
+            this.lTipoTrab = new System.Windows.Forms.Label();
+            this.lAmbito = new System.Windows.Forms.Label();
+            this.comboAmbitoTrab = new System.Windows.Forms.ComboBox();
+            this.comboTipoTrab = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gradosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSet)).BeginInit();
@@ -57,7 +61,7 @@
             // bConfirmar
             // 
             this.bConfirmar.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bConfirmar.Location = new System.Drawing.Point(117, 395);
+            this.bConfirmar.Location = new System.Drawing.Point(117, 415);
             this.bConfirmar.Name = "bConfirmar";
             this.bConfirmar.Size = new System.Drawing.Size(125, 23);
             this.bConfirmar.TabIndex = 16;
@@ -68,7 +72,7 @@
             // bCancelar
             // 
             this.bCancelar.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCancelar.Location = new System.Drawing.Point(348, 395);
+            this.bCancelar.Location = new System.Drawing.Point(348, 415);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(125, 23);
             this.bCancelar.TabIndex = 17;
@@ -80,7 +84,7 @@
             // 
             this.lComp.AutoSize = true;
             this.lComp.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lComp.Location = new System.Drawing.Point(36, 215);
+            this.lComp.Location = new System.Drawing.Point(36, 262);
             this.lComp.Name = "lComp";
             this.lComp.Size = new System.Drawing.Size(78, 14);
             this.lComp.TabIndex = 18;
@@ -120,7 +124,7 @@
             // 
             this.lHoras.AutoSize = true;
             this.lHoras.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lHoras.Location = new System.Drawing.Point(329, 170);
+            this.lHoras.Location = new System.Drawing.Point(36, 218);
             this.lHoras.Name = "lHoras";
             this.lHoras.Size = new System.Drawing.Size(95, 14);
             this.lHoras.TabIndex = 22;
@@ -180,10 +184,6 @@
             // comboTurno
             // 
             this.comboTurno.FormattingEnabled = true;
-            this.comboTurno.Items.AddRange(new object[] {
-            "Ambas",
-            "Mañana",
-            "Tarde"});
             this.comboTurno.Location = new System.Drawing.Point(429, 84);
             this.comboTurno.Name = "comboTurno";
             this.comboTurno.Size = new System.Drawing.Size(101, 21);
@@ -192,11 +192,6 @@
             // comboTipo
             // 
             this.comboTipo.FormattingEnabled = true;
-            this.comboTipo.Items.AddRange(new object[] {
-            "Todas",
-            "Voluntariado",
-            "Formacion",
-            "Investigacion"});
             this.comboTipo.Location = new System.Drawing.Point(429, 125);
             this.comboTipo.Name = "comboTipo";
             this.comboTipo.Size = new System.Drawing.Size(101, 21);
@@ -205,38 +200,7 @@
             // comboHoras
             // 
             this.comboHoras.FormattingEnabled = true;
-            this.comboHoras.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30"});
-            this.comboHoras.Location = new System.Drawing.Point(429, 167);
+            this.comboHoras.Location = new System.Drawing.Point(149, 215);
             this.comboHoras.Name = "comboHoras";
             this.comboHoras.Size = new System.Drawing.Size(101, 21);
             this.comboHoras.TabIndex = 29;
@@ -244,7 +208,7 @@
             // listCompetencias
             // 
             this.listCompetencias.FormattingEnabled = true;
-            this.listCompetencias.Location = new System.Drawing.Point(117, 245);
+            this.listCompetencias.Location = new System.Drawing.Point(117, 279);
             this.listCompetencias.Name = "listCompetencias";
             this.listCompetencias.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listCompetencias.Size = new System.Drawing.Size(356, 121);
@@ -261,11 +225,51 @@
             // 
             this.gradosTableAdapter.ClearBeforeFill = true;
             // 
+            // lTipoTrab
+            // 
+            this.lTipoTrab.AutoSize = true;
+            this.lTipoTrab.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTipoTrab.Location = new System.Drawing.Point(329, 170);
+            this.lTipoTrab.Name = "lTipoTrab";
+            this.lTipoTrab.Size = new System.Drawing.Size(85, 14);
+            this.lTipoTrab.TabIndex = 32;
+            this.lTipoTrab.Text = "Tipo de Trabajo:";
+            // 
+            // lAmbito
+            // 
+            this.lAmbito.AutoSize = true;
+            this.lAmbito.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAmbito.Location = new System.Drawing.Point(329, 215);
+            this.lAmbito.Name = "lAmbito";
+            this.lAmbito.Size = new System.Drawing.Size(99, 14);
+            this.lAmbito.TabIndex = 33;
+            this.lAmbito.Text = "Ámbito de Trabajo:";
+            // 
+            // comboAmbitoTrab
+            // 
+            this.comboAmbitoTrab.FormattingEnabled = true;
+            this.comboAmbitoTrab.Location = new System.Drawing.Point(429, 208);
+            this.comboAmbitoTrab.Name = "comboAmbitoTrab";
+            this.comboAmbitoTrab.Size = new System.Drawing.Size(101, 21);
+            this.comboAmbitoTrab.TabIndex = 34;
+            // 
+            // comboTipoTrab
+            // 
+            this.comboTipoTrab.FormattingEnabled = true;
+            this.comboTipoTrab.Location = new System.Drawing.Point(429, 163);
+            this.comboTipoTrab.Name = "comboTipoTrab";
+            this.comboTipoTrab.Size = new System.Drawing.Size(101, 21);
+            this.comboTipoTrab.TabIndex = 35;
+            // 
             // FAnadirPreferencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(599, 450);
+            this.Controls.Add(this.comboTipoTrab);
+            this.Controls.Add(this.comboAmbitoTrab);
+            this.Controls.Add(this.lAmbito);
+            this.Controls.Add(this.lTipoTrab);
             this.Controls.Add(this.textNombreComp);
             this.Controls.Add(this.listCompetencias);
             this.Controls.Add(this.comboHoras);
@@ -315,5 +319,9 @@
         private WePassDataSet wePassDataSet;
         private System.Windows.Forms.BindingSource gradosBindingSource;
         private WePassDataSetTableAdapters.GradosTableAdapter gradosTableAdapter;
+        private System.Windows.Forms.Label lTipoTrab;
+        private System.Windows.Forms.Label lAmbito;
+        private System.Windows.Forms.ComboBox comboAmbitoTrab;
+        private System.Windows.Forms.ComboBox comboTipoTrab;
     }
 }

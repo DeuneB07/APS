@@ -68,8 +68,8 @@ namespace APS.Mapeo
             if( tupla[5].ToString() != "") horasPosibles = int.Parse(tupla[5].ToString());
             if (tupla[6].ToString() != "") Enum.TryParse<Actividad.TurnoE>(tupla[6].ToString(), true, out turno);
             if (tupla[7].ToString() != "") Enum.TryParse<Actividad.TipoActividadE>(tupla[7].ToString(), true, out tipoAct);
-            if (tupla[8].ToString() != "") Enum.TryParse<Actividad.TipoActividadE>(tupla[7].ToString(), true, out tipoAct);
-            if (tupla[9].ToString() != "") Enum.TryParse<Actividad.TipoActividadE>(tupla[7].ToString(), true, out tipoAct);
+            if (tupla[8].ToString() != "") Enum.TryParse<Actividad.TipoTrabajoE>(tupla[7].ToString(), true, out tipoTrabajo);
+            if (tupla[9].ToString() != "") Enum.TryParse<Actividad.AmbitoTrabajoE>(tupla[7].ToString(), true, out ambitoTrabajo);
             competencias = null;
         }
 
@@ -185,6 +185,30 @@ namespace APS.Mapeo
                 miBD.Update("UPDATE Preferencias SET tipoAct='" + value.ToString() + "' "
                         + "WHERE ID_Preferencia=" + ID_preferencia + ";");
                 tipoAct = value;
+            }
+        }
+
+        public Actividad.TipoTrabajoE TipoTrabajo
+        {
+            get { return tipoTrabajo; }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                miBD.Update("UPDATE Preferencias SET tipoTrabajo='" + value.ToString() + "' "
+                        + "WHERE ID_Preferencia=" + ID_preferencia + ";");
+                tipoTrabajo = value;
+            }
+        }
+
+        public Actividad.AmbitoTrabajoE AmbitoTrabajo
+        {
+            get { return ambitoTrabajo; }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                miBD.Update("UPDATE Preferencias SET ambitoTrabajo='" + value.ToString() + "' "
+                        + "WHERE ID_Preferencia=" + ID_preferencia + ";");
+                ambitoTrabajo = value;
             }
         }
 

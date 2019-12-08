@@ -22,18 +22,59 @@ namespace APS.Interfaces
             InitializeComponent();
             this.user = user;
 
-            cargarTipoActividad();
             cargarCompetencias();
             cargarGrados();
             cargarAsignaturas();
+            cargarTurnos();
+            cargarTipoActividad();
+            cargarNumeroHoras();
+            cargarTipoTrabajo();
+            cargarAmbitoTrabajo();
+        }
+
+        private void cargarTurnos()
+        {
+            foreach(TurnoE t in Enum.GetValues(typeof(TurnoE)))
+            {
+                comboTurno.Items.Add(t);
+            }
         }
 
         private void cargarTipoActividad()
         {
-            if (user.Rol.NombreRol.Equals("Estudiante"))
+            foreach(TipoActividadE tAct in Enum.GetValues(typeof(TipoActividadE)))
             {
-                comboTipo.Items.Add("Formación");
-                comboTipo.Items.Add("Investigación");
+                if (tAct.ToString().Equals("VOLUNTARIADO"))
+                {
+                    comboTipo.Items.Add(tAct);
+                } else if (user.Rol.NombreRol.Equals("Estudiante"))
+                {
+                    comboTipo.Items.Add(tAct);
+                }
+            }
+        }
+
+        private void cargarNumeroHoras()
+        {
+            for(int c = 0; c<=50; c++)
+            {
+                comboHoras.Items.Add(c);
+            }
+        }
+
+        private void cargarTipoTrabajo()
+        {
+            foreach (TipoTrabajoE tTrab in Enum.GetValues(typeof(TipoTrabajoE)))
+            {
+                comboTipoTrab.Items.Add(tTrab);
+            }
+        }
+
+        private void cargarAmbitoTrabajo()
+        {
+            foreach (AmbitoTrabajoE ambT in Enum.GetValues(typeof(AmbitoTrabajoE)))
+            {
+                comboAmbitoTrab.Items.Add(ambT);
             }
         }
 
@@ -78,6 +119,8 @@ namespace APS.Interfaces
 
                 TipoActividadE resTipo;
                 TurnoE resTurno;
+                TipoTrabajoE resTipoTrab;
+                AmbitoTrabajoE resAmbTrabajo;
 
                 Enum.TryParse<TurnoE>(comboTurno.Text, true, out resTurno);
                 if(!comboTurno.Text.Equals("")) p.Turno = resTurno;
@@ -85,6 +128,11 @@ namespace APS.Interfaces
                 Enum.TryParse<TipoActividadE>(comboTipo.Text, true, out resTipo);
                 if(!comboTipo.Text.Equals("")) p.TipoActividad = resTipo;
 
+                Enum.TryParse<TipoTrabajoE>(comboTipoTrab.Text, true, out resTipoTrab);
+                if (!comboTipoTrab.Text.Equals("")) p.TipoTrabajo = resTipoTrab;
+
+                Enum.TryParse<AmbitoTrabajoE>(comboAmbitoTrab.Text, true, out resAmbTrabajo);
+                if (!comboAmbitoTrab.Text.Equals("")) p.AmbitoTrabajo = resAmbTrabajo;
 
                 if (comboHoras.Text != "") p.HorasPosibles = int.Parse(comboHoras.Text);
 

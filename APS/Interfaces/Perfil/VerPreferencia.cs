@@ -26,6 +26,8 @@ namespace APS.Interfaces
             lShowTipo.Text = p.TipoActividad.ToString();
             lShowTurno.Text = p.Turno.ToString();
             if(p.Asignatura!=null) lShowPreferencia.Text = p.Asignatura.NombreAsig;
+            lTipoTrab2.Text = p.TipoTrabajo.ToString();
+            lAmbTrab2.Text = p.AmbitoTrabajo.ToString();
             cargarCompetencias();
 
         }

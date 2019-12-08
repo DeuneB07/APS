@@ -43,12 +43,16 @@
             this.lShowTurno = new System.Windows.Forms.Label();
             this.lShowPreferencia = new System.Windows.Forms.Label();
             this.lShowGrado = new System.Windows.Forms.Label();
+            this.l = new System.Windows.Forms.Label();
+            this.lTipoTrab = new System.Windows.Forms.Label();
+            this.lAmbTrab2 = new System.Windows.Forms.Label();
+            this.lTipoTrab2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listCompetencias
             // 
             this.listCompetencias.FormattingEnabled = true;
-            this.listCompetencias.Location = new System.Drawing.Point(110, 238);
+            this.listCompetencias.Location = new System.Drawing.Point(110, 288);
             this.listCompetencias.Name = "listCompetencias";
             this.listCompetencias.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listCompetencias.Size = new System.Drawing.Size(356, 121);
@@ -118,7 +122,7 @@
             // 
             this.lComp.AutoSize = true;
             this.lComp.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lComp.Location = new System.Drawing.Point(29, 208);
+            this.lComp.Location = new System.Drawing.Point(29, 259);
             this.lComp.Name = "lComp";
             this.lComp.Size = new System.Drawing.Size(78, 14);
             this.lComp.TabIndex = 34;
@@ -127,7 +131,7 @@
             // bConfirmar
             // 
             this.bConfirmar.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bConfirmar.Location = new System.Drawing.Point(218, 386);
+            this.bConfirmar.Location = new System.Drawing.Point(218, 415);
             this.bConfirmar.Name = "bConfirmar";
             this.bConfirmar.Size = new System.Drawing.Size(125, 23);
             this.bConfirmar.TabIndex = 32;
@@ -189,11 +193,53 @@
             this.lShowGrado.Size = new System.Drawing.Size(0, 14);
             this.lShowGrado.TabIndex = 52;
             // 
+            // l
+            // 
+            this.l.AutoSize = true;
+            this.l.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l.Location = new System.Drawing.Point(317, 239);
+            this.l.Name = "l";
+            this.l.Size = new System.Drawing.Size(99, 14);
+            this.l.TabIndex = 53;
+            this.l.Text = "Ámbito de Trabajo:";
+            // 
+            // lTipoTrab
+            // 
+            this.lTipoTrab.AutoSize = true;
+            this.lTipoTrab.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTipoTrab.Location = new System.Drawing.Point(325, 201);
+            this.lTipoTrab.Name = "lTipoTrab";
+            this.lTipoTrab.Size = new System.Drawing.Size(85, 14);
+            this.lTipoTrab.TabIndex = 54;
+            this.lTipoTrab.Text = "Tipo de Trabajo:";
+            // 
+            // lAmbTrab2
+            // 
+            this.lAmbTrab2.AutoSize = true;
+            this.lAmbTrab2.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAmbTrab2.Location = new System.Drawing.Point(422, 239);
+            this.lAmbTrab2.Name = "lAmbTrab2";
+            this.lAmbTrab2.Size = new System.Drawing.Size(0, 14);
+            this.lAmbTrab2.TabIndex = 55;
+            // 
+            // lTipoTrab2
+            // 
+            this.lTipoTrab2.AutoSize = true;
+            this.lTipoTrab2.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTipoTrab2.Location = new System.Drawing.Point(423, 201);
+            this.lTipoTrab2.Name = "lTipoTrab2";
+            this.lTipoTrab2.Size = new System.Drawing.Size(0, 14);
+            this.lTipoTrab2.TabIndex = 56;
+            // 
             // VerPreferencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(558, 450);
+            this.Controls.Add(this.lTipoTrab2);
+            this.Controls.Add(this.lAmbTrab2);
+            this.Controls.Add(this.lTipoTrab);
+            this.Controls.Add(this.l);
             this.Controls.Add(this.lShowGrado);
             this.Controls.Add(this.lShowPreferencia);
             this.Controls.Add(this.lShowTurno);
@@ -210,7 +256,7 @@
             this.Controls.Add(this.lComp);
             this.Controls.Add(this.bConfirmar);
             this.Name = "VerPreferencia";
-            this.Text = "Añadir Preferencias";
+            this.Text = "Ver Preferencia";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +278,9 @@
         private System.Windows.Forms.Label lShowTurno;
         private System.Windows.Forms.Label lShowPreferencia;
         private System.Windows.Forms.Label lShowGrado;
+        private System.Windows.Forms.Label l;
+        private System.Windows.Forms.Label lTipoTrab;
+        private System.Windows.Forms.Label lAmbTrab2;
+        private System.Windows.Forms.Label lTipoTrab2;
     }
 }
