@@ -30,8 +30,8 @@ namespace APS.Interfaces
             if (!user.AccesoPantalla("VALORACION")) tabUser.Controls.Remove(this.pValoracion);
             if (!user.AccesoPantalla("PENDIENTES")) tabUser.Controls.Remove(this.pPendientes);
             if (!user.AccesoPantalla("REVISION")) tabUser.Controls.Remove(this.pRevision);
-            if (!user.AccesoPantalla("MIS ACTIVIDADES")) tabUser.Controls.Remove(this.pMisActividades);
-            if (!user.AccesoPantalla("ACTIVIDADES INSCRITAS")) tabUser.Controls.Remove(this.pActividadesInscritas);
+            //if (!user.AccesoPantalla("MIS ACTIVIDADES")) tabUser.Controls.Remove(this.pMisActividades);
+            //if (!user.AccesoPantalla("ACTIVIDADES INSCRITAS")) tabUser.Controls.Remove(this.pActividadesInscritas);
 
             if (user.NombreUser != null) lWelcome.Text = "¡Bienvenido, " + user.Nombre + " " + user.Apellido1 + "!";
             else lWelcome.Text = "¡Bienvenido, " + user.NombreUser + "!";
@@ -109,7 +109,7 @@ namespace APS.Interfaces
                 actividades.Add(act);
             }
             actividades.Sort();
-            //this.dataGridViewActividades.DataSource = actividades;
+     
         }
 
         private void bLogout_Click(object sender, EventArgs e)
