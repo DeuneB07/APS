@@ -52,6 +52,12 @@
   <ItemGroup>
     <Compile Include="BD\BDException.cs" />
     <Compile Include="BD\BDLibrary.cs" />
+    <Compile Include="Interfaces\Personalizados\CartelFiltros.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelFiltros.Designer.cs">
+      <DependentUpon>CartelFiltros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelPrimarioPruebil.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,6 +196,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WePassDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelFiltros.resx">
+      <DependentUpon>CartelFiltros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelPrimarioPruebil.resx">
       <DependentUpon>CartelPrimarioPruebil.cs</DependentUpon>
     </EmbeddedResource>

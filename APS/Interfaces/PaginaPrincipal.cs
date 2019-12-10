@@ -46,17 +46,26 @@ namespace APS.Interfaces
             cargarRevisionActividades();
         }
 
+        private void cargarFiltros()
+        {
+            CartelFiltros cFiltro = new CartelFiltros(this.user);
+            panelTodas.Controls.Add(cFiltro);
+        }
+
         private void cargarTodasActividadesChulas()
         {
+
+            pTodas.Controls.Add(panelTodas);
+            cargarFiltros();
+
             List<Actividad> actividades = Actividad.ListaActividades();
             CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
-            pTodas.Controls.Add(panelTodas);
+            
 
             int c = 0;
             foreach (Actividad act in actividades)
             {
                 actsCarteles[c] = new CartelActividadesStandard(user, act);
-
                 panelTodas.Controls.Add(actsCarteles[c]);
                 actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c) + 50);
                 c++;

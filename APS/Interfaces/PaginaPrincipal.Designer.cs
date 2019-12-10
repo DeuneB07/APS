@@ -80,7 +80,7 @@
             this.tabUser.Location = new System.Drawing.Point(21, 59);
             this.tabUser.Name = "tabUser";
             this.tabUser.SelectedIndex = 0;
-            this.tabUser.Size = new System.Drawing.Size(645, 357);
+            this.tabUser.Size = new System.Drawing.Size(665, 357);
             this.tabUser.TabIndex = 0;
             // 
             // pMatch
@@ -99,13 +99,14 @@
             this.pTodas.Location = new System.Drawing.Point(4, 22);
             this.pTodas.Name = "pTodas";
             this.pTodas.Padding = new System.Windows.Forms.Padding(3);
-            this.pTodas.Size = new System.Drawing.Size(637, 331);
+            this.pTodas.Size = new System.Drawing.Size(657, 331);
             this.pTodas.TabIndex = 1;
             this.pTodas.Text = "Todas";
             this.pTodas.UseVisualStyleBackColor = true;
             // 
             // panelTodas
             // 
+            this.panelTodas.AutoScroll = true;
             this.panelTodas.ColumnCount = 1;
             this.panelTodas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panelTodas.Location = new System.Drawing.Point(0, 0);
@@ -113,7 +114,7 @@
             this.panelTodas.RowCount = 2;
             this.panelTodas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panelTodas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelTodas.Size = new System.Drawing.Size(637, 331);
+            this.panelTodas.Size = new System.Drawing.Size(657, 331);
             this.panelTodas.TabIndex = 0;
             // 
             // pProyectos
