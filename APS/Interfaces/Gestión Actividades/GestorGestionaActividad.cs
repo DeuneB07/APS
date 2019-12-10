@@ -165,7 +165,7 @@ namespace APS.Interfaces
                 }
                 else
                 {
-                    act.EstadoAct = EstadoActividadE.PENDIENTE_ACEPTACION;
+                    act.EstadoAct = EstadoActividadE.NEGOCIACION_PDI;
                     MessageBox.Show("Actividad gestionada correctamente.\n La actividad pasará a ser revisada por el profesor responsable.");
                 }
                
