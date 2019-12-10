@@ -11,12 +11,12 @@ using APS.Mapeo;
 
 namespace APS.Interfaces
 {
-    public partial class Cartel : UserControl
+    public partial class CartelPrimarioPruebil : UserControl
     {
 
         private Asignatura a;
 
-        public Cartel(Asignatura a)
+        public CartelPrimarioPruebil(Asignatura a)
         {
             InitializeComponent();
             this.a = a;

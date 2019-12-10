@@ -52,11 +52,11 @@
   <ItemGroup>
     <Compile Include="BD\BDException.cs" />
     <Compile Include="BD\BDLibrary.cs" />
-    <Compile Include="Interfaces\Cartel.cs">
+    <Compile Include="Interfaces\Personalizados\CartelPrimarioPruebil.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Interfaces\Cartel.Designer.cs">
-      <DependentUpon>Cartel.cs</DependentUpon>
+    <Compile Include="Interfaces\Personalizados\CartelPrimarioPruebil.Designer.cs">
+      <DependentUpon>CartelPrimarioPruebil.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Gestión Actividades\VerActividad.cs">
       <SubType>Form</SubType>
@@ -124,10 +124,16 @@
     <Compile Include="Interfaces\PaginaPrincipal.Designer.cs">
       <DependentUpon>PaginaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Prueba.cs">
+    <Compile Include="Interfaces\Personalizados\CartelActividadesStandard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelActividadesStandard.Designer.cs">
+      <DependentUpon>CartelActividadesStandard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\Prueba.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Prueba.Designer.cs">
+    <Compile Include="Interfaces\Personalizados\Prueba.Designer.cs">
       <DependentUpon>Prueba.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Login\RegistroONG.cs">
@@ -142,10 +148,10 @@
     <Compile Include="Interfaces\Perfil\VerPreferencia.Designer.cs">
       <DependentUpon>VerPreferencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\PruebaVer.cs">
+    <Compile Include="Interfaces\Personalizados\PruebaVer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\PruebaVer.Designer.cs">
+    <Compile Include="Interfaces\Personalizados\PruebaVer.Designer.cs">
       <DependentUpon>PruebaVer.cs</DependentUpon>
     </Compile>
     <Compile Include="JSON\IDUMA.cs" />
@@ -173,8 +179,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WePassDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Interfaces\Cartel.resx">
-      <DependentUpon>Cartel.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelPrimarioPruebil.resx">
+      <DependentUpon>CartelPrimarioPruebil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Gestión Actividades\VerActividad.resx">
       <DependentUpon>VerActividad.cs</DependentUpon>
@@ -209,7 +215,10 @@
     <EmbeddedResource Include="Interfaces\PaginaPrincipal.resx">
       <DependentUpon>PaginaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Prueba.resx">
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelActividadesStandard.resx">
+      <DependentUpon>CartelActividadesStandard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\Prueba.resx">
       <DependentUpon>Prueba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Login\RegistroONG.resx">
@@ -218,7 +227,7 @@
     <EmbeddedResource Include="Interfaces\Perfil\VerPreferencia.resx">
       <DependentUpon>VerPreferencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\PruebaVer.resx">
+    <EmbeddedResource Include="Interfaces\Personalizados\PruebaVer.resx">
       <DependentUpon>PruebaVer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -267,6 +276,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sobre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sobre%281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

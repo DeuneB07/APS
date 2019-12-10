@@ -1,6 +1,6 @@
 ﻿namespace APS.Interfaces
 {
-    partial class Cartel
+    partial class CartelPrimarioPruebil
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cartel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartelPrimarioPruebil));
             this.panel1 = new System.Windows.Forms.Panel();
             this.bVerMas = new System.Windows.Forms.Button();
             this.labelTitulo = new System.Windows.Forms.Label();
