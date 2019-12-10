@@ -52,6 +52,18 @@
   <ItemGroup>
     <Compile Include="BD\BDException.cs" />
     <Compile Include="BD\BDLibrary.cs" />
+    <Compile Include="Interfaces\Gestión Actividades\NegociarActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Gestión Actividades\NegociarActividad.Designer.cs">
+      <DependentUpon>NegociarActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Gestión Actividades\VerActividadRevision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Gestión Actividades\VerActividadRevision.Designer.cs">
+      <DependentUpon>VerActividadRevision.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelFiltros.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -64,11 +76,11 @@
     <Compile Include="Interfaces\Personalizados\CartelPrimarioPruebil.Designer.cs">
       <DependentUpon>CartelPrimarioPruebil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Gestión Actividades\VerActividad.cs">
+    <Compile Include="Interfaces\Gestión Actividades\VerActividadGestor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Gestión Actividades\VerActividad.Designer.cs">
-      <DependentUpon>VerActividad.cs</DependentUpon>
+    <Compile Include="Interfaces\Gestión Actividades\VerActividadGestor.Designer.cs">
+      <DependentUpon>VerActividadGestor.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Login\RegistroUMA.cs">
       <SubType>Form</SubType>
@@ -196,14 +208,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WePassDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Interfaces\Gestión Actividades\NegociarActividad.resx">
+      <DependentUpon>NegociarActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Gestión Actividades\VerActividadRevision.resx">
+      <DependentUpon>VerActividadRevision.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelFiltros.resx">
       <DependentUpon>CartelFiltros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelPrimarioPruebil.resx">
       <DependentUpon>CartelPrimarioPruebil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Gestión Actividades\VerActividad.resx">
-      <DependentUpon>VerActividad.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\Gestión Actividades\VerActividadGestor.resx">
+      <DependentUpon>VerActividadGestor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Login\RegistroUMA.resx">
       <DependentUpon>RegistroUMA.cs</DependentUpon>

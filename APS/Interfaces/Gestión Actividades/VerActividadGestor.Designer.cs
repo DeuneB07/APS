@@ -1,6 +1,6 @@
 ﻿namespace APS.Interfaces.Gestión_Actividades
 {
-    partial class VerActividad
+    partial class VerActividadGestor
     {
         /// <summary>
         /// Required designer variable.
