@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroONG));
-            this.b_aceptarReg = new System.Windows.Forms.Button();
-            this.b_ONGReg = new System.Windows.Forms.Button();
-            this.b_cancelarReg = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.t_correoReg = new System.Windows.Forms.TextBox();
-            this.t_pwdReg = new System.Windows.Forms.TextBox();
+            this.tEmail = new System.Windows.Forms.TextBox();
+            this.tPassword = new System.Windows.Forms.TextBox();
             this.labelError = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.tUsuario = new System.Windows.Forms.TextBox();
@@ -43,45 +42,36 @@
             this.tDNI = new System.Windows.Forms.TextBox();
             this.dateTimePickerFechNacimiento = new System.Windows.Forms.DateTimePicker();
             this.labelFechNacimiento = new System.Windows.Forms.Label();
+            this.tConfirmar = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // b_aceptarReg
+            // btnAceptar
             // 
-            this.b_aceptarReg.Location = new System.Drawing.Point(449, 292);
-            this.b_aceptarReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.b_aceptarReg.Name = "b_aceptarReg";
-            this.b_aceptarReg.Size = new System.Drawing.Size(83, 28);
-            this.b_aceptarReg.TabIndex = 0;
-            this.b_aceptarReg.Text = "Aceptar";
-            this.b_aceptarReg.UseVisualStyleBackColor = true;
-            this.b_aceptarReg.Click += new System.EventHandler(this.b_aceptarReg_Click);
+            this.btnAceptar.Location = new System.Drawing.Point(449, 292);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(83, 28);
+            this.btnAceptar.TabIndex = 0;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.b_aceptarReg_Click);
             // 
-            // b_ONGReg
+            // btnCancelar
             // 
-            this.b_ONGReg.Location = new System.Drawing.Point(37, 292);
-            this.b_ONGReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.b_ONGReg.Name = "b_ONGReg";
-            this.b_ONGReg.Size = new System.Drawing.Size(83, 28);
-            this.b_ONGReg.TabIndex = 1;
-            this.b_ONGReg.Text = "Soy ONG";
-            this.b_ONGReg.UseVisualStyleBackColor = true;
-            this.b_ONGReg.Visible = false;
-            // 
-            // b_cancelarReg
-            // 
-            this.b_cancelarReg.Location = new System.Drawing.Point(557, 292);
-            this.b_cancelarReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.b_cancelarReg.Name = "b_cancelarReg";
-            this.b_cancelarReg.Size = new System.Drawing.Size(83, 28);
-            this.b_cancelarReg.TabIndex = 2;
-            this.b_cancelarReg.Text = "Cancelar";
-            this.b_cancelarReg.UseVisualStyleBackColor = true;
-            this.b_cancelarReg.Click += new System.EventHandler(this.b_cancelarReg_Click);
+            this.btnCancelar.Location = new System.Drawing.Point(557, 292);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(83, 28);
+            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.b_cancelarReg_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(127, 49);
+            this.label1.Location = new System.Drawing.Point(137, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 17);
             this.label1.TabIndex = 3;
@@ -90,29 +80,29 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(97, 91);
+            this.label2.Location = new System.Drawing.Point(107, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Contraseña";
             // 
-            // t_correoReg
+            // tEmail
             // 
-            this.t_correoReg.Location = new System.Drawing.Point(213, 44);
-            this.t_correoReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.t_correoReg.Name = "t_correoReg";
-            this.t_correoReg.Size = new System.Drawing.Size(369, 22);
-            this.t_correoReg.TabIndex = 5;
+            this.tEmail.Location = new System.Drawing.Point(213, 44);
+            this.tEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tEmail.Name = "tEmail";
+            this.tEmail.Size = new System.Drawing.Size(369, 22);
+            this.tEmail.TabIndex = 5;
             // 
-            // t_pwdReg
+            // tPassword
             // 
-            this.t_pwdReg.Location = new System.Drawing.Point(213, 89);
-            this.t_pwdReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.t_pwdReg.Name = "t_pwdReg";
-            this.t_pwdReg.PasswordChar = '*';
-            this.t_pwdReg.Size = new System.Drawing.Size(369, 22);
-            this.t_pwdReg.TabIndex = 6;
-            this.t_pwdReg.UseSystemPasswordChar = true;
+            this.tPassword.Location = new System.Drawing.Point(213, 89);
+            this.tPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tPassword.Name = "tPassword";
+            this.tPassword.PasswordChar = '*';
+            this.tPassword.Size = new System.Drawing.Size(369, 22);
+            this.tPassword.TabIndex = 6;
+            this.tPassword.UseSystemPasswordChar = true;
             // 
             // labelError
             // 
@@ -129,7 +119,7 @@
             // labelUsuario
             // 
             this.labelUsuario.AutoSize = true;
-            this.labelUsuario.Location = new System.Drawing.Point(77, 146);
+            this.labelUsuario.Location = new System.Drawing.Point(73, 184);
             this.labelUsuario.Name = "labelUsuario";
             this.labelUsuario.Size = new System.Drawing.Size(115, 17);
             this.labelUsuario.TabIndex = 9;
@@ -137,7 +127,7 @@
             // 
             // tUsuario
             // 
-            this.tUsuario.Location = new System.Drawing.Point(213, 146);
+            this.tUsuario.Location = new System.Drawing.Point(213, 184);
             this.tUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tUsuario.Name = "tUsuario";
             this.tUsuario.Size = new System.Drawing.Size(101, 22);
@@ -146,7 +136,7 @@
             // labelDNI
             // 
             this.labelDNI.AutoSize = true;
-            this.labelDNI.Location = new System.Drawing.Point(127, 181);
+            this.labelDNI.Location = new System.Drawing.Point(127, 227);
             this.labelDNI.Name = "labelDNI";
             this.labelDNI.Size = new System.Drawing.Size(61, 17);
             this.labelDNI.TabIndex = 11;
@@ -154,7 +144,7 @@
             // 
             // tDNI
             // 
-            this.tDNI.Location = new System.Drawing.Point(213, 181);
+            this.tDNI.Location = new System.Drawing.Point(213, 227);
             this.tDNI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tDNI.Name = "tDNI";
             this.tDNI.Size = new System.Drawing.Size(101, 22);
@@ -162,7 +152,7 @@
             // 
             // dateTimePickerFechNacimiento
             // 
-            this.dateTimePickerFechNacimiento.Location = new System.Drawing.Point(463, 143);
+            this.dateTimePickerFechNacimiento.Location = new System.Drawing.Point(460, 182);
             this.dateTimePickerFechNacimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerFechNacimiento.Name = "dateTimePickerFechNacimiento";
             this.dateTimePickerFechNacimiento.Size = new System.Drawing.Size(200, 22);
@@ -171,17 +161,38 @@
             // labelFechNacimiento
             // 
             this.labelFechNacimiento.AutoSize = true;
-            this.labelFechNacimiento.Location = new System.Drawing.Point(329, 145);
+            this.labelFechNacimiento.Location = new System.Drawing.Point(329, 184);
             this.labelFechNacimiento.Name = "labelFechNacimiento";
             this.labelFechNacimiento.Size = new System.Drawing.Size(125, 17);
             this.labelFechNacimiento.TabIndex = 14;
             this.labelFechNacimiento.Text = "Fecha Nacimiento:";
+            // 
+            // tConfirmar
+            // 
+            this.tConfirmar.Location = new System.Drawing.Point(213, 133);
+            this.tConfirmar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tConfirmar.Name = "tConfirmar";
+            this.tConfirmar.PasswordChar = '*';
+            this.tConfirmar.Size = new System.Drawing.Size(369, 22);
+            this.tConfirmar.TabIndex = 15;
+            this.tConfirmar.UseSystemPasswordChar = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(42, 133);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(146, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Confirmar Contraseña";
             // 
             // RegistroONG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 346);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tConfirmar);
             this.Controls.Add(this.labelFechNacimiento);
             this.Controls.Add(this.dateTimePickerFechNacimiento);
             this.Controls.Add(this.tDNI);
@@ -189,13 +200,12 @@
             this.Controls.Add(this.tUsuario);
             this.Controls.Add(this.labelUsuario);
             this.Controls.Add(this.labelError);
-            this.Controls.Add(this.t_pwdReg);
-            this.Controls.Add(this.t_correoReg);
+            this.Controls.Add(this.tPassword);
+            this.Controls.Add(this.tEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.b_cancelarReg);
-            this.Controls.Add(this.b_ONGReg);
-            this.Controls.Add(this.b_aceptarReg);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAceptar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RegistroONG";
@@ -207,13 +217,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button b_aceptarReg;
-        private System.Windows.Forms.Button b_ONGReg;
-        private System.Windows.Forms.Button b_cancelarReg;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox t_correoReg;
-        private System.Windows.Forms.TextBox t_pwdReg;
+        private System.Windows.Forms.TextBox tEmail;
+        private System.Windows.Forms.TextBox tPassword;
         private System.Windows.Forms.Label labelError;
         private System.Windows.Forms.Label labelUsuario;
         private System.Windows.Forms.TextBox tUsuario;
@@ -221,5 +230,7 @@
         private System.Windows.Forms.TextBox tDNI;
         private System.Windows.Forms.DateTimePicker dateTimePickerFechNacimiento;
         private System.Windows.Forms.Label labelFechNacimiento;
+        private System.Windows.Forms.TextBox tConfirmar;
+        private System.Windows.Forms.Label label3;
     }
 }

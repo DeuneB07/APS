@@ -31,35 +31,20 @@ namespace APS.Interfaces
 
         private void b_aceptarReg_Click(object sender, EventArgs e)
         {
-            string correo = t_correoReg.Text;
-            string pwd = t_pwdReg.Text;
+            string correo = tEmail.Text;
+            string pwd = tPassword.Text;
+            string pwd2 = tConfirmar.Text;
 
             try
             {
-                //Comprobar que no está registrado el email en la BBDD
-                if ((new Usuario(correo)).Email != null)
-                {
-                    throw new Exception("Existe el usuario con el mismo correo");
-                }
+                if (correo.Equals("")) throw new Exception("El correo no puede estar vacío");
+                if (pwd.Equals("")) throw new Exception("La contraseña no puede estar vacía");
+                if (!pwd.Equals(pwd2)) throw new Exception("Las contraseñas no coinciden");
+                Usuario nuevoUser = new Usuario(correo, pwd, tUsuario.Text, new Rol("ONG"));
 
-                UsuarioJSON userJSON = IDUMA.Acceso(correo, pwd);
-
-                //Registra al usuario en la BBDD
-                Usuario user = new Usuario(userJSON.UserEmail, new Rol(userJSON.CategoryName), userJSON.Nombre, userJSON.PrimerApellido, userJSON.SegundoApellido, userJSON.Situation);
-                if (tUsuario.Text != "") user.NombreUser = tUsuario.Text;
-                if (tDNI.Text != "") user.DNI = tDNI.Text;
-                if (dateTimePickerFechNacimiento.Value.ToShortDateString() != DateTime.Today.ToShortDateString()) user.FechaNac = dateTimePickerFechNacimiento.Value.ToShortDateString();
-
-                //Esta mockup son usuarios de medicina siempre
-                Grado medicina = new Grado(5);
-                user.AddGrado(medicina); //id 5 => Medicina
-                foreach(CursoJSON c in userJSON.Courses)
-                {
-                    
-                    Asignatura a = new Asignatura(medicina, c.Name);
-                    if (a.ID_Asig != -1) user.AddAsignatura(a);
-                }
-
+                if (tDNI.Text != "") nuevoUser.DNI = tDNI.Text;
+                if (!dateTimePickerFechNacimiento.Value.Equals(DateTime.Today)) nuevoUser.FechaNac = dateTimePickerFechNacimiento.Value.ToShortDateString();
+                
                 MessageBox.Show("Usuario creado correctamente");
 
                 this.Close();
@@ -70,13 +55,5 @@ namespace APS.Interfaces
             }
             
         }
-
-
-        /*
-        private void b_ONGReg_Click(object sender, EventArgs e)
-        {
-            //Comprobar
-        }*/
-
     }
 }
