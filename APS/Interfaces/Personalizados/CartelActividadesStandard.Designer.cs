@@ -98,7 +98,6 @@
             // bSolicitar
             // 
             this.bSolicitar.BackColor = System.Drawing.Color.Transparent;
-            this.bSolicitar.BackgroundImage = global::APS.Properties.Resources.sobre;
             this.bSolicitar.Cursor = System.Windows.Forms.Cursors.Default;
             this.bSolicitar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.bSolicitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -112,7 +111,6 @@
             // 
             // bVerMas
             // 
-            this.bVerMas.BackgroundImage = global::APS.Properties.Resources.iconmas;
             this.bVerMas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bVerMas.FlatAppearance.BorderSize = 0;
             this.bVerMas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

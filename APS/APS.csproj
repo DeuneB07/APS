@@ -130,6 +130,12 @@
     <Compile Include="Interfaces\Personalizados\CartelActividadesStandard.Designer.cs">
       <DependentUpon>CartelActividadesStandard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelSolicitantesActividad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelSolicitantesActividad.Designer.cs">
+      <DependentUpon>CartelSolicitantesActividad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\Prueba.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,9 @@
     <EmbeddedResource Include="Interfaces\Personalizados\CartelActividadesStandard.resx">
       <DependentUpon>CartelActividadesStandard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelSolicitantesActividad.resx">
+      <DependentUpon>CartelSolicitantesActividad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\Prueba.resx">
       <DependentUpon>Prueba.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,14 +241,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -270,6 +273,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconmas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmas1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmas2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
