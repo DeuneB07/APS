@@ -47,7 +47,7 @@ namespace APS.Interfaces
             cargarPendientesActividades();
             cargarRevisionActividades();
             //cargarMisActividades();
-            //cargarActividadesInscrito();
+            //cargarActividadesInscritas();
         }
 
         private void cargarFiltros()
@@ -80,7 +80,7 @@ namespace APS.Interfaces
         private void cargarTodasActividades()
         {
             List<Actividad> actividades = new List<Actividad>();
-            foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.PREINICIO))
+            foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA))
             {
                 actividades.Add(act);
             }
@@ -90,7 +90,7 @@ namespace APS.Interfaces
         private void cargarPendientesActividades()
         {
             List<Actividad> actividades = new List<Actividad>();
-            foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.PENDIENTES))
+            foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.PENDIENTE_ACEPTACION))
             {
                 actividades.Add(act);
             }
@@ -100,11 +100,11 @@ namespace APS.Interfaces
         private void cargarRevisionActividades()
         {
             List<Actividad> actividades = new List<Actividad>();
-            foreach(Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.EN_REVISION_PROFESOR))
+            foreach(Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_ONG))
             {
                 actividades.Add(act);
             }
-            foreach(Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.EN_REVISION_ONG))
+            foreach(Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_PDI))
             {
                 actividades.Add(act);
             }

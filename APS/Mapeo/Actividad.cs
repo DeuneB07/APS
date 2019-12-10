@@ -11,7 +11,7 @@ namespace APS.Mapeo
         private static string BD_NAME = Properties.Settings.Default.BD_NAME;
 
         public enum TipoActividadE {TODAS,FORMACION,INVESTIGACION,VOLUNTARIADO};
-        public enum EstadoActividadE { PENDIENTES,EN_REVISION_PROFESOR,EN_REVISION_ONG,PREINICIO,FINALIZADO};
+        public enum EstadoActividadE { PENDIENTE_ACEPTACION, ABIERTA, CERRADA, NEGOCIACION_ONG, NEGOCIACION_PDI, EN_TRAMITE, EN_PROCESO, EN_EVALUACION, CONCLUIDA, ACEPTADO, DENEGADO};
         public enum TurnoE {AMBAS,MAÑANA,TARDE};
         public enum TipoTrabajoE {TODAS,SALUD,EVENTO};
         public enum AmbitoTrabajoE {TODAS,INMIGRACION,SIN_HOGAR,POBREZA,DISCAPACIDAD,TERCERA_EDAD};

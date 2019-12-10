@@ -160,12 +160,12 @@ namespace APS.Interfaces
 
                 if (tipo.ToString().Equals("VOLUNTARIADO"))
                 {
-                    act.EstadoAct = EstadoActividadE.PREINICIO;
+                    act.EstadoAct = EstadoActividadE.ABIERTA;
                     MessageBox.Show("Actividad gestionada correctamente.\n La actividad voluntaria pasa a formar parte de las actividades PREINICIO");
                 }
                 else
                 {
-                    act.EstadoAct = EstadoActividadE.EN_REVISION_PROFESOR;
+                    act.EstadoAct = EstadoActividadE.PENDIENTE_ACEPTACION;
                     MessageBox.Show("Actividad gestionada correctamente.\n La actividad pasará a ser revisada por el profesor responsable.");
                 }
                
