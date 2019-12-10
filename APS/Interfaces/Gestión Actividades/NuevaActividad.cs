@@ -39,7 +39,7 @@ namespace APS.Interfaces
                 Enum.TryParse<TipoTrabajoE>(listTrabajo.SelectedItem.ToString(),true,out trabajo);
 
                 Actividad a = new Actividad(tNombreAct.Text,tDescripcion.Text,int.Parse(tNumPlazas.Text),int.Parse(tNumHoras.Text),turno,dateTimePickerFechaIni.Value,dateTimePickerFechaFin.Value,
-                                            tLugar.Text,ong,EstadoActividadE.PENDIENTES,ambito,trabajo);
+                                            tLugar.Text,ong,EstadoActividadE.PENDIENTE_ACEPTACION,ambito,trabajo);
 
                 MessageBox.Show("Actividad creada correctamente.\n La actividad pasará a trámite del gestor del sistema");
                 MessageBox.Show("ambito; " + ambito + " trabajo: " + trabajo);
