@@ -202,6 +202,7 @@
             this.dataGridViewRevision.RowTemplate.Height = 24;
             this.dataGridViewRevision.Size = new System.Drawing.Size(655, 365);
             this.dataGridViewRevision.TabIndex = 1;
+            this.dataGridViewRevision.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRevision_CellDoubleClick);
             // 
             // pMisActividades
             // 

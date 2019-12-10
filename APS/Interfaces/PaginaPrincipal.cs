@@ -101,15 +101,15 @@ namespace APS.Interfaces
         {
             List<Actividad> actividades = new List<Actividad>();
             Rol rol = user.Rol;
-            if (rol.NombreRol.Equals("Profesor") || rol.NombreRol.Equals("ONG"))
+            if (rol.NombreRol.Equals("PDI") || rol.NombreRol.Equals("ONG"))
             {
                 foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_ONG))
                 {
-                    if(act.Organizador.Equals(user.Email) || act.Responsable.Equals(user.Email)) actividades.Add(act);
+                    if(act.Organizador.Email.Equals(user.Email) || act.Responsable.Email.Equals(user.Email)) actividades.Add(act);
                 }
                 foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_PDI))
                 {
-                    /*if (act.Organizador.Equals(user.Email) || act.Responsable.Equals(user.Email))*/ actividades.Add(act);
+                    if (act.Organizador.Email.Equals(user.Email) || act.Responsable.Email.Equals(user.Email)) actividades.Add(act);
                 }
                 actividades.Sort();
                 this.dataGridViewRevision.DataSource = actividades;
