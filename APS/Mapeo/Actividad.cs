@@ -128,8 +128,8 @@ namespace APS.Mapeo
             if (!(tupla[15].ToString().Equals(""))) notaMedia = Double.Parse((String)tupla[15]);
             Enum.TryParse<EstadoActividadE>((String)tupla[16],true,out estadoAct);
             imagen = null;
-            if (!(tupla[17].ToString().Equals(""))) Enum.TryParse<TipoTrabajoE>((String)tupla[17], true,out tipoTrabajo);
             if (!(tupla[18].ToString().Equals(""))) Enum.TryParse<AmbitoTrabajoE>((String)tupla[18], true,out ambitoTrabajo);
+            if (!(tupla[17].ToString().Equals(""))) Enum.TryParse<TipoTrabajoE>((String)tupla[19], true, out tipoTrabajo);
             competencias = null;
         }
 

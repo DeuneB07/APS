@@ -30,8 +30,8 @@ namespace APS.Interfaces
             if (!user.AccesoPantalla("VALORACION")) tabUser.Controls.Remove(this.pValoracion);
             if (!user.AccesoPantalla("PENDIENTES")) tabUser.Controls.Remove(this.pPendientes);
             if (!user.AccesoPantalla("REVISION")) tabUser.Controls.Remove(this.pRevision);
-            if (!user.AccesoPantalla("MIS ACTIVIDADES")) tabUser.Controls.Remove(this.pMisActividades);
-            if (!user.AccesoPantalla("ACTIVIDADES INSCRITAS")) tabUser.Controls.Remove(this.pActividadesInscritas);
+            //if (!user.AccesoPantalla("MIS ACTIVIDADES")) tabUser.Controls.Remove(this.pMisActividades);
+            //if (!user.AccesoPantalla("ACTIVIDADES INSCRITAS")) tabUser.Controls.Remove(this.pActividadesInscritas);
 
             if (user.NombreUser != null) lWelcome.Text = "¡Bienvenido, " + user.Nombre + " " + user.Apellido1 + "!";
             else lWelcome.Text = "¡Bienvenido, " + user.NombreUser + "!";
@@ -100,16 +100,20 @@ namespace APS.Interfaces
         private void cargarRevisionActividades()
         {
             List<Actividad> actividades = new List<Actividad>();
-            foreach(Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_ONG))
+            Rol rol = user.Rol;
+            if (rol.NombreRol.Equals("Profesor") || rol.NombreRol.Equals("ONG"))
             {
-                actividades.Add(act);
+                foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_ONG))
+                {
+                    if(act.Organizador.Equals(user.Email) || act.Responsable.Equals(user.Email)) actividades.Add(act);
+                }
+                foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_PDI))
+                {
+                    /*if (act.Organizador.Equals(user.Email) || act.Responsable.Equals(user.Email))*/ actividades.Add(act);
+                }
+                actividades.Sort();
+                this.dataGridViewRevision.DataSource = actividades;
             }
-            foreach(Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_PDI))
-            {
-                actividades.Add(act);
-            }
-            actividades.Sort();
-            //this.dataGridViewActividades.DataSource = actividades;
         }
 
         private void bLogout_Click(object sender, EventArgs e)
@@ -206,6 +210,34 @@ namespace APS.Interfaces
             this.Visible = true;
             cargarTodasActividades();
             cargarPendientesActividades();
+        }
+
+        private void dataGridViewRevision_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = e.RowIndex;
+            int id = int.Parse(this.dataGridViewRevision.Rows[i].Cells[0].Value.ToString());
+            Actividad revision = new Actividad(id);
+            Rol rol = user.Rol;
+
+            //VER ACTIVIDAD A REVISAR POR EL PDI
+            if (rol.NombreRol.Equals("PDI") && revision.EstadoAct.Equals(Actividad.EstadoActividadE.NEGOCIACION_PDI))
+            {
+                VerActividad verActividad = new VerActividad(user, revision);
+                this.Visible = false;
+                verActividad.ShowDialog();
+                this.Visible = true;
+            }
+            //VER ACTIVIDAD A REVISAR POR LA ONG
+            else if (revision.EstadoAct.Equals(Actividad.EstadoActividadE.NEGOCIACION_ONG))
+            {
+                VerActividad verActividad = new VerActividad(user, revision);
+                this.Visible = false;
+                verActividad.ShowDialog();
+                this.Visible = true;
+            }
+            
+            cargarTodasActividades();
+            cargarRevisionActividades();
         }
     }
 }
