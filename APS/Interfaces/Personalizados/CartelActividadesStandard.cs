@@ -27,6 +27,18 @@ namespace APS.Interfaces.Personalizados
             this.lDescripcion.Text = a.DescAct;
             this.lNumPlazas.Text = a.NumPlazas.ToString();
             this.lTipoActividad.Text = a.TipoAct.ToString();
+            this.lShowIni.Text = a.FechaInicio.ToShortDateString();
+            this.lShowFin.Text = a.FechaFin.ToShortDateString();
+            this.lShowOrg.Text = a.Organizador.Nombre;
+            if (a.Responsable != null)
+            {
+                this.lShowResp.Text = a.Responsable.Nombre + " " + a.Responsable.Apellido1 + " " + a.Responsable.Apellido2;
+            } else
+            {
+                lResp.Visible = false;
+                lShowResp.Visible = false;
+                //this.lShowResp.Text = "Sin Responsable Asociado a esta Actividad";
+            }
         }
 
         #region Properties
@@ -34,6 +46,10 @@ namespace APS.Interfaces.Personalizados
         private string _description;
         private string _plazas;
         private string _tipoact;
+        private DateTime _fechaini;
+        private DateTime _fechafin;
+        private string _organizador;
+        private string _responsable;
         private Image _icon;
 
         [Category("Custom Props")]
@@ -62,6 +78,34 @@ namespace APS.Interfaces.Personalizados
         {
             get { return _tipoact; }
             set { _tipoact = value; lTipoActividad.Text = value; }
+        }
+
+        [Category("Custom Props")]
+        public DateTime FechaInicio
+        {
+            get { return _fechaini; }
+            set { _fechaini = value; lShowIni.Text = value.ToShortTimeString(); }
+        }
+
+        [Category("Custom Props")]
+        public DateTime FechaFin
+        {
+            get { return _fechafin; }
+            set { _fechafin = value; lShowFin.Text = value.ToShortDateString(); }
+        }
+
+        [Category("Custom Props")]
+        public string Organizador
+        {
+            get { return _organizador; }
+            set { _organizador = value; lShowOrg.Text = value; }
+        }
+
+        [Category("Custom Props")]
+        public string Responsable
+        {
+            get { return _responsable; }
+            set { _responsable = value; lShowResp.Text = value; }
         }
 
         [Category("Custom Props")]

@@ -101,7 +101,7 @@ namespace APS.Interfaces
             {
                 if (tUsuario.Text != "") user.NombreUser = tUsuario.Text;
                 if (tDNI.Text != "") user.DNI = tDNI.Text;
-                if (dateTimePickerFechNacimiento.Value.ToShortDateString() != DateTime.Today.ToShortDateString()) user.FechaNac = dateTimePickerFechNacimiento.Value.ToShortDateString();
+                if (dateTimePickerFechNacimiento.Value != DateTime.Today) user.FechaNac = dateTimePickerFechNacimiento.Value;
 
                 MessageBox.Show("Usuario creado correctamente");
 

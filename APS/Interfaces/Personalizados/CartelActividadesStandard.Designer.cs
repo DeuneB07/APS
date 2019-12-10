@@ -28,16 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartelActividadesStandard));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lShowOrg = new System.Windows.Forms.Label();
+            this.lShowIni = new System.Windows.Forms.Label();
+            this.lShowFin = new System.Windows.Forms.Label();
+            this.lFecha = new System.Windows.Forms.Label();
+            this.lOrg = new System.Windows.Forms.Label();
+            this.lTipoActividad = new System.Windows.Forms.Label();
+            this.lTipoA = new System.Windows.Forms.Label();
+            this.bSolicitar = new System.Windows.Forms.Button();
             this.lNumPlazas = new System.Windows.Forms.Label();
             this.lPlazas = new System.Windows.Forms.Label();
+            this.bVerMas = new System.Windows.Forms.Button();
             this.labelName = new System.Windows.Forms.Label();
             this.lDescripcion = new System.Windows.Forms.Label();
-            this.bSolicitar = new System.Windows.Forms.Button();
-            this.bVerMas = new System.Windows.Forms.Button();
             this.pict = new System.Windows.Forms.PictureBox();
-            this.lTipoA = new System.Windows.Forms.Label();
-            this.lTipoActividad = new System.Windows.Forms.Label();
+            this.lResp = new System.Windows.Forms.Label();
+            this.lShowResp = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +53,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lShowResp);
+            this.panel1.Controls.Add(this.lResp);
+            this.panel1.Controls.Add(this.lShowOrg);
+            this.panel1.Controls.Add(this.lShowIni);
+            this.panel1.Controls.Add(this.lShowFin);
+            this.panel1.Controls.Add(this.lFecha);
+            this.panel1.Controls.Add(this.lOrg);
             this.panel1.Controls.Add(this.lTipoActividad);
             this.panel1.Controls.Add(this.lTipoA);
             this.panel1.Controls.Add(this.bSolicitar);
@@ -56,13 +71,93 @@
             this.panel1.Controls.Add(this.pict);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(452, 116);
+            this.panel1.Size = new System.Drawing.Size(623, 147);
             this.panel1.TabIndex = 3;
+            // 
+            // lShowOrg
+            // 
+            this.lShowOrg.AutoSize = true;
+            this.lShowOrg.Location = new System.Drawing.Point(82, 27);
+            this.lShowOrg.Name = "lShowOrg";
+            this.lShowOrg.Size = new System.Drawing.Size(46, 13);
+            this.lShowOrg.TabIndex = 17;
+            this.lShowOrg.Text = "nounorg";
+            // 
+            // lShowIni
+            // 
+            this.lShowIni.AutoSize = true;
+            this.lShowIni.Location = new System.Drawing.Point(465, 85);
+            this.lShowIni.Name = "lShowIni";
+            this.lShowIni.Size = new System.Drawing.Size(17, 13);
+            this.lShowIni.TabIndex = 16;
+            this.lShowIni.Text = "ini";
+            // 
+            // lShowFin
+            // 
+            this.lShowFin.AutoSize = true;
+            this.lShowFin.Location = new System.Drawing.Point(465, 105);
+            this.lShowFin.Name = "lShowFin";
+            this.lShowFin.Size = new System.Drawing.Size(18, 13);
+            this.lShowFin.TabIndex = 15;
+            this.lShowFin.Text = "fin";
+            // 
+            // lFecha
+            // 
+            this.lFecha.AutoSize = true;
+            this.lFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lFecha.Location = new System.Drawing.Point(413, 85);
+            this.lFecha.Name = "lFecha";
+            this.lFecha.Size = new System.Drawing.Size(46, 13);
+            this.lFecha.TabIndex = 14;
+            this.lFecha.Text = "Fecha:";
+            // 
+            // lOrg
+            // 
+            this.lOrg.AutoSize = true;
+            this.lOrg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lOrg.Location = new System.Drawing.Point(15, 27);
+            this.lOrg.Name = "lOrg";
+            this.lOrg.Size = new System.Drawing.Size(61, 13);
+            this.lOrg.TabIndex = 13;
+            this.lOrg.Text = "Organiza:";
+            // 
+            // lTipoActividad
+            // 
+            this.lTipoActividad.AutoSize = true;
+            this.lTipoActividad.Location = new System.Drawing.Point(530, 63);
+            this.lTipoActividad.Name = "lTipoActividad";
+            this.lTipoActividad.Size = new System.Drawing.Size(39, 13);
+            this.lTipoActividad.TabIndex = 12;
+            this.lTipoActividad.Text = "tipoact";
+            // 
+            // lTipoA
+            // 
+            this.lTipoA.AutoSize = true;
+            this.lTipoA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTipoA.Location = new System.Drawing.Point(413, 63);
+            this.lTipoA.Name = "lTipoA";
+            this.lTipoA.Size = new System.Drawing.Size(111, 13);
+            this.lTipoA.TabIndex = 11;
+            this.lTipoA.Text = "Tipo de Actividad:";
+            // 
+            // bSolicitar
+            // 
+            this.bSolicitar.BackColor = System.Drawing.Color.Transparent;
+            this.bSolicitar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bSolicitar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.bSolicitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bSolicitar.ForeColor = System.Drawing.Color.Black;
+            this.bSolicitar.Location = new System.Drawing.Point(556, 112);
+            this.bSolicitar.Name = "bSolicitar";
+            this.bSolicitar.Size = new System.Drawing.Size(64, 32);
+            this.bSolicitar.TabIndex = 10;
+            this.bSolicitar.Text = "Solicitar";
+            this.bSolicitar.UseVisualStyleBackColor = false;
             // 
             // lNumPlazas
             // 
             this.lNumPlazas.AutoSize = true;
-            this.lNumPlazas.Location = new System.Drawing.Point(153, 92);
+            this.lNumPlazas.Location = new System.Drawing.Point(467, 128);
             this.lNumPlazas.Name = "lNumPlazas";
             this.lNumPlazas.Size = new System.Drawing.Size(57, 13);
             this.lNumPlazas.TabIndex = 9;
@@ -71,11 +166,24 @@
             // lPlazas
             // 
             this.lPlazas.AutoSize = true;
-            this.lPlazas.Location = new System.Drawing.Point(144, 79);
+            this.lPlazas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPlazas.Location = new System.Drawing.Point(413, 128);
             this.lPlazas.Name = "lPlazas";
-            this.lPlazas.Size = new System.Drawing.Size(44, 13);
+            this.lPlazas.Size = new System.Drawing.Size(52, 13);
             this.lPlazas.TabIndex = 8;
             this.lPlazas.Text = "Plazas: ";
+            // 
+            // bVerMas
+            // 
+            this.bVerMas.FlatAppearance.BorderSize = 0;
+            this.bVerMas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVerMas.Image = ((System.Drawing.Image)(resources.GetObject("bVerMas.Image")));
+            this.bVerMas.Location = new System.Drawing.Point(566, 3);
+            this.bVerMas.Name = "bVerMas";
+            this.bVerMas.Size = new System.Drawing.Size(54, 55);
+            this.bVerMas.TabIndex = 7;
+            this.bVerMas.UseVisualStyleBackColor = true;
+            this.bVerMas.Click += new System.EventHandler(this.bVerMas_Click);
             // 
             // labelName
             // 
@@ -89,63 +197,38 @@
             // lDescripcion
             // 
             this.lDescripcion.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDescripcion.Location = new System.Drawing.Point(144, 33);
+            this.lDescripcion.Location = new System.Drawing.Point(141, 63);
             this.lDescripcion.Name = "lDescripcion";
-            this.lDescripcion.Size = new System.Drawing.Size(266, 43);
+            this.lDescripcion.Size = new System.Drawing.Size(266, 78);
             this.lDescripcion.TabIndex = 5;
             this.lDescripcion.Text = "Descripción";
             // 
-            // bSolicitar
-            // 
-            this.bSolicitar.BackColor = System.Drawing.Color.Transparent;
-            this.bSolicitar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bSolicitar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.bSolicitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bSolicitar.ForeColor = System.Drawing.Color.Black;
-            this.bSolicitar.Location = new System.Drawing.Point(385, 79);
-            this.bSolicitar.Name = "bSolicitar";
-            this.bSolicitar.Size = new System.Drawing.Size(64, 32);
-            this.bSolicitar.TabIndex = 10;
-            this.bSolicitar.Text = "Solicitar";
-            this.bSolicitar.UseVisualStyleBackColor = false;
-            // 
-            // bVerMas
-            // 
-            this.bVerMas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bVerMas.FlatAppearance.BorderSize = 0;
-            this.bVerMas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVerMas.Location = new System.Drawing.Point(419, 3);
-            this.bVerMas.Name = "bVerMas";
-            this.bVerMas.Size = new System.Drawing.Size(30, 30);
-            this.bVerMas.TabIndex = 7;
-            this.bVerMas.UseVisualStyleBackColor = true;
-            this.bVerMas.Click += new System.EventHandler(this.bVerMas_Click);
-            // 
             // pict
             // 
-            this.pict.Location = new System.Drawing.Point(6, 30);
+            this.pict.Location = new System.Drawing.Point(3, 63);
             this.pict.Name = "pict";
             this.pict.Size = new System.Drawing.Size(132, 81);
             this.pict.TabIndex = 6;
             this.pict.TabStop = false;
             // 
-            // lTipoA
+            // lResp
             // 
-            this.lTipoA.AutoSize = true;
-            this.lTipoA.Location = new System.Drawing.Point(235, 79);
-            this.lTipoA.Name = "lTipoA";
-            this.lTipoA.Size = new System.Drawing.Size(93, 13);
-            this.lTipoA.TabIndex = 11;
-            this.lTipoA.Text = "Tipo de Actividad:";
+            this.lResp.AutoSize = true;
+            this.lResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lResp.Location = new System.Drawing.Point(15, 45);
+            this.lResp.Name = "lResp";
+            this.lResp.Size = new System.Drawing.Size(84, 13);
+            this.lResp.TabIndex = 18;
+            this.lResp.Text = "Responsable:";
             // 
-            // lTipoActividad
+            // lShowResp
             // 
-            this.lTipoActividad.AutoSize = true;
-            this.lTipoActividad.Location = new System.Drawing.Point(248, 92);
-            this.lTipoActividad.Name = "lTipoActividad";
-            this.lTipoActividad.Size = new System.Drawing.Size(39, 13);
-            this.lTipoActividad.TabIndex = 12;
-            this.lTipoActividad.Text = "tipoact";
+            this.lShowResp.AutoSize = true;
+            this.lShowResp.Location = new System.Drawing.Point(105, 45);
+            this.lShowResp.Name = "lShowResp";
+            this.lShowResp.Size = new System.Drawing.Size(51, 13);
+            this.lShowResp.TabIndex = 19;
+            this.lShowResp.Text = "nounresp";
             // 
             // CartelActividadesStandard
             // 
@@ -154,7 +237,7 @@
             this.BackColor = System.Drawing.Color.Teal;
             this.Controls.Add(this.panel1);
             this.Name = "CartelActividadesStandard";
-            this.Size = new System.Drawing.Size(460, 122);
+            this.Size = new System.Drawing.Size(629, 153);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).EndInit();
@@ -173,5 +256,12 @@
         private System.Windows.Forms.Button bSolicitar;
         private System.Windows.Forms.Label lTipoActividad;
         private System.Windows.Forms.Label lTipoA;
+        private System.Windows.Forms.Label lShowOrg;
+        private System.Windows.Forms.Label lShowIni;
+        private System.Windows.Forms.Label lShowFin;
+        private System.Windows.Forms.Label lFecha;
+        private System.Windows.Forms.Label lOrg;
+        private System.Windows.Forms.Label lShowResp;
+        private System.Windows.Forms.Label lResp;
     }
 }
