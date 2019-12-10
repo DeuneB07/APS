@@ -15,7 +15,7 @@ namespace APS.Mapeo
         private String dni;
         private String nombreUser;
         private Rol rol;
-        private String fechaNac;
+        private DateTime fechaNac;
         private String nombre;
         private String apellido1;
         private String apellido2;
@@ -88,7 +88,13 @@ namespace APS.Mapeo
                 if (tupla[2].ToString() != "") dni = (String)tupla[2];
                 if (tupla[3].ToString() != "") nombreUser = (String)tupla[3];
                 rol = new Rol((String)tupla[4]);
-                if (tupla[5].ToString() != "") fechaNac = tupla[5].ToString();
+
+                if (tupla[5].ToString() != "")
+                {
+                    string[] fechaIn = tupla[5].ToString().Split('-');
+                    fechaNac = new DateTime(int.Parse(fechaIn[0]), int.Parse(fechaIn[1]), int.Parse(fechaIn[2]));
+                }
+
                 //imagen = null;
                 grados = null;
                 preferencias = null;
@@ -121,7 +127,15 @@ namespace APS.Mapeo
                 if (tupla[2].ToString()!="") dni = (String)tupla[2];
                 if(tupla[3].ToString()!="")nombreUser = (String)tupla[3];
                 rol = new Rol((String)tupla[4]);
-                if (tupla[5].ToString()!="") fechaNac = tupla[5].ToString();
+                
+                
+                if (tupla[5].ToString() != "")
+                {
+                    string[] fechaIn = tupla[5].ToString().Split('-');
+                    fechaNac = new DateTime(int.Parse(fechaIn[0]), int.Parse(fechaIn[1]), int.Parse(fechaIn[2]));
+
+                }
+
                 //imagen = null;
                 preferencias = null;
                 asignaturas = null;
@@ -259,13 +273,13 @@ namespace APS.Mapeo
             }
         }
 
-        public String FechaNac
+        public DateTime FechaNac
         {
             get { return fechaNac; }
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("UPDATE Usuario SET fechaNac = '" + value
+                miBD.Update("UPDATE Usuario SET fechaNac = '" + value.ToShortDateString()
                         + "' WHERE email ='" + this.email + "';");
                 fechaNac = value;
             }
@@ -278,7 +292,7 @@ namespace APS.Mapeo
             miBD.Delete("DELETE FROM  Usuario WHERE email ='" + this.email + "';");
             email = password = null;
             DNI = nombreUser = null;
-            fechaNac = null;
+            fechaNac = DateTime.Today;
             //imagen = null;
             nombre = null;
             apellido1 = null;
@@ -415,7 +429,7 @@ namespace APS.Mapeo
 
         public override string ToString()
         {
-            return email + ";" + password + ";" + dni + ";" + nombreUser + ";" + rol.NombreRol + ";" + fechaNac;
+            return email + ";" + password + ";" + dni + ";" + nombreUser + ";" + rol.NombreRol + ";" + fechaNac.ToShortDateString();
         }
 
         public override bool Equals(object obj)

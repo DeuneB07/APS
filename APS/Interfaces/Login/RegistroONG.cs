@@ -43,7 +43,7 @@ namespace APS.Interfaces
                 Usuario nuevoUser = new Usuario(correo, pwd, tUsuario.Text, new Rol("ONG"));
 
                 if (tDNI.Text != "") nuevoUser.DNI = tDNI.Text;
-                if (!dateTimePickerFechNacimiento.Value.Equals(DateTime.Today)) nuevoUser.FechaNac = dateTimePickerFechNacimiento.Value.ToShortDateString();
+                if (!dateTimePickerFechNacimiento.Value.Equals(DateTime.Today)) nuevoUser.FechaNac = dateTimePickerFechNacimiento.Value;
                 
                 MessageBox.Show("Usuario creado correctamente");
 

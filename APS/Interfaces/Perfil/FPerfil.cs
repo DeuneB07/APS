@@ -42,7 +42,7 @@ namespace APS.Interfaces
             lDNI2.Text = user.DNI;
             lNombre2.Text = user.Nombre + " " + user.Apellido1 + " " + user.Apellido2;
             lMail2.Text = user.Email;
-            lFecha2.Text = user.FechaNac;
+            lFecha2.Text = user.FechaNac.ToShortDateString();
             cargarAsignaturas();
             cargarGrados();
         }
@@ -53,7 +53,7 @@ namespace APS.Interfaces
             lDNI2.Text = user.DNI;
             lNombre2.Text = user.Nombre + " " + user.Apellido1 + " " + user.Apellido2;
             lMail2.Text = user.Email;
-            lFecha2.Text = user.FechaNac;
+            lFecha2.Text = user.FechaNac.ToShortDateString();
             cargarAsignaturas();
             lGrados.Visible = false;
             lGradosUno.Visible = false;
@@ -86,7 +86,7 @@ namespace APS.Interfaces
             lDNI2.Text = user.DNI;
             lNombre2.Text = user.Nombre + " " + user.Apellido1 + " " + user.Apellido2;
             lMail2.Text = user.Email;
-            lFecha2.Text = user.FechaNac;
+            lFecha2.Text = user.FechaNac.ToShortDateString();
 
             lAsignaturas.Visible = false;
             listAsignaturas.Visible = false;
@@ -102,7 +102,7 @@ namespace APS.Interfaces
             lDNI2.Text = user.DNI;
             lNombre2.Text = user.Nombre + user.Apellido1 + user.Apellido2;
             lMail2.Text = user.Email;
-            lFecha2.Text = user.FechaNac;
+            lFecha2.Text = user.FechaNac.ToShortDateString();
 
             lDNI.Visible = false;
             lDNI2.Visible = false;

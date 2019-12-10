@@ -1,4 +1,5 @@
 ﻿using APS.Interfaces.Gestión_Actividades;
+using APS.Interfaces.Personalizados;
 using APS.Mapeo;
 using System;
 using System.Collections.Generic;
@@ -41,11 +42,39 @@ namespace APS.Interfaces
             //this.gradosTableAdapter.Fill(this.wePassDataSet.Grados);
             //this.actividadesTableAdapter.Fill(this.wePassDataSet.Actividades);
 
-            cargarTodasActividades();
+            cargarTodasActividadesChulas();
+            //cargarTodasActividades();
             cargarPendientesActividades();
             cargarRevisionActividades();
             //cargarMisActividades();
             //cargarActividadesInscrito();
+        }
+
+        private void cargarFiltros()
+        {
+            CartelFiltros cFiltro = new CartelFiltros(this.user);
+            panelTodas.Controls.Add(cFiltro);
+        }
+
+        private void cargarTodasActividadesChulas()
+        {
+
+            pTodas.Controls.Add(panelTodas);
+            cargarFiltros();
+
+            List<Actividad> actividades = Actividad.ListaActividades();
+            CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
+            
+
+            int c = 0;
+            foreach (Actividad act in actividades)
+            {
+                actsCarteles[c] = new CartelActividadesStandard(user, act);
+                panelTodas.Controls.Add(actsCarteles[c]);
+                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c) + 50);
+                c++;
+            }
+
         }
 
         private void cargarTodasActividades()
@@ -55,7 +84,7 @@ namespace APS.Interfaces
             {
                 actividades.Add(act);
             }
-            this.dataGridViewActividades.DataSource = actividades;
+            //this.dataGridViewActividades.DataSource = actividades;
         }
 
         private void cargarPendientesActividades()
@@ -80,7 +109,7 @@ namespace APS.Interfaces
                 actividades.Add(act);
             }
             actividades.Sort();
-            this.dataGridViewActividades.DataSource = actividades;
+            //this.dataGridViewActividades.DataSource = actividades;
         }
 
         private void bLogout_Click(object sender, EventArgs e)
