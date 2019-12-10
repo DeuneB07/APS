@@ -266,25 +266,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Image1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\IMG_20170220_225138.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mascot_allsides.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconmas.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\sobre.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\sobre%281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
