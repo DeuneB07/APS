@@ -204,7 +204,7 @@ namespace APS.Interfaces
             int i = e.RowIndex;
             int id = int.Parse(this.dataGridViewPendientes.Rows[i].Cells[0].Value.ToString());
             Actividad pendiente = new Actividad(id);
-            VerActividad verActividad = new VerActividad(user, pendiente);
+            VerActividadGestor verActividad = new VerActividadGestor(user, pendiente);
             this.Visible = false;
             verActividad.ShowDialog();
             this.Visible = true;

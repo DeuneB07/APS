@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace APS.Interfaces.Gestión_Actividades
 {
-    public partial class VerActividad : Form
+    public partial class VerActividadGestor : Form
     {
         private Usuario user;
         private Actividad actividad;
 
-        public VerActividad(Usuario user, Actividad actividad)
+        public VerActividadGestor(Usuario user, Actividad actividad)
         {
             InitializeComponent();
             this.user = user;

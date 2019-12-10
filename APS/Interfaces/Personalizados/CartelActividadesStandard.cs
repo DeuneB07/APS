@@ -119,7 +119,7 @@ namespace APS.Interfaces.Personalizados
 
         private void bVerMas_Click(object sender, EventArgs e)
         {
-            VerActividad vAct = new VerActividad(this.user, this.a);
+            VerActividadGestor vAct = new VerActividadGestor(this.user, this.a);
             vAct.ShowDialog();
         }
 
