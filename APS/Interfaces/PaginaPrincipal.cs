@@ -52,8 +52,10 @@ namespace APS.Interfaces
 
         private void cargarFiltros()
         {
+            //pTodas
             CartelFiltros cFiltro = new CartelFiltros(this.user);
-            panelTodas.Controls.Add(cFiltro);
+            panelTodas.Controls.Add(cFiltro, 0, 0);
+            panelTodas.RowCount = panelTodas.RowCount + 1;
         }
 
         private void cargarTodasActividadesChulas()
@@ -64,14 +66,14 @@ namespace APS.Interfaces
 
             List<Actividad> actividades = Actividad.ListaActividades();
             CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
-            
 
             int c = 0;
             foreach (Actividad act in actividades)
             {
                 actsCarteles[c] = new CartelActividadesStandard(user, act);
-                panelTodas.Controls.Add(actsCarteles[c]);
-                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c) + 50);
+                panelTodas.Controls.Add(actsCarteles[c], 0, c+1);
+                panelTodas.RowCount = panelTodas.RowCount + 1;
+                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
                 c++;
             }
 
