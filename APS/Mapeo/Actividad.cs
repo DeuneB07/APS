@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using BDLibrary;
 using APS.BD;
+using System.Drawing;
+using System.IO;
+using System.Text;
 
 namespace APS.Mapeo
 {
@@ -34,7 +37,7 @@ namespace APS.Mapeo
         private Proyecto proyecto;
         private double notaMedia;
         private EstadoActividadE estadoAct;
-        private String imagen;
+        private Image imagen;
         private TipoTrabajoE tipoTrabajo;
         private AmbitoTrabajoE ambitoTrabajo;
         private List<Competencia> competencias; //lazzy
@@ -129,14 +132,14 @@ namespace APS.Mapeo
             Enum.TryParse<EstadoActividadE>((String)tupla[16],true,out estadoAct);
             imagen = null;
             if (!(tupla[18].ToString().Equals(""))) Enum.TryParse<AmbitoTrabajoE>((String)tupla[18], true,out ambitoTrabajo);
-            if (!(tupla[17].ToString().Equals(""))) Enum.TryParse<TipoTrabajoE>((String)tupla[19], true, out tipoTrabajo);
+            if (!(tupla[19].ToString().Equals(""))) Enum.TryParse<TipoTrabajoE>((String)tupla[19], true, out tipoTrabajo);
             competencias = null;
         }
-
+        /*
         public Actividad(String nombreAct, String descAct, int numPlazas, int numHoras, TurnoE turno,
                          DateTime fechaInicio, DateTime fechaFin, String lugar, Usuario organizador,
                          Usuario responsable, Grado grado, Asignatura asig, TipoActividadE tipoAct,
-                         Proyecto proy, double notaMedia, EstadoActividadE estadoAct, String imagen, TipoTrabajoE tipoTrabajo, AmbitoTrabajoE ambitoTrabajo)
+                         Proyecto proy, double notaMedia, EstadoActividadE estadoAct, Image imagen, TipoTrabajoE tipoTrabajo, AmbitoTrabajoE ambitoTrabajo)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             String ins = "INSERT INTO Actividades VALUES ('" + nombreAct + "','"
@@ -163,11 +166,11 @@ namespace APS.Mapeo
             this.proyecto = proy;
             this.notaMedia = notaMedia;
             this.estadoAct = estadoAct;
-            //this.imagen = imagen;
+            this.imagen = imagen;
             this.tipoTrabajo = tipoTrabajo;
             this.ambitoTrabajo = ambitoTrabajo;
             competencias = null;
-        }
+        }*/
 
         public Actividad(String nombreAct, String descAct, int numPlazas, int numHoras, TurnoE turno,
                  DateTime fechaInicio, DateTime fechaFin, String lugar, Usuario organizador,
@@ -414,14 +417,28 @@ namespace APS.Mapeo
             }
         }
 
-        /*public File Imagen
+        public Image Imagen
         {
             get { return imagen; }
             set
             {
+                using (var db = new ActividadesDB.Entities())
+                {
+                    int id = this.ID_Actividad;
+                    var obj = db.Actividades.Find(id);
 
+                    //CONVERT TO ARRAY
+                    MemoryStream m_MemoryStream = new MemoryStream();
+                    value.Save(m_MemoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                    byte[] m_imagen = m_MemoryStream.ToArray();
+
+                    obj.imagen = m_imagen;
+                    db.SaveChanges();
+                    
+                }
+                this.imagen = value;
             }
-        }*/
+        }
 
         public TipoTrabajoE TipoTrabajo
         {

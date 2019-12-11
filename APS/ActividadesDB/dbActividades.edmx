@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WePassModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Actividades">
+          <Key>
+            <PropertyRef Name="ID_Actividad" />
+          </Key>
+          <Property Name="ID_Actividad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreAct" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcionAct" Type="text" Nullable="false" />
+          <Property Name="numPlazas" Type="int" Nullable="false" />
+          <Property Name="numHoras" Type="int" Nullable="false" />
+          <Property Name="turno" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fechaInicio" Type="date" Nullable="false" />
+          <Property Name="fechaFin" Type="date" Nullable="false" />
+          <Property Name="lugar" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="emailOrganizador" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="emailResponsable" Type="varchar" MaxLength="50" />
+          <Property Name="idGrado" Type="int" />
+          <Property Name="idAsig" Type="int" />
+          <Property Name="tipoAct" Type="varchar" MaxLength="50" />
+          <Property Name="idProy" Type="int" />
+          <Property Name="notaMedia" Type="real" />
+          <Property Name="estadoAct" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="imagen" Type="varbinary(max)" />
+          <Property Name="ambitoTrabajo" Type="varchar" MaxLength="50" />
+          <Property Name="tipoTrabajo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="WePassModelStoreContainer">
+          <EntitySet Name="Actividades" EntityType="Self.Actividades" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WePassModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Actividades">
+          <Key>
+            <PropertyRef Name="ID_Actividad" />
+          </Key>
+          <Property Name="ID_Actividad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreAct" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcionAct" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numPlazas" Type="Int32" Nullable="false" />
+          <Property Name="numHoras" Type="Int32" Nullable="false" />
+          <Property Name="turno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fechaFin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="lugar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emailOrganizador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emailResponsable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idGrado" Type="Int32" />
+          <Property Name="idAsig" Type="Int32" />
+          <Property Name="tipoAct" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idProy" Type="Int32" />
+          <Property Name="notaMedia" Type="Single" />
+          <Property Name="estadoAct" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ambitoTrabajo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tipoTrabajo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Actividades" EntityType="Self.Actividades" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WePassModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Actividades">
+            <EntityTypeMapping TypeName="WePassModel.Actividades">
+              <MappingFragment StoreEntitySet="Actividades">
+                <ScalarProperty Name="ID_Actividad" ColumnName="ID_Actividad" />
+                <ScalarProperty Name="nombreAct" ColumnName="nombreAct" />
+                <ScalarProperty Name="descripcionAct" ColumnName="descripcionAct" />
+                <ScalarProperty Name="numPlazas" ColumnName="numPlazas" />
+                <ScalarProperty Name="numHoras" ColumnName="numHoras" />
+                <ScalarProperty Name="turno" ColumnName="turno" />
+                <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+                <ScalarProperty Name="fechaFin" ColumnName="fechaFin" />
+                <ScalarProperty Name="lugar" ColumnName="lugar" />
+                <ScalarProperty Name="emailOrganizador" ColumnName="emailOrganizador" />
+                <ScalarProperty Name="emailResponsable" ColumnName="emailResponsable" />
+                <ScalarProperty Name="idGrado" ColumnName="idGrado" />
+                <ScalarProperty Name="idAsig" ColumnName="idAsig" />
+                <ScalarProperty Name="tipoAct" ColumnName="tipoAct" />
+                <ScalarProperty Name="idProy" ColumnName="idProy" />
+                <ScalarProperty Name="notaMedia" ColumnName="notaMedia" />
+                <ScalarProperty Name="estadoAct" ColumnName="estadoAct" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+                <ScalarProperty Name="ambitoTrabajo" ColumnName="ambitoTrabajo" />
+                <ScalarProperty Name="tipoTrabajo" ColumnName="tipoTrabajo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
