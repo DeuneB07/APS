@@ -285,6 +285,7 @@
             this.btnAceptarRevision.TabIndex = 52;
             this.btnAceptarRevision.Text = "Aceptar";
             this.btnAceptarRevision.UseVisualStyleBackColor = true;
+            this.btnAceptarRevision.Click += new System.EventHandler(this.btnAceptarRevision_Click);
             // 
             // btnRechazarRevision
             // 
@@ -295,6 +296,7 @@
             this.btnRechazarRevision.TabIndex = 53;
             this.btnRechazarRevision.Text = "Rechazar";
             this.btnRechazarRevision.UseVisualStyleBackColor = true;
+            this.btnRechazarRevision.Click += new System.EventHandler(this.btnRechazarRevision_Click);
             // 
             // btnCancelarRevision
             // 

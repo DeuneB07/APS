@@ -156,11 +156,14 @@ namespace APS.Interfaces
             int c = 0;
             foreach (Actividad act in listAct)
             {
-                actsCarteles[c] = new CartelActividadesStandard(user, act);
-                panelTodas.Controls.Add(actsCarteles[c], 0, c + 1);
-                panelTodas.RowCount = panelTodas.RowCount + 1;
-                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
-                c++;
+                if (act.EstadoAct.ToString().Equals("ABIERTA"))
+                {
+                    actsCarteles[c] = new CartelActividadesStandard(user, act);
+                    panelTodas.Controls.Add(actsCarteles[c], 0, c + 1);
+                    panelTodas.RowCount = panelTodas.RowCount + 1;
+                    actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
+                    c++;
+                }
             }
         }
 
@@ -176,11 +179,15 @@ namespace APS.Interfaces
             int c = 0;
             foreach (Actividad act in actividades)
             {
-                actsCarteles[c] = new CartelActividadesStandard(user, act);
-                panelTodas.Controls.Add(actsCarteles[c], 0, c+1);
-                panelTodas.RowCount = panelTodas.RowCount + 1;
-                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
-                c++;
+                if(act.EstadoAct.ToString().Equals("ABIERTA"))
+                {
+                    actsCarteles[c] = new CartelActividadesStandard(user, act);
+                    panelTodas.Controls.Add(actsCarteles[c], 0, c + 1);
+                    panelTodas.RowCount = panelTodas.RowCount + 1;
+                    actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
+                    c++;
+                }
+                
             }
 
         }
@@ -190,7 +197,11 @@ namespace APS.Interfaces
             List<Actividad> actividades = new List<Actividad>();
             foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA))
             {
-                actividades.Add(act);
+                if(act.EstadoAct.ToString().Equals("ABIERTA"))
+                {
+                    actividades.Add(act);
+                }
+                
             }
             //this.dataGridViewActividades.DataSource = actividades;
         }
