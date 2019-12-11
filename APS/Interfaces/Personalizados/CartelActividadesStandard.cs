@@ -30,6 +30,7 @@ namespace APS.Interfaces.Personalizados
             this.lShowIni.Text = a.FechaInicio.ToShortDateString();
             this.lShowFin.Text = a.FechaFin.ToShortDateString();
             this.lShowOrg.Text = a.Organizador.Nombre;
+
             if (a.Responsable != null)
             {
                 this.lShowResp.Text = a.Responsable.Nombre + " " + a.Responsable.Apellido1 + " " + a.Responsable.Apellido2;

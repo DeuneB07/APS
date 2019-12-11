@@ -42,7 +42,7 @@ namespace APS.Interfaces
             //this.gradosTableAdapter.Fill(this.wePassDataSet.Grados);
             //this.actividadesTableAdapter.Fill(this.wePassDataSet.Actividades);
 
-            cargarTodasActividadesChulas();
+            cargarTodasActividadesInicio();
             //cargarTodasActividades();
             cargarPendientesActividades();
             cargarRevisionActividades();
@@ -56,9 +56,115 @@ namespace APS.Interfaces
             CartelFiltros cFiltro = new CartelFiltros(this.user);
             panelTodas.Controls.Add(cFiltro, 0, 0);
             panelTodas.RowCount = panelTodas.RowCount + 1;
+            
+            //Pulsación Filtros
+            Control panelFiltro = cFiltro.Controls.Find("panel1", false)[0]; //Panel de Filtros
+            List<ComboBox> cBox = new List<ComboBox>(); //ComboBox de Filtros [Horas, Turno, TipoAct, Asig, Grado];
+            DateTimePicker dtIni = new DateTimePicker(); //DateTimePicker de Filtros
+            Button bFiltros = new Button(); //Button de Filtros -> Aplicar
+
+            //Recojo los Botones
+            foreach(Control cPanel in panelFiltro.Controls)
+            {
+                if (cPanel.GetType().ToString().Equals("System.Windows.Forms.ComboBox")) cBox.Add((ComboBox)cPanel);
+                if (cPanel.GetType().ToString().Equals("System.Windows.Forms.Button")) bFiltros = (Button)cPanel;
+                if (cPanel.GetType().ToString().Equals("System.Windows.Forms.DateTimePicker")) dtIni = (DateTimePicker)cPanel;
+            }
+
+            //Añadimos Parámetros para el Filtro
+            bFiltros.Click += (sender, EventArgs) => { bFiltros_Click(sender, EventArgs, cBox, dtIni); };
         }
 
-        private void cargarTodasActividadesChulas()
+        private void bFiltros_Click(object sender, EventArgs e, List<ComboBox> cBox, DateTimePicker dtIni)
+        {
+            List<Actividad> lAct = Actividad.ListaActividades();
+            Grado g = null;
+            Asignatura asig = null;
+            Actividad.TurnoE turnoF;
+            Actividad.TipoActividadE tipoActF;
+            int horas = -1;
+
+            if (cBox[0].SelectedItem != null) horas = int.Parse(cBox[0].SelectedItem.ToString());
+            if (cBox[4].SelectedItem != null) g = (Grado)cBox[4].SelectedItem;
+            if (cBox[3].SelectedItem != null) asig = (Asignatura) cBox[3].SelectedItem;
+
+            Enum.TryParse<Actividad.TurnoE>(cBox[1].Text, true, out turnoF);
+            Enum.TryParse<Actividad.TipoActividadE>(cBox[2].Text, true, out tipoActF);
+
+            //Filtro Grado
+            if (g != null)
+            {
+                foreach (Actividad a in Actividad.ListaActividades())
+                {
+                   if (a.Grado == null || !a.Grado.Equals(g))
+                   {
+                        lAct.Remove(a);
+                   }
+                }
+            }
+
+            //Filtro Asignatura
+            if (asig != null)
+            {
+                foreach (Actividad a in Actividad.ListaActividades())
+                {
+                    if (a.Asignatura == null || !a.Asignatura.Equals(asig)) lAct.Remove(a);
+                }
+            }
+
+            //Filtro Turno
+            if (!turnoF.Equals(null) && !turnoF.Equals(Actividad.TurnoE.AMBAS))
+            {
+                foreach(Actividad a in Actividad.ListaActividades())
+                {
+                    if (!a.Turno.Equals(turnoF)) lAct.Remove(a);
+                }
+            }
+
+            //Filtro TipoActividad
+            if (!tipoActF.Equals(null) && !tipoActF.Equals(Actividad.TipoActividadE.TODAS))
+            {
+                foreach (Actividad a in Actividad.ListaActividades())
+                {
+                    if (!a.TipoAct.Equals(tipoActF)) lAct.Remove(a);
+                }
+            }
+
+            //Filtro Horas
+            if (horas != -1)
+            {
+                foreach (Actividad a in Actividad.ListaActividades())
+                {
+                    if (a.NumHoras != horas) lAct.Remove(a);
+                }
+            }
+
+
+            cargarTodasActividadesFiltro(lAct);
+        }
+
+        private void cargarTodasActividadesFiltro(List<Actividad> listAct)
+        {
+            panelTodas.Controls.Clear();
+            panelTodas.AutoScroll = false;
+            panelTodas.AutoScroll = true;
+            panelTodas.RowCount = 1;
+            cargarFiltros();
+
+            CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[listAct.Count];
+
+            int c = 0;
+            foreach (Actividad act in listAct)
+            {
+                actsCarteles[c] = new CartelActividadesStandard(user, act);
+                panelTodas.Controls.Add(actsCarteles[c], 0, c + 1);
+                panelTodas.RowCount = panelTodas.RowCount + 1;
+                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
+                c++;
+            }
+        }
+
+        private void cargarTodasActividadesInicio()
         {
 
             pTodas.Controls.Add(panelTodas);
