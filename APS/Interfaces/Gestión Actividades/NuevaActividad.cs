@@ -41,8 +41,23 @@ namespace APS.Interfaces
                 TipoTrabajoE trabajo;
                 Enum.TryParse<TipoTrabajoE>(listTrabajo.SelectedItem.ToString(),true,out trabajo);
 
+                /*if (pictureBox.Image != null)
+                {
+                    //**** GUARDAR IMAGEN****
+                    int m_codigo = Convert.ToInt32(1);
+                    MemoryStream m_MemoryStream = new MemoryStream();
+                    pictureBox.Image.Save(m_MemoryStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    byte[] m_imagen = m_MemoryStream.ToArray();
+                    //Como ven lo que realmente enviamos a la tabla es un arreglo de byte 🙂 
+                    //y podemos decir que estas tres lineas anteriores son lo complicado de la tarea.
+                    //*******************************
+                }*/
+
+                
                 Actividad a = new Actividad(tNombreAct.Text,tDescripcion.Text,int.Parse(tNumPlazas.Text),int.Parse(tNumHoras.Text),turno,dateTimePickerFechaIni.Value,dateTimePickerFechaFin.Value,
                                             tLugar.Text,ong,EstadoActividadE.PENDIENTE_ACEPTACION,ambito,trabajo);
+
+                if(!tURL.Text.Trim().Equals("")) a.Imagen = pictureBox.Image;
 
                 MessageBox.Show("Actividad creada correctamente.\n La actividad pasará a trámite del gestor del sistema");
                 MessageBox.Show("ambito; " + ambito + " trabajo: " + trabajo);
@@ -52,6 +67,7 @@ namespace APS.Interfaces
             }catch(Exception ex)
             {
                 labelError.Text = "ERROR: Faltan Parámetros o son incorrectos. \n"+ex.Message;
+                Console.WriteLine(ex.StackTrace);
             }
 
         }
@@ -61,28 +77,17 @@ namespace APS.Interfaces
             this.Close();
         }
 
-      /*  private void btnExaminar_Click(object sender, EventArgs e)
+        private void btnExaminar_Click(object sender, EventArgs e)
         {
-            OpenFileDialog OD = new OpenFileDialog();
-            OD.Filter = "Imagenes jpg(*.jpg)| *.jpg | All Files(*.*) | *.*";
-            if (OD.ShowDialog() == true)
+            openFileDialog1.Filter = "Archivos jpg (*.jpg)|*.jpg|Archivos png(*.png)|*.png";
+            openFileDialog1.FilterIndex = 1;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                using (Stream stream = OD.OpenFile())
-                {
-                    bitCoder = BitmapDecoder.Create(stream, BitmapCreateOptions.PreservePixelFormat,
-                        BitmapCacheOption.OnLoad);
-                    Foto.Source = bitCoder.Frames[0];
-                    txtRutaImagen.Text = OD.FileName;
-                }
+                tURL.Text = openFileDialog1.FileName;
             }
-            else
-            {
-                Foto.Source = null;
-            }
-            System.IO.FileStream fs;
-            fs = new System.IO.FileStream(txtRutaImagen.Text, System.IO.FileMode.Open);
-            imagen = new byte[Convert.ToInt32(fs.Length.ToString())];
-            fs.Read(imagen, 0, imagen.Length);
-        }*/
+
+            pictureBox.ImageLocation = openFileDialog1.FileName;
+        }
     }
 }

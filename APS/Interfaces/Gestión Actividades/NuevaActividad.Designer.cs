@@ -54,18 +54,21 @@ namespace APS.Interfaces
             this.dateTimePickerFechaIni = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerFechaFin = new System.Windows.Forms.DateTimePicker();
             this.tLugar = new System.Windows.Forms.TextBox();
-            this.tImagen = new System.Windows.Forms.TextBox();
+            this.tURL = new System.Windows.Forms.TextBox();
             this.listTurno = new System.Windows.Forms.ListBox();
             this.listAmbito = new System.Windows.Forms.ListBox();
-            this.actividadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listTrabajo = new System.Windows.Forms.ListBox();
             this.labelError = new System.Windows.Forms.Label();
             this.ambitoTrabajoEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipoTrabajoEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnExaminar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.actividadBindingSource)).BeginInit();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.actividadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ambitoTrabajoEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoTrabajoEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actividadBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelOrganizador
@@ -254,12 +257,13 @@ namespace APS.Interfaces
             this.tLugar.Size = new System.Drawing.Size(196, 22);
             this.tLugar.TabIndex = 22;
             // 
-            // tImagen
+            // tURL
             // 
-            this.tImagen.Location = new System.Drawing.Point(435, 430);
-            this.tImagen.Name = "tImagen";
-            this.tImagen.Size = new System.Drawing.Size(115, 22);
-            this.tImagen.TabIndex = 23;
+            this.tURL.Enabled = false;
+            this.tURL.Location = new System.Drawing.Point(435, 430);
+            this.tURL.Name = "tURL";
+            this.tURL.Size = new System.Drawing.Size(115, 22);
+            this.tURL.TabIndex = 23;
             // 
             // listTurno
             // 
@@ -289,10 +293,6 @@ namespace APS.Interfaces
             this.listAmbito.Name = "listAmbito";
             this.listAmbito.Size = new System.Drawing.Size(138, 20);
             this.listAmbito.TabIndex = 25;
-            // 
-            // actividadBindingSource
-            // 
-            this.actividadBindingSource.DataSource = typeof(APS.Mapeo.Actividad);
             // 
             // listTrabajo
             // 
@@ -335,18 +335,36 @@ namespace APS.Interfaces
             this.btnExaminar.TabIndex = 28;
             this.btnExaminar.Text = "Examinar";
             this.btnExaminar.UseVisualStyleBackColor = true;
+            this.btnExaminar.Click += new System.EventHandler(this.btnExaminar_Click);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(438, 472);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(136, 59);
+            this.pictureBox.TabIndex = 29;
+            this.pictureBox.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // actividadBindingSource
+            // 
+            this.actividadBindingSource.DataSource = typeof(APS.Mapeo.Actividad);
             // 
             // NuevaActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 629);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.btnExaminar);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.listTrabajo);
             this.Controls.Add(this.listAmbito);
             this.Controls.Add(this.listTurno);
-            this.Controls.Add(this.tImagen);
+            this.Controls.Add(this.tURL);
             this.Controls.Add(this.tLugar);
             this.Controls.Add(this.dateTimePickerFechaFin);
             this.Controls.Add(this.dateTimePickerFechaIni);
@@ -372,9 +390,10 @@ namespace APS.Interfaces
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NuevaActividad";
             this.Text = "Nueva Actividad";
-            ((System.ComponentModel.ISupportInitialize)(this.actividadBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ambitoTrabajoEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoTrabajoEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actividadBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,7 +423,7 @@ namespace APS.Interfaces
         private System.Windows.Forms.DateTimePicker dateTimePickerFechaIni;
         private System.Windows.Forms.DateTimePicker dateTimePickerFechaFin;
         private System.Windows.Forms.TextBox tLugar;
-        private System.Windows.Forms.TextBox tImagen;
+        private System.Windows.Forms.TextBox tURL;
         private System.Windows.Forms.ListBox listTurno;
         private System.Windows.Forms.ListBox listAmbito;
         private System.Windows.Forms.ListBox listTrabajo;
@@ -413,5 +432,7 @@ namespace APS.Interfaces
         private System.Windows.Forms.BindingSource tipoTrabajoEBindingSource;
         private System.Windows.Forms.BindingSource actividadBindingSource;
         private System.Windows.Forms.Button btnExaminar;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
