@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace APS.Interfaces
     {
 
         private Usuario ong;
+
+        byte[] imagen;
 
         public NuevaActividad(Usuario ong)
         {
@@ -58,5 +61,28 @@ namespace APS.Interfaces
             this.Close();
         }
 
+      /*  private void btnExaminar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OD = new OpenFileDialog();
+            OD.Filter = "Imagenes jpg(*.jpg)| *.jpg | All Files(*.*) | *.*";
+            if (OD.ShowDialog() == true)
+            {
+                using (Stream stream = OD.OpenFile())
+                {
+                    bitCoder = BitmapDecoder.Create(stream, BitmapCreateOptions.PreservePixelFormat,
+                        BitmapCacheOption.OnLoad);
+                    Foto.Source = bitCoder.Frames[0];
+                    txtRutaImagen.Text = OD.FileName;
+                }
+            }
+            else
+            {
+                Foto.Source = null;
+            }
+            System.IO.FileStream fs;
+            fs = new System.IO.FileStream(txtRutaImagen.Text, System.IO.FileMode.Open);
+            imagen = new byte[Convert.ToInt32(fs.Length.ToString())];
+            fs.Read(imagen, 0, imagen.Length);
+        }*/
     }
 }

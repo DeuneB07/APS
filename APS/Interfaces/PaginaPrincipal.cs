@@ -222,7 +222,7 @@ namespace APS.Interfaces
             //VER ACTIVIDAD A REVISAR POR EL PDI
             if (rol.NombreRol.Equals("PDI") && revision.EstadoAct.Equals(Actividad.EstadoActividadE.NEGOCIACION_PDI))
             {
-                VerActividad verActividad = new VerActividad(user, revision);
+                VerActividadRevision verActividad = new VerActividadRevision(user, revision);
                 this.Visible = false;
                 verActividad.ShowDialog();
                 this.Visible = true;
@@ -230,7 +230,7 @@ namespace APS.Interfaces
             //VER ACTIVIDAD A REVISAR POR LA ONG
             else if (revision.EstadoAct.Equals(Actividad.EstadoActividadE.NEGOCIACION_ONG))
             {
-                VerActividad verActividad = new VerActividad(user, revision);
+                VerActividadRevision verActividad = new VerActividadRevision(user, revision);
                 this.Visible = false;
                 verActividad.ShowDialog();
                 this.Visible = true;

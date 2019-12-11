@@ -62,6 +62,7 @@ namespace APS.Interfaces
             this.labelError = new System.Windows.Forms.Label();
             this.ambitoTrabajoEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipoTrabajoEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnExaminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.actividadBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ambitoTrabajoEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoTrabajoEBindingSource)).BeginInit();
@@ -257,7 +258,7 @@ namespace APS.Interfaces
             // 
             this.tImagen.Location = new System.Drawing.Point(435, 430);
             this.tImagen.Name = "tImagen";
-            this.tImagen.Size = new System.Drawing.Size(170, 22);
+            this.tImagen.Size = new System.Drawing.Size(115, 22);
             this.tImagen.TabIndex = 23;
             // 
             // listTurno
@@ -298,14 +299,13 @@ namespace APS.Interfaces
             this.listTrabajo.FormattingEnabled = true;
             this.listTrabajo.ItemHeight = 16;
             this.listTrabajo.Items.AddRange(new object[] {
-            Actividad.TipoTrabajoE.TODAS,
-            Actividad.TipoTrabajoE.SALUD,
-            Actividad.TipoTrabajoE.EVENTO});
+            APS.Mapeo.Actividad.TipoTrabajoE.TODAS,
+            APS.Mapeo.Actividad.TipoTrabajoE.SALUD,
+            APS.Mapeo.Actividad.TipoTrabajoE.EVENTO});
             this.listTrabajo.Location = new System.Drawing.Point(243, 503);
             this.listTrabajo.Name = "listTrabajo";
             this.listTrabajo.Size = new System.Drawing.Size(138, 20);
             this.listTrabajo.TabIndex = 26;
-            
             // 
             // labelError
             // 
@@ -327,11 +327,21 @@ namespace APS.Interfaces
             // 
             this.tipoTrabajoEBindingSource.DataSource = typeof(APS.Mapeo.Actividad.TipoTrabajoE);
             // 
+            // btnExaminar
+            // 
+            this.btnExaminar.Location = new System.Drawing.Point(556, 429);
+            this.btnExaminar.Name = "btnExaminar";
+            this.btnExaminar.Size = new System.Drawing.Size(75, 23);
+            this.btnExaminar.TabIndex = 28;
+            this.btnExaminar.Text = "Examinar";
+            this.btnExaminar.UseVisualStyleBackColor = true;
+            // 
             // NuevaActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 629);
+            this.Controls.Add(this.btnExaminar);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.listTrabajo);
             this.Controls.Add(this.listAmbito);
@@ -402,5 +412,6 @@ namespace APS.Interfaces
         private System.Windows.Forms.BindingSource ambitoTrabajoEBindingSource;
         private System.Windows.Forms.BindingSource tipoTrabajoEBindingSource;
         private System.Windows.Forms.BindingSource actividadBindingSource;
+        private System.Windows.Forms.Button btnExaminar;
     }
 }
