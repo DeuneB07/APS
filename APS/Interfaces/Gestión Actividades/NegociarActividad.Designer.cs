@@ -280,6 +280,7 @@
             this.btnAceptarNegociar.TabIndex = 74;
             this.btnAceptarNegociar.Text = "Aceptar";
             this.btnAceptarNegociar.UseVisualStyleBackColor = true;
+            this.btnAceptarNegociar.Click += new System.EventHandler(this.btnAceptarNegociar_Click);
             // 
             // btnCancelarNegociar
             // 

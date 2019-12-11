@@ -38,5 +38,22 @@ namespace APS.Interfaces.Gestión_Actividades
         {
             this.Close();
         }
+
+        private void btnAceptarNegociar_Click(object sender, EventArgs e)
+        {   
+            APS.Mapeo.Actividad.TurnoE turno;
+            if (!tNumPlazasNegociar.Text.Equals("") && !tNumPlazasNegociar.Text.Equals(actividad.NumPlazas.ToString())) actividad.NumPlazas = int.Parse(tNumPlazasNegociar.Text);
+            if (!tNumHorasNegociar.Text.Equals("") && !tNumHorasNegociar.Text.Equals(actividad.NumHoras.ToString())) actividad.NumHoras = int.Parse(tNumHorasNegociar.Text);
+            Enum.TryParse<APS.Mapeo.Actividad.TurnoE>(listTurnoNegociar.Text, true, out turno);
+            if (!listTurnoNegociar.Text.Equals("") && !listTurnoNegociar.Text.Equals(actividad.Turno.ToString())) actividad.Turno = turno;
+            if (user.ToString().Equals("PDI"))
+            {
+                actividad.EstadoAct = Actividad.EstadoActividadE.NEGOCIACION_ONG;
+            } else
+            {
+                actividad.EstadoAct = Actividad.EstadoActividadE.NEGOCIACION_PDI;
+            }
+            this.Close();
+        }
     }
 }

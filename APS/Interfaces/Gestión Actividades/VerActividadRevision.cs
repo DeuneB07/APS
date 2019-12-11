@@ -56,6 +56,7 @@ namespace APS.Interfaces.Gestión_Actividades
                 //Mostrar la actividad en Todas
                 //Borrar la actividad de la pantalla de En Revisión del PDI
                 //Mandar un mensaje a la ONG diciendo que su actividad ha sido rechazada por el profesor y se ha subido como Voluntariado
+                this.Close();
             } else //Viene de ser negociada por la ONG
             {
                 actividad.TipoAct = Actividad.TipoActividadE.VOLUNTARIADO;
@@ -63,6 +64,7 @@ namespace APS.Interfaces.Gestión_Actividades
                 //Mandar actividad con algunos campos vacios a la ONG para que la rellene otra vez
                 //Borrar actividad de la pantalla de En Revisión del PDI
                 //Enviar mensaje a la ONG diciendo que la negociación a sido denegada y que deberá rellenar los datos de la actividad de nuevo para poder subirla como voluntariado
+                this.Close();
             }
         }
 
@@ -75,6 +77,7 @@ namespace APS.Interfaces.Gestión_Actividades
             //Borrar la actividad de la pantalla En Revisión de la ONG
             //Mostrar la actividad en la pantalla de Mis Actividades de la ONG
             //Mandar un mensaje a la ONG de que su actividad ha sido aceptada
+            this.Close();
         }
     }
 }
