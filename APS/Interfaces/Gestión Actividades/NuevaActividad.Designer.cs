@@ -65,7 +65,6 @@ namespace APS.Interfaces
             this.listTurno = new System.Windows.Forms.ComboBox();
             this.listAmbito = new System.Windows.Forms.ComboBox();
             this.listTrabajo = new System.Windows.Forms.ComboBox();
-            this.btnBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ambitoTrabajoEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoTrabajoEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();

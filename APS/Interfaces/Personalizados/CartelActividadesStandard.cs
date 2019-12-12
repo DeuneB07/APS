@@ -31,6 +31,7 @@ namespace APS.Interfaces.Personalizados
             this.lShowFin.Text = a.FechaFin.ToShortDateString();
             this.lShowOrg.Text = a.Organizador.Nombre;
             this.lEstado.Text = a.EstadoAct.ToString();
+            if (a.Imagen != null) pict.Image = a.Imagen;
 
             if (a.Responsable != null)
             {

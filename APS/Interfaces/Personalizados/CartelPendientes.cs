@@ -31,7 +31,7 @@ namespace APS.Interfaces.Personalizados
             this.lShowAmbito.Text = a.AmbitoTrabajo.ToString();
             this.lShowLugar.Text = a.Lugar;
             this.lShowHoras.Text = a.NumHoras.ToString();
-            //this.pict = a.Imagen;
+            if (a.Imagen != null) pict.Image = a.Imagen;
         }
 
         #region Properties
