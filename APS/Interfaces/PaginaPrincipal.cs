@@ -34,7 +34,7 @@ namespace APS.Interfaces
             if (!user.AccesoPantalla("ACTIVIDADES INSCRITAS")) tabUser.Controls.Remove(this.pActividadesInscritas);
 
             if (user.NombreUser != null) lWelcome.Text = "¡Bienvenido, " + user.Nombre + " " + user.Apellido1 + "!";
-            else lWelcome.Text = "¡Bienvenido, " + user.NombreUser + "!";
+            else lWelcome.Text = "¡Bienvenido!";
 
             lNewAct.Visible = user.InsertarPantalla("ACTIVIDADES");
             lNuevoProy.Visible = user.InsertarPantalla("PROYECTOS");
@@ -42,14 +42,47 @@ namespace APS.Interfaces
             //this.gradosTableAdapter.Fill(this.wePassDataSet.Grados);
             //this.actividadesTableAdapter.Fill(this.wePassDataSet.Actividades);
 
-            cargarFiltrosMatch();
+            cargarMatchActividadesInicio();
             cargarTodasActividadesInicio();
             
-            //cargarTodasActividades();
             cargarPendientesActividades();
             cargarRevisionActividades();
             //cargarMisActividades();
             //cargarActividadesInscritas();
+        }
+
+        //
+        // PESTAÑA MATCH
+        //
+        private void cargarMatchActividadesInicio()
+        {
+            Console.WriteLine("HOLA0");
+            pMatch.Controls.Add(panelMatch);
+            cargarFiltrosMatch();
+            Console.WriteLine("HOLA1");
+
+            List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
+            CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
+            Console.WriteLine("HOLA3");
+
+            int c = 0;
+            foreach (Actividad act in actividades)
+            {
+                Console.WriteLine("HOLAFOR1");
+                foreach(Asignatura asig in user.Asignaturas)
+                {
+                    Console.WriteLine("HOLAFOR2");
+                    if (act.Asignatura != null && act.Asignatura.Equals(asig))
+                    {
+                        Console.WriteLine("HOLAIF");
+                        actsCarteles[c] = new CartelActividadesStandard(user, act);
+                        panelMatch.Controls.Add(actsCarteles[c], 0, c + 1);
+                        panelMatch.RowCount = panelMatch.RowCount + 1;
+                        actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
+                        c++;
+                    }
+                }
+            }
         }
 
         private void cargarFiltrosMatch()
@@ -179,13 +212,58 @@ namespace APS.Interfaces
             }
         }
 
+        //
+        // PESTAÑA TODAS
+        //
+        private void cargarTodasActividadesInicio()
+        {
+
+            pTodas.Controls.Add(panelTodas);
+            cargarFiltrosTodas();
+
+            List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
+            CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
+
+            int c = 0;
+            foreach (Actividad act in actividades)
+            {
+                 actsCarteles[c] = new CartelActividadesStandard(user, act);
+                 panelTodas.Controls.Add(actsCarteles[c], 0, c + 1);
+                 panelTodas.RowCount = panelTodas.RowCount + 1;
+                 actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
+                 c++;
+            }
+
+        }
+
+        private void cargarTodasActividadesFiltro(List<Actividad> listAct)
+        {
+            panelTodas.Controls.Clear();
+            panelTodas.AutoScroll = false;
+            panelTodas.AutoScroll = true;
+            panelTodas.RowCount = 1;
+            cargarFiltrosTodas();
+
+            CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[listAct.Count];
+
+            int c = 0;
+            foreach (Actividad act in listAct)
+            {
+                actsCarteles[c] = new CartelActividadesStandard(user, act);
+                panelTodas.Controls.Add(actsCarteles[c], 0, c + 1);
+                panelTodas.RowCount = panelTodas.RowCount + 1;
+                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
+                c++;
+            }
+        }
+
         private void cargarFiltrosTodas()
         {
             //pTodas
             CartelFiltros cFiltro = new CartelFiltros(this.user);
             panelTodas.Controls.Add(cFiltro, 0, 0);
             panelTodas.RowCount = panelTodas.RowCount + 1;
-            
+
             //Pulsación Filtros
             Control panelFiltro = cFiltro.Controls.Find("panel1", false)[0]; //Panel de Filtros
             List<ComboBox> cBox = new List<ComboBox>(); //ComboBox de Filtros [Horas, Turno, TipoAct, Asig, Grado];
@@ -193,7 +271,7 @@ namespace APS.Interfaces
             Button bFiltros = new Button(); //Button de Filtros -> Aplicar
 
             //Recojo los Botones
-            foreach(Control cPanel in panelFiltro.Controls)
+            foreach (Control cPanel in panelFiltro.Controls)
             {
                 if (cPanel.GetType().ToString().Equals("System.Windows.Forms.ComboBox")) cBox.Add((ComboBox)cPanel);
                 if (cPanel.GetType().ToString().Equals("System.Windows.Forms.Button")) bFiltros = (Button)cPanel;
@@ -206,7 +284,7 @@ namespace APS.Interfaces
 
         private void bFiltros_Click(object sender, EventArgs e, List<ComboBox> cBox, DateTimePicker dtIni)
         {
-            List<Actividad> lAct = Actividad.ListaActividades();
+            List<Actividad> lAct = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
             Grado g = null;
             Asignatura asig = null;
             Actividad.TurnoE turnoF;
@@ -215,7 +293,7 @@ namespace APS.Interfaces
 
             if (cBox[0].SelectedItem != null) horas = int.Parse(cBox[0].SelectedItem.ToString());
             if (cBox[4].SelectedItem != null) g = (Grado)cBox[4].SelectedItem;
-            if (cBox[3].SelectedItem != null) asig = (Asignatura) cBox[3].SelectedItem;
+            if (cBox[3].SelectedItem != null) asig = (Asignatura)cBox[3].SelectedItem;
 
             Enum.TryParse<Actividad.TurnoE>(cBox[1].Text, true, out turnoF);
             Enum.TryParse<Actividad.TipoActividadE>(cBox[2].Text, true, out tipoActF);
@@ -225,10 +303,10 @@ namespace APS.Interfaces
             {
                 foreach (Actividad a in Actividad.ListaActividades())
                 {
-                   if (a.Grado == null || !a.Grado.Equals(g))
-                   {
+                    if (a.Grado == null || !a.Grado.Equals(g))
+                    {
                         lAct.Remove(a);
-                   }
+                    }
                 }
             }
 
@@ -244,7 +322,7 @@ namespace APS.Interfaces
             //Filtro Turno
             if (!turnoF.Equals(null) && !turnoF.Equals(Actividad.TurnoE.AMBAS))
             {
-                foreach(Actividad a in Actividad.ListaActividades())
+                foreach (Actividad a in Actividad.ListaActividades())
                 {
                     if (!a.Turno.Equals(turnoF)) lAct.Remove(a);
                 }
@@ -272,69 +350,9 @@ namespace APS.Interfaces
             cargarTodasActividadesFiltro(lAct);
         }
 
-        private void cargarTodasActividadesFiltro(List<Actividad> listAct)
-        {
-            panelTodas.Controls.Clear();
-            panelTodas.AutoScroll = false;
-            panelTodas.AutoScroll = true;
-            panelTodas.RowCount = 1;
-            cargarFiltrosTodas();
-
-            CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[listAct.Count];
-
-            int c = 0;
-            foreach (Actividad act in listAct)
-            {
-                if (act.EstadoAct.ToString().Equals("ABIERTA"))
-                {
-                    actsCarteles[c] = new CartelActividadesStandard(user, act);
-                    panelTodas.Controls.Add(actsCarteles[c], 0, c + 1);
-                    panelTodas.RowCount = panelTodas.RowCount + 1;
-                    actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
-                    c++;
-                }
-            }
-        }
-
-        private void cargarTodasActividadesInicio()
-        {
-
-            pTodas.Controls.Add(panelTodas);
-            cargarFiltrosTodas();
-
-            List<Actividad> actividades = Actividad.ListaActividades();
-            CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
-
-            int c = 0;
-            foreach (Actividad act in actividades)
-            {
-                if(act.EstadoAct.ToString().Equals("ABIERTA"))
-                {
-                    actsCarteles[c] = new CartelActividadesStandard(user, act);
-                    panelTodas.Controls.Add(actsCarteles[c], 0, c + 1);
-                    panelTodas.RowCount = panelTodas.RowCount + 1;
-                    actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
-                    c++;
-                }
-                
-            }
-
-        }
-
-        private void cargarTodasActividades()
-        {
-            List<Actividad> actividades = new List<Actividad>();
-            foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA))
-            {
-                if(act.EstadoAct.ToString().Equals("ABIERTA"))
-                {
-                    actividades.Add(act);
-                }
-                
-            }
-            //this.dataGridViewActividades.DataSource = actividades;
-        }
-
+        //
+        // PESTAÑA PENDIENTES -> estado= 'PENDIENTE_ACEPTACION' (SÓLO GESTOR)
+        //
         private void cargarPendientesActividades()
         {
             List<Actividad> actividades = new List<Actividad>();
@@ -395,6 +413,13 @@ namespace APS.Interfaces
             }*/
         }
 
+
+        //
+        // PESTAÑA REVISIÓN -> estado(s) = 'ACEPTADA_GESTOR'(PDI) -> LA VE EL PDI RESPONSABLE ASIGNADO
+        //                                  \ 'NEGOCIAR_PDI'(PDI, ONG) -> LA VE EL PDI ASIGNADO (INTERACTÚA) Y LA ONG (NO HACE NADA)
+        //                                  \'NEGOCIAR_ONG'(PDI, ONG) -> LA VE EL ONG (INTERACTÚA) Y EL PDI RESPONSABLE (NO HACE NADA)
+        //                  
+        //
         private void bLogout_Click(object sender, EventArgs e)
         {
             crearCierreSesion();
@@ -487,7 +512,6 @@ namespace APS.Interfaces
             this.Visible = false;
             verActividad.ShowDialog();
             this.Visible = true;
-            cargarTodasActividades();
             cargarPendientesActividades();
         }
 
@@ -515,7 +539,7 @@ namespace APS.Interfaces
                 this.Visible = true;
             }
             
-            cargarTodasActividades();
+            //cargarTodasActividades();
             cargarRevisionActividades();
         }
     }
