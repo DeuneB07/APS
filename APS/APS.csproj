@@ -63,6 +63,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD\BDException.cs" />
+    <Compile Include="BD\BDLibrary.cs" />
     <Compile Include="ImagenesDB\Actividades.cs">
       <DependentUpon>dbActividades.tt</DependentUpon>
     </Compile>
@@ -81,8 +83,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbActividades.edmx</DependentUpon>
     </Compile>
-    <Compile Include="BD\BDException.cs" />
-    <Compile Include="BD\BDLibrary.cs" />
     <Compile Include="Interfaces\Gestión Actividades\NegociarActividad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -373,6 +373,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\no-image.png" />
+    <None Include="Resources\userDefault.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="ImagenesDB\dbActividades.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>dbActividades.edmx</DependentUpon>
@@ -383,8 +387,6 @@
       <DependentUpon>dbActividades.edmx</DependentUpon>
       <LastGenOutput>dbActividades.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\no-image.png" />
-    <None Include="Resources\userDefault.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

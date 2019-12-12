@@ -29,28 +29,27 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lShowHoras = new System.Windows.Forms.Label();
+            this.lShowTurno = new System.Windows.Forms.Label();
+            this.lHoras = new System.Windows.Forms.Label();
+            this.lTurno = new System.Windows.Forms.Label();
             this.bRechazar = new System.Windows.Forms.Button();
             this.bRevisar = new System.Windows.Forms.Button();
             this.lShowAmbito = new System.Windows.Forms.Label();
             this.lAmbTrab = new System.Windows.Forms.Label();
             this.lShowTipoTrab = new System.Windows.Forms.Label();
+            this.lTipoTrab = new System.Windows.Forms.Label();
             this.lShowOrg = new System.Windows.Forms.Label();
             this.lShowIni = new System.Windows.Forms.Label();
             this.lFecha = new System.Windows.Forms.Label();
             this.lOrg = new System.Windows.Forms.Label();
             this.lShowLugar = new System.Windows.Forms.Label();
             this.lLugar = new System.Windows.Forms.Label();
-            this.bSolicitar = new System.Windows.Forms.Button();
             this.lNumPlazas = new System.Windows.Forms.Label();
             this.lPlazas = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.lDescripcion = new System.Windows.Forms.Label();
             this.pict = new System.Windows.Forms.PictureBox();
-            this.lTipoTrab = new System.Windows.Forms.Label();
-            this.lTurno = new System.Windows.Forms.Label();
-            this.lHoras = new System.Windows.Forms.Label();
-            this.lShowTurno = new System.Windows.Forms.Label();
-            this.lShowHoras = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +73,6 @@
             this.panel1.Controls.Add(this.lOrg);
             this.panel1.Controls.Add(this.lShowLugar);
             this.panel1.Controls.Add(this.lLugar);
-            this.panel1.Controls.Add(this.bSolicitar);
             this.panel1.Controls.Add(this.lNumPlazas);
             this.panel1.Controls.Add(this.lPlazas);
             this.panel1.Controls.Add(this.labelName);
@@ -84,6 +82,44 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(623, 147);
             this.panel1.TabIndex = 3;
+            // 
+            // lShowHoras
+            // 
+            this.lShowHoras.AutoSize = true;
+            this.lShowHoras.Location = new System.Drawing.Point(574, 27);
+            this.lShowHoras.Name = "lShowHoras";
+            this.lShowHoras.Size = new System.Drawing.Size(33, 13);
+            this.lShowHoras.TabIndex = 27;
+            this.lShowHoras.Text = "horas";
+            // 
+            // lShowTurno
+            // 
+            this.lShowTurno.AutoSize = true;
+            this.lShowTurno.Location = new System.Drawing.Point(463, 27);
+            this.lShowTurno.Name = "lShowTurno";
+            this.lShowTurno.Size = new System.Drawing.Size(31, 13);
+            this.lShowTurno.TabIndex = 26;
+            this.lShowTurno.Text = "turno";
+            // 
+            // lHoras
+            // 
+            this.lHoras.AutoSize = true;
+            this.lHoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lHoras.Location = new System.Drawing.Point(524, 27);
+            this.lHoras.Name = "lHoras";
+            this.lHoras.Size = new System.Drawing.Size(44, 13);
+            this.lHoras.TabIndex = 25;
+            this.lHoras.Text = "Horas:";
+            // 
+            // lTurno
+            // 
+            this.lTurno.AutoSize = true;
+            this.lTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTurno.Location = new System.Drawing.Point(413, 27);
+            this.lTurno.Name = "lTurno";
+            this.lTurno.Size = new System.Drawing.Size(44, 13);
+            this.lTurno.TabIndex = 24;
+            this.lTurno.Text = "Turno:";
             // 
             // bRechazar
             // 
@@ -98,7 +134,6 @@
             this.bRechazar.TabIndex = 23;
             this.bRechazar.Text = "Rechazar";
             this.bRechazar.UseVisualStyleBackColor = false;
-            this.bRechazar.Visible = false;
             // 
             // bRevisar
             // 
@@ -113,7 +148,6 @@
             this.bRevisar.TabIndex = 22;
             this.bRevisar.Text = "Revisar";
             this.bRevisar.UseVisualStyleBackColor = false;
-            this.bRevisar.Visible = false;
             // 
             // lShowAmbito
             // 
@@ -143,6 +177,16 @@
             this.lShowTipoTrab.Size = new System.Drawing.Size(42, 13);
             this.lShowTipoTrab.TabIndex = 19;
             this.lShowTipoTrab.Text = "tipotrab";
+            // 
+            // lTipoTrab
+            // 
+            this.lTipoTrab.AutoSize = true;
+            this.lTipoTrab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTipoTrab.Location = new System.Drawing.Point(413, 63);
+            this.lTipoTrab.Name = "lTipoTrab";
+            this.lTipoTrab.Size = new System.Drawing.Size(101, 13);
+            this.lTipoTrab.TabIndex = 18;
+            this.lTipoTrab.Text = "Tipo de Trabajo:";
             // 
             // lShowOrg
             // 
@@ -201,20 +245,6 @@
             this.lLugar.TabIndex = 11;
             this.lLugar.Text = "Lugar:";
             // 
-            // bSolicitar
-            // 
-            this.bSolicitar.BackColor = System.Drawing.Color.Transparent;
-            this.bSolicitar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bSolicitar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.bSolicitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bSolicitar.ForeColor = System.Drawing.Color.Black;
-            this.bSolicitar.Location = new System.Drawing.Point(556, 112);
-            this.bSolicitar.Name = "bSolicitar";
-            this.bSolicitar.Size = new System.Drawing.Size(64, 32);
-            this.bSolicitar.TabIndex = 10;
-            this.bSolicitar.Text = "Solicitar";
-            this.bSolicitar.UseVisualStyleBackColor = false;
-            // 
             // lNumPlazas
             // 
             this.lNumPlazas.AutoSize = true;
@@ -260,54 +290,6 @@
             this.pict.TabIndex = 6;
             this.pict.TabStop = false;
             // 
-            // lTipoTrab
-            // 
-            this.lTipoTrab.AutoSize = true;
-            this.lTipoTrab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTipoTrab.Location = new System.Drawing.Point(413, 63);
-            this.lTipoTrab.Name = "lTipoTrab";
-            this.lTipoTrab.Size = new System.Drawing.Size(101, 13);
-            this.lTipoTrab.TabIndex = 18;
-            this.lTipoTrab.Text = "Tipo de Trabajo:";
-            // 
-            // lTurno
-            // 
-            this.lTurno.AutoSize = true;
-            this.lTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTurno.Location = new System.Drawing.Point(413, 27);
-            this.lTurno.Name = "lTurno";
-            this.lTurno.Size = new System.Drawing.Size(44, 13);
-            this.lTurno.TabIndex = 24;
-            this.lTurno.Text = "Turno:";
-            // 
-            // lHoras
-            // 
-            this.lHoras.AutoSize = true;
-            this.lHoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lHoras.Location = new System.Drawing.Point(524, 27);
-            this.lHoras.Name = "lHoras";
-            this.lHoras.Size = new System.Drawing.Size(44, 13);
-            this.lHoras.TabIndex = 25;
-            this.lHoras.Text = "Horas:";
-            // 
-            // lShowTurno
-            // 
-            this.lShowTurno.AutoSize = true;
-            this.lShowTurno.Location = new System.Drawing.Point(463, 27);
-            this.lShowTurno.Name = "lShowTurno";
-            this.lShowTurno.Size = new System.Drawing.Size(31, 13);
-            this.lShowTurno.TabIndex = 26;
-            this.lShowTurno.Text = "turno";
-            // 
-            // lShowHoras
-            // 
-            this.lShowHoras.AutoSize = true;
-            this.lShowHoras.Location = new System.Drawing.Point(574, 27);
-            this.lShowHoras.Name = "lShowHoras";
-            this.lShowHoras.Size = new System.Drawing.Size(33, 13);
-            this.lShowHoras.TabIndex = 27;
-            this.lShowHoras.Text = "horas";
-            // 
             // CartelPendientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,7 +312,6 @@
         private System.Windows.Forms.PictureBox pict;
         private System.Windows.Forms.Label lNumPlazas;
         private System.Windows.Forms.Label lPlazas;
-        private System.Windows.Forms.Button bSolicitar;
         private System.Windows.Forms.Label lShowLugar;
         private System.Windows.Forms.Label lLugar;
         private System.Windows.Forms.Label lShowOrg;
