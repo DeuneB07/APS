@@ -32,6 +32,13 @@ namespace APS.Interfaces.Personalizados
             this.lShowOrg.Text = a.Organizador.Nombre;
             this.lEstado.Text = a.EstadoAct.ToString();
 
+            if (user.Rol.NombreRol.Equals("GESTOR"))
+            {
+                bSolicitar.Visible = false;
+                bRevisar.Visible = true;
+                bRechazar.Visible = true;
+            }
+
             if (a.Responsable != null)
             {
                 this.lShowResp.Text = a.Responsable.Nombre + " " + a.Responsable.Apellido1 + " " + a.Responsable.Apellido2;

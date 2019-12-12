@@ -44,8 +44,8 @@ namespace APS.Interfaces
 
             cargarMatchActividadesInicio();
             cargarTodasActividadesInicio();
-            
-            cargarPendientesActividades();
+            cargarPendientesActividadesInicio();
+
             cargarRevisionActividades();
             //cargarMisActividades();
             //cargarActividadesInscritas();
@@ -353,6 +353,56 @@ namespace APS.Interfaces
         //
         // PESTAÑA PENDIENTES -> estado= 'PENDIENTE_ACEPTACION' (SÓLO GESTOR)
         //
+        private void cargarPendientesActividadesInicio()
+        {
+            pPendientes.Controls.Add(panelPendientes);
+
+            List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.PENDIENTE_ACEPTACION);
+            CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
+
+            int c = 0;
+            foreach (Actividad act in actividades)
+            {
+                actsCarteles[c] = new CartelActividadesStandard(user, act);
+                panelPendientes.Controls.Add(actsCarteles[c], 0, c);
+                panelPendientes.RowCount = panelPendientes.RowCount + 1;
+                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
+                actsCarteles[c].BackColor = Color.DarkCyan;
+               
+                //BOTONES GESTOR
+                Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
+                Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
+                Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
+
+                //PROGRAMACIÓN BOTONES
+                bAceptar.Click += (sender, EventArgs) => { bAceptar_Click(sender, EventArgs, act); };
+                bRechazar.Click += (sender, EventArgs) => { bRechazar_Click(sender, EventArgs, act); };
+                c++;
+            }
+        }
+
+        private void bAceptar_Click(object sender, EventArgs eventArgs, Actividad act)
+        {
+            GestorGestionaActividad gestorGestionaActividad = new GestorGestionaActividad(user, act);
+            //this.Visible = false;
+            gestorGestionaActividad.ShowDialog();
+            this.Visible = true;
+            cargarPendientesActividadesInicio();
+        }
+
+        private void bRechazar_Click(object sender, EventArgs eventArgs, Actividad act)
+        {
+            act.BorrarActividad();
+            cargarPendientesActividadesInicio();
+        }
+
+        //
+        // PESTAÑA REVISIÓN -> estado(s) = 'ACEPTADA_GESTOR'(PDI) -> LA VE EL PDI RESPONSABLE ASIGNADO
+        //                                  \ 'NEGOCIAR_PDI'(PDI, ONG) -> LA VE EL PDI ASIGNADO (INTERACTÚA) Y LA ONG (NO HACE NADA)
+        //                                  \'NEGOCIAR_ONG'(PDI, ONG) -> LA VE EL ONG (INTERACTÚA) Y EL PDI RESPONSABLE (NO HACE NADA)
+        //                  
+        //
+        /*
         private void cargarPendientesActividades()
         {
             List<Actividad> actividades = new List<Actividad>();
@@ -362,7 +412,7 @@ namespace APS.Interfaces
             }
             this.dataGridViewPendientes.DataSource = actividades;
         }
-
+        */
         private void cargarRevisionActividades()
         {
             List<Actividad> actividades = new List<Actividad>();
@@ -414,12 +464,7 @@ namespace APS.Interfaces
         }
 
 
-        //
-        // PESTAÑA REVISIÓN -> estado(s) = 'ACEPTADA_GESTOR'(PDI) -> LA VE EL PDI RESPONSABLE ASIGNADO
-        //                                  \ 'NEGOCIAR_PDI'(PDI, ONG) -> LA VE EL PDI ASIGNADO (INTERACTÚA) Y LA ONG (NO HACE NADA)
-        //                                  \'NEGOCIAR_ONG'(PDI, ONG) -> LA VE EL ONG (INTERACTÚA) Y EL PDI RESPONSABLE (NO HACE NADA)
-        //                  
-        //
+       
         private void bLogout_Click(object sender, EventArgs e)
         {
             crearCierreSesion();
@@ -482,6 +527,7 @@ namespace APS.Interfaces
             }*/
         }
 
+        /*
         private void bGestionar_Click(object sender, EventArgs e)
         {
             try
@@ -502,7 +548,7 @@ namespace APS.Interfaces
                 MessageBox.Show(ex.Message);
             }
         }
-
+        
         private void dataGridViewPendientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;
@@ -514,7 +560,7 @@ namespace APS.Interfaces
             this.Visible = true;
             cargarPendientesActividades();
         }
-
+        */
         private void dataGridViewRevision_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;
