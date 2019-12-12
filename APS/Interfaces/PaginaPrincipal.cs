@@ -358,12 +358,12 @@ namespace APS.Interfaces
             pPendientes.Controls.Add(panelPendientes);
 
             List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.PENDIENTE_ACEPTACION);
-            CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
+            CartelPendientes[] actsCarteles = new CartelPendientes[actividades.Count];
 
             int c = 0;
             foreach (Actividad act in actividades)
             {
-                actsCarteles[c] = new CartelActividadesStandard(user, act);
+                actsCarteles[c] = new CartelPendientes(user, act);
                 panelPendientes.Controls.Add(actsCarteles[c], 0, c);
                 panelPendientes.RowCount = panelPendientes.RowCount + 1;
                 actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
@@ -375,13 +375,13 @@ namespace APS.Interfaces
                 Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
 
                 //PROGRAMACIÓN BOTONES
-                bAceptar.Click += (sender, EventArgs) => { bAceptar_Click(sender, EventArgs, act); };
+                bAceptar.Click += (sender, EventArgs) => { bRevisar_Click(sender, EventArgs, act); };
                 bRechazar.Click += (sender, EventArgs) => { bRechazar_Click(sender, EventArgs, act); };
                 c++;
             }
         }
 
-        private void bAceptar_Click(object sender, EventArgs eventArgs, Actividad act)
+        private void bRevisar_Click(object sender, EventArgs eventArgs, Actividad act)
         {
             GestorGestionaActividad gestorGestionaActividad = new GestorGestionaActividad(user, act);
             //this.Visible = false;
@@ -402,17 +402,6 @@ namespace APS.Interfaces
         //                                  \'NEGOCIAR_ONG'(PDI, ONG) -> LA VE EL ONG (INTERACTÚA) Y EL PDI RESPONSABLE (NO HACE NADA)
         //                  
         //
-        /*
-        private void cargarPendientesActividades()
-        {
-            List<Actividad> actividades = new List<Actividad>();
-            foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.PENDIENTE_ACEPTACION))
-            {
-                actividades.Add(act);
-            }
-            this.dataGridViewPendientes.DataSource = actividades;
-        }
-        */
         private void cargarRevisionActividades()
         {
             List<Actividad> actividades = new List<Actividad>();
@@ -526,41 +515,6 @@ namespace APS.Interfaces
 
             }*/
         }
-
-        /*
-        private void bGestionar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (this.dataGridViewPendientes.SelectedRows.Count == 0)
-                {
-                    throw new Exception("Ninguna actividad seleccionada");
-                }
-                int id = int.Parse(this.dataGridViewPendientes.SelectedRows[0].Cells[0].Value.ToString());
-                Actividad pendiente = new Actividad(id);
-                GestorGestionaActividad gestorGestionaActividad = new GestorGestionaActividad(user, pendiente);
-                this.Visible = false;
-                gestorGestionaActividad.ShowDialog();
-                this.Visible = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        
-        private void dataGridViewPendientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int i = e.RowIndex;
-            int id = int.Parse(this.dataGridViewPendientes.Rows[i].Cells[0].Value.ToString());
-            Actividad pendiente = new Actividad(id);
-            VerActividadGestor verActividad = new VerActividadGestor(user, pendiente);
-            this.Visible = false;
-            verActividad.ShowDialog();
-            this.Visible = true;
-            cargarPendientesActividades();
-        }
-        */
         private void dataGridViewRevision_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;

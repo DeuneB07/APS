@@ -107,6 +107,12 @@
     <Compile Include="Interfaces\Personalizados\CartelFiltros.Designer.cs">
       <DependentUpon>CartelFiltros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelPendientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelPendientes.Designer.cs">
+      <DependentUpon>CartelPendientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelPrimarioPruebil.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelFiltros.resx">
       <DependentUpon>CartelFiltros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelPendientes.resx">
+      <DependentUpon>CartelPendientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelPrimarioPruebil.resx">
       <DependentUpon>CartelPrimarioPruebil.cs</DependentUpon>

@@ -48,8 +48,6 @@
             this.labelName = new System.Windows.Forms.Label();
             this.lDescripcion = new System.Windows.Forms.Label();
             this.pict = new System.Windows.Forms.PictureBox();
-            this.bRevisar = new System.Windows.Forms.Button();
-            this.bRechazar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).BeginInit();
             this.SuspendLayout();
@@ -57,8 +55,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.bRechazar);
-            this.panel1.Controls.Add(this.bRevisar);
             this.panel1.Controls.Add(this.lEstado);
             this.panel1.Controls.Add(this.lE);
             this.panel1.Controls.Add(this.lShowResp);
@@ -258,36 +254,6 @@
             this.pict.TabIndex = 6;
             this.pict.TabStop = false;
             // 
-            // bRevisar
-            // 
-            this.bRevisar.BackColor = System.Drawing.Color.Transparent;
-            this.bRevisar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bRevisar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.bRevisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bRevisar.ForeColor = System.Drawing.Color.Black;
-            this.bRevisar.Location = new System.Drawing.Point(556, 79);
-            this.bRevisar.Name = "bRevisar";
-            this.bRevisar.Size = new System.Drawing.Size(64, 32);
-            this.bRevisar.TabIndex = 22;
-            this.bRevisar.Text = "Revisar";
-            this.bRevisar.UseVisualStyleBackColor = false;
-            this.bRevisar.Visible = false;
-            // 
-            // bRechazar
-            // 
-            this.bRechazar.BackColor = System.Drawing.Color.Transparent;
-            this.bRechazar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bRechazar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.bRechazar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bRechazar.ForeColor = System.Drawing.Color.Black;
-            this.bRechazar.Location = new System.Drawing.Point(556, 112);
-            this.bRechazar.Name = "bRechazar";
-            this.bRechazar.Size = new System.Drawing.Size(64, 32);
-            this.bRechazar.TabIndex = 23;
-            this.bRechazar.Text = "Rechazar";
-            this.bRechazar.UseVisualStyleBackColor = false;
-            this.bRechazar.Visible = false;
-            // 
             // CartelActividadesStandard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,7 +289,5 @@
         private System.Windows.Forms.Label lResp;
         private System.Windows.Forms.Label lE;
         private System.Windows.Forms.Label lEstado;
-        private System.Windows.Forms.Button bRechazar;
-        private System.Windows.Forms.Button bRevisar;
     }
 }

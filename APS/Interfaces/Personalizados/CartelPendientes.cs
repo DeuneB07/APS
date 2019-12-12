@@ -8,17 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using APS.Mapeo;
-using APS.Interfaces.Gestión_Actividades;
 
 namespace APS.Interfaces.Personalizados
 {
-    public partial class CartelActividadesStandard : UserControl
+    public partial class CartelPendientes : UserControl
     {
 
         private Actividad a;
         private Usuario user;
 
-        public CartelActividadesStandard(Usuario user, Actividad a)
+        public CartelPendientes(Usuario user, Actividad a)
         {
             InitializeComponent();
             this.a = a;
@@ -26,33 +25,26 @@ namespace APS.Interfaces.Personalizados
             this.labelName.Text = a.NombreAct;
             this.lDescripcion.Text = a.DescAct;
             this.lNumPlazas.Text = a.NumPlazas.ToString();
-            this.lTipoActividad.Text = a.TipoAct.ToString();
-            this.lShowIni.Text = a.FechaInicio.ToShortDateString();
-            this.lShowFin.Text = a.FechaFin.ToShortDateString();
+            this.lShowTipoTrab.Text = a.TipoTrabajo.ToString();
+            this.lShowIni.Text = a.FechaInicio.ToShortDateString() + " - " + a.FechaFin.ToShortDateString();
             this.lShowOrg.Text = a.Organizador.Nombre;
-            this.lEstado.Text = a.EstadoAct.ToString();
-
-            if (a.Responsable != null)
-            {
-                this.lShowResp.Text = a.Responsable.Nombre + " " + a.Responsable.Apellido1 + " " + a.Responsable.Apellido2;
-            } else
-            {
-                lResp.Visible = false;
-                lShowResp.Visible = false;
-                //this.lShowResp.Text = "Sin Responsable Asociado a esta Actividad";
-            }
+            this.lShowAmbito.Text = a.AmbitoTrabajo.ToString();
+            this.lShowLugar.Text = a.Lugar;
+            this.lShowHoras.Text = a.NumHoras.ToString();
+            //this.pict = a.Imagen;
         }
 
         #region Properties
         private string _noun;
         private string _description;
-        private string _plazas;
-        private string _estado;
-        private string _tipoact;
+        private int _plazas;
+        private string _tipotrab;
+        private string _ambtrab;
         private DateTime _fechaini;
         private DateTime _fechafin;
+        private string _lugar;
         private string _organizador;
-        private string _responsable;
+        private int _horas;
         private Image _icon;
 
         [Category("Custom Props")]
@@ -70,38 +62,45 @@ namespace APS.Interfaces.Personalizados
         }
 
         [Category("Custom Props")]
-        public string NumPlazas
+        public int NumPlazas
         {
             get { return _plazas; }
-            set { _plazas = value; lNumPlazas.Text = value; }
+            set { _plazas = value; lNumPlazas.Text = value.ToString(); }
         }
 
         [Category("Custom Props")]
-        public string Estado
+        public int NumHoras
         {
-            get { return _estado; }
-            set { _estado = value; lEstado.Text = value; }
+            get { return _horas; }
+            set { _horas = value; lShowHoras.Text = value.ToString(); }
         }
 
         [Category("Custom Props")]
-        public string TipoActividad
+        public string TipoTrabajo
         {
-            get { return _tipoact; }
-            set { _tipoact = value; lTipoActividad.Text = value; }
+            get { return _tipotrab; }
+            set { _tipotrab = value; lShowTipoTrab.Text = value; }
+        }
+
+        [Category("Custom Props")]
+        public string AmbitoTrabajo
+        {
+            get { return _ambtrab; }
+            set { _ambtrab = value; lShowAmbito.Text = value; }
         }
 
         [Category("Custom Props")]
         public DateTime FechaInicio
         {
             get { return _fechaini; }
-            set { _fechaini = value; lShowIni.Text = value.ToShortTimeString(); }
+            set { _fechaini = value; lShowIni.Text = value.ToShortDateString() +" - "+ _fechafin.ToShortDateString(); }
         }
 
         [Category("Custom Props")]
         public DateTime FechaFin
         {
             get { return _fechafin; }
-            set { _fechafin = value; lShowFin.Text = value.ToShortDateString(); }
+            set { _fechafin = value; lShowIni.Text = _fechaini.ToShortDateString() +" - "+ value.ToShortDateString(); }
         }
 
         [Category("Custom Props")]
@@ -112,10 +111,10 @@ namespace APS.Interfaces.Personalizados
         }
 
         [Category("Custom Props")]
-        public string Responsable
+        public string Lugar
         {
-            get { return _responsable; }
-            set { _responsable = value; lShowResp.Text = value; }
+            get { return _lugar; }
+            set { _lugar = value; lShowLugar.Text = value; }
         }
 
         [Category("Custom Props")]
@@ -126,12 +125,6 @@ namespace APS.Interfaces.Personalizados
         }
 
         #endregion
-
-        private void bVerMas_Click(object sender, EventArgs e)
-        {
-            VerActividadGestor vAct = new VerActividadGestor(this.user, this.a);
-            vAct.ShowDialog();
-        }
 
     }
 }
