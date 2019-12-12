@@ -30,6 +30,7 @@ namespace APS.Interfaces.Personalizados
             this.lShowIni.Text = a.FechaInicio.ToShortDateString();
             this.lShowFin.Text = a.FechaFin.ToShortDateString();
             this.lShowOrg.Text = a.Organizador.Nombre;
+            this.lEstado.Text = a.EstadoAct.ToString();
 
             if (a.Responsable != null)
             {
@@ -46,6 +47,7 @@ namespace APS.Interfaces.Personalizados
         private string _noun;
         private string _description;
         private string _plazas;
+        private string _estado;
         private string _tipoact;
         private DateTime _fechaini;
         private DateTime _fechafin;
@@ -72,6 +74,13 @@ namespace APS.Interfaces.Personalizados
         {
             get { return _plazas; }
             set { _plazas = value; lNumPlazas.Text = value; }
+        }
+
+        [Category("Custom Props")]
+        public string Estado
+        {
+            get { return _estado; }
+            set { _estado = value; lEstado.Text = value; }
         }
 
         [Category("Custom Props")]
