@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartelActividadesStandard));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lE = new System.Windows.Forms.Label();
+            this.lShowResp = new System.Windows.Forms.Label();
+            this.lResp = new System.Windows.Forms.Label();
             this.lShowOrg = new System.Windows.Forms.Label();
             this.lShowIni = new System.Windows.Forms.Label();
             this.lShowFin = new System.Windows.Forms.Label();
@@ -44,8 +47,7 @@
             this.labelName = new System.Windows.Forms.Label();
             this.lDescripcion = new System.Windows.Forms.Label();
             this.pict = new System.Windows.Forms.PictureBox();
-            this.lResp = new System.Windows.Forms.Label();
-            this.lShowResp = new System.Windows.Forms.Label();
+            this.lEstado = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +55,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lEstado);
+            this.panel1.Controls.Add(this.lE);
             this.panel1.Controls.Add(this.lShowResp);
             this.panel1.Controls.Add(this.lResp);
             this.panel1.Controls.Add(this.lShowOrg);
@@ -73,6 +77,35 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(623, 147);
             this.panel1.TabIndex = 3;
+            // 
+            // lE
+            // 
+            this.lE.AutoSize = true;
+            this.lE.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lE.Location = new System.Drawing.Point(413, 45);
+            this.lE.Name = "lE";
+            this.lE.Size = new System.Drawing.Size(50, 13);
+            this.lE.TabIndex = 20;
+            this.lE.Text = "Estado:";
+            // 
+            // lShowResp
+            // 
+            this.lShowResp.AutoSize = true;
+            this.lShowResp.Location = new System.Drawing.Point(105, 45);
+            this.lShowResp.Name = "lShowResp";
+            this.lShowResp.Size = new System.Drawing.Size(51, 13);
+            this.lShowResp.TabIndex = 19;
+            this.lShowResp.Text = "nounresp";
+            // 
+            // lResp
+            // 
+            this.lResp.AutoSize = true;
+            this.lResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lResp.Location = new System.Drawing.Point(15, 45);
+            this.lResp.Name = "lResp";
+            this.lResp.Size = new System.Drawing.Size(84, 13);
+            this.lResp.TabIndex = 18;
+            this.lResp.Text = "Responsable:";
             // 
             // lShowOrg
             // 
@@ -211,24 +244,14 @@
             this.pict.TabIndex = 6;
             this.pict.TabStop = false;
             // 
-            // lResp
+            // lEstado
             // 
-            this.lResp.AutoSize = true;
-            this.lResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lResp.Location = new System.Drawing.Point(15, 45);
-            this.lResp.Name = "lResp";
-            this.lResp.Size = new System.Drawing.Size(84, 13);
-            this.lResp.TabIndex = 18;
-            this.lResp.Text = "Responsable:";
-            // 
-            // lShowResp
-            // 
-            this.lShowResp.AutoSize = true;
-            this.lShowResp.Location = new System.Drawing.Point(105, 45);
-            this.lShowResp.Name = "lShowResp";
-            this.lShowResp.Size = new System.Drawing.Size(51, 13);
-            this.lShowResp.TabIndex = 19;
-            this.lShowResp.Text = "nounresp";
+            this.lEstado.AutoSize = true;
+            this.lEstado.Location = new System.Drawing.Point(469, 45);
+            this.lEstado.Name = "lEstado";
+            this.lEstado.Size = new System.Drawing.Size(39, 13);
+            this.lEstado.TabIndex = 21;
+            this.lEstado.Text = "estado";
             // 
             // CartelActividadesStandard
             // 
@@ -263,5 +286,7 @@
         private System.Windows.Forms.Label lOrg;
         private System.Windows.Forms.Label lShowResp;
         private System.Windows.Forms.Label lResp;
+        private System.Windows.Forms.Label lE;
+        private System.Windows.Forms.Label lEstado;
     }
 }

@@ -33,11 +33,22 @@ namespace APS.Interfaces.Personalizados
 
         private void cargarGrados()
         {
-            foreach (Grado g in usrLogin.Grados)
+            if (usrLogin.Rol.NombreRol.Equals("GESTOR"))
             {
-                cGrado.Items.Add(g);
+                foreach (Grado g in Grado.ListaGrados())
+                {
+                    cGrado.Items.Add(g);
+                }
+                cGrado.DisplayMember = "nombreGrado";
+            } else
+            {
+                foreach (Grado g in usrLogin.Grados)
+                {
+                    cGrado.Items.Add(g);
+                }
+                cGrado.DisplayMember = "nombreGrado";
             }
-            cGrado.DisplayMember = "nombreGrado";
+            
         }
 
         private void cargarAsignaturas()
