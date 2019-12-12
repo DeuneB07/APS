@@ -101,6 +101,12 @@
     <Compile Include="Interfaces\Gestión Actividades\VerActividadRevision.Designer.cs">
       <DependentUpon>VerActividadRevision.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelFiltroMatch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelFiltroMatch.Designer.cs">
+      <DependentUpon>CartelFiltroMatch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelFiltros.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -16,14 +16,13 @@ namespace APS.ActividadesDB
     public partial class Entities : DbContext
     {
         public Entities()
-            : base("Data Source=localhost;Initial Catalog=WePass;Persist Security Info=True;User ID=user1;Password=user1;MultipleActiveResultSets=True")
+            : base("name=Entities")
         {
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            var entityBuilder = modelBuilder.Entity<ActividadesDB.Actividades>();
-            entityBuilder.HasKey(e => new { e.ID_Actividad });
+            throw new UnintentionalCodeFirstException();
         }
     
         public virtual DbSet<Actividades> Actividades { get; set; }
