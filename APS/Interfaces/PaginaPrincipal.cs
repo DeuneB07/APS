@@ -283,6 +283,8 @@ namespace APS.Interfaces
             Asignatura asig = null;
             Actividad.TurnoE turnoF;
             Actividad.TipoActividadE tipoActF;
+            //DateTime example = new DateTime(DateTime.Today.Year+100, 1, 1);
+            DateTime inicio = dtIni.MaxDate;
             int horas = -1;
 
             if (cBox[0].SelectedItem != null) horas = int.Parse(cBox[0].SelectedItem.ToString());
@@ -340,6 +342,14 @@ namespace APS.Interfaces
                 }
             }
 
+            //Filtro Fecha
+            if(inicio >= DateTime.Today)
+            {
+                foreach(Actividad a in Actividad.ListaActividades())
+                {
+                    if (a.FechaInicio < inicio) lAct.Remove(a); 
+                }
+            }
 
             cargarTodasActividadesFiltro(lAct);
         }

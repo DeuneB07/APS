@@ -40,7 +40,6 @@ namespace APS.Interfaces.Personalizados
             {
                 lResp.Visible = false;
                 lShowResp.Visible = false;
-                //this.lShowResp.Text = "Sin Responsable Asociado a esta Actividad";
             }
         }
 
