@@ -64,7 +64,6 @@ namespace APS.Interfaces
                 if (!tURL.Text.Trim().Equals("")) a.Imagen = pictureBox.Image;
 
                 MessageBox.Show("Actividad creada correctamente.\n La actividad pasará a trámite del gestor del sistema");
-                MessageBox.Show("ambito; " + ambito + " trabajo: " + trabajo);
                 this.Close();
 
 
@@ -92,6 +91,13 @@ namespace APS.Interfaces
             }
 
             pictureBox.ImageLocation = openFileDialog1.FileName;
+            Console.WriteLine(openFileDialog1.FileName);
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            tURL.Text = "";
+            pictureBox.Image = null;
         }
 
 

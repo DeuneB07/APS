@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace APS.ActividadesDB
+namespace APS.ImagenesDB
 {
     using System;
     using System.Data.Entity;
@@ -16,13 +16,14 @@ namespace APS.ActividadesDB
     public partial class Entities : DbContext
     {
         public Entities()
-            : base("name=Entities")
+            : base("Data Source=localhost;Initial Catalog=WePass;Persist Security Info=True;User ID=user1;Password=user1;MultipleActiveResultSets=True")
         {
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            var entityBuilder = modelBuilder.Entity<Actividades>();
+            entityBuilder.HasKey(e => new { e.ID_Actividad });
         }
     
         public virtual DbSet<Actividades> Actividades { get; set; }

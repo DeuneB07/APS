@@ -65,6 +65,7 @@ namespace APS.Interfaces
             this.listTurno = new System.Windows.Forms.ComboBox();
             this.listAmbito = new System.Windows.Forms.ComboBox();
             this.listTrabajo = new System.Windows.Forms.ComboBox();
+            this.btnBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ambitoTrabajoEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoTrabajoEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -287,6 +288,7 @@ namespace APS.Interfaces
             this.tURL.Name = "tURL";
             this.tURL.Size = new System.Drawing.Size(87, 20);
             this.tURL.TabIndex = 23;
+            this.tURL.Visible = false;
             // 
             // labelError
             // 
@@ -322,10 +324,14 @@ namespace APS.Interfaces
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(328, 384);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox.BackColor = System.Drawing.Color.White;
+            this.pictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.BackgroundImage")));
+            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox.InitialImage = null;
+            this.pictureBox.Location = new System.Drawing.Point(495, 439);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(102, 48);
+            this.pictureBox.Size = new System.Drawing.Size(132, 81);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 29;
             this.pictureBox.TabStop = false;
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerActividadGestor));
             this.listTrabajo = new System.Windows.Forms.ListBox();
             this.listAmbito = new System.Windows.Forms.ListBox();
             this.listTurno = new System.Windows.Forms.ListBox();
@@ -53,6 +54,8 @@
             this.btnGestionar = new System.Windows.Forms.Button();
             this.btnRechazar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // listTrabajo
@@ -266,7 +269,7 @@
             // 
             // btnGestionar
             // 
-            this.btnGestionar.Location = new System.Drawing.Point(341, 545);
+            this.btnGestionar.Location = new System.Drawing.Point(285, 643);
             this.btnGestionar.Name = "btnGestionar";
             this.btnGestionar.Size = new System.Drawing.Size(88, 23);
             this.btnGestionar.TabIndex = 51;
@@ -276,7 +279,7 @@
             // 
             // btnRechazar
             // 
-            this.btnRechazar.Location = new System.Drawing.Point(445, 545);
+            this.btnRechazar.Location = new System.Drawing.Point(392, 643);
             this.btnRechazar.Name = "btnRechazar";
             this.btnRechazar.Size = new System.Drawing.Size(98, 23);
             this.btnRechazar.TabIndex = 52;
@@ -286,7 +289,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(562, 545);
+            this.btnCancelar.Location = new System.Drawing.Point(509, 643);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(90, 23);
             this.btnCancelar.TabIndex = 53;
@@ -294,11 +297,23 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // VerActividad
+            // pictureBox
+            // 
+            this.pictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.BackgroundImage")));
+            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox.Location = new System.Drawing.Point(281, 532);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(132, 81);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 55;
+            this.pictureBox.TabStop = false;
+            // 
+            // VerActividadGestor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 580);
+            this.ClientSize = new System.Drawing.Size(611, 678);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnRechazar);
             this.Controls.Add(this.btnGestionar);
@@ -324,8 +339,9 @@
             this.Controls.Add(this.labelDescripcion);
             this.Controls.Add(this.labelNombreAct);
             this.Controls.Add(this.labelOrganizador);
-            this.Name = "VerActividad";
+            this.Name = "VerActividadGestor";
             this.Text = "Ver Actividad";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,5 +374,6 @@
         private System.Windows.Forms.Button btnGestionar;
         private System.Windows.Forms.Button btnRechazar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }

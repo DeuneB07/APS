@@ -48,6 +48,7 @@ namespace APS.Interfaces
             catch (Exception ex)
             {
                 labelError.Text = ex.Message;
+                Console.WriteLine(ex.StackTrace);
             }
         }
 
