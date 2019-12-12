@@ -56,25 +56,19 @@ namespace APS.Interfaces
         //
         private void cargarMatchActividadesInicio()
         {
-            Console.WriteLine("HOLA0");
             pMatch.Controls.Add(panelMatch);
             cargarFiltrosMatch();
-            Console.WriteLine("HOLA1");
 
             List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
             CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
-            Console.WriteLine("HOLA3");
 
             int c = 0;
             foreach (Actividad act in actividades)
             {
-                Console.WriteLine("HOLAFOR1");
                 foreach(Asignatura asig in user.Asignaturas)
                 {
-                    Console.WriteLine("HOLAFOR2");
                     if (act.Asignatura != null && act.Asignatura.Equals(asig))
                     {
-                        Console.WriteLine("HOLAIF");
                         actsCarteles[c] = new CartelActividadesStandard(user, act);
                         panelMatch.Controls.Add(actsCarteles[c], 0, c + 1);
                         panelMatch.RowCount = panelMatch.RowCount + 1;
@@ -355,6 +349,9 @@ namespace APS.Interfaces
         //
         private void cargarPendientesActividadesInicio()
         {
+            pPendientes.Controls.Clear();
+            panelPendientes.AutoScroll = false;
+            panelPendientes.AutoScroll = true;
             pPendientes.Controls.Add(panelPendientes);
 
             List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.PENDIENTE_ACEPTACION);
