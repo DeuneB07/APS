@@ -419,10 +419,34 @@ namespace APS.Mapeo
 
         public Image Imagen
         {
-            get { return imagen; }
+            get {
+                if (imagen == null)
+                {
+                    using (var db = new ImagenesDB.Entities())
+                    {
+                        int id = this.ID_Actividad;
+                        var obj = db.Actividades.Find(id);
+
+                        byte[] m_imagen = obj.imagen;
+                        if(m_imagen == null)
+                        {
+                            imagen = null;
+                        }
+                        else
+                        {
+                            MemoryStream m_MemoryStream = new MemoryStream(m_imagen);
+                            imagen = Image.FromStream(m_MemoryStream);
+                        }
+
+                    }
+                }
+
+
+                return imagen;
+            }
             set
             {
-                using (var db = new ActividadesDB.Entities())
+                using (var db = new ImagenesDB.Entities())
                 {
                     int id = this.ID_Actividad;
                     var obj = db.Actividades.Find(id);

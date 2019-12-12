@@ -32,6 +32,12 @@ namespace APS.Interfaces.Gestión_Actividades
             listTurnoRevision.Text = actividad.Turno.ToString();
             listAmbitoRevision.Text = actividad.AmbitoTrabajo.ToString();
             listTrabajoRevision.Text = actividad.TipoTrabajo.ToString();
+
+            //Mostrar Imagen
+            if(actividad.Imagen != null)
+            {
+                pictureBox1.Image = actividad.Imagen;
+            }
         }
 
         private void btnCancelarRevision_Click(object sender, EventArgs e)

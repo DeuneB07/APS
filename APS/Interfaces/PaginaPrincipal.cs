@@ -368,9 +368,10 @@ namespace APS.Interfaces
             int id = int.Parse(this.dataGridViewRevision.Rows[i].Cells[0].Value.ToString());
             Actividad revision = new Actividad(id);
             Rol rol = user.Rol;
+            MessageBox.Show("holaaaaa");
 
             //VER ACTIVIDAD A REVISAR POR EL PDI
-            if (rol.NombreRol.Equals("PDI") && revision.EstadoAct.Equals(Actividad.EstadoActividadE.NEGOCIACION_PDI))
+            if (rol.NombreRol.Equals("PDI") && (revision.EstadoAct.Equals(Actividad.EstadoActividadE.NEGOCIACION_PDI) || revision.EstadoAct.Equals(Actividad.EstadoActividadE.ACEPTADA_GESTOR)))
             {
                 VerActividadRevision verActividad = new VerActividadRevision(user, revision);
                 this.Visible = false;
@@ -378,7 +379,7 @@ namespace APS.Interfaces
                 this.Visible = true;
             }
             //VER ACTIVIDAD A REVISAR POR LA ONG
-            else if (revision.EstadoAct.Equals(Actividad.EstadoActividadE.NEGOCIACION_ONG))
+            else if (rol.NombreRol.Equals("ONG") && revision.EstadoAct.Equals(Actividad.EstadoActividadE.NEGOCIACION_ONG))
             {
                 VerActividadRevision verActividad = new VerActividadRevision(user, revision);
                 this.Visible = false;

@@ -65,6 +65,7 @@ namespace APS.Interfaces
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.actividadBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ambitoTrabajoEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoTrabajoEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -155,7 +156,7 @@ namespace APS.Interfaces
             // labelImagen
             // 
             this.labelImagen.AutoSize = true;
-            this.labelImagen.Location = new System.Drawing.Point(371, 430);
+            this.labelImagen.Location = new System.Drawing.Point(431, 439);
             this.labelImagen.Name = "labelImagen";
             this.labelImagen.Size = new System.Drawing.Size(58, 17);
             this.labelImagen.TabIndex = 9;
@@ -181,7 +182,7 @@ namespace APS.Interfaces
             // 
             // bAceptar
             // 
-            this.bAceptar.Location = new System.Drawing.Point(438, 558);
+            this.bAceptar.Location = new System.Drawing.Point(434, 607);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(75, 23);
             this.bAceptar.TabIndex = 12;
@@ -191,7 +192,7 @@ namespace APS.Interfaces
             // 
             // bCancelar
             // 
-            this.bCancelar.Location = new System.Drawing.Point(541, 558);
+            this.bCancelar.Location = new System.Drawing.Point(541, 607);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(75, 23);
             this.bCancelar.TabIndex = 13;
@@ -260,10 +261,11 @@ namespace APS.Interfaces
             // tURL
             // 
             this.tURL.Enabled = false;
-            this.tURL.Location = new System.Drawing.Point(435, 430);
+            this.tURL.Location = new System.Drawing.Point(495, 411);
             this.tURL.Name = "tURL";
-            this.tURL.Size = new System.Drawing.Size(115, 22);
+            this.tURL.Size = new System.Drawing.Size(132, 22);
             this.tURL.TabIndex = 23;
+            this.tURL.Visible = false;
             // 
             // listTurno
             // 
@@ -313,7 +315,7 @@ namespace APS.Interfaces
             this.labelError.BackColor = System.Drawing.Color.Transparent;
             this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(48, 576);
+            this.labelError.Location = new System.Drawing.Point(34, 613);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(44, 17);
             this.labelError.TabIndex = 27;
@@ -329,7 +331,7 @@ namespace APS.Interfaces
             // 
             // btnExaminar
             // 
-            this.btnExaminar.Location = new System.Drawing.Point(556, 429);
+            this.btnExaminar.Location = new System.Drawing.Point(485, 526);
             this.btnExaminar.Name = "btnExaminar";
             this.btnExaminar.Size = new System.Drawing.Size(75, 23);
             this.btnExaminar.TabIndex = 28;
@@ -339,9 +341,14 @@ namespace APS.Interfaces
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(438, 472);
+            this.pictureBox.BackColor = System.Drawing.Color.White;
+            this.pictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.BackgroundImage")));
+            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox.InitialImage = null;
+            this.pictureBox.Location = new System.Drawing.Point(495, 439);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(136, 59);
+            this.pictureBox.Size = new System.Drawing.Size(132, 81);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 29;
             this.pictureBox.TabStop = false;
             // 
@@ -353,11 +360,22 @@ namespace APS.Interfaces
             // 
             this.actividadBindingSource.DataSource = typeof(APS.Mapeo.Actividad);
             // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(566, 526);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.TabIndex = 30;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
             // NuevaActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 629);
+            this.ClientSize = new System.Drawing.Size(688, 653);
+            this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.btnExaminar);
             this.Controls.Add(this.labelError);
@@ -434,5 +452,6 @@ namespace APS.Interfaces
         private System.Windows.Forms.Button btnExaminar;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btnBorrar;
     }
 }
