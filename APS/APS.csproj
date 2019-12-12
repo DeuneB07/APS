@@ -260,6 +260,9 @@
     <EmbeddedResource Include="Interfaces\Gestión Actividades\VerActividadRevision.resx">
       <DependentUpon>VerActividadRevision.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelFiltroMatch.resx">
+      <DependentUpon>CartelFiltroMatch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelFiltros.resx">
       <DependentUpon>CartelFiltros.cs</DependentUpon>
     </EmbeddedResource>
