@@ -363,6 +363,7 @@ namespace APS.Interfaces
             panelPendientes.AutoScroll = false;
             panelPendientes.AutoScroll = true;
             pPendientes.Controls.Add(panelPendientes);
+            panelPendientes.Controls.Clear();
 
             List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.PENDIENTE_ACEPTACION);
             CartelPendientes[] actsCarteles = new CartelPendientes[actividades.Count];

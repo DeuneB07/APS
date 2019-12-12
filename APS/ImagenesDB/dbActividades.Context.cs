@@ -16,7 +16,7 @@ namespace APS.ImagenesDB
     public partial class Entities : DbContext
     {
         public Entities()
-            : base("Data Source=DESKTOP-S90N4GL;Initial Catalog=WePass;Persist Security Info=True;User ID=sa;Password=gestion1920;MultipleActiveResultSets=True")
+            : base("Data Source=localhost;Initial Catalog=WePass;Persist Security Info=True;User ID=user1;Password=user1;MultipleActiveResultSets=True")
         {
         }
     
