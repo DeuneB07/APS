@@ -4,6 +4,7 @@ using BDLibrary;
 using APS.BD;
 using System.Drawing;
 using static APS.Mapeo.Actividad_Solicitud;
+using System.IO;
 
 namespace APS.Mapeo
 {
@@ -368,6 +369,49 @@ namespace APS.Mapeo
             return rol.Rechazar(p);
         }
 
+        public Image Imagen
+        {
+            get
+            {
+                if (imagen == null)
+                {
+                    using (var db = new ImagenesDB.Entities2())
+                    {
+                        var obj = db.Usuario.Find(this.email);
+
+                        byte[] m_imagen = obj.imagen;
+                        if (m_imagen == null)
+                        {
+                            imagen = null;
+                        }
+                        else
+                        {
+                            MemoryStream m_MemoryStream = new MemoryStream(m_imagen);
+                            imagen = Image.FromStream(m_MemoryStream);
+                        }
+                    }
+                }
+                return imagen;
+            }
+            set
+            {
+                using (var db = new ImagenesDB.Entities2())
+                {
+                    var obj = db.Usuario.Find(this.email);
+
+                    //CONVERT TO ARRAY
+                    MemoryStream m_MemoryStream = new MemoryStream();
+                    value.Save(m_MemoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                    byte[] m_imagen = m_MemoryStream.ToArray();
+
+                    obj.imagen = m_imagen;
+                    db.SaveChanges();
+
+                }
+                this.imagen = value;
+            }
+        }
+
 
         public override string ToString()
         {
@@ -383,6 +427,8 @@ namespace APS.Mapeo
         {
             return email.GetHashCode();
         }
+
+        
 
 
         /*

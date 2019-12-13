@@ -82,6 +82,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbActividades.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ImagenesDB\dbUsuarios.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbUsuarios.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImagenesDB\dbUsuarios.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbUsuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImagenesDB\dbUsuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbUsuarios.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ImagenesDB\Usuario.cs">
+      <DependentUpon>dbUsuarios.tt</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Gestión Actividades\NegociarActividad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,6 +368,13 @@
     <None Include="ImagenesDB\dbActividades.edmx.diagram">
       <DependentUpon>dbActividades.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="ImagenesDB\dbUsuarios.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbUsuarios.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ImagenesDB\dbUsuarios.edmx.diagram">
+      <DependentUpon>dbUsuarios.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -404,6 +429,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>dbActividades.edmx</DependentUpon>
       <LastGenOutput>dbActividades.cs</LastGenOutput>
+    </Content>
+    <Content Include="ImagenesDB\dbUsuarios.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbUsuarios.edmx</DependentUpon>
+      <LastGenOutput>dbUsuarios.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ImagenesDB\dbUsuarios.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbUsuarios.edmx</DependentUpon>
+      <LastGenOutput>dbUsuarios.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

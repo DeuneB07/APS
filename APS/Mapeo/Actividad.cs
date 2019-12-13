@@ -451,11 +451,8 @@ namespace APS.Mapeo
                             MemoryStream m_MemoryStream = new MemoryStream(m_imagen);
                             imagen = Image.FromStream(m_MemoryStream);
                         }
-
                     }
                 }
-
-
                 return imagen;
             }
             set

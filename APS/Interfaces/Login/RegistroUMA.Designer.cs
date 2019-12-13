@@ -51,16 +51,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnExaminar = new System.Windows.Forms.Button();
+            this.tURL = new System.Windows.Forms.TextBox();
+            this.pictureBoxPerfil = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.bBorrarPref = new System.Windows.Forms.Button();
             this.bAddPref = new System.Windows.Forms.Button();
             this.listPreferencias = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBoxPerfil = new System.Windows.Forms.PictureBox();
-            this.tURL = new System.Windows.Forms.TextBox();
-            this.btnExaminar = new System.Windows.Forms.Button();
-            this.btnBorrar = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPerfil)).BeginInit();
@@ -292,6 +293,57 @@
             this.panel2.Size = new System.Drawing.Size(703, 282);
             this.panel2.TabIndex = 25;
             // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(238, 221);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(105, 28);
+            this.btnBorrar.TabIndex = 32;
+            this.btnBorrar.Text = "Reset";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // btnExaminar
+            // 
+            this.btnExaminar.Location = new System.Drawing.Point(238, 178);
+            this.btnExaminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExaminar.Name = "btnExaminar";
+            this.btnExaminar.Size = new System.Drawing.Size(105, 28);
+            this.btnExaminar.TabIndex = 31;
+            this.btnExaminar.Text = "Examinar";
+            this.btnExaminar.UseVisualStyleBackColor = true;
+            this.btnExaminar.Click += new System.EventHandler(this.btnExaminar_Click);
+            // 
+            // tURL
+            // 
+            this.tURL.Enabled = false;
+            this.tURL.Location = new System.Drawing.Point(132, 137);
+            this.tURL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tURL.Name = "tURL";
+            this.tURL.Size = new System.Drawing.Size(181, 22);
+            this.tURL.TabIndex = 30;
+            // 
+            // pictureBoxPerfil
+            // 
+            this.pictureBoxPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxPerfil.Image = global::APS.Properties.Resources.userDefault;
+            this.pictureBoxPerfil.Location = new System.Drawing.Point(132, 164);
+            this.pictureBoxPerfil.Name = "pictureBoxPerfil";
+            this.pictureBoxPerfil.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPerfil.TabIndex = 29;
+            this.pictureBoxPerfil.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(41, 140);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 17);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Imgen Perfil:";
+            // 
             // bBorrarPref
             // 
             this.bBorrarPref.Location = new System.Drawing.Point(561, 150);
@@ -343,57 +395,15 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "ApS";
             // 
-            // label8
+            // openFileDialog1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(41, 140);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 17);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Imgen Perfil:";
-            // 
-            // pictureBoxPerfil
-            // 
-            this.pictureBoxPerfil.Image = global::APS.Properties.Resources.userDefault;
-            this.pictureBoxPerfil.Location = new System.Drawing.Point(132, 164);
-            this.pictureBoxPerfil.Name = "pictureBoxPerfil";
-            this.pictureBoxPerfil.Size = new System.Drawing.Size(100, 100);
-            this.pictureBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPerfil.TabIndex = 29;
-            this.pictureBoxPerfil.TabStop = false;
-            // 
-            // tURL
-            // 
-            this.tURL.Location = new System.Drawing.Point(132, 137);
-            this.tURL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tURL.Name = "tURL";
-            this.tURL.Size = new System.Drawing.Size(181, 22);
-            this.tURL.TabIndex = 30;
-            // 
-            // btnExaminar
-            // 
-            this.btnExaminar.Location = new System.Drawing.Point(238, 178);
-            this.btnExaminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExaminar.Name = "btnExaminar";
-            this.btnExaminar.Size = new System.Drawing.Size(105, 28);
-            this.btnExaminar.TabIndex = 31;
-            this.btnExaminar.Text = "Examinar";
-            this.btnExaminar.UseVisualStyleBackColor = true;
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Location = new System.Drawing.Point(238, 221);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(105, 28);
-            this.btnBorrar.TabIndex = 32;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // RegistroUMA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(782, 574);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -448,5 +458,6 @@
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnExaminar;
         private System.Windows.Forms.TextBox tURL;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

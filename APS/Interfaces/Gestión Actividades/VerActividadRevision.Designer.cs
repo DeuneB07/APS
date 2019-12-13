@@ -332,7 +332,7 @@
             // 
             // bSubirRevision
             // 
-            this.bSubirRevision.Location = new System.Drawing.Point(21, 468);
+            this.bSubirRevision.Location = new System.Drawing.Point(24, 468);
             this.bSubirRevision.Name = "bSubirRevision";
             this.bSubirRevision.Size = new System.Drawing.Size(88, 23);
             this.bSubirRevision.TabIndex = 57;
