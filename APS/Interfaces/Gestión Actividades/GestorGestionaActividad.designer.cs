@@ -137,7 +137,7 @@
             this.labelError.BackColor = System.Drawing.Color.Transparent;
             this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(45, 501);
+            this.labelError.Location = new System.Drawing.Point(18, 484);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(44, 17);
             this.labelError.TabIndex = 28;
@@ -395,6 +395,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.listTrabajo);
             this.panel1.Controls.Add(this.listAmbito);
             this.panel1.Controls.Add(this.listTurno);
@@ -423,6 +424,8 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.listCompetencias);
             this.panel2.Controls.Add(this.lblCompetencias);
             this.panel2.Controls.Add(this.comboResponsable);
@@ -434,9 +437,9 @@
             this.panel2.Controls.Add(this.labelResponsable);
             this.panel2.Controls.Add(this.labelAsignatura);
             this.panel2.Controls.Add(this.labelGrado);
-            this.panel2.Location = new System.Drawing.Point(401, 15);
+            this.panel2.Location = new System.Drawing.Point(398, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(360, 537);
+            this.panel2.Size = new System.Drawing.Size(363, 541);
             this.panel2.TabIndex = 74;
             // 
             // listCompetencias
@@ -463,6 +466,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(770, 643);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

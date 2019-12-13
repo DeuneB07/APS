@@ -64,5 +64,6 @@ namespace APS.Interfaces.Gestión_Actividades
         {
             this.Close();
         }
+
     }
 }
