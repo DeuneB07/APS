@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static APS.Mapeo.Actividad;
 
 namespace APS.Interfaces.Gestión_Actividades
 {
@@ -47,6 +48,10 @@ namespace APS.Interfaces.Gestión_Actividades
             {
                 bSubirRevision.Visible = false;
             }
+
+            cargarTurnos();
+            cargarTipoTrabajo();
+            cargarAmbitoTrabajo();
         }
 
         private void btnCancelarRevision_Click(object sender, EventArgs e)
@@ -82,6 +87,30 @@ namespace APS.Interfaces.Gestión_Actividades
             NegociarActividad negAct = new NegociarActividad(user, actividad);
             negAct.ShowDialog();
             this.Close();
+        }
+
+        private void cargarTurnos()
+        {
+            foreach (TurnoE t in Enum.GetValues(typeof(TurnoE)))
+            {
+                listTurnoRevision.Items.Add(t);
+            }
+        }
+
+        private void cargarTipoTrabajo()
+        {
+            foreach (TipoTrabajoE tTrab in Enum.GetValues(typeof(TipoTrabajoE)))
+            {
+                listTrabajoRevision.Items.Add(tTrab);
+            }
+        }
+
+        private void cargarAmbitoTrabajo()
+        {
+            foreach (AmbitoTrabajoE tAmb in Enum.GetValues(typeof(AmbitoTrabajoE)))
+            {
+                listAmbitoRevision.Items.Add(tAmb);
+            }
         }
     }
 }
