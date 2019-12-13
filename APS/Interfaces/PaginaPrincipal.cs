@@ -47,8 +47,8 @@ namespace APS.Interfaces
             cargarTodasActividadesInicio();
             cargarPendientesActividadesInicio();
             cargarRevisionActividadesInicio();
-
-            //cargarMisActividades();
+            cargarMisActividadesInicio();
+            
             //cargarActividadesInscritas();
         }
 
@@ -648,6 +648,7 @@ namespace APS.Interfaces
             actRevision.ShowDialog();
             cargarRevisionActividadesInicio();
             cargarTodasActividadesInicio();
+            cargarMisActividadesInicio();
         }
 
         // -> PDI debe Aceptar/Rechazar Actividad en Negociación con ONG
@@ -665,6 +666,7 @@ namespace APS.Interfaces
             actRevision.ShowDialog();
             cargarRevisionActividadesInicio();
             cargarTodasActividadesInicio();
+            cargarMisActividadesInicio();
         }
 
         // -> ONG debe Aceptar/Rechazar Actividad en Negociación con PDI
@@ -690,7 +692,109 @@ namespace APS.Interfaces
             actRevision.ShowDialog();
             cargarRevisionActividadesInicio();
             cargarTodasActividadesInicio();
+            cargarMisActividadesInicio();
         }
+
+
+        //
+        // PESTAÑA MIS ACTIVIDADES -> Sólo ONG (organizador) y PDI (responsable) // Sólo Actividades Abiertas y Publicadas
+        //
+        private void cargarMisActividadesInicio()
+        {
+            pMisActividades.Controls.Clear();
+            panelMisActs.AutoScroll = false;
+            panelMisActs.AutoScroll = true;
+            pMisActividades.Controls.Add(panelMisActs);
+            panelMisActs.RowCount = 1;
+            panelMisActs.Controls.Clear();
+
+
+            if (user.Rol.NombreRol.Equals("PDI"))
+            {
+                List<Actividad> actsPDI = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
+                cargarMisActsPDI(actsPDI);
+            }
+            else
+            { //ES ONG -> lo mismo que para el PDI, pero al contrario 
+                List<Actividad> actsONG = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
+                cargarMisActsONG(actsONG);
+            }
+        }
+
+        private void cargarMisActsONG(List<Actividad> actsONG)
+        {
+
+            CartelPendientes[] carActsONG = new CartelPendientes[actsONG.Count];
+            int c = 0;
+            foreach (Actividad act in actsONG)
+            {
+                if (act.Organizador.Equals(user))
+                {
+                    carActsONG[c] = new CartelPendientes(user, act);
+                    panelMisActs.Controls.Add(carActsONG[c], 0, c);
+                    panelMisActs.RowCount = panelMisActs.RowCount + 1;
+                    carActsONG[c].Location = new Point(carActsONG[c].Location.X, (carActsONG[c].Size.Height * c));
+                    carActsONG[c].BackColor = Color.Orange;
+
+                    //BOTONES GESTOR
+                    Panel panel = (Panel)carActsONG[c].Controls.Find("panel1", false)[0];
+                    Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
+                    Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
+                    Button bParticipantes = (Button)panel.Controls.Find("bVerParts", false)[0];
+                    bAceptar.Visible = false;
+                    bRechazar.Visible = false;
+                    bParticipantes.Visible = true;
+
+                    //PROGRAMACIÓN BOTONES
+                    bParticipantes.Click += (sender, EventArgs) => { bVerSolicitantesONG_Click(sender, EventArgs, act); };
+
+                    c++;
+                }
+            }
+        }
+
+        private void cargarMisActsPDI(List<Actividad> actsPDI)
+        {
+            CartelPendientes[] carActsPDI = new CartelPendientes[actsPDI.Count];
+            int c = 0;
+            foreach (Actividad act in actsPDI)
+            {
+                if (act.Responsable != null && act.Responsable.Equals(user))
+                {
+                    carActsPDI[c] = new CartelPendientes(user, act);
+                    panelMisActs.Controls.Add(carActsPDI[c], 0, c);
+                    panelMisActs.RowCount = panelMisActs.RowCount + 1;
+                    carActsPDI[c].Location = new Point(carActsPDI[c].Location.X, (carActsPDI[c].Size.Height * c));
+                    carActsPDI[c].BackColor = Color.Orange;
+
+                    //BOTONES GESTOR
+                    Panel panel = (Panel)carActsPDI[c].Controls.Find("panel1", false)[0];
+                    Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
+                    Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
+                    Button bParticipantes = (Button)panel.Controls.Find("bVerParts", false)[0];
+                    bAceptar.Visible = false;
+                    bRechazar.Visible = false;
+                    bParticipantes.Visible = true;
+
+                    //PROGRAMACIÓN BOTONES
+                    bParticipantes.Click += (sender, EventArgs) => { bVerSolicitantesPDI_Click(sender, EventArgs, act); };
+
+                    c++;
+                }
+            }
+        }
+
+
+        private void bVerSolicitantesONG_Click(object sender, EventArgs eventArgs, Actividad act)
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void bVerSolicitantesPDI_Click(object sender, EventArgs eventArgs, Actividad act)
+        {
+            //throw new NotImplementedException();
+        }
+
 
 
         //

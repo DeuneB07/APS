@@ -50,6 +50,7 @@
             this.labelName = new System.Windows.Forms.Label();
             this.lDescripcion = new System.Windows.Forms.Label();
             this.pict = new System.Windows.Forms.PictureBox();
+            this.bVerParts = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.bVerParts);
             this.panel1.Controls.Add(this.lShowHoras);
             this.panel1.Controls.Add(this.lShowTurno);
             this.panel1.Controls.Add(this.lHoras);
@@ -291,6 +293,21 @@
             this.pict.TabIndex = 6;
             this.pict.TabStop = false;
             // 
+            // bVerParts
+            // 
+            this.bVerParts.BackColor = System.Drawing.Color.Transparent;
+            this.bVerParts.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bVerParts.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.bVerParts.Font = new System.Drawing.Font("Calibri Light", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bVerParts.ForeColor = System.Drawing.Color.Black;
+            this.bVerParts.Location = new System.Drawing.Point(545, 113);
+            this.bVerParts.Name = "bVerParts";
+            this.bVerParts.Size = new System.Drawing.Size(75, 32);
+            this.bVerParts.TabIndex = 28;
+            this.bVerParts.Text = "Participantes";
+            this.bVerParts.UseVisualStyleBackColor = false;
+            this.bVerParts.Visible = false;
+            // 
             // CartelPendientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,5 +346,6 @@
         private System.Windows.Forms.Label lShowTurno;
         private System.Windows.Forms.Label lHoras;
         private System.Windows.Forms.Label lTurno;
+        private System.Windows.Forms.Button bVerParts;
     }
 }
