@@ -74,129 +74,117 @@ namespace APS.Interfaces
             // labelOrganizador
             // 
             this.labelOrganizador.AutoSize = true;
-            this.labelOrganizador.Location = new System.Drawing.Point(112, 37);
-            this.labelOrganizador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelOrganizador.Location = new System.Drawing.Point(149, 46);
             this.labelOrganizador.Name = "labelOrganizador";
-            this.labelOrganizador.Size = new System.Drawing.Size(67, 13);
+            this.labelOrganizador.Size = new System.Drawing.Size(91, 17);
             this.labelOrganizador.TabIndex = 0;
             this.labelOrganizador.Text = "Organizador:";
             // 
             // labelNombreAct
             // 
             this.labelNombreAct.AutoSize = true;
-            this.labelNombreAct.Location = new System.Drawing.Point(88, 74);
-            this.labelNombreAct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNombreAct.Location = new System.Drawing.Point(117, 91);
             this.labelNombreAct.Name = "labelNombreAct";
-            this.labelNombreAct.Size = new System.Drawing.Size(94, 13);
+            this.labelNombreAct.Size = new System.Drawing.Size(123, 17);
             this.labelNombreAct.TabIndex = 1;
             this.labelNombreAct.Text = "Nombre Actividad:";
             // 
             // labelDescripcion
             // 
             this.labelDescripcion.AutoSize = true;
-            this.labelDescripcion.Location = new System.Drawing.Point(70, 107);
-            this.labelDescripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDescripcion.Location = new System.Drawing.Point(93, 132);
             this.labelDescripcion.Name = "labelDescripcion";
-            this.labelDescripcion.Size = new System.Drawing.Size(113, 13);
+            this.labelDescripcion.Size = new System.Drawing.Size(147, 17);
             this.labelDescripcion.TabIndex = 2;
             this.labelDescripcion.Text = "Descripción Actividad:";
             // 
             // labelNumPlazas
             // 
             this.labelNumPlazas.AutoSize = true;
-            this.labelNumPlazas.Location = new System.Drawing.Point(97, 184);
-            this.labelNumPlazas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNumPlazas.Location = new System.Drawing.Point(129, 226);
             this.labelNumPlazas.Name = "labelNumPlazas";
-            this.labelNumPlazas.Size = new System.Drawing.Size(81, 13);
+            this.labelNumPlazas.Size = new System.Drawing.Size(108, 17);
             this.labelNumPlazas.TabIndex = 3;
             this.labelNumPlazas.Text = "Número Plazas:";
             // 
             // labelNumHoras
             // 
             this.labelNumHoras.AutoSize = true;
-            this.labelNumHoras.Location = new System.Drawing.Point(100, 214);
-            this.labelNumHoras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNumHoras.Location = new System.Drawing.Point(133, 263);
             this.labelNumHoras.Name = "labelNumHoras";
-            this.labelNumHoras.Size = new System.Drawing.Size(78, 13);
+            this.labelNumHoras.Size = new System.Drawing.Size(104, 17);
             this.labelNumHoras.TabIndex = 4;
             this.labelNumHoras.Text = "Número Horas:";
             // 
             // labelFechaInicio
             // 
             this.labelFechaInicio.AutoSize = true;
-            this.labelFechaInicio.Location = new System.Drawing.Point(112, 248);
-            this.labelFechaInicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFechaInicio.Location = new System.Drawing.Point(149, 305);
             this.labelFechaInicio.Name = "labelFechaInicio";
-            this.labelFechaInicio.Size = new System.Drawing.Size(68, 13);
+            this.labelFechaInicio.Size = new System.Drawing.Size(87, 17);
             this.labelFechaInicio.TabIndex = 5;
             this.labelFechaInicio.Text = "Fecha Inicio:";
             // 
             // labelFechaFin
             // 
             this.labelFechaFin.AutoSize = true;
-            this.labelFechaFin.Location = new System.Drawing.Point(122, 280);
-            this.labelFechaFin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFechaFin.Location = new System.Drawing.Point(163, 345);
             this.labelFechaFin.Name = "labelFechaFin";
-            this.labelFechaFin.Size = new System.Drawing.Size(57, 13);
+            this.labelFechaFin.Size = new System.Drawing.Size(74, 17);
             this.labelFechaFin.TabIndex = 6;
             this.labelFechaFin.Text = "Fecha Fin:";
             // 
             // labelLugar
             // 
             this.labelLugar.AutoSize = true;
-            this.labelLugar.Location = new System.Drawing.Point(141, 316);
-            this.labelLugar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelLugar.Location = new System.Drawing.Point(188, 389);
             this.labelLugar.Name = "labelLugar";
-            this.labelLugar.Size = new System.Drawing.Size(37, 13);
+            this.labelLugar.Size = new System.Drawing.Size(49, 17);
             this.labelLugar.TabIndex = 7;
             this.labelLugar.Text = "Lugar:";
             // 
             // labelTurno
             // 
             this.labelTurno.AutoSize = true;
-            this.labelTurno.Location = new System.Drawing.Point(141, 349);
-            this.labelTurno.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTurno.Location = new System.Drawing.Point(188, 430);
             this.labelTurno.Name = "labelTurno";
-            this.labelTurno.Size = new System.Drawing.Size(38, 13);
+            this.labelTurno.Size = new System.Drawing.Size(50, 17);
             this.labelTurno.TabIndex = 8;
             this.labelTurno.Text = "Turno:";
             // 
             // labelImagen
             // 
             this.labelImagen.AutoSize = true;
-            this.labelImagen.Location = new System.Drawing.Point(278, 349);
-            this.labelImagen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelImagen.Location = new System.Drawing.Point(371, 430);
             this.labelImagen.Name = "labelImagen";
-            this.labelImagen.Size = new System.Drawing.Size(45, 13);
+            this.labelImagen.Size = new System.Drawing.Size(58, 17);
             this.labelImagen.TabIndex = 9;
             this.labelImagen.Text = "Imagen:";
             // 
             // labelAmbito
             // 
             this.labelAmbito.AutoSize = true;
-            this.labelAmbito.Location = new System.Drawing.Point(97, 384);
-            this.labelAmbito.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelAmbito.Location = new System.Drawing.Point(129, 473);
             this.labelAmbito.Name = "labelAmbito";
-            this.labelAmbito.Size = new System.Drawing.Size(81, 13);
+            this.labelAmbito.Size = new System.Drawing.Size(108, 17);
             this.labelAmbito.TabIndex = 10;
             this.labelAmbito.Text = "Ambito Trabajo:";
             // 
             // labelTipo
             // 
             this.labelTipo.AutoSize = true;
-            this.labelTipo.Location = new System.Drawing.Point(108, 413);
-            this.labelTipo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTipo.Location = new System.Drawing.Point(144, 508);
             this.labelTipo.Name = "labelTipo";
-            this.labelTipo.Size = new System.Drawing.Size(70, 13);
+            this.labelTipo.Size = new System.Drawing.Size(93, 17);
             this.labelTipo.TabIndex = 11;
             this.labelTipo.Text = "Tipo Trabajo:";
             // 
             // bAceptar
             // 
-            this.bAceptar.Location = new System.Drawing.Point(328, 453);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bAceptar.Location = new System.Drawing.Point(426, 560);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(56, 19);
+            this.bAceptar.Size = new System.Drawing.Size(83, 23);
             this.bAceptar.TabIndex = 12;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -204,10 +192,10 @@ namespace APS.Interfaces
             // 
             // bCancelar
             // 
-            this.bCancelar.Location = new System.Drawing.Point(406, 453);
-            this.bCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bCancelar.Location = new System.Drawing.Point(536, 560);
+            this.bCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(56, 19);
+            this.bCancelar.Size = new System.Drawing.Size(79, 23);
             this.bCancelar.TabIndex = 13;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
@@ -216,76 +204,76 @@ namespace APS.Interfaces
             // tOrganizador
             // 
             this.tOrganizador.Enabled = false;
-            this.tOrganizador.Location = new System.Drawing.Point(185, 37);
-            this.tOrganizador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tOrganizador.Location = new System.Drawing.Point(247, 46);
+            this.tOrganizador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tOrganizador.Name = "tOrganizador";
-            this.tOrganizador.Size = new System.Drawing.Size(138, 20);
+            this.tOrganizador.Size = new System.Drawing.Size(183, 22);
             this.tOrganizador.TabIndex = 14;
             // 
             // tNombreAct
             // 
-            this.tNombreAct.Location = new System.Drawing.Point(185, 74);
-            this.tNombreAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tNombreAct.Location = new System.Drawing.Point(247, 91);
+            this.tNombreAct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tNombreAct.Name = "tNombreAct";
-            this.tNombreAct.Size = new System.Drawing.Size(138, 20);
+            this.tNombreAct.Size = new System.Drawing.Size(183, 22);
             this.tNombreAct.TabIndex = 15;
             // 
             // tDescripcion
             // 
-            this.tDescripcion.Location = new System.Drawing.Point(185, 107);
-            this.tDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tDescripcion.Location = new System.Drawing.Point(247, 132);
+            this.tDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tDescripcion.Name = "tDescripcion";
-            this.tDescripcion.Size = new System.Drawing.Size(138, 59);
+            this.tDescripcion.Size = new System.Drawing.Size(183, 72);
             this.tDescripcion.TabIndex = 16;
             this.tDescripcion.Text = "";
             // 
             // tNumPlazas
             // 
-            this.tNumPlazas.Location = new System.Drawing.Point(182, 184);
-            this.tNumPlazas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tNumPlazas.Location = new System.Drawing.Point(243, 226);
+            this.tNumPlazas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tNumPlazas.Name = "tNumPlazas";
-            this.tNumPlazas.Size = new System.Drawing.Size(43, 20);
+            this.tNumPlazas.Size = new System.Drawing.Size(56, 22);
             this.tNumPlazas.TabIndex = 18;
             // 
             // tNumHoras
             // 
-            this.tNumHoras.Location = new System.Drawing.Point(182, 214);
-            this.tNumHoras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tNumHoras.Location = new System.Drawing.Point(243, 263);
+            this.tNumHoras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tNumHoras.Name = "tNumHoras";
-            this.tNumHoras.Size = new System.Drawing.Size(43, 20);
+            this.tNumHoras.Size = new System.Drawing.Size(56, 22);
             this.tNumHoras.TabIndex = 19;
             // 
             // dateTimePickerFechaIni
             // 
-            this.dateTimePickerFechaIni.Location = new System.Drawing.Point(182, 248);
-            this.dateTimePickerFechaIni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFechaIni.Location = new System.Drawing.Point(243, 305);
+            this.dateTimePickerFechaIni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerFechaIni.Name = "dateTimePickerFechaIni";
-            this.dateTimePickerFechaIni.Size = new System.Drawing.Size(151, 20);
+            this.dateTimePickerFechaIni.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerFechaIni.TabIndex = 20;
             // 
             // dateTimePickerFechaFin
             // 
-            this.dateTimePickerFechaFin.Location = new System.Drawing.Point(182, 280);
-            this.dateTimePickerFechaFin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFechaFin.Location = new System.Drawing.Point(243, 345);
+            this.dateTimePickerFechaFin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerFechaFin.Name = "dateTimePickerFechaFin";
-            this.dateTimePickerFechaFin.Size = new System.Drawing.Size(151, 20);
+            this.dateTimePickerFechaFin.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerFechaFin.TabIndex = 21;
             // 
             // tLugar
             // 
-            this.tLugar.Location = new System.Drawing.Point(185, 316);
-            this.tLugar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tLugar.Location = new System.Drawing.Point(247, 389);
+            this.tLugar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tLugar.Name = "tLugar";
-            this.tLugar.Size = new System.Drawing.Size(148, 20);
+            this.tLugar.Size = new System.Drawing.Size(196, 22);
             this.tLugar.TabIndex = 22;
             // 
             // tURL
             // 
             this.tURL.Enabled = false;
-            this.tURL.Location = new System.Drawing.Point(326, 349);
-            this.tURL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tURL.Location = new System.Drawing.Point(435, 430);
+            this.tURL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tURL.Name = "tURL";
-            this.tURL.Size = new System.Drawing.Size(87, 20);
+            this.tURL.Size = new System.Drawing.Size(115, 22);
             this.tURL.TabIndex = 23;
             this.tURL.Visible = false;
             // 
@@ -295,10 +283,9 @@ namespace APS.Interfaces
             this.labelError.BackColor = System.Drawing.Color.Transparent;
             this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(36, 468);
-            this.labelError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelError.Location = new System.Drawing.Point(48, 576);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(33, 13);
+            this.labelError.Size = new System.Drawing.Size(44, 17);
             this.labelError.TabIndex = 27;
             this.labelError.Text = "error";
             // 
@@ -312,10 +299,10 @@ namespace APS.Interfaces
             // 
             // btnExaminar
             // 
-            this.btnExaminar.Location = new System.Drawing.Point(417, 349);
-            this.btnExaminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExaminar.Location = new System.Drawing.Point(556, 430);
+            this.btnExaminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExaminar.Name = "btnExaminar";
-            this.btnExaminar.Size = new System.Drawing.Size(56, 19);
+            this.btnExaminar.Size = new System.Drawing.Size(75, 23);
             this.btnExaminar.TabIndex = 28;
             this.btnExaminar.Text = "Examinar";
             this.btnExaminar.UseVisualStyleBackColor = true;
@@ -327,7 +314,8 @@ namespace APS.Interfaces
             this.pictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.BackgroundImage")));
             this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox.InitialImage = null;
-            this.pictureBox.Location = new System.Drawing.Point(495, 439);
+            this.pictureBox.Location = new System.Drawing.Point(437, 458);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(132, 81);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -345,32 +333,35 @@ namespace APS.Interfaces
             // listTurno
             // 
             this.listTurno.FormattingEnabled = true;
-            this.listTurno.Location = new System.Drawing.Point(182, 349);
+            this.listTurno.Location = new System.Drawing.Point(243, 430);
+            this.listTurno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listTurno.Name = "listTurno";
-            this.listTurno.Size = new System.Drawing.Size(91, 21);
+            this.listTurno.Size = new System.Drawing.Size(120, 24);
             this.listTurno.TabIndex = 30;
             // 
             // listAmbito
             // 
             this.listAmbito.FormattingEnabled = true;
-            this.listAmbito.Location = new System.Drawing.Point(182, 381);
+            this.listAmbito.Location = new System.Drawing.Point(243, 469);
+            this.listAmbito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listAmbito.Name = "listAmbito";
-            this.listAmbito.Size = new System.Drawing.Size(104, 21);
+            this.listAmbito.Size = new System.Drawing.Size(137, 24);
             this.listAmbito.TabIndex = 31;
             // 
             // listTrabajo
             // 
             this.listTrabajo.FormattingEnabled = true;
-            this.listTrabajo.Location = new System.Drawing.Point(182, 410);
+            this.listTrabajo.Location = new System.Drawing.Point(243, 505);
+            this.listTrabajo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listTrabajo.Name = "listTrabajo";
-            this.listTrabajo.Size = new System.Drawing.Size(104, 21);
+            this.listTrabajo.Size = new System.Drawing.Size(137, 24);
             this.listTrabajo.TabIndex = 32;
             // 
             // NuevaActividad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 511);
+            this.ClientSize = new System.Drawing.Size(657, 613);
             this.Controls.Add(this.listTrabajo);
             this.Controls.Add(this.listAmbito);
             this.Controls.Add(this.listTurno);
@@ -401,7 +392,7 @@ namespace APS.Interfaces
             this.Controls.Add(this.labelNombreAct);
             this.Controls.Add(this.labelOrganizador);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NuevaActividad";
             this.Text = "Nueva Actividad";
             ((System.ComponentModel.ISupportInitialize)(this.ambitoTrabajoEBindingSource)).EndInit();
