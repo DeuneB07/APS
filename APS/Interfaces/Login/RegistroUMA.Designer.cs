@@ -56,13 +56,19 @@
             this.listPreferencias = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBoxPerfil = new System.Windows.Forms.PictureBox();
+            this.tURL = new System.Windows.Forms.TextBox();
+            this.btnExaminar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPerfil)).BeginInit();
             this.SuspendLayout();
             // 
             // b_aceptarReg
             // 
-            this.b_aceptarReg.Location = new System.Drawing.Point(454, 463);
+            this.b_aceptarReg.Location = new System.Drawing.Point(562, 525);
             this.b_aceptarReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.b_aceptarReg.Name = "b_aceptarReg";
             this.b_aceptarReg.Size = new System.Drawing.Size(83, 28);
@@ -73,7 +79,7 @@
             // 
             // b_cancelarReg
             // 
-            this.b_cancelarReg.Location = new System.Drawing.Point(558, 463);
+            this.b_cancelarReg.Location = new System.Drawing.Point(666, 525);
             this.b_cancelarReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.b_cancelarReg.Name = "b_cancelarReg";
             this.b_cancelarReg.Size = new System.Drawing.Size(83, 28);
@@ -106,7 +112,7 @@
             this.labelError.BackColor = System.Drawing.Color.Transparent;
             this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(32, 469);
+            this.labelError.Location = new System.Drawing.Point(32, 531);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(44, 17);
             this.labelError.TabIndex = 8;
@@ -115,7 +121,7 @@
             // labelUsuario
             // 
             this.labelUsuario.AutoSize = true;
-            this.labelUsuario.Location = new System.Drawing.Point(41, 53);
+            this.labelUsuario.Location = new System.Drawing.Point(25, 53);
             this.labelUsuario.Name = "labelUsuario";
             this.labelUsuario.Size = new System.Drawing.Size(115, 17);
             this.labelUsuario.TabIndex = 9;
@@ -123,7 +129,7 @@
             // 
             // tUsuario
             // 
-            this.tUsuario.Location = new System.Drawing.Point(168, 53);
+            this.tUsuario.Location = new System.Drawing.Point(146, 53);
             this.tUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tUsuario.Name = "tUsuario";
             this.tUsuario.Size = new System.Drawing.Size(124, 22);
@@ -132,7 +138,7 @@
             // labelDNI
             // 
             this.labelDNI.AutoSize = true;
-            this.labelDNI.Location = new System.Drawing.Point(79, 93);
+            this.labelDNI.Location = new System.Drawing.Point(79, 95);
             this.labelDNI.Name = "labelDNI";
             this.labelDNI.Size = new System.Drawing.Size(61, 17);
             this.labelDNI.TabIndex = 11;
@@ -140,7 +146,7 @@
             // 
             // tDNI
             // 
-            this.tDNI.Location = new System.Drawing.Point(168, 90);
+            this.tDNI.Location = new System.Drawing.Point(146, 93);
             this.tDNI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tDNI.Name = "tDNI";
             this.tDNI.Size = new System.Drawing.Size(124, 22);
@@ -265,6 +271,11 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnBorrar);
+            this.panel2.Controls.Add(this.btnExaminar);
+            this.panel2.Controls.Add(this.tURL);
+            this.panel2.Controls.Add(this.pictureBoxPerfil);
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.bBorrarPref);
             this.panel2.Controls.Add(this.bAddPref);
             this.panel2.Controls.Add(this.listPreferencias);
@@ -278,7 +289,7 @@
             this.panel2.Controls.Add(this.tDNI);
             this.panel2.Location = new System.Drawing.Point(35, 227);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(703, 207);
+            this.panel2.Size = new System.Drawing.Size(703, 282);
             this.panel2.TabIndex = 25;
             // 
             // bBorrarPref
@@ -332,11 +343,58 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "ApS";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(41, 140);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 17);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Imgen Perfil:";
+            // 
+            // pictureBoxPerfil
+            // 
+            this.pictureBoxPerfil.Image = global::APS.Properties.Resources.userDefault;
+            this.pictureBoxPerfil.Location = new System.Drawing.Point(132, 164);
+            this.pictureBoxPerfil.Name = "pictureBoxPerfil";
+            this.pictureBoxPerfil.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPerfil.TabIndex = 29;
+            this.pictureBoxPerfil.TabStop = false;
+            // 
+            // tURL
+            // 
+            this.tURL.Location = new System.Drawing.Point(132, 137);
+            this.tURL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tURL.Name = "tURL";
+            this.tURL.Size = new System.Drawing.Size(181, 22);
+            this.tURL.TabIndex = 30;
+            // 
+            // btnExaminar
+            // 
+            this.btnExaminar.Location = new System.Drawing.Point(238, 178);
+            this.btnExaminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExaminar.Name = "btnExaminar";
+            this.btnExaminar.Size = new System.Drawing.Size(105, 28);
+            this.btnExaminar.TabIndex = 31;
+            this.btnExaminar.Text = "Examinar";
+            this.btnExaminar.UseVisualStyleBackColor = true;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(238, 221);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(105, 28);
+            this.btnBorrar.TabIndex = 32;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            // 
             // RegistroUMA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 520);
+            this.ClientSize = new System.Drawing.Size(782, 574);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelError);
@@ -350,6 +408,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPerfil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,5 +443,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button bBorrarPref;
         private System.Windows.Forms.Button bAddPref;
+        private System.Windows.Forms.PictureBox pictureBoxPerfil;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Button btnExaminar;
+        private System.Windows.Forms.TextBox tURL;
     }
 }
