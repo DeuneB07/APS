@@ -402,8 +402,14 @@ namespace APS.Interfaces
 
         private void bRechazar_Click(object sender, EventArgs eventArgs, Actividad act)
         {
-            act.BorrarActividad();
-            cargarPendientesActividadesInicio();
+            DialogResult emCierreDialog;
+            string mensaje = "¿Quieres rechazar la actividad? Se borrará del sistema";
+            string caption = "¡AVISO!";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
+
+            if (emCierreDialog == DialogResult.Yes) act.BorrarActividad();
+            cargarRevisionActividadesInicio();
         }
 
         //
