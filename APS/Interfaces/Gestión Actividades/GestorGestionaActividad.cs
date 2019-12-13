@@ -41,6 +41,9 @@ namespace APS.Interfaces
             cargarAsignaturas();
             cargarResponsables();
             cargarCompetencias();
+            cargarTurnos();
+            cargarTipoTrabajo();
+            cargarAmbitoTrabajo();
         }
 
         private void cargarGrados()
@@ -121,6 +124,30 @@ namespace APS.Interfaces
             listCompetencias.DisplayMember = "nombreComp";
         }
 
+        private void cargarTurnos()
+        {
+            foreach (TurnoE t in Enum.GetValues(typeof(TurnoE)))
+            {
+                listTurno.Items.Add(t);
+            }
+        }
+
+        private void cargarTipoTrabajo()
+        {
+            foreach (TipoTrabajoE tTrab in Enum.GetValues(typeof(TipoTrabajoE)))
+            {
+                listTrabajo.Items.Add(tTrab);
+            }
+        }
+
+        private void cargarAmbitoTrabajo()
+        {
+            foreach (AmbitoTrabajoE tAmb in Enum.GetValues(typeof(AmbitoTrabajoE)))
+            {
+                listAmbito.Items.Add(tAmb);
+            }
+        }
+
         private void Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -199,5 +226,6 @@ namespace APS.Interfaces
                 comboResponsable.Enabled = true;
             }
         }
+
     }
 }
