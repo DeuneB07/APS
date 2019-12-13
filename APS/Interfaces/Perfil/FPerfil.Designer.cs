@@ -59,19 +59,19 @@
             // 
             this.lNombre.AutoSize = true;
             this.lNombre.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lNombre.Location = new System.Drawing.Point(91, 194);
-            this.lNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lNombre.Location = new System.Drawing.Point(136, 303);
+            this.lNombre.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lNombre.Name = "lNombre";
-            this.lNombre.Size = new System.Drawing.Size(62, 18);
+            this.lNombre.Size = new System.Drawing.Size(96, 29);
             this.lNombre.TabIndex = 0;
             this.lNombre.Text = "Nombre:";
             // 
             // picPerfil
             // 
-            this.picPerfil.Location = new System.Drawing.Point(48, 15);
-            this.picPerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.picPerfil.Location = new System.Drawing.Point(72, 23);
+            this.picPerfil.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.picPerfil.Name = "picPerfil";
-            this.picPerfil.Size = new System.Drawing.Size(123, 112);
+            this.picPerfil.Size = new System.Drawing.Size(184, 175);
             this.picPerfil.TabIndex = 2;
             this.picPerfil.TabStop = false;
             // 
@@ -79,10 +79,10 @@
             // 
             this.lDNI2.AutoSize = true;
             this.lDNI2.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDNI2.Location = new System.Drawing.Point(164, 244);
-            this.lDNI2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lDNI2.Location = new System.Drawing.Point(246, 381);
+            this.lDNI2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lDNI2.Name = "lDNI2";
-            this.lDNI2.Size = new System.Drawing.Size(35, 18);
+            this.lDNI2.Size = new System.Drawing.Size(56, 29);
             this.lDNI2.TabIndex = 3;
             this.lDNI2.Text = "(dni)";
             // 
@@ -90,10 +90,10 @@
             // 
             this.lNombre2.AutoSize = true;
             this.lNombre2.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lNombre2.Location = new System.Drawing.Point(164, 194);
-            this.lNombre2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lNombre2.Location = new System.Drawing.Point(246, 303);
+            this.lNombre2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lNombre2.Name = "lNombre2";
-            this.lNombre2.Size = new System.Drawing.Size(48, 18);
+            this.lNombre2.Size = new System.Drawing.Size(75, 29);
             this.lNombre2.TabIndex = 4;
             this.lNombre2.Text = "(noun)";
             // 
@@ -101,10 +101,10 @@
             // 
             this.lFecha.AutoSize = true;
             this.lFecha.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lFecha.Location = new System.Drawing.Point(91, 341);
-            this.lFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lFecha.Location = new System.Drawing.Point(136, 533);
+            this.lFecha.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lFecha.Name = "lFecha";
-            this.lFecha.Size = new System.Drawing.Size(121, 18);
+            this.lFecha.Size = new System.Drawing.Size(189, 29);
             this.lFecha.TabIndex = 5;
             this.lFecha.Text = "Fecha Nacimiento:";
             // 
@@ -112,10 +112,10 @@
             // 
             this.lMail.AutoSize = true;
             this.lMail.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lMail.Location = new System.Drawing.Point(91, 293);
-            this.lMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lMail.Location = new System.Drawing.Point(136, 458);
+            this.lMail.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lMail.Name = "lMail";
-            this.lMail.Size = new System.Drawing.Size(50, 18);
+            this.lMail.Size = new System.Drawing.Size(78, 29);
             this.lMail.TabIndex = 6;
             this.lMail.Text = "e-mail:";
             // 
@@ -123,10 +123,10 @@
             // 
             this.lDNI.AutoSize = true;
             this.lDNI.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDNI.Location = new System.Drawing.Point(91, 244);
-            this.lDNI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lDNI.Location = new System.Drawing.Point(136, 381);
+            this.lDNI.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lDNI.Name = "lDNI";
-            this.lDNI.Size = new System.Drawing.Size(35, 18);
+            this.lDNI.Size = new System.Drawing.Size(55, 29);
             this.lDNI.TabIndex = 7;
             this.lDNI.Text = "DNI:";
             // 
@@ -134,10 +134,10 @@
             // 
             this.lMail2.AutoSize = true;
             this.lMail2.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lMail2.Location = new System.Drawing.Point(164, 293);
-            this.lMail2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lMail2.Location = new System.Drawing.Point(246, 458);
+            this.lMail2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lMail2.Name = "lMail2";
-            this.lMail2.Size = new System.Drawing.Size(49, 18);
+            this.lMail2.Size = new System.Drawing.Size(79, 29);
             this.lMail2.TabIndex = 8;
             this.lMail2.Text = "(email)";
             // 
@@ -145,20 +145,20 @@
             // 
             this.lFecha2.AutoSize = true;
             this.lFecha2.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lFecha2.Location = new System.Drawing.Point(229, 341);
-            this.lFecha2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lFecha2.Location = new System.Drawing.Point(344, 533);
+            this.lFecha2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lFecha2.Name = "lFecha2";
-            this.lFecha2.Size = new System.Drawing.Size(73, 18);
+            this.lFecha2.Size = new System.Drawing.Size(116, 29);
             this.lFecha2.TabIndex = 9;
             this.lFecha2.Text = "(fechaNac)";
             // 
             // bModPerfil
             // 
             this.bModPerfil.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bModPerfil.Location = new System.Drawing.Point(91, 444);
-            this.bModPerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.bModPerfil.Location = new System.Drawing.Point(136, 694);
+            this.bModPerfil.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.bModPerfil.Name = "bModPerfil";
-            this.bModPerfil.Size = new System.Drawing.Size(131, 28);
+            this.bModPerfil.Size = new System.Drawing.Size(196, 44);
             this.bModPerfil.TabIndex = 10;
             this.bModPerfil.Text = "Modificar Perfil";
             this.bModPerfil.UseVisualStyleBackColor = true;
@@ -167,10 +167,10 @@
             // bPreferencias
             // 
             this.bPreferencias.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bPreferencias.Location = new System.Drawing.Point(468, 444);
-            this.bPreferencias.Margin = new System.Windows.Forms.Padding(4);
+            this.bPreferencias.Location = new System.Drawing.Point(702, 694);
+            this.bPreferencias.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.bPreferencias.Name = "bPreferencias";
-            this.bPreferencias.Size = new System.Drawing.Size(131, 28);
+            this.bPreferencias.Size = new System.Drawing.Size(196, 44);
             this.bPreferencias.TabIndex = 11;
             this.bPreferencias.Text = "Ver Preferencias";
             this.bPreferencias.UseVisualStyleBackColor = true;
@@ -179,10 +179,10 @@
             // bBaja
             // 
             this.bBaja.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bBaja.Location = new System.Drawing.Point(884, 444);
-            this.bBaja.Margin = new System.Windows.Forms.Padding(4);
+            this.bBaja.Location = new System.Drawing.Point(1326, 694);
+            this.bBaja.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.bBaja.Name = "bBaja";
-            this.bBaja.Size = new System.Drawing.Size(131, 28);
+            this.bBaja.Size = new System.Drawing.Size(196, 44);
             this.bBaja.TabIndex = 12;
             this.bBaja.Text = "Darse de Baja";
             this.bBaja.UseVisualStyleBackColor = true;
@@ -191,21 +191,21 @@
             // listAsignaturas
             // 
             this.listAsignaturas.FormattingEnabled = true;
-            this.listAsignaturas.ItemHeight = 16;
-            this.listAsignaturas.Location = new System.Drawing.Point(623, 257);
-            this.listAsignaturas.Margin = new System.Windows.Forms.Padding(4);
+            this.listAsignaturas.ItemHeight = 25;
+            this.listAsignaturas.Location = new System.Drawing.Point(934, 402);
+            this.listAsignaturas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.listAsignaturas.Name = "listAsignaturas";
-            this.listAsignaturas.Size = new System.Drawing.Size(391, 100);
+            this.listAsignaturas.Size = new System.Drawing.Size(584, 154);
             this.listAsignaturas.TabIndex = 13;
             // 
             // lAsignaturas
             // 
             this.lAsignaturas.AutoSize = true;
             this.lAsignaturas.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAsignaturas.Location = new System.Drawing.Point(464, 257);
-            this.lAsignaturas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lAsignaturas.Location = new System.Drawing.Point(696, 402);
+            this.lAsignaturas.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lAsignaturas.Name = "lAsignaturas";
-            this.lAsignaturas.Size = new System.Drawing.Size(141, 18);
+            this.lAsignaturas.Size = new System.Drawing.Size(219, 29);
             this.lAsignaturas.TabIndex = 14;
             this.lAsignaturas.Text = "Asignaturas en Curso:";
             // 
@@ -213,10 +213,10 @@
             // 
             this.lGrados.AutoSize = true;
             this.lGrados.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lGrados.Location = new System.Drawing.Point(464, 170);
-            this.lGrados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lGrados.Location = new System.Drawing.Point(696, 266);
+            this.lGrados.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lGrados.Name = "lGrados";
-            this.lGrados.Size = new System.Drawing.Size(112, 18);
+            this.lGrados.Size = new System.Drawing.Size(174, 29);
             this.lGrados.TabIndex = 15;
             this.lGrados.Text = "Grados en Curso:";
             // 
@@ -224,30 +224,30 @@
             // 
             this.lGradosUno.AutoSize = true;
             this.lGradosUno.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lGradosUno.Location = new System.Drawing.Point(619, 170);
-            this.lGradosUno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lGradosUno.Location = new System.Drawing.Point(928, 266);
+            this.lGradosUno.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lGradosUno.Name = "lGradosUno";
-            this.lGradosUno.Size = new System.Drawing.Size(95, 18);
+            this.lGradosUno.Size = new System.Drawing.Size(147, 29);
             this.lGradosUno.TabIndex = 16;
             this.lGradosUno.Text = "(gradosSiUno)";
             // 
             // listGrados
             // 
             this.listGrados.FormattingEnabled = true;
-            this.listGrados.ItemHeight = 16;
-            this.listGrados.Location = new System.Drawing.Point(623, 165);
-            this.listGrados.Margin = new System.Windows.Forms.Padding(4);
+            this.listGrados.ItemHeight = 25;
+            this.listGrados.Location = new System.Drawing.Point(934, 258);
+            this.listGrados.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.listGrados.Name = "listGrados";
-            this.listGrados.Size = new System.Drawing.Size(391, 84);
+            this.listGrados.Size = new System.Drawing.Size(584, 129);
             this.listGrados.TabIndex = 17;
             // 
             // bAceptarC
             // 
             this.bAceptarC.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAceptarC.Location = new System.Drawing.Point(256, 444);
-            this.bAceptarC.Margin = new System.Windows.Forms.Padding(4);
+            this.bAceptarC.Location = new System.Drawing.Point(384, 694);
+            this.bAceptarC.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.bAceptarC.Name = "bAceptarC";
-            this.bAceptarC.Size = new System.Drawing.Size(167, 28);
+            this.bAceptarC.Size = new System.Drawing.Size(250, 44);
             this.bAceptarC.TabIndex = 18;
             this.bAceptarC.Text = "Aceptar Cambios";
             this.bAceptarC.UseVisualStyleBackColor = true;
@@ -257,10 +257,10 @@
             // 
             this.lNombreUser.AutoSize = true;
             this.lNombreUser.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lNombreUser.Location = new System.Drawing.Point(91, 150);
-            this.lNombreUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lNombreUser.Location = new System.Drawing.Point(136, 234);
+            this.lNombreUser.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lNombreUser.Name = "lNombreUser";
-            this.lNombreUser.Size = new System.Drawing.Size(113, 18);
+            this.lNombreUser.Size = new System.Drawing.Size(174, 29);
             this.lNombreUser.TabIndex = 20;
             this.lNombreUser.Text = "Nombre Usuario:";
             // 
@@ -268,28 +268,28 @@
             // 
             this.lUserNoun2.AutoSize = true;
             this.lUserNoun2.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lUserNoun2.Location = new System.Drawing.Point(229, 150);
-            this.lUserNoun2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lUserNoun2.Location = new System.Drawing.Point(344, 234);
+            this.lUserNoun2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lUserNoun2.Name = "lUserNoun2";
-            this.lUserNoun2.Size = new System.Drawing.Size(74, 18);
+            this.lUserNoun2.Size = new System.Drawing.Size(115, 29);
             this.lUserNoun2.TabIndex = 21;
             this.lUserNoun2.Text = "(usernoun)";
             // 
             // textNombreUser
             // 
-            this.textNombreUser.Location = new System.Drawing.Point(212, 150);
-            this.textNombreUser.Margin = new System.Windows.Forms.Padding(4);
+            this.textNombreUser.Location = new System.Drawing.Point(318, 234);
+            this.textNombreUser.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textNombreUser.Name = "textNombreUser";
-            this.textNombreUser.Size = new System.Drawing.Size(132, 22);
+            this.textNombreUser.Size = new System.Drawing.Size(196, 31);
             this.textNombreUser.TabIndex = 22;
             // 
             // bAtras
             // 
             this.bAtras.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAtras.Location = new System.Drawing.Point(883, 491);
-            this.bAtras.Margin = new System.Windows.Forms.Padding(4);
+            this.bAtras.Location = new System.Drawing.Point(1324, 767);
+            this.bAtras.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.bAtras.Name = "bAtras";
-            this.bAtras.Size = new System.Drawing.Size(131, 28);
+            this.bAtras.Size = new System.Drawing.Size(196, 44);
             this.bAtras.TabIndex = 23;
             this.bAtras.Text = "Atrás";
             this.bAtras.UseVisualStyleBackColor = true;
@@ -298,20 +298,20 @@
             // bCancelarC
             // 
             this.bCancelarC.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCancelarC.Location = new System.Drawing.Point(655, 444);
-            this.bCancelarC.Margin = new System.Windows.Forms.Padding(4);
+            this.bCancelarC.Location = new System.Drawing.Point(982, 694);
+            this.bCancelarC.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.bCancelarC.Name = "bCancelarC";
-            this.bCancelarC.Size = new System.Drawing.Size(167, 28);
+            this.bCancelarC.Size = new System.Drawing.Size(250, 44);
             this.bCancelarC.TabIndex = 24;
-            this.bCancelarC.Text = "Aceptar Cambios";
+            this.bCancelarC.Text = "Cancelar";
             this.bCancelarC.UseVisualStyleBackColor = true;
             this.bCancelarC.Click += new System.EventHandler(this.bCancelarC_Click);
             // 
             // FPerfil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1600, 866);
             this.Controls.Add(this.bCancelarC);
             this.Controls.Add(this.bAtras);
             this.Controls.Add(this.textNombreUser);
@@ -336,7 +336,7 @@
             this.Controls.Add(this.picPerfil);
             this.Controls.Add(this.lNombre);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FPerfil";
             this.Text = "Perfil";
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();

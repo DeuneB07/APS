@@ -414,12 +414,12 @@ namespace APS.Interfaces
         //
         private void cargarRevisionActividadesInicio()
         {
-            pRevision.Controls.Clear();
+            //pRevision.Controls.Clear();
             panelRevision.AutoScroll = false;
             panelRevision.AutoScroll = true;
             pRevision.Controls.Add(panelRevision);
-            panelRevision.RowCount = 1;
-            panelRevision.Controls.Clear();
+            //panelRevision.RowCount = 1;
+            //panelRevision.Controls.Clear();
 
             //ORDEN -> PRIMERO LAS QUE TIENE QUE DECIDIR SI ES VIABLE
             //      -> DESPUÉS, LAS QUE TIENE QUE REVISAR
@@ -431,12 +431,15 @@ namespace APS.Interfaces
             if (user.Rol.NombreRol.Equals("PDI"))
             {
                 List<Actividad> actAcGestor = Actividad.ListaActividades(Actividad.EstadoActividadE.ACEPTADA_GESTOR);
+                Console.WriteLine(actAcGestor.Count());
                 CartelPendientes[] carAcGestor = new CartelPendientes[actAcGestor.Count];
 
                 foreach (Actividad act in actAcGestor)
                 {
+                    Console.WriteLine(act.Responsable.Email);
                     if (act.Responsable.Equals(user))
                     {
+                        Console.WriteLine("Hello Bro");
                         carAcGestor[c] = new CartelPendientes(user, act);
                         panelPendientes.Controls.Add(carAcGestor[c], 0, c);
                         panelPendientes.RowCount = panelPendientes.RowCount + 1;
@@ -454,6 +457,7 @@ namespace APS.Interfaces
                         c++;
                     }
                 }
+                Console.WriteLine("He Salido del Infierno");
             }
             
 
