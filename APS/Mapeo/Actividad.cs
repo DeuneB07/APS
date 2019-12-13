@@ -543,7 +543,7 @@ namespace APS.Mapeo
         public void BorrarActividad()
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            String del = "DELETE FROM Actividades WHERE ID_Actividad='" + this.ID_Actividad + "';";
+            String del = "DELETE FROM Actividades WHERE ID_Actividad=" + ID_Actividad + ";";
             miBD.Delete(del);
             this.ID_actividad = -1;
             nombreAct = null;

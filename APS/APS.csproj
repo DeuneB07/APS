@@ -237,6 +237,7 @@
     <Compile Include="JSON\Program.cs" />
     <Compile Include="JSON\UsuarioJSON.cs" />
     <Compile Include="Mapeo\Actividad_Realizada.cs" />
+    <Compile Include="Mapeo\Actividad_Solicitud.cs" />
     <Compile Include="Mapeo\Asignatura.cs" />
     <Compile Include="Mapeo\Actividad.cs" />
     <Compile Include="Mapeo\Competencia.cs" />

@@ -103,7 +103,7 @@ namespace APS.Mapeo
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Actividades_Realizadas SET emailParticipante='" + value + "' "
+                String up = "UPDATE Actividades_Realizadas SET emailParticipante='" + value.Email + "' "
                         + "WHERE emailParticipante='" + this.participante.Email + "' and idAct=" + actividad.ID_Actividad + ";";
                 miBD.Update(up);
                 this.participante = value;

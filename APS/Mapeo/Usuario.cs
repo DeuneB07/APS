@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using BDLibrary;
 using APS.BD;
+using System.Drawing;
+using static APS.Mapeo.Actividad_Solicitud;
 
 namespace APS.Mapeo
 {
@@ -20,11 +22,14 @@ namespace APS.Mapeo
         private String apellido1;
         private String apellido2;
         private String situacion;
-        //private File imagen;
-        private List<Grado> grados; //Lazzy
-        private List<Preferencia> preferencias; //Lazzy
-        private List<Asignatura> asignaturas; //Lazzy
-        private List<Mensaje> mensajes;//Lazzy
+        private Image imagen;         //Lazy
+        private List<Grado> grados;   //Lazy
+        private List<Preferencia> preferencias; //Lazy
+        private List<Asignatura> asignaturas; //Lazy
+        private List<Mensaje> mensajes;//Lazy
+
+        private List<Actividad_Realizada> actividadesRealizadas; //Lazzy
+        private List<Actividad_Solicitud> actividadesSolicitadas;  //Lazzzy
 
         public static List<Usuario> ListaUsuarios()
         {
@@ -332,6 +337,60 @@ namespace APS.Mapeo
 
 
 
+
+        public Boolean AccesoPantalla(String p)
+        {
+            return rol.Acceso(p);
+        }
+
+        public Boolean InsertarPantalla(String p)
+        {
+            return rol.Insertar(p);
+        }
+
+        public Boolean ModificarPantalla(String p)
+        {
+            return rol.Modificar(p);
+        }
+
+        public Boolean BorrarPantalla(String p)
+        {
+            return rol.Borrar(p);
+        }
+
+        public Boolean AceptarPantalla(String p)
+        {
+            return rol.Aceptar(p);
+        }
+
+        public Boolean RechazarPantalla(String p)
+        {
+            return rol.Rechazar(p);
+        }
+
+
+        public override string ToString()
+        {
+            return email + ";" + password + ";" + dni + ";" + nombreUser + ";" + rol.NombreRol + ";" + fechaNac.ToShortDateString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Usuario && (((Usuario)obj).email.ToUpper().CompareTo(this.email.ToUpper()) == 0);
+        }
+
+        public override int GetHashCode()
+        {
+            return email.GetHashCode();
+        }
+
+
+        /*
+         *  GESTIÓN ATRIBUTOS LAZY
+         */
+
+
+
         public List<Preferencia> Preferencias
         {
             get
@@ -341,22 +400,22 @@ namespace APS.Mapeo
             }
         }
 
-         public List<Mensaje> Mensajes
+        public List<Mensaje> Mensajes
         {
             get
             {
                 if (mensajes == null)
                 {
                     mensajes = Mapeo.Mensaje.ListaMensajes();
-                   /* List<Mensaje> recibidos = new List<Mensaje>();
-                    foreach (Mensaje msg in mensajes)
-                    {
-                        if (msg.Receptor.Equals(this))
-                        {
-                            recibidos.Add(msg);
-                        }
-                    }
-                    mensajes = recibidos;*/
+                    /* List<Mensaje> recibidos = new List<Mensaje>();
+                     foreach (Mensaje msg in mensajes)
+                     {
+                         if (msg.Receptor.Equals(this))
+                         {
+                             recibidos.Add(msg);
+                         }
+                     }
+                     mensajes = recibidos;*/
                 }
                 return mensajes;
             }
@@ -438,52 +497,32 @@ namespace APS.Mapeo
             }
         }
 
-
-        public Boolean AccesoPantalla(String p)
+        public List<Actividad_Solicitud> ActividadesSolicitadas
         {
-            return rol.Acceso(p);
+            get
+            {
+                if (actividadesSolicitadas == null)
+                {
+                    actividadesSolicitadas = Actividad_Solicitud.ListaActividadesSolicitudes(this);
+                }
+                return actividadesSolicitadas;
+            }
         }
 
-        public Boolean InsertarPantalla(String p)
+        public void AddActividadSolicitada(Actividad act, EstadoActividadSolicitudE estado)
         {
-            return rol.Insertar(p);
+            Actividad_Solicitud actSolicitud = new Actividad_Solicitud(this, act, estado);
+            this.ActividadesSolicitadas.Add(actSolicitud);
         }
 
-        public Boolean ModificarPantalla(String p)
+        public void RemoveActividadSolicitada(Actividad_Solicitud act)
         {
-            return rol.Modificar(p);
-        }
-
-        public Boolean BorrarPantalla(String p)
-        {
-            return rol.Borrar(p);
-        }
-
-        public Boolean AceptarPantalla(String p)
-        {
-            return rol.Aceptar(p);
-        }
-
-        public Boolean RechazarPantalla(String p)
-        {
-            return rol.Rechazar(p);
+            this.ActividadesSolicitadas.Remove(act);
+            act.BorrarActividadSolicitud();
         }
 
 
-        public override string ToString()
-        {
-            return email + ";" + password + ";" + dni + ";" + nombreUser + ";" + rol.NombreRol + ";" + fechaNac.ToShortDateString();
-        }
 
-        public override bool Equals(object obj)
-        {
-            return obj is Usuario && (((Usuario)obj).email.ToUpper().CompareTo(this.email.ToUpper()) == 0);
-        }
-
-        public override int GetHashCode()
-        {
-            return email.GetHashCode();
-        }
 
     }
 }
