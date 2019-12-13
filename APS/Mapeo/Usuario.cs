@@ -24,6 +24,7 @@ namespace APS.Mapeo
         private List<Grado> grados; //Lazzy
         private List<Preferencia> preferencias; //Lazzy
         private List<Asignatura> asignaturas; //Lazzy
+        private List<Mensaje> mensajes;//Lazzy
 
         public static List<Usuario> ListaUsuarios()
         {
@@ -329,6 +330,8 @@ namespace APS.Mapeo
                     + u.NombreUser);
         }
 
+
+
         public List<Preferencia> Preferencias
         {
             get
@@ -337,6 +340,46 @@ namespace APS.Mapeo
                 return preferencias;
             }
         }
+
+         public List<Mensaje> Mensajes
+        {
+            get
+            {
+                if (mensajes == null)
+                {
+                    mensajes = Mapeo.Mensaje.ListaMensajes();
+                   /* List<Mensaje> recibidos = new List<Mensaje>();
+                    foreach (Mensaje msg in mensajes)
+                    {
+                        if (msg.Receptor.Equals(this))
+                        {
+                            recibidos.Add(msg);
+                        }
+                    }
+                    mensajes = recibidos;*/
+                }
+                return mensajes;
+            }
+        }
+
+        public void AddMensaje(Mensaje msg)
+        {
+            if (!this.Mensajes.Contains(msg))
+            {
+                Mensajes.Add(msg);
+            }
+        }
+
+        public void RemoveMensaje(Mensaje msg)
+        {
+            if (this.Mensajes.Contains(msg))
+            {
+                Mensajes.Remove(msg);
+            }
+        }
+
+
+
 
         public void AddPreferencia(Preferencia p)
         {

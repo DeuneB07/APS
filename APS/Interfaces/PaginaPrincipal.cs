@@ -1,4 +1,5 @@
 ﻿using APS.Interfaces.Gestión_Actividades;
+using APS.Interfaces.Perfil;
 using APS.Interfaces.Personalizados;
 using APS.Mapeo;
 using System;
@@ -388,6 +389,19 @@ namespace APS.Interfaces
             
             cargarTodasActividades();
             cargarRevisionActividades();
+        }
+
+       private void lMensajes_Click(object sender, EventArgs e)
+        {
+            this.goBandeja();
+        }
+
+        private void goBandeja()
+        { 
+            BandejaMensajes msg = new BandejaMensajes(user);
+            this.Visible = false;
+            msg.ShowDialog();
+            this.Visible = true;
         }
     }
 }

@@ -33,6 +33,7 @@
             this.tabUser = new System.Windows.Forms.TabControl();
             this.pMatch = new System.Windows.Forms.TabPage();
             this.pTodas = new System.Windows.Forms.TabPage();
+            this.panelTodas = new System.Windows.Forms.TableLayoutPanel();
             this.pProyectos = new System.Windows.Forms.TabPage();
             this.pValoracion = new System.Windows.Forms.TabPage();
             this.pPendientes = new System.Windows.Forms.TabPage();
@@ -56,7 +57,6 @@
             this.lNewAct = new System.Windows.Forms.Label();
             this.gradosTableAdapter = new APS.WePassDataSetTableAdapters.GradosTableAdapter();
             this.actividadesTableAdapter = new APS.WePassDataSetTableAdapters.ActividadesTableAdapter();
-            this.panelTodas = new System.Windows.Forms.TableLayoutPanel();
             this.tabUser.SuspendLayout();
             this.pTodas.SuspendLayout();
             this.pPendientes.SuspendLayout();
@@ -91,7 +91,7 @@
             // 
             this.pMatch.Location = new System.Drawing.Point(4, 22);
             this.pMatch.Name = "pMatch";
-            this.pMatch.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pMatch.Padding = new System.Windows.Forms.Padding(3);
             this.pMatch.Size = new System.Drawing.Size(657, 332);
             this.pMatch.TabIndex = 0;
             this.pMatch.Text = "Match";
@@ -102,17 +102,30 @@
             this.pTodas.Controls.Add(this.panelTodas);
             this.pTodas.Location = new System.Drawing.Point(4, 22);
             this.pTodas.Name = "pTodas";
-            this.pTodas.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pTodas.Padding = new System.Windows.Forms.Padding(3);
             this.pTodas.Size = new System.Drawing.Size(657, 332);
             this.pTodas.TabIndex = 1;
             this.pTodas.Text = "Todas";
             this.pTodas.UseVisualStyleBackColor = true;
             // 
+            // panelTodas
+            // 
+            this.panelTodas.AutoScroll = true;
+            this.panelTodas.ColumnCount = 1;
+            this.panelTodas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelTodas.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.panelTodas.Location = new System.Drawing.Point(0, 0);
+            this.panelTodas.Name = "panelTodas";
+            this.panelTodas.RowCount = 1;
+            this.panelTodas.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.panelTodas.Size = new System.Drawing.Size(657, 332);
+            this.panelTodas.TabIndex = 1;
+            // 
             // pProyectos
             // 
             this.pProyectos.Location = new System.Drawing.Point(4, 22);
             this.pProyectos.Name = "pProyectos";
-            this.pProyectos.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pProyectos.Padding = new System.Windows.Forms.Padding(3);
             this.pProyectos.Size = new System.Drawing.Size(657, 332);
             this.pProyectos.TabIndex = 2;
             this.pProyectos.Text = "Proyectos";
@@ -122,7 +135,7 @@
             // 
             this.pValoracion.Location = new System.Drawing.Point(4, 22);
             this.pValoracion.Name = "pValoracion";
-            this.pValoracion.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pValoracion.Padding = new System.Windows.Forms.Padding(3);
             this.pValoracion.Size = new System.Drawing.Size(657, 332);
             this.pValoracion.TabIndex = 3;
             this.pValoracion.Text = "Valoración";
@@ -134,7 +147,7 @@
             this.pPendientes.Controls.Add(this.dataGridViewPendientes);
             this.pPendientes.Location = new System.Drawing.Point(4, 22);
             this.pPendientes.Name = "pPendientes";
-            this.pPendientes.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pPendientes.Padding = new System.Windows.Forms.Padding(3);
             this.pPendientes.Size = new System.Drawing.Size(657, 332);
             this.pPendientes.TabIndex = 4;
             this.pPendientes.Text = "Pendientes";
@@ -143,7 +156,7 @@
             // bGestionar
             // 
             this.bGestionar.Location = new System.Drawing.Point(548, 23);
-            this.bGestionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bGestionar.Margin = new System.Windows.Forms.Padding(2);
             this.bGestionar.Name = "bGestionar";
             this.bGestionar.Size = new System.Drawing.Size(64, 20);
             this.bGestionar.TabIndex = 2;
@@ -155,7 +168,7 @@
             // 
             this.dataGridViewPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPendientes.Location = new System.Drawing.Point(26, 15);
-            this.dataGridViewPendientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewPendientes.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPendientes.Name = "dataGridViewPendientes";
             this.dataGridViewPendientes.RowHeadersWidth = 82;
             this.dataGridViewPendientes.RowTemplate.Height = 24;
@@ -168,7 +181,7 @@
             this.pRevision.Controls.Add(this.dataGridViewRevision);
             this.pRevision.Location = new System.Drawing.Point(4, 22);
             this.pRevision.Name = "pRevision";
-            this.pRevision.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pRevision.Padding = new System.Windows.Forms.Padding(3);
             this.pRevision.Size = new System.Drawing.Size(657, 332);
             this.pRevision.TabIndex = 5;
             this.pRevision.Text = "Revisión";
@@ -178,7 +191,7 @@
             // 
             this.dataGridViewRevision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRevision.Location = new System.Drawing.Point(74, 18);
-            this.dataGridViewRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewRevision.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewRevision.Name = "dataGridViewRevision";
             this.dataGridViewRevision.RowHeadersWidth = 82;
             this.dataGridViewRevision.RowTemplate.Height = 24;
@@ -270,6 +283,7 @@
             this.lMensajes.Size = new System.Drawing.Size(71, 19);
             this.lMensajes.TabIndex = 4;
             this.lMensajes.Text = "Mensajes";
+            this.lMensajes.Click += new System.EventHandler(this.lMensajes_Click);
             // 
             // lHistorial
             // 
@@ -331,19 +345,6 @@
             // actividadesTableAdapter
             // 
             this.actividadesTableAdapter.ClearBeforeFill = true;
-            // 
-            // panelTodas
-            // 
-            this.panelTodas.AutoScroll = true;
-            this.panelTodas.ColumnCount = 1;
-            this.panelTodas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelTodas.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.panelTodas.Location = new System.Drawing.Point(0, 0);
-            this.panelTodas.Name = "panelTodas";
-            this.panelTodas.RowCount = 1;
-            this.panelTodas.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.panelTodas.Size = new System.Drawing.Size(657, 332);
-            this.panelTodas.TabIndex = 1;
             // 
             // PaginaPrincipal
             // 

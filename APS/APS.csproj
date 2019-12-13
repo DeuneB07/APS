@@ -97,6 +97,24 @@
     <Compile Include="Interfaces\Gestión Actividades\VerActividadRevision.Designer.cs">
       <DependentUpon>VerActividadRevision.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Perfil\AperturaMensajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Perfil\AperturaMensajes.Designer.cs">
+      <DependentUpon>AperturaMensajes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Perfil\NuevoMensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Perfil\NuevoMensaje.Designer.cs">
+      <DependentUpon>NuevoMensaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Perfil\BandejaMensajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Perfil\BandejaMensajes.Designer.cs">
+      <DependentUpon>BandejaMensajes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelFiltros.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -249,6 +267,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Gestión Actividades\VerActividadRevision.resx">
       <DependentUpon>VerActividadRevision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Perfil\AperturaMensajes.resx">
+      <DependentUpon>AperturaMensajes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Perfil\NuevoMensaje.resx">
+      <DependentUpon>NuevoMensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Perfil\BandejaMensajes.resx">
+      <DependentUpon>BandejaMensajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelFiltros.resx">
       <DependentUpon>CartelFiltros.cs</DependentUpon>
