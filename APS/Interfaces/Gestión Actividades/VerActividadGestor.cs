@@ -34,9 +34,15 @@ namespace APS.Interfaces.Gestión_Actividades
             listAmbito.Text = actividad.AmbitoTrabajo.ToString();
             listTrabajo.Text = actividad.TipoTrabajo.ToString();
 
-            if(actividad.Imagen != null)
+            if (actividad.Imagen != null)
             {
                 pictureBox.Image = actividad.Imagen;
+            }
+            if (!user.Rol.NombreRol.Equals("GESTOR") || actividad.EstadoAct.ToString().Equals("ABIERTA"))
+            {
+                btnGestionar.Visible = false;
+                btnRechazar.Visible = false;
+                btnCancelar.Text = "Atrás";
             }
         }
 

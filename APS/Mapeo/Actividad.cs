@@ -14,7 +14,7 @@ namespace APS.Mapeo
         private static string BD_NAME = Properties.Settings.Default.BD_NAME;
 
         public enum TipoActividadE {TODAS,FORMACION,INVESTIGACION,VOLUNTARIADO};
-        public enum EstadoActividadE { PENDIENTE_ACEPTACION, ABIERTA, CERRADA, ACEPTADA_GESTOR, NEGOCIACION_ONG, NEGOCIACION_PDI, EN_TRAMITE, EN_PROCESO, EN_EVALUACION, CONCLUIDA, ACEPTADO, DENEGADO};
+        public enum EstadoActividadE { PENDIENTE_ACEPTACION, ABIERTA, CERRADA, ACEPTADA_GESTOR, NEGOCIACION_ONG, NEGOCIACION_PDI, NEGOCIACION_CANCELADA, EN_PROCESO, EN_EVALUACION, CONCLUIDA };
         public enum TurnoE {AMBAS,MAÑANA,TARDE};
         public enum TipoTrabajoE {TODAS,SALUD,EVENTO};
         public enum AmbitoTrabajoE {TODAS,INMIGRACION,SIN_HOGAR,POBREZA,DISCAPACIDAD,TERCERA_EDAD};
@@ -331,11 +331,25 @@ namespace APS.Mapeo
             get { return responsable; }
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Actividades SET emailResponsable='" + value.Email + "' "
-                        + "WHERE ID_Actividad=" + this.ID_actividad + ";";
-                miBD.Update(up);
-                this.responsable = value;
+                if (value == null)
+                {
+                    using (var db = new ImagenesDB.Entities())
+                    {
+                        var act = db.Actividades.Find(this.ID_actividad);
+                        act.emailResponsable = null;
+                        db.SaveChanges();
+                        this.responsable = null;
+                    }
+                }
+                else
+                {
+                    SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                    String up = "UPDATE Actividades SET emailResponsable='" + value.Email + "' "
+                            + "WHERE ID_Actividad=" + this.ID_actividad + ";";
+                    miBD.Update(up);
+                    this.responsable = value;
+                }
+                
             }
         }
 

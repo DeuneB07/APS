@@ -26,8 +26,8 @@ namespace APS.Interfaces.Gestión_Actividades
             tDescripcionNegociar.Text = actividad.DescAct;
             tNumPlazasNegociar.Text = actividad.NumPlazas.ToString();
             tNumHorasNegociar.Text = actividad.NumHoras.ToString();
-            dateTimePickerFechaIniNegociar.Value = actividad.FechaInicio;
-            dateTimePickerFechaFinNegociar.Value = actividad.FechaFin;
+            fechaInicioNegociar.Text = actividad.FechaInicio.ToShortDateString();
+            fechaFinNegociar.Text = actividad.FechaFin.ToShortDateString();
             tLugarNegociar.Text = actividad.Lugar;
             listTurnoNegociar.Text = actividad.Turno.ToString();
             listAmbitoNegociar.Text = actividad.AmbitoTrabajo.ToString();
@@ -46,12 +46,20 @@ namespace APS.Interfaces.Gestión_Actividades
             if (!tNumHorasNegociar.Text.Equals("") && !tNumHorasNegociar.Text.Equals(actividad.NumHoras.ToString())) actividad.NumHoras = int.Parse(tNumHorasNegociar.Text);
             Enum.TryParse<APS.Mapeo.Actividad.TurnoE>(listTurnoNegociar.Text, true, out turno);
             if (!listTurnoNegociar.Text.Equals("") && !listTurnoNegociar.Text.Equals(actividad.Turno.ToString())) actividad.Turno = turno;
-            if (user.ToString().Equals("PDI"))
+            if (user.Rol.NombreRol.ToString().Equals("PDI"))
             {
                 actividad.EstadoAct = Actividad.EstadoActividadE.NEGOCIACION_ONG;
             } else
             {
-                actividad.EstadoAct = Actividad.EstadoActividadE.NEGOCIACION_PDI;
+                if (actividad.EstadoAct.ToString().Equals("NEGOCIACION_CANCELADA"))
+                {
+                    actividad.EstadoAct = Actividad.EstadoActividadE.ABIERTA;
+                }
+                else
+                {
+                    actividad.EstadoAct = Actividad.EstadoActividadE.NEGOCIACION_PDI;
+                }
+                
             }
             this.Close();
         }

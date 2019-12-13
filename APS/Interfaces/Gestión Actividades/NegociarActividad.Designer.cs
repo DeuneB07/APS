@@ -32,8 +32,6 @@
             this.listAmbitoNegociar = new System.Windows.Forms.ListBox();
             this.listTurnoNegociar = new System.Windows.Forms.ListBox();
             this.tLugarNegociar = new System.Windows.Forms.TextBox();
-            this.dateTimePickerFechaFinNegociar = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerFechaIniNegociar = new System.Windows.Forms.DateTimePicker();
             this.tNumHorasNegociar = new System.Windows.Forms.TextBox();
             this.tNumPlazasNegociar = new System.Windows.Forms.TextBox();
             this.tDescripcionNegociar = new System.Windows.Forms.RichTextBox();
@@ -52,6 +50,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAceptarNegociar = new System.Windows.Forms.Button();
             this.btnCancelarNegociar = new System.Windows.Forms.Button();
+            this.fechaInicioNegociar = new System.Windows.Forms.TextBox();
+            this.fechaFinNegociar = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listTrabajoNegociar
@@ -109,22 +109,6 @@
             this.tLugarNegociar.Name = "tLugarNegociar";
             this.tLugarNegociar.Size = new System.Drawing.Size(292, 31);
             this.tLugarNegociar.TabIndex = 70;
-            // 
-            // dateTimePickerFechaFinNegociar
-            // 
-            this.dateTimePickerFechaFinNegociar.Location = new System.Drawing.Point(396, 527);
-            this.dateTimePickerFechaFinNegociar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dateTimePickerFechaFinNegociar.Name = "dateTimePickerFechaFinNegociar";
-            this.dateTimePickerFechaFinNegociar.Size = new System.Drawing.Size(298, 31);
-            this.dateTimePickerFechaFinNegociar.TabIndex = 69;
-            // 
-            // dateTimePickerFechaIniNegociar
-            // 
-            this.dateTimePickerFechaIniNegociar.Location = new System.Drawing.Point(396, 463);
-            this.dateTimePickerFechaIniNegociar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dateTimePickerFechaIniNegociar.Name = "dateTimePickerFechaIniNegociar";
-            this.dateTimePickerFechaIniNegociar.Size = new System.Drawing.Size(298, 31);
-            this.dateTimePickerFechaIniNegociar.TabIndex = 68;
             // 
             // tNumHorasNegociar
             // 
@@ -293,19 +277,37 @@
             this.btnCancelarNegociar.UseVisualStyleBackColor = true;
             this.btnCancelarNegociar.Click += new System.EventHandler(this.btnCancelarNegociar_Click);
             // 
+            // fechaInicioNegociar
+            // 
+            this.fechaInicioNegociar.Enabled = false;
+            this.fechaInicioNegociar.Location = new System.Drawing.Point(396, 465);
+            this.fechaInicioNegociar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.fechaInicioNegociar.Name = "fechaInicioNegociar";
+            this.fechaInicioNegociar.Size = new System.Drawing.Size(271, 31);
+            this.fechaInicioNegociar.TabIndex = 76;
+            // 
+            // fechaFinNegociar
+            // 
+            this.fechaFinNegociar.Enabled = false;
+            this.fechaFinNegociar.Location = new System.Drawing.Point(396, 529);
+            this.fechaFinNegociar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.fechaFinNegociar.Name = "fechaFinNegociar";
+            this.fechaFinNegociar.Size = new System.Drawing.Size(271, 31);
+            this.fechaFinNegociar.TabIndex = 77;
+            // 
             // NegociarActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 924);
+            this.Controls.Add(this.fechaFinNegociar);
+            this.Controls.Add(this.fechaInicioNegociar);
             this.Controls.Add(this.btnCancelarNegociar);
             this.Controls.Add(this.btnAceptarNegociar);
             this.Controls.Add(this.listTrabajoNegociar);
             this.Controls.Add(this.listAmbitoNegociar);
             this.Controls.Add(this.listTurnoNegociar);
             this.Controls.Add(this.tLugarNegociar);
-            this.Controls.Add(this.dateTimePickerFechaFinNegociar);
-            this.Controls.Add(this.dateTimePickerFechaIniNegociar);
             this.Controls.Add(this.tNumHorasNegociar);
             this.Controls.Add(this.tNumPlazasNegociar);
             this.Controls.Add(this.tDescripcionNegociar);
@@ -335,8 +337,6 @@
         private System.Windows.Forms.ListBox listAmbitoNegociar;
         private System.Windows.Forms.ListBox listTurnoNegociar;
         private System.Windows.Forms.TextBox tLugarNegociar;
-        private System.Windows.Forms.DateTimePicker dateTimePickerFechaFinNegociar;
-        private System.Windows.Forms.DateTimePicker dateTimePickerFechaIniNegociar;
         private System.Windows.Forms.TextBox tNumHorasNegociar;
         private System.Windows.Forms.TextBox tNumPlazasNegociar;
         private System.Windows.Forms.RichTextBox tDescripcionNegociar;
@@ -355,5 +355,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAceptarNegociar;
         private System.Windows.Forms.Button btnCancelarNegociar;
+        private System.Windows.Forms.TextBox fechaInicioNegociar;
+        private System.Windows.Forms.TextBox fechaFinNegociar;
     }
 }

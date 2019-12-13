@@ -201,7 +201,12 @@ namespace APS.Interfaces
                     actsCarteles[c] = new CartelActividadesStandard(user, act);
                     panelMatch.Controls.Add(actsCarteles[c], 0, c + 1);
                     panelMatch.RowCount = panelMatch.RowCount + 1;
-                    actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
+                    actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));                  
+                    //BOTON SOLICITAR
+                    Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
+                    Button bSolicitar = (Button)panel.Controls.Find("bSolicitar", false)[0];
+                    //PROGRAMACIÓN BOTONES
+                    //bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, act); };
                     c++;
                 }
             }
@@ -214,6 +219,8 @@ namespace APS.Interfaces
         {
 
             pTodas.Controls.Add(panelTodas);
+            panelTodas.Controls.Clear();
+            panelTodas.RowCount = 1;
             cargarFiltrosTodas();
 
             List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
@@ -226,7 +233,16 @@ namespace APS.Interfaces
                  panelTodas.Controls.Add(actsCarteles[c], 0, c + 1);
                  panelTodas.RowCount = panelTodas.RowCount + 1;
                  actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
-                 c++;
+                //BOTON SOLICITAR
+                Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
+                Button bSolicitar = (Button)panel.Controls.Find("bSolicitar", false)[0];
+                if (user.Rol.NombreRol.Equals("GESTOR"))
+                {
+                    bSolicitar.Visible = false;
+                }
+                //PROGRAMACIÓN BOTONES
+                //bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, act); }; 
+                c++;
             }
 
         }
@@ -439,6 +455,7 @@ namespace APS.Interfaces
             //Listas de Actividades en Negociación
             List<Actividad> actNegPDI = Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_PDI);
             List<Actividad> actNegONG = Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_ONG);
+            List<Actividad> actNegCAN = Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_CANCELADA);
 
             if (user.Rol.NombreRol.Equals("PDI"))
             {
@@ -446,7 +463,7 @@ namespace APS.Interfaces
             }
             else
             { //ES ONG -> lo mismo que para el PDI, pero al contrario 
-                cargarRevisionONG(c, actNegPDI, actNegONG);
+                cargarRevisionONG(c, actNegPDI, actNegONG, actNegCAN);
             }
         }
 
@@ -536,13 +553,36 @@ namespace APS.Interfaces
             }
         }
 
-        private void cargarRevisionONG(int c, List<Actividad> actNegPDI, List<Actividad> actNegONG)
+        private void cargarRevisionONG(int c, List<Actividad> actNegPDI, List<Actividad> actNegONG, List<Actividad> actNegCancelada)
         {
             
             //Carteles que Usaremos
             CartelPendientes[] carNegPDI = new CartelPendientes[actNegPDI.Count];
             CartelPendientes[] carNegONG = new CartelPendientes[actNegONG.Count];
+            CartelPendientes[] carNegCancelada = new CartelPendientes[actNegCancelada.Count];
 
+            foreach (Actividad act in actNegCancelada)
+            {
+                if (act.Organizador.Equals(user))
+                {
+                    carNegCancelada[c] = new CartelPendientes(user, act);
+                    panelRevision.Controls.Add(carNegCancelada[c], 0, c);
+                    panelRevision.RowCount = panelRevision.RowCount + 1;
+                    carNegCancelada[c].Location = new Point(carNegCancelada[c].Location.X, (carNegCancelada[c].Size.Height * c));
+                    carNegCancelada[c].BackColor = Color.Yellow;
+
+                    //BOTONES GESTOR
+                    Panel panel = (Panel)carNegCancelada[c].Controls.Find("panel1", false)[0];
+                    Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
+                    Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
+
+                    //PROGRAMACIÓN BOTONES
+                    bAceptar.Click += (sender, EventArgs) => { bRevisarRevONG_Click(sender, EventArgs, act); };
+                    bRechazar.Click += (sender, EventArgs) => { bRechazarRevONG_Click(sender, EventArgs, act); };
+
+                    c++;
+                }
+            }
             foreach (Actividad act in actNegONG)
             {
                 if (act.Organizador.Equals(user))
@@ -595,34 +635,61 @@ namespace APS.Interfaces
           // -> PDI debe Aceptar/Rechazar Actividad Entregada por Gestor
         private void bRechazarRevGestor_Click(object sender, EventArgs eventArgs, Actividad act)
         {
-            throw new NotImplementedException();
+            act.EstadoAct = Actividad.EstadoActividadE.ABIERTA;
+            act.TipoAct = Actividad.TipoActividadE.VOLUNTARIADO;
+            act.Responsable = null;
+            cargarRevisionActividadesInicio();
+            cargarTodasActividadesInicio();
         }
 
         private void bRevisarRevGestor_Click(object sender, EventArgs eventArgs, Actividad act)
         {
-            throw new NotImplementedException();
+            VerActividadRevision actRevision = new VerActividadRevision(user,act);
+            actRevision.ShowDialog();
+            cargarRevisionActividadesInicio();
+            cargarTodasActividadesInicio();
         }
 
         // -> PDI debe Aceptar/Rechazar Actividad en Negociación con ONG
         private void bRechazarRevPDI_Click(object sender, EventArgs eventArgs, Actividad act)
         {
-            throw new NotImplementedException();
+            act.EstadoAct = Actividad.EstadoActividadE.NEGOCIACION_CANCELADA;
+            act.TipoAct = Actividad.TipoActividadE.VOLUNTARIADO;
+            act.Responsable = null;
+            cargarRevisionActividadesInicio();
         }
 
         private void bRevisarRevPDI_Click(object sender, EventArgs eventArgs, Actividad act)
         {
-            throw new NotImplementedException();
+            VerActividadRevision actRevision = new VerActividadRevision(user, act);
+            actRevision.ShowDialog();
+            cargarRevisionActividadesInicio();
+            cargarTodasActividadesInicio();
         }
 
         // -> ONG debe Aceptar/Rechazar Actividad en Negociación con PDI
         private void bRechazarRevONG_Click(object sender, EventArgs eventArgs, Actividad act)
         {
-            throw new NotImplementedException();
+            if (act.EstadoAct.ToString().Equals("NEGOCIACION_CANCELADA"))
+            {
+                act.BorrarActividad();
+                cargarRevisionActividadesInicio();
+            }
+            else
+            {
+                act.EstadoAct = Actividad.EstadoActividadE.NEGOCIACION_CANCELADA;
+                act.TipoAct = Actividad.TipoActividadE.VOLUNTARIADO;
+                act.Responsable = null;
+                cargarRevisionActividadesInicio();
+            }
         }
 
         private void bRevisarRevONG_Click(object sender, EventArgs eventArgs, Actividad act)
         {
-            throw new NotImplementedException();
+            VerActividadRevision actRevision = new VerActividadRevision(user, act);
+            actRevision.ShowDialog();
+            cargarRevisionActividadesInicio();
+            cargarTodasActividadesInicio();
         }
 
 
@@ -687,6 +754,19 @@ namespace APS.Interfaces
             NuevaActividad newAct = new NuevaActividad(user);
             this.Visible = false;
             newAct.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void lMensajes_Click(object sender, EventArgs e)
+        {
+            //this.goBandeja();
+        }
+
+        private void goBandeja()
+        {
+            //BandejaMensajes msg = new BandejaMensajes(user);
+            this.Visible = false;
+            //msg.showDialog();
             this.Visible = true;
         }
     }

@@ -132,6 +132,5 @@ namespace APS.Interfaces.Personalizados
             VerActividadGestor vAct = new VerActividadGestor(this.user, this.a);
             vAct.ShowDialog();
         }
-
     }
 }
