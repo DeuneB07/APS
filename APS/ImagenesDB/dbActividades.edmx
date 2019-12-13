@@ -26,7 +26,7 @@
           <Property Name="idProy" Type="int" />
           <Property Name="notaMedia" Type="real" />
           <Property Name="estadoAct" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="imagen" Type="varbinary(max)" />
+          <Property Name="imagen" Type="image" />
           <Property Name="ambitoTrabajo" Type="varchar" MaxLength="50" />
           <Property Name="tipoTrabajo" Type="varchar" MaxLength="50" />
         </EntityType>

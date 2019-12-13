@@ -33,20 +33,42 @@ namespace APS.Interfaces.Personalizados
 
         private void cargarGrados()
         {
-            foreach (Grado g in usrLogin.Grados)
+            if (usrLogin.Rol.NombreRol.Equals("GESTOR"))
             {
-                cGrado.Items.Add(g);
+                foreach (Grado g in Grado.ListaGrados())
+                {
+                    cGrado.Items.Add(g);
+                }
+                cGrado.DisplayMember = "nombreGrado";
+            } else
+            {
+                foreach (Grado g in usrLogin.Grados)
+                {
+                    cGrado.Items.Add(g);
+                }
+                cGrado.DisplayMember = "nombreGrado";
             }
-            cGrado.DisplayMember = "nombreGrado";
+            
         }
 
         private void cargarAsignaturas()
         {
-            foreach (Asignatura a in usrLogin.Asignaturas)
+            if (usrLogin.Rol.NombreRol.Equals("GESTOR"))
             {
-                cAsig.Items.Add(a);
+                foreach (Asignatura a in Asignatura.ListaAsignaturas())
+                {
+                    cAsig.Items.Add(a);
+                }
+                cAsig.DisplayMember = "nombreAsig";
             }
-            cAsig.DisplayMember = "nombreAsig";
+            else
+            {
+                foreach (Asignatura a in usrLogin.Asignaturas)
+                {
+                    cAsig.Items.Add(a);
+                }
+                cAsig.DisplayMember = "nombreAsig";
+            }
         }
 
         private void cargarTurnos()
@@ -65,7 +87,7 @@ namespace APS.Interfaces.Personalizados
                 {
                     cTipoAct.Items.Add(tAct);
                 }
-                else if (usrLogin.Rol.NombreRol.Equals("Estudiante"))
+                else if (usrLogin.Rol.NombreRol.Equals("Estudiante") || usrLogin.Rol.NombreRol.Equals("GESTOR") || usrLogin.Rol.NombreRol.Equals("PDI"))
                 {
                     cTipoAct.Items.Add(tAct);
                 }

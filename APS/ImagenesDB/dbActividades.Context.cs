@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace APS.ActividadesDB
+namespace APS.ImagenesDB
 {
     using System;
     using System.Data.Entity;
@@ -19,10 +19,10 @@ namespace APS.ActividadesDB
             : base("Data Source=localhost;Initial Catalog=WePass;Persist Security Info=True;User ID=user1;Password=user1;MultipleActiveResultSets=True")
         {
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            var entityBuilder = modelBuilder.Entity<ActividadesDB.Actividades>();
+            var entityBuilder = modelBuilder.Entity<Actividades>();
             entityBuilder.HasKey(e => new { e.ID_Actividad });
         }
     

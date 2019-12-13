@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace APS.ActividadesDB
+namespace APS.ImagenesDB
 {
     using System;
     using System.Collections.Generic;

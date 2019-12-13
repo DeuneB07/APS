@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace APS.Interfaces
 {
-    public partial class FPerfil : Form
+    public partial class FPerfilUsuario : Form
     {
 
         Usuario user;
 
-        public FPerfil(Usuario user)
+        public FPerfilUsuario(Usuario user)
         {
 
             InitializeComponent();
@@ -29,8 +29,6 @@ namespace APS.Interfaces
                 
             if (user.Rol.NombreRol.ToUpper().Equals("ESTUDIANTE")) cargarPerfilAlumno();
             if (user.Rol.NombreRol.Equals("PDI")) cargarPerfilPDI();
-            if (user.Rol.NombreRol.Equals("PAS")) cargarPerfilPAS();
-            if (user.Rol.NombreRol.Equals("ONG")) cargarPerfilONG();
             if (user.Rol.NombreRol.ToUpper().Equals("GESTOR")) cargarPerfilGestor();
             
 
@@ -60,26 +58,6 @@ namespace APS.Interfaces
             listGrados.Visible = false;
         }
 
-        private void cargarPerfilONG()
-        {
-            lUserNoun2.Text = user.NombreUser;
-            lDNI2.Text = user.DNI;
-            lNombre2.Text = user.Nombre;
-            lMail2.Text = user.Email;
-
-            
-            bPreferencias.Visible = false;
-            lFecha.Visible = false;
-            lFecha2.Visible = false;
-            lDNI.Visible = false;
-            lDNI2.Visible = false;
-            lAsignaturas.Visible = false;
-            listAsignaturas.Visible = false;
-            lGrados.Visible = false;
-            lGradosUno.Visible = false;
-            listGrados.Visible = false;
-        }
-
         private void cargarPerfilGestor()
         {
             lUserNoun2.Text = user.NombreUser;
@@ -94,23 +72,6 @@ namespace APS.Interfaces
             lGradosUno.Visible = false;
             listGrados.Visible = false;
             bPreferencias.Visible = false;
-        }
-
-        private void cargarPerfilPAS()
-        {
-            lUserNoun2.Text = user.NombreUser;
-            lDNI2.Text = user.DNI;
-            lNombre2.Text = user.Nombre + user.Apellido1 + user.Apellido2;
-            lMail2.Text = user.Email;
-            lFecha2.Text = user.FechaNac.ToShortDateString();
-
-            lDNI.Visible = false;
-            lDNI2.Visible = false;
-            lAsignaturas.Visible = false;
-            listAsignaturas.Visible = false;
-            lGrados.Visible = false;
-            lGradosUno.Visible = false;
-            listGrados.Visible = false;
         }
 
         private void cargarAsignaturas()

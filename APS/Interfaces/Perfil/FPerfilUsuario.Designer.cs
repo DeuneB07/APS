@@ -1,6 +1,6 @@
 ﻿namespace APS.Interfaces
 {
-    partial class FPerfil
+    partial class FPerfilUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FPerfil));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FPerfilUsuario));
             this.lNombre = new System.Windows.Forms.Label();
             this.picPerfil = new System.Windows.Forms.PictureBox();
             this.lDNI2 = new System.Windows.Forms.Label();
@@ -255,7 +255,7 @@
             // 
             // textNombreUser
             // 
-            this.textNombreUser.Location = new System.Drawing.Point(159, 122);
+            this.textNombreUser.Location = new System.Drawing.Point(164, 119);
             this.textNombreUser.Name = "textNombreUser";
             this.textNombreUser.Size = new System.Drawing.Size(100, 20);
             this.textNombreUser.TabIndex = 22;
@@ -282,7 +282,7 @@
             this.bCancelarC.UseVisualStyleBackColor = true;
             this.bCancelarC.Click += new System.EventHandler(this.bCancelarC_Click);
             // 
-            // FPerfil
+            // FPerfilUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -311,7 +311,7 @@
             this.Controls.Add(this.picPerfil);
             this.Controls.Add(this.lNombre);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FPerfil";
+            this.Name = "FPerfilUsuario";
             this.Text = "Perfil";
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
             this.ResumeLayout(false);

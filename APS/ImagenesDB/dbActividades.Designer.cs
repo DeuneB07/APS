@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\Jesús\Desktop\Ingeniería de Software UMA\Curso 3\Semestre 1\Ingeniería de Requisitos\Proyecto APS\ProyectoC#\GitHub\APS\APS\ActividadesDB\dbActividades.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\F541U\Documents\Uni\Ingeniería del Software\Tercer Año\Ingeniería de Requisitos\Prácticas\Trabajo en Grupo\10. Trabajo\APS\APS\ImagenesDB\dbActividades.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.

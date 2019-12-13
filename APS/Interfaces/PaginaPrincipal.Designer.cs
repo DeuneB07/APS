@@ -32,15 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaginaPrincipal));
             this.tabUser = new System.Windows.Forms.TabControl();
             this.pMatch = new System.Windows.Forms.TabPage();
+            this.panelMatch = new System.Windows.Forms.TableLayoutPanel();
             this.pTodas = new System.Windows.Forms.TabPage();
             this.panelTodas = new System.Windows.Forms.TableLayoutPanel();
             this.pProyectos = new System.Windows.Forms.TabPage();
             this.pValoracion = new System.Windows.Forms.TabPage();
             this.pPendientes = new System.Windows.Forms.TabPage();
-            this.bGestionar = new System.Windows.Forms.Button();
-            this.dataGridViewPendientes = new System.Windows.Forms.DataGridView();
+            this.panelPendientes = new System.Windows.Forms.TableLayoutPanel();
             this.pRevision = new System.Windows.Forms.TabPage();
-            this.dataGridViewRevision = new System.Windows.Forms.DataGridView();
             this.pMisActividades = new System.Windows.Forms.TabPage();
             this.pActividadesInscritas = new System.Windows.Forms.TabPage();
             this.gradosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -57,12 +56,12 @@
             this.lNewAct = new System.Windows.Forms.Label();
             this.gradosTableAdapter = new APS.WePassDataSetTableAdapters.GradosTableAdapter();
             this.actividadesTableAdapter = new APS.WePassDataSetTableAdapters.ActividadesTableAdapter();
+            this.panelRevision = new System.Windows.Forms.TableLayoutPanel();
             this.tabUser.SuspendLayout();
+            this.pMatch.SuspendLayout();
             this.pTodas.SuspendLayout();
             this.pPendientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPendientes)).BeginInit();
             this.pRevision.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRevision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSet)).BeginInit();
@@ -89,6 +88,7 @@
             // 
             // pMatch
             // 
+            this.pMatch.Controls.Add(this.panelMatch);
             this.pMatch.Location = new System.Drawing.Point(4, 22);
             this.pMatch.Name = "pMatch";
             this.pMatch.Padding = new System.Windows.Forms.Padding(3);
@@ -96,6 +96,19 @@
             this.pMatch.TabIndex = 0;
             this.pMatch.Text = "Match";
             this.pMatch.UseVisualStyleBackColor = true;
+            // 
+            // panelMatch
+            // 
+            this.panelMatch.AutoScroll = true;
+            this.panelMatch.ColumnCount = 1;
+            this.panelMatch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMatch.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.panelMatch.Location = new System.Drawing.Point(0, 0);
+            this.panelMatch.Name = "panelMatch";
+            this.panelMatch.RowCount = 1;
+            this.panelMatch.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.panelMatch.Size = new System.Drawing.Size(657, 332);
+            this.panelMatch.TabIndex = 2;
             // 
             // pTodas
             // 
@@ -143,8 +156,7 @@
             // 
             // pPendientes
             // 
-            this.pPendientes.Controls.Add(this.bGestionar);
-            this.pPendientes.Controls.Add(this.dataGridViewPendientes);
+            this.pPendientes.Controls.Add(this.panelPendientes);
             this.pPendientes.Location = new System.Drawing.Point(4, 22);
             this.pPendientes.Name = "pPendientes";
             this.pPendientes.Padding = new System.Windows.Forms.Padding(3);
@@ -153,32 +165,22 @@
             this.pPendientes.Text = "Pendientes";
             this.pPendientes.UseVisualStyleBackColor = true;
             // 
-            // bGestionar
+            // panelPendientes
             // 
-            this.bGestionar.Location = new System.Drawing.Point(548, 23);
-            this.bGestionar.Margin = new System.Windows.Forms.Padding(2);
-            this.bGestionar.Name = "bGestionar";
-            this.bGestionar.Size = new System.Drawing.Size(64, 20);
-            this.bGestionar.TabIndex = 2;
-            this.bGestionar.Text = "Gestionar";
-            this.bGestionar.UseVisualStyleBackColor = true;
-            this.bGestionar.Click += new System.EventHandler(this.bGestionar_Click);
-            // 
-            // dataGridViewPendientes
-            // 
-            this.dataGridViewPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPendientes.Location = new System.Drawing.Point(26, 15);
-            this.dataGridViewPendientes.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridViewPendientes.Name = "dataGridViewPendientes";
-            this.dataGridViewPendientes.RowHeadersWidth = 82;
-            this.dataGridViewPendientes.RowTemplate.Height = 24;
-            this.dataGridViewPendientes.Size = new System.Drawing.Size(491, 297);
-            this.dataGridViewPendientes.TabIndex = 0;
-            this.dataGridViewPendientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPendientes_CellDoubleClick);
+            this.panelPendientes.AutoScroll = true;
+            this.panelPendientes.ColumnCount = 1;
+            this.panelPendientes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelPendientes.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.panelPendientes.Location = new System.Drawing.Point(0, 0);
+            this.panelPendientes.Name = "panelPendientes";
+            this.panelPendientes.RowCount = 1;
+            this.panelPendientes.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.panelPendientes.Size = new System.Drawing.Size(657, 332);
+            this.panelPendientes.TabIndex = 2;
             // 
             // pRevision
             // 
-            this.pRevision.Controls.Add(this.dataGridViewRevision);
+            this.pRevision.Controls.Add(this.panelRevision);
             this.pRevision.Location = new System.Drawing.Point(4, 22);
             this.pRevision.Name = "pRevision";
             this.pRevision.Padding = new System.Windows.Forms.Padding(3);
@@ -186,18 +188,6 @@
             this.pRevision.TabIndex = 5;
             this.pRevision.Text = "Revisión";
             this.pRevision.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewRevision
-            // 
-            this.dataGridViewRevision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRevision.Location = new System.Drawing.Point(74, 18);
-            this.dataGridViewRevision.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridViewRevision.Name = "dataGridViewRevision";
-            this.dataGridViewRevision.RowHeadersWidth = 82;
-            this.dataGridViewRevision.RowTemplate.Height = 24;
-            this.dataGridViewRevision.Size = new System.Drawing.Size(491, 297);
-            this.dataGridViewRevision.TabIndex = 1;
-            this.dataGridViewRevision.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRevision_CellDoubleClick);
             // 
             // pMisActividades
             // 
@@ -283,7 +273,6 @@
             this.lMensajes.Size = new System.Drawing.Size(71, 19);
             this.lMensajes.TabIndex = 4;
             this.lMensajes.Text = "Mensajes";
-            this.lMensajes.Click += new System.EventHandler(this.lMensajes_Click);
             // 
             // lHistorial
             // 
@@ -346,6 +335,19 @@
             // 
             this.actividadesTableAdapter.ClearBeforeFill = true;
             // 
+            // panelRevision
+            // 
+            this.panelRevision.AutoScroll = true;
+            this.panelRevision.ColumnCount = 1;
+            this.panelRevision.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelRevision.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.panelRevision.Location = new System.Drawing.Point(0, 0);
+            this.panelRevision.Name = "panelRevision";
+            this.panelRevision.RowCount = 1;
+            this.panelRevision.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.panelRevision.Size = new System.Drawing.Size(657, 332);
+            this.panelRevision.TabIndex = 3;
+            // 
             // PaginaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,13 +365,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PaginaPrincipal";
             this.Text = "Pagina Principal";
-            this.Load += new System.EventHandler(this.PaginaPrincipal_Load);
             this.tabUser.ResumeLayout(false);
+            this.pMatch.ResumeLayout(false);
             this.pTodas.ResumeLayout(false);
             this.pPendientes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPendientes)).EndInit();
             this.pRevision.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRevision)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSet)).EndInit();
@@ -403,11 +403,11 @@
         private WePassDataSetTableAdapters.GradosTableAdapter gradosTableAdapter;
         private System.Windows.Forms.BindingSource actividadesBindingSource;
         private WePassDataSetTableAdapters.ActividadesTableAdapter actividadesTableAdapter;
-        private System.Windows.Forms.Button bGestionar;
-        private System.Windows.Forms.DataGridView dataGridViewPendientes;
-        private System.Windows.Forms.DataGridView dataGridViewRevision;
         private System.Windows.Forms.TabPage pMisActividades;
         private System.Windows.Forms.TabPage pActividadesInscritas;
         private System.Windows.Forms.TableLayoutPanel panelTodas;
+        private System.Windows.Forms.TableLayoutPanel panelMatch;
+        private System.Windows.Forms.TableLayoutPanel panelPendientes;
+        private System.Windows.Forms.TableLayoutPanel panelRevision;
     }
 }

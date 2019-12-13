@@ -40,10 +40,13 @@ namespace APS.Interfaces
                 if (correo.Equals("")) throw new Exception("El correo no puede estar vacío");
                 if (pwd.Equals("")) throw new Exception("La contraseña no puede estar vacía");
                 if (!pwd.Equals(pwd2)) throw new Exception("Las contraseñas no coinciden");
+                if (tNombreONG.Text.Trim().Equals("")) throw new Exception("El campo nombre completo ONG no puede estar vacío");
                 Usuario nuevoUser = new Usuario(correo, pwd, tUsuario.Text, new Rol("ONG"));
+                nuevoUser.Nombre = tNombreONG.Text;
 
-                if (tDNI.Text != "") nuevoUser.DNI = tDNI.Text;
-                if (!dateTimePickerFechNacimiento.Value.Equals(DateTime.Today)) nuevoUser.FechaNac = dateTimePickerFechNacimiento.Value;
+                if (!tUsuario.Text.Trim().Equals("")) nuevoUser.NombreUser = tUsuario.Text;
+                nuevoUser.FechaNac = dateTimePickerFechNacimiento.Value;
+                //if (!tURL.Text.Trim().Equals("")) nuevoUser.Imagen = pictureBoxPerfil.Image;
                 
                 MessageBox.Show("Usuario creado correctamente");
 
