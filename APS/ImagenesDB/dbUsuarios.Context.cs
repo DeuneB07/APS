@@ -22,8 +22,8 @@ namespace APS.ImagenesDB
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            var entityBuilder = modelBuilder.Entity<Actividades>();
-            entityBuilder.HasKey(e => new { e.ID_Actividad });
+            var entityBuilder = modelBuilder.Entity<Usuario>();
+            entityBuilder.HasKey(e => new { e.email });
         }
     
         public virtual DbSet<Usuario> Usuario { get; set; }
