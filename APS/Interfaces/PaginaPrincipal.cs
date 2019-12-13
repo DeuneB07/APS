@@ -689,5 +689,18 @@ namespace APS.Interfaces
             newAct.ShowDialog();
             this.Visible = true;
         }
+
+       private void lMensajes_Click(object sender, EventArgs e)
+        {
+            this.goBandeja();
+        }
+
+        private void goBandeja()
+        { 
+            BandejaMensajes msg = new BandejaMensajes(user);
+            this.Visible = false;
+            msg.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

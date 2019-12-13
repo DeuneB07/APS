@@ -5,7 +5,7 @@ using APS.BD;
 
 namespace APS.Mapeo
 {
-    class Mensaje
+    public class Mensaje
     {
 
         private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
@@ -24,27 +24,28 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Mensaje> lista = new List<Mensaje>();
 
-            foreach (object[] tupla in miBD.Select("SELECT emailEmisor, emailReceptor FROM Mensajes;"))
+            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje,emailEmisor, emailReceptor FROM Mensajes;"))
             {
-                String emailE = (String)tupla[0];
-                String emailR = (String)tupla[1];
-                Mensaje m = new Mensaje(new Usuario(emailE), new Usuario(emailR));
+                String emailE = tupla[1].ToString();
+                String emailR = tupla[2].ToString();
+                int id = int.Parse(tupla[0].ToString());
+                Mensaje m = new Mensaje(id,new Usuario(emailE), new Usuario(emailR));
                 lista.Add(m);
             }
             return lista;
         }
 
-        public Mensaje(Usuario emisor, Usuario receptor)
+        public Mensaje(int id ,Usuario emisor, Usuario receptor)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             Object[] tupla = miBD.Select("SELECT * FROM Mensajes "
-                    + "WHERE emailEmisor='" + emisor.Email + "' and emailReceptor='" + receptor.Email + "';")[0];
-            ID_mensaje = (int)tupla[0];
-            asunto = (String)tupla[1];
-            texto = (String)tupla[2];
-            date = (String)tupla[3];
-            emisor = new Usuario((String)tupla[4]);
-            receptor = new Usuario((String)tupla[5]);
+                    + "WHERE emailEmisor='" + emisor.Email + "' and emailReceptor='" + receptor.Email +"'and ID_Mensaje = '"+id+"';")[0];
+            ID_mensaje = int.Parse(tupla[0].ToString());
+            asunto = tupla[1].ToString();
+            texto =tupla[2].ToString();
+            date =tupla[3].ToString();
+            emisor = new Usuario(tupla[4].ToString());
+            receptor = new Usuario(tupla[5].ToString());
         }
 
         public Mensaje(String asunto, String texto, String date, Usuario emisor, Usuario receptor)
@@ -141,7 +142,7 @@ namespace APS.Mapeo
 
         public override string ToString()
         {
-            return "Emisor: " + emisor.Email +"\n Receptor: " + receptor.Email + "\n Fecha: " + date + "\n Asunto: " + asunto + "\n Texto: " + texto;
+            return "Emisor: " +"\t Receptor: "  + "\t Fecha: " + date + "\t Asunto: " + asunto + "\t Texto: " + texto;
         }
 
         public override bool Equals(object obj)
