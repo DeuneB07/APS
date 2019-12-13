@@ -1,4 +1,5 @@
 ﻿using APS.Interfaces.Gestión_Actividades;
+using APS.Interfaces.Perfil;
 using APS.Interfaces.Personalizados;
 using APS.Mapeo;
 using System;
@@ -24,12 +25,12 @@ namespace APS.Interfaces
             this.user = user;
 
             tabUser.Visible = true;
-            if (!user.AccesoPantalla("MATCH")) tabUser.Controls.Remove(this.pMatch);
-            if (!user.AccesoPantalla("TODAS")) tabUser.Controls.Remove(this.pTodas);
+            if (!user.AccesoPantalla("MATCH")) tabUser.Controls.Remove(this.pMatch); //HECHO
+            if (!user.AccesoPantalla("TODAS")) tabUser.Controls.Remove(this.pTodas); //HECHO
             if (!user.AccesoPantalla("PROYECTOS")) tabUser.Controls.Remove(this.pProyectos);
             if (!user.AccesoPantalla("VALORACION")) tabUser.Controls.Remove(this.pValoracion);
-            if (!user.AccesoPantalla("PENDIENTES")) tabUser.Controls.Remove(this.pPendientes);
-            if (!user.AccesoPantalla("REVISION")) tabUser.Controls.Remove(this.pRevision);
+            if (!user.AccesoPantalla("PENDIENTES")) tabUser.Controls.Remove(this.pPendientes); //HECHO
+            if (!user.AccesoPantalla("REVISION")) tabUser.Controls.Remove(this.pRevision); //HECHO
             if (!user.AccesoPantalla("MIS ACTIVIDADES")) tabUser.Controls.Remove(this.pMisActividades);
             if (!user.AccesoPantalla("ACTIVIDADES INSCRITAS")) tabUser.Controls.Remove(this.pActividadesInscritas);
 
@@ -47,7 +48,6 @@ namespace APS.Interfaces
             cargarPendientesActividadesInicio();
             cargarRevisionActividadesInicio();
 
-            //cargarRevisionActividades();
             //cargarMisActividades();
             //cargarActividadesInscritas();
         }
@@ -407,9 +407,10 @@ namespace APS.Interfaces
         }
 
         //
-        // PESTAÑA REVISIÓN -> estado(s) = 'ACEPTADA_GESTOR'(PDI) -> LA VE EL PDI RESPONSABLE ASIGNADO
-        //                                  \ 'NEGOCIAR_PDI'(PDI, ONG) -> LA VE EL PDI ASIGNADO (INTERACTÚA) Y LA ONG (NO HACE NADA)
-        //                                  \'NEGOCIAR_ONG'(PDI, ONG) -> LA VE EL ONG (INTERACTÚA) Y EL PDI RESPONSABLE (NO HACE NADA)
+        //
+        //                                  -> 'ACEPTADA_GESTOR'(PDI) -> LA VE EL PDI RESPONSABLE ASIGNADO
+        // PESTAÑA REVISIÓN -> estado(s)    -> 'NEGOCIAR_PDI'(PDI, ONG) -> LA VE EL PDI ASIGNADO (INTERACTÚA) Y LA ONG (NO HACE NADA)
+        //                                  -> 'NEGOCIAR_ONG'(PDI, ONG) -> LA VE EL ONG (INTERACTÚA) Y EL PDI RESPONSABLE (NO HACE NADA)
         //                  
         //
         private void cargarRevisionActividadesInicio()
@@ -423,10 +424,28 @@ namespace APS.Interfaces
 
             //ORDEN -> PRIMERO LAS QUE TIENE QUE DECIDIR SI ES VIABLE
             //      -> DESPUÉS, LAS QUE TIENE QUE REVISAR
-            //      -> POR ÚLTIMO, LAS QUE TIENE QUE ESPERAR PARA VER
+            //      -> POR ÚLTIMO, LAS QUE TIENE QUE ESPERAR PARA VER (revisión en el otro lado)
 
             int c = 0;
+            cargarAceptadasGestor(c); //Carga las Actividades recién aceptadas por el gestor
+            c = panelRevision.Controls.Count;
 
+            //Listas de Actividades en Negociación
+            List<Actividad> actNegPDI = Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_PDI);
+            List<Actividad> actNegONG = Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_ONG);
+
+            if (user.Rol.NombreRol.Equals("PDI"))
+            {
+                cargarRevisionPDI(c, actNegPDI, actNegONG);
+            }
+            else
+            { //ES ONG -> lo mismo que para el PDI, pero al contrario 
+                cargarRevisionONG(c, actNegPDI, actNegONG);
+            }
+        }
+
+        private void cargarAceptadasGestor(int c)
+        {
             //SI ES PDI MOSTRAMOS LAS ACTIVIDADES QUE LE ENVÍA EL GESTOR
             if (user.Rol.NombreRol.Equals("PDI"))
             {
@@ -435,191 +454,175 @@ namespace APS.Interfaces
 
                 foreach (Actividad act in actAcGestor)
                 {
+
                     if (act.Responsable.Equals(user))
                     {
                         carAcGestor[c] = new CartelPendientes(user, act);
-                        panelPendientes.Controls.Add(carAcGestor[c], 0, c);
-                        panelPendientes.RowCount = panelPendientes.RowCount + 1;
+                        panelRevision.Controls.Add(carAcGestor[c], 0, c);
+                        panelRevision.RowCount = panelRevision.RowCount + 1;
                         carAcGestor[c].Location = new Point(carAcGestor[c].Location.X, (carAcGestor[c].Size.Height * c));
                         carAcGestor[c].BackColor = Color.Yellow;
 
-                        //BOTONES GESTOR
+                        //BOTONES
                         Panel panel = (Panel)carAcGestor[c].Controls.Find("panel1", false)[0];
                         Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
                         Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
 
                         //PROGRAMACIÓN BOTONES
-                        //bAceptar.Click += (sender, EventArgs) => { bRevisarRev_Click(sender, EventArgs, act); };
-                        //bRechazar.Click += (sender, EventArgs) => { bRechazarRev_Click(sender, EventArgs, act); };
+                        bAceptar.Click += (sender, EventArgs) => { bRevisarRevGestor_Click(sender, EventArgs, act); };
+                        bRechazar.Click += (sender, EventArgs) => { bRechazarRevGestor_Click(sender, EventArgs, act); };
                         c++;
                     }
                 }
             }
-            
+        }
 
-            List<Actividad> actNegPDI = Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_PDI);
-            List<Actividad> actNegONG = Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_ONG);
-           
+        private void cargarRevisionPDI(int c, List<Actividad> actNegPDI, List<Actividad> actNegONG)
+        {
+            //Carteles que Usaremos
             CartelPendientes[] carNegPDI = new CartelPendientes[actNegPDI.Count];
             CartelPendientes[] carNegONG = new CartelPendientes[actNegONG.Count];
 
-            //INSERTAMOS ACTIVIDADES GESTOR DONDE SEA RESPONSABLE
-
-            if (user.Rol.NombreRol.Equals("PDI"))
+            foreach (Actividad act in actNegPDI)
             {
-                
-                foreach (Actividad act in actNegPDI)
+                if (act.Responsable.Equals(user))
                 {
-                    if (act.Responsable.Equals(user))
-                    {
-                        carNegPDI[c] = new CartelPendientes(user, act);
-                        panelPendientes.Controls.Add(carNegPDI[c], 0, c);
-                        panelPendientes.RowCount = panelPendientes.RowCount + 1;
-                        carNegPDI[c].Location = new Point(carNegPDI[c].Location.X, (carNegPDI[c].Size.Height * c));
-                        carNegPDI[c].BackColor = Color.Green;
+                    carNegPDI[c] = new CartelPendientes(user, act);
+                    panelRevision.Controls.Add(carNegPDI[c], 0, c);
+                    panelRevision.RowCount = panelRevision.RowCount + 1;
+                    carNegPDI[c].Location = new Point(carNegPDI[c].Location.X, (carNegPDI[c].Size.Height * c));
+                    carNegPDI[c].BackColor = Color.Green;
 
-                        //BOTONES GESTOR
-                        Panel panel = (Panel)carNegPDI[c].Controls.Find("panel1", false)[0];
-                        Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
-                        Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
+                    //BOTONES GESTOR
+                    Panel panel = (Panel)carNegPDI[c].Controls.Find("panel1", false)[0];
+                    Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
+                    Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
 
-                        //PROGRAMACIÓN BOTONES
-                        //bAceptar.Click += (sender, EventArgs) => { bRevisarRevPDI_Click(sender, EventArgs, act); };
-                        //bRechazar.Click += (sender, EventArgs) => { bRechazarRevPDI_Click(sender, EventArgs, act); };
-                        c++;
-                    }
-                }
-
-                //Ahora Carga Las Actividades en revisión por ONGs
-                foreach (Actividad act in actNegONG)
-                {
-                    if (act.Responsable.Equals(user))
-                    {
-                        carNegONG[c] = new CartelPendientes(user, act);
-                        panelPendientes.Controls.Add(carNegONG[c], 0, c);
-                        panelPendientes.RowCount = panelPendientes.RowCount + 1;
-                        carNegONG[c].Location = new Point(carNegONG[c].Location.X, (carNegONG[c].Size.Height * c));
-                        carNegONG[c].BackColor = Color.Red;
-
-                        //BOTONES GESTOR
-                        Panel panel = (Panel)carNegONG[c].Controls.Find("panel1", false)[0];
-                        Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
-                        Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
-                        
-                        //Ponemos en invisible los botones, pues no es su turno
-                        bAceptar.Visible = false;
-                        bRechazar.Visible = false;
-
-                        c++;
-                    }
-                }
-            
-            } else //ES ONG -> lo mismo que para el PDI, pero al contrario
-            {
-                
-                foreach (Actividad act in actNegONG)
-                {
-                    if (act.Organizador.Equals(user))
-                    {
-                        carNegONG[c] = new CartelPendientes(user, act);
-                        panelPendientes.Controls.Add(carNegONG[c], 0, c);
-                        panelPendientes.RowCount = panelPendientes.RowCount + 1;
-                        carNegONG[c].Location = new Point(carNegONG[c].Location.X, (carNegONG[c].Size.Height * c));
-                        carNegONG[c].BackColor = Color.Green;
-
-                        //BOTONES GESTOR
-                        Panel panel = (Panel)carNegONG[c].Controls.Find("panel1", false)[0];
-                        Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
-                        Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
-
-                        //PROGRAMACIÓN BOTONES
-                        //bAceptar.Click += (sender, EventArgs) => { bRevisarRevONG_Click(sender, EventArgs, act); };
-                        //bRechazar.Click += (sender, EventArgs) => { bRechazarRevONG_Click(sender, EventArgs, act); };
-
-                        c++;
-                    }
-                }
-
-                //Ahora las Actividades del PDI
-                foreach (Actividad act in actNegPDI)
-                {
-                    if (act.Organizador.Equals(user))
-                    {
-                        carNegPDI[c] = new CartelPendientes(user, act);
-                        panelPendientes.Controls.Add(carNegPDI[c], 0, c);
-                        panelPendientes.RowCount = panelPendientes.RowCount + 1;
-                        carNegPDI[c].Location = new Point(carNegPDI[c].Location.X, (carNegPDI[c].Size.Height * c));
-                        carNegPDI[c].BackColor = Color.Red;
-
-                        //BOTONES GESTOR
-                        Panel panel = (Panel)carNegPDI[c].Controls.Find("panel1", false)[0];
-                        Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
-                        Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
-
-                        //PROGRAMACIÓN BOTONES
-                        bAceptar.Visible = false;
-                        bRechazar.Visible = false;
-
-                        c++;
-                    }
+                    //PROGRAMACIÓN BOTONES
+                    bAceptar.Click += (sender, EventArgs) => { bRevisarRevPDI_Click(sender, EventArgs, act); };
+                    bRechazar.Click += (sender, EventArgs) => { bRechazarRevPDI_Click(sender, EventArgs, act); };
+                    c++;
                 }
             }
-            
 
+            //Ahora Carga Las Actividades en revisión por ONGs
+            foreach (Actividad act in actNegONG)
+            {
+                if (act.Responsable.Equals(user))
+                {
+                    carNegONG[c] = new CartelPendientes(user, act);
+                    panelRevision.Controls.Add(carNegONG[c], 0, c);
+                    panelRevision.RowCount = panelRevision.RowCount + 1;
+                    carNegONG[c].Location = new Point(carNegONG[c].Location.X, (carNegONG[c].Size.Height * c));
+                    carNegONG[c].BackColor = Color.Red;
+
+                    //BOTONES GESTOR
+                    Panel panel = (Panel)carNegONG[c].Controls.Find("panel1", false)[0];
+                    Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
+                    Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
+
+                    //Ponemos en invisible los botones, pues no es su turno
+                    bAceptar.Visible = false;
+                    bRechazar.Visible = false;
+
+                    c++;
+                }
+            }
         }
 
-        /*private void cargarRevisionActividades()
+        private void cargarRevisionONG(int c, List<Actividad> actNegPDI, List<Actividad> actNegONG)
         {
-            List<Actividad> actividades = new List<Actividad>();
-            Rol rol = user.Rol;
-            if (rol.NombreRol.Equals("PDI"))
-            {
-                foreach(Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_ONG))
-                {
-                    if (act.Responsable.Email.Equals(user.Email)) actividades.Add(act);
-                }
-                foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_PDI))
-                {
-                    if (act.Responsable.Email.Equals(user.Email)) actividades.Add(act);
-                }
-                foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.ACEPTADA_GESTOR))
-                {
-                    if (act.Responsable.Email.Equals(user.Email)) actividades.Add(act);
-                }
-                actividades.Sort();
-                this.dataGridViewRevision.DataSource = actividades;
-            } 
-            else if (rol.NombreRol.Equals("ONG"))
-            {
-                foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_PDI))
-                {
-                    if (act.Organizador.Email.Equals(user.Email)) actividades.Add(act);
-                }
-                foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_ONG))
-                {
-                    if (act.Organizador.Email.Equals(user.Email)) actividades.Add(act);
-                }
-                actividades.Sort();
-                this.dataGridViewRevision.DataSource = actividades;
-            }*/
+            
+            //Carteles que Usaremos
+            CartelPendientes[] carNegPDI = new CartelPendientes[actNegPDI.Count];
+            CartelPendientes[] carNegONG = new CartelPendientes[actNegONG.Count];
 
-            /*if (rol.NombreRol.Equals("PDI") || rol.NombreRol.Equals("ONG"))
+            foreach (Actividad act in actNegONG)
             {
-                foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_ONG))
+                if (act.Organizador.Equals(user))
                 {
-                    if(act.Organizador.Email.Equals(user.Email) || act.Responsable.Email.Equals(user.Email)) actividades.Add(act);
+                    carNegONG[c] = new CartelPendientes(user, act);
+                    panelRevision.Controls.Add(carNegONG[c], 0, c);
+                    panelRevision.RowCount = panelRevision.RowCount + 1;
+                    carNegONG[c].Location = new Point(carNegONG[c].Location.X, (carNegONG[c].Size.Height * c));
+                    carNegONG[c].BackColor = Color.Green;
+
+                    //BOTONES GESTOR
+                    Panel panel = (Panel)carNegONG[c].Controls.Find("panel1", false)[0];
+                    Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
+                    Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
+
+                    //PROGRAMACIÓN BOTONES
+                    bAceptar.Click += (sender, EventArgs) => { bRevisarRevONG_Click(sender, EventArgs, act); };
+                    bRechazar.Click += (sender, EventArgs) => { bRechazarRevONG_Click(sender, EventArgs, act); };
+
+                    c++;
                 }
-                foreach (Actividad act in Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_PDI))
-                {
-                    if (act.Organizador.Email.Equals(user.Email) || act.Responsable.Email.Equals(user.Email)) actividades.Add(act);
-                }
-                actividades.Sort();
-                this.dataGridViewRevision.DataSource = actividades;
             }
-        }*/
+
+            //Ahora las Actividades del PDI
+            foreach (Actividad act in actNegPDI)
+            {
+                if (act.Organizador.Equals(user))
+                {
+                    carNegPDI[c] = new CartelPendientes(user, act);
+                    panelPendientes.Controls.Add(carNegPDI[c], 0, c);
+                    panelPendientes.RowCount = panelPendientes.RowCount + 1;
+                    carNegPDI[c].Location = new Point(carNegPDI[c].Location.X, (carNegPDI[c].Size.Height * c));
+                    carNegPDI[c].BackColor = Color.Red;
+
+                    //BOTONES GESTOR
+                    Panel panel = (Panel)carNegPDI[c].Controls.Find("panel1", false)[0];
+                    Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
+                    Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
+
+                    //PROGRAMACIÓN BOTONES
+                    bAceptar.Visible = false;
+                    bRechazar.Visible = false;
+
+                    c++;
+                }
+            }
+        }
+
+        //PROGRAMACIÓN BOTONES
+          // -> PDI debe Aceptar/Rechazar Actividad Entregada por Gestor
+        private void bRechazarRevGestor_Click(object sender, EventArgs eventArgs, Actividad act)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void bRevisarRevGestor_Click(object sender, EventArgs eventArgs, Actividad act)
+        {
+            throw new NotImplementedException();
+        }
+
+        // -> PDI debe Aceptar/Rechazar Actividad en Negociación con ONG
+        private void bRechazarRevPDI_Click(object sender, EventArgs eventArgs, Actividad act)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void bRevisarRevPDI_Click(object sender, EventArgs eventArgs, Actividad act)
+        {
+            throw new NotImplementedException();
+        }
+
+        // -> ONG debe Aceptar/Rechazar Actividad en Negociación con PDI
+        private void bRechazarRevONG_Click(object sender, EventArgs eventArgs, Actividad act)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void bRevisarRevONG_Click(object sender, EventArgs eventArgs, Actividad act)
+        {
+            throw new NotImplementedException();
+        }
 
 
-       
+        //
+        // MÉTODOS EXTRA
+        //
         private void bLogout_Click(object sender, EventArgs e)
         {
             crearCierreSesion();
@@ -643,10 +646,29 @@ namespace APS.Interfaces
 
         private void GoPerfilUsuario()
         {
-            FPerfil pagina = new FPerfil(user);
-            this.Visible = false;
-            pagina.ShowDialog();
-            this.Visible = true;
+
+            if (user.Rol.NombreRol.Equals("ONG"))
+            {
+                FPerfilONG pagONG = new FPerfilONG(user);
+                this.Visible = false;
+                pagONG.ShowDialog();
+                this.Visible = true;
+            }
+            else if(user.Rol.NombreRol.Equals("PAS"))
+            {
+                FPerfilPAS pagPAS = new FPerfilPAS(user);
+                this.Visible = false;
+                pagPAS.ShowDialog();
+                this.Visible = true;
+            }
+            else
+            {
+                FPerfilUsuario pagina = new FPerfilUsuario(user);
+                this.Visible = false;
+                pagina.ShowDialog();
+                this.Visible = true;
+            }
+            
         }
 
         private void lNewAct_Click(object sender, EventArgs e)
@@ -661,53 +683,5 @@ namespace APS.Interfaces
             newAct.ShowDialog();
             this.Visible = true;
         }
-
-        private void PaginaPrincipal_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'wePassDataSet.Actividades' Puede moverla o quitarla según sea necesario.
-            //this.actividadesTableAdapter.Fill(this.wePassDataSet.Actividades);
-            // TODO: esta línea de código carga datos en la tabla 'wePassDataSet.Grados' Puede moverla o quitarla según sea necesario.
-            //this.gradosTableAdapter.Fill(this.wePassDataSet.Grados);
-
-        }
-
-        private void listGrados_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*
-            Grado g = (Grado)listGrados.SelectedItem;
-            
-            foreach(Asignatura a in Asignatura.ListaAsignaturas(g))
-            {
-
-            }*/
-        }
-        /*private void dataGridViewRevision_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int i = e.RowIndex;
-            int id = int.Parse(this.dataGridViewRevision.Rows[i].Cells[0].Value.ToString());
-            Actividad revision = new Actividad(id);
-            Rol rol = user.Rol;
-            MessageBox.Show("holaaaaa");
-
-            //VER ACTIVIDAD A REVISAR POR EL PDI
-            if (rol.NombreRol.Equals("PDI") && (revision.EstadoAct.Equals(Actividad.EstadoActividadE.NEGOCIACION_PDI) || revision.EstadoAct.Equals(Actividad.EstadoActividadE.ACEPTADA_GESTOR)))
-            {
-                VerActividadRevision verActividad = new VerActividadRevision(user, revision);
-                this.Visible = false;
-                verActividad.ShowDialog();
-                this.Visible = true;
-            }
-            //VER ACTIVIDAD A REVISAR POR LA ONG
-            else if (rol.NombreRol.Equals("ONG") && revision.EstadoAct.Equals(Actividad.EstadoActividadE.NEGOCIACION_ONG))
-            {
-                VerActividadRevision verActividad = new VerActividadRevision(user, revision);
-                this.Visible = false;
-                verActividad.ShowDialog();
-                this.Visible = true;
-            }
-            
-            //cargarTodasActividades();
-            cargarRevisionActividades();
-        }*/
     }
 }

@@ -95,6 +95,18 @@
     <Compile Include="Interfaces\Gestión Actividades\VerActividadRevision.Designer.cs">
       <DependentUpon>VerActividadRevision.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Perfil\FPerfilONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Perfil\FPerfilONG.Designer.cs">
+      <DependentUpon>FPerfilONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Perfil\FPerfilPAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Perfil\FPerfilPAS.Designer.cs">
+      <DependentUpon>FPerfilPAS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelFiltroMatch.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -167,11 +179,11 @@
     <Compile Include="Interfaces\Gestión Actividades\NuevaActividad.Designer.cs">
       <DependentUpon>NuevaActividad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Perfil\FPerfil.cs">
+    <Compile Include="Interfaces\Perfil\FPerfilUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Perfil\FPerfil.Designer.cs">
-      <DependentUpon>FPerfil.cs</DependentUpon>
+    <Compile Include="Interfaces\Perfil\FPerfilUsuario.Designer.cs">
+      <DependentUpon>FPerfilUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Login\PaginaInicio.cs">
       <SubType>Form</SubType>
@@ -257,6 +269,12 @@
     <EmbeddedResource Include="Interfaces\Gestión Actividades\VerActividadRevision.resx">
       <DependentUpon>VerActividadRevision.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Perfil\FPerfilONG.resx">
+      <DependentUpon>FPerfilONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Perfil\FPerfilPAS.resx">
+      <DependentUpon>FPerfilPAS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelFiltroMatch.resx">
       <DependentUpon>CartelFiltroMatch.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,8 +299,8 @@
     <EmbeddedResource Include="Interfaces\Login\iDumaInicio.resx">
       <DependentUpon>iDumaInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Perfil\FPerfil.resx">
-      <DependentUpon>FPerfil.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\Perfil\FPerfilUsuario.resx">
+      <DependentUpon>FPerfilUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Perfil\FPreferencias.resx">
       <DependentUpon>FPreferencias.cs</DependentUpon>

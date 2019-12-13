@@ -153,7 +153,7 @@
             // 
             this.lShowAmbito.AutoSize = true;
             this.lShowAmbito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lShowAmbito.Location = new System.Drawing.Point(452, 103);
+            this.lShowAmbito.Location = new System.Drawing.Point(440, 103);
             this.lShowAmbito.Name = "lShowAmbito";
             this.lShowAmbito.Size = new System.Drawing.Size(45, 15);
             this.lShowAmbito.TabIndex = 21;
@@ -172,7 +172,7 @@
             // lShowTipoTrab
             // 
             this.lShowTipoTrab.AutoSize = true;
-            this.lShowTipoTrab.Location = new System.Drawing.Point(452, 67);
+            this.lShowTipoTrab.Location = new System.Drawing.Point(440, 67);
             this.lShowTipoTrab.Name = "lShowTipoTrab";
             this.lShowTipoTrab.Size = new System.Drawing.Size(42, 13);
             this.lShowTipoTrab.TabIndex = 19;
