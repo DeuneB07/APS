@@ -545,7 +545,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             String del = "DELETE FROM Actividades WHERE ID_Actividad='" + this.ID_Actividad + "';";
             miBD.Delete(del);
-            ID_Actividad = -1;
+            this.ID_actividad = -1;
             nombreAct = null;
             descAct = null;
             numPlazas = -1;

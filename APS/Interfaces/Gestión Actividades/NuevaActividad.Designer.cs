@@ -65,6 +65,7 @@ namespace APS.Interfaces
             this.listTurno = new System.Windows.Forms.ComboBox();
             this.listAmbito = new System.Windows.Forms.ComboBox();
             this.listTrabajo = new System.Windows.Forms.ComboBox();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ambitoTrabajoEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoTrabajoEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -155,7 +156,7 @@ namespace APS.Interfaces
             // labelImagen
             // 
             this.labelImagen.AutoSize = true;
-            this.labelImagen.Location = new System.Drawing.Point(371, 430);
+            this.labelImagen.Location = new System.Drawing.Point(410, 430);
             this.labelImagen.Name = "labelImagen";
             this.labelImagen.Size = new System.Drawing.Size(58, 17);
             this.labelImagen.TabIndex = 9;
@@ -181,7 +182,7 @@ namespace APS.Interfaces
             // 
             // bAceptar
             // 
-            this.bAceptar.Location = new System.Drawing.Point(426, 560);
+            this.bAceptar.Location = new System.Drawing.Point(462, 560);
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(83, 23);
@@ -192,7 +193,7 @@ namespace APS.Interfaces
             // 
             // bCancelar
             // 
-            this.bCancelar.Location = new System.Drawing.Point(536, 560);
+            this.bCancelar.Location = new System.Drawing.Point(574, 560);
             this.bCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(79, 23);
@@ -270,7 +271,7 @@ namespace APS.Interfaces
             // tURL
             // 
             this.tURL.Enabled = false;
-            this.tURL.Location = new System.Drawing.Point(435, 430);
+            this.tURL.Location = new System.Drawing.Point(494, 401);
             this.tURL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tURL.Name = "tURL";
             this.tURL.Size = new System.Drawing.Size(115, 22);
@@ -299,10 +300,10 @@ namespace APS.Interfaces
             // 
             // btnExaminar
             // 
-            this.btnExaminar.Location = new System.Drawing.Point(556, 430);
+            this.btnExaminar.Location = new System.Drawing.Point(474, 427);
             this.btnExaminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExaminar.Name = "btnExaminar";
-            this.btnExaminar.Size = new System.Drawing.Size(75, 23);
+            this.btnExaminar.Size = new System.Drawing.Size(80, 23);
             this.btnExaminar.TabIndex = 28;
             this.btnExaminar.Text = "Examinar";
             this.btnExaminar.UseVisualStyleBackColor = true;
@@ -311,11 +312,11 @@ namespace APS.Interfaces
             // pictureBox
             // 
             this.pictureBox.BackColor = System.Drawing.Color.White;
-            this.pictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.BackgroundImage")));
             this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox.Image = global::APS.Properties.Resources.no_image;
             this.pictureBox.InitialImage = null;
-            this.pictureBox.Location = new System.Drawing.Point(437, 458);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox.Location = new System.Drawing.Point(477, 456);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(132, 81);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -334,7 +335,7 @@ namespace APS.Interfaces
             // 
             this.listTurno.FormattingEnabled = true;
             this.listTurno.Location = new System.Drawing.Point(243, 430);
-            this.listTurno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listTurno.Margin = new System.Windows.Forms.Padding(4);
             this.listTurno.Name = "listTurno";
             this.listTurno.Size = new System.Drawing.Size(120, 24);
             this.listTurno.TabIndex = 30;
@@ -343,7 +344,7 @@ namespace APS.Interfaces
             // 
             this.listAmbito.FormattingEnabled = true;
             this.listAmbito.Location = new System.Drawing.Point(243, 469);
-            this.listAmbito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listAmbito.Margin = new System.Windows.Forms.Padding(4);
             this.listAmbito.Name = "listAmbito";
             this.listAmbito.Size = new System.Drawing.Size(137, 24);
             this.listAmbito.TabIndex = 31;
@@ -352,16 +353,29 @@ namespace APS.Interfaces
             // 
             this.listTrabajo.FormattingEnabled = true;
             this.listTrabajo.Location = new System.Drawing.Point(243, 505);
-            this.listTrabajo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listTrabajo.Margin = new System.Windows.Forms.Padding(4);
             this.listTrabajo.Name = "listTrabajo";
             this.listTrabajo.Size = new System.Drawing.Size(137, 24);
             this.listTrabajo.TabIndex = 32;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(560, 427);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(80, 23);
+            this.btnReset.TabIndex = 33;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // NuevaActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 613);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(665, 630);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.listTrabajo);
             this.Controls.Add(this.listAmbito);
             this.Controls.Add(this.listTurno);
@@ -439,5 +453,6 @@ namespace APS.Interfaces
         private System.Windows.Forms.ComboBox listTurno;
         private System.Windows.Forms.ComboBox listAmbito;
         private System.Windows.Forms.ComboBox listTrabajo;
+        private System.Windows.Forms.Button btnReset;
     }
 }

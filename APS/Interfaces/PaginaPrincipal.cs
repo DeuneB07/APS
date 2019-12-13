@@ -426,6 +426,7 @@ namespace APS.Interfaces
 
             if (emCierreDialog == DialogResult.Yes) act.BorrarActividad();
             cargarRevisionActividadesInicio();
+            cargarPendientesActividadesInicio();
         }
 
         //

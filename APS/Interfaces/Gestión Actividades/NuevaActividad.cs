@@ -18,8 +18,6 @@ namespace APS.Interfaces
 
         private Usuario ong;
 
-        byte[] imagen;
-
         public NuevaActividad(Usuario ong)
         {
             InitializeComponent();
@@ -37,6 +35,11 @@ namespace APS.Interfaces
         {
             try
             {
+                if (int.Parse(tNumPlazas.Text) < -1) throw new Exception("Número de plazas debe ser positivo, o -1 si es indefinido");
+                if (int.Parse(tNumHoras.Text) <= 0) throw new Exception("Número de horas debe ser positivo");
+                if (dateTimePickerFechaIni.Value < DateTime.Today) throw new Exception("Fecha inicio debe ser posterior o igual a la fecha actual");
+                if (dateTimePickerFechaFin.Value < dateTimePickerFechaIni.Value) throw new Exception("Fecha fin debe ser posterior o igual a la fecha inicial");
+                //if (tLugar.Text.Trim().Equals("")) throw new Exception("Lugar no puede estar vacía");
 
                 TurnoE turno;
                 Enum.TryParse<TurnoE>(listTurno.SelectedItem.ToString(), true, out turno);
@@ -44,19 +47,6 @@ namespace APS.Interfaces
                 Enum.TryParse(listAmbito.SelectedItem.ToString(), true, out ambito);
                 TipoTrabajoE trabajo;
                 Enum.TryParse<TipoTrabajoE>(listTrabajo.SelectedItem.ToString(), true, out trabajo);
-
-                /*if (pictureBox.Image != null)
-                {
-                    //**** GUARDAR IMAGEN****
-                    int m_codigo = Convert.ToInt32(1);
-                    MemoryStream m_MemoryStream = new MemoryStream();
-                    pictureBox.Image.Save(m_MemoryStream, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    byte[] m_imagen = m_MemoryStream.ToArray();
-                    //Como ven lo que realmente enviamos a la tabla es un arreglo de byte 🙂 
-                    //y podemos decir que estas tres lineas anteriores son lo complicado de la tarea.
-                    //*******************************
-                }*/
-
 
                 Actividad a = new Actividad(tNombreAct.Text, tDescripcion.Text, int.Parse(tNumPlazas.Text), int.Parse(tNumHoras.Text), turno, dateTimePickerFechaIni.Value, dateTimePickerFechaFin.Value,
                                             tLugar.Text, ong, EstadoActividadE.PENDIENTE_ACEPTACION, ambito, trabajo);
@@ -125,5 +115,10 @@ namespace APS.Interfaces
             }
         }
 
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            this.tURL.Text = "";
+            this.pictureBox.Image = global::APS.Properties.Resources.no_image;
+        }
     }
 }
