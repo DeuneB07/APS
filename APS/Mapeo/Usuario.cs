@@ -30,7 +30,7 @@ namespace APS.Mapeo
         private List<Mensaje> mensajes;//Lazy
 
         private List<Actividad_Realizada> actividadesRealizadas; //Lazzy
-        private List<Actividad_Solicitud> actividadesSolicitadas;  //Lazzzy
+        private List<Actividad_Solicitud> actividadesSolicitadas;  //Lazzy
 
         public static List<Usuario> ListaUsuarios()
         {

@@ -74,7 +74,7 @@
             this.panel1.Controls.Add(this.lDescripcion);
             this.panel1.Controls.Add(this.pict);
             this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1246, 283);
             this.panel1.TabIndex = 3;
@@ -203,7 +203,7 @@
             this.bSolicitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bSolicitar.ForeColor = System.Drawing.Color.Black;
             this.bSolicitar.Location = new System.Drawing.Point(1112, 216);
-            this.bSolicitar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.bSolicitar.Margin = new System.Windows.Forms.Padding(6);
             this.bSolicitar.Name = "bSolicitar";
             this.bSolicitar.Size = new System.Drawing.Size(128, 61);
             this.bSolicitar.TabIndex = 10;
@@ -237,7 +237,7 @@
             this.bVerMas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVerMas.Image = ((System.Drawing.Image)(resources.GetObject("bVerMas.Image")));
             this.bVerMas.Location = new System.Drawing.Point(1132, 6);
-            this.bVerMas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.bVerMas.Margin = new System.Windows.Forms.Padding(6);
             this.bVerMas.Name = "bVerMas";
             this.bVerMas.Size = new System.Drawing.Size(108, 106);
             this.bVerMas.TabIndex = 7;
@@ -267,7 +267,7 @@
             // pict
             // 
             this.pict.Location = new System.Drawing.Point(6, 122);
-            this.pict.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pict.Margin = new System.Windows.Forms.Padding(6);
             this.pict.Name = "pict";
             this.pict.Size = new System.Drawing.Size(264, 156);
             this.pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -280,7 +280,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "CartelActividadesStandard";
             this.Size = new System.Drawing.Size(1258, 294);
             this.panel1.ResumeLayout(false);
