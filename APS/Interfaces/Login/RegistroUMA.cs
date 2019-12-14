@@ -160,13 +160,12 @@ namespace APS.Interfaces
             }
 
             pictureBoxPerfil.ImageLocation = openFileDialog1.FileName;
-            Console.WriteLine(openFileDialog1.FileName);
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             tURL.Text = "";
-            pictureBoxPerfil.Image = null;
+            pictureBoxPerfil.Image = global::APS.Properties.Resources.userDefault; ;
         }
     }
 }
