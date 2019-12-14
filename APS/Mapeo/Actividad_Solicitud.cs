@@ -65,6 +65,21 @@ namespace APS.Mapeo
             return lista;
         }
 
+        public static List<Usuario> ListaActividadesSolicitudes(Actividad act, Actividad_Solicitud.EstadoActividadSolicitudE estado)
+        {
+            // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Usuario> lista = new List<Usuario>();
+
+            foreach (Object[] tupla in miBD.Select("SELECT emailParticipante FROM Actividades_Solicitudes WHERE idAct=" + act.ID_Actividad + " and EstadoSolicitud =  '" + estado.ToString() + "';"))
+            {
+                String emP = tupla[0].ToString();
+                Usuario u = new Usuario(emP);
+                lista.Add(u);
+            }
+            return lista;
+        }
+
         public Actividad_Solicitud(Usuario user, Actividad act)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);

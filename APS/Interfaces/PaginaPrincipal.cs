@@ -828,12 +828,18 @@ namespace APS.Interfaces
 
         private void bVerSolicitantesONG_Click(object sender, EventArgs eventArgs, Actividad act)
         {
-            //throw new NotImplementedException();
+            VerParticipantes verPar = new VerParticipantes(act,user);
+            this.Visible = false;
+            verPar.ShowDialog();
+            this.Visible = true;
         }
 
         private void bVerSolicitantesPDI_Click(object sender, EventArgs eventArgs, Actividad act)
         {
-            //throw new NotImplementedException();
+            VerParticipantes verPar = new VerParticipantes(act, user);
+            this.Visible = false;
+            verPar.ShowDialog();
+            this.Visible = true;
         }
 
 
