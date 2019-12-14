@@ -33,6 +33,7 @@ namespace APS.Interfaces.Perfil
             this.bAceptarC.Visible = false;
             this.bCancelarC.Visible = false;
             this.modiUser.Visible = false;
+            if (usr.Imagen != null) this.pictureBoxPerfil.Image = usr.Imagen;
         }
 
         private void bModPerfil_Click(object sender, EventArgs e)

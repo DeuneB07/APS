@@ -23,7 +23,7 @@ namespace APS.Interfaces
         {
             InitializeComponent();
             this.user = user;
-
+            
             tabUser.Visible = true;
             if (!user.AccesoPantalla("MATCH")) tabUser.Controls.Remove(this.pMatch); //HECHO
             if (!user.AccesoPantalla("TODAS")) tabUser.Controls.Remove(this.pTodas); //HECHO

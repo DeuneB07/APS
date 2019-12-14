@@ -69,10 +69,12 @@
             // 
             // b_aceptarReg
             // 
-            this.b_aceptarReg.Location = new System.Drawing.Point(562, 525);
+            this.b_aceptarReg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.b_aceptarReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b_aceptarReg.Location = new System.Drawing.Point(509, 531);
             this.b_aceptarReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.b_aceptarReg.Name = "b_aceptarReg";
-            this.b_aceptarReg.Size = new System.Drawing.Size(83, 28);
+            this.b_aceptarReg.Size = new System.Drawing.Size(105, 28);
             this.b_aceptarReg.TabIndex = 0;
             this.b_aceptarReg.Text = "Aceptar";
             this.b_aceptarReg.UseVisualStyleBackColor = true;
@@ -80,12 +82,13 @@
             // 
             // b_cancelarReg
             // 
-            this.b_cancelarReg.Location = new System.Drawing.Point(666, 525);
+            this.b_cancelarReg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.b_cancelarReg.Location = new System.Drawing.Point(638, 531);
             this.b_cancelarReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.b_cancelarReg.Name = "b_cancelarReg";
-            this.b_cancelarReg.Size = new System.Drawing.Size(83, 28);
+            this.b_cancelarReg.Size = new System.Drawing.Size(100, 28);
             this.b_cancelarReg.TabIndex = 2;
-            this.b_cancelarReg.Text = "Cancelar";
+            this.b_cancelarReg.Text = "Omitir";
             this.b_cancelarReg.UseVisualStyleBackColor = true;
             this.b_cancelarReg.Click += new System.EventHandler(this.b_cancelarReg_Click);
             // 
@@ -113,7 +116,7 @@
             this.labelError.BackColor = System.Drawing.Color.Transparent;
             this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(32, 531);
+            this.labelError.Location = new System.Drawing.Point(39, 531);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(44, 17);
             this.labelError.TabIndex = 8;
@@ -122,7 +125,7 @@
             // labelUsuario
             // 
             this.labelUsuario.AutoSize = true;
-            this.labelUsuario.Location = new System.Drawing.Point(25, 53);
+            this.labelUsuario.Location = new System.Drawing.Point(3, 53);
             this.labelUsuario.Name = "labelUsuario";
             this.labelUsuario.Size = new System.Drawing.Size(115, 17);
             this.labelUsuario.TabIndex = 9;
@@ -130,7 +133,7 @@
             // 
             // tUsuario
             // 
-            this.tUsuario.Location = new System.Drawing.Point(146, 53);
+            this.tUsuario.Location = new System.Drawing.Point(132, 53);
             this.tUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tUsuario.Name = "tUsuario";
             this.tUsuario.Size = new System.Drawing.Size(124, 22);
@@ -139,7 +142,7 @@
             // labelDNI
             // 
             this.labelDNI.AutoSize = true;
-            this.labelDNI.Location = new System.Drawing.Point(79, 95);
+            this.labelDNI.Location = new System.Drawing.Point(57, 98);
             this.labelDNI.Name = "labelDNI";
             this.labelDNI.Size = new System.Drawing.Size(61, 17);
             this.labelDNI.TabIndex = 11;
@@ -147,7 +150,7 @@
             // 
             // tDNI
             // 
-            this.tDNI.Location = new System.Drawing.Point(146, 93);
+            this.tDNI.Location = new System.Drawing.Point(132, 98);
             this.tDNI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tDNI.Name = "tDNI";
             this.tDNI.Size = new System.Drawing.Size(124, 22);
@@ -290,7 +293,7 @@
             this.panel2.Controls.Add(this.tDNI);
             this.panel2.Location = new System.Drawing.Point(35, 227);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(703, 282);
+            this.panel2.Size = new System.Drawing.Size(703, 293);
             this.panel2.TabIndex = 25;
             // 
             // btnBorrar
@@ -328,7 +331,7 @@
             // 
             this.pictureBoxPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxPerfil.Image = global::APS.Properties.Resources.userDefault;
-            this.pictureBoxPerfil.Location = new System.Drawing.Point(132, 164);
+            this.pictureBoxPerfil.Location = new System.Drawing.Point(132, 178);
             this.pictureBoxPerfil.Name = "pictureBoxPerfil";
             this.pictureBoxPerfil.Size = new System.Drawing.Size(100, 100);
             this.pictureBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
