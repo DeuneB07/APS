@@ -42,7 +42,7 @@
             // 
             this.bRegistrar.BackColor = System.Drawing.Color.LightCyan;
             this.bRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bRegistrar.Location = new System.Drawing.Point(438, 211);
+            this.bRegistrar.Location = new System.Drawing.Point(322, 197);
             this.bRegistrar.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.bRegistrar.Name = "bRegistrar";
             this.bRegistrar.Size = new System.Drawing.Size(156, 29);
@@ -56,7 +56,7 @@
             this.bIniciar.BackColor = System.Drawing.Color.LightCyan;
             this.bIniciar.FlatAppearance.BorderSize = 0;
             this.bIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bIniciar.Location = new System.Drawing.Point(127, 211);
+            this.bIniciar.Location = new System.Drawing.Point(150, 197);
             this.bIniciar.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.bIniciar.Name = "bIniciar";
             this.bIniciar.Size = new System.Drawing.Size(156, 29);
@@ -71,7 +71,7 @@
             this.labelError.BackColor = System.Drawing.Color.Transparent;
             this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(124, 47);
+            this.labelError.Location = new System.Drawing.Point(147, 61);
             this.labelError.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(44, 17);
@@ -81,36 +81,40 @@
             // labelCorreo
             // 
             this.labelCorreo.AutoSize = true;
-            this.labelCorreo.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.labelCorreo.Location = new System.Drawing.Point(124, 87);
+            this.labelCorreo.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorreo.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.labelCorreo.Location = new System.Drawing.Point(69, 90);
             this.labelCorreo.Name = "labelCorreo";
-            this.labelCorreo.Size = new System.Drawing.Size(62, 17);
+            this.labelCorreo.Size = new System.Drawing.Size(66, 20);
             this.labelCorreo.TabIndex = 8;
             this.labelCorreo.Text = "Correo:";
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.labelPassword.Location = new System.Drawing.Point(90, 137);
+            this.labelPassword.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPassword.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.labelPassword.Location = new System.Drawing.Point(35, 140);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(96, 17);
+            this.labelPassword.Size = new System.Drawing.Size(100, 20);
             this.labelPassword.TabIndex = 9;
             this.labelPassword.Text = "Contraseña:";
             // 
             // tCorreo
             // 
-            this.tCorreo.Location = new System.Drawing.Point(192, 87);
+            this.tCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tCorreo.Location = new System.Drawing.Point(150, 90);
             this.tCorreo.Name = "tCorreo";
-            this.tCorreo.Size = new System.Drawing.Size(328, 23);
+            this.tCorreo.Size = new System.Drawing.Size(328, 27);
             this.tCorreo.TabIndex = 10;
             // 
             // tPassword
             // 
-            this.tPassword.Location = new System.Drawing.Point(192, 137);
+            this.tPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tPassword.Location = new System.Drawing.Point(150, 137);
             this.tPassword.Name = "tPassword";
             this.tPassword.PasswordChar = '●';
-            this.tPassword.Size = new System.Drawing.Size(328, 23);
+            this.tPassword.Size = new System.Drawing.Size(328, 27);
             this.tPassword.TabIndex = 11;
             // 
             // InicioPersExterno
@@ -119,8 +123,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(719, 414);
+            this.ClientSize = new System.Drawing.Size(571, 354);
             this.Controls.Add(this.tPassword);
             this.Controls.Add(this.tCorreo);
             this.Controls.Add(this.labelPassword);
