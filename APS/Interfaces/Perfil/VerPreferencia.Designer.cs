@@ -66,7 +66,7 @@
             this.listCompetencias.FormattingEnabled = true;
             this.listCompetencias.ItemHeight = 16;
             this.listCompetencias.Location = new System.Drawing.Point(147, 354);
-            this.listCompetencias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listCompetencias.Margin = new System.Windows.Forms.Padding(4);
             this.listCompetencias.Name = "listCompetencias";
             this.listCompetencias.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listCompetencias.Size = new System.Drawing.Size(473, 148);
@@ -153,7 +153,7 @@
             // 
             this.bConfirmar.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bConfirmar.Location = new System.Drawing.Point(455, 511);
-            this.bConfirmar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bConfirmar.Margin = new System.Windows.Forms.Padding(4);
             this.bConfirmar.Name = "bConfirmar";
             this.bConfirmar.Size = new System.Drawing.Size(167, 28);
             this.bConfirmar.TabIndex = 32;
@@ -267,7 +267,7 @@
             // 
             this.bModificar.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bModificar.Location = new System.Drawing.Point(147, 511);
-            this.bModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bModificar.Margin = new System.Windows.Forms.Padding(4);
             this.bModificar.Name = "bModificar";
             this.bModificar.Size = new System.Drawing.Size(167, 28);
             this.bModificar.TabIndex = 57;
@@ -279,7 +279,7 @@
             // 
             this.cModiGrado.FormattingEnabled = true;
             this.cModiGrado.Location = new System.Drawing.Point(67, 124);
-            this.cModiGrado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cModiGrado.Margin = new System.Windows.Forms.Padding(4);
             this.cModiGrado.Name = "cModiGrado";
             this.cModiGrado.Size = new System.Drawing.Size(300, 24);
             this.cModiGrado.TabIndex = 58;
@@ -289,7 +289,7 @@
             // 
             this.cModiAsig.FormattingEnabled = true;
             this.cModiAsig.Location = new System.Drawing.Point(67, 201);
-            this.cModiAsig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cModiAsig.Margin = new System.Windows.Forms.Padding(4);
             this.cModiAsig.Name = "cModiAsig";
             this.cModiAsig.Size = new System.Drawing.Size(300, 24);
             this.cModiAsig.TabIndex = 59;
@@ -298,7 +298,7 @@
             // 
             this.cModiTurno.FormattingEnabled = true;
             this.cModiTurno.Location = new System.Drawing.Point(567, 103);
-            this.cModiTurno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cModiTurno.Margin = new System.Windows.Forms.Padding(4);
             this.cModiTurno.Name = "cModiTurno";
             this.cModiTurno.Size = new System.Drawing.Size(133, 24);
             this.cModiTurno.TabIndex = 60;
@@ -307,7 +307,7 @@
             // 
             this.cModAmb.FormattingEnabled = true;
             this.cModAmb.Location = new System.Drawing.Point(567, 294);
-            this.cModAmb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cModAmb.Margin = new System.Windows.Forms.Padding(4);
             this.cModAmb.Name = "cModAmb";
             this.cModAmb.Size = new System.Drawing.Size(133, 24);
             this.cModAmb.TabIndex = 61;
@@ -316,7 +316,7 @@
             // 
             this.cModiTipoTrab.FormattingEnabled = true;
             this.cModiTipoTrab.Location = new System.Drawing.Point(567, 244);
-            this.cModiTipoTrab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cModiTipoTrab.Margin = new System.Windows.Forms.Padding(4);
             this.cModiTipoTrab.Name = "cModiTipoTrab";
             this.cModiTipoTrab.Size = new System.Drawing.Size(133, 24);
             this.cModiTipoTrab.TabIndex = 62;
@@ -325,7 +325,7 @@
             // 
             this.cModiHoras.FormattingEnabled = true;
             this.cModiHoras.Location = new System.Drawing.Point(567, 192);
-            this.cModiHoras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cModiHoras.Margin = new System.Windows.Forms.Padding(4);
             this.cModiHoras.Name = "cModiHoras";
             this.cModiHoras.Size = new System.Drawing.Size(133, 24);
             this.cModiHoras.TabIndex = 63;
@@ -334,7 +334,7 @@
             // 
             this.cModiTipoAct.FormattingEnabled = true;
             this.cModiTipoAct.Location = new System.Drawing.Point(567, 145);
-            this.cModiTipoAct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cModiTipoAct.Margin = new System.Windows.Forms.Padding(4);
             this.cModiTipoAct.Name = "cModiTipoAct";
             this.cModiTipoAct.Size = new System.Drawing.Size(133, 24);
             this.cModiTipoAct.TabIndex = 64;
@@ -342,7 +342,7 @@
             // tModiNombre
             // 
             this.tModiNombre.Location = new System.Drawing.Point(199, 32);
-            this.tModiNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tModiNombre.Margin = new System.Windows.Forms.Padding(4);
             this.tModiNombre.Name = "tModiNombre";
             this.tModiNombre.Size = new System.Drawing.Size(501, 22);
             this.tModiNombre.TabIndex = 65;
@@ -351,7 +351,7 @@
             // 
             this.bModiConf.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bModiConf.Location = new System.Drawing.Point(147, 511);
-            this.bModiConf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bModiConf.Margin = new System.Windows.Forms.Padding(4);
             this.bModiConf.Name = "bModiConf";
             this.bModiConf.Size = new System.Drawing.Size(167, 28);
             this.bModiConf.TabIndex = 66;
@@ -363,7 +363,7 @@
             // 
             this.bModiCancelar.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bModiCancelar.Location = new System.Drawing.Point(455, 511);
-            this.bModiCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bModiCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.bModiCancelar.Name = "bModiCancelar";
             this.bModiCancelar.Size = new System.Drawing.Size(167, 28);
             this.bModiCancelar.TabIndex = 67;
@@ -376,7 +376,7 @@
             this.listModiCompetencias.FormattingEnabled = true;
             this.listModiCompetencias.ItemHeight = 16;
             this.listModiCompetencias.Location = new System.Drawing.Point(146, 355);
-            this.listModiCompetencias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listModiCompetencias.Margin = new System.Windows.Forms.Padding(4);
             this.listModiCompetencias.Name = "listModiCompetencias";
             this.listModiCompetencias.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listModiCompetencias.Size = new System.Drawing.Size(473, 148);
@@ -418,7 +418,7 @@
             this.Controls.Add(this.lTipo);
             this.Controls.Add(this.lComp);
             this.Controls.Add(this.bConfirmar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VerPreferencia";
             this.Text = "Ver Preferencia";
             this.ResumeLayout(false);
