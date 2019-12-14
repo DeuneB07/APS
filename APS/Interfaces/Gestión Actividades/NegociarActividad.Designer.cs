@@ -57,174 +57,174 @@
             // tLugarNegociar
             // 
             this.tLugarNegociar.Enabled = false;
-            this.tLugarNegociar.Location = new System.Drawing.Point(198, 309);
-            this.tLugarNegociar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tLugarNegociar.Location = new System.Drawing.Point(396, 594);
+            this.tLugarNegociar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tLugarNegociar.Name = "tLugarNegociar";
-            this.tLugarNegociar.Size = new System.Drawing.Size(148, 20);
+            this.tLugarNegociar.Size = new System.Drawing.Size(292, 31);
             this.tLugarNegociar.TabIndex = 70;
             // 
             // tNumHorasNegociar
             // 
             this.tNumHorasNegociar.HideSelection = false;
-            this.tNumHorasNegociar.Location = new System.Drawing.Point(198, 206);
-            this.tNumHorasNegociar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tNumHorasNegociar.Location = new System.Drawing.Point(396, 396);
+            this.tNumHorasNegociar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tNumHorasNegociar.Name = "tNumHorasNegociar";
-            this.tNumHorasNegociar.Size = new System.Drawing.Size(43, 20);
+            this.tNumHorasNegociar.Size = new System.Drawing.Size(82, 31);
             this.tNumHorasNegociar.TabIndex = 67;
             // 
             // tNumPlazasNegociar
             // 
             this.tNumPlazasNegociar.HideSelection = false;
-            this.tNumPlazasNegociar.Location = new System.Drawing.Point(198, 169);
-            this.tNumPlazasNegociar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tNumPlazasNegociar.Location = new System.Drawing.Point(396, 325);
+            this.tNumPlazasNegociar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tNumPlazasNegociar.Name = "tNumPlazasNegociar";
-            this.tNumPlazasNegociar.Size = new System.Drawing.Size(43, 20);
+            this.tNumPlazasNegociar.Size = new System.Drawing.Size(82, 31);
             this.tNumPlazasNegociar.TabIndex = 66;
             // 
             // tDescripcionNegociar
             // 
             this.tDescripcionNegociar.Enabled = false;
-            this.tDescripcionNegociar.Location = new System.Drawing.Point(198, 94);
-            this.tDescripcionNegociar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tDescripcionNegociar.Location = new System.Drawing.Point(396, 181);
+            this.tDescripcionNegociar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tDescripcionNegociar.Name = "tDescripcionNegociar";
-            this.tDescripcionNegociar.Size = new System.Drawing.Size(138, 59);
+            this.tDescripcionNegociar.Size = new System.Drawing.Size(272, 110);
             this.tDescripcionNegociar.TabIndex = 65;
             this.tDescripcionNegociar.Text = "";
             // 
             // tNombreActNegociar
             // 
             this.tNombreActNegociar.Enabled = false;
-            this.tNombreActNegociar.Location = new System.Drawing.Point(198, 54);
-            this.tNombreActNegociar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tNombreActNegociar.Location = new System.Drawing.Point(396, 104);
+            this.tNombreActNegociar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tNombreActNegociar.Name = "tNombreActNegociar";
-            this.tNombreActNegociar.Size = new System.Drawing.Size(138, 20);
+            this.tNombreActNegociar.Size = new System.Drawing.Size(272, 31);
             this.tNombreActNegociar.TabIndex = 64;
             // 
             // tOrganizadorNegociar
             // 
             this.tOrganizadorNegociar.Enabled = false;
-            this.tOrganizadorNegociar.Location = new System.Drawing.Point(198, 21);
-            this.tOrganizadorNegociar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tOrganizadorNegociar.Location = new System.Drawing.Point(396, 40);
+            this.tOrganizadorNegociar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tOrganizadorNegociar.Name = "tOrganizadorNegociar";
-            this.tOrganizadorNegociar.Size = new System.Drawing.Size(138, 20);
+            this.tOrganizadorNegociar.Size = new System.Drawing.Size(272, 31);
             this.tOrganizadorNegociar.TabIndex = 63;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(118, 416);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Location = new System.Drawing.Point(236, 800);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 13);
+            this.label11.Size = new System.Drawing.Size(139, 25);
             this.label11.TabIndex = 62;
             this.label11.Text = "Tipo Trabajo:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(106, 379);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(212, 729);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 13);
+            this.label10.Size = new System.Drawing.Size(163, 25);
             this.label10.TabIndex = 61;
             this.label10.Text = "Ámbito Trabajo:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(150, 345);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(300, 663);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 13);
+            this.label9.Size = new System.Drawing.Size(74, 25);
             this.label9.TabIndex = 60;
             this.label9.Text = "Turno:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(151, 310);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(302, 596);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 13);
+            this.label8.Size = new System.Drawing.Size(73, 25);
             this.label8.TabIndex = 59;
             this.label8.Text = "Lugar:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(130, 276);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(260, 531);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.Size = new System.Drawing.Size(114, 25);
             this.label7.TabIndex = 58;
             this.label7.Text = "Fecha Fin:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(120, 244);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(240, 469);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.Size = new System.Drawing.Size(134, 25);
             this.label6.TabIndex = 57;
             this.label6.Text = "Fecha Inicio:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(94, 207);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(188, 398);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 13);
+            this.label5.Size = new System.Drawing.Size(186, 25);
             this.label5.TabIndex = 56;
             this.label5.Text = "Número de Horas:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(90, 171);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(180, 329);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 13);
+            this.label4.Size = new System.Drawing.Size(194, 25);
             this.label4.TabIndex = 55;
             this.label4.Text = "Número de Plazas:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(74, 96);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(148, 185);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 13);
+            this.label3.Size = new System.Drawing.Size(225, 25);
             this.label3.TabIndex = 54;
             this.label3.Text = "Descripción Actividad:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(94, 56);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(188, 108);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 13);
+            this.label2.Size = new System.Drawing.Size(187, 25);
             this.label2.TabIndex = 53;
             this.label2.Text = "Nombre Actividad:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(119, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(238, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.Size = new System.Drawing.Size(136, 25);
             this.label1.TabIndex = 52;
             this.label1.Text = "Organizador:";
             // 
             // btnAceptarNegociar
             // 
-            this.btnAceptarNegociar.Location = new System.Drawing.Point(221, 450);
-            this.btnAceptarNegociar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAceptarNegociar.Location = new System.Drawing.Point(442, 865);
+            this.btnAceptarNegociar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAceptarNegociar.Name = "btnAceptarNegociar";
-            this.btnAceptarNegociar.Size = new System.Drawing.Size(66, 19);
+            this.btnAceptarNegociar.Size = new System.Drawing.Size(132, 37);
             this.btnAceptarNegociar.TabIndex = 74;
             this.btnAceptarNegociar.Text = "Aceptar";
             this.btnAceptarNegociar.UseVisualStyleBackColor = true;
@@ -232,10 +232,10 @@
             // 
             // btnCancelarNegociar
             // 
-            this.btnCancelarNegociar.Location = new System.Drawing.Point(319, 450);
-            this.btnCancelarNegociar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarNegociar.Location = new System.Drawing.Point(638, 865);
+            this.btnCancelarNegociar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelarNegociar.Name = "btnCancelarNegociar";
-            this.btnCancelarNegociar.Size = new System.Drawing.Size(68, 19);
+            this.btnCancelarNegociar.Size = new System.Drawing.Size(136, 37);
             this.btnCancelarNegociar.TabIndex = 75;
             this.btnCancelarNegociar.Text = "Cancelar";
             this.btnCancelarNegociar.UseVisualStyleBackColor = true;
@@ -244,50 +244,55 @@
             // fechaInicioNegociar
             // 
             this.fechaInicioNegociar.Enabled = false;
-            this.fechaInicioNegociar.Location = new System.Drawing.Point(198, 242);
-            this.fechaInicioNegociar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechaInicioNegociar.Location = new System.Drawing.Point(396, 465);
+            this.fechaInicioNegociar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fechaInicioNegociar.Name = "fechaInicioNegociar";
-            this.fechaInicioNegociar.Size = new System.Drawing.Size(138, 20);
+            this.fechaInicioNegociar.Size = new System.Drawing.Size(272, 31);
             this.fechaInicioNegociar.TabIndex = 76;
             // 
             // fechaFinNegociar
             // 
             this.fechaFinNegociar.Enabled = false;
-            this.fechaFinNegociar.Location = new System.Drawing.Point(198, 275);
-            this.fechaFinNegociar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechaFinNegociar.Location = new System.Drawing.Point(396, 529);
+            this.fechaFinNegociar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fechaFinNegociar.Name = "fechaFinNegociar";
-            this.fechaFinNegociar.Size = new System.Drawing.Size(138, 20);
+            this.fechaFinNegociar.Size = new System.Drawing.Size(272, 31);
             this.fechaFinNegociar.TabIndex = 77;
             // 
             // listTurnoNegociar
             // 
             this.listTurnoNegociar.FormattingEnabled = true;
-            this.listTurnoNegociar.Location = new System.Drawing.Point(198, 342);
+            this.listTurnoNegociar.Location = new System.Drawing.Point(396, 658);
+            this.listTurnoNegociar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.listTurnoNegociar.Name = "listTurnoNegociar";
-            this.listTurnoNegociar.Size = new System.Drawing.Size(121, 21);
+            this.listTurnoNegociar.Size = new System.Drawing.Size(238, 33);
             this.listTurnoNegociar.TabIndex = 78;
             // 
             // listTrabajoNegociar
             // 
+            this.listTrabajoNegociar.Enabled = false;
             this.listTrabajoNegociar.FormattingEnabled = true;
-            this.listTrabajoNegociar.Location = new System.Drawing.Point(198, 413);
+            this.listTrabajoNegociar.Location = new System.Drawing.Point(396, 794);
+            this.listTrabajoNegociar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.listTrabajoNegociar.Name = "listTrabajoNegociar";
-            this.listTrabajoNegociar.Size = new System.Drawing.Size(121, 21);
+            this.listTrabajoNegociar.Size = new System.Drawing.Size(238, 33);
             this.listTrabajoNegociar.TabIndex = 79;
             // 
             // listAmbitoNegociar
             // 
+            this.listAmbitoNegociar.Enabled = false;
             this.listAmbitoNegociar.FormattingEnabled = true;
-            this.listAmbitoNegociar.Location = new System.Drawing.Point(198, 376);
+            this.listAmbitoNegociar.Location = new System.Drawing.Point(396, 723);
+            this.listAmbitoNegociar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.listAmbitoNegociar.Name = "listAmbitoNegociar";
-            this.listAmbitoNegociar.Size = new System.Drawing.Size(121, 21);
+            this.listAmbitoNegociar.Size = new System.Drawing.Size(238, 33);
             this.listAmbitoNegociar.TabIndex = 80;
             // 
             // NegociarActividad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 505);
+            this.ClientSize = new System.Drawing.Size(844, 971);
             this.Controls.Add(this.listAmbitoNegociar);
             this.Controls.Add(this.listTrabajoNegociar);
             this.Controls.Add(this.listTurnoNegociar);
@@ -312,7 +317,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NegociarActividad";
             this.Text = "NegociarActividad";
             this.ResumeLayout(false);

@@ -34,9 +34,11 @@
             this.pSolicitudesAceptadas = new System.Windows.Forms.TabPage();
             this.panelSolAceptadas = new System.Windows.Forms.TableLayoutPanel();
             this.pSolicitudesEnEsperaONG = new System.Windows.Forms.TabPage();
+            this.panelSolicitudesEsperaONG = new System.Windows.Forms.TableLayoutPanel();
             this.tabSolicitudes.SuspendLayout();
             this.pSolicitudesPendientes.SuspendLayout();
             this.pSolicitudesAceptadas.SuspendLayout();
+            this.pSolicitudesEnEsperaONG.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabSolicitudes
@@ -102,6 +104,7 @@
             // 
             // pSolicitudesEnEsperaONG
             // 
+            this.pSolicitudesEnEsperaONG.Controls.Add(this.panelSolicitudesEsperaONG);
             this.pSolicitudesEnEsperaONG.Location = new System.Drawing.Point(8, 39);
             this.pSolicitudesEnEsperaONG.Name = "pSolicitudesEnEsperaONG";
             this.pSolicitudesEnEsperaONG.Padding = new System.Windows.Forms.Padding(3);
@@ -109,6 +112,20 @@
             this.pSolicitudesEnEsperaONG.TabIndex = 2;
             this.pSolicitudesEnEsperaONG.Text = "Solicitudes en Espera ONG";
             this.pSolicitudesEnEsperaONG.UseVisualStyleBackColor = true;
+            // 
+            // panelSolicitudesEsperaONG
+            // 
+            this.panelSolicitudesEsperaONG.AutoScroll = true;
+            this.panelSolicitudesEsperaONG.ColumnCount = 1;
+            this.panelSolicitudesEsperaONG.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelSolicitudesEsperaONG.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.panelSolicitudesEsperaONG.Location = new System.Drawing.Point(8, 8);
+            this.panelSolicitudesEsperaONG.Margin = new System.Windows.Forms.Padding(6);
+            this.panelSolicitudesEsperaONG.Name = "panelSolicitudesEsperaONG";
+            this.panelSolicitudesEsperaONG.RowCount = 1;
+            this.panelSolicitudesEsperaONG.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.panelSolicitudesEsperaONG.Size = new System.Drawing.Size(1791, 796);
+            this.panelSolicitudesEsperaONG.TabIndex = 4;
             // 
             // VerParticipantes
             // 
@@ -121,6 +138,7 @@
             this.tabSolicitudes.ResumeLayout(false);
             this.pSolicitudesPendientes.ResumeLayout(false);
             this.pSolicitudesAceptadas.ResumeLayout(false);
+            this.pSolicitudesEnEsperaONG.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -133,5 +151,6 @@
         private System.Windows.Forms.TableLayoutPanel panelSolPendientes;
         private System.Windows.Forms.TableLayoutPanel panelSolAceptadas;
         private System.Windows.Forms.TabPage pSolicitudesEnEsperaONG;
+        private System.Windows.Forms.TableLayoutPanel panelSolicitudesEsperaONG;
     }
 }

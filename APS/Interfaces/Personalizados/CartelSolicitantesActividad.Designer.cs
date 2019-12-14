@@ -98,7 +98,6 @@
             this.bAceptar.TabIndex = 17;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = false;
-            this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
             // 
             // lShowNick
             // 
@@ -173,7 +172,6 @@
             this.bDenegar.TabIndex = 10;
             this.bDenegar.Text = "Denegar";
             this.bDenegar.UseVisualStyleBackColor = false;
-            this.bDenegar.Click += new System.EventHandler(this.bDenegar_Click);
             // 
             // lShowMail
             // 
