@@ -51,6 +51,7 @@
             this.tURL = new System.Windows.Forms.TextBox();
             this.pictureBoxPerfil = new System.Windows.Forms.PictureBox();
             this.lblImagenPerfil = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPerfil)).BeginInit();
@@ -244,8 +245,9 @@
             this.btnBorrarImagen.Name = "btnBorrarImagen";
             this.btnBorrarImagen.Size = new System.Drawing.Size(83, 28);
             this.btnBorrarImagen.TabIndex = 22;
-            this.btnBorrarImagen.Text = "Borrar";
+            this.btnBorrarImagen.Text = "Reset";
             this.btnBorrarImagen.UseVisualStyleBackColor = true;
+            this.btnBorrarImagen.Click += new System.EventHandler(this.btnBorrarImagen_Click);
             // 
             // btnExaminar
             // 
@@ -256,6 +258,7 @@
             this.btnExaminar.TabIndex = 21;
             this.btnExaminar.Text = "Examinar";
             this.btnExaminar.UseVisualStyleBackColor = true;
+            this.btnExaminar.Click += new System.EventHandler(this.btnExaminar_Click);
             // 
             // tURL
             // 
@@ -268,6 +271,7 @@
             // 
             // pictureBoxPerfil
             // 
+            this.pictureBoxPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxPerfil.Image = global::APS.Properties.Resources.userDefault;
             this.pictureBoxPerfil.Location = new System.Drawing.Point(586, 55);
             this.pictureBoxPerfil.Name = "pictureBoxPerfil";
@@ -285,6 +289,10 @@
             this.lblImagenPerfil.Size = new System.Drawing.Size(97, 18);
             this.lblImagenPerfil.TabIndex = 15;
             this.lblImagenPerfil.Text = "Imagen Perfil:";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // RegistroONG
             // 
@@ -335,5 +343,6 @@
         private System.Windows.Forms.TextBox tURL;
         private System.Windows.Forms.Button btnExaminar;
         private System.Windows.Forms.Button btnBorrarImagen;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

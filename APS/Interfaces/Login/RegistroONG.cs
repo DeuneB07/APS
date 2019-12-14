@@ -58,5 +58,24 @@ namespace APS.Interfaces
             }
             
         }
+
+        private void btnExaminar_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Archivos jpg (*.jpg)|*.jpg|Archivos png(*.png)|*.png";
+            openFileDialog1.FilterIndex = 1;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                tURL.Text = openFileDialog1.FileName;
+            }
+
+            pictureBoxPerfil.ImageLocation = openFileDialog1.FileName;
+        }
+
+        private void btnBorrarImagen_Click(object sender, EventArgs e)
+        {
+            tURL.Text = "";
+            pictureBoxPerfil.Image = global::APS.Properties.Resources.userDefault; ;
+        }
     }
 }

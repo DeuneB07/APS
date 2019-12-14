@@ -44,6 +44,8 @@ namespace APS.Interfaces.Perfil
             this.bAceptarC.Visible = true;
             this.bCancelarC.Visible = true;
             this.modiUser.Visible = true;
+            this.btnBorrarImagen.Visible = true;
+            this.btnCambiarImagen.Visible = true;
         }
 
         private void bBaja_Click(object sender, EventArgs e)
@@ -65,6 +67,8 @@ namespace APS.Interfaces.Perfil
                 lShowUser.Text = usr.NombreUser;
             }
 
+            if (!this.tURL.Text.Trim().Equals("")) usr.Imagen = pictureBoxPerfil.Image;
+
             this.bBaja.Visible = true;
             this.bAtras.Visible = true;
             this.bModPerfil.Visible = true;
@@ -72,6 +76,8 @@ namespace APS.Interfaces.Perfil
             this.bAceptarC.Visible = false;
             this.bCancelarC.Visible = false;
             this.modiUser.Visible = false;
+            this.btnCambiarImagen.Visible = false;
+            this.btnBorrarImagen.Visible = false;
         }
 
         private void bCancelarC_Click(object sender, EventArgs e)
@@ -83,11 +89,32 @@ namespace APS.Interfaces.Perfil
             this.bAceptarC.Visible = false;
             this.bCancelarC.Visible = false;
             this.modiUser.Visible = false;
+            this.btnCambiarImagen.Visible = false;
+            this.btnBorrarImagen.Visible = false;
         }
 
         private void bAtras_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCambiarImagen_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Archivos jpg (*.jpg)|*.jpg|Archivos png(*.png)|*.png";
+            openFileDialog1.FilterIndex = 1;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                tURL.Text = openFileDialog1.FileName;
+            }
+
+            pictureBoxPerfil.ImageLocation = openFileDialog1.FileName;
+        }
+
+        private void btnBorrarImagen_Click(object sender, EventArgs e)
+        {
+            tURL.Text = "";
+            pictureBoxPerfil.Image = global::APS.Properties.Resources.userDefault; ;
         }
     }
 }

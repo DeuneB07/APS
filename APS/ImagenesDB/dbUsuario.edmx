@@ -45,7 +45,7 @@
           <Property Name="apellido2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="situacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="WePassEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
         </EntityContainer>
       </Schema>
@@ -53,7 +53,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="WePassModel1StoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="WePassModel1StoreContainer" CdmEntityContainer="WePassEntities">
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="WePassModel1.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
