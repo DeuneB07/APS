@@ -80,16 +80,6 @@ namespace APS.Interfaces.Personalizados
 
         #endregion
 
-        private void bAceptar_Click(object sender, EventArgs e)
-        {
-            //ACEPTAR AL ALUMNO EN LA ACTIVIDAD
-        }
-
-        private void bDenegar_Click(object sender, EventArgs e)
-        {
-            //RECHAZAR AL ALUMNO DE LA ACTIVIDAD
-        }
-
         private void bVerTodo_Click(object sender, EventArgs e)
         {
             //VerUsuario vUsr = new VerUsuario(this.usrLogin, this.usrShow);
