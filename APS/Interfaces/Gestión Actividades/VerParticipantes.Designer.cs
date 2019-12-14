@@ -30,9 +30,10 @@
         {
             this.tabSolicitudes = new System.Windows.Forms.TabControl();
             this.pSolicitudesPendientes = new System.Windows.Forms.TabPage();
-            this.pSolicitudesAceptadas = new System.Windows.Forms.TabPage();
             this.panelSolPendientes = new System.Windows.Forms.TableLayoutPanel();
+            this.pSolicitudesAceptadas = new System.Windows.Forms.TabPage();
             this.panelSolAceptadas = new System.Windows.Forms.TableLayoutPanel();
+            this.pSolicitudesEnEsperaONG = new System.Windows.Forms.TabPage();
             this.tabSolicitudes.SuspendLayout();
             this.pSolicitudesPendientes.SuspendLayout();
             this.pSolicitudesAceptadas.SuspendLayout();
@@ -42,6 +43,7 @@
             // 
             this.tabSolicitudes.Controls.Add(this.pSolicitudesPendientes);
             this.tabSolicitudes.Controls.Add(this.pSolicitudesAceptadas);
+            this.tabSolicitudes.Controls.Add(this.pSolicitudesEnEsperaONG);
             this.tabSolicitudes.Location = new System.Drawing.Point(2, 0);
             this.tabSolicitudes.Name = "tabSolicitudes";
             this.tabSolicitudes.SelectedIndex = 0;
@@ -59,17 +61,6 @@
             this.pSolicitudesPendientes.Text = "Solicitudes Pendientes";
             this.pSolicitudesPendientes.UseVisualStyleBackColor = true;
             // 
-            // pSolicitudesAceptadas
-            // 
-            this.pSolicitudesAceptadas.Controls.Add(this.panelSolAceptadas);
-            this.pSolicitudesAceptadas.Location = new System.Drawing.Point(8, 39);
-            this.pSolicitudesAceptadas.Name = "pSolicitudesAceptadas";
-            this.pSolicitudesAceptadas.Padding = new System.Windows.Forms.Padding(3);
-            this.pSolicitudesAceptadas.Size = new System.Drawing.Size(1791, 796);
-            this.pSolicitudesAceptadas.TabIndex = 1;
-            this.pSolicitudesAceptadas.Text = "Solicitudes Aceptadas";
-            this.pSolicitudesAceptadas.UseVisualStyleBackColor = true;
-            // 
             // panelSolPendientes
             // 
             this.panelSolPendientes.AutoScroll = true;
@@ -84,6 +75,17 @@
             this.panelSolPendientes.Size = new System.Drawing.Size(1791, 796);
             this.panelSolPendientes.TabIndex = 3;
             // 
+            // pSolicitudesAceptadas
+            // 
+            this.pSolicitudesAceptadas.Controls.Add(this.panelSolAceptadas);
+            this.pSolicitudesAceptadas.Location = new System.Drawing.Point(8, 39);
+            this.pSolicitudesAceptadas.Name = "pSolicitudesAceptadas";
+            this.pSolicitudesAceptadas.Padding = new System.Windows.Forms.Padding(3);
+            this.pSolicitudesAceptadas.Size = new System.Drawing.Size(1791, 796);
+            this.pSolicitudesAceptadas.TabIndex = 1;
+            this.pSolicitudesAceptadas.Text = "Solicitudes Aceptadas";
+            this.pSolicitudesAceptadas.UseVisualStyleBackColor = true;
+            // 
             // panelSolAceptadas
             // 
             this.panelSolAceptadas.AutoScroll = true;
@@ -97,6 +99,16 @@
             this.panelSolAceptadas.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.panelSolAceptadas.Size = new System.Drawing.Size(1791, 796);
             this.panelSolAceptadas.TabIndex = 3;
+            // 
+            // pSolicitudesEnEsperaONG
+            // 
+            this.pSolicitudesEnEsperaONG.Location = new System.Drawing.Point(8, 39);
+            this.pSolicitudesEnEsperaONG.Name = "pSolicitudesEnEsperaONG";
+            this.pSolicitudesEnEsperaONG.Padding = new System.Windows.Forms.Padding(3);
+            this.pSolicitudesEnEsperaONG.Size = new System.Drawing.Size(1791, 796);
+            this.pSolicitudesEnEsperaONG.TabIndex = 2;
+            this.pSolicitudesEnEsperaONG.Text = "Solicitudes en Espera ONG";
+            this.pSolicitudesEnEsperaONG.UseVisualStyleBackColor = true;
             // 
             // VerParticipantes
             // 
@@ -120,5 +132,6 @@
         private System.Windows.Forms.TabPage pSolicitudesAceptadas;
         private System.Windows.Forms.TableLayoutPanel panelSolPendientes;
         private System.Windows.Forms.TableLayoutPanel panelSolAceptadas;
+        private System.Windows.Forms.TabPage pSolicitudesEnEsperaONG;
     }
 }

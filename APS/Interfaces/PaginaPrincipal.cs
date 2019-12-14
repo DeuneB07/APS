@@ -90,34 +90,26 @@ namespace APS.Interfaces
 
         private void bSolicitar_Click(object sender, EventArgs eventArgs, Actividad act)
         {
-            List<Actividad_Solicitud> lista = user.ActividadesSolicitadas;
+            List<Actividad_Solicitud> lista = Actividad_Solicitud.ListaActividadesSolicitudes(user);
             Boolean encontrada = false;
             int contador = 0;
             while (!encontrada && lista.Count > contador)
             {
-                if (lista[contador].Equals(act))
-                {
-                    encontrada = true;
-                }
+                if (lista[contador].Actividad.Equals(act)) encontrada = true;
                 contador++;
             }
-
-            if(encontrada == false)
+            Console.WriteLine("Encontrado: " + encontrada.ToString());
+            if(!encontrada)
             {
-                if(act.TipoAct.ToString().Equals("VOLUNTARIADO"))
-                {
-                    user.AddActividadSolicitada(act, Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_ONG);
-                }
-                else
-                {
-                    user.AddActividadSolicitada(act, Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_PDI);
-                }
+                if(act.TipoAct.ToString().Equals("VOLUNTARIADO")) user.AddActividadSolicitada(act, Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_ONG);
+                else user.AddActividadSolicitada(act, Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_PDI);
+           
                 cargarActividadesInscritas();
             }
             else
             {
                 DialogResult emCierreDialog;
-                string mensaje = "Actividad Ya Solicitada";
+                string mensaje = "Esta actividad ya ha sido solicitada anteriormente.";
                 string caption = "¡AVISO!";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
@@ -834,17 +826,26 @@ namespace APS.Interfaces
             }
         }
 
-
         private void bVerSolicitantesONG_Click(object sender, EventArgs eventArgs, Actividad act)
         {
-            //throw new NotImplementedException();
+            VerParticipantes verPar = new VerParticipantes(act,user);
+            this.Visible = false;
+            verPar.ShowDialog();
+            this.Visible = true;
         }
 
         private void bVerSolicitantesPDI_Click(object sender, EventArgs eventArgs, Actividad act)
         {
-            //throw new NotImplementedException();
+            VerParticipantes verPar = new VerParticipantes(act, user);
+            this.Visible = false;
+            verPar.ShowDialog();
+            this.Visible = true;
         }
 
+
+        //
+        // PESTAÑA ACTIVIDADES INSCRITAS
+        //
         private void cargarActividadesInscritas()
         {
             pActividadesInscritas.Controls.Clear();
@@ -862,11 +863,11 @@ namespace APS.Interfaces
             List<Actividad_Solicitud> actSolDenegada = Actividad_Solicitud.ListaActividadesSolicitudes(user, Actividad_Solicitud.EstadoActividadSolicitudE.DENEGADA);
 
             cargarSolicitudesAceptadas(actSolAceptada,c);
-            c = panelActIns.RowCount + 1;
+            c = panelActIns.Controls.Count;
             cargarSolicitudesEsperaPDI(actSolEsperaPDI,c);
-            c = panelActIns.RowCount + 1;
+            c = panelActIns.Controls.Count;
             cargarSolicitudesEsperaONG(actSolEsperaONG,c);
-            c = panelActIns.RowCount + 1;
+            c = panelActIns.Controls.Count;
             cargarSolicitudesDenegadas(actSolDenegada,c);
         }
 
@@ -877,21 +878,18 @@ namespace APS.Interfaces
             foreach (Actividad_Solicitud aS in actSolDenegada)
             {
                 carActInsDenegada[c] = new CartelActividadesStandard(user, aS.Actividad);
-                panelMisActs.Controls.Add(carActInsDenegada[c], 0, c);
-                panelMisActs.RowCount = panelMisActs.RowCount + 1;
+                panelActIns.Controls.Add(carActInsDenegada[c], 0, c);
+                panelActIns.RowCount = panelActIns.RowCount + 1;
                 carActInsDenegada[c].Location = new Point(carActInsDenegada[c].Location.X, (carActInsDenegada[c].Size.Height * c));
                 carActInsDenegada[c].BackColor = Color.Red;
 
                 //BOTONES GESTOR
                 Panel panel = (Panel)carActInsDenegada[c].Controls.Find("panel1", false)[0];
-                Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
-                Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
-                Button bParticipantes = (Button)panel.Controls.Find("bVerParts", false)[0];
+                Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                 Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
                 estado.Text = aS.EstadoSolicitud.ToString();
-                bAceptar.Visible = false;
-                bRechazar.Visible = false;
-                bParticipantes.Visible = false;
+                bCancelar.Visible = false;
+
 
                 c++;
             }
@@ -904,21 +902,20 @@ namespace APS.Interfaces
             foreach (Actividad_Solicitud aS in actSolEsperaONG)
             {
                 carActInsEsperaONG[c] = new CartelActividadesStandard(user, aS.Actividad);
-                panelMisActs.Controls.Add(carActInsEsperaONG[c], 0, c);
-                panelMisActs.RowCount = panelMisActs.RowCount + 1;
+                panelActIns.Controls.Add(carActInsEsperaONG[c], 0, c);
+                panelActIns.RowCount = panelActIns.RowCount + 1;
                 carActInsEsperaONG[c].Location = new Point(carActInsEsperaONG[c].Location.X, (carActInsEsperaONG[c].Size.Height * c));
                 carActInsEsperaONG[c].BackColor = Color.Violet;
 
                 //BOTONES GESTOR
                 Panel panel = (Panel)carActInsEsperaONG[c].Controls.Find("panel1", false)[0];
-                Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
-                Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
-                Button bParticipantes = (Button)panel.Controls.Find("bVerParts", false)[0];
+                Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                 Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
                 estado.Text = aS.EstadoSolicitud.ToString();
-                bAceptar.Visible = false;
-                bRechazar.Visible = false;
-                bParticipantes.Visible = false;
+                bCancelar.Text = "Cancelar";
+
+                //Programación Botón
+                bCancelar.Click += (sender, EventArgs) => { bCancelarSolicitud_Click(sender, EventArgs, aS); };
 
                 c++;
             }
@@ -931,23 +928,39 @@ namespace APS.Interfaces
             foreach (Actividad_Solicitud aS in actSolEsperaPDI)
             {
                 carActInsEsperaPDI[c] = new CartelActividadesStandard(user, aS.Actividad);
-                panelMisActs.Controls.Add(carActInsEsperaPDI[c], 0, c);
-                panelMisActs.RowCount = panelMisActs.RowCount + 1;
+                panelActIns.Controls.Add(carActInsEsperaPDI[c], 0, c);
+                panelActIns.RowCount = panelActIns.RowCount + 1;
                 carActInsEsperaPDI[c].Location = new Point(carActInsEsperaPDI[c].Location.X, (carActInsEsperaPDI[c].Size.Height * c));
                 carActInsEsperaPDI[c].BackColor = Color.Purple;
 
                 //BOTONES GESTOR
                 Panel panel = (Panel)carActInsEsperaPDI[c].Controls.Find("panel1", false)[0];
-                Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
-                Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
-                Button bParticipantes = (Button)panel.Controls.Find("bVerParts", false)[0];
+                Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                 Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
                 estado.Text = aS.EstadoSolicitud.ToString();
-                bAceptar.Visible = false;
-                bRechazar.Visible = false;
-                bParticipantes.Visible = false;
+                bCancelar.Text = "Cancelar";
+
+                //Programación Botón
+                bCancelar.Click += (sender, EventArgs) => { bCancelarSolicitud_Click(sender, EventArgs, aS); };
+
 
                 c++;
+            }
+        }
+
+        private void bCancelarSolicitud_Click(object sender, EventArgs eventArgs, Actividad_Solicitud aS)
+        {
+            DialogResult emCierreDialog;
+            string mensaje = "¿Desea cancelar esta solicitud?";
+            string caption = "¡AVISO!";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
+
+            if (emCierreDialog == DialogResult.Yes)
+            {
+                user.RemoveActividadSolicitada(aS);
+                cargarActividadesInscritas();
+                
             }
         }
 
@@ -958,21 +971,18 @@ namespace APS.Interfaces
             foreach (Actividad_Solicitud aS in actSolAceptada)
             {
                 carActInsAceptada[c] = new CartelActividadesStandard(user, aS.Actividad);
-                panelMisActs.Controls.Add(carActInsAceptada[c], 0, c);
-                panelMisActs.RowCount = panelMisActs.RowCount + 1;
+                panelActIns.Controls.Add(carActInsAceptada[c], 0, c);
+                panelActIns.RowCount = panelActIns.RowCount + 1;
                 carActInsAceptada[c].Location = new Point(carActInsAceptada[c].Location.X, (carActInsAceptada[c].Size.Height * c));
                 carActInsAceptada[c].BackColor = Color.Green;
 
-                //BOTONES GESTOR
+                //BOTONES
                 Panel panel = (Panel)carActInsAceptada[c].Controls.Find("panel1", false)[0];
-                Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
-                Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
-                Button bParticipantes = (Button)panel.Controls.Find("bVerParts", false)[0];
+                Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                 Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
                 estado.Text = aS.EstadoSolicitud.ToString();
-                bAceptar.Visible = false;
-                bRechazar.Visible = false;
-                bParticipantes.Visible = false;
+                bCancelar.Visible = false;
+
 
                 c++;
             }
