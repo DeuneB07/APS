@@ -40,9 +40,6 @@ namespace APS.Interfaces
             lNewAct.Visible = user.InsertarPantalla("ACTIVIDADES");
             lNuevoProy.Visible = user.InsertarPantalla("PROYECTOS");
 
-            //this.gradosTableAdapter.Fill(this.wePassDataSet.Grados);
-            //this.actividadesTableAdapter.Fill(this.wePassDataSet.Actividades);
-
             if (user.AccesoPantalla("MATCH")) cargarMatchActividadesInicio(); //HECHO
             if (user.AccesoPantalla("TODAS")) cargarTodasActividadesInicio(); //HECHO
             //if (user.AccesoPantalla("PROYECTOS")) tabUser.Controls.Remove(this.pProyectos);
@@ -516,7 +513,7 @@ namespace APS.Interfaces
             {
                 List<Actividad> actAcGestor = Actividad.ListaActividades(Actividad.EstadoActividadE.ACEPTADA_GESTOR);
                 CartelPendientes[] carAcGestor = new CartelPendientes[actAcGestor.Count];
-
+                Console.WriteLine("ActsGestor: " + actAcGestor);
                 foreach (Actividad act in actAcGestor)
                 {
 
@@ -548,41 +545,46 @@ namespace APS.Interfaces
             CartelPendientes[] carNegPDI = new CartelPendientes[actNegPDI.Count];
             CartelPendientes[] carNegONG = new CartelPendientes[actNegONG.Count];
 
+            int c2 = 0;
             foreach (Actividad act in actNegPDI)
             {
                 if (act.Responsable.Equals(user))
                 {
-                    carNegPDI[c] = new CartelPendientes(user, act);
-                    panelRevision.Controls.Add(carNegPDI[c], 0, c);
+                    
+                    carNegPDI[c2] = new CartelPendientes(user, act);
+                    panelRevision.Controls.Add(carNegPDI[c2], 0, c);
                     panelRevision.RowCount = panelRevision.RowCount + 1;
-                    carNegPDI[c].Location = new Point(carNegPDI[c].Location.X, (carNegPDI[c].Size.Height * c));
-                    carNegPDI[c].BackColor = Color.Green;
+                    carNegPDI[c2].Location = new Point(carNegPDI[c2].Location.X, (carNegPDI[c2].Size.Height * c));
+                    carNegPDI[c2].BackColor = Color.Green;
 
                     //BOTONES GESTOR
-                    Panel panel = (Panel)carNegPDI[c].Controls.Find("panel1", false)[0];
+                    Panel panel = (Panel)carNegPDI[c2].Controls.Find("panel1", false)[0];
                     Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
                     Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
 
                     //PROGRAMACIÓN BOTONES
                     bAceptar.Click += (sender, EventArgs) => { bRevisarRevPDI_Click(sender, EventArgs, act); };
                     bRechazar.Click += (sender, EventArgs) => { bRechazarRevPDI_Click(sender, EventArgs, act); };
+
                     c++;
+                    c2++;
                 }
             }
 
+            c2 = 0;
             //Ahora Carga Las Actividades en revisión por ONGs
             foreach (Actividad act in actNegONG)
             {
                 if (act.Responsable.Equals(user))
                 {
-                    carNegONG[c] = new CartelPendientes(user, act);
-                    panelRevision.Controls.Add(carNegONG[c], 0, c);
+                    carNegONG[c2] = new CartelPendientes(user, act);
+                    panelRevision.Controls.Add(carNegONG[c2], 0, c);
                     panelRevision.RowCount = panelRevision.RowCount + 1;
-                    carNegONG[c].Location = new Point(carNegONG[c].Location.X, (carNegONG[c].Size.Height * c));
-                    carNegONG[c].BackColor = Color.Red;
+                    carNegONG[c2].Location = new Point(carNegONG[c2].Location.X, (carNegONG[c2].Size.Height * c));
+                    carNegONG[c2].BackColor = Color.Red;
 
                     //BOTONES GESTOR
-                    Panel panel = (Panel)carNegONG[c].Controls.Find("panel1", false)[0];
+                    Panel panel = (Panel)carNegONG[c2].Controls.Find("panel1", false)[0];
                     Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
                     Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
 
@@ -591,6 +593,7 @@ namespace APS.Interfaces
                     bRechazar.Visible = false;
 
                     c++;
+                    c2++;
                 }
             }
         }
@@ -603,18 +606,19 @@ namespace APS.Interfaces
             CartelPendientes[] carNegONG = new CartelPendientes[actNegONG.Count];
             CartelPendientes[] carNegCancelada = new CartelPendientes[actNegCancelada.Count];
 
+            int c2 = 0;
             foreach (Actividad act in actNegCancelada)
             {
                 if (act.Organizador.Equals(user))
                 {
-                    carNegCancelada[c] = new CartelPendientes(user, act);
-                    panelRevision.Controls.Add(carNegCancelada[c], 0, c);
+                    carNegCancelada[c2] = new CartelPendientes(user, act);
+                    panelRevision.Controls.Add(carNegCancelada[c2], 0, c);
                     panelRevision.RowCount = panelRevision.RowCount + 1;
-                    carNegCancelada[c].Location = new Point(carNegCancelada[c].Location.X, (carNegCancelada[c].Size.Height * c));
-                    carNegCancelada[c].BackColor = Color.Yellow;
+                    carNegCancelada[c2].Location = new Point(carNegCancelada[c2].Location.X, (carNegCancelada[c2].Size.Height * c));
+                    carNegCancelada[c2].BackColor = Color.Yellow;
 
                     //BOTONES GESTOR
-                    Panel panel = (Panel)carNegCancelada[c].Controls.Find("panel1", false)[0];
+                    Panel panel = (Panel)carNegCancelada[c2].Controls.Find("panel1", false)[0];
                     Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
                     Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
 
@@ -623,20 +627,23 @@ namespace APS.Interfaces
                     bRechazar.Click += (sender, EventArgs) => { bRechazarRevONG_Click(sender, EventArgs, act); };
 
                     c++;
+                    c2++;
                 }
             }
+
+            c2 = 0;
             foreach (Actividad act in actNegONG)
             {
                 if (act.Organizador.Equals(user))
                 {
-                    carNegONG[c] = new CartelPendientes(user, act);
-                    panelRevision.Controls.Add(carNegONG[c], 0, c);
+                    carNegONG[c2] = new CartelPendientes(user, act);
+                    panelRevision.Controls.Add(carNegONG[c2], 0, c);
                     panelRevision.RowCount = panelRevision.RowCount + 1;
-                    carNegONG[c].Location = new Point(carNegONG[c].Location.X, (carNegONG[c].Size.Height * c));
-                    carNegONG[c].BackColor = Color.Green;
+                    carNegONG[c2].Location = new Point(carNegONG[c2].Location.X, (carNegONG[c2].Size.Height * c));
+                    carNegONG[c2].BackColor = Color.Green;
 
                     //BOTONES GESTOR
-                    Panel panel = (Panel)carNegONG[c].Controls.Find("panel1", false)[0];
+                    Panel panel = (Panel)carNegONG[c2].Controls.Find("panel1", false)[0];
                     Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
                     Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
 
@@ -645,22 +652,24 @@ namespace APS.Interfaces
                     bRechazar.Click += (sender, EventArgs) => { bRechazarRevONG_Click(sender, EventArgs, act); };
 
                     c++;
+                    c2++;
                 }
             }
 
+            c2 = 0;
             //Ahora las Actividades del PDI
             foreach (Actividad act in actNegPDI)
             {
                 if (act.Organizador.Equals(user))
                 {
-                    carNegPDI[c] = new CartelPendientes(user, act);
-                    panelPendientes.Controls.Add(carNegPDI[c], 0, c);
+                    carNegPDI[c2] = new CartelPendientes(user, act);
+                    panelPendientes.Controls.Add(carNegPDI[c2], 0, c);
                     panelPendientes.RowCount = panelPendientes.RowCount + 1;
-                    carNegPDI[c].Location = new Point(carNegPDI[c].Location.X, (carNegPDI[c].Size.Height * c));
-                    carNegPDI[c].BackColor = Color.Red;
+                    carNegPDI[c2].Location = new Point(carNegPDI[c2].Location.X, (carNegPDI[c2].Size.Height * c));
+                    carNegPDI[c2].BackColor = Color.Red;
 
                     //BOTONES GESTOR
-                    Panel panel = (Panel)carNegPDI[c].Controls.Find("panel1", false)[0];
+                    Panel panel = (Panel)carNegPDI[c2].Controls.Find("panel1", false)[0];
                     Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
                     Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
 
@@ -669,6 +678,7 @@ namespace APS.Interfaces
                     bRechazar.Visible = false;
 
                     c++;
+                    c2++;
                 }
             }
         }
@@ -875,16 +885,17 @@ namespace APS.Interfaces
         {
             CartelActividadesStandard[] carActInsDenegada = new CartelActividadesStandard[actSolDenegada.Count];
 
+            int c2 = 0;
             foreach (Actividad_Solicitud aS in actSolDenegada)
             {
-                carActInsDenegada[c] = new CartelActividadesStandard(user, aS.Actividad);
-                panelActIns.Controls.Add(carActInsDenegada[c], 0, c);
+                carActInsDenegada[c2] = new CartelActividadesStandard(user, aS.Actividad);
+                panelActIns.Controls.Add(carActInsDenegada[c2], 0, c);
                 panelActIns.RowCount = panelActIns.RowCount + 1;
-                carActInsDenegada[c].Location = new Point(carActInsDenegada[c].Location.X, (carActInsDenegada[c].Size.Height * c));
-                carActInsDenegada[c].BackColor = Color.Red;
+                carActInsDenegada[c2].Location = new Point(carActInsDenegada[c2].Location.X, (carActInsDenegada[c2].Size.Height * c));
+                carActInsDenegada[c2].BackColor = Color.Red;
 
                 //BOTONES GESTOR
-                Panel panel = (Panel)carActInsDenegada[c].Controls.Find("panel1", false)[0];
+                Panel panel = (Panel)carActInsDenegada[c2].Controls.Find("panel1", false)[0];
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                 Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
                 estado.Text = aS.EstadoSolicitud.ToString();
@@ -892,6 +903,7 @@ namespace APS.Interfaces
 
 
                 c++;
+                c2++;
             }
         }
 
@@ -899,16 +911,17 @@ namespace APS.Interfaces
         {
             CartelActividadesStandard[] carActInsEsperaONG = new CartelActividadesStandard[actSolEsperaONG.Count];
 
+            int c2 = 0;
             foreach (Actividad_Solicitud aS in actSolEsperaONG)
             {
-                carActInsEsperaONG[c] = new CartelActividadesStandard(user, aS.Actividad);
-                panelActIns.Controls.Add(carActInsEsperaONG[c], 0, c);
+                carActInsEsperaONG[c2] = new CartelActividadesStandard(user, aS.Actividad);
+                panelActIns.Controls.Add(carActInsEsperaONG[c2], 0, c);
                 panelActIns.RowCount = panelActIns.RowCount + 1;
-                carActInsEsperaONG[c].Location = new Point(carActInsEsperaONG[c].Location.X, (carActInsEsperaONG[c].Size.Height * c));
-                carActInsEsperaONG[c].BackColor = Color.Violet;
+                carActInsEsperaONG[c2].Location = new Point(carActInsEsperaONG[c2].Location.X, (carActInsEsperaONG[c2].Size.Height * c));
+                carActInsEsperaONG[c2].BackColor = Color.Violet;
 
                 //BOTONES GESTOR
-                Panel panel = (Panel)carActInsEsperaONG[c].Controls.Find("panel1", false)[0];
+                Panel panel = (Panel)carActInsEsperaONG[c2].Controls.Find("panel1", false)[0];
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                 Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
                 estado.Text = aS.EstadoSolicitud.ToString();
@@ -918,6 +931,7 @@ namespace APS.Interfaces
                 bCancelar.Click += (sender, EventArgs) => { bCancelarSolicitud_Click(sender, EventArgs, aS); };
 
                 c++;
+                c2++;
             }
         }
 
@@ -925,16 +939,17 @@ namespace APS.Interfaces
         {
             CartelActividadesStandard[] carActInsEsperaPDI = new CartelActividadesStandard[actSolEsperaPDI.Count];
 
+            int c2 = 0;
             foreach (Actividad_Solicitud aS in actSolEsperaPDI)
             {
-                carActInsEsperaPDI[c] = new CartelActividadesStandard(user, aS.Actividad);
-                panelActIns.Controls.Add(carActInsEsperaPDI[c], 0, c);
+                carActInsEsperaPDI[c2] = new CartelActividadesStandard(user, aS.Actividad);
+                panelActIns.Controls.Add(carActInsEsperaPDI[c2], 0, c);
                 panelActIns.RowCount = panelActIns.RowCount + 1;
-                carActInsEsperaPDI[c].Location = new Point(carActInsEsperaPDI[c].Location.X, (carActInsEsperaPDI[c].Size.Height * c));
-                carActInsEsperaPDI[c].BackColor = Color.Purple;
+                carActInsEsperaPDI[c2].Location = new Point(carActInsEsperaPDI[c2].Location.X, (carActInsEsperaPDI[c2].Size.Height * c));
+                carActInsEsperaPDI[c2].BackColor = Color.Purple;
 
                 //BOTONES GESTOR
-                Panel panel = (Panel)carActInsEsperaPDI[c].Controls.Find("panel1", false)[0];
+                Panel panel = (Panel)carActInsEsperaPDI[c2].Controls.Find("panel1", false)[0];
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                 Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
                 estado.Text = aS.EstadoSolicitud.ToString();
@@ -945,6 +960,7 @@ namespace APS.Interfaces
 
 
                 c++;
+                c2++;
             }
         }
 
@@ -968,16 +984,17 @@ namespace APS.Interfaces
         {
             CartelActividadesStandard[] carActInsAceptada = new CartelActividadesStandard[actSolAceptada.Count];
 
+            int c2 = 0;
             foreach (Actividad_Solicitud aS in actSolAceptada)
             {
-                carActInsAceptada[c] = new CartelActividadesStandard(user, aS.Actividad);
-                panelActIns.Controls.Add(carActInsAceptada[c], 0, c);
+                carActInsAceptada[c2] = new CartelActividadesStandard(user, aS.Actividad);
+                panelActIns.Controls.Add(carActInsAceptada[c2], 0, c);
                 panelActIns.RowCount = panelActIns.RowCount + 1;
-                carActInsAceptada[c].Location = new Point(carActInsAceptada[c].Location.X, (carActInsAceptada[c].Size.Height * c));
-                carActInsAceptada[c].BackColor = Color.Green;
+                carActInsAceptada[c2].Location = new Point(carActInsAceptada[c2].Location.X, (carActInsAceptada[c2].Size.Height * c));
+                carActInsAceptada[c2].BackColor = Color.Green;
 
                 //BOTONES
-                Panel panel = (Panel)carActInsAceptada[c].Controls.Find("panel1", false)[0];
+                Panel panel = (Panel)carActInsAceptada[c2].Controls.Find("panel1", false)[0];
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                 Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
                 estado.Text = aS.EstadoSolicitud.ToString();
@@ -985,6 +1002,7 @@ namespace APS.Interfaces
 
 
                 c++;
+                c2++;
             }
         }
 

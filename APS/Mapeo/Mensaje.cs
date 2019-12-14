@@ -14,7 +14,7 @@ namespace APS.Mapeo
         private int ID_mensaje;
         private String asunto;
         private String texto;
-        private String date;
+        private DateTime date;
         private Usuario emisor;
         private Usuario receptor;
         
@@ -43,17 +43,20 @@ namespace APS.Mapeo
             ID_mensaje = int.Parse(tupla[0].ToString());
             asunto = tupla[1].ToString();
             texto =tupla[2].ToString();
-            date =tupla[3].ToString();
+
+            string[] fechaIn = tupla[6].ToString().Split('-');
+            date = new DateTime(int.Parse(fechaIn[0]), int.Parse(fechaIn[1]), int.Parse(fechaIn[2]));
+
             emisor = new Usuario(tupla[4].ToString());
             receptor = new Usuario(tupla[5].ToString());
         }
 
-        public Mensaje(String asunto, String texto, String date, Usuario emisor, Usuario receptor)
+        public Mensaje(String asunto, String texto, DateTime date, Usuario emisor, Usuario receptor)
         {
             // Crea el objeto y lo inserta en la base de datos
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             miBD.Insert("INSERT INTO Mensajes (asunto,texto,date,emailEmisor, emailReceptor) VALUES("
-                    + "'" + asunto + "', '" + texto + "', '" + date + "', '" + emisor.Email + "', '" + receptor.Email + "');");
+                    + "'" + asunto + "', '" + texto + "', '" + date.ToShortDateString() + "', '" + emisor.Email + "', '" + receptor.Email + "');");
             this.asunto = asunto;
             this.texto = texto;
             this.date = date;
@@ -116,13 +119,13 @@ namespace APS.Mapeo
             }
         }
 
-        public String Date
+        public DateTime Date
         {
             get { return date; }
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("UPDATE Mensajes SET date = '" + value
+                miBD.Update("UPDATE Mensajes SET date = '" + value.ToShortDateString()
                 + "' WHERE ID_Mensaje ='" + this.ID_Mensaje + "';");
                 date = value;
             }
@@ -135,14 +138,14 @@ namespace APS.Mapeo
             miBD.Delete("DELETE FROM Mensajes WHERE ID_Mensaje ='" + this.ID_mensaje + "';");
             emisor = receptor= null;
             asunto = texto = null;
-            date = null;
+            date = DateTime.Today;
             ID_mensaje = -1;
         }
 
 
         public override string ToString()
         {
-            return "Emisor: " +"\t Receptor: "  + "\t Fecha: " + date + "\t Asunto: " + asunto + "\t Texto: " + texto;
+            return "Emisor: " +"\t Receptor: "  + "\t Fecha: " + date.ToShortDateString() + "\t Asunto: " + asunto + "\t Texto: " + texto;
         }
 
         public override bool Equals(object obj)

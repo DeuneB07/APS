@@ -149,6 +149,12 @@
     <Compile Include="Interfaces\Personalizados\CartelFiltros.Designer.cs">
       <DependentUpon>CartelFiltros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelMensajes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelMensajes.Designer.cs">
+      <DependentUpon>CartelMensajes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelPendientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -314,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelFiltros.resx">
       <DependentUpon>CartelFiltros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelMensajes.resx">
+      <DependentUpon>CartelMensajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelPendientes.resx">
       <DependentUpon>CartelPendientes.cs</DependentUpon>

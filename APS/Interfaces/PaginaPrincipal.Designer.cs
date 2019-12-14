@@ -95,7 +95,7 @@
             this.pMatch.Controls.Add(this.panelMatch);
             this.pMatch.Location = new System.Drawing.Point(4, 22);
             this.pMatch.Name = "pMatch";
-            this.pMatch.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pMatch.Padding = new System.Windows.Forms.Padding(3);
             this.pMatch.Size = new System.Drawing.Size(657, 332);
             this.pMatch.TabIndex = 0;
             this.pMatch.Text = "Match";
@@ -106,7 +106,6 @@
             this.panelMatch.AutoScroll = true;
             this.panelMatch.ColumnCount = 1;
             this.panelMatch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelMatch.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.panelMatch.Location = new System.Drawing.Point(0, 0);
             this.panelMatch.Name = "panelMatch";
             this.panelMatch.RowCount = 1;
@@ -119,7 +118,7 @@
             this.pTodas.Controls.Add(this.panelTodas);
             this.pTodas.Location = new System.Drawing.Point(4, 22);
             this.pTodas.Name = "pTodas";
-            this.pTodas.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pTodas.Padding = new System.Windows.Forms.Padding(3);
             this.pTodas.Size = new System.Drawing.Size(657, 332);
             this.pTodas.TabIndex = 1;
             this.pTodas.Text = "Todas";
@@ -130,7 +129,6 @@
             this.panelTodas.AutoScroll = true;
             this.panelTodas.ColumnCount = 1;
             this.panelTodas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelTodas.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.panelTodas.Location = new System.Drawing.Point(0, 0);
             this.panelTodas.Name = "panelTodas";
             this.panelTodas.RowCount = 1;
@@ -142,7 +140,7 @@
             // 
             this.pProyectos.Location = new System.Drawing.Point(4, 22);
             this.pProyectos.Name = "pProyectos";
-            this.pProyectos.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pProyectos.Padding = new System.Windows.Forms.Padding(3);
             this.pProyectos.Size = new System.Drawing.Size(657, 332);
             this.pProyectos.TabIndex = 2;
             this.pProyectos.Text = "Proyectos";
@@ -152,7 +150,7 @@
             // 
             this.pValoracion.Location = new System.Drawing.Point(4, 22);
             this.pValoracion.Name = "pValoracion";
-            this.pValoracion.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pValoracion.Padding = new System.Windows.Forms.Padding(3);
             this.pValoracion.Size = new System.Drawing.Size(657, 332);
             this.pValoracion.TabIndex = 3;
             this.pValoracion.Text = "Valoración";
@@ -163,7 +161,7 @@
             this.pPendientes.Controls.Add(this.panelPendientes);
             this.pPendientes.Location = new System.Drawing.Point(4, 22);
             this.pPendientes.Name = "pPendientes";
-            this.pPendientes.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pPendientes.Padding = new System.Windows.Forms.Padding(3);
             this.pPendientes.Size = new System.Drawing.Size(657, 332);
             this.pPendientes.TabIndex = 4;
             this.pPendientes.Text = "Pendientes";
@@ -174,7 +172,6 @@
             this.panelPendientes.AutoScroll = true;
             this.panelPendientes.ColumnCount = 1;
             this.panelPendientes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelPendientes.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.panelPendientes.Location = new System.Drawing.Point(0, 0);
             this.panelPendientes.Name = "panelPendientes";
             this.panelPendientes.RowCount = 1;
@@ -187,7 +184,7 @@
             this.pRevision.Controls.Add(this.panelRevision);
             this.pRevision.Location = new System.Drawing.Point(4, 22);
             this.pRevision.Name = "pRevision";
-            this.pRevision.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pRevision.Padding = new System.Windows.Forms.Padding(3);
             this.pRevision.Size = new System.Drawing.Size(657, 332);
             this.pRevision.TabIndex = 5;
             this.pRevision.Text = "Revisión";
@@ -198,7 +195,6 @@
             this.panelRevision.AutoScroll = true;
             this.panelRevision.ColumnCount = 1;
             this.panelRevision.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelRevision.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.panelRevision.Location = new System.Drawing.Point(0, 0);
             this.panelRevision.Name = "panelRevision";
             this.panelRevision.RowCount = 1;
@@ -210,9 +206,9 @@
             // 
             this.pMisActividades.Controls.Add(this.panelMisActs);
             this.pMisActividades.Location = new System.Drawing.Point(4, 22);
-            this.pMisActividades.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pMisActividades.Margin = new System.Windows.Forms.Padding(2);
             this.pMisActividades.Name = "pMisActividades";
-            this.pMisActividades.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pMisActividades.Padding = new System.Windows.Forms.Padding(2);
             this.pMisActividades.Size = new System.Drawing.Size(657, 332);
             this.pMisActividades.TabIndex = 6;
             this.pMisActividades.Text = "Mis Actividades";
@@ -223,7 +219,6 @@
             this.panelMisActs.AutoScroll = true;
             this.panelMisActs.ColumnCount = 1;
             this.panelMisActs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelMisActs.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.panelMisActs.Location = new System.Drawing.Point(0, 0);
             this.panelMisActs.Name = "panelMisActs";
             this.panelMisActs.RowCount = 1;
@@ -235,9 +230,9 @@
             // 
             this.pActividadesInscritas.Controls.Add(this.panelActIns);
             this.pActividadesInscritas.Location = new System.Drawing.Point(4, 22);
-            this.pActividadesInscritas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pActividadesInscritas.Margin = new System.Windows.Forms.Padding(2);
             this.pActividadesInscritas.Name = "pActividadesInscritas";
-            this.pActividadesInscritas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pActividadesInscritas.Padding = new System.Windows.Forms.Padding(2);
             this.pActividadesInscritas.Size = new System.Drawing.Size(657, 332);
             this.pActividadesInscritas.TabIndex = 7;
             this.pActividadesInscritas.Text = "Actividades Inscritas";
@@ -248,7 +243,6 @@
             this.panelActIns.AutoScroll = true;
             this.panelActIns.ColumnCount = 1;
             this.panelActIns.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelActIns.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.panelActIns.Location = new System.Drawing.Point(0, 1);
             this.panelActIns.Name = "panelActIns";
             this.panelActIns.RowCount = 1;
