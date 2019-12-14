@@ -52,10 +52,6 @@ namespace APS.Interfaces.Perfil
         private void bBaja_Click(object sender, EventArgs e)
         {
             usr.BorraUsuario();
-
-            PaginaInicio ventana = new PaginaInicio();
-            this.Visible = false;
-            ventana.ShowDialog();
             this.Close();
         }
 
@@ -115,7 +111,7 @@ namespace APS.Interfaces.Perfil
         private void btnBorrarImagen_Click(object sender, EventArgs e)
         {
             tURL.Text = "";
-            pictureBoxPerfil.Image = global::APS.Properties.Resources.userDefault; ;
+            pictureBoxPerfil.Image = global::APS.Properties.Resources.userDefault;
         }
     }
 }

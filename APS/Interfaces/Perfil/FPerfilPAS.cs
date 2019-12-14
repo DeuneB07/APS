@@ -44,7 +44,7 @@ namespace APS.Interfaces.Perfil
             lShowNombre.Text = usr.Nombre + " " + usr.Apellido1 + " " + usr.Apellido2;
             lShowMail.Text = usr.Email;
 
-
+            if (usr.Imagen != null) picPerfil.Image = usr.Imagen;
 
         }
 
@@ -65,6 +65,8 @@ namespace APS.Interfaces.Perfil
             dateNac.Visible = true;
             bAceptarC.Visible = true;
             bCancelarC.Visible = true;
+            btnBorrarImagen.Visible = true;
+            btnCambiarImagen.Visible = true;
 
             bBaja.Visible = false;
             bModPerfil.Visible = false;
@@ -77,10 +79,6 @@ namespace APS.Interfaces.Perfil
         private void bBaja_Click(object sender, EventArgs e)
         {
             usr.BorraUsuario();
-
-            PaginaInicio ventana = new PaginaInicio();
-            this.Visible = false;
-            ventana.ShowDialog();
             this.Close();
         }
 
@@ -96,6 +94,8 @@ namespace APS.Interfaces.Perfil
             dateNac.Visible = false;
             bAceptarC.Visible = false;
             bCancelarC.Visible = false;
+            btnCambiarImagen.Visible = false;
+            btnBorrarImagen.Visible = false;
 
             bBaja.Visible = true;
             bModPerfil.Visible = true;
@@ -112,6 +112,8 @@ namespace APS.Interfaces.Perfil
             dateNac.Visible = false;
             bAceptarC.Visible = false;
             bCancelarC.Visible = false;
+            btnCambiarImagen.Visible = false;
+            btnBorrarImagen.Visible = false;
 
             bBaja.Visible = true;
             bModPerfil.Visible = true;
@@ -132,6 +134,25 @@ namespace APS.Interfaces.Perfil
         private void bAtras_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCambiarImagen_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Archivos jpg (*.jpg)|*.jpg|Archivos png(*.png)|*.png";
+            openFileDialog1.FilterIndex = 1;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                tURL.Text = openFileDialog1.FileName;
+            }
+
+            picPerfil.ImageLocation = openFileDialog1.FileName;
+        }
+
+        private void btnBorrarImagen_Click(object sender, EventArgs e)
+        {
+            tURL.Text = "";
+            picPerfil.Image = global::APS.Properties.Resources.userDefault;
         }
     }
 }

@@ -23,6 +23,7 @@ namespace APS.Interfaces
         {
             InitializeComponent();
             this.user = user;
+            if (user.Imagen != null) pictureUser.Image = user.Imagen;
             
             tabUser.Visible = true;
             if (!user.AccesoPantalla("MATCH")) tabUser.Controls.Remove(this.pMatch); //HECHO
@@ -1021,23 +1022,28 @@ namespace APS.Interfaces
                 FPerfilONG pagONG = new FPerfilONG(user);
                 this.Visible = false;
                 pagONG.ShowDialog();
-                this.Visible = true;
             }
             else if(user.Rol.NombreRol.Equals("PAS"))
             {
                 FPerfilPAS pagPAS = new FPerfilPAS(user);
                 this.Visible = false;
                 pagPAS.ShowDialog();
-                this.Visible = true;
             }
             else
             {
                 FPerfilUsuario pagina = new FPerfilUsuario(user);
                 this.Visible = false;
                 pagina.ShowDialog();
+            }
+
+            if(user.Email.Trim().Equals(""))
+            {
+                this.Close();
+            }
+            else
+            {
                 this.Visible = true;
             }
-            
         }
 
         private void lNewAct_Click(object sender, EventArgs e)
@@ -1065,5 +1071,6 @@ namespace APS.Interfaces
             //msg.showDialog();
             this.Visible = true;
         }
+
     }
 }

@@ -56,7 +56,7 @@
             this.pictureBoxPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxPerfil.Image = global::APS.Properties.Resources.userDefault;
             this.pictureBoxPerfil.Location = new System.Drawing.Point(16, 15);
-            this.pictureBoxPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxPerfil.Name = "pictureBoxPerfil";
             this.pictureBoxPerfil.Size = new System.Drawing.Size(139, 129);
             this.pictureBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -67,7 +67,7 @@
             // 
             this.bCancelarC.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCancelarC.Location = new System.Drawing.Point(173, 511);
-            this.bCancelarC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bCancelarC.Margin = new System.Windows.Forms.Padding(4);
             this.bCancelarC.Name = "bCancelarC";
             this.bCancelarC.Size = new System.Drawing.Size(167, 28);
             this.bCancelarC.TabIndex = 35;
@@ -79,7 +79,7 @@
             // 
             this.bAtras.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAtras.Location = new System.Drawing.Point(355, 511);
-            this.bAtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bAtras.Margin = new System.Windows.Forms.Padding(4);
             this.bAtras.Name = "bAtras";
             this.bAtras.Size = new System.Drawing.Size(131, 28);
             this.bAtras.TabIndex = 34;
@@ -90,7 +90,7 @@
             // modiUser
             // 
             this.modiUser.Location = new System.Drawing.Point(173, 265);
-            this.modiUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.modiUser.Margin = new System.Windows.Forms.Padding(4);
             this.modiUser.Name = "modiUser";
             this.modiUser.Size = new System.Drawing.Size(132, 22);
             this.modiUser.TabIndex = 33;
@@ -110,7 +110,7 @@
             // 
             this.bAceptarC.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAceptarC.Location = new System.Drawing.Point(173, 475);
-            this.bAceptarC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bAceptarC.Margin = new System.Windows.Forms.Padding(4);
             this.bAceptarC.Name = "bAceptarC";
             this.bAceptarC.Size = new System.Drawing.Size(167, 28);
             this.bAceptarC.TabIndex = 31;
@@ -122,7 +122,7 @@
             // 
             this.bBaja.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bBaja.Location = new System.Drawing.Point(24, 511);
-            this.bBaja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bBaja.Margin = new System.Windows.Forms.Padding(4);
             this.bBaja.Name = "bBaja";
             this.bBaja.Size = new System.Drawing.Size(131, 28);
             this.bBaja.TabIndex = 30;
@@ -134,7 +134,7 @@
             // 
             this.bModPerfil.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bModPerfil.Location = new System.Drawing.Point(24, 475);
-            this.bModPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bModPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.bModPerfil.Name = "bModPerfil";
             this.bModPerfil.Size = new System.Drawing.Size(131, 28);
             this.bModPerfil.TabIndex = 29;
@@ -222,7 +222,7 @@
             // btnCambiarImagen
             // 
             this.btnCambiarImagen.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarImagen.Location = new System.Drawing.Point(163, 40);
+            this.btnCambiarImagen.Location = new System.Drawing.Point(176, 45);
             this.btnCambiarImagen.Margin = new System.Windows.Forms.Padding(4);
             this.btnCambiarImagen.Name = "btnCambiarImagen";
             this.btnCambiarImagen.Size = new System.Drawing.Size(131, 28);
@@ -235,7 +235,7 @@
             // btnBorrarImagen
             // 
             this.btnBorrarImagen.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrarImagen.Location = new System.Drawing.Point(163, 92);
+            this.btnBorrarImagen.Location = new System.Drawing.Point(176, 97);
             this.btnBorrarImagen.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrarImagen.Name = "btnBorrarImagen";
             this.btnBorrarImagen.Size = new System.Drawing.Size(131, 28);
@@ -247,7 +247,7 @@
             // 
             // tURL
             // 
-            this.tURL.Location = new System.Drawing.Point(163, 10);
+            this.tURL.Location = new System.Drawing.Point(176, 15);
             this.tURL.Margin = new System.Windows.Forms.Padding(4);
             this.tURL.Name = "tURL";
             this.tURL.Size = new System.Drawing.Size(132, 22);
@@ -282,7 +282,7 @@
             this.Controls.Add(this.lShowNombre);
             this.Controls.Add(this.lNombre);
             this.Controls.Add(this.pictureBoxPerfil);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FPerfilONG";
             this.Text = "Perfil";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPerfil)).EndInit();

@@ -16,5 +16,11 @@ namespace APS.Interfaces
         {
             InitializeComponent();
         }
+
+        private void LoadingPagPrinc_Load(object sender, EventArgs e)
+        {
+            pictureBox1.Image = global::APS.Properties.Resources.Loading_2; 
+        }
     }
+
 }

@@ -303,6 +303,9 @@
     <EmbeddedResource Include="Interfaces\Gestión Actividades\VerParticipantes.resx">
       <DependentUpon>VerParticipantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\LoadingPagPrinc.resx">
+      <DependentUpon>LoadingPagPrinc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Perfil\FPerfilONG.resx">
       <DependentUpon>FPerfilONG.cs</DependentUpon>
     </EmbeddedResource>
@@ -456,6 +459,7 @@
       <DependentUpon>dbUsuario.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Loading_2.gif" />
     <None Include="Resources\loading1.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
