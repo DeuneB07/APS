@@ -35,21 +35,25 @@
             // 
             // bPersonalUMA
             // 
-            this.bPersonalUMA.Location = new System.Drawing.Point(94, 78);
+            this.bPersonalUMA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bPersonalUMA.BackgroundImage")));
+            this.bPersonalUMA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bPersonalUMA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bPersonalUMA.Location = new System.Drawing.Point(147, 64);
             this.bPersonalUMA.Name = "bPersonalUMA";
-            this.bPersonalUMA.Size = new System.Drawing.Size(205, 121);
+            this.bPersonalUMA.Size = new System.Drawing.Size(160, 148);
             this.bPersonalUMA.TabIndex = 7;
-            this.bPersonalUMA.Text = "PERSONAL UMA";
             this.bPersonalUMA.UseVisualStyleBackColor = true;
             this.bPersonalUMA.Click += new System.EventHandler(this.bPersonalUMA_Click);
             // 
             // bPersonalExt
             // 
-            this.bPersonalExt.Location = new System.Drawing.Point(373, 78);
+            this.bPersonalExt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bPersonalExt.BackgroundImage")));
+            this.bPersonalExt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bPersonalExt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bPersonalExt.Location = new System.Drawing.Point(379, 64);
             this.bPersonalExt.Name = "bPersonalExt";
-            this.bPersonalExt.Size = new System.Drawing.Size(205, 121);
+            this.bPersonalExt.Size = new System.Drawing.Size(162, 148);
             this.bPersonalExt.TabIndex = 8;
-            this.bPersonalExt.Text = "PERSONAL EXTERNO";
             this.bPersonalExt.UseVisualStyleBackColor = true;
             this.bPersonalExt.Click += new System.EventHandler(this.bPersonalExt_Click);
             // 
@@ -69,6 +73,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "PaginaInicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Página Inicio";
             this.ResumeLayout(false);
 

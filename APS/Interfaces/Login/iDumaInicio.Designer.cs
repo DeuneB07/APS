@@ -54,15 +54,15 @@
             this.btnEntrar.BackColor = System.Drawing.Color.Transparent;
             this.btnEntrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEntrar.BackgroundImage")));
             this.btnEntrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnEntrar.FlatAppearance.BorderSize = 0;
-            this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEntrar.Location = new System.Drawing.Point(46, 306);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(81, 39);
             this.btnEntrar.TabIndex = 9;
-            this.btnEntrar.UseVisualStyleBackColor = false;
+            this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // tIdentificacion
