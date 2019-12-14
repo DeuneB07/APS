@@ -369,13 +369,14 @@ namespace APS.Mapeo
             return rol.Rechazar(p);
         }
 
+        
         public Image Imagen
         {
             get
             {
                 if (imagen == null)
                 {
-                    using (var db = new ImagenesDB.Entities2())
+                    using (var db = new ImagenesDB.WePassEntities())
                     {
                         var obj = db.Usuario.Find(this.email);
 
@@ -395,7 +396,7 @@ namespace APS.Mapeo
             }
             set
             {
-                using (var db = new ImagenesDB.Entities2())
+                using (var db = new ImagenesDB.WePassEntities())
                 {
                     var obj = db.Usuario.Find(this.email);
 

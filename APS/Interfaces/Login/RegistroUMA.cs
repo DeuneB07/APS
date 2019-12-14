@@ -102,7 +102,7 @@ namespace APS.Interfaces
                 if (tUsuario.Text != "") user.NombreUser = tUsuario.Text;
                 if (tDNI.Text != "") user.DNI = tDNI.Text;
                 if (dateTimePickerFechNacimiento.Value != DateTime.Today) user.FechaNac = dateTimePickerFechNacimiento.Value;
-                if (tURL.Text.Trim().Equals("")) user.Imagen = pictureBoxPerfil.Image;
+                if (!tURL.Text.Trim().Equals("")) user.Imagen = pictureBoxPerfil.Image;
 
                 MessageBox.Show("Usuario creado correctamente");
 
