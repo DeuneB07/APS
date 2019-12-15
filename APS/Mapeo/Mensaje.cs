@@ -41,7 +41,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Mensaje> lista = new List<Mensaje>();
 
-            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje,emailEmisor, emailReceptor FROM Mensajes WHERE emailEmisor = '" + emisor.Email + "';"))
+            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje, emailEmisor, emailReceptor FROM Mensajes WHERE emailEmisor = '" + emisor.Email + "';"))
             {
                 String emailE = tupla[1].ToString();
                 String emailR = tupla[2].ToString();
@@ -58,7 +58,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Mensaje> lista = new List<Mensaje>();
 
-            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje,emailEmisor, emailReceptor FROM Mensajes WHERE emailReceptor = '" + receptor.Email + "';"))
+            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje, emailEmisor, emailReceptor FROM Mensajes WHERE emailReceptor = '" + receptor.Email + "';"))
             {
                 String emailE = tupla[1].ToString();
                 String emailR = tupla[2].ToString();
@@ -136,7 +136,7 @@ namespace APS.Mapeo
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
                 miBD.Update("UPDATE Mensajes SET emailEmisor = '" + value.Email
-                + "' WHERE ID_Mensaje ='" + this.ID_Mensaje + "';");
+                + "' WHERE ID_Mensaje = " + this.ID_Mensaje + ";");
                 emisor = value;
             }
         }
@@ -148,7 +148,7 @@ namespace APS.Mapeo
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
                 miBD.Update("UPDATE Mensajes SET emailReceptor = '" + value.Email
-                + "' WHERE ID_Mensaje ='" + this.ID_Mensaje + "';");
+                + "' WHERE ID_Mensaje =" + this.ID_Mensaje + ";");
                 receptor = value;
             }
         }
@@ -160,7 +160,7 @@ namespace APS.Mapeo
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
                 miBD.Update("UPDATE Mensajes SET fecha = '" + value.ToShortDateString()
-                + "' WHERE ID_Mensaje ='" + this.ID_Mensaje + "';");
+                + "' WHERE ID_Mensaje =" + this.ID_Mensaje + ";");
                 date = value;
             }
         }
@@ -169,7 +169,7 @@ namespace APS.Mapeo
         {
             // Actualiza el atributo en memoria y en la base de datos
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Delete("DELETE FROM Mensajes WHERE ID_Mensaje ='" + this.ID_mensaje + "';");
+            miBD.Delete("DELETE FROM Mensajes WHERE ID_Mensaje =" + this.ID_mensaje + ";");
             emisor = receptor= null;
             asunto = texto = null;
             date = DateTime.Today;
