@@ -168,7 +168,6 @@
             // 
             // comboGrado
             // 
-            this.comboGrado.Enabled = false;
             this.comboGrado.FormattingEnabled = true;
             this.comboGrado.Location = new System.Drawing.Point(139, 172);
             this.comboGrado.Margin = new System.Windows.Forms.Padding(4);
@@ -194,13 +193,11 @@
             // 
             // comboAsig
             // 
-            this.comboAsig.Enabled = false;
             this.comboAsig.Location = new System.Drawing.Point(139, 222);
             this.comboAsig.Margin = new System.Windows.Forms.Padding(4);
             this.comboAsig.Name = "comboAsig";
             this.comboAsig.Size = new System.Drawing.Size(256, 24);
             this.comboAsig.TabIndex = 26;
-            this.comboAsig.Visible = false;
             // 
             // comboTurno
             // 

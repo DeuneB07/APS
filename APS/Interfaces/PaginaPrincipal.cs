@@ -79,12 +79,17 @@ namespace APS.Interfaces
             List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
             CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
 
+            List<Asignatura> asigs = user.Asignaturas;
             int c = 0;
             foreach (Actividad act in actividades)
             {
-                foreach(Asignatura asig in user.Asignaturas)
+                bool encontrado = false;
+                int j = 0;
+                Asignatura asig = null;
+                while(!encontrado)
                 {
-                    if (act.Asignatura != null && act.Asignatura.Equals(asig))
+                    asig = asigs[j];
+                    if ((act.Asignatura != null && act.Asignatura.Equals(asig)) || act.TipoAct.Equals(Actividad.TipoActividadE.VOLUNTARIADO))
                     {
                         actsCarteles[c] = new CartelActividadesStandard(user, act);
                         panelMatch.Controls.Add(actsCarteles[c], 0, c + 1);
@@ -96,8 +101,10 @@ namespace APS.Interfaces
                         Button bSolicitar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                         bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, act); };
 
+                        encontrado = true;
                         c++;
                     }
+                    j++;
                 }
             }
         }
@@ -190,7 +197,7 @@ namespace APS.Interfaces
                 }
 
                 //Filtro Turno
-                if (!turnoF.Equals(null) && !turnoF.Equals(Actividad.TurnoE.AMBAS))
+                if (!turnoF.Equals(Actividad.TurnoE.AMBAS))
                 {
                     foreach (Actividad a in Actividad.ListaActividades())
                     {
@@ -199,7 +206,7 @@ namespace APS.Interfaces
                 }
 
                 //Filtro TipoActividad
-                if (!tipoActF.Equals(null) && !tipoActF.Equals(Actividad.TipoActividadE.TODAS))
+                if (!tipoActF.Equals(Actividad.TipoActividadE.TODAS))
                 {
                     foreach (Actividad a in Actividad.ListaActividades())
                     {
@@ -208,7 +215,7 @@ namespace APS.Interfaces
                 }
 
                 //Filtro TipoTrab
-                if (!tipoTrabF.Equals(null) && !tipoTrabF.Equals(Actividad.TipoActividadE.TODAS))
+                if (!tipoTrabF.Equals(Actividad.TipoActividadE.TODAS))
                 {
                     foreach (Actividad a in Actividad.ListaActividades())
                     {
@@ -217,7 +224,7 @@ namespace APS.Interfaces
                 }
 
                 //Filtro AmbTrabajo
-                if (!ambTrabF.Equals(null) && !ambTrabF.Equals(Actividad.TipoActividadE.TODAS))
+                if (!ambTrabF.Equals(Actividad.TipoActividadE.TODAS))
                 {
                     foreach (Actividad a in Actividad.ListaActividades())
                     {
@@ -230,13 +237,15 @@ namespace APS.Interfaces
                 {
                     foreach (Actividad a in Actividad.ListaActividades())
                     {
-                        if (a.NumHoras != horas) lAct.Remove(a);
+                        if (a.NumHoras<=horas) lAct.Remove(a);
                     }
                 }
-
+                cargarMatchActividadesFiltro(lAct);
             }
-
-            cargarMatchActividadesFiltro(lAct);
+            else
+            {
+                cargarMatchActividadesInicio();
+            }
         }
 
         private void cargarMatchActividadesFiltro(List<Actividad> listAct)

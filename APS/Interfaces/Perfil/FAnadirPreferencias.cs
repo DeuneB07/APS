@@ -110,9 +110,15 @@ namespace APS.Interfaces
                  */
                 if (textNombreComp.Text.Trim().Equals("")) throw new Exception("Nombre Preferencia no puede estar vacío");
                 if (comboTipo.SelectedItem == null) throw new Exception("Tipo de Actividad no puede ser vacía");
+                if (comboTurno.SelectedItem == null) throw new Exception("");
+                if (comboTipoTrab.SelectedItem == null) throw new Exception("Tipo de Trabajo no puede ser vacía");
+                if (comboAmbitoTrab.SelectedItem == null) throw new Exception("Ambito de Trabajo no puede ser vacía");
 
-                Asignatura a = (Asignatura)comboAsig.SelectedItem;
-                Grado g = (Grado)comboGrado.SelectedItem;
+                Asignatura a = null;
+                Grado g = null;
+
+                if(!comboAsig.Text.Trim().Equals(""))  a = (Asignatura)comboAsig.SelectedItem;
+                if(!comboGrado.Text.Trim().Equals("")) g = (Grado)comboGrado.SelectedItem;
 
                 p = new Preferencia(textNombreComp.Text, user);
                 if(!comboGrado.Text.Equals("")) p.Grado = g;
@@ -187,11 +193,14 @@ namespace APS.Interfaces
             if(comboTipo.SelectedItem.ToString().Equals("VOLUNTARIADO"))
             {
                 comboGrado.Enabled = false;
+                comboGrado.Text = "";
                 comboAsig.Enabled = false;
+                comboAsig.Text = "";
             }
             else
             {
                 comboGrado.Enabled = true;
+                cargarAsignaturas();
             }
         }
     }
