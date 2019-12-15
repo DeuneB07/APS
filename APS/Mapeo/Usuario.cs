@@ -27,7 +27,8 @@ namespace APS.Mapeo
         private List<Grado> grados;   //Lazy
         private List<Preferencia> preferencias; //Lazy
         private List<Asignatura> asignaturas; //Lazy
-        private List<Mensaje> mensajes;//Lazy
+        private List<Mensaje> mensajesRecibidos;//Lazy
+        private List<Mensaje> mensajesEnviados;//Lazy
 
         private List<Actividad_Realizada> actividadesRealizadas; //Lazzy
         private List<Actividad_Solicitud> actividadesSolicitadas;  //Lazzy
@@ -447,13 +448,13 @@ namespace APS.Mapeo
             }
         }
 
-        public List<Mensaje> Mensajes
+        public List<Mensaje> MensajesEnviados
         {
             get
             {
-                if (mensajes == null)
+                if (mensajesEnviados == null)
                 {
-                    mensajes = Mapeo.Mensaje.ListaMensajes();
+                    mensajesEnviados = Mapeo.Mensaje.ListaMensajesEnviados(this);
                     /* List<Mensaje> recibidos = new List<Mensaje>();
                      foreach (Mensaje msg in mensajes)
                      {
@@ -464,28 +465,62 @@ namespace APS.Mapeo
                      }
                      mensajes = recibidos;*/
                 }
-                return mensajes;
+                return mensajesEnviados;
             }
         }
 
-        public void AddMensaje(Mensaje msg)
+        public List<Mensaje> MensajesRecibidos
         {
-            if (!this.Mensajes.Contains(msg))
+            get
             {
-                Mensajes.Add(msg);
+                if (mensajesRecibidos == null)
+                {
+                    mensajesRecibidos = Mapeo.Mensaje.ListaMensajesRecibidos(this);
+                    /* List<Mensaje> recibidos = new List<Mensaje>();
+                     foreach (Mensaje msg in mensajes)
+                     {
+                         if (msg.Receptor.Equals(this))
+                         {
+                             recibidos.Add(msg);
+                         }
+                     }
+                     mensajes = recibidos;*/
+                }
+                return mensajesRecibidos;
             }
         }
 
-        public void RemoveMensaje(Mensaje msg)
+        public void AddMensajeEnviado(Mensaje msg)
         {
-            if (this.Mensajes.Contains(msg))
+            if (!this.MensajesEnviados.Contains(msg))
             {
-                Mensajes.Remove(msg);
+                MensajesEnviados.Add(msg);
             }
         }
 
+        public void RemoveMensajeEnviado(Mensaje msg)
+        {
+            if (this.MensajesEnviados.Contains(msg))
+            {
+                MensajesEnviados.Remove(msg);
+            }
+        }
 
+        public void AddMensajeRecibido(Mensaje msg)
+        {
+            if (!this.MensajesRecibidos.Contains(msg))
+            {
+                MensajesRecibidos.Add(msg);
+            }
+        }
 
+        public void RemoveMensajeRecibido(Mensaje msg)
+        {
+            if (this.MensajesRecibidos.Contains(msg))
+            {
+                MensajesRecibidos.Remove(msg);
+            }
+        }
 
         public void AddPreferencia(Preferencia p)
         {

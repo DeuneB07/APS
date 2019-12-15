@@ -34,6 +34,7 @@
             this.lEscribir = new System.Windows.Forms.Label();
             this.lSend = new System.Windows.Forms.Label();
             this.lReceived = new System.Windows.Forms.Label();
+            this.bSalir = new System.Windows.Forms.Button();
             this.pictEnviados = new System.Windows.Forms.PictureBox();
             this.pictCont3 = new System.Windows.Forms.PictureBox();
             this.pictEscribir = new System.Windows.Forms.PictureBox();
@@ -104,32 +105,47 @@
             this.lReceived.BackColor = System.Drawing.Color.Transparent;
             this.lReceived.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lReceived.ForeColor = System.Drawing.Color.Black;
-            this.lReceived.Location = new System.Drawing.Point(26, 341);
+            this.lReceived.Location = new System.Drawing.Point(24, 341);
             this.lReceived.Name = "lReceived";
-            this.lReceived.Size = new System.Drawing.Size(73, 13);
+            this.lReceived.Size = new System.Drawing.Size(75, 13);
             this.lReceived.TabIndex = 30;
-            this.lReceived.Text = "Ver Enviados";
+            this.lReceived.Text = "Ver Recibidos";
+            // 
+            // bSalir
+            // 
+            this.bSalir.BackColor = System.Drawing.Color.Transparent;
+            this.bSalir.BackgroundImage = global::APS.Properties.Resources.exiticon;
+            this.bSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bSalir.FlatAppearance.BorderSize = 0;
+            this.bSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bSalir.Location = new System.Drawing.Point(638, 6);
+            this.bSalir.Name = "bSalir";
+            this.bSalir.Size = new System.Drawing.Size(55, 53);
+            this.bSalir.TabIndex = 31;
+            this.bSalir.UseVisualStyleBackColor = false;
+            this.bSalir.Click += new System.EventHandler(this.bSalir_Click);
             // 
             // pictEnviados
             // 
             this.pictEnviados.BackgroundImage = global::APS.Properties.Resources.received;
             this.pictEnviados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictEnviados.Location = new System.Drawing.Point(44, 286);
+            this.pictEnviados.Location = new System.Drawing.Point(44, 197);
             this.pictEnviados.Name = "pictEnviados";
             this.pictEnviados.Size = new System.Drawing.Size(37, 37);
             this.pictEnviados.TabIndex = 29;
             this.pictEnviados.TabStop = false;
+            this.pictEnviados.Click += new System.EventHandler(this.pictEnviados_Click);
             // 
             // pictCont3
             // 
             this.pictCont3.BackgroundImage = global::APS.Properties.Resources.newmessage;
             this.pictCont3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictCont3.Location = new System.Drawing.Point(27, 271);
-            this.pictCont3.Controls.Add(pictRecibidos);
             this.pictCont3.Name = "pictCont3";
             this.pictCont3.Size = new System.Drawing.Size(68, 67);
             this.pictCont3.TabIndex = 28;
             this.pictCont3.TabStop = false;
+            this.pictCont3.Click += new System.EventHandler(this.pictCont3_Click);
             // 
             // pictEscribir
             // 
@@ -140,27 +156,29 @@
             this.pictEscribir.Size = new System.Drawing.Size(37, 33);
             this.pictEscribir.TabIndex = 24;
             this.pictEscribir.TabStop = false;
+            this.pictEscribir.Click += new System.EventHandler(this.pictEscribir_Click);
             // 
             // pictCont1
             // 
             this.pictCont1.BackgroundImage = global::APS.Properties.Resources.newmessage;
             this.pictCont1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictCont1.Location = new System.Drawing.Point(27, 83);
-            this.pictCont1.Controls.Add(pictEscribir);
             this.pictCont1.Name = "pictCont1";
             this.pictCont1.Size = new System.Drawing.Size(68, 67);
             this.pictCont1.TabIndex = 22;
             this.pictCont1.TabStop = false;
+            this.pictCont1.Click += new System.EventHandler(this.pictCont1_Click);
             // 
             // pictRecibidos
             // 
             this.pictRecibidos.BackgroundImage = global::APS.Properties.Resources.enviados;
             this.pictRecibidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictRecibidos.Location = new System.Drawing.Point(44, 203);
+            this.pictRecibidos.Location = new System.Drawing.Point(44, 290);
             this.pictRecibidos.Name = "pictRecibidos";
             this.pictRecibidos.Size = new System.Drawing.Size(37, 30);
             this.pictRecibidos.TabIndex = 25;
             this.pictRecibidos.TabStop = false;
+            this.pictRecibidos.Click += new System.EventHandler(this.pictRecibidos_Click);
             // 
             // pictSobres
             // 
@@ -177,11 +195,11 @@
             this.pictCont2.BackgroundImage = global::APS.Properties.Resources.newmessage;
             this.pictCont2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictCont2.Location = new System.Drawing.Point(27, 182);
-            this.pictCont2.Controls.Add(pictEnviados);
             this.pictCont2.Name = "pictCont2";
             this.pictCont2.Size = new System.Drawing.Size(68, 67);
             this.pictCont2.TabIndex = 24;
             this.pictCont2.TabStop = false;
+            this.pictCont2.Click += new System.EventHandler(this.pictCont2_Click);
             // 
             // BandejaMensajes
             // 
@@ -189,14 +207,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(705, 378);
-            this.Controls.Add(this.lReceived);
             this.Controls.Add(this.pictEnviados);
+            this.Controls.Add(this.pictRecibidos);
+            this.Controls.Add(this.pictEscribir);
+            this.Controls.Add(this.bSalir);
+            this.Controls.Add(this.lReceived);
             this.Controls.Add(this.pictCont3);
             this.Controls.Add(this.lSend);
             this.Controls.Add(this.lEscribir);
-            this.Controls.Add(this.pictEscribir);
             this.Controls.Add(this.pictCont1);
-            this.Controls.Add(this.pictRecibidos);
             this.Controls.Add(this.pictSobres);
             this.Controls.Add(this.panelMensajes);
             this.Controls.Add(this.lMensajes);
@@ -230,5 +249,6 @@
         private System.Windows.Forms.Label lReceived;
         private System.Windows.Forms.PictureBox pictEnviados;
         private System.Windows.Forms.PictureBox pictCont3;
+        private System.Windows.Forms.Button bSalir;
     }
 }

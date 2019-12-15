@@ -30,13 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartelActividadesStandard));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lEstado = new System.Windows.Forms.Label();
-            this.lE = new System.Windows.Forms.Label();
             this.lShowResp = new System.Windows.Forms.Label();
             this.lResp = new System.Windows.Forms.Label();
             this.lShowOrg = new System.Windows.Forms.Label();
             this.lShowIni = new System.Windows.Forms.Label();
-            this.lShowFin = new System.Windows.Forms.Label();
             this.lFecha = new System.Windows.Forms.Label();
             this.lOrg = new System.Windows.Forms.Label();
             this.lTipoActividad = new System.Windows.Forms.Label();
@@ -55,13 +52,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lEstado);
-            this.panel1.Controls.Add(this.lE);
             this.panel1.Controls.Add(this.lShowResp);
             this.panel1.Controls.Add(this.lResp);
             this.panel1.Controls.Add(this.lShowOrg);
             this.panel1.Controls.Add(this.lShowIni);
-            this.panel1.Controls.Add(this.lShowFin);
             this.panel1.Controls.Add(this.lFecha);
             this.panel1.Controls.Add(this.lOrg);
             this.panel1.Controls.Add(this.lTipoActividad);
@@ -78,28 +72,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1246, 283);
             this.panel1.TabIndex = 3;
-            // 
-            // lEstado
-            // 
-            this.lEstado.AutoSize = true;
-            this.lEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lEstado.Location = new System.Drawing.Point(938, 86);
-            this.lEstado.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lEstado.Name = "lEstado";
-            this.lEstado.Size = new System.Drawing.Size(66, 24);
-            this.lEstado.TabIndex = 21;
-            this.lEstado.Text = "estado";
-            // 
-            // lE
-            // 
-            this.lE.AutoSize = true;
-            this.lE.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lE.Location = new System.Drawing.Point(826, 86);
-            this.lE.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lE.Name = "lE";
-            this.lE.Size = new System.Drawing.Size(93, 26);
-            this.lE.TabIndex = 20;
-            this.lE.Text = "Estado:";
             // 
             // lShowResp
             // 
@@ -135,28 +107,18 @@
             // lShowIni
             // 
             this.lShowIni.AutoSize = true;
-            this.lShowIni.Location = new System.Drawing.Point(930, 164);
+            this.lShowIni.Location = new System.Drawing.Point(922, 158);
             this.lShowIni.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lShowIni.Name = "lShowIni";
             this.lShowIni.Size = new System.Drawing.Size(34, 25);
             this.lShowIni.TabIndex = 16;
             this.lShowIni.Text = "ini";
             // 
-            // lShowFin
-            // 
-            this.lShowFin.AutoSize = true;
-            this.lShowFin.Location = new System.Drawing.Point(930, 202);
-            this.lShowFin.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lShowFin.Name = "lShowFin";
-            this.lShowFin.Size = new System.Drawing.Size(35, 25);
-            this.lShowFin.TabIndex = 15;
-            this.lShowFin.Text = "fin";
-            // 
             // lFecha
             // 
             this.lFecha.AutoSize = true;
             this.lFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lFecha.Location = new System.Drawing.Point(826, 164);
+            this.lFecha.Location = new System.Drawing.Point(826, 158);
             this.lFecha.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lFecha.Name = "lFecha";
             this.lFecha.Size = new System.Drawing.Size(84, 26);
@@ -177,7 +139,7 @@
             // lTipoActividad
             // 
             this.lTipoActividad.AutoSize = true;
-            this.lTipoActividad.Location = new System.Drawing.Point(1060, 122);
+            this.lTipoActividad.Location = new System.Drawing.Point(1044, 112);
             this.lTipoActividad.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lTipoActividad.Name = "lTipoActividad";
             this.lTipoActividad.Size = new System.Drawing.Size(76, 25);
@@ -188,7 +150,7 @@
             // 
             this.lTipoA.AutoSize = true;
             this.lTipoA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTipoA.Location = new System.Drawing.Point(826, 122);
+            this.lTipoA.Location = new System.Drawing.Point(826, 112);
             this.lTipoA.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lTipoA.Name = "lTipoA";
             this.lTipoA.Size = new System.Drawing.Size(202, 26);
@@ -213,23 +175,24 @@
             // lNumPlazas
             // 
             this.lNumPlazas.AutoSize = true;
-            this.lNumPlazas.Location = new System.Drawing.Point(934, 247);
+            this.lNumPlazas.BackColor = System.Drawing.Color.Transparent;
+            this.lNumPlazas.Location = new System.Drawing.Point(1058, 207);
             this.lNumPlazas.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lNumPlazas.Name = "lNumPlazas";
-            this.lNumPlazas.Size = new System.Drawing.Size(116, 25);
+            this.lNumPlazas.Size = new System.Drawing.Size(53, 25);
             this.lNumPlazas.TabIndex = 9;
-            this.lNumPlazas.Text = "numplazas";
+            this.lNumPlazas.Text = "num";
             // 
             // lPlazas
             // 
             this.lPlazas.AutoSize = true;
             this.lPlazas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lPlazas.Location = new System.Drawing.Point(826, 247);
+            this.lPlazas.Location = new System.Drawing.Point(826, 207);
             this.lPlazas.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lPlazas.Name = "lPlazas";
-            this.lPlazas.Size = new System.Drawing.Size(98, 26);
+            this.lPlazas.Size = new System.Drawing.Size(229, 26);
             this.lPlazas.TabIndex = 8;
-            this.lPlazas.Text = "Plazas: ";
+            this.lPlazas.Text = "Plazas Disponibles: ";
             // 
             // bVerMas
             // 
@@ -303,12 +266,9 @@
         private System.Windows.Forms.Label lTipoA;
         private System.Windows.Forms.Label lShowOrg;
         private System.Windows.Forms.Label lShowIni;
-        private System.Windows.Forms.Label lShowFin;
         private System.Windows.Forms.Label lFecha;
         private System.Windows.Forms.Label lOrg;
         private System.Windows.Forms.Label lShowResp;
         private System.Windows.Forms.Label lResp;
-        private System.Windows.Forms.Label lE;
-        private System.Windows.Forms.Label lEstado;
     }
 }

@@ -50,8 +50,8 @@ namespace APS.Interfaces
             //if (user.AccesoPantalla("VALORACION")) tabUser.Controls.Remove(this.pValoracion);
             if (user.AccesoPantalla("PENDIENTES")) cargarPendientesActividadesInicio(); //HECHO
             if (user.AccesoPantalla("REVISION")) cargarRevisionActividadesInicio(); //HECHO
-            if (user.AccesoPantalla("MIS ACTIVIDADES")) cargarMisActividadesInicio();
-            if (user.AccesoPantalla("ACTIVIDADES INSCRITAS")) cargarActividadesInscritas();
+            if (user.AccesoPantalla("MIS ACTIVIDADES")) cargarMisActividadesInicio(); //HECHO
+            if (user.AccesoPantalla("ACTIVIDADES INSCRITAS")) cargarActividadesInscritas(); //HECHO
 
             t.Abort();
         }
@@ -809,36 +809,50 @@ namespace APS.Interfaces
             panelMisActs.RowCount = 1;
             panelMisActs.Controls.Clear();
 
-
+            int c = 0;
             if (user.Rol.NombreRol.Equals("PDI"))
             {
                 List<Actividad> actsPDI = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
-                cargarMisActsPDI(actsPDI);
+                List<Actividad> actsCERPDI = Actividad.ListaActividades(Actividad.EstadoActividadE.CERRADA);
+                List<Actividad> actsPROPDI = Actividad.ListaActividades(Actividad.EstadoActividadE.EN_PROCESO);
+                cargarMisActsPDI(c,actsPDI);
+                c = panelMisActs.Controls.Count;
+                cargarMisActsPDI(c,actsCERPDI);
+                c = panelMisActs.Controls.Count;
+                cargarMisActsPDI(c,actsPROPDI);
+                
             }
             else
             { //ES ONG -> lo mismo que para el PDI, pero al contrario 
                 List<Actividad> actsONG = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
-                cargarMisActsONG(actsONG);
+                List<Actividad> actsCERONG = Actividad.ListaActividades(Actividad.EstadoActividadE.CERRADA);
+                List<Actividad> actsPROONG = Actividad.ListaActividades(Actividad.EstadoActividadE.EN_PROCESO);
+                cargarMisActsONG(c,actsONG);
+                c = panelMisActs.Controls.Count;
+                cargarMisActsONG(c,actsCERONG);
+                c = panelMisActs.Controls.Count;
+                cargarMisActsONG(c,actsPROONG);
             }
         }
 
-        private void cargarMisActsONG(List<Actividad> actsONG)
+        private void cargarMisActsONG(int c, List<Actividad> actsONG)
         {
-
             CartelPendientes[] carActsONG = new CartelPendientes[actsONG.Count];
-            int c = 0;
+            int c2 = 0;
             foreach (Actividad act in actsONG)
             {
                 if (act.Organizador.Equals(user))
                 {
-                    carActsONG[c] = new CartelPendientes(user, act);
-                    panelMisActs.Controls.Add(carActsONG[c], 0, c);
+                    carActsONG[c2] = new CartelPendientes(user, act);
+                    panelMisActs.Controls.Add(carActsONG[c2], 0, c);
                     panelMisActs.RowCount = panelMisActs.RowCount + 1;
-                    carActsONG[c].Location = new Point(carActsONG[c].Location.X, (carActsONG[c].Size.Height * c));
-                    carActsONG[c].BackColor = Color.Orange;
+                    carActsONG[c2].Location = new Point(carActsONG[c2].Location.X, (carActsONG[c2].Size.Height * c));
+                    if(act.EstadoAct.ToString().Equals("ABIERTA")) carActsONG[c2].BackColor = Color.Blue;
+                    if (act.EstadoAct.ToString().Equals("CERRADA")) carActsONG[c2].BackColor = Color.OrangeRed;
+                    if (act.EstadoAct.ToString().Equals("EN_PROCESO")) carActsONG[c2].BackColor = Color.ForestGreen;
 
                     //BOTONES GESTOR
-                    Panel panel = (Panel)carActsONG[c].Controls.Find("panel1", false)[0];
+                    Panel panel = (Panel)carActsONG[c2].Controls.Find("panel1", false)[0];
                     Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
                     Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
                     Button bParticipantes = (Button)panel.Controls.Find("bVerParts", false)[0];
@@ -854,22 +868,24 @@ namespace APS.Interfaces
             }
         }
 
-        private void cargarMisActsPDI(List<Actividad> actsPDI)
+        private void cargarMisActsPDI(int c, List<Actividad> actsPDI)
         {
             CartelPendientes[] carActsPDI = new CartelPendientes[actsPDI.Count];
-            int c = 0;
+            int c2 = 0;
             foreach (Actividad act in actsPDI)
             {
                 if (act.Responsable != null && act.Responsable.Equals(user))
                 {
-                    carActsPDI[c] = new CartelPendientes(user, act);
-                    panelMisActs.Controls.Add(carActsPDI[c], 0, c);
+                    carActsPDI[c2] = new CartelPendientes(user, act);
+                    panelMisActs.Controls.Add(carActsPDI[c2], 0, c);
                     panelMisActs.RowCount = panelMisActs.RowCount + 1;
-                    carActsPDI[c].Location = new Point(carActsPDI[c].Location.X, (carActsPDI[c].Size.Height * c));
-                    carActsPDI[c].BackColor = Color.Orange;
+                    carActsPDI[c2].Location = new Point(carActsPDI[c2].Location.X, (carActsPDI[c2].Size.Height * c));
+                    if (act.EstadoAct.ToString().Equals("ABIERTA")) carActsPDI[c2].BackColor = Color.Blue;
+                    if (act.EstadoAct.ToString().Equals("CERRADA")) carActsPDI[c2].BackColor = Color.OrangeRed;
+                    if (act.EstadoAct.ToString().Equals("EN_PROCESO")) carActsPDI[c2].BackColor = Color.ForestGreen;
 
                     //BOTONES GESTOR
-                    Panel panel = (Panel)carActsPDI[c].Controls.Find("panel1", false)[0];
+                    Panel panel = (Panel)carActsPDI[c2].Controls.Find("panel1", false)[0];
                     Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
                     Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
                     Button bParticipantes = (Button)panel.Controls.Find("bVerParts", false)[0];
@@ -949,8 +965,9 @@ namespace APS.Interfaces
                 //BOTONES GESTOR
                 Panel panel = (Panel)carActInsDenegada[c2].Controls.Find("panel1", false)[0];
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
-                Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
-                estado.Text = aS.EstadoSolicitud.ToString();
+                Label estado = (Label)panel.Controls.Find("lPlazas", false)[0];
+                estado.Text = "Estado Solicitud:";
+                carActInsDenegada[c2].NumPlazas = aS.EstadoSolicitud.ToString();
                 bCancelar.Visible = false;
 
 
@@ -975,8 +992,9 @@ namespace APS.Interfaces
                 //BOTONES GESTOR
                 Panel panel = (Panel)carActInsEsperaONG[c2].Controls.Find("panel1", false)[0];
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
-                Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
-                estado.Text = aS.EstadoSolicitud.ToString();
+                Label estado = (Label)panel.Controls.Find("lPlazas", false)[0];
+                estado.Text = "Estado Solicitud:";
+                carActInsEsperaONG[c2].NumPlazas = aS.EstadoSolicitud.ToString();
                 bCancelar.Text = "Cancelar";
 
                 //Programación Botón
@@ -1003,8 +1021,9 @@ namespace APS.Interfaces
                 //BOTONES GESTOR
                 Panel panel = (Panel)carActInsEsperaPDI[c2].Controls.Find("panel1", false)[0];
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
-                Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
-                estado.Text = aS.EstadoSolicitud.ToString();
+                Label estado = (Label)panel.Controls.Find("lPlazas", false)[0];
+                estado.Text = "Estado Solicitud:";
+                carActInsEsperaPDI[c2].NumPlazas = aS.EstadoSolicitud.ToString();
                 bCancelar.Text = "Cancelar";
 
                 //Programación Botón
@@ -1048,8 +1067,9 @@ namespace APS.Interfaces
                 //BOTONES
                 Panel panel = (Panel)carActInsAceptada[c2].Controls.Find("panel1", false)[0];
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
-                Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
-                estado.Text = aS.EstadoSolicitud.ToString();
+                Label estado = (Label)panel.Controls.Find("lPlazas", false)[0];
+                estado.Text = "Estado Solicitud:";
+                carActInsAceptada[c2].NumPlazas = aS.EstadoSolicitud.ToString();
                 bCancelar.Visible = false;
 
 

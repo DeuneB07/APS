@@ -24,7 +24,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Mensaje> lista = new List<Mensaje>();
 
-            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje,emailEmisor, emailReceptor FROM Mensajes;"))
+            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje, emailEmisor, emailReceptor FROM Mensajes;"))
             {
                 String emailE = tupla[1].ToString();
                 String emailR = tupla[2].ToString();
@@ -41,7 +41,24 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Mensaje> lista = new List<Mensaje>();
 
-            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje,emailEmisor, emailReceptor FROM Mensajes WHERE emailEmisor = '" + emisor.Email + "';"))
+            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje, emailEmisor, emailReceptor FROM Mensajes WHERE emailEmisor = '" + emisor.Email + "';"))
+            {
+                String emailE = tupla[1].ToString();
+                String emailR = tupla[2].ToString();
+                int id = int.Parse(tupla[0].ToString());
+                Mensaje m = new Mensaje(id, new Usuario(emailE), new Usuario(emailR));
+                lista.Add(m);
+            }
+            return lista;
+        }
+
+        public static List<Mensaje> ListaMensajesRecibidos(Usuario receptor)
+        {
+            // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Mensaje> lista = new List<Mensaje>();
+
+            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje, emailEmisor, emailReceptor FROM Mensajes WHERE emailReceptor = '" + receptor.Email + "';"))
             {
                 String emailE = tupla[1].ToString();
                 String emailR = tupla[2].ToString();
@@ -73,23 +90,23 @@ namespace APS.Mapeo
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             Object[] tupla = miBD.Select("SELECT * FROM Mensajes "
-                    + "WHERE emailEmisor='" + emisor.Email + "' and emailReceptor='" + receptor.Email +"'and ID_Mensaje = '"+id+"';")[0];
+                    + "WHERE emailEmisor='" + emisor.Email + "' and emailReceptor='" + receptor.Email +"' and ID_Mensaje = "+id+";")[0];
             ID_mensaje = int.Parse(tupla[0].ToString());
             asunto = tupla[1].ToString();
             texto =tupla[2].ToString();
 
-            string[] fechaIn = tupla[6].ToString().Split('-');
+            string[] fechaIn = tupla[3].ToString().Split('-');
             date = new DateTime(int.Parse(fechaIn[0]), int.Parse(fechaIn[1]), int.Parse(fechaIn[2]));
 
-            emisor = new Usuario(tupla[4].ToString());
-            receptor = new Usuario(tupla[5].ToString());
+            this.emisor = new Usuario(tupla[4].ToString());
+            this.receptor = new Usuario(tupla[5].ToString());
         }
 
         public Mensaje(String asunto, String texto, DateTime date, Usuario emisor, Usuario receptor)
         {
             // Crea el objeto y lo inserta en la base de datos
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Insert("INSERT INTO Mensajes (asunto,texto,date,emailEmisor, emailReceptor) VALUES("
+            miBD.Insert("INSERT INTO Mensajes (asunto,texto,fecha,emailEmisor, emailReceptor) VALUES("
                     + "'" + asunto + "', '" + texto + "', '" + date.ToShortDateString() + "', '" + emisor.Email + "', '" + receptor.Email + "');");
             this.asunto = asunto;
             this.texto = texto;
@@ -136,7 +153,7 @@ namespace APS.Mapeo
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
                 miBD.Update("UPDATE Mensajes SET emailEmisor = '" + value.Email
-                + "' WHERE ID_Mensaje ='" + this.ID_Mensaje + "';");
+                + "' WHERE ID_Mensaje = " + ID_Mensaje + ";");
                 emisor = value;
             }
         }
@@ -148,7 +165,7 @@ namespace APS.Mapeo
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
                 miBD.Update("UPDATE Mensajes SET emailReceptor = '" + value.Email
-                + "' WHERE ID_Mensaje ='" + this.ID_Mensaje + "';");
+                + "' WHERE ID_Mensaje =" + this.ID_Mensaje + ";");
                 receptor = value;
             }
         }
@@ -159,8 +176,8 @@ namespace APS.Mapeo
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("UPDATE Mensajes SET date = '" + value.ToShortDateString()
-                + "' WHERE ID_Mensaje ='" + this.ID_Mensaje + "';");
+                miBD.Update("UPDATE Mensajes SET fecha = '" + value.ToShortDateString()
+                + "' WHERE ID_Mensaje =" + this.ID_Mensaje + ";");
                 date = value;
             }
         }
@@ -169,8 +186,8 @@ namespace APS.Mapeo
         {
             // Actualiza el atributo en memoria y en la base de datos
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Delete("DELETE FROM Mensajes WHERE ID_Mensaje ='" + this.ID_mensaje + "';");
-            emisor = receptor= null;
+            miBD.Delete("DELETE FROM Mensajes WHERE ID_Mensaje =" + this.ID_mensaje + ";");
+            emisor = receptor = null;
             asunto = texto = null;
             date = DateTime.Today;
             ID_mensaje = -1;

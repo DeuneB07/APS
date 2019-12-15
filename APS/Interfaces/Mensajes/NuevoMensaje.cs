@@ -13,36 +13,42 @@ namespace APS.Interfaces.Mensajes
 {
     public partial class NuevoMensaje : Form
     {
-        Usuario user;
-        Mensaje msg;
+        Usuario usrEmisor;
+        Usuario usrReceptor;
 
-        public NuevoMensaje(Usuario user, Mensaje msg)
+        public NuevoMensaje(Usuario usrEmisor, Usuario usrReceptor)
         {
             InitializeComponent();
-            this.user = user;
-            this.msg = msg;
+            this.usrEmisor = usrEmisor;
+            this.usrReceptor = usrReceptor;
+
+            if(usrReceptor != null)
+            {
+                tReceptor.Text = usrReceptor.Email;
+                tReceptor.Enabled = false;
+            }
         }
 
         private void bEnviar_Click(object sender, EventArgs e)
         {
             try
             {
-                Mapeo.Mensaje escrito = new Mapeo.Mensaje(tAsunto.Text.ToString(), tTexto.Text.ToString(), DateTime.Today, user, new Usuario(tReceptor.Text));
+                Mensaje msg = new Mensaje(tAsunto.Text, tTexto.Text, DateTime.Today, usrEmisor, new Usuario(tReceptor.Text));
                 this.Close();
             }
-            catch (Exception exc)
+            catch (Exception ex)
             {
-                Console.WriteLine(exc.StackTrace);
+                Console.WriteLine(ex.Message);
+                DialogResult emFalloEnviar;
+                string mensaje = "Se ha producido un error";
+                string caption = "Lo sentimos, pero...";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                emFalloEnviar = MessageBox.Show(mensaje, caption, buttons);
             }
+            
         }
 
-        private void beliminar_Click(object sender, EventArgs e)
-        {
-            msg.BorraMensaje();
-            this.Close();
-        }
-
-        private void bvolver_Click(object sender, EventArgs e)
+        private void bAtras_Click(object sender, EventArgs e)
         {
             this.Close();
         }
