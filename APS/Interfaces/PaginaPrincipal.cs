@@ -86,7 +86,7 @@ namespace APS.Interfaces
                 bool encontrado = false;
                 int j = 0;
                 Asignatura asig = null;
-                while(!encontrado)
+                while(!encontrado && j<asigs.Count)
                 {
                     asig = asigs[j];
                     if ((act.Asignatura != null && act.Asignatura.Equals(asig)) || act.TipoAct.Equals(Actividad.TipoActividadE.VOLUNTARIADO))
