@@ -14,13 +14,11 @@ namespace APS.Interfaces.Personalizados
     public partial class CartelMensajes : UserControl
     {
 
-        private Usuario usr;
         private Mensaje m;
 
-        public CartelMensajes(Usuario usr, Mensaje m)
+        public CartelMensajes(Mensaje m)
         {
             InitializeComponent();
-            this.usr = usr;
             this.m = m;
 
             if (m.Asunto.Equals("")) lShowAsunto.Text = m.Asunto;

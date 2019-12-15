@@ -23,6 +23,7 @@ namespace APS.Interfaces
             this.user = user;
             Usuario ong = act.Organizador;
             this.act = act;
+            this.Text = this.Text + " " + act.NombreAct;
             labelError.Text = "";
 
             tOrganizador.Text = act.Organizador.Nombre;

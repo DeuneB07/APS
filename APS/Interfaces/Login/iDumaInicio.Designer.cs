@@ -34,9 +34,7 @@
             this.labelError = new System.Windows.Forms.Label();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.loading = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loading)).BeginInit();
             this.SuspendLayout();
             // 
             // tIdentificacion
@@ -103,35 +101,23 @@
             this.pictureBox.TabIndex = 8;
             this.pictureBox.TabStop = false;
             // 
-            // loading
-            // 
-            this.loading.BackColor = System.Drawing.Color.Transparent;
-            this.loading.Image = global::APS.Properties.Resources.Loading_2;
-            this.loading.Location = new System.Drawing.Point(337, 306);
-            this.loading.Name = "loading";
-            this.loading.Size = new System.Drawing.Size(39, 38);
-            this.loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.loading.TabIndex = 13;
-            this.loading.TabStop = false;
-            this.loading.Visible = false;
-            // 
             // iDumaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1133, 629);
-            this.Controls.Add(this.loading);
+            this.ClientSize = new System.Drawing.Size(1116, 550);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.tPassword);
             this.Controls.Add(this.tIdentificacion);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.pictureBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "iDumaInicio";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "iDUMA";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,6 +130,5 @@
         private System.Windows.Forms.TextBox tIdentificacion;
         private System.Windows.Forms.TextBox tPassword;
         private System.Windows.Forms.Label labelError;
-        private System.Windows.Forms.PictureBox loading;
     }
 }

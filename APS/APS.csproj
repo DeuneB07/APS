@@ -313,6 +313,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Login\SplashLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Login\SplashLoading.Designer.cs">
+      <DependentUpon>SplashLoading.cs</DependentUpon>
+    </Compile>
     <Compile Include="WePassDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -332,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Mensajes\BandejaMensajes.resx">
       <DependentUpon>BandejaMensajes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Mensajes\NuevoMensaje.resx">
+      <DependentUpon>NuevoMensaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Perfil\FPerfilONG.resx">
       <DependentUpon>FPerfilONG.cs</DependentUpon>
@@ -409,6 +418,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Login\SplashLoading.resx">
+      <DependentUpon>SplashLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="ImagenesDB\dbActividad.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -489,6 +501,7 @@
       <DependentUpon>dbUsuario.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\exiticon.png" />
     <None Include="Resources\received.png" />
     <None Include="Resources\enviados.png" />
     <None Include="Resources\escribir.png" />

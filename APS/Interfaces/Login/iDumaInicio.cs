@@ -68,7 +68,7 @@ namespace APS.Interfaces
             RegistroUMA registro = new RegistroUMA(userJSON);
             this.Visible = false;
             registro.ShowDialog();
-            this.Visible = true;
+            this.Close();
         }
 
     }

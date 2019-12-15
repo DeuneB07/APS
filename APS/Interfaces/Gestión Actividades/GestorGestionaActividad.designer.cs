@@ -112,7 +112,7 @@
             // Aceptar
             // 
             this.Aceptar.Location = new System.Drawing.Point(501, 602);
-            this.Aceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Aceptar.Margin = new System.Windows.Forms.Padding(4);
             this.Aceptar.Name = "Aceptar";
             this.Aceptar.Size = new System.Drawing.Size(100, 28);
             this.Aceptar.TabIndex = 12;
@@ -123,7 +123,7 @@
             // Cancelar
             // 
             this.Cancelar.Location = new System.Drawing.Point(643, 602);
-            this.Cancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(100, 28);
             this.Cancelar.TabIndex = 13;
@@ -148,7 +148,7 @@
             this.comboGrado.Enabled = false;
             this.comboGrado.FormattingEnabled = true;
             this.comboGrado.Location = new System.Drawing.Point(165, 161);
-            this.comboGrado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboGrado.Margin = new System.Windows.Forms.Padding(4);
             this.comboGrado.Name = "comboGrado";
             this.comboGrado.Size = new System.Drawing.Size(176, 24);
             this.comboGrado.TabIndex = 29;
@@ -158,7 +158,7 @@
             // 
             this.comboAsig.Enabled = false;
             this.comboAsig.Location = new System.Drawing.Point(165, 221);
-            this.comboAsig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboAsig.Margin = new System.Windows.Forms.Padding(4);
             this.comboAsig.Name = "comboAsig";
             this.comboAsig.Size = new System.Drawing.Size(176, 24);
             this.comboAsig.TabIndex = 30;
@@ -172,7 +172,7 @@
             "FORMACION",
             "INVESTIGACION"});
             this.comboTipoAct.Location = new System.Drawing.Point(165, 98);
-            this.comboTipoAct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboTipoAct.Margin = new System.Windows.Forms.Padding(4);
             this.comboTipoAct.Name = "comboTipoAct";
             this.comboTipoAct.Size = new System.Drawing.Size(176, 24);
             this.comboTipoAct.TabIndex = 31;
@@ -182,7 +182,7 @@
             // 
             this.comboResponsable.Enabled = false;
             this.comboResponsable.Location = new System.Drawing.Point(165, 281);
-            this.comboResponsable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboResponsable.Margin = new System.Windows.Forms.Padding(4);
             this.comboResponsable.Name = "comboResponsable";
             this.comboResponsable.Size = new System.Drawing.Size(176, 24);
             this.comboResponsable.TabIndex = 32;
@@ -394,7 +394,7 @@
             this.listAmbito.Enabled = false;
             this.listAmbito.FormattingEnabled = true;
             this.listAmbito.Location = new System.Drawing.Point(165, 449);
-            this.listAmbito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listAmbito.Margin = new System.Windows.Forms.Padding(4);
             this.listAmbito.Name = "listAmbito";
             this.listAmbito.Size = new System.Drawing.Size(160, 24);
             this.listAmbito.TabIndex = 75;
@@ -404,7 +404,7 @@
             this.listTrabajo.Enabled = false;
             this.listTrabajo.FormattingEnabled = true;
             this.listTrabajo.Location = new System.Drawing.Point(165, 491);
-            this.listTrabajo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listTrabajo.Margin = new System.Windows.Forms.Padding(4);
             this.listTrabajo.Name = "listTrabajo";
             this.listTrabajo.Size = new System.Drawing.Size(160, 24);
             this.listTrabajo.TabIndex = 74;
@@ -414,7 +414,7 @@
             this.listTurno.Enabled = false;
             this.listTurno.FormattingEnabled = true;
             this.listTurno.Location = new System.Drawing.Point(165, 409);
-            this.listTurno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listTurno.Margin = new System.Windows.Forms.Padding(4);
             this.listTurno.Name = "listTurno";
             this.listTurno.Size = new System.Drawing.Size(160, 24);
             this.listTurno.TabIndex = 73;
@@ -472,9 +472,9 @@
             this.Controls.Add(this.labelDescripcion);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Aceptar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GestorGestionaActividad";
-            this.Text = "Actividad ...";
+            this.Text = "Actividad";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
