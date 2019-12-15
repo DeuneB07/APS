@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lShowEstado = new System.Windows.Forms.Label();
+            this.lEstado = new System.Windows.Forms.Label();
             this.bVerParts = new System.Windows.Forms.Button();
             this.lShowHoras = new System.Windows.Forms.Label();
             this.lShowTurno = new System.Windows.Forms.Label();
@@ -51,8 +53,6 @@
             this.labelName = new System.Windows.Forms.Label();
             this.lDescripcion = new System.Windows.Forms.Label();
             this.pict = new System.Windows.Forms.PictureBox();
-            this.lEstado = new System.Windows.Forms.Label();
-            this.lShowEstado = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).BeginInit();
             this.SuspendLayout();
@@ -85,10 +85,32 @@
             this.panel1.Controls.Add(this.lDescripcion);
             this.panel1.Controls.Add(this.pict);
             this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1246, 314);
             this.panel1.TabIndex = 3;
+            // 
+            // lShowEstado
+            // 
+            this.lShowEstado.AutoSize = true;
+            this.lShowEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lShowEstado.Location = new System.Drawing.Point(859, 54);
+            this.lShowEstado.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lShowEstado.Name = "lShowEstado";
+            this.lShowEstado.Size = new System.Drawing.Size(86, 29);
+            this.lShowEstado.TabIndex = 30;
+            this.lShowEstado.Text = "estado";
+            // 
+            // lEstado
+            // 
+            this.lEstado.AutoSize = true;
+            this.lEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lEstado.Location = new System.Drawing.Point(747, 57);
+            this.lEstado.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lEstado.Name = "lEstado";
+            this.lEstado.Size = new System.Drawing.Size(93, 26);
+            this.lEstado.TabIndex = 29;
+            this.lEstado.Text = "Estado:";
             // 
             // bVerParts
             // 
@@ -98,7 +120,7 @@
             this.bVerParts.Font = new System.Drawing.Font("Calibri Light", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bVerParts.ForeColor = System.Drawing.Color.Black;
             this.bVerParts.Location = new System.Drawing.Point(1090, 246);
-            this.bVerParts.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.bVerParts.Margin = new System.Windows.Forms.Padding(6);
             this.bVerParts.Name = "bVerParts";
             this.bVerParts.Size = new System.Drawing.Size(150, 62);
             this.bVerParts.TabIndex = 28;
@@ -109,7 +131,7 @@
             // lShowHoras
             // 
             this.lShowHoras.AutoSize = true;
-            this.lShowHoras.Location = new System.Drawing.Point(1063, 59);
+            this.lShowHoras.Location = new System.Drawing.Point(843, 192);
             this.lShowHoras.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lShowHoras.Name = "lShowHoras";
             this.lShowHoras.Size = new System.Drawing.Size(66, 25);
@@ -119,7 +141,7 @@
             // lShowTurno
             // 
             this.lShowTurno.AutoSize = true;
-            this.lShowTurno.Location = new System.Drawing.Point(843, 58);
+            this.lShowTurno.Location = new System.Drawing.Point(843, 233);
             this.lShowTurno.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lShowTurno.Name = "lShowTurno";
             this.lShowTurno.Size = new System.Drawing.Size(61, 25);
@@ -130,7 +152,7 @@
             // 
             this.lHoras.AutoSize = true;
             this.lHoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lHoras.Location = new System.Drawing.Point(957, 58);
+            this.lHoras.Location = new System.Drawing.Point(747, 191);
             this.lHoras.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lHoras.Name = "lHoras";
             this.lHoras.Size = new System.Drawing.Size(82, 26);
@@ -141,7 +163,7 @@
             // 
             this.lTurno.AutoSize = true;
             this.lTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTurno.Location = new System.Drawing.Point(747, 58);
+            this.lTurno.Location = new System.Drawing.Point(745, 233);
             this.lTurno.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lTurno.Name = "lTurno";
             this.lTurno.Size = new System.Drawing.Size(79, 26);
@@ -156,7 +178,7 @@
             this.bRechazar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bRechazar.ForeColor = System.Drawing.Color.Black;
             this.bRechazar.Location = new System.Drawing.Point(1112, 245);
-            this.bRechazar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.bRechazar.Margin = new System.Windows.Forms.Padding(6);
             this.bRechazar.Name = "bRechazar";
             this.bRechazar.Size = new System.Drawing.Size(128, 62);
             this.bRechazar.TabIndex = 23;
@@ -171,7 +193,7 @@
             this.bRevisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bRevisar.ForeColor = System.Drawing.Color.Black;
             this.bRevisar.Location = new System.Drawing.Point(1112, 172);
-            this.bRevisar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.bRevisar.Margin = new System.Windows.Forms.Padding(6);
             this.bRevisar.Name = "bRevisar";
             this.bRevisar.Size = new System.Drawing.Size(128, 62);
             this.bRevisar.TabIndex = 22;
@@ -288,7 +310,7 @@
             // 
             this.lNumPlazas.AutoSize = true;
             this.lNumPlazas.BackColor = System.Drawing.Color.Transparent;
-            this.lNumPlazas.Location = new System.Drawing.Point(986, 263);
+            this.lNumPlazas.Location = new System.Drawing.Point(986, 272);
             this.lNumPlazas.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lNumPlazas.Name = "lNumPlazas";
             this.lNumPlazas.Size = new System.Drawing.Size(53, 25);
@@ -299,7 +321,7 @@
             // 
             this.lPlazas.AutoSize = true;
             this.lPlazas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lPlazas.Location = new System.Drawing.Point(747, 263);
+            this.lPlazas.Location = new System.Drawing.Point(745, 272);
             this.lPlazas.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lPlazas.Name = "lPlazas";
             this.lPlazas.Size = new System.Drawing.Size(229, 26);
@@ -329,34 +351,12 @@
             // pict
             // 
             this.pict.Location = new System.Drawing.Point(6, 151);
-            this.pict.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pict.Margin = new System.Windows.Forms.Padding(6);
             this.pict.Name = "pict";
             this.pict.Size = new System.Drawing.Size(264, 156);
             this.pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pict.TabIndex = 6;
             this.pict.TabStop = false;
-            // 
-            // lEstado
-            // 
-            this.lEstado.AutoSize = true;
-            this.lEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lEstado.Location = new System.Drawing.Point(747, 208);
-            this.lEstado.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lEstado.Name = "lEstado";
-            this.lEstado.Size = new System.Drawing.Size(93, 26);
-            this.lEstado.TabIndex = 29;
-            this.lEstado.Text = "Estado:";
-            // 
-            // lShowEstado
-            // 
-            this.lShowEstado.AutoSize = true;
-            this.lShowEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lShowEstado.Location = new System.Drawing.Point(852, 205);
-            this.lShowEstado.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lShowEstado.Name = "lShowEstado";
-            this.lShowEstado.Size = new System.Drawing.Size(86, 29);
-            this.lShowEstado.TabIndex = 30;
-            this.lShowEstado.Text = "estado";
             // 
             // CartelPendientes
             // 
@@ -364,7 +364,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "CartelPendientes";
             this.Size = new System.Drawing.Size(1258, 326);
             this.panel1.ResumeLayout(false);

@@ -70,13 +70,13 @@
             this.panel1.Location = new System.Drawing.Point(6, 6);
             this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1246, 283);
+            this.panel1.Size = new System.Drawing.Size(1246, 326);
             this.panel1.TabIndex = 3;
             // 
             // lShowResp
             // 
             this.lShowResp.AutoSize = true;
-            this.lShowResp.Location = new System.Drawing.Point(210, 86);
+            this.lShowResp.Location = new System.Drawing.Point(210, 111);
             this.lShowResp.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lShowResp.Name = "lShowResp";
             this.lShowResp.Size = new System.Drawing.Size(102, 25);
@@ -87,7 +87,7 @@
             // 
             this.lResp.AutoSize = true;
             this.lResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lResp.Location = new System.Drawing.Point(30, 86);
+            this.lResp.Location = new System.Drawing.Point(30, 111);
             this.lResp.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lResp.Name = "lResp";
             this.lResp.Size = new System.Drawing.Size(157, 26);
@@ -97,7 +97,7 @@
             // lShowOrg
             // 
             this.lShowOrg.AutoSize = true;
-            this.lShowOrg.Location = new System.Drawing.Point(164, 52);
+            this.lShowOrg.Location = new System.Drawing.Point(166, 69);
             this.lShowOrg.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lShowOrg.Name = "lShowOrg";
             this.lShowOrg.Size = new System.Drawing.Size(91, 25);
@@ -107,7 +107,7 @@
             // lShowIni
             // 
             this.lShowIni.AutoSize = true;
-            this.lShowIni.Location = new System.Drawing.Point(922, 158);
+            this.lShowIni.Location = new System.Drawing.Point(913, 158);
             this.lShowIni.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lShowIni.Name = "lShowIni";
             this.lShowIni.Size = new System.Drawing.Size(34, 25);
@@ -118,7 +118,7 @@
             // 
             this.lFecha.AutoSize = true;
             this.lFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lFecha.Location = new System.Drawing.Point(826, 158);
+            this.lFecha.Location = new System.Drawing.Point(817, 158);
             this.lFecha.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lFecha.Name = "lFecha";
             this.lFecha.Size = new System.Drawing.Size(84, 26);
@@ -129,7 +129,7 @@
             // 
             this.lOrg.AutoSize = true;
             this.lOrg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lOrg.Location = new System.Drawing.Point(30, 52);
+            this.lOrg.Location = new System.Drawing.Point(30, 69);
             this.lOrg.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lOrg.Name = "lOrg";
             this.lOrg.Size = new System.Drawing.Size(115, 26);
@@ -139,7 +139,7 @@
             // lTipoActividad
             // 
             this.lTipoActividad.AutoSize = true;
-            this.lTipoActividad.Location = new System.Drawing.Point(1044, 112);
+            this.lTipoActividad.Location = new System.Drawing.Point(1035, 112);
             this.lTipoActividad.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lTipoActividad.Name = "lTipoActividad";
             this.lTipoActividad.Size = new System.Drawing.Size(76, 25);
@@ -150,7 +150,7 @@
             // 
             this.lTipoA.AutoSize = true;
             this.lTipoA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTipoA.Location = new System.Drawing.Point(826, 112);
+            this.lTipoA.Location = new System.Drawing.Point(817, 111);
             this.lTipoA.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lTipoA.Name = "lTipoA";
             this.lTipoA.Size = new System.Drawing.Size(202, 26);
@@ -164,7 +164,7 @@
             this.bSolicitar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.bSolicitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bSolicitar.ForeColor = System.Drawing.Color.Black;
-            this.bSolicitar.Location = new System.Drawing.Point(1112, 216);
+            this.bSolicitar.Location = new System.Drawing.Point(1112, 259);
             this.bSolicitar.Margin = new System.Windows.Forms.Padding(6);
             this.bSolicitar.Name = "bSolicitar";
             this.bSolicitar.Size = new System.Drawing.Size(128, 61);
@@ -176,7 +176,7 @@
             // 
             this.lNumPlazas.AutoSize = true;
             this.lNumPlazas.BackColor = System.Drawing.Color.Transparent;
-            this.lNumPlazas.Location = new System.Drawing.Point(1058, 207);
+            this.lNumPlazas.Location = new System.Drawing.Point(1044, 208);
             this.lNumPlazas.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lNumPlazas.Name = "lNumPlazas";
             this.lNumPlazas.Size = new System.Drawing.Size(53, 25);
@@ -187,7 +187,7 @@
             // 
             this.lPlazas.AutoSize = true;
             this.lPlazas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lPlazas.Location = new System.Drawing.Point(826, 207);
+            this.lPlazas.Location = new System.Drawing.Point(817, 207);
             this.lPlazas.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lPlazas.Name = "lPlazas";
             this.lPlazas.Size = new System.Drawing.Size(229, 26);
@@ -220,7 +220,7 @@
             // lDescripcion
             // 
             this.lDescripcion.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDescripcion.Location = new System.Drawing.Point(282, 122);
+            this.lDescripcion.Location = new System.Drawing.Point(282, 158);
             this.lDescripcion.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lDescripcion.Name = "lDescripcion";
             this.lDescripcion.Size = new System.Drawing.Size(532, 150);
@@ -229,7 +229,7 @@
             // 
             // pict
             // 
-            this.pict.Location = new System.Drawing.Point(6, 122);
+            this.pict.Location = new System.Drawing.Point(6, 158);
             this.pict.Margin = new System.Windows.Forms.Padding(6);
             this.pict.Name = "pict";
             this.pict.Size = new System.Drawing.Size(264, 156);
@@ -245,7 +245,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "CartelActividadesStandard";
-            this.Size = new System.Drawing.Size(1258, 294);
+            this.Size = new System.Drawing.Size(1258, 338);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).EndInit();

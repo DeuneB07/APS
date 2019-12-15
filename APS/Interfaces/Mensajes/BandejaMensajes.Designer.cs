@@ -114,7 +114,6 @@
             // bSalir
             // 
             this.bSalir.BackColor = System.Drawing.Color.Transparent;
-            this.bSalir.BackgroundImage = global::APS.Properties.Resources.exiticon;
             this.bSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bSalir.FlatAppearance.BorderSize = 0;
             this.bSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -127,7 +126,8 @@
             // 
             // pictEnviados
             // 
-            this.pictEnviados.BackgroundImage = global::APS.Properties.Resources.received;
+            this.pictEnviados.BackColor = System.Drawing.Color.Transparent;
+            this.pictEnviados.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictEnviados.BackgroundImage")));
             this.pictEnviados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictEnviados.Location = new System.Drawing.Point(44, 197);
             this.pictEnviados.Name = "pictEnviados";
@@ -138,7 +138,7 @@
             // 
             // pictCont3
             // 
-            this.pictCont3.BackgroundImage = global::APS.Properties.Resources.newmessage;
+            this.pictCont3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictCont3.BackgroundImage")));
             this.pictCont3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictCont3.Location = new System.Drawing.Point(27, 271);
             this.pictCont3.Name = "pictCont3";
@@ -149,7 +149,8 @@
             // 
             // pictEscribir
             // 
-            this.pictEscribir.BackgroundImage = global::APS.Properties.Resources.escribir;
+            this.pictEscribir.BackColor = System.Drawing.Color.Transparent;
+            this.pictEscribir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictEscribir.BackgroundImage")));
             this.pictEscribir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictEscribir.Location = new System.Drawing.Point(44, 101);
             this.pictEscribir.Name = "pictEscribir";
@@ -160,7 +161,7 @@
             // 
             // pictCont1
             // 
-            this.pictCont1.BackgroundImage = global::APS.Properties.Resources.newmessage;
+            this.pictCont1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictCont1.BackgroundImage")));
             this.pictCont1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictCont1.Location = new System.Drawing.Point(27, 83);
             this.pictCont1.Name = "pictCont1";
@@ -171,18 +172,19 @@
             // 
             // pictRecibidos
             // 
-            this.pictRecibidos.BackgroundImage = global::APS.Properties.Resources.enviados;
+            this.pictRecibidos.BackColor = System.Drawing.Color.Transparent;
+            this.pictRecibidos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictRecibidos.BackgroundImage")));
             this.pictRecibidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictRecibidos.Location = new System.Drawing.Point(44, 290);
+            this.pictRecibidos.Location = new System.Drawing.Point(44, 287);
             this.pictRecibidos.Name = "pictRecibidos";
-            this.pictRecibidos.Size = new System.Drawing.Size(37, 30);
+            this.pictRecibidos.Size = new System.Drawing.Size(37, 35);
             this.pictRecibidos.TabIndex = 25;
             this.pictRecibidos.TabStop = false;
             this.pictRecibidos.Click += new System.EventHandler(this.pictRecibidos_Click);
             // 
             // pictSobres
             // 
-            this.pictSobres.BackgroundImage = global::APS.Properties.Resources.sobres;
+            this.pictSobres.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictSobres.BackgroundImage")));
             this.pictSobres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictSobres.Location = new System.Drawing.Point(12, 12);
             this.pictSobres.Name = "pictSobres";
@@ -192,7 +194,7 @@
             // 
             // pictCont2
             // 
-            this.pictCont2.BackgroundImage = global::APS.Properties.Resources.newmessage;
+            this.pictCont2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictCont2.BackgroundImage")));
             this.pictCont2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictCont2.Location = new System.Drawing.Point(27, 182);
             this.pictCont2.Name = "pictCont2";

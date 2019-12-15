@@ -41,8 +41,10 @@ namespace APS.Interfaces
             if (user.NombreUser!=null && !user.NombreUser.Trim().Equals("")) lWelcome.Text = "¡Bienvenido, " + user.NombreUser+"!";
             else lWelcome.Text = "¡Bienvenido, "+ user.Nombre + "!";
 
-            lNewAct.Visible = user.InsertarPantalla("ACTIVIDADES");
-            lNuevoProy.Visible = user.InsertarPantalla("PROYECTOS");
+            lActividad.Visible = user.InsertarPantalla("ACTIVIDADES");
+            pictActividad.Visible = user.InsertarPantalla("ACTIVIDADES");
+            lProyecto.Visible = user.InsertarPantalla("PROYECTOS");
+            pictProyectos.Visible = user.InsertarPantalla("PROYECTOS");
 
             if (user.AccesoPantalla("MATCH")) cargarMatchActividadesInicio(); //HECHO
             if (user.AccesoPantalla("TODAS")) cargarTodasActividadesInicio(); //HECHO
@@ -1082,40 +1084,20 @@ namespace APS.Interfaces
         //
         // MÉTODOS EXTRA
         //
-        private void bLogout_Click(object sender, EventArgs e)
+        private void PaginaPrincipal_Load(object sender, EventArgs e)
         {
-            crearCierreSesion();
+            TopMost = true;
         }
 
-        private void crearCierreSesion()
+        private void pictPerfil_Click(object sender, EventArgs e) //Abrir Perfil
         {
-            DialogResult emCierreDialog;
-            string mensaje = "¿Quieres cerrar la sesión actual?";
-            string caption = "¡AVISO!";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
-
-            if (emCierreDialog == DialogResult.Yes) this.Close();
-        }
-
-        private void lPerfil_Click(object sender, EventArgs e)
-        {
-            GoPerfilUsuario();
-            if (user.Imagen != null) pictureUser.Image = user.Imagen;
-            else pictureUser.Image = global::APS.Properties.Resources.userDefault;
-            cargarMatchActividadesInicio();
-        }
-
-        private void GoPerfilUsuario()
-        {
-
             if (user.Rol.NombreRol.Equals("ONG"))
             {
                 FPerfilONG pagONG = new FPerfilONG(user);
                 this.Visible = false;
                 pagONG.ShowDialog();
             }
-            else if(user.Rol.NombreRol.Equals("PAS"))
+            else if (user.Rol.NombreRol.Equals("PAS"))
             {
                 FPerfilPAS pagPAS = new FPerfilPAS(user);
                 this.Visible = false;
@@ -1128,7 +1110,7 @@ namespace APS.Interfaces
                 pagina.ShowDialog();
             }
 
-            if(user.Email.Trim().Equals(""))
+            if (user.Email.Trim().Equals(""))
             {
                 this.Close();
             }
@@ -1136,14 +1118,22 @@ namespace APS.Interfaces
             {
                 this.Visible = true;
             }
+
+            //Extra
+            if (user.Imagen != null) pictureUser.Image = user.Imagen;
+            else pictureUser.Image = global::APS.Properties.Resources.userDefault;
+            cargarMatchActividadesInicio();
         }
 
-        private void lNewAct_Click(object sender, EventArgs e)
+        private void pictMensajes_Click(object sender, EventArgs e) //Abrir Mensajes
         {
-            goNuevaActividad();
+            BandejaMensajes msg = new BandejaMensajes(user);
+            this.Visible = false;
+            msg.ShowDialog();
+            this.Visible = true;
         }
 
-        private void goNuevaActividad()
+        private void pictActividad_Click(object sender, EventArgs e) //Abrir Actividad
         {
             NuevaActividad newAct = new NuevaActividad(user);
             this.Visible = false;
@@ -1152,23 +1142,15 @@ namespace APS.Interfaces
             cargarRevisionActividadesInicio();
         }
 
-        private void lMensajes_Click(object sender, EventArgs e)
+        private void pictCerrarSesion_Click(object sender, EventArgs e)
         {
-            this.goBandeja();
-        }
+            DialogResult emCierreDialog;
+            string mensaje = "¿Quieres cerrar la sesión actual?";
+            string caption = "¡AVISO!";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
 
-        private void goBandeja()
-        {
-            BandejaMensajes msg = new BandejaMensajes(user);
-            this.Visible = false;
-            msg.ShowDialog();
-            this.Visible = true;
-        }
-
-        private void PaginaPrincipal_Load(object sender, EventArgs e)
-        {
-            TopMost = true;
-            TopMost = false;
+            if (emCierreDialog == DialogResult.Yes) this.Close();
         }
     }
 }
