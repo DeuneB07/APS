@@ -437,6 +437,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\perfilicon.webp" />
     <None Include="WePassDataSet.xsc">
       <DependentUpon>WePassDataSet.xsd</DependentUpon>
     </None>
@@ -492,6 +493,12 @@
       <DependentUpon>dbUsuario.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\cerrarsesion.png" />
+    <None Include="Resources\historialicon1.png" />
+    <None Include="Resources\historialicon.png" />
+    <None Include="Resources\proyectoicon.png" />
+    <None Include="Resources\actividadicon.png" />
+    <None Include="Resources\mensajesicon.png" />
     <None Include="Resources\exiticon.png" />
     <None Include="Resources\received.png" />
     <None Include="Resources\enviados.png" />
