@@ -125,12 +125,6 @@
     <Compile Include="Interfaces\Gestión Actividades\VerParticipantes.Designer.cs">
       <DependentUpon>VerParticipantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\LoadingPagPrinc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\LoadingPagPrinc.Designer.cs">
-      <DependentUpon>LoadingPagPrinc.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces\Mensajes\AperturaMensajes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -338,9 +332,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Gestión Actividades\VerParticipantes.resx">
       <DependentUpon>VerParticipantes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\LoadingPagPrinc.resx">
-      <DependentUpon>LoadingPagPrinc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Mensajes\BandejaMensajes.resx">
       <DependentUpon>BandejaMensajes.cs</DependentUpon>

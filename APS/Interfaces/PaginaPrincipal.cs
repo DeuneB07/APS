@@ -10,7 +10,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace APS.Interfaces
@@ -39,7 +38,7 @@ namespace APS.Interfaces
             if (!user.AccesoPantalla("MIS ACTIVIDADES")) tabUser.Controls.Remove(this.pMisActividades);
             if (!user.AccesoPantalla("ACTIVIDADES INSCRITAS")) tabUser.Controls.Remove(this.pActividadesInscritas);
 
-            if (!user.NombreUser.Trim().Equals("")) lWelcome.Text = "¡Bienvenido, " + user.NombreUser+";
+            if (user.NombreUser!=null && !user.NombreUser.Trim().Equals("")) lWelcome.Text = "¡Bienvenido, " + user.NombreUser+"!";
             else lWelcome.Text = "¡Bienvenido, "+ user.Nombre + "!";
 
             lNewAct.Visible = user.InsertarPantalla("ACTIVIDADES");
@@ -67,6 +66,11 @@ namespace APS.Interfaces
         //
         private void cargarMatchActividadesInicio()
         {
+            panelMatch.Controls.Clear();
+            panelMatch.AutoScroll = false;
+            panelMatch.AutoScroll = true;
+            panelMatch.RowCount = 1;
+
             pMatch.Controls.Add(panelMatch);
             cargarFiltrosMatch();
 
@@ -1076,7 +1080,10 @@ namespace APS.Interfaces
 
         private void lPerfil_Click(object sender, EventArgs e)
         {
-            this.GoPerfilUsuario();
+            GoPerfilUsuario();
+            if (user.Imagen != null) pictureUser.Image = user.Imagen;
+            else pictureUser.Image = global::APS.Properties.Resources.userDefault;
+            cargarMatchActividadesInicio();
         }
 
         private void GoPerfilUsuario()

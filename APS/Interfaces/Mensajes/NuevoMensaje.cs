@@ -27,7 +27,7 @@ namespace APS.Interfaces.Mensajes
         {
             try
             {
-                Mapeo.Mensaje escrito = new Mapeo.Mensaje(tAsunto.Text.ToString(), tTexto.Text.ToString(), DateTime.Today.ToShortDateString(), user, new Usuario(tReceptor.text));
+                Mapeo.Mensaje escrito = new Mapeo.Mensaje(tAsunto.Text.ToString(), tTexto.Text.ToString(), DateTime.Today, user, new Usuario(tReceptor.Text));
                 this.Close();
             }
             catch (Exception exc)

@@ -28,7 +28,7 @@ namespace APS.Interfaces.Perfil
         private void cargaMensajesRecibidos()
         {
 
-            List<Mensaje> mensajes = Mensaje.ListaMensajes(user);
+            List<Mensaje> mensajes = Mensaje.ListaMensajesRecibidos(user);
 
         }
     }

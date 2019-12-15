@@ -51,8 +51,8 @@ namespace APS.Interfaces
 
         private void GoPaginaPrincipal(Usuario user)
         {
-            PaginaPrincipal pagina = new PaginaPrincipal(user);
             this.Visible = false;
+            PaginaPrincipal pagina = new PaginaPrincipal(user);
             pagina.ShowDialog();
             this.Close();
         }

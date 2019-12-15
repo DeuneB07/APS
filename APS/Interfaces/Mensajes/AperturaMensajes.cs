@@ -43,10 +43,9 @@ namespace APS.Interfaces.Mensajes
         private void bresponder_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            nuevo.ShowDialog();
+            //nuevo.ShowDialog();
             this.Visible = true;
         }
     }
 }
 
-}

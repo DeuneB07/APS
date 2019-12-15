@@ -16,12 +16,9 @@ namespace APS.Interfaces
     public partial class PaginaInicio : Form
     {
 
-        Usuario user;
-
         public PaginaInicio()
         {
             InitializeComponent();
-            user = null;
         }
 
         private void bPersonalUMA_Click(object sender, EventArgs e)
