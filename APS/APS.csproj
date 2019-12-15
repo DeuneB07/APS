@@ -302,16 +302,16 @@
     <Compile Include="Mapeo\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces\Login\SplashLoading.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaces\Login\SplashLoading.Designer.cs">
       <DependentUpon>SplashLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="WePassDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -437,6 +437,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\perfilicon.webp" />
     <None Include="WePassDataSet.xsc">
       <DependentUpon>WePassDataSet.xsd</DependentUpon>
     </None>
@@ -492,6 +493,12 @@
       <DependentUpon>dbUsuario.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\cerrarsesion.png" />
+    <None Include="Resources\historialicon1.png" />
+    <None Include="Resources\historialicon.png" />
+    <None Include="Resources\proyectoicon.png" />
+    <None Include="Resources\actividadicon.png" />
+    <None Include="Resources\mensajesicon.png" />
     <None Include="Resources\exiticon.png" />
     <None Include="Resources\received.png" />
     <None Include="Resources\enviados.png" />
@@ -499,8 +506,6 @@
     <None Include="Resources\newmessage.png" />
     <None Include="Resources\circulo.png" />
     <None Include="Resources\sobres.png" />
-    <None Include="Resources\Loading_2.gif" />
-    <None Include="Resources\loading1.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -183,7 +183,7 @@
             // 
             this.tOrganizadorRevision.Enabled = false;
             this.tOrganizadorRevision.Location = new System.Drawing.Point(161, 25);
-            this.tOrganizadorRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tOrganizadorRevision.Margin = new System.Windows.Forms.Padding(2);
             this.tOrganizadorRevision.Name = "tOrganizadorRevision";
             this.tOrganizadorRevision.Size = new System.Drawing.Size(138, 20);
             this.tOrganizadorRevision.TabIndex = 40;
@@ -192,7 +192,7 @@
             // 
             this.tNombreActRevision.Enabled = false;
             this.tNombreActRevision.Location = new System.Drawing.Point(161, 58);
-            this.tNombreActRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tNombreActRevision.Margin = new System.Windows.Forms.Padding(2);
             this.tNombreActRevision.Name = "tNombreActRevision";
             this.tNombreActRevision.Size = new System.Drawing.Size(138, 20);
             this.tNombreActRevision.TabIndex = 41;
@@ -201,7 +201,7 @@
             // 
             this.tDescripcionRevision.Enabled = false;
             this.tDescripcionRevision.Location = new System.Drawing.Point(161, 98);
-            this.tDescripcionRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tDescripcionRevision.Margin = new System.Windows.Forms.Padding(2);
             this.tDescripcionRevision.Name = "tDescripcionRevision";
             this.tDescripcionRevision.Size = new System.Drawing.Size(138, 59);
             this.tDescripcionRevision.TabIndex = 42;
@@ -211,7 +211,7 @@
             // 
             this.tNumPlazasRevision.Enabled = false;
             this.tNumPlazasRevision.Location = new System.Drawing.Point(161, 173);
-            this.tNumPlazasRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tNumPlazasRevision.Margin = new System.Windows.Forms.Padding(2);
             this.tNumPlazasRevision.Name = "tNumPlazasRevision";
             this.tNumPlazasRevision.Size = new System.Drawing.Size(43, 20);
             this.tNumPlazasRevision.TabIndex = 43;
@@ -220,7 +220,7 @@
             // 
             this.tNumHorasRevision.Enabled = false;
             this.tNumHorasRevision.Location = new System.Drawing.Point(161, 210);
-            this.tNumHorasRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tNumHorasRevision.Margin = new System.Windows.Forms.Padding(2);
             this.tNumHorasRevision.Name = "tNumHorasRevision";
             this.tNumHorasRevision.Size = new System.Drawing.Size(43, 20);
             this.tNumHorasRevision.TabIndex = 44;
@@ -229,7 +229,7 @@
             // 
             this.dateTimePickerFechaIniRevision.Enabled = false;
             this.dateTimePickerFechaIniRevision.Location = new System.Drawing.Point(393, 173);
-            this.dateTimePickerFechaIniRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFechaIniRevision.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFechaIniRevision.Name = "dateTimePickerFechaIniRevision";
             this.dateTimePickerFechaIniRevision.Size = new System.Drawing.Size(190, 20);
             this.dateTimePickerFechaIniRevision.TabIndex = 45;
@@ -238,7 +238,7 @@
             // 
             this.dateTimePickerFechaFinRevision.Enabled = false;
             this.dateTimePickerFechaFinRevision.Location = new System.Drawing.Point(393, 204);
-            this.dateTimePickerFechaFinRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFechaFinRevision.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFechaFinRevision.Name = "dateTimePickerFechaFinRevision";
             this.dateTimePickerFechaFinRevision.Size = new System.Drawing.Size(190, 20);
             this.dateTimePickerFechaFinRevision.TabIndex = 46;
@@ -247,7 +247,7 @@
             // 
             this.tLugarRevision.Enabled = false;
             this.tLugarRevision.Location = new System.Drawing.Point(161, 245);
-            this.tLugarRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tLugarRevision.Margin = new System.Windows.Forms.Padding(2);
             this.tLugarRevision.Name = "tLugarRevision";
             this.tLugarRevision.Size = new System.Drawing.Size(138, 20);
             this.tLugarRevision.TabIndex = 47;
@@ -255,7 +255,7 @@
             // btnAceptarRevision
             // 
             this.btnAceptarRevision.Location = new System.Drawing.Point(350, 380);
-            this.btnAceptarRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAceptarRevision.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptarRevision.Name = "btnAceptarRevision";
             this.btnAceptarRevision.Size = new System.Drawing.Size(66, 31);
             this.btnAceptarRevision.TabIndex = 52;
@@ -266,7 +266,7 @@
             // btnCancelarRevision
             // 
             this.btnCancelarRevision.Location = new System.Drawing.Point(522, 380);
-            this.btnCancelarRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarRevision.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarRevision.Name = "btnCancelarRevision";
             this.btnCancelarRevision.Size = new System.Drawing.Size(68, 31);
             this.btnCancelarRevision.TabIndex = 54;
@@ -277,7 +277,7 @@
             // btnNegociarRevision
             // 
             this.btnNegociarRevision.Location = new System.Drawing.Point(436, 380);
-            this.btnNegociarRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNegociarRevision.Margin = new System.Windows.Forms.Padding(2);
             this.btnNegociarRevision.Name = "btnNegociarRevision";
             this.btnNegociarRevision.Size = new System.Drawing.Size(67, 31);
             this.btnNegociarRevision.TabIndex = 55;
@@ -290,7 +290,7 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::APS.Properties.Resources.no_image;
             this.pictureBox1.Location = new System.Drawing.Point(389, 28);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(193, 129);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -300,7 +300,7 @@
             // bSubirRevision
             // 
             this.bSubirRevision.Location = new System.Drawing.Point(31, 392);
-            this.bSubirRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bSubirRevision.Margin = new System.Windows.Forms.Padding(2);
             this.bSubirRevision.Name = "bSubirRevision";
             this.bSubirRevision.Size = new System.Drawing.Size(66, 19);
             this.bSubirRevision.TabIndex = 57;
@@ -371,6 +371,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VerActividadRevision";
             this.Text = "VerActividadRevision";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
