@@ -39,7 +39,7 @@ namespace APS.Interfaces
             if (!user.AccesoPantalla("MIS ACTIVIDADES")) tabUser.Controls.Remove(this.pMisActividades);
             if (!user.AccesoPantalla("ACTIVIDADES INSCRITAS")) tabUser.Controls.Remove(this.pActividadesInscritas);
 
-            if (!user.NombreUser.Trim().Equals("")) lWelcome.Text = "¡Bienvenido, " + user.NombreUser+";
+            if (!user.NombreUser.Trim().Equals("")) lWelcome.Text = "¡Bienvenido, " + user.NombreUser+"!";
             else lWelcome.Text = "¡Bienvenido, "+ user.Nombre + "!";
 
             lNewAct.Visible = user.InsertarPantalla("ACTIVIDADES");
@@ -51,8 +51,8 @@ namespace APS.Interfaces
             //if (user.AccesoPantalla("VALORACION")) tabUser.Controls.Remove(this.pValoracion);
             if (user.AccesoPantalla("PENDIENTES")) cargarPendientesActividadesInicio(); //HECHO
             if (user.AccesoPantalla("REVISION")) cargarRevisionActividadesInicio(); //HECHO
-            if (user.AccesoPantalla("MIS ACTIVIDADES")) cargarMisActividadesInicio();
-            if (user.AccesoPantalla("ACTIVIDADES INSCRITAS")) cargarActividadesInscritas();
+            if (user.AccesoPantalla("MIS ACTIVIDADES")) cargarMisActividadesInicio(); //HECHO
+            if (user.AccesoPantalla("ACTIVIDADES INSCRITAS")) cargarActividadesInscritas(); //HECHO
 
             t.Abort();
         }
