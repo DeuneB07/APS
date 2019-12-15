@@ -417,7 +417,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PaginaPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pagina Principal";
+            this.Load += new System.EventHandler(this.PaginaPrincipal_Load);
             this.tabUser.ResumeLayout(false);
             this.pMatch.ResumeLayout(false);
             this.pTodas.ResumeLayout(false);
