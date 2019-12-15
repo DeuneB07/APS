@@ -51,11 +51,5 @@ namespace APS.Interfaces
         }
 
         #endregion
-
-        private void bVerMas_Click(object sender, EventArgs e)
-        {
-            PruebaVer pa = new PruebaVer(this.a);
-            pa.ShowDialog();
-        }
     }
 }
