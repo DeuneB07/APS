@@ -22,6 +22,9 @@ namespace APS.Interfaces
 
         public PaginaPrincipal(Usuario user)
         {
+            Thread t = new Thread(new ThreadStart(StartForm));
+            t.Start();
+
             InitializeComponent();
             this.user = user;
             if (user.Imagen != null) pictureUser.Image = user.Imagen;
@@ -36,8 +39,8 @@ namespace APS.Interfaces
             if (!user.AccesoPantalla("MIS ACTIVIDADES")) tabUser.Controls.Remove(this.pMisActividades);
             if (!user.AccesoPantalla("ACTIVIDADES INSCRITAS")) tabUser.Controls.Remove(this.pActividadesInscritas);
 
-            if (user.NombreUser != null) lWelcome.Text = "¡Bienvenido, " + user.Nombre + " " + user.Apellido1 + "!";
-            else lWelcome.Text = "¡Bienvenido!";
+            if (!user.NombreUser.Trim().Equals("")) lWelcome.Text = "¡Bienvenido, " + user.NombreUser+";
+            else lWelcome.Text = "¡Bienvenido, "+ user.Nombre + "!";
 
             lNewAct.Visible = user.InsertarPantalla("ACTIVIDADES");
             lNuevoProy.Visible = user.InsertarPantalla("PROYECTOS");
@@ -50,6 +53,13 @@ namespace APS.Interfaces
             if (user.AccesoPantalla("REVISION")) cargarRevisionActividadesInicio(); //HECHO
             if (user.AccesoPantalla("MIS ACTIVIDADES")) cargarMisActividadesInicio();
             if (user.AccesoPantalla("ACTIVIDADES INSCRITAS")) cargarActividadesInscritas();
+
+            t.Abort();
+        }
+
+        public void StartForm()
+        {
+            Application.Run(new SplashLoading());
         }
 
         //
@@ -1126,6 +1136,11 @@ namespace APS.Interfaces
             this.Visible = false;
             //msg.showDialog();
             this.Visible = true;
+        }
+
+        private void PaginaPrincipal_Load(object sender, EventArgs e)
+        {
+            TopMost = true;
         }
     }
 }

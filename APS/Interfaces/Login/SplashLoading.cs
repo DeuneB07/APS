@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace APS.Interfaces
+namespace APS
 {
-    public partial class LoadingPagPrinc: Form
+    public partial class SplashLoading : Form
     {
-        public LoadingPagPrinc()
+        public SplashLoading()
         {
             InitializeComponent();
         }

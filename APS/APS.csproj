@@ -125,12 +125,6 @@
     <Compile Include="Interfaces\Gestión Actividades\VerParticipantes.Designer.cs">
       <DependentUpon>VerParticipantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\LoadingPagPrinc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\LoadingPagPrinc.Designer.cs">
-      <DependentUpon>LoadingPagPrinc.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces\Perfil\FPerfilONG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,6 +295,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Login\SplashLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Login\SplashLoading.Designer.cs">
+      <DependentUpon>SplashLoading.cs</DependentUpon>
+    </Compile>
     <Compile Include="WePassDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -314,9 +314,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Gestión Actividades\VerParticipantes.resx">
       <DependentUpon>VerParticipantes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\LoadingPagPrinc.resx">
-      <DependentUpon>LoadingPagPrinc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Perfil\FPerfilONG.resx">
       <DependentUpon>FPerfilONG.cs</DependentUpon>
@@ -394,6 +391,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Login\SplashLoading.resx">
+      <DependentUpon>SplashLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="ImagenesDB\dbActividad.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
