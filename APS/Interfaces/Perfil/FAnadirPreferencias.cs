@@ -27,9 +27,12 @@ namespace APS.Interfaces
             cargarAsignaturas();
             cargarTurnos();
             cargarTipoActividad();
-            cargarNumeroHoras();
             cargarTipoTrabajo();
             cargarAmbitoTrabajo();
+            comboTipo.SelectedItem = comboTipo.Items[0];
+            comboTurno.SelectedItem = comboTurno.Items[0];
+            comboTipoTrab.SelectedItem = comboTipoTrab.Items[0];
+            comboAmbitoTrab.SelectedItem = comboAmbitoTrab.Items[0];
         }
 
         private void cargarTurnos()
@@ -51,14 +54,6 @@ namespace APS.Interfaces
                 {
                     comboTipo.Items.Add(tAct);
                 }
-            }
-        }
-
-        private void cargarNumeroHoras()
-        {
-            for(int c = 0; c<=50; c++)
-            {
-                comboHoras.Items.Add(c);
             }
         }
 
@@ -110,6 +105,12 @@ namespace APS.Interfaces
             Preferencia p = null;
             try
             {
+                /*
+                 *  CONTROL DE ERRORES 
+                 */
+                if (textNombreComp.Text.Trim().Equals("")) throw new Exception("Nombre Preferencia no puede estar vacío");
+                if (comboTipo.SelectedItem == null) throw new Exception("Tipo de Actividad no puede ser vacía");
+
                 Asignatura a = (Asignatura)comboAsig.SelectedItem;
                 Grado g = (Grado)comboGrado.SelectedItem;
 
@@ -134,7 +135,7 @@ namespace APS.Interfaces
                 Enum.TryParse<AmbitoTrabajoE>(comboAmbitoTrab.Text, true, out resAmbTrabajo);
                 if (!comboAmbitoTrab.Text.Equals("")) p.AmbitoTrabajo = resAmbTrabajo;
 
-                if (comboHoras.Text != "") p.HorasPosibles = int.Parse(comboHoras.Text);
+                p.HorasPosibles = decimal.ToInt32(numericUpDown.Value);
 
                 foreach (Competencia c in listCompetencias.SelectedItems)
                 {
