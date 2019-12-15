@@ -165,6 +165,7 @@ namespace APS.Interfaces
 
             if(cBox.SelectedItem != null)
             {
+                Preferencia pref = (Preferencia)cBox.SelectedItem;
                 Grado g = ((Preferencia)cBox.SelectedItem).Grado;
                 Asignatura asig = ((Preferencia)cBox.SelectedItem).Asignatura;
                 Actividad.TurnoE turnoF = ((Preferencia)cBox.SelectedItem).Turno;
@@ -206,7 +207,7 @@ namespace APS.Interfaces
                 }
 
                 //Filtro TipoActividad
-                if (!tipoActF.Equals(Actividad.TipoActividadE.TODAS))
+                if (!tipoActF.ToString().Equals(Actividad.TipoActividadE.TODAS.ToString()))
                 {
                     foreach (Actividad a in Actividad.ListaActividades())
                     {
@@ -215,7 +216,7 @@ namespace APS.Interfaces
                 }
 
                 //Filtro TipoTrab
-                if (!tipoTrabF.Equals(Actividad.TipoActividadE.TODAS))
+                if (!tipoTrabF.ToString().Equals(Actividad.TipoActividadE.TODAS.ToString()))
                 {
                     foreach (Actividad a in Actividad.ListaActividades())
                     {
@@ -224,7 +225,7 @@ namespace APS.Interfaces
                 }
 
                 //Filtro AmbTrabajo
-                if (!ambTrabF.Equals(Actividad.TipoActividadE.TODAS))
+                if (!ambTrabF.ToString().Equals(Actividad.TipoActividadE.TODAS.ToString()))
                 {
                     foreach (Actividad a in Actividad.ListaActividades())
                     {

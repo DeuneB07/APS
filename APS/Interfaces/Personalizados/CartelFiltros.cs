@@ -27,7 +27,6 @@ namespace APS.Interfaces.Personalizados
             cargarTipoActividad();
             cargarGrados();
             cargarAsignaturas();
-            cargarHoras();
 
         }
 
@@ -93,15 +92,5 @@ namespace APS.Interfaces.Personalizados
                 }
             }
         }
-
-        private void cargarHoras()
-        {
-            for (int c = 0; c <= 50; c++)
-            {
-                cHoras.Items.Add(c);
-            }
-        }
-
-
     }
 }
