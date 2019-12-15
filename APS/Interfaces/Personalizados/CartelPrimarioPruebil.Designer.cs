@@ -60,7 +60,6 @@
             this.bVerMas.Size = new System.Drawing.Size(30, 30);
             this.bVerMas.TabIndex = 7;
             this.bVerMas.UseVisualStyleBackColor = true;
-            this.bVerMas.Click += new System.EventHandler(this.bVerMas_Click);
             // 
             // labelTitulo
             // 
