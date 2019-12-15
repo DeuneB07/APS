@@ -1087,6 +1087,7 @@ namespace APS.Interfaces
         private void PaginaPrincipal_Load(object sender, EventArgs e)
         {
             TopMost = true;
+            TopMost = false;
         }
 
         private void pictPerfil_Click(object sender, EventArgs e) //Abrir Perfil
