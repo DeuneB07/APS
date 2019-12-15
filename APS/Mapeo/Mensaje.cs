@@ -81,8 +81,8 @@ namespace APS.Mapeo
             string[] fechaIn = tupla[3].ToString().Split('-');
             date = new DateTime(int.Parse(fechaIn[0]), int.Parse(fechaIn[1]), int.Parse(fechaIn[2]));
 
-            emisor = new Usuario(tupla[4].ToString());
-            receptor = new Usuario(tupla[5].ToString());
+            this.emisor = new Usuario(tupla[4].ToString());
+            this.receptor = new Usuario(tupla[5].ToString());
         }
 
         public Mensaje(String asunto, String texto, DateTime date, Usuario emisor, Usuario receptor)
@@ -136,7 +136,7 @@ namespace APS.Mapeo
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
                 miBD.Update("UPDATE Mensajes SET emailEmisor = '" + value.Email
-                + "' WHERE ID_Mensaje = " + this.ID_Mensaje + ";");
+                + "' WHERE ID_Mensaje = " + ID_Mensaje + ";");
                 emisor = value;
             }
         }
@@ -170,7 +170,7 @@ namespace APS.Mapeo
             // Actualiza el atributo en memoria y en la base de datos
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             miBD.Delete("DELETE FROM Mensajes WHERE ID_Mensaje =" + this.ID_mensaje + ";");
-            emisor = receptor= null;
+            emisor = receptor = null;
             asunto = texto = null;
             date = DateTime.Today;
             ID_mensaje = -1;

@@ -27,6 +27,9 @@ namespace APS.Interfaces.Perfil
             cargarMensajesRecibidos();
         }
 
+        //
+        //CARGAS
+        //
         private void cargarMensajesRecibidos()
         {
             envRec = 1;
@@ -61,18 +64,6 @@ namespace APS.Interfaces.Perfil
 
         }
 
-        private void bEliminarRecibido_Click(object sender, EventArgs eventArgs, Mensaje msg)
-        {
-            user.RemoveMensaje(msg);
-        }
-
-        private void bResponder_Click(object sender, EventArgs eventArgs, Mensaje msg)
-        {
-            NuevoMensaje newMsg = new NuevoMensaje(user, msg.Emisor);
-            newMsg.ShowDialog();
-            if (envRec == 0) cargarMensajesEnviados();
-        }
-
         private void cargarMensajesEnviados()
         {
             envRec = 0;
@@ -87,6 +78,7 @@ namespace APS.Interfaces.Perfil
             int c = 0;
             foreach (Mensaje msg in mensajes)
             {
+                //Console.WriteLine("FOREACH MENSAJES ENVIADOS: " + msg.Emisor.Email + " // " + msg.Receptor.Email);
                 carMensajes[c] = new CartelMensajes(msg);
                 panelMensajes.Controls.Add(carMensajes[c], 0, c);
                 panelMensajes.RowCount = panelMensajes.RowCount + 1;
@@ -104,28 +96,78 @@ namespace APS.Interfaces.Perfil
             }
         }
 
+        //
+        //BOTONES CARTEL
+        //
+        private void bResponder_Click(object sender, EventArgs eventArgs, Mensaje msg)
+        {
+            NuevoMensaje newMsg = new NuevoMensaje(user, msg.Emisor);
+            newMsg.ShowDialog();
+            if (envRec == 0) cargarMensajesEnviados();
+        }
+
+        private void bEliminarRecibido_Click(object sender, EventArgs eventArgs, Mensaje msg)
+        {
+            user.RemoveMensajeRecibido(msg);
+            msg.Receptor.RemoveMensajeEnviado(msg);
+            msg.BorraMensaje();
+            cargarMensajesRecibidos();
+        }
+
         private void bEliminarEnviado_Click(object sender, EventArgs eventArgs, Mensaje msg)
         {
-            user.RemoveMensaje(msg);
+            user.RemoveMensajeEnviado(msg);
+            msg.Emisor.RemoveMensajeRecibido(msg);
+            msg.BorraMensaje();
+            cargarMensajesEnviados();
         }
 
-        private void pictCont2_Click(object sender, EventArgs e) //Enviados
-        {
-            if(envRec == 1) cargarMensajesEnviados();
-        }
-
-        private void pictCont3_Click(object sender, EventArgs e) //Recibidos
-        {
-            if(envRec == 0) cargarMensajesRecibidos();
-        }
-
-        private void pictCont1_Click(object sender, EventArgs e) //Redactar
+        //
+        //REDACTAR
+        //
+        private void pictCont1_Click(object sender, EventArgs e)
         {
             NuevoMensaje newMsg = new NuevoMensaje(user, null);
             newMsg.ShowDialog();
             if (envRec == 0) cargarMensajesEnviados();
         }
 
+        private void pictEscribir_Click(object sender, EventArgs e)
+        {
+            NuevoMensaje newMsg = new NuevoMensaje(user, null);
+            newMsg.ShowDialog();
+            if (envRec == 0) cargarMensajesEnviados();
+        }
+
+        //
+        //ENVIADOS
+        //
+        private void pictCont2_Click(object sender, EventArgs e)
+        {
+            if(envRec == 1) cargarMensajesEnviados();
+        }
+
+        private void pictEnviados_Click(object sender, EventArgs e)
+        {
+            if (envRec == 1) cargarMensajesEnviados();
+        }
+
+        //
+        //RECIBIDOS
+        //
+        private void pictCont3_Click(object sender, EventArgs e)
+        {
+            if(envRec == 0) cargarMensajesRecibidos();
+        }
+
+        private void pictRecibidos_Click(object sender, EventArgs e)
+        {
+            if (envRec == 0) cargarMensajesRecibidos();
+        }
+
+        //
+        //SALIR
+        //
         private void bSalir_Click(object sender, EventArgs e)
         {
             this.Close();

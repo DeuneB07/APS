@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartelMensajes));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lShowMensaje = new System.Windows.Forms.TextBox();
             this.bEliminar = new System.Windows.Forms.Button();
             this.bResponder = new System.Windows.Forms.Button();
             this.lShowFecha = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.lAsunto = new System.Windows.Forms.Label();
             this.lReceptor = new System.Windows.Forms.Label();
             this.lEmisor = new System.Windows.Forms.Label();
-            this.lShowMensaje = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,8 +60,23 @@
             this.panel1.Controls.Add(this.lEmisor);
             this.panel1.Location = new System.Drawing.Point(17, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(573, 144);
+            this.panel1.Size = new System.Drawing.Size(523, 144);
             this.panel1.TabIndex = 0;
+            // 
+            // lShowMensaje
+            // 
+            this.lShowMensaje.BackColor = System.Drawing.Color.White;
+            this.lShowMensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lShowMensaje.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lShowMensaje.Enabled = false;
+            this.lShowMensaje.Location = new System.Drawing.Point(16, 37);
+            this.lShowMensaje.Multiline = true;
+            this.lShowMensaje.Name = "lShowMensaje";
+            this.lShowMensaje.ReadOnly = true;
+            this.lShowMensaje.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.lShowMensaje.Size = new System.Drawing.Size(491, 59);
+            this.lShowMensaje.TabIndex = 11;
+            this.lShowMensaje.Text = "mensaje";
             // 
             // bEliminar
             // 
@@ -70,7 +85,7 @@
             this.bEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bEliminar.FlatAppearance.BorderSize = 0;
             this.bEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bEliminar.Location = new System.Drawing.Point(533, 103);
+            this.bEliminar.Location = new System.Drawing.Point(484, 105);
             this.bEliminar.Name = "bEliminar";
             this.bEliminar.Size = new System.Drawing.Size(36, 36);
             this.bEliminar.TabIndex = 10;
@@ -83,7 +98,7 @@
             this.bResponder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bResponder.FlatAppearance.BorderSize = 0;
             this.bResponder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bResponder.Location = new System.Drawing.Point(491, 103);
+            this.bResponder.Location = new System.Drawing.Point(442, 105);
             this.bResponder.Name = "bResponder";
             this.bResponder.Size = new System.Drawing.Size(36, 36);
             this.bResponder.TabIndex = 9;
@@ -130,7 +145,7 @@
             // lShowAsunto
             // 
             this.lShowAsunto.AutoSize = true;
-            this.lShowAsunto.Location = new System.Drawing.Point(70, 12);
+            this.lShowAsunto.Location = new System.Drawing.Point(70, 11);
             this.lShowAsunto.Name = "lShowAsunto";
             this.lShowAsunto.Size = new System.Drawing.Size(39, 13);
             this.lShowAsunto.TabIndex = 3;
@@ -166,21 +181,6 @@
             this.lEmisor.TabIndex = 0;
             this.lEmisor.Text = "Remitente:";
             // 
-            // lShowMensaje
-            // 
-            this.lShowMensaje.BackColor = System.Drawing.Color.White;
-            this.lShowMensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lShowMensaje.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lShowMensaje.Enabled = false;
-            this.lShowMensaje.Location = new System.Drawing.Point(16, 37);
-            this.lShowMensaje.Multiline = true;
-            this.lShowMensaje.Name = "lShowMensaje";
-            this.lShowMensaje.ReadOnly = true;
-            this.lShowMensaje.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.lShowMensaje.Size = new System.Drawing.Size(540, 59);
-            this.lShowMensaje.TabIndex = 11;
-            this.lShowMensaje.Text = "mensaje";
-            // 
             // CartelMensajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,7 +188,7 @@
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.Controls.Add(this.panel1);
             this.Name = "CartelMensajes";
-            this.Size = new System.Drawing.Size(608, 150);
+            this.Size = new System.Drawing.Size(560, 150);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
