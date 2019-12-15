@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace APS.Interfaces
 {
-    public partial class LoadingPagPrinc : Form
+    public partial class LoadingPagPrinc: Form
     {
         public LoadingPagPrinc()
         {
             InitializeComponent();
         }
-
-        private void LoadingPagPrinc_Load(object sender, EventArgs e)
-        {
-            pictureBox1.Image = global::APS.Properties.Resources.Loading_2; 
-        }
     }
-
 }

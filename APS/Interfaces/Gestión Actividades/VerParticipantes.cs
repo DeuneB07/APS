@@ -62,10 +62,10 @@ namespace APS.Interfaces.Gestión_Actividades
                     //BOTONES
                     Panel panel = (Panel)carSolAct[c].Controls.Find("panel1", false)[0];
                     Button bAceptar = (Button)panel.Controls.Find("bAceptar", false)[0];
-                    Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
+                    Button bDenegar = (Button)panel.Controls.Find("bDenegar", false)[0];
 
                     bAceptar.Visible = false;
-                    bRechazar.Visible = false;
+                    bDenegar.Visible = false;
 
                     c++;
                 }
@@ -96,10 +96,10 @@ namespace APS.Interfaces.Gestión_Actividades
                  //BOTONES
                 Panel panel = (Panel)carSolAct[c].Controls.Find("panel1", false)[0];
                 Button bAceptar = (Button)panel.Controls.Find("bAceptar", false)[0];
-                Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
+                Button bDenegar = (Button)panel.Controls.Find("bDenegar", false)[0];
 
                 bAceptar.Visible = false;
-                bRechazar.Visible = false;
+                bDenegar.Visible = false;
 
                 c++;
             }
@@ -131,11 +131,11 @@ namespace APS.Interfaces.Gestión_Actividades
                     //BOTONES
                     Panel panel = (Panel)carSolAct[c].Controls.Find("panel1", false)[0];
                     Button bAceptar = (Button)panel.Controls.Find("bAceptar", false)[0];
-                    Button bRechazar = (Button)panel.Controls.Find("bDenegar", false)[0];
+                    Button bDenegar = (Button)panel.Controls.Find("bDenegar", false)[0];
 
                     //PROGRAMACIÓN BOTONES
                     bAceptar.Click += (sender, EventArgs) => { bAceptarPDI_Click(sender, EventArgs, user); };
-                    bRechazar.Click += (sender, EventArgs) => { bRechazar_Click(sender, EventArgs, user); };
+                    bDenegar.Click += (sender, EventArgs) => { bDenegar_Click(sender, EventArgs, user); };
 
                     c++;
                 }
@@ -168,11 +168,11 @@ namespace APS.Interfaces.Gestión_Actividades
                     //BOTONES
                     Panel panel = (Panel)carSolAct[c].Controls.Find("panel1", false)[0];
                     Button bAceptar = (Button)panel.Controls.Find("bAceptar", false)[0];
-                    Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
+                    Button bDenegar = (Button)panel.Controls.Find("bDenegar", false)[0];
 
                     //PROGRAMACIÓN BOTONES
                     bAceptar.Click += (sender, EventArgs) => { bAceptarONG_Click(sender, EventArgs, user); };
-                    bRechazar.Click += (sender, EventArgs) => { bRechazar_Click(sender, EventArgs, user); };
+                    bDenegar.Click += (sender, EventArgs) => { bDenegar_Click(sender, EventArgs, user); };
 
                     c++;
                 }
@@ -183,6 +183,7 @@ namespace APS.Interfaces.Gestión_Actividades
         {
             Actividad_Solicitud actSolicitud = new Actividad_Solicitud(user, actividad);
             actSolicitud.EstadoSolicitud = Actividad_Solicitud.EstadoActividadSolicitudE.ACEPTADA;
+            actSolicitud.Actividad.NumPlazas = actSolicitud.Actividad.NumPlazas - 1;
             cargarPendientesONG();
             cargarAceptadas();
         }
@@ -192,9 +193,10 @@ namespace APS.Interfaces.Gestión_Actividades
             Actividad_Solicitud actSolicitud = new Actividad_Solicitud(user, actividad);
             actSolicitud.EstadoSolicitud = Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_ONG;
             cargarPendientesPDI();
+            cargarEnEsperaONG();
         }
 
-        private void bRechazar_Click(object sender, EventArgs eventArgs, Usuario user)
+        private void bDenegar_Click(object sender, EventArgs eventArgs, Usuario user)
         {
             Actividad_Solicitud actSolicitud = new Actividad_Solicitud(user, actividad);
             actSolicitud.EstadoSolicitud = Actividad_Solicitud.EstadoActividadSolicitudE.DENEGADA;

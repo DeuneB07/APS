@@ -34,7 +34,9 @@
             this.labelError = new System.Windows.Forms.Label();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.loading = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loading)).BeginInit();
             this.SuspendLayout();
             // 
             // tIdentificacion
@@ -66,7 +68,7 @@
             this.labelError.BackColor = System.Drawing.Color.Transparent;
             this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(160, 293);
+            this.labelError.Location = new System.Drawing.Point(180, 294);
             this.labelError.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(44, 17);
@@ -101,6 +103,18 @@
             this.pictureBox.TabIndex = 8;
             this.pictureBox.TabStop = false;
             // 
+            // loading
+            // 
+            this.loading.BackColor = System.Drawing.Color.Transparent;
+            this.loading.Image = global::APS.Properties.Resources.Loading_2;
+            this.loading.Location = new System.Drawing.Point(337, 306);
+            this.loading.Name = "loading";
+            this.loading.Size = new System.Drawing.Size(39, 38);
+            this.loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.loading.TabIndex = 13;
+            this.loading.TabStop = false;
+            this.loading.Visible = false;
+            // 
             // iDumaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -108,6 +122,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1133, 629);
+            this.Controls.Add(this.loading);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.tPassword);
             this.Controls.Add(this.tIdentificacion);
@@ -116,6 +131,7 @@
             this.Name = "iDumaInicio";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,5 +144,6 @@
         private System.Windows.Forms.TextBox tIdentificacion;
         private System.Windows.Forms.TextBox tPassword;
         private System.Windows.Forms.Label labelError;
+        private System.Windows.Forms.PictureBox loading;
     }
 }

@@ -15,6 +15,8 @@ namespace APS.Interfaces
     public partial class iDumaInicio : Form
     {
         private Usuario user;
+
+
         public iDumaInicio()
         {
             InitializeComponent();
@@ -58,6 +60,7 @@ namespace APS.Interfaces
             this.Visible = false;
             pagPrinc.ShowDialog();
             this.Close();
+
         }
 
         private void GoRegistro(UsuarioJSON userJSON)

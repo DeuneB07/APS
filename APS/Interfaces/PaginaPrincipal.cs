@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -49,7 +50,6 @@ namespace APS.Interfaces
             if (user.AccesoPantalla("REVISION")) cargarRevisionActividadesInicio(); //HECHO
             if (user.AccesoPantalla("MIS ACTIVIDADES")) cargarMisActividadesInicio();
             if (user.AccesoPantalla("ACTIVIDADES INSCRITAS")) cargarActividadesInscritas();
-
         }
 
         //
@@ -101,8 +101,13 @@ namespace APS.Interfaces
             {
                 if(act.TipoAct.ToString().Equals("VOLUNTARIADO")) user.AddActividadSolicitada(act, Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_ONG);
                 else user.AddActividadSolicitada(act, Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_PDI);
-           
+            
                 cargarActividadesInscritas();
+                DialogResult emCierreDialog;
+                string mensaje = "Actividad solicitada";
+                string caption = "¡PERFECTO!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
             }
             else
             {
@@ -496,6 +501,7 @@ namespace APS.Interfaces
             List<Actividad> actNegPDI = Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_PDI);
             List<Actividad> actNegONG = Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_ONG);
             List<Actividad> actNegCAN = Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_CANCELADA);
+            List<Actividad> actPenGestor = Actividad.ListaActividades(Actividad.EstadoActividadE.PENDIENTE_ACEPTACION);
 
             if (user.Rol.NombreRol.Equals("PDI"))
             {
@@ -503,7 +509,7 @@ namespace APS.Interfaces
             }
             else
             { //ES ONG -> lo mismo que para el PDI, pero al contrario 
-                cargarRevisionONG(c, actNegPDI, actNegONG, actNegCAN);
+                cargarRevisionONG(c, actNegPDI, actNegONG, actNegCAN, actPenGestor);
             }
         }
 
@@ -599,15 +605,43 @@ namespace APS.Interfaces
             }
         }
 
-        private void cargarRevisionONG(int c, List<Actividad> actNegPDI, List<Actividad> actNegONG, List<Actividad> actNegCancelada)
+        private void cargarRevisionONG(int c, List<Actividad> actNegPDI, List<Actividad> actNegONG, List<Actividad> actNegCancelada, List<Actividad> actPenGestor) 
         {
             
             //Carteles que Usaremos
             CartelPendientes[] carNegPDI = new CartelPendientes[actNegPDI.Count];
             CartelPendientes[] carNegONG = new CartelPendientes[actNegONG.Count];
             CartelPendientes[] carNegCancelada = new CartelPendientes[actNegCancelada.Count];
+            CartelPendientes[] carPenGestor = new CartelPendientes[actPenGestor.Count];
 
             int c2 = 0;
+            foreach (Actividad act in actPenGestor)
+            {
+                if (act.Organizador.Equals(user))
+                {
+                    carPenGestor[c2] = new CartelPendientes(user, act);
+                    panelRevision.Controls.Add(carPenGestor[c2], 0, c);
+                    panelRevision.RowCount = panelRevision.RowCount + 1;
+                    carPenGestor[c2].Location = new Point(carPenGestor[c2].Location.X, (carPenGestor[c2].Size.Height * c));
+                    carPenGestor[c2].BackColor = Color.Black;
+
+                    //BOTONES GESTOR
+                    Panel panel = (Panel)carPenGestor[c2].Controls.Find("panel1", false)[0];
+                    Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
+                    Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
+                    bAceptar.Visible = false;
+                    bRechazar.Visible = false;
+
+                    //PROGRAMACIÓN BOTONES
+                    bAceptar.Click += (sender, EventArgs) => { bRevisarRevONG_Click(sender, EventArgs, act); };
+                    bRechazar.Click += (sender, EventArgs) => { bRechazarRevONG_Click(sender, EventArgs, act); };
+
+                    c++;
+                    c2++;
+                }
+            }
+
+            c2 = 0;
             foreach (Actividad act in actNegCancelada)
             {
                 if (act.Organizador.Equals(user))
@@ -843,6 +877,9 @@ namespace APS.Interfaces
             this.Visible = false;
             verPar.ShowDialog();
             this.Visible = true;
+            cargarMatchActividadesInicio();
+            cargarTodasActividadesInicio();
+            cargarMisActividadesInicio();
         }
 
         private void bVerSolicitantesPDI_Click(object sender, EventArgs eventArgs, Actividad act)
@@ -1075,6 +1112,7 @@ namespace APS.Interfaces
             this.Visible = false;
             newAct.ShowDialog();
             this.Visible = true;
+            cargarRevisionActividadesInicio();
         }
 
         private void lMensajes_Click(object sender, EventArgs e)
@@ -1089,6 +1127,5 @@ namespace APS.Interfaces
             //msg.showDialog();
             this.Visible = true;
         }
-
     }
 }

@@ -78,6 +78,8 @@ namespace APS.Interfaces
 
         private void comboGrado_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboAsig.Enabled = true;
+            comboAsig.Items.Clear();
             cargarAsignaturas();
             cargarCompetencias();
         }
@@ -210,6 +212,10 @@ namespace APS.Interfaces
         private void comboAsig_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarResponsables();
+            if (comboResponsable.Items.Count > 0)
+            {
+                comboResponsable.SelectedItem = comboResponsable.Items[0];
+            }
         }
 
         private void comboTipoAct_SelectedIndexChanged(object sender, EventArgs e)
@@ -218,12 +224,15 @@ namespace APS.Interfaces
             Enum.TryParse<TipoActividadE>(comboTipoAct.SelectedItem.ToString(), true, out tipo);
             if (tipo.ToString().Equals("VOLUNTARIADO"))
             {
+                comboGrado.Items.Clear();
+                comboAsig.Items.Clear();
                 comboResponsable.Items.Clear();
-                comboResponsable.Enabled = false;
             }
             else
             {
-                comboResponsable.Enabled = true;
+                comboGrado.Enabled = true;
+                comboGrado.Items.Clear();
+                cargarGrados();
             }
         }
 
