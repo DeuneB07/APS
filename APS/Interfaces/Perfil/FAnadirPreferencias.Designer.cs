@@ -66,7 +66,7 @@
             this.bConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bConfirmar.Font = new System.Drawing.Font("Georgia", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bConfirmar.Location = new System.Drawing.Point(156, 522);
-            this.bConfirmar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bConfirmar.Margin = new System.Windows.Forms.Padding(4);
             this.bConfirmar.Name = "bConfirmar";
             this.bConfirmar.Size = new System.Drawing.Size(215, 28);
             this.bConfirmar.TabIndex = 16;
@@ -80,7 +80,7 @@
             this.bCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bCancelar.Font = new System.Drawing.Font("Georgia", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCancelar.Location = new System.Drawing.Point(424, 522);
-            this.bCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(205, 28);
             this.bCancelar.TabIndex = 17;
@@ -171,7 +171,7 @@
             this.comboGrado.Enabled = false;
             this.comboGrado.FormattingEnabled = true;
             this.comboGrado.Location = new System.Drawing.Point(139, 172);
-            this.comboGrado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboGrado.Margin = new System.Windows.Forms.Padding(4);
             this.comboGrado.Name = "comboGrado";
             this.comboGrado.Size = new System.Drawing.Size(256, 24);
             this.comboGrado.TabIndex = 25;
@@ -196,7 +196,7 @@
             // 
             this.comboAsig.Enabled = false;
             this.comboAsig.Location = new System.Drawing.Point(139, 222);
-            this.comboAsig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboAsig.Margin = new System.Windows.Forms.Padding(4);
             this.comboAsig.Name = "comboAsig";
             this.comboAsig.Size = new System.Drawing.Size(256, 24);
             this.comboAsig.TabIndex = 26;
@@ -207,7 +207,7 @@
             this.comboTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTurno.FormattingEnabled = true;
             this.comboTurno.Location = new System.Drawing.Point(616, 114);
-            this.comboTurno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboTurno.Margin = new System.Windows.Forms.Padding(4);
             this.comboTurno.Name = "comboTurno";
             this.comboTurno.Size = new System.Drawing.Size(133, 26);
             this.comboTurno.TabIndex = 27;
@@ -216,17 +216,18 @@
             // 
             this.comboTipo.FormattingEnabled = true;
             this.comboTipo.Location = new System.Drawing.Point(203, 117);
-            this.comboTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboTipo.Margin = new System.Windows.Forms.Padding(4);
             this.comboTipo.Name = "comboTipo";
             this.comboTipo.Size = new System.Drawing.Size(133, 24);
             this.comboTipo.TabIndex = 28;
+            this.comboTipo.SelectedIndexChanged += new System.EventHandler(this.comboTipo_SelectedIndexChanged);
             // 
             // listCompetencias
             // 
             this.listCompetencias.FormattingEnabled = true;
             this.listCompetencias.ItemHeight = 16;
             this.listCompetencias.Location = new System.Drawing.Point(156, 343);
-            this.listCompetencias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listCompetencias.Margin = new System.Windows.Forms.Padding(4);
             this.listCompetencias.Name = "listCompetencias";
             this.listCompetencias.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listCompetencias.Size = new System.Drawing.Size(473, 148);
@@ -236,7 +237,7 @@
             // 
             this.textNombreComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNombreComp.Location = new System.Drawing.Point(203, 39);
-            this.textNombreComp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textNombreComp.Margin = new System.Windows.Forms.Padding(4);
             this.textNombreComp.Name = "textNombreComp";
             this.textNombreComp.Size = new System.Drawing.Size(546, 24);
             this.textNombreComp.TabIndex = 31;
@@ -272,7 +273,7 @@
             this.comboAmbitoTrab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboAmbitoTrab.FormattingEnabled = true;
             this.comboAmbitoTrab.Location = new System.Drawing.Point(616, 217);
-            this.comboAmbitoTrab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboAmbitoTrab.Margin = new System.Windows.Forms.Padding(4);
             this.comboAmbitoTrab.Name = "comboAmbitoTrab";
             this.comboAmbitoTrab.Size = new System.Drawing.Size(133, 26);
             this.comboAmbitoTrab.TabIndex = 34;
@@ -282,7 +283,7 @@
             this.comboTipoTrab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTipoTrab.FormattingEnabled = true;
             this.comboTipoTrab.Location = new System.Drawing.Point(616, 170);
-            this.comboTipoTrab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboTipoTrab.Margin = new System.Windows.Forms.Padding(4);
             this.comboTipoTrab.Name = "comboTipoTrab";
             this.comboTipoTrab.Size = new System.Drawing.Size(133, 26);
             this.comboTipoTrab.TabIndex = 35;
@@ -322,7 +323,7 @@
             this.Controls.Add(this.bCancelar);
             this.Controls.Add(this.bConfirmar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FAnadirPreferencias";
             this.Text = "Introduzca Preferencia";
             this.Load += new System.EventHandler(this.FAnadirPreferencias_Load);

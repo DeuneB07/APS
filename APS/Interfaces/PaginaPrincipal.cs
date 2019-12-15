@@ -1168,6 +1168,7 @@ namespace APS.Interfaces
         private void PaginaPrincipal_Load(object sender, EventArgs e)
         {
             TopMost = true;
+            TopMost = false;
         }
     }
 }
