@@ -27,10 +27,8 @@ namespace APS.Interfaces.Personalizados
             this.lDescripcion.Text = a.DescAct;
             this.lNumPlazas.Text = a.NumPlazas.ToString();
             this.lTipoActividad.Text = a.TipoAct.ToString();
-            this.lShowIni.Text = a.FechaInicio.ToShortDateString();
-            this.lShowFin.Text = a.FechaFin.ToShortDateString();
+            this.lShowIni.Text = a.FechaInicio.ToShortDateString() + " - " + a.FechaFin.ToShortDateString();
             this.lShowOrg.Text = a.Organizador.Nombre;
-            this.lEstado.Text = a.EstadoAct.ToString();
             if (a.Imagen != null) pict.Image = a.Imagen;
 
             if (a.Responsable != null)
@@ -77,13 +75,6 @@ namespace APS.Interfaces.Personalizados
         }
 
         [Category("Custom Props")]
-        public string Estado
-        {
-            get { return _estado; }
-            set { _estado = value; lEstado.Text = value; }
-        }
-
-        [Category("Custom Props")]
         public string TipoActividad
         {
             get { return _tipoact; }
@@ -95,13 +86,6 @@ namespace APS.Interfaces.Personalizados
         {
             get { return _fechaini; }
             set { _fechaini = value; lShowIni.Text = value.ToShortTimeString(); }
-        }
-
-        [Category("Custom Props")]
-        public DateTime FechaFin
-        {
-            get { return _fechafin; }
-            set { _fechafin = value; lShowFin.Text = value.ToShortDateString(); }
         }
 
         [Category("Custom Props")]

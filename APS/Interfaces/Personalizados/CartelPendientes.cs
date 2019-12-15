@@ -32,6 +32,7 @@ namespace APS.Interfaces.Personalizados
             this.lShowLugar.Text = a.Lugar;
             this.lShowHoras.Text = a.NumHoras.ToString();
             this.lShowTurno.Text = a.Turno.ToString();
+            this.lShowEstado.Text = a.EstadoAct.ToString();
             if (a.Imagen != null) pict.Image = a.Imagen;
         }
 
@@ -41,6 +42,7 @@ namespace APS.Interfaces.Personalizados
         private int _plazas;
         private string _tipotrab;
         private string _ambtrab;
+        private string _estado;
         private DateTime _fechaini;
         private DateTime _fechafin;
         private string _lugar;
@@ -88,6 +90,13 @@ namespace APS.Interfaces.Personalizados
         {
             get { return _ambtrab; }
             set { _ambtrab = value; lShowAmbito.Text = value; }
+        }
+
+        [Category("Custom Props")]
+        public string Estado
+        {
+            get { return _estado; }
+            set { _estado = value; lShowEstado.Text = value; }
         }
 
         [Category("Custom Props")]

@@ -24,15 +24,33 @@ namespace APS.Interfaces.Gestión_Actividades
             this.logeado = logeado;
             tabSolicitudes.Visible = true;
 
+            
+
             if (logeado.Rol.NombreRol.Equals("ONG"))
             {
-                cargarPendientesONG();
                 tabSolicitudes.Controls.Remove(this.pSolicitudesEnEsperaONG);
+                if (actividad.EstadoAct.ToString().Equals("CERRADA") || actividad.EstadoAct.ToString().Equals("EN_PROCESO")) 
+                {
+                    tabSolicitudes.Controls.Remove(this.pSolicitudesPendientes);
+                } 
+                else
+                {
+                    cargarPendientesONG();
+                }
+                
             }
             else
             {
-                cargarPendientesPDI();
-                cargarEnEsperaONG();
+                if (actividad.EstadoAct.ToString().Equals("CERRADA") || actividad.EstadoAct.ToString().Equals("EN_PROCESO"))
+                {
+                    tabSolicitudes.Controls.Remove(this.pSolicitudesPendientes);
+                    tabSolicitudes.Controls.Remove(this.pSolicitudesEnEsperaONG);
+                }
+                else
+                {
+                    cargarPendientesPDI();
+                    cargarEnEsperaONG();
+                }
             }
             cargarAceptadas();
         }
@@ -135,6 +153,10 @@ namespace APS.Interfaces.Gestión_Actividades
                     Button bDenegar = (Button)panel.Controls.Find("bDenegar", false)[0];
 
                     //PROGRAMACIÓN BOTONES
+                    if (actividad.EstadoAct.ToString().Equals("CERRADA"))
+                    {
+                        bAceptar.Visible = false;
+                    }
                     bAceptar.Click += (sender, EventArgs) => { bAceptarPDI_Click(sender, EventArgs, user); };
                     bDenegar.Click += (sender, EventArgs) => { bDenegar_Click(sender, EventArgs, user); };
 
@@ -172,6 +194,10 @@ namespace APS.Interfaces.Gestión_Actividades
                     Button bDenegar = (Button)panel.Controls.Find("bDenegar", false)[0];
 
                     //PROGRAMACIÓN BOTONES
+                    if (actividad.EstadoAct.ToString().Equals("CERRADA"))
+                    {
+                        bAceptar.Visible = false;
+                    }
                     bAceptar.Click += (sender, EventArgs) => { bAceptarONG_Click(sender, EventArgs, user); };
                     bDenegar.Click += (sender, EventArgs) => { bDenegar_Click(sender, EventArgs, user); };
 
@@ -185,6 +211,7 @@ namespace APS.Interfaces.Gestión_Actividades
             Actividad_Solicitud actSolicitud = new Actividad_Solicitud(user, actividad);
             actSolicitud.EstadoSolicitud = Actividad_Solicitud.EstadoActividadSolicitudE.ACEPTADA;
             actSolicitud.Actividad.NumPlazas = actSolicitud.Actividad.NumPlazas - 1;
+            if (actSolicitud.Actividad.NumPlazas == 0) actSolicitud.Actividad.EstadoAct = Actividad.EstadoActividadE.CERRADA;
             cargarPendientesONG();
             cargarAceptadas();
         }
