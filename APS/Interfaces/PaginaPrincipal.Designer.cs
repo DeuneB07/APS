@@ -365,7 +365,7 @@
             // pictCerrarSesion
             // 
             this.pictCerrarSesion.BackColor = System.Drawing.Color.Transparent;
-            this.pictCerrarSesion.BackgroundImage = global::APS.Properties.Resources.cerrarsesion;
+            this.pictCerrarSesion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictCerrarSesion.BackgroundImage")));
             this.pictCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictCerrarSesion.Location = new System.Drawing.Point(712, 392);
             this.pictCerrarSesion.Name = "pictCerrarSesion";
@@ -377,7 +377,7 @@
             // pictMensajes
             // 
             this.pictMensajes.BackColor = System.Drawing.Color.Transparent;
-            this.pictMensajes.BackgroundImage = global::APS.Properties.Resources.mensajesicon;
+            this.pictMensajes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictMensajes.BackgroundImage")));
             this.pictMensajes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictMensajes.Location = new System.Drawing.Point(712, 178);
             this.pictMensajes.Name = "pictMensajes";
@@ -389,7 +389,7 @@
             // pictActividad
             // 
             this.pictActividad.BackColor = System.Drawing.Color.Transparent;
-            this.pictActividad.BackgroundImage = global::APS.Properties.Resources.actividadicon;
+            this.pictActividad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictActividad.BackgroundImage")));
             this.pictActividad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictActividad.Location = new System.Drawing.Point(712, 323);
             this.pictActividad.Name = "pictActividad";
@@ -401,7 +401,7 @@
             // pictProyectos
             // 
             this.pictProyectos.BackColor = System.Drawing.Color.Transparent;
-            this.pictProyectos.BackgroundImage = global::APS.Properties.Resources.proyectoicon;
+            this.pictProyectos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictProyectos.BackgroundImage")));
             this.pictProyectos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictProyectos.Location = new System.Drawing.Point(712, 323);
             this.pictProyectos.Name = "pictProyectos";
@@ -412,7 +412,7 @@
             // pictPerfil
             // 
             this.pictPerfil.BackColor = System.Drawing.Color.Transparent;
-            this.pictPerfil.BackgroundImage = global::APS.Properties.Resources.perfilicon;
+            this.pictPerfil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictPerfil.BackgroundImage")));
             this.pictPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictPerfil.Location = new System.Drawing.Point(712, 104);
             this.pictPerfil.Name = "pictPerfil";
@@ -424,7 +424,6 @@
             // pictureUser
             // 
             this.pictureUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureUser.Image = global::APS.Properties.Resources.userDefault;
             this.pictureUser.Location = new System.Drawing.Point(707, 12);
             this.pictureUser.Name = "pictureUser";
             this.pictureUser.Size = new System.Drawing.Size(60, 60);
@@ -435,7 +434,7 @@
             // pictHistorial
             // 
             this.pictHistorial.BackColor = System.Drawing.Color.Transparent;
-            this.pictHistorial.BackgroundImage = global::APS.Properties.Resources.historialicon1;
+            this.pictHistorial.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictHistorial.BackgroundImage")));
             this.pictHistorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictHistorial.Location = new System.Drawing.Point(712, 251);
             this.pictHistorial.Name = "pictHistorial";

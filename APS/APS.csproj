@@ -495,7 +495,6 @@
     </Content>
     <None Include="Resources\cerrarsesion.png" />
     <None Include="Resources\historialicon1.png" />
-    <None Include="Resources\historialicon.png" />
     <None Include="Resources\proyectoicon.png" />
     <None Include="Resources\actividadicon.png" />
     <None Include="Resources\mensajesicon.png" />
