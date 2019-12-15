@@ -38,6 +38,7 @@ namespace APS.Interfaces.Mensajes
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 DialogResult emFalloEnviar;
                 string mensaje = "Se ha producido un error";
                 string caption = "Lo sentimos, pero...";

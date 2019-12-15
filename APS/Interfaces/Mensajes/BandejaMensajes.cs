@@ -42,6 +42,7 @@ namespace APS.Interfaces.Perfil
             int c = 0;
             foreach (Mensaje msg in mensajes)
             {
+                Console.WriteLine(msg.ToString());
                 carMensajes[c] = new CartelMensajes(msg);
                 panelMensajes.Controls.Add(carMensajes[c], 0, c);
                 panelMensajes.RowCount = panelMensajes.RowCount + 1;

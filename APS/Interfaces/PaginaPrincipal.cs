@@ -961,8 +961,9 @@ namespace APS.Interfaces
                 //BOTONES GESTOR
                 Panel panel = (Panel)carActInsDenegada[c2].Controls.Find("panel1", false)[0];
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
-                Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
-                estado.Text = aS.EstadoSolicitud.ToString();
+                Label estado = (Label)panel.Controls.Find("lPlazas", false)[0];
+                estado.Text = "Estado Solicitud:";
+                carActInsDenegada[c2].NumPlazas = aS.EstadoSolicitud.ToString();
                 bCancelar.Visible = false;
 
 
@@ -987,8 +988,9 @@ namespace APS.Interfaces
                 //BOTONES GESTOR
                 Panel panel = (Panel)carActInsEsperaONG[c2].Controls.Find("panel1", false)[0];
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
-                Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
-                estado.Text = aS.EstadoSolicitud.ToString();
+                Label estado = (Label)panel.Controls.Find("lPlazas", false)[0];
+                estado.Text = "Estado Solicitud:";
+                carActInsEsperaONG[c2].NumPlazas = aS.EstadoSolicitud.ToString();
                 bCancelar.Text = "Cancelar";
 
                 //Programación Botón
@@ -1015,8 +1017,9 @@ namespace APS.Interfaces
                 //BOTONES GESTOR
                 Panel panel = (Panel)carActInsEsperaPDI[c2].Controls.Find("panel1", false)[0];
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
-                Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
-                estado.Text = aS.EstadoSolicitud.ToString();
+                Label estado = (Label)panel.Controls.Find("lPlazas", false)[0];
+                estado.Text = "Estado Solicitud:";
+                carActInsEsperaPDI[c2].NumPlazas = aS.EstadoSolicitud.ToString();
                 bCancelar.Text = "Cancelar";
 
                 //Programación Botón
@@ -1060,8 +1063,9 @@ namespace APS.Interfaces
                 //BOTONES
                 Panel panel = (Panel)carActInsAceptada[c2].Controls.Find("panel1", false)[0];
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
-                Label estado = (Label)panel.Controls.Find("lEstado", false)[0];
-                estado.Text = aS.EstadoSolicitud.ToString();
+                Label estado = (Label)panel.Controls.Find("lPlazas", false)[0];
+                estado.Text = "Estado Solicitud:";
+                carActInsAceptada[c2].NumPlazas = aS.EstadoSolicitud.ToString();
                 bCancelar.Visible = false;
 
 

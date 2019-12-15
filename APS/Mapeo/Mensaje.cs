@@ -24,7 +24,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Mensaje> lista = new List<Mensaje>();
 
-            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje,emailEmisor, emailReceptor FROM Mensajes;"))
+            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje, emailEmisor, emailReceptor FROM Mensajes;"))
             {
                 String emailE = tupla[1].ToString();
                 String emailR = tupla[2].ToString();
@@ -73,12 +73,12 @@ namespace APS.Mapeo
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             Object[] tupla = miBD.Select("SELECT * FROM Mensajes "
-                    + "WHERE emailEmisor='" + emisor.Email + "' and emailReceptor='" + receptor.Email +"'and ID_Mensaje = '"+id+"';")[0];
+                    + "WHERE emailEmisor='" + emisor.Email + "' and emailReceptor='" + receptor.Email +"' and ID_Mensaje = "+id+";")[0];
             ID_mensaje = int.Parse(tupla[0].ToString());
             asunto = tupla[1].ToString();
             texto =tupla[2].ToString();
 
-            string[] fechaIn = tupla[6].ToString().Split('-');
+            string[] fechaIn = tupla[3].ToString().Split('-');
             date = new DateTime(int.Parse(fechaIn[0]), int.Parse(fechaIn[1]), int.Parse(fechaIn[2]));
 
             emisor = new Usuario(tupla[4].ToString());
@@ -89,7 +89,7 @@ namespace APS.Mapeo
         {
             // Crea el objeto y lo inserta en la base de datos
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Insert("INSERT INTO Mensajes (asunto,texto,date,emailEmisor, emailReceptor) VALUES("
+            miBD.Insert("INSERT INTO Mensajes (asunto,texto,fecha,emailEmisor, emailReceptor) VALUES("
                     + "'" + asunto + "', '" + texto + "', '" + date.ToShortDateString() + "', '" + emisor.Email + "', '" + receptor.Email + "');");
             this.asunto = asunto;
             this.texto = texto;
@@ -159,7 +159,7 @@ namespace APS.Mapeo
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("UPDATE Mensajes SET date = '" + value.ToShortDateString()
+                miBD.Update("UPDATE Mensajes SET fecha = '" + value.ToShortDateString()
                 + "' WHERE ID_Mensaje ='" + this.ID_Mensaje + "';");
                 date = value;
             }
