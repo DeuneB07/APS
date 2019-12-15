@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FPerfilPAS));
             this.lShowFecha = new System.Windows.Forms.Label();
             this.lFechaNac = new System.Windows.Forms.Label();
             this.modiUser = new System.Windows.Forms.TextBox();
@@ -192,7 +193,7 @@
             // 
             this.picPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPerfil.Image = global::APS.Properties.Resources.userDefault;
+            this.picPerfil.Image = ((System.Drawing.Image)(resources.GetObject("picPerfil.Image")));
             this.picPerfil.Location = new System.Drawing.Point(12, 12);
             this.picPerfil.Name = "picPerfil";
             this.picPerfil.Size = new System.Drawing.Size(105, 105);

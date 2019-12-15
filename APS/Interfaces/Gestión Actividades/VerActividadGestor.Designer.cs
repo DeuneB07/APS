@@ -30,6 +30,7 @@ namespace APS.Interfaces.Gestión_Actividades
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerActividadGestor));
             this.tLugar = new System.Windows.Forms.TextBox();
             this.dateTimePickerFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerFechaIni = new System.Windows.Forms.DateTimePicker();
@@ -301,7 +302,7 @@ namespace APS.Interfaces.Gestión_Actividades
             // 
             this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Image = global::APS.Properties.Resources.no_image;
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.Location = new System.Drawing.Point(368, 15);
             this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox.Name = "pictureBox";

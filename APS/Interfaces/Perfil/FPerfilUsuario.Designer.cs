@@ -72,8 +72,8 @@
             // picPerfil
             // 
             this.picPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picPerfil.Image = ((System.Drawing.Image)(resources.GetObject("picPerfil.Image")));
             this.picPerfil.Location = new System.Drawing.Point(36, 12);
-            this.picPerfil.Image = global::APS.Properties.Resources.userDefault;
             this.picPerfil.Name = "picPerfil";
             this.picPerfil.Size = new System.Drawing.Size(93, 91);
             this.picPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
