@@ -35,6 +35,23 @@ namespace APS.Mapeo
             return lista;
         }
 
+        public static List<Mensaje> ListaMensajesEnviados(Usuario emisor)
+        {
+            // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Mensaje> lista = new List<Mensaje>();
+
+            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje,emailEmisor, emailReceptor FROM Mensajes WHERE emailEmisor = '" + emisor.Email + "';"))
+            {
+                String emailE = tupla[1].ToString();
+                String emailR = tupla[2].ToString();
+                int id = int.Parse(tupla[0].ToString());
+                Mensaje m = new Mensaje(id, new Usuario(emailE), new Usuario(emailR));
+                lista.Add(m);
+            }
+            return lista;
+        }
+
         public Mensaje(int id ,Usuario emisor, Usuario receptor)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
