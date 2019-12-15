@@ -102,7 +102,8 @@
             // lShowNick
             // 
             this.lShowNick.AutoSize = true;
-            this.lShowNick.Location = new System.Drawing.Point(269, 35);
+            this.lShowNick.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lShowNick.Location = new System.Drawing.Point(256, 35);
             this.lShowNick.Name = "lShowNick";
             this.lShowNick.Size = new System.Drawing.Size(27, 13);
             this.lShowNick.TabIndex = 16;
@@ -112,10 +113,10 @@
             // 
             this.lNick.AutoSize = true;
             this.lNick.BackColor = System.Drawing.Color.Transparent;
-            this.lNick.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNick.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNick.Location = new System.Drawing.Point(144, 35);
             this.lNick.Name = "lNick";
-            this.lNick.Size = new System.Drawing.Size(119, 13);
+            this.lNick.Size = new System.Drawing.Size(106, 13);
             this.lNick.TabIndex = 15;
             this.lNick.Text = "Nombre de Usuario:";
             // 
@@ -123,10 +124,10 @@
             // 
             this.lNacimiento.AutoSize = true;
             this.lNacimiento.BackColor = System.Drawing.Color.Transparent;
-            this.lNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNacimiento.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNacimiento.Location = new System.Drawing.Point(144, 95);
             this.lNacimiento.Name = "lNacimiento";
-            this.lNacimiento.Size = new System.Drawing.Size(110, 13);
+            this.lNacimiento.Size = new System.Drawing.Size(93, 13);
             this.lNacimiento.TabIndex = 14;
             this.lNacimiento.Text = "Fech. Nacimiento:";
             // 
@@ -134,28 +135,30 @@
             // 
             this.lRol.AutoSize = true;
             this.lRol.BackColor = System.Drawing.Color.Transparent;
-            this.lRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRol.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lRol.Location = new System.Drawing.Point(144, 55);
             this.lRol.Name = "lRol";
-            this.lRol.Size = new System.Drawing.Size(30, 13);
+            this.lRol.Size = new System.Drawing.Size(25, 13);
             this.lRol.TabIndex = 13;
             this.lRol.Text = "Rol:";
             // 
             // lShowRol
             // 
             this.lShowRol.AutoSize = true;
-            this.lShowRol.Location = new System.Drawing.Point(180, 55);
+            this.lShowRol.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lShowRol.Location = new System.Drawing.Point(175, 55);
             this.lShowRol.Name = "lShowRol";
-            this.lShowRol.Size = new System.Drawing.Size(29, 13);
+            this.lShowRol.Size = new System.Drawing.Size(33, 13);
             this.lShowRol.TabIndex = 12;
             this.lShowRol.Text = "rolex";
             // 
             // lShowNac
             // 
             this.lShowNac.AutoSize = true;
-            this.lShowNac.Location = new System.Drawing.Point(260, 95);
+            this.lShowNac.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lShowNac.Location = new System.Drawing.Point(243, 95);
             this.lShowNac.Name = "lShowNac";
-            this.lShowNac.Size = new System.Drawing.Size(25, 13);
+            this.lShowNac.Size = new System.Drawing.Size(24, 13);
             this.lShowNac.TabIndex = 11;
             this.lShowNac.Text = "nac";
             // 
@@ -176,9 +179,10 @@
             // lShowMail
             // 
             this.lShowMail.AutoSize = true;
-            this.lShowMail.Location = new System.Drawing.Point(194, 75);
+            this.lShowMail.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lShowMail.Location = new System.Drawing.Point(191, 75);
             this.lShowMail.Name = "lShowMail";
-            this.lShowMail.Size = new System.Drawing.Size(31, 13);
+            this.lShowMail.Size = new System.Drawing.Size(34, 13);
             this.lShowMail.TabIndex = 9;
             this.lShowMail.Text = "email";
             // 
@@ -186,16 +190,16 @@
             // 
             this.lMail.AutoSize = true;
             this.lMail.BackColor = System.Drawing.Color.Transparent;
-            this.lMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lMail.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMail.Location = new System.Drawing.Point(144, 75);
             this.lMail.Name = "lMail";
-            this.lMail.Size = new System.Drawing.Size(44, 13);
+            this.lMail.Size = new System.Drawing.Size(41, 13);
             this.lMail.TabIndex = 8;
             this.lMail.Text = "e-mail:";
             // 
             // labelName
             // 
-            this.labelName.Font = new System.Drawing.Font("Calibri", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.Location = new System.Drawing.Point(3, 4);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(407, 23);

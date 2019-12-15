@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartelFiltroMatch));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelTitulo = new System.Windows.Forms.Label();
-            this.lFiltro = new System.Windows.Forms.Label();
-            this.cPreferencia = new System.Windows.Forms.ComboBox();
             this.bAplicar = new System.Windows.Forms.Button();
+            this.cPreferencia = new System.Windows.Forms.ComboBox();
+            this.lFiltro = new System.Windows.Forms.Label();
+            this.labelTitulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,33 +49,6 @@
             this.panel1.Size = new System.Drawing.Size(598, 75);
             this.panel1.TabIndex = 3;
             // 
-            // labelTitulo
-            // 
-            this.labelTitulo.Font = new System.Drawing.Font("Calibri", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(3, 4);
-            this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(187, 23);
-            this.labelTitulo.TabIndex = 4;
-            this.labelTitulo.Text = "Elija Preferencia Para Buscar";
-            // 
-            // lFiltro
-            // 
-            this.lFiltro.AutoSize = true;
-            this.lFiltro.Font = new System.Drawing.Font("Calibri Light", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lFiltro.Location = new System.Drawing.Point(26, 39);
-            this.lFiltro.Name = "lFiltro";
-            this.lFiltro.Size = new System.Drawing.Size(73, 13);
-            this.lFiltro.TabIndex = 5;
-            this.lFiltro.Text = "Preferencia:";
-            // 
-            // cPreferencia
-            // 
-            this.cPreferencia.FormattingEnabled = true;
-            this.cPreferencia.Location = new System.Drawing.Point(105, 35);
-            this.cPreferencia.Name = "cPreferencia";
-            this.cPreferencia.Size = new System.Drawing.Size(367, 21);
-            this.cPreferencia.TabIndex = 7;
-            // 
             // bAplicar
             // 
             this.bAplicar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bAplicar.BackgroundImage")));
@@ -88,6 +61,34 @@
             this.bAplicar.Size = new System.Drawing.Size(68, 68);
             this.bAplicar.TabIndex = 4;
             this.bAplicar.UseVisualStyleBackColor = true;
+            // 
+            // cPreferencia
+            // 
+            this.cPreferencia.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cPreferencia.FormattingEnabled = true;
+            this.cPreferencia.Location = new System.Drawing.Point(99, 36);
+            this.cPreferencia.Name = "cPreferencia";
+            this.cPreferencia.Size = new System.Drawing.Size(367, 21);
+            this.cPreferencia.TabIndex = 7;
+            // 
+            // lFiltro
+            // 
+            this.lFiltro.AutoSize = true;
+            this.lFiltro.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lFiltro.Location = new System.Drawing.Point(26, 39);
+            this.lFiltro.Name = "lFiltro";
+            this.lFiltro.Size = new System.Drawing.Size(67, 13);
+            this.lFiltro.TabIndex = 5;
+            this.lFiltro.Text = "Preferencia:";
+            // 
+            // labelTitulo
+            // 
+            this.labelTitulo.Font = new System.Drawing.Font("Bahnschrift", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.Location = new System.Drawing.Point(3, 4);
+            this.labelTitulo.Name = "labelTitulo";
+            this.labelTitulo.Size = new System.Drawing.Size(214, 23);
+            this.labelTitulo.TabIndex = 4;
+            this.labelTitulo.Text = "Elija Preferencia Para Buscar";
             // 
             // CartelFiltroMatch
             // 

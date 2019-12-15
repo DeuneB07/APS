@@ -257,12 +257,6 @@
     <Compile Include="Interfaces\Personalizados\CartelSolicitantesActividad.Designer.cs">
       <DependentUpon>CartelSolicitantesActividad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Personalizados\Prueba.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\Personalizados\Prueba.Designer.cs">
-      <DependentUpon>Prueba.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces\Login\RegistroONG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,12 +268,6 @@
     </Compile>
     <Compile Include="Interfaces\Perfil\VerPreferencia.Designer.cs">
       <DependentUpon>VerPreferencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\Personalizados\PruebaVer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\Personalizados\PruebaVer.Designer.cs">
-      <DependentUpon>PruebaVer.cs</DependentUpon>
     </Compile>
     <Compile Include="JSON\IDUMA.cs" />
     <Compile Include="JSON\CursoJSON.cs" />
@@ -393,17 +381,11 @@
     <EmbeddedResource Include="Interfaces\Personalizados\CartelSolicitantesActividad.resx">
       <DependentUpon>CartelSolicitantesActividad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Personalizados\Prueba.resx">
-      <DependentUpon>Prueba.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Login\RegistroONG.resx">
       <DependentUpon>RegistroONG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Perfil\VerPreferencia.resx">
       <DependentUpon>VerPreferencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Personalizados\PruebaVer.resx">
-      <DependentUpon>PruebaVer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
