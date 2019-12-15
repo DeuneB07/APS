@@ -16,6 +16,7 @@ namespace APS.Interfaces.Gestión_Actividades
     {
         private Usuario logeado;
         private Actividad actividad;
+
         public VerParticipantes(Actividad actividad, Usuario logeado)
         {
             InitializeComponent();

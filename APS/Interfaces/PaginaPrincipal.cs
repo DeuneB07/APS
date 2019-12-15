@@ -1117,14 +1117,14 @@ namespace APS.Interfaces
 
         private void lMensajes_Click(object sender, EventArgs e)
         {
-            //this.goBandeja();
+            this.goBandeja();
         }
 
         private void goBandeja()
         {
-            //BandejaMensajes msg = new BandejaMensajes(user);
+            BandejaMensajes msg = new BandejaMensajes(user);
             this.Visible = false;
-            //msg.showDialog();
+            msg.ShowDialog();
             this.Visible = true;
         }
     }
