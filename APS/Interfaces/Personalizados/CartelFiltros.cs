@@ -92,5 +92,24 @@ namespace APS.Interfaces.Personalizados
                 }
             }
         }
+
+        private void cTipoAct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cTipoAct.SelectedItem.ToString().Equals(Actividad.TipoActividadE.VOLUNTARIADO.ToString()))
+            {
+                cGrado.Text = "";
+                cGrado.SelectedItem = null;
+                cAsig.Text = "";
+                cAsig.SelectedItem = null;
+
+                cGrado.Enabled = false;
+                cAsig.Enabled = false;
+            }
+            else
+            {
+                cGrado.Enabled = true;
+                cAsig.Enabled = true;
+            }
+        }
     }
 }

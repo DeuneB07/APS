@@ -173,9 +173,14 @@ namespace APS.Interfaces
 
         private void comboGrado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Grado g = (Grado) comboGrado.SelectedItem;
-            cargarAsignaturas(g);
-            comboAsig.Enabled = true;
+            if (comboGrado.Enabled)
+            {
+                Grado g = (Grado)comboGrado.SelectedItem;
+                cargarAsignaturas(g);
+                comboAsig.SelectedItem = null;
+                comboAsig.Text = "";
+                comboAsig.Enabled = true;
+            }
         }
 
         private void cargarAsignaturas(Grado g)
@@ -192,15 +197,18 @@ namespace APS.Interfaces
         {
             if(comboTipo.SelectedItem.ToString().Equals("VOLUNTARIADO"))
             {
-                comboGrado.Enabled = false;
-                comboGrado.Text = "";
                 comboAsig.Enabled = false;
+                comboGrado.Enabled = false;
+                comboGrado.SelectedItem = null;
+                comboGrado.Text = "";
+                comboAsig.Items.Clear();
+                comboAsig.SelectedItem = null;
                 comboAsig.Text = "";
+
             }
             else
             {
                 comboGrado.Enabled = true;
-                cargarAsignaturas();
             }
         }
     }

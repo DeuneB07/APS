@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartelFiltros));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cHoras = new System.Windows.Forms.NumericUpDown();
             this.datePickerIni = new System.Windows.Forms.DateTimePicker();
             this.cTurno = new System.Windows.Forms.ComboBox();
             this.cTipoAct = new System.Windows.Forms.ComboBox();
@@ -42,7 +43,6 @@
             this.lGrado = new System.Windows.Forms.Label();
             this.bAplicar = new System.Windows.Forms.Button();
             this.lTurno = new System.Windows.Forms.Label();
-            this.cHoras = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cHoras)).BeginInit();
             this.SuspendLayout();
@@ -64,16 +64,29 @@
             this.panel1.Controls.Add(this.bAplicar);
             this.panel1.Controls.Add(this.lTurno);
             this.panel1.Location = new System.Drawing.Point(20, 20);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(799, 148);
             this.panel1.TabIndex = 3;
+            // 
+            // cHoras
+            // 
+            this.cHoras.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cHoras.Location = new System.Drawing.Point(487, 112);
+            this.cHoras.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.cHoras.Name = "cHoras";
+            this.cHoras.Size = new System.Drawing.Size(144, 23);
+            this.cHoras.TabIndex = 26;
             // 
             // datePickerIni
             // 
             this.datePickerIni.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePickerIni.Location = new System.Drawing.Point(117, 106);
-            this.datePickerIni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.datePickerIni.Margin = new System.Windows.Forms.Padding(4);
             this.datePickerIni.Name = "datePickerIni";
             this.datePickerIni.Size = new System.Drawing.Size(265, 24);
             this.datePickerIni.TabIndex = 25;
@@ -83,7 +96,7 @@
             this.cTurno.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cTurno.FormattingEnabled = true;
             this.cTurno.Location = new System.Drawing.Point(487, 73);
-            this.cTurno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cTurno.Margin = new System.Windows.Forms.Padding(4);
             this.cTurno.Name = "cTurno";
             this.cTurno.Size = new System.Drawing.Size(144, 25);
             this.cTurno.TabIndex = 23;
@@ -93,17 +106,18 @@
             this.cTipoAct.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cTipoAct.FormattingEnabled = true;
             this.cTipoAct.Location = new System.Drawing.Point(152, 73);
-            this.cTipoAct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cTipoAct.Margin = new System.Windows.Forms.Padding(4);
             this.cTipoAct.Name = "cTipoAct";
             this.cTipoAct.Size = new System.Drawing.Size(144, 25);
             this.cTipoAct.TabIndex = 22;
+            this.cTipoAct.SelectedIndexChanged += new System.EventHandler(this.cTipoAct_SelectedIndexChanged);
             // 
             // cAsig
             // 
             this.cAsig.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cAsig.FormattingEnabled = true;
             this.cAsig.Location = new System.Drawing.Point(113, 41);
-            this.cAsig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cAsig.Margin = new System.Windows.Forms.Padding(4);
             this.cAsig.Name = "cAsig";
             this.cAsig.Size = new System.Drawing.Size(476, 25);
             this.cAsig.TabIndex = 21;
@@ -113,7 +127,7 @@
             this.cGrado.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cGrado.FormattingEnabled = true;
             this.cGrado.Location = new System.Drawing.Point(80, 10);
-            this.cGrado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cGrado.Margin = new System.Windows.Forms.Padding(4);
             this.cGrado.Name = "cGrado";
             this.cGrado.Size = new System.Drawing.Size(511, 25);
             this.cGrado.TabIndex = 20;
@@ -185,7 +199,7 @@
             this.bAplicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAplicar.ForeColor = System.Drawing.Color.Black;
             this.bAplicar.Location = new System.Drawing.Point(733, 92);
-            this.bAplicar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bAplicar.Margin = new System.Windows.Forms.Padding(4);
             this.bAplicar.Name = "bAplicar";
             this.bAplicar.Size = new System.Drawing.Size(61, 52);
             this.bAplicar.TabIndex = 10;
@@ -202,21 +216,13 @@
             this.lTurno.TabIndex = 8;
             this.lTurno.Text = "Turno:";
             // 
-            // cHoras
-            // 
-            this.cHoras.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cHoras.Location = new System.Drawing.Point(487, 112);
-            this.cHoras.Name = "cHoras";
-            this.cHoras.Size = new System.Drawing.Size(144, 23);
-            this.cHoras.TabIndex = 26;
-            // 
             // CartelFiltros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tomato;
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CartelFiltros";
             this.Size = new System.Drawing.Size(839, 188);
             this.panel1.ResumeLayout(false);

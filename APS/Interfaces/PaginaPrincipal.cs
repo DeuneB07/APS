@@ -234,11 +234,11 @@ namespace APS.Interfaces
                 }
 
                 //Filtro Horas
-                if (horas != -1)
+                if (horas != 0)
                 {
                     foreach (Actividad a in Actividad.ListaActividades())
                     {
-                        if (a.NumHoras<=horas) lAct.Remove(a);
+                        if (a.NumHoras>horas) lAct.Remove(a);
                     }
                 }
                 cargarMatchActividadesFiltro(lAct);
@@ -287,7 +287,7 @@ namespace APS.Interfaces
             pTodas.Controls.Add(panelTodas);
             panelTodas.Controls.Clear();
             panelTodas.RowCount = 1;
-            cargarFiltrosTodas();
+            cargarFiltrosTodas(Actividad.TurnoE.AMBAS,Actividad.TipoActividadE.TODAS,null,null,DateTime.Today,0);
 
             List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
             CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
@@ -313,13 +313,14 @@ namespace APS.Interfaces
 
         }
 
-        private void cargarTodasActividadesFiltro(List<Actividad> listAct)
+        private void cargarTodasActividadesFiltro(List<Actividad> listAct,Actividad.TurnoE turno, Actividad.TipoActividadE tipoAct,
+                                                    Asignatura asig, Grado g, DateTime date, int horas)
         {
             panelTodas.Controls.Clear();
             panelTodas.AutoScroll = false;
             panelTodas.AutoScroll = true;
             panelTodas.RowCount = 1;
-            cargarFiltrosTodas();
+            cargarFiltrosTodas(turno,tipoAct,asig,g,date,horas);
 
             CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[listAct.Count];
 
@@ -347,9 +348,10 @@ namespace APS.Interfaces
 
             //Pulsación Filtros
             Control panelFiltro = cFiltro.Controls.Find("panel1", false)[0]; //Panel de Filtros
-            List<ComboBox> cBox = new List<ComboBox>(); //ComboBox de Filtros [Horas, Turno, TipoAct, Asig, Grado];
+            List<ComboBox> cBox = new List<ComboBox>(); //ComboBox de Filtros [Turno, TipoAct, Asig, Grado];
             DateTimePicker dtIni = new DateTimePicker(); //DateTimePicker de Filtros
             Button bFiltros = new Button(); //Button de Filtros -> Aplicar
+            NumericUpDown bHoras = new NumericUpDown();
 
             //Recojo los Botones
             foreach (Control cPanel in panelFiltro.Controls)
@@ -357,29 +359,70 @@ namespace APS.Interfaces
                 if (cPanel.GetType().ToString().Equals("System.Windows.Forms.ComboBox")) cBox.Add((ComboBox)cPanel);
                 if (cPanel.GetType().ToString().Equals("System.Windows.Forms.Button")) bFiltros = (Button)cPanel;
                 if (cPanel.GetType().ToString().Equals("System.Windows.Forms.DateTimePicker")) dtIni = (DateTimePicker)cPanel;
+                if (cPanel.GetType().ToString().Equals("System.Windows.Forms.NumericUpDown")) bHoras = (NumericUpDown)cPanel;
             }
 
             //Añadimos Parámetros para el Filtro
-            bFiltros.Click += (sender, EventArgs) => { bFiltros_Click(sender, EventArgs, cBox, dtIni); };
+            bFiltros.Click += (sender, EventArgs) => { bFiltros_Click(sender, EventArgs, cBox, dtIni, bHoras); };
+
+            //Valores predefinidos
+            cBox[0].SelectedItem = Actividad.TurnoE.AMBAS;
+            cBox[1].SelectedItem = Actividad.TipoActividadE.TODAS;
+            bHoras.Value = bHoras.Maximum;
         }
 
-        private void bFiltros_Click(object sender, EventArgs e, List<ComboBox> cBox, DateTimePicker dtIni)
+        private void cargarFiltrosTodas(Actividad.TurnoE turno, Actividad.TipoActividadE tipoAct, Asignatura asig, Grado g, DateTime date, int horas)
+        {
+            //pTodas
+            CartelFiltros cFiltro = new CartelFiltros(this.user);
+            panelTodas.Controls.Add(cFiltro, 0, 0);
+            panelTodas.RowCount = panelTodas.RowCount + 1;
+
+            //Pulsación Filtros
+            Control panelFiltro = cFiltro.Controls.Find("panel1", false)[0]; //Panel de Filtros
+            List<ComboBox> cBox = new List<ComboBox>(); //ComboBox de Filtros [Turno, TipoAct, Asig, Grado];
+            DateTimePicker dtIni = new DateTimePicker(); //DateTimePicker de Filtros
+            Button bFiltros = new Button(); //Button de Filtros -> Aplicar
+            NumericUpDown bHoras = new NumericUpDown();
+
+            //Recojo los Botones
+            foreach (Control cPanel in panelFiltro.Controls)
+            {
+                if (cPanel.GetType().ToString().Equals("System.Windows.Forms.ComboBox")) cBox.Add((ComboBox)cPanel);
+                if (cPanel.GetType().ToString().Equals("System.Windows.Forms.Button")) bFiltros = (Button)cPanel;
+                if (cPanel.GetType().ToString().Equals("System.Windows.Forms.DateTimePicker")) dtIni = (DateTimePicker)cPanel;
+                if (cPanel.GetType().ToString().Equals("System.Windows.Forms.NumericUpDown")) bHoras = (NumericUpDown)cPanel;
+            }
+
+            //Añadimos Parámetros para el Filtro
+            bFiltros.Click += (sender, EventArgs) => { bFiltros_Click(sender, EventArgs, cBox, dtIni, bHoras); };
+
+            //Añadimos valores predefinidos
+            cBox[0].SelectedItem = turno;
+            cBox[1].SelectedItem = tipoAct;
+            cBox[2].SelectedItem = asig;
+            cBox[3].SelectedItem = g;
+            dtIni.Value = date;
+            bHoras.Value = horas;
+        }
+
+        private void bFiltros_Click(object sender, EventArgs e, List<ComboBox> cBox, DateTimePicker dtIni, NumericUpDown bHoras)
         {
             List<Actividad> lAct = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
             Grado g = null;
             Asignatura asig = null;
-            Actividad.TurnoE turnoF;
-            Actividad.TipoActividadE tipoActF;
+            Actividad.TurnoE turnoF = Actividad.TurnoE.AMBAS;
+            Actividad.TipoActividadE tipoActF = Actividad.TipoActividadE.TODAS;
             //DateTime example = new DateTime(DateTime.Today.Year+100, 1, 1);
             DateTime inicio = dtIni.Value;
             int horas = -1;
 
-            if (cBox[0].SelectedItem != null) horas = int.Parse(cBox[0].SelectedItem.ToString());
-            if (cBox[4].SelectedItem != null) g = (Grado)cBox[4].SelectedItem;
-            if (cBox[3].SelectedItem != null) asig = (Asignatura)cBox[3].SelectedItem;
+            horas = decimal.ToInt32(bHoras.Value);
+            if (cBox[3].SelectedItem != null) g = (Grado)cBox[3].SelectedItem;
+            if (cBox[2].SelectedItem != null) asig = (Asignatura)cBox[2].SelectedItem;
 
-            Enum.TryParse<Actividad.TurnoE>(cBox[1].Text, true, out turnoF);
-            Enum.TryParse<Actividad.TipoActividadE>(cBox[2].Text, true, out tipoActF);
+            Enum.TryParse<Actividad.TurnoE>(cBox[0].Text, true, out turnoF);
+            Enum.TryParse<Actividad.TipoActividadE>(cBox[1].Text, true, out tipoActF);
 
             //Filtro Grado
             if (g != null)
@@ -403,7 +446,7 @@ namespace APS.Interfaces
             }
 
             //Filtro Turno
-            if (!turnoF.Equals(null) && !turnoF.Equals(Actividad.TurnoE.AMBAS))
+            if (!turnoF.ToString().Equals(Actividad.TurnoE.AMBAS.ToString()))
             {
                 foreach (Actividad a in Actividad.ListaActividades())
                 {
@@ -412,7 +455,7 @@ namespace APS.Interfaces
             }
 
             //Filtro TipoActividad
-            if (!tipoActF.Equals(null) && !tipoActF.Equals(Actividad.TipoActividadE.TODAS))
+            if (!tipoActF.ToString().Equals(Actividad.TipoActividadE.TODAS.ToString()))
             {
                 foreach (Actividad a in Actividad.ListaActividades())
                 {
@@ -421,11 +464,11 @@ namespace APS.Interfaces
             }
 
             //Filtro Horas
-            if (horas != -1)
+            if (horas != 0)
             {
                 foreach (Actividad a in Actividad.ListaActividades())
                 {
-                    if (a.NumHoras != horas) lAct.Remove(a);
+                    if (a.NumHoras > horas) lAct.Remove(a);
                 }
             }
 
@@ -438,7 +481,7 @@ namespace APS.Interfaces
                 }
             }
 
-            cargarTodasActividadesFiltro(lAct);
+            cargarTodasActividadesFiltro(lAct,turnoF,tipoActF,asig,g,inicio,horas);
         }
 
         //
