@@ -172,7 +172,7 @@ namespace APS.Interfaces
                 Actividad.TipoActividadE tipoActF = ((Preferencia)cBox.SelectedItem).TipoActividad;
                 Actividad.TipoTrabajoE tipoTrabF = ((Preferencia)cBox.SelectedItem).TipoTrabajo;
                 Actividad.AmbitoTrabajoE ambTrabF = ((Preferencia)cBox.SelectedItem).AmbitoTrabajo;
-                int horas = -1;
+                int horas = 0;
 
                 if (!((Preferencia)cBox.SelectedItem).HorasPosibles.ToString().Equals("")) horas = ((Preferencia)cBox.SelectedItem).HorasPosibles;
 

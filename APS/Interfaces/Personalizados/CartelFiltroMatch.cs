@@ -29,7 +29,7 @@ namespace APS.Interfaces.Personalizados
             {
                 cPreferencia.Items.Add(p);
             }
-            cPreferencia.DisplayMember = "nombrePreferencia"; // grado.nombreGrado // asig.nombreAsig";
+            cPreferencia.DisplayMember = "nombre_preferencia"; // grado.nombreGrado // asig.nombreAsig";
         }
     }
 }
