@@ -36,7 +36,8 @@ namespace APS.Interfaces.Perfil
             panelMensajes.Controls.Clear();
             panelMensajes.RowCount = 1;
             panelMensajes.AutoScroll = false;
-            //panelMensajes.AutoScroll = true;
+            panel1.AutoScroll = false;
+            panel1.AutoScroll = true;
 
 
             List<Mensaje> mensajes = Mensaje.ListaMensajesRecibidos(user);
@@ -70,7 +71,8 @@ namespace APS.Interfaces.Perfil
             panelMensajes.Controls.Clear();
             panelMensajes.RowCount = 1;
             panelMensajes.AutoScroll = false;
-            //panelMensajes.AutoScroll = true;
+            panel1.AutoScroll = false;
+            panel1.AutoScroll = true;
 
             List<Mensaje> mensajes = Mensaje.ListaMensajesEnviados(user);
             CartelMensajes[] carMensajes = new CartelMensajes[mensajes.Count];
