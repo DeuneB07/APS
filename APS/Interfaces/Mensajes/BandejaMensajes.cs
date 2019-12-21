@@ -36,8 +36,8 @@ namespace APS.Interfaces.Perfil
             panelMensajes.Controls.Clear();
             panelMensajes.RowCount = 1;
             panelMensajes.AutoScroll = false;
-            panelMensajes.AutoScroll = true;
-            
+            //panelMensajes.AutoScroll = true;
+
 
             List<Mensaje> mensajes = Mensaje.ListaMensajesRecibidos(user);
             CartelMensajes[] carMensajes = new CartelMensajes[mensajes.Count];
@@ -70,7 +70,7 @@ namespace APS.Interfaces.Perfil
             panelMensajes.Controls.Clear();
             panelMensajes.RowCount = 1;
             panelMensajes.AutoScroll = false;
-            panelMensajes.AutoScroll = true;
+            //panelMensajes.AutoScroll = true;
 
             List<Mensaje> mensajes = Mensaje.ListaMensajesEnviados(user);
             CartelMensajes[] carMensajes = new CartelMensajes[mensajes.Count];
@@ -82,7 +82,9 @@ namespace APS.Interfaces.Perfil
                 carMensajes[c] = new CartelMensajes(msg);
                 panelMensajes.Controls.Add(carMensajes[c], 0, c);
                 panelMensajes.RowCount = panelMensajes.RowCount + 1;
-                carMensajes[c].Location = new Point(carMensajes[c].Location.X, (carMensajes[c].Size.Height * c));
+                //carMensajes[c].Location = new Point(carMensajes[c].Location.X, (carMensajes[c].Size.Height * c));
+                //carMensajes[c].Dock = DockStyle.Fill;
+                //carMensajes[c].Margin = new Padding(0,3,0,3);
 
                 //BOTONES GESTOR
                 Panel panel = (Panel)carMensajes[c].Controls.Find("panel1", false)[0];
