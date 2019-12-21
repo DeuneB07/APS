@@ -25,10 +25,6 @@ namespace APS.Interfaces
             tOrganizador.Enabled = false;
             tOrganizador.Text = ong.Nombre;
             labelError.Text = "";
-
-            cargarTurnos();
-            cargarTipoTrabajo();
-            cargarAmbitoTrabajo();
         }
 
         private void bAceptar_Click(object sender, EventArgs e)
@@ -43,13 +39,22 @@ namespace APS.Interfaces
 
                 TurnoE turno;
                 Enum.TryParse<TurnoE>(listTurno.SelectedItem.ToString(), true, out turno);
+
+                //ANTIGUO
                 AmbitoTrabajoE ambito;
-                Enum.TryParse(listAmbito.SelectedItem.ToString(), true, out ambito);
+                Enum.TryParse(listAmbito.Text, true, out ambito);
                 TipoTrabajoE trabajo;
-                Enum.TryParse<TipoTrabajoE>(listTrabajo.SelectedItem.ToString(), true, out trabajo);
+                Enum.TryParse<TipoTrabajoE>(listTrabajo.Text, true, out trabajo);
+                //NUEVO
+                if (listAmbito.SelectedItem.Equals(null)) throw new Exception("Ningún Ambito de trabajo seleccionado");
+                if (listTrabajo.SelectedItem.Equals(null)) throw new Exception("Ningún Tipo de trabajo seleccionado");
+                AmbitoTrabajo ambito2 = (AmbitoTrabajo)listAmbito.SelectedItem;
+                TipoTrabajo trabajo2 = (TipoTrabajo)listTrabajo.SelectedItem;
+                Console.WriteLine("idAmbito: " + ambito2.ID_AmbitoTrabajo + "; ambito: " + ambito2.Ambito_Trabajo);
+                Console.WriteLine("idTipo: " + trabajo2.ID_TipoTrabajo + "; tipo: " + trabajo2.Tipo_Trabajo);
 
                 Actividad a = new Actividad(tNombreAct.Text, tDescripcion.Text, int.Parse(tNumPlazas.Text), int.Parse(tNumHoras.Text), turno, dateTimePickerFechaIni.Value, dateTimePickerFechaFin.Value,
-                                            tLugar.Text, ong, EstadoActividadE.PENDIENTE_ACEPTACION, ambito, trabajo);
+                                            tLugar.Text, ong, EstadoActividadE.PENDIENTE_ACEPTACION, ambito, trabajo, ambito2, trabajo2);
 
                 if (!tURL.Text.Trim().Equals("")) a.Imagen = pictureBox.Image;
 
@@ -99,26 +104,37 @@ namespace APS.Interfaces
             }
         }
 
-        private void cargarTipoTrabajo()
-        {
-            foreach (TipoTrabajoE tTrab in Enum.GetValues(typeof(TipoTrabajoE)))
-            {
-                listTrabajo.Items.Add(tTrab);
-            }
-        }
-
-        private void cargarAmbitoTrabajo()
-        {
-            foreach (AmbitoTrabajoE tAmb in Enum.GetValues(typeof(AmbitoTrabajoE)))
-            {
-                listAmbito.Items.Add(tAmb);
-            }
-        }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             this.tURL.Text = "";
             this.pictureBox.Image = global::APS.Properties.Resources.no_image;
+        }
+
+        private void NuevaActividad_Load(object sender, EventArgs e)
+        {
+            cargarTurnos();
+            cargarAmbitoTrabajo();
+            cargarTipoTrabajo();
+        }
+
+        private void cargarAmbitoTrabajo()
+        {
+            listAmbito.Items.Clear();
+            foreach(AmbitoTrabajo ambito in AmbitoTrabajo.ListaAmbitoTrabajo())
+            {
+                listAmbito.Items.Add(ambito);
+            }
+            listAmbito.DisplayMember = "ambitoTrabajo";
+        }
+
+        private void cargarTipoTrabajo()
+        {
+            listTrabajo.Items.Clear();
+            foreach(TipoTrabajo tipo in TipoTrabajo.ListaTipoTrabajo())
+            {
+                listTrabajo.Items.Add(tipo);
+            }
+            listTrabajo.DisplayMember = "tipoTrabajo";
         }
     }
 }

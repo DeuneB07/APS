@@ -25,26 +25,6 @@ namespace APS.Interfaces
             this.act = act;
             this.Text = this.Text + " " + act.NombreAct;
             labelError.Text = "";
-
-            tOrganizador.Text = act.Organizador.Nombre;
-            tNombreAct.Text = act.NombreAct;
-            tDescripcion.Text = act.DescAct;
-            tNumPlazas.Text = act.NumPlazas.ToString();
-            tNumHoras.Text = act.NumHoras.ToString();
-            dateTimePickerFechaIni.Value = act.FechaInicio;
-            dateTimePickerFechaFin.Value = act.FechaFin;
-            tLugar.Text = act.Lugar;
-            listTurno.Text = act.Turno.ToString();
-            listAmbito.Text = act.AmbitoTrabajo.ToString();
-            listTrabajo.Text = act.TipoTrabajo.ToString();
-
-            cargarGrados();
-            cargarAsignaturas();
-            cargarResponsables();
-            cargarCompetencias();
-            cargarTurnos();
-            cargarTipoTrabajo();
-            cargarAmbitoTrabajo();
         }
 
         private void cargarGrados()
@@ -135,22 +115,6 @@ namespace APS.Interfaces
             }
         }
 
-        private void cargarTipoTrabajo()
-        {
-            foreach (TipoTrabajoE tTrab in Enum.GetValues(typeof(TipoTrabajoE)))
-            {
-                listTrabajo.Items.Add(tTrab);
-            }
-        }
-
-        private void cargarAmbitoTrabajo()
-        {
-            foreach (AmbitoTrabajoE tAmb in Enum.GetValues(typeof(AmbitoTrabajoE)))
-            {
-                listAmbito.Items.Add(tAmb);
-            }
-        }
-
         private void Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -236,6 +200,53 @@ namespace APS.Interfaces
                 cargarGrados();
             }
         }
+
+        private void GestorGestionaActividad_Load(object sender, EventArgs e)
+        {
+            cargarGrados();
+            cargarAsignaturas();
+            cargarResponsables();
+            cargarCompetencias();
+            //cargarTurnos();            //al ser predeterminados, no hace falta cargarlos
+            //cargarAmbitoTrabajo();
+            //cargarTipoTrabajo();
+
+            //VALORES PREDETERMINADOS
+            tOrganizador.Text = act.Organizador.Nombre;
+            tNombreAct.Text = act.NombreAct;
+            tDescripcion.Text = act.DescAct;
+            tNumPlazas.Text = act.NumPlazas.ToString();
+            tNumHoras.Text = act.NumHoras.ToString();
+            dateTimePickerFechaIni.Value = act.FechaInicio;
+            dateTimePickerFechaFin.Value = act.FechaFin;
+            tLugar.Text = act.Lugar;
+            listTurno.Text = act.Turno.ToString();
+            listAmbito.Text = act.AmbitoTrabajo2.Ambito_Trabajo;
+            listTrabajo.Text = act.TipoTrabajo2.Tipo_Trabajo;
+
+        }
+
+        private void cargarAmbitoTrabajo()
+        {
+            listAmbito.Items.Clear();
+            foreach (AmbitoTrabajo ambito in AmbitoTrabajo.ListaAmbitoTrabajo())
+            {
+                listAmbito.Items.Add(ambito);
+            }
+            listAmbito.DisplayMember = "ambitoTrabajo";
+        }
+
+        private void cargarTipoTrabajo()
+        {
+            listTrabajo.Items.Clear();
+            foreach (TipoTrabajo tipo in TipoTrabajo.ListaTipoTrabajo())
+            {
+                listTrabajo.Items.Add(tipo);
+            }
+            listTrabajo.DisplayMember = "tipoTrabajo";
+        }
+
+
 
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelGrado = new System.Windows.Forms.Label();
             this.labelAsignatura = new System.Windows.Forms.Label();
             this.labelResponsable = new System.Windows.Forms.Label();
@@ -475,6 +476,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GestorGestionaActividad";
             this.Text = "Actividad";
+            this.Load += new System.EventHandler(this.GestorGestionaActividad_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

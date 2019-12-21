@@ -275,6 +275,7 @@
     <Compile Include="JSON\UsuarioJSON.cs" />
     <Compile Include="Mapeo\Actividad_Realizada.cs" />
     <Compile Include="Mapeo\Actividad_Solicitud.cs" />
+    <Compile Include="Mapeo\AmbitoTrabajo.cs" />
     <Compile Include="Mapeo\Asignatura.cs" />
     <Compile Include="Mapeo\Actividad.cs" />
     <Compile Include="Mapeo\Competencia.cs" />
@@ -287,6 +288,7 @@
     <Compile Include="Mapeo\PruebasMapeo\PruebaUsuario.cs" />
     <Compile Include="Mapeo\PruebasMapeo\PruebaRol.cs" />
     <Compile Include="Mapeo\Rol.cs" />
+    <Compile Include="Mapeo\TipoTrabajo.cs" />
     <Compile Include="Mapeo\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
