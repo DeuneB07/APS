@@ -42,6 +42,7 @@
             // 
             this.bRegistrar.BackColor = System.Drawing.Color.LightCyan;
             this.bRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bRegistrar.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bRegistrar.Location = new System.Drawing.Point(322, 197);
             this.bRegistrar.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.bRegistrar.Name = "bRegistrar";
@@ -56,6 +57,7 @@
             this.bIniciar.BackColor = System.Drawing.Color.LightCyan;
             this.bIniciar.FlatAppearance.BorderSize = 0;
             this.bIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bIniciar.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bIniciar.Location = new System.Drawing.Point(150, 197);
             this.bIniciar.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.bIniciar.Name = "bIniciar";
@@ -69,57 +71,57 @@
             // 
             this.labelError.AutoSize = true;
             this.labelError.BackColor = System.Drawing.Color.Transparent;
-            this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
             this.labelError.Location = new System.Drawing.Point(147, 61);
             this.labelError.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(44, 17);
+            this.labelError.Size = new System.Drawing.Size(34, 13);
             this.labelError.TabIndex = 7;
             this.labelError.Text = "error";
             // 
             // labelCorreo
             // 
             this.labelCorreo.AutoSize = true;
-            this.labelCorreo.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorreo.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCorreo.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.labelCorreo.Location = new System.Drawing.Point(69, 90);
+            this.labelCorreo.Location = new System.Drawing.Point(69, 93);
             this.labelCorreo.Name = "labelCorreo";
-            this.labelCorreo.Size = new System.Drawing.Size(66, 20);
+            this.labelCorreo.Size = new System.Drawing.Size(56, 17);
             this.labelCorreo.TabIndex = 8;
             this.labelCorreo.Text = "Correo:";
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPassword.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPassword.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.labelPassword.Location = new System.Drawing.Point(35, 140);
+            this.labelPassword.Location = new System.Drawing.Point(41, 140);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(100, 20);
+            this.labelPassword.Size = new System.Drawing.Size(84, 17);
             this.labelPassword.TabIndex = 9;
             this.labelPassword.Text = "Contraseña:";
             // 
             // tCorreo
             // 
-            this.tCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tCorreo.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tCorreo.Location = new System.Drawing.Point(150, 90);
             this.tCorreo.Name = "tCorreo";
-            this.tCorreo.Size = new System.Drawing.Size(328, 27);
+            this.tCorreo.Size = new System.Drawing.Size(328, 24);
             this.tCorreo.TabIndex = 10;
             // 
             // tPassword
             // 
-            this.tPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tPassword.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tPassword.Location = new System.Drawing.Point(150, 137);
             this.tPassword.Name = "tPassword";
             this.tPassword.PasswordChar = '●';
-            this.tPassword.Size = new System.Drawing.Size(328, 27);
+            this.tPassword.Size = new System.Drawing.Size(328, 24);
             this.tPassword.TabIndex = 11;
             // 
             // InicioPersExterno
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
