@@ -35,6 +35,9 @@ namespace APS.Interfaces
             if (user.NombreUser!=null && !user.NombreUser.Trim().Equals("")) lWelcome.Text = "¡Bienvenido, " + user.NombreUser+"!";
             else lWelcome.Text = "¡Bienvenido, "+ user.Nombre + "!";
 
+            //UPDATES SQL
+            Actividad.ActualizarEstadoActividades();
+
             t.Abort();
         }
 

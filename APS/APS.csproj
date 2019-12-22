@@ -137,6 +137,12 @@
     <Compile Include="Interfaces\ControllersPP\PDIControllerPP.Designer.cs">
       <DependentUpon>PDIControllerPP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Gestión Actividades\VerActividadAbierta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Gestión Actividades\VerActividadAbierta.Designer.cs">
+      <DependentUpon>VerActividadAbierta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Gestión Actividades\NegociarActividad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Gestión Actividades\NegociarActividad.resx">
       <DependentUpon>NegociarActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Gestión Actividades\VerActividadAbierta.resx">
+      <DependentUpon>VerActividadAbierta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Gestión Actividades\VerActividadRevision.resx">
       <DependentUpon>VerActividadRevision.cs</DependentUpon>
