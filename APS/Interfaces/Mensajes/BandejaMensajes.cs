@@ -105,21 +105,39 @@ namespace APS.Interfaces.Perfil
             NuevoMensaje newMsg = new NuevoMensaje(user, msg.Emisor);
             newMsg.ShowDialog();
             if (envRec == 0) cargarMensajesEnviados();
+            else cargarMensajesRecibidos(); //Se pueden enviar mensajes a uno mismo
         }
 
         private void bEliminarRecibido_Click(object sender, EventArgs eventArgs, Mensaje msg)
         {
+
+            msg.BorradoReceptor = true;
             user.RemoveMensajeRecibido(msg);
-            msg.Receptor.RemoveMensajeEnviado(msg);
-            msg.BorraMensaje();
+
+            if (msg.BorradoEmisor == true) msg.BorraMensaje();
+            if (msg.Emisor.Equals(msg.Receptor))
+            {
+                user.RemoveMensajeEnviado(msg);
+                msg.BorraMensaje();
+            }
+
             cargarMensajesRecibidos();
+
         }
 
         private void bEliminarEnviado_Click(object sender, EventArgs eventArgs, Mensaje msg)
         {
+
+            msg.BorradoEmisor = true;
             user.RemoveMensajeEnviado(msg);
-            msg.Emisor.RemoveMensajeRecibido(msg);
-            msg.BorraMensaje();
+
+            if (msg.BorradoReceptor == true) msg.BorraMensaje();
+            if (msg.Emisor.Equals(msg.Receptor))
+            {
+                user.RemoveMensajeRecibido(msg);
+                msg.BorraMensaje();
+            }
+
             cargarMensajesEnviados();
         }
 
