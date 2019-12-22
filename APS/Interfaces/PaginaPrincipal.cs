@@ -170,11 +170,8 @@ namespace APS.Interfaces
 
         private void bEvaluacion_Click(object sender, EventArgs eventArgs)
         {
-            DialogResult emCierreDialog;
-            string mensaje = "Función No Implementada Aún.";
-            string caption = "¡AVISO!";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
+            if (!chargedWindow.Equals(PantallaCargada.EVALUACION))
+                cargarValoracionActividadesInicio();
         }
 
         private void bMisActividades_Click(object sender, EventArgs eventArgs)
@@ -226,6 +223,7 @@ namespace APS.Interfaces
             cargarFiltrosMatch();
 
             List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
+            List<Actividad_Solicitud> lista = Actividad_Solicitud.ListaActividadesSolicitudes(user);
             CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
 
             List<Asignatura> asigs = user.Asignaturas;
@@ -248,6 +246,17 @@ namespace APS.Interfaces
                         //Programar Solicitar
                         Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
                         Button bSolicitar = (Button)panel.Controls.Find("bSolicitar", false)[0];
+                        Boolean encontrada = false;
+                        int contador = 0;
+                        while (!encontrada && lista.Count > contador)
+                        {
+                            if (lista[contador].Actividad.Equals(act)) encontrada = true;
+                            contador++;
+                        }
+                        if (encontrada)
+                        {
+                            bSolicitar.Visible = false;
+                        }
                         bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, act); };
 
                         encontrado = true;
@@ -260,36 +269,16 @@ namespace APS.Interfaces
 
         private void bSolicitar_Click(object sender, EventArgs eventArgs, Actividad act)
         {
-            List<Actividad_Solicitud> lista = Actividad_Solicitud.ListaActividadesSolicitudes(user);
-            Boolean encontrada = false;
-            int contador = 0;
-            while (!encontrada && lista.Count > contador)
-            {
-                if (lista[contador].Actividad.Equals(act)) encontrada = true;
-                contador++;
-            }
-            Console.WriteLine("Encontrado: " + encontrada.ToString());
-            if(!encontrada)
-            {
-                if(act.TipoAct.ToString().Equals("VOLUNTARIADO")) user.AddActividadSolicitada(act, Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_ONG);
-                else user.AddActividadSolicitada(act, Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_PDI);
-            
-                cargarActividadesInscritas();
-                DialogResult emCierreDialog;
-                string mensaje = "Actividad solicitada";
-                string caption = "¡PERFECTO!";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
-            }
-            else
-            {
-                DialogResult emCierreDialog;
-                string mensaje = "Esta actividad ya ha sido solicitada anteriormente.";
-                string caption = "¡AVISO!";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
-            }
 
+            if(act.TipoAct.ToString().Equals("VOLUNTARIADO")) user.AddActividadSolicitada(act, Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_ONG);
+            else user.AddActividadSolicitada(act, Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_PDI);
+            
+            cargarActividadesInscritas();
+            DialogResult emCierreDialog;
+            string mensaje = "Actividad solicitada";
+            string caption = "¡PERFECTO!";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
         }
 
         private void cargarFiltrosMatch()
@@ -410,6 +399,7 @@ namespace APS.Interfaces
             cargarFiltrosMatch();
 
             CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[listAct.Count];
+            List<Actividad_Solicitud> lista = Actividad_Solicitud.ListaActividadesSolicitudes(user);
 
             int c = 0;
             foreach (Actividad act in listAct)
@@ -423,6 +413,17 @@ namespace APS.Interfaces
                     //BOTON SOLICITAR
                     Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
                     Button bSolicitar = (Button)panel.Controls.Find("bSolicitar", false)[0];
+                    Boolean encontrada = false;
+                    int contador = 0;
+                    while (!encontrada && lista.Count > contador)
+                    {
+                        if (lista[contador].Actividad.Equals(act)) encontrada = true;
+                        contador++;
+                    }
+                    if (encontrada)
+                    {
+                        bSolicitar.Visible = false;
+                    }
                     //PROGRAMACIÓN BOTONES
                     bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, act); };
                     c++;
@@ -445,6 +446,7 @@ namespace APS.Interfaces
             cargarFiltrosTodas(Actividad.TurnoE.AMBAS,Actividad.TipoActividadE.TODAS,null,null,DateTime.Today,0);
 
             List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
+            List<Actividad_Solicitud> lista = Actividad_Solicitud.ListaActividadesSolicitudes(user);
             CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
 
             int c = 0;
@@ -459,7 +461,19 @@ namespace APS.Interfaces
                 Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
                 Button bSolicitar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                 if (user.Rol.NombreRol.Equals("GESTOR")) bSolicitar.Visible = false;
+
                 
+                Boolean encontrada = false;
+                int contador = 0;
+                while (!encontrada && lista.Count > contador)
+                {
+                    if (lista[contador].Actividad.Equals(act)) encontrada = true;
+                    contador++;
+                }
+                if (encontrada)
+                {
+                    bSolicitar.Visible = false;
+                }
                 //PROGRAMACIÓN BOTONES
                 bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, act); };
                 c++;
@@ -970,6 +984,64 @@ namespace APS.Interfaces
             actRevision.ShowDialog();
             cargarRevisionActividadesInicio();
         }
+
+        //
+        //PESTAÑA VALORACION
+        //
+
+        private void cargarValoracionActividadesInicio()
+        {
+            chargedWindow = PantallaCargada.EVALUACION;
+            tablePP.Controls.Clear();
+            tablePP.RowCount = 1;
+            tablePP.AutoScroll = false;
+            panelPrincipal.AutoScroll = false;
+            panelPrincipal.AutoScroll = true;
+
+            List<Actividad_Realizada> actRealizadas = Actividad_Realizada.ListaActividadesRealizadas(user, Actividad_Realizada.EstadoActividadR.EVALUACION_PARTICIPANTE);
+            List<Actividad> actividades = Actividad_Realizada.ListaActividades(user.Email);
+            CartelActividadesValoracion[] actsCarteles = new CartelActividadesValoracion[actRealizadas.Count];
+
+            int c = 0;
+            foreach (Actividad act in actividades)
+            {
+                actsCarteles[c] = new CartelActividadesValoracion(user, act);
+                tablePP.Controls.Add(actsCarteles[c], 0, c + 1);
+                tablePP.RowCount = tablePP.RowCount + 1;
+                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
+                actsCarteles[c].BackColor = Color.Aqua;
+
+                //BOTON SOLICITAR
+                Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
+                Button bValorar = (Button)panel.Controls.Find("bValorar", false)[0];
+                if (user.Rol.NombreRol.Equals("GESTOR")) bValorar.Visible = false;
+                Boolean encontrada = false;
+                int j = 0;
+                while(!encontrada && j < actRealizadas.Count())
+                {
+                    if(act.ID_Actividad == actRealizadas[j].Actividad.ID_Actividad)
+                    {
+                        encontrada = true;
+                    } else
+                    {
+                        j++;
+                    }
+                }
+                Actividad_Realizada aR = actRealizadas[j];
+                //PROGRAMACIÓN BOTONES
+                bValorar.Click += (sender, EventArgs) => { bValorar_Click(sender, EventArgs, aR); };
+                c++;
+            }
+        }
+
+        private void bValorar_Click(object sender, EventArgs eventArgs, Actividad_Realizada act)
+        {
+            EvaluarActividad evAct = new EvaluarActividad(act);
+            this.Visible = false;
+            evAct.ShowDialog();
+            this.Visible = true;
+        }
+
 
 
         //
