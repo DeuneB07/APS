@@ -47,6 +47,8 @@ namespace APS.Interfaces.Gestión_Actividades
             }
 
             cargarTurnos();
+            cargarTipoTrabajo();
+            cargarAmbitoTrabajo();
         }
 
         private void cargarTurnos()
@@ -55,6 +57,26 @@ namespace APS.Interfaces.Gestión_Actividades
             {
                 listTurno.Items.Add(t);
             }
+        }
+
+        private void cargarAmbitoTrabajo()
+        {
+            listAmbito.Items.Clear();
+            foreach (AmbitoTrabajo ambito in AmbitoTrabajo.ListaAmbitoTrabajo())
+            {
+                listAmbito.Items.Add(ambito);
+            }
+            listAmbito.DisplayMember = "ambitoTrabajo";
+        }
+
+        private void cargarTipoTrabajo()
+        {
+            listTrabajo.Items.Clear();
+            foreach (TipoTrabajo tipo in TipoTrabajo.ListaTipoTrabajo())
+            {
+                listTrabajo.Items.Add(tipo);
+            }
+            listTrabajo.DisplayMember = "tipoTrabajo";
         }
 
         private void btnGestionar_Click(object sender, EventArgs e)

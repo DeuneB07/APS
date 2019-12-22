@@ -20,8 +20,8 @@ namespace APS.Mapeo
         private int horasPosibles;
         private TurnoE turno;
         private TipoActividadE tipoAct;
-        private TipoTrabajoE tipoTrabajo;
-        private AmbitoTrabajoE ambitoTrabajo;
+        private TipoTrabajo tipoTrabajo;
+        private AmbitoTrabajo ambitoTrabajo;
 
         private List<Competencia> competencias;   //lazzy
 
@@ -62,14 +62,14 @@ namespace APS.Mapeo
                         + "WHERE ID_Preferencia=" + id + ";")[0];
             ID_preferencia = (int)tupla[0];
             nombre_preferencia = (String)tupla[1];
-            if ( tupla[2].ToString() != "") user = new Usuario((String)tupla[2]);
-            if ( tupla[3].ToString() != "") grado = new Grado((int.Parse(tupla[3].ToString())));
-            if ( tupla[4].ToString() != "") asig = new Asignatura(int.Parse(tupla[4].ToString()));
-            if( tupla[5].ToString() != "") horasPosibles = int.Parse(tupla[5].ToString());
+            if (tupla[2].ToString() != "") user = new Usuario((String)tupla[2]);
+            if (tupla[3].ToString() != "") grado = new Grado((int.Parse(tupla[3].ToString())));
+            if (tupla[4].ToString() != "") asig = new Asignatura(int.Parse(tupla[4].ToString()));
+            if (tupla[5].ToString() != "") horasPosibles = int.Parse(tupla[5].ToString());
             if (tupla[6].ToString() != "") Enum.TryParse<Actividad.TurnoE>(tupla[6].ToString(), true, out turno);
             if (tupla[7].ToString() != "") Enum.TryParse<Actividad.TipoActividadE>(tupla[7].ToString(), true, out tipoAct);
-            if (tupla[8].ToString() != "") Enum.TryParse<Actividad.TipoTrabajoE>(tupla[7].ToString(), true, out tipoTrabajo);
-            if (tupla[9].ToString() != "") Enum.TryParse<Actividad.AmbitoTrabajoE>(tupla[7].ToString(), true, out ambitoTrabajo);
+            if (tupla[8].ToString() != "") tipoTrabajo = new TipoTrabajo(tupla[8].ToString(), false);
+            if (tupla[9].ToString() != "") ambitoTrabajo = new AmbitoTrabajo(tupla[9].ToString(), false);
             competencias = null;
         }
 
@@ -89,7 +89,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             String ins = "INSERT INTO Preferencias (nombre_preferencia,emailUser) VALUES ('"+ nombre_preferencia +"','"+user.Email+"');";
             miBD.Insert(ins);
-            ID_preferencia= int.Parse(miBD.SelectScalar("SELECT max(ID_Preferencia) FROM Preferencias;").ToString());
+            ID_preferencia = int.Parse(miBD.SelectScalar("SELECT max(ID_Preferencia) FROM Preferencias;").ToString());
             this.nombre_preferencia = nombre_preferencia;
             this.user = user;
             competencias = null;
@@ -188,25 +188,25 @@ namespace APS.Mapeo
             }
         }
 
-        public Actividad.TipoTrabajoE TipoTrabajo
+        public TipoTrabajo TipoTrabajo
         {
             get { return tipoTrabajo; }
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("UPDATE Preferencias SET tipoTrabajo='" + value.ToString() + "' "
+                miBD.Update("UPDATE Preferencias SET idTipoTrabajo=" + value.ID_TipoTrabajo + " "
                         + "WHERE ID_Preferencia=" + ID_preferencia + ";");
                 tipoTrabajo = value;
             }
         }
 
-        public Actividad.AmbitoTrabajoE AmbitoTrabajo
+        public AmbitoTrabajo AmbitoTrabajo
         {
             get { return ambitoTrabajo; }
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("UPDATE Preferencias SET ambitoTrabajo='" + value.ToString() + "' "
+                miBD.Update("UPDATE Preferencias SET idAmbitoTrabajo= " + value.ID_AmbitoTrabajo + " "
                         + "WHERE ID_Preferencia=" + ID_preferencia + ";");
                 ambitoTrabajo = value;
             }
@@ -260,6 +260,8 @@ namespace APS.Mapeo
             grado = null;
             asig = null;
             horasPosibles = -1;
+            tipoTrabajo = null;
+            ambitoTrabajo = null;
             //turno = null;
             //tipoAct = null;
             //competencias= null

@@ -16,6 +16,9 @@ namespace APS.Mapeo
         public enum TipoActividadE {TODAS,FORMACION,INVESTIGACION,VOLUNTARIADO};
         public enum EstadoActividadE { PENDIENTE_ACEPTACION, ABIERTA, CERRADA, ACEPTADA_GESTOR, NEGOCIACION_ONG, NEGOCIACION_PDI, NEGOCIACION_CANCELADA, EN_PROCESO, EN_EVALUACION, CONCLUIDA };
         public enum TurnoE {AMBAS,MAÑANA,TARDE};
+        //public enum TipoTrabajoE {TODAS,SALUD,EVENTO,VIAJE,INVESTIGACION,ADMINISTRACION,OTROS};
+        //public enum AmbitoTrabajoE {TODAS,INMIGRACION,SIN_HOGAR,POBREZA,DISCAPACIDAD,TERCERA_EDAD,NIÑOS,ANIMALES,OTROS};
+
 
         private int ID_actividad;
         private String nombreAct;
@@ -142,14 +145,15 @@ namespace APS.Mapeo
             if (!(tupla[15].ToString().Equals(""))) notaMedia = Double.Parse((String)tupla[15]);
             Enum.TryParse<EstadoActividadE>((String)tupla[16],true,out estadoAct);
             imagen = null;
-            if (!(tupla[18].ToString().Equals(""))) ambitoTrabajo = new AmbitoTrabajo((int)tupla[20]);
-            if (!(tupla[19].ToString().Equals(""))) tipoTrabajo = new TipoTrabajo((int)tupla[21]);
+
+            if (!(tupla[18].ToString().Equals(""))) ambitoTrabajo = new AmbitoTrabajo((int)tupla[18]);
+            if (!(tupla[19].ToString().Equals(""))) tipoTrabajo = new TipoTrabajo((int)tupla[19]);
             competencias = null;
         }
 
         public Actividad(String nombreAct, String descAct, int numPlazas, int numHoras, TurnoE turno,
                  DateTime fechaInicio, DateTime fechaFin, String lugar, Usuario organizador,
-                EstadoActividadE estadoAct, AmbitoTrabajo ambitoTrabajo2, TipoTrabajo tipoTrabajo2)
+                EstadoActividadE estadoAct, AmbitoTrabajo ambitoTrabajo, TipoTrabajo tipoTrabajo)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             String ins = "INSERT INTO Actividades (nombreAct,descripcionAct,numPlazas,numHoras, turno,"
@@ -157,7 +161,7 @@ namespace APS.Mapeo
                     + "VALUES ('" + nombreAct + "','"
                     + descAct + "'," + numPlazas + "," + numHoras + ",'" + turno.ToString() + "','"
                     + fechaInicio.ToShortDateString() + "','" + fechaFin.ToShortDateString() + "','" + lugar + "','" + organizador.Email + "','"
-                    + estadoAct + "',"+ambitoTrabajo2.ID_AmbitoTrabajo+","+tipoTrabajo2.ID_TipoTrabajo+");";
+                    + estadoAct + "'," +ambitoTrabajo.ID_AmbitoTrabajo+","+tipoTrabajo.ID_TipoTrabajo+");";
             miBD.Insert(ins);
             this.ID_actividad = (int)miBD.SelectScalar("SELECT max(ID_Actividad) FROM Actividades;");
             this.nombreAct = nombreAct;
@@ -170,8 +174,8 @@ namespace APS.Mapeo
             this.lugar = lugar;
             this.organizador = organizador;
             this.estadoAct = estadoAct;
-            this.ambitoTrabajo = ambitoTrabajo2;
-            this.tipoTrabajo = tipoTrabajo2;
+            this.ambitoTrabajo = ambitoTrabajo;
+            this.tipoTrabajo = tipoTrabajo;
             competencias = null;
         }
 
@@ -535,8 +539,8 @@ namespace APS.Mapeo
             notaMedia = -1;
             //estadoAct = null;
             imagen = null;
-            //tipoTrabajo = null;
-            //ambitoTrabajo = null;
+            tipoTrabajo = null;
+            ambitoTrabajo = null;
         }
 
         public override string ToString()
@@ -546,7 +550,7 @@ namespace APS.Mapeo
         + fechaInicio.ToShortDateString() + ", fechaFin=" + fechaFin.ToShortDateString() + ", lugar=" + lugar + ", organizador=" + organizador
         + ", responsable=" + responsable + ", grado=" + grado + ", asig=" + asig + ", tipoAct=" + tipoAct
         + ", proyecto=" + proyecto + ", notaMedia=" + notaMedia + ", estadoAct=" + estadoAct + ", imagen="
-        + imagen + ", tipoTrabajo="+ tipoTrabajo+", ambitoTrabajo= "+ ambitoTrabajo+ "]";
+        + imagen + ", tipoTrabajo="+ tipoTrabajo.Tipo_Trabajo+", ambitoTrabajo= "+ ambitoTrabajo.Ambito_Trabajo+ "]";
         }
 
         public override bool Equals(object obj)

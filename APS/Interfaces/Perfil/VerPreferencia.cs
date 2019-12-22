@@ -38,8 +38,8 @@ namespace APS.Interfaces
             lShowTipo.Text = p.TipoActividad.ToString();
             lShowTurno.Text = p.Turno.ToString();
             if (p.Asignatura != null) lShowPreferencia.Text = p.Asignatura.NombreAsig;
-            lTipoTrab2.Text = p.TipoTrabajo.ToString();
-            lAmbTrab2.Text = p.AmbitoTrabajo.ToString();
+            lTipoTrab2.Text = p.TipoTrabajo.Tipo_Trabajo;
+            lAmbTrab2.Text = p.AmbitoTrabajo.Ambito_Trabajo;
             cargarCompetencias();
         }
 
@@ -59,8 +59,8 @@ namespace APS.Interfaces
             tModiNombre.Text = p.Nombre_Preferencia;
             if (!p.Turno.ToString().Equals("")) cModiTurno.SelectedItem = p.Turno;
             if (!p.TipoActividad.ToString().Equals("")) cModiTipoAct.SelectedItem = p.TipoActividad;
-            if (!p.TipoTrabajo.ToString().Equals("")) cModiTipoTrab.SelectedItem = p.TipoTrabajo;
-            if (!p.AmbitoTrabajo.ToString().Equals("")) cModAmb.SelectedItem = p.AmbitoTrabajo;
+            if (!p.TipoTrabajo.Tipo_Trabajo.Equals("")) cModiTipoTrab.SelectedItem = p.TipoTrabajo;
+            if (!p.AmbitoTrabajo.Ambito_Trabajo.Equals("")) cModAmb.SelectedItem = p.AmbitoTrabajo;
             if (p.HorasPosibles != -1) cModiHoras.SelectedItem = p.HorasPosibles;
         }
 
@@ -95,20 +95,24 @@ namespace APS.Interfaces
             }
         }
 
-        private void cargarTipoTrabajo()
-        {
-            foreach (TipoTrabajoE tTrab in Enum.GetValues(typeof(TipoTrabajoE)))
-            {
-                cModiTipoTrab.Items.Add(tTrab);
-            }
-        }
-
         private void cargarAmbitoTrabajo()
         {
-            foreach (AmbitoTrabajoE ambT in Enum.GetValues(typeof(AmbitoTrabajoE)))
+            cModAmb.Items.Clear();
+            foreach (AmbitoTrabajo ambito in AmbitoTrabajo.ListaAmbitoTrabajo())
             {
-                cModAmb.Items.Add(ambT);
+                cModAmb.Items.Add(ambito);
             }
+            cModAmb.DisplayMember = "ambitoTrabajo";
+        }
+
+        private void cargarTipoTrabajo()
+        {
+            cModiTipoTrab.Items.Clear();
+            foreach (TipoTrabajo tipo in TipoTrabajo.ListaTipoTrabajo())
+            {
+                cModiTipoTrab.Items.Add(tipo);
+            }
+            cModiTipoTrab.DisplayMember = "tipoTrabajo";
         }
 
         private void cargarGrados()
@@ -260,8 +264,6 @@ namespace APS.Interfaces
                 //ENUMERACIONES
                 TipoActividadE resTipo;
                 TurnoE resTurno;
-                TipoTrabajoE resTipoTrab;
-                AmbitoTrabajoE resAmbTrabajo;
 
                 Enum.TryParse<TurnoE>(cModiTurno.Text, true, out resTurno);
                 if (!cModiTurno.Text.Equals("") && !cModiTurno.Text.Equals(p.Turno.ToString())) p.Turno = resTurno;
@@ -269,11 +271,14 @@ namespace APS.Interfaces
                 Enum.TryParse<TipoActividadE>(cModiTipoAct.Text, true, out resTipo);
                 if (!cModiTipoAct.Text.Equals("") && !cModiTipoAct.Text.Equals(p.TipoActividad.ToString())) p.TipoActividad = resTipo;
 
-                Enum.TryParse<TipoTrabajoE>(cModiTipoTrab.Text, true, out resTipoTrab);
-                if (!cModiTipoTrab.Text.Equals("") && !cModiTipoTrab.Text.Equals(p.TipoTrabajo.ToString())) p.TipoTrabajo = resTipoTrab;
+                //
+                // NUEVO AMBITO TIPO
+                //
+                if (!cModiTipoTrab.Text.Equals("") && !cModiTipoTrab.Text.Equals(p.TipoTrabajo.Tipo_Trabajo)) 
+                    p.TipoTrabajo = (TipoTrabajo)cModiTipoTrab.SelectedItem;
 
-                Enum.TryParse<AmbitoTrabajoE>(cModAmb.Text, true, out resAmbTrabajo);
-                if (!cModAmb.Text.Equals("") && !cModAmb.Text.Equals(p.AmbitoTrabajo.ToString())) p.AmbitoTrabajo = resAmbTrabajo;
+                if (!cModAmb.Text.Equals("") && !cModAmb.Text.Equals(p.AmbitoTrabajo.Ambito_Trabajo)) 
+                    p.AmbitoTrabajo = (AmbitoTrabajo)cModAmb.SelectedItem;
 
                 //COMPETENCIAS
                foreach (Competencia cA in listCompetencias.Items) p.RemoveCompetencia(cA);

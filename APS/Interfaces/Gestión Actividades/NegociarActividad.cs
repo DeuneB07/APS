@@ -35,6 +35,8 @@ namespace APS.Interfaces.Gestión_Actividades
             listTrabajoNegociar.Text = actividad.TipoTrabajo.Tipo_Trabajo;
 
             cargarTurnos();
+            cargarTipoTrabajo();
+            cargarAmbitoTrabajo();
         }
 
         private void btnCancelarNegociar_Click(object sender, EventArgs e)
@@ -73,6 +75,26 @@ namespace APS.Interfaces.Gestión_Actividades
             {
                 listTurnoNegociar.Items.Add(t);
             }
+        }
+
+        private void cargarAmbitoTrabajo()
+        {
+            listAmbitoNegociar.Items.Clear();
+            foreach (AmbitoTrabajo ambito in AmbitoTrabajo.ListaAmbitoTrabajo())
+            {
+                listAmbitoNegociar.Items.Add(ambito);
+            }
+            listAmbitoNegociar.DisplayMember = "ambitoTrabajo";
+        }
+
+        private void cargarTipoTrabajo()
+        {
+            listTrabajoNegociar.Items.Clear();
+            foreach (TipoTrabajo tipo in TipoTrabajo.ListaTipoTrabajo())
+            {
+                listTrabajoNegociar.Items.Add(tipo);
+            }
+            listTrabajoNegociar.DisplayMember = "tipoTrabajo";
         }
     }
 }

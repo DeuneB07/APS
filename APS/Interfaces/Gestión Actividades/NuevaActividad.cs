@@ -40,6 +40,7 @@ namespace APS.Interfaces
                 TurnoE turno;
                 Enum.TryParse<TurnoE>(listTurno.SelectedItem.ToString(), true, out turno);
 
+                //NUEVO
                 if (listAmbito.SelectedItem.Equals(null)) throw new Exception("Ningún Ambito de trabajo seleccionado");
                 if (listTrabajo.SelectedItem.Equals(null)) throw new Exception("Ningún Tipo de trabajo seleccionado");
                 AmbitoTrabajo ambito = (AmbitoTrabajo)listAmbito.SelectedItem;
