@@ -25,14 +25,36 @@ namespace APS.Interfaces.Personalizados
             this.labelName.Text = a.NombreAct;
             this.lDescripcion.Text = a.DescAct;
             this.lNumPlazas.Text = a.NumPlazas.ToString();
-            this.lShowTipoTrab.Text = a.TipoTrabajo.ToString();
             this.lShowIni.Text = a.FechaInicio.ToShortDateString() + " - " + a.FechaFin.ToShortDateString();
             this.lShowOrg.Text = a.Organizador.Nombre;
-            this.lShowAmbito.Text = a.AmbitoTrabajo.ToString();
+            
+            if (!a.TipoTrabajo2.Tipo_Trabajo.Equals(""))
+            {
+                this.lShowTipoTrab.Text = a.TipoTrabajo2.Tipo_Trabajo;
+            } else
+            {
+                this.lShowTipoTrab.Visible = false;
+                this.lTipoTrab.Visible = false;
+            }
+
+            if (!a.AmbitoTrabajo2.Ambito_Trabajo.Equals(""))
+            {
+                this.lShowAmbito.Text = a.AmbitoTrabajo2.Ambito_Trabajo;
+            }
+            else
+            {
+                this.lShowAmbito.Visible = false;
+                this.lAmbTrab.Visible = false;
+            }
+
             this.lShowLugar.Text = a.Lugar;
             this.lShowHoras.Text = a.NumHoras.ToString();
             this.lShowTurno.Text = a.Turno.ToString();
-            this.lShowEstado.Text = a.EstadoAct.ToString();
+
+            string[] estado = a.EstadoAct.ToString().Split('_');
+            this.lShowEstado.Text = "";
+            foreach (string s in estado) this.lShowEstado.Text = this.lShowEstado.Text + s + " ";
+
             if (a.Imagen != null) pict.Image = a.Imagen;
         }
 

@@ -93,7 +93,7 @@
             // 
             this.lShowEstado.AutoSize = true;
             this.lShowEstado.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lShowEstado.Location = new System.Drawing.Point(424, 30);
+            this.lShowEstado.Location = new System.Drawing.Point(418, 29);
             this.lShowEstado.Name = "lShowEstado";
             this.lShowEstado.Size = new System.Drawing.Size(42, 14);
             this.lShowEstado.TabIndex = 30;

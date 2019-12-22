@@ -626,22 +626,26 @@ namespace APS.Interfaces
             int c = 0;
             foreach (Actividad act in actividades)
             {
+                Console.WriteLine("hola entro");
                 actsCarteles[c] = new CartelPendientes(user, act);
                 tablePP.Controls.Add(actsCarteles[c], 0, c);
                 tablePP.RowCount = tablePP.RowCount + 1;
                 actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
                 actsCarteles[c].BackColor = Color.DarkCyan;
-               
+
+                Console.WriteLine("hola prebotones");
                 //BOTONES GESTOR
                 Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
                 Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
                 Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
-
+                Console.WriteLine("hola postbotones");
                 //PROGRAMACIÓN BOTONES
                 bAceptar.Click += (sender, EventArgs) => { bRevisar_Click(sender, EventArgs, act); };
                 bRechazar.Click += (sender, EventArgs) => { bRechazar_Click(sender, EventArgs, act); };
                 c++;
+                Console.WriteLine("hola postprogr");
             }
+            Console.WriteLine("hola fin");
         }
 
         private void bRevisar_Click(object sender, EventArgs eventArgs, Actividad act)
@@ -661,8 +665,11 @@ namespace APS.Interfaces
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
 
-            if (emCierreDialog == DialogResult.Yes) act.BorrarActividad();
-            cargarPendientesActividadesInicio();
+            if (emCierreDialog == DialogResult.Yes)
+            {
+                act.BorrarActividad();
+                cargarPendientesActividadesInicio();
+            }
         }
 
         //
@@ -710,7 +717,6 @@ namespace APS.Interfaces
             {
                 List<Actividad> actAcGestor = Actividad.ListaActividades(Actividad.EstadoActividadE.ACEPTADA_GESTOR);
                 CartelPendientes[] carAcGestor = new CartelPendientes[actAcGestor.Count];
-                Console.WriteLine("ActsGestor: " + actAcGestor);
                 foreach (Actividad act in actAcGestor)
                 {
 
@@ -1134,7 +1140,8 @@ namespace APS.Interfaces
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                 Label estado = (Label)panel.Controls.Find("lPlazas", false)[0];
                 estado.Text = "Estado Solicitud:";
-                carActInsDenegada[c2].NumPlazas = aS.EstadoSolicitud.ToString();
+                carActInsDenegada[c2].NumPlazas = "DENEGADA";
+
                 bCancelar.Visible = false;
 
 
@@ -1161,7 +1168,7 @@ namespace APS.Interfaces
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                 Label estado = (Label)panel.Controls.Find("lPlazas", false)[0];
                 estado.Text = "Estado Solicitud:";
-                carActInsEsperaONG[c2].NumPlazas = aS.EstadoSolicitud.ToString();
+                carActInsEsperaONG[c2].NumPlazas = "ESPERANDO ONG";
                 bCancelar.Text = "Cancelar";
 
                 //Programación Botón
@@ -1190,7 +1197,7 @@ namespace APS.Interfaces
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                 Label estado = (Label)panel.Controls.Find("lPlazas", false)[0];
                 estado.Text = "Estado Solicitud:";
-                carActInsEsperaPDI[c2].NumPlazas = aS.EstadoSolicitud.ToString();
+                carActInsEsperaPDI[c2].NumPlazas = "ESPERANDO PDI";
                 bCancelar.Text = "Cancelar";
 
                 //Programación Botón
@@ -1236,7 +1243,7 @@ namespace APS.Interfaces
                 Button bCancelar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                 Label estado = (Label)panel.Controls.Find("lPlazas", false)[0];
                 estado.Text = "Estado Solicitud:";
-                carActInsAceptada[c2].NumPlazas = aS.EstadoSolicitud.ToString();
+                carActInsAceptada[c2].NumPlazas = "ACEPTADA";
                 bCancelar.Visible = false;
 
 

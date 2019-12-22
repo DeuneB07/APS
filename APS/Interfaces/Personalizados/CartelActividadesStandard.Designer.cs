@@ -171,7 +171,7 @@
             this.lNumPlazas.AutoSize = true;
             this.lNumPlazas.BackColor = System.Drawing.Color.Transparent;
             this.lNumPlazas.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lNumPlazas.Location = new System.Drawing.Point(520, 108);
+            this.lNumPlazas.Location = new System.Drawing.Point(511, 108);
             this.lNumPlazas.Name = "lNumPlazas";
             this.lNumPlazas.Size = new System.Drawing.Size(28, 13);
             this.lNumPlazas.TabIndex = 9;
