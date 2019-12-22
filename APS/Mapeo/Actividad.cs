@@ -44,6 +44,20 @@ namespace APS.Mapeo
         private TipoTrabajo tipoTrabajo2;
         private List<Competencia> competencias; //lazzy
 
+        public static void ActualizarEstadoActividades()
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+
+            //UPDATE EN_PROCESO
+            miBD.Update("UPDATE Actividades SET estadoAct='" + EstadoActividadE.EN_PROCESO.ToString() + "' " +
+                "WHERE fechaInicio=CONVERT(date,SYSDATETIME()) "+
+                "AND (estadoAct like '"+EstadoActividadE.ABIERTA.ToString()+"' OR estadoAct like '"+EstadoActividadE.CERRADA.ToString()+"')");
+            //UPDATE CONCLUIDA
+            miBD.Update("UPDATE Actividades SET estadoAct='" + EstadoActividadE.CONCLUIDA.ToString() + "' " +
+                "WHERE fechaFin=CONVERT(date,SYSDATETIME()) "+
+                "AND estadoAct like '"+EstadoActividadE.EN_PROCESO.ToString()+"'");
+        }
+
         public static List<Actividad> ListaActividades()
         {
             // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos

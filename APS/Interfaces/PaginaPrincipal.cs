@@ -55,6 +55,9 @@ namespace APS.Interfaces
             if (user.AccesoPantalla("MIS ACTIVIDADES")) cargarMisActividadesInicio(); //HECHO
             if (user.AccesoPantalla("ACTIVIDADES INSCRITAS")) cargarActividadesInscritas(); //HECHO
 
+            //UPDATES SQL
+            Actividad.ActualizarEstadoActividades();
+
             t.Abort();
         }
 
