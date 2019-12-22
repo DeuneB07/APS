@@ -68,8 +68,8 @@ namespace APS.Mapeo
             if (tupla[5].ToString() != "") horasPosibles = int.Parse(tupla[5].ToString());
             if (tupla[6].ToString() != "") Enum.TryParse<Actividad.TurnoE>(tupla[6].ToString(), true, out turno);
             if (tupla[7].ToString() != "") Enum.TryParse<Actividad.TipoActividadE>(tupla[7].ToString(), true, out tipoAct);
-            if (tupla[8].ToString() != "") tipoTrabajo = new TipoTrabajo(tupla[8].ToString(), false);
-            if (tupla[9].ToString() != "") ambitoTrabajo = new AmbitoTrabajo(tupla[9].ToString(), false);
+            if (tupla[8].ToString() != "") tipoTrabajo = new TipoTrabajo((int)tupla[8]);
+            if (tupla[9].ToString() != "") ambitoTrabajo = new AmbitoTrabajo((int)tupla[9]);
             competencias = null;
         }
 

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4bba369513b044648405fbb89f8a7f3b" Name="Diagram1" ZoomLevel="97">
+      <Diagram DiagramId="57851df0ac824547a531ac867c4048f6" Name="Diagram1">
         <EntityTypeShape EntityType="WePassModel.Actividades" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>

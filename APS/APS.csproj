@@ -72,17 +72,17 @@
     <Compile Include="BD\BDException.cs" />
     <Compile Include="BD\BDLibrary.cs" />
     <Compile Include="ImagenesDB\Actividades.cs">
-      <DependentUpon>dbImagenes.tt</DependentUpon>
+      <DependentUpon>dbActividad.tt</DependentUpon>
     </Compile>
-    <Compile Include="ImagenesDB\dbImagenes.Context.cs">
+    <Compile Include="ImagenesDB\dbActividad.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbImagenes.Context.tt</DependentUpon>
+      <DependentUpon>dbActividad.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ImagenesDB\dbImagenes.cs">
+    <Compile Include="ImagenesDB\dbActividad.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbImagenes.tt</DependentUpon>
+      <DependentUpon>dbActividad.tt</DependentUpon>
     </Compile>
     <Compile Include="ImagenesDB\dbActividad.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -451,6 +451,10 @@
     <EmbeddedResource Include="Interfaces\Login\SplashLoading.resx">
       <DependentUpon>SplashLoading.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="ImagenesDB\dbUsuario.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbUsuario.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="ImagenesDB\dbActividad.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>dbActividad.Designer.cs</LastGenOutput>
@@ -458,10 +462,6 @@
     <None Include="ImagenesDB\dbActividad.edmx.diagram">
       <DependentUpon>dbActividad.edmx</DependentUpon>
     </None>
-    <EntityDeploy Include="ImagenesDB\dbUsuario.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbUsuario.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="ImagenesDB\dbUsuario.edmx.diagram">
       <DependentUpon>dbUsuario.edmx</DependentUpon>
     </None>
@@ -511,15 +511,15 @@
     <None Include="Resources\userDefault.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ImagenesDB\dbImagenes.Context.tt">
+    <Content Include="ImagenesDB\dbActividad.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>dbActividad.edmx</DependentUpon>
-      <LastGenOutput>dbImagenes.Context.cs</LastGenOutput>
+      <LastGenOutput>dbActividad.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ImagenesDB\dbImagenes.tt">
+    <Content Include="ImagenesDB\dbActividad.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>dbActividad.edmx</DependentUpon>
-      <LastGenOutput>dbImagenes.cs</LastGenOutput>
+      <LastGenOutput>dbActividad.cs</LastGenOutput>
     </Content>
     <Content Include="ImagenesDB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
