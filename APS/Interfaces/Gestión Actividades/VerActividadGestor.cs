@@ -32,8 +32,8 @@ namespace APS.Interfaces.Gestión_Actividades
             dateTimePickerFechaFin.Value = actividad.FechaFin;
             tLugar.Text = actividad.Lugar;
             listTurno.Text = actividad.Turno.ToString();
-            listAmbito.Text = actividad.AmbitoTrabajo.ToString();
-            listTrabajo.Text = actividad.TipoTrabajo.ToString();
+            listAmbito.Text = actividad.AmbitoTrabajo.Ambito_Trabajo;
+            listTrabajo.Text = actividad.TipoTrabajo.Tipo_Trabajo;
 
             if (actividad.Imagen != null)
             {
@@ -47,8 +47,6 @@ namespace APS.Interfaces.Gestión_Actividades
             }
 
             cargarTurnos();
-            cargarTipoTrabajo();
-            cargarAmbitoTrabajo();
         }
 
         private void cargarTurnos()
@@ -56,22 +54,6 @@ namespace APS.Interfaces.Gestión_Actividades
             foreach (TurnoE t in Enum.GetValues(typeof(TurnoE)))
             {
                 listTurno.Items.Add(t);
-            }
-        }
-
-        private void cargarTipoTrabajo()
-        {
-            foreach (TipoTrabajoE tTrab in Enum.GetValues(typeof(TipoTrabajoE)))
-            {
-                listTrabajo.Items.Add(tTrab);
-            }
-        }
-
-        private void cargarAmbitoTrabajo()
-        {
-            foreach (AmbitoTrabajoE tAmb in Enum.GetValues(typeof(AmbitoTrabajoE)))
-            {
-                listAmbito.Items.Add(tAmb);
             }
         }
 

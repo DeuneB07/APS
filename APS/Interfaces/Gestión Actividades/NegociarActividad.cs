@@ -31,12 +31,10 @@ namespace APS.Interfaces.Gestión_Actividades
             fechaFinNegociar.Text = actividad.FechaFin.ToShortDateString();
             tLugarNegociar.Text = actividad.Lugar;
             listTurnoNegociar.Text = actividad.Turno.ToString();
-            listAmbitoNegociar.Text = actividad.AmbitoTrabajo.ToString();
-            listTrabajoNegociar.Text = actividad.TipoTrabajo.ToString();
+            listAmbitoNegociar.Text = actividad.AmbitoTrabajo.Ambito_Trabajo;
+            listTrabajoNegociar.Text = actividad.TipoTrabajo.Tipo_Trabajo;
 
             cargarTurnos();
-            cargarTipoTrabajo();
-            cargarAmbitoTrabajo();
         }
 
         private void btnCancelarNegociar_Click(object sender, EventArgs e)
@@ -74,22 +72,6 @@ namespace APS.Interfaces.Gestión_Actividades
             foreach (TurnoE t in Enum.GetValues(typeof(TurnoE)))
             {
                 listTurnoNegociar.Items.Add(t);
-            }
-        }
-
-        private void cargarTipoTrabajo()
-        {
-            foreach (TipoTrabajoE tTrab in Enum.GetValues(typeof(TipoTrabajoE)))
-            {
-                listTrabajoNegociar.Items.Add(tTrab);
-            }
-        }
-
-        private void cargarAmbitoTrabajo()
-        {
-            foreach (AmbitoTrabajoE tAmb in Enum.GetValues(typeof(AmbitoTrabajoE)))
-            {
-                listAmbitoNegociar.Items.Add(tAmb);
             }
         }
     }

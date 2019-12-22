@@ -16,9 +16,6 @@ namespace APS.Mapeo
         public enum TipoActividadE {TODAS,FORMACION,INVESTIGACION,VOLUNTARIADO};
         public enum EstadoActividadE { PENDIENTE_ACEPTACION, ABIERTA, CERRADA, ACEPTADA_GESTOR, NEGOCIACION_ONG, NEGOCIACION_PDI, NEGOCIACION_CANCELADA, EN_PROCESO, EN_EVALUACION, CONCLUIDA };
         public enum TurnoE {AMBAS,MAÑANA,TARDE};
-        public enum TipoTrabajoE {TODAS,SALUD,EVENTO,VIAJE,INVESTIGACION,ADMINISTRACION,OTROS};
-        public enum AmbitoTrabajoE {TODAS,INMIGRACION,SIN_HOGAR,POBREZA,DISCAPACIDAD,TERCERA_EDAD,NIÑOS,ANIMALES,OTROS};
-
 
         private int ID_actividad;
         private String nombreAct;
@@ -38,10 +35,8 @@ namespace APS.Mapeo
         private double notaMedia;
         private EstadoActividadE estadoAct;
         private Image imagen;
-        private TipoTrabajoE tipoTrabajo;
-        private AmbitoTrabajoE ambitoTrabajo;
-        private AmbitoTrabajo ambitoTrabajo2;
-        private TipoTrabajo tipoTrabajo2;
+        private AmbitoTrabajo ambitoTrabajo;
+        private TipoTrabajo tipoTrabajo;
         private List<Competencia> competencias; //lazzy
 
         public static void ActualizarEstadoActividades()
@@ -147,61 +142,22 @@ namespace APS.Mapeo
             if (!(tupla[15].ToString().Equals(""))) notaMedia = Double.Parse((String)tupla[15]);
             Enum.TryParse<EstadoActividadE>((String)tupla[16],true,out estadoAct);
             imagen = null;
-            if (!(tupla[18].ToString().Equals(""))) Enum.TryParse<AmbitoTrabajoE>((String)tupla[18], true,out ambitoTrabajo);
-            if (!(tupla[19].ToString().Equals(""))) Enum.TryParse<TipoTrabajoE>((String)tupla[19], true, out tipoTrabajo);
-            if (!(tupla[20].ToString().Equals(""))) ambitoTrabajo2 = new AmbitoTrabajo((int)tupla[20]);
-            if (!(tupla[21].ToString().Equals(""))) tipoTrabajo2 = new TipoTrabajo((int)tupla[21]);
+            if (!(tupla[18].ToString().Equals(""))) ambitoTrabajo = new AmbitoTrabajo((int)tupla[20]);
+            if (!(tupla[19].ToString().Equals(""))) tipoTrabajo = new TipoTrabajo((int)tupla[21]);
             competencias = null;
         }
 
-        /*
-        public Actividad(String nombreAct, String descAct, int numPlazas, int numHoras, TurnoE turno,
-                         DateTime fechaInicio, DateTime fechaFin, String lugar, Usuario organizador,
-                         Usuario responsable, Grado grado, Asignatura asig, TipoActividadE tipoAct,
-                         Proyecto proy, double notaMedia, EstadoActividadE estadoAct, Image imagen, TipoTrabajoE tipoTrabajo, AmbitoTrabajoE ambitoTrabajo)
-        {
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            String ins = "INSERT INTO Actividades VALUES ('" + nombreAct + "','"
-                        + descAct + "'," + numPlazas + "," + numHoras + ",'" + turno.ToString() + "','"
-                        + fechaInicio.ToShortDateString() + "','" + fechaFin.ToShortDateString() + "','" + lugar + "','" + organizador.Email + "','"
-                        + responsable.Email + "'," + grado.ID_Grado + "," + asig.ID_Asig + ",'"
-                        + tipoAct.ToString() + "'," + proy.ID_Proyecto + "," + notaMedia + ",'" + estadoAct + "','"
-                        + "101" + "','"+ambitoTrabajo.ToString()+"','"+tipoTrabajo.ToString()+"');";
-            miBD.Insert(ins);
-            this.ID_actividad = (int)miBD.SelectScalar("SELECT max(ID_Actividad) FROM Actividades;");
-            this.nombreAct = nombreAct;
-            this.descAct = descAct;
-            this.numPlazas = numPlazas;
-            this.numHoras = numHoras;
-            this.turno = turno;
-            this.fechaInicio = fechaInicio;
-            this.fechaFin = fechaFin;
-            this.lugar = lugar;
-            this.organizador = organizador;
-            this.responsable = responsable;
-            this.grado = grado;
-            this.asig = asig;
-            this.tipoAct = tipoAct;
-            this.proyecto = proy;
-            this.notaMedia = notaMedia;
-            this.estadoAct = estadoAct;
-            this.imagen = imagen;
-            this.tipoTrabajo = tipoTrabajo;
-            this.ambitoTrabajo = ambitoTrabajo;
-            competencias = null;
-        }*/
-
         public Actividad(String nombreAct, String descAct, int numPlazas, int numHoras, TurnoE turno,
                  DateTime fechaInicio, DateTime fechaFin, String lugar, Usuario organizador,
-                EstadoActividadE estadoAct, AmbitoTrabajoE ambito, TipoTrabajoE trabajo, AmbitoTrabajo ambitoTrabajo2, TipoTrabajo tipoTrabajo2)
+                EstadoActividadE estadoAct, AmbitoTrabajo ambitoTrabajo2, TipoTrabajo tipoTrabajo2)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             String ins = "INSERT INTO Actividades (nombreAct,descripcionAct,numPlazas,numHoras, turno,"
-                    + "fechaInicio, fechaFin,lugar,emailOrganizador,estadoAct,ambitoTrabajo,tipoTrabajo,idAmbitoTrabajo,idTipoTrabajo) "
+                    + "fechaInicio, fechaFin,lugar,emailOrganizador,estadoAct,idAmbitoTrabajo,idTipoTrabajo) "
                     + "VALUES ('" + nombreAct + "','"
                     + descAct + "'," + numPlazas + "," + numHoras + ",'" + turno.ToString() + "','"
                     + fechaInicio.ToShortDateString() + "','" + fechaFin.ToShortDateString() + "','" + lugar + "','" + organizador.Email + "','"
-                    + estadoAct + "','" + ambito.ToString()+"','"+trabajo.ToString()+"',"+ambitoTrabajo2.ID_AmbitoTrabajo+","+tipoTrabajo2.ID_TipoTrabajo+");";
+                    + estadoAct + "',"+ambitoTrabajo2.ID_AmbitoTrabajo+","+tipoTrabajo2.ID_TipoTrabajo+");";
             miBD.Insert(ins);
             this.ID_actividad = (int)miBD.SelectScalar("SELECT max(ID_Actividad) FROM Actividades;");
             this.nombreAct = nombreAct;
@@ -214,10 +170,8 @@ namespace APS.Mapeo
             this.lugar = lugar;
             this.organizador = organizador;
             this.estadoAct = estadoAct;
-            this.ambitoTrabajo = ambito;
-            this.tipoTrabajo = trabajo;
-            this.ambitoTrabajo2 = ambitoTrabajo2;
-            this.tipoTrabajo2 = tipoTrabajo2;
+            this.ambitoTrabajo = ambitoTrabajo2;
+            this.tipoTrabajo = tipoTrabajo2;
             competencias = null;
         }
 
@@ -496,55 +450,29 @@ namespace APS.Mapeo
             }
         }
 
-        public TipoTrabajoE TipoTrabajo
+        public TipoTrabajo TipoTrabajo
         {
             get { return tipoTrabajo; }
-            set
-            {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Actividades SET tipoTrabajo='" + value.ToString() + "' "
-                        + "WHERE ID_Actividad=" + this.ID_actividad + ";";
-                miBD.Update(up);
-                this.tipoTrabajo = value;
-            }
-        }
-
-        public TipoTrabajo TipoTrabajo2
-        {
-            get { return tipoTrabajo2; }
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
                 String up = "UPDATE Actividades SET idTipoTrabajo=" + value.ID_TipoTrabajo +
                         " WHERE ID_Actividad=" + this.ID_actividad + ";";
                 miBD.Update(up);
-                this.tipoTrabajo2 = value;
+                this.tipoTrabajo = value;
             }
         }
 
-        public AmbitoTrabajoE AmbitoTrabajo
+        public AmbitoTrabajo AmbitoTrabajo
         {
             get { return ambitoTrabajo; }
-            set
-            {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Actividades SET ambitoTrabajo='" + value.ToString() + "' "
-                        + "WHERE ID_Actividad=" + this.ID_actividad + ";";
-                miBD.Update(up);
-                this.ambitoTrabajo = value;
-            }
-        }
-
-        public AmbitoTrabajo AmbitoTrabajo2
-        {
-            get { return ambitoTrabajo2; }
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
                 String up = "UPDATE Actividades SET idAmbitoTrabajo=" + value.ID_AmbitoTrabajo +
                         " WHERE ID_Actividad=" + this.ID_actividad + ";";
                 miBD.Update(up);
-                this.ambitoTrabajo2 = value;
+                this.ambitoTrabajo = value;
             }
         }
 

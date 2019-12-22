@@ -325,14 +325,6 @@ namespace APS.Interfaces
             this.labelError.TabIndex = 27;
             this.labelError.Text = "error";
             // 
-            // ambitoTrabajoEBindingSource
-            // 
-            this.ambitoTrabajoEBindingSource.DataSource = typeof(APS.Mapeo.Actividad.AmbitoTrabajoE);
-            // 
-            // tipoTrabajoEBindingSource
-            // 
-            this.tipoTrabajoEBindingSource.DataSource = typeof(APS.Mapeo.Actividad.TipoTrabajoE);
-            // 
             // btnExaminar
             // 
             this.btnExaminar.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
