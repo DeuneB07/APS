@@ -107,6 +107,36 @@
     <Compile Include="ImagenesDB\Usuario.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ControllersPP\EstudianteControllerPP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ControllersPP\EstudianteControllerPP.Designer.cs">
+      <DependentUpon>EstudianteControllerPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ControllersPP\GestorControllerPP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ControllersPP\GestorControllerPP.Designer.cs">
+      <DependentUpon>GestorControllerPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ControllersPP\ONGControllerPP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ControllersPP\ONGControllerPP.Designer.cs">
+      <DependentUpon>ONGControllerPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ControllersPP\PASControllerPP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ControllersPP\PASControllerPP.Designer.cs">
+      <DependentUpon>PASControllerPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ControllersPP\PDIControllerPP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ControllersPP\PDIControllerPP.Designer.cs">
+      <DependentUpon>PDIControllerPP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Gestión Actividades\NegociarActividad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +338,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WePassDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Interfaces\ControllersPP\EstudianteControllerPP.resx">
+      <DependentUpon>EstudianteControllerPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ControllersPP\GestorControllerPP.resx">
+      <DependentUpon>GestorControllerPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ControllersPP\ONGControllerPP.resx">
+      <DependentUpon>ONGControllerPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ControllersPP\PASControllerPP.resx">
+      <DependentUpon>PASControllerPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ControllersPP\PDIControllerPP.resx">
+      <DependentUpon>PDIControllerPP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Gestión Actividades\NegociarActividad.resx">
       <DependentUpon>NegociarActividad.cs</DependentUpon>
     </EmbeddedResource>

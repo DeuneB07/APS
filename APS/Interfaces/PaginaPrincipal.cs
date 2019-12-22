@@ -18,6 +18,8 @@ namespace APS.Interfaces
     {
 
         Usuario user;
+        private enum PantallaCargada { MATCH, TODAS, REVISION, PENDIENTES, ACTIVIDADES_INSCRITAS, MIS_ACTIVIDADES, PROYECTOS, EVALUACION};
+        private PantallaCargada chargedWindow;
 
         public PaginaPrincipal(Usuario user)
         {
@@ -26,34 +28,12 @@ namespace APS.Interfaces
 
             InitializeComponent();
             this.user = user;
-            if (user.Imagen != null) pictureUser.Image = user.Imagen;
-            
-            tabUser.Visible = true;
-            if (!user.AccesoPantalla("MATCH")) tabUser.Controls.Remove(this.pMatch); //HECHO
-            if (!user.AccesoPantalla("TODAS")) tabUser.Controls.Remove(this.pTodas); //HECHO
-            if (!user.AccesoPantalla("PROYECTOS")) tabUser.Controls.Remove(this.pProyectos);
-            if (!user.AccesoPantalla("VALORACION")) tabUser.Controls.Remove(this.pValoracion);
-            if (!user.AccesoPantalla("PENDIENTES")) tabUser.Controls.Remove(this.pPendientes); //HECHO
-            if (!user.AccesoPantalla("REVISION")) tabUser.Controls.Remove(this.pRevision); //HECHO
-            if (!user.AccesoPantalla("MIS ACTIVIDADES")) tabUser.Controls.Remove(this.pMisActividades);
-            if (!user.AccesoPantalla("ACTIVIDADES INSCRITAS")) tabUser.Controls.Remove(this.pActividadesInscritas);
+
+            //Cargar Interfaz Adecuado (según Rol)
+            cargarInterfaz();
 
             if (user.NombreUser!=null && !user.NombreUser.Trim().Equals("")) lWelcome.Text = "¡Bienvenido, " + user.NombreUser+"!";
             else lWelcome.Text = "¡Bienvenido, "+ user.Nombre + "!";
-
-            lActividad.Visible = user.InsertarPantalla("ACTIVIDADES");
-            pictActividad.Visible = user.InsertarPantalla("ACTIVIDADES");
-            lProyecto.Visible = user.InsertarPantalla("PROYECTOS");
-            pictProyectos.Visible = user.InsertarPantalla("PROYECTOS");
-
-            if (user.AccesoPantalla("MATCH")) cargarMatchActividadesInicio(); //HECHO
-            if (user.AccesoPantalla("TODAS")) cargarTodasActividadesInicio(); //HECHO
-            //if (user.AccesoPantalla("PROYECTOS")) tabUser.Controls.Remove(this.pProyectos);
-            //if (user.AccesoPantalla("VALORACION")) tabUser.Controls.Remove(this.pValoracion);
-            if (user.AccesoPantalla("PENDIENTES")) cargarPendientesActividadesInicio(); //HECHO
-            if (user.AccesoPantalla("REVISION")) cargarRevisionActividadesInicio(); //HECHO
-            if (user.AccesoPantalla("MIS ACTIVIDADES")) cargarMisActividadesInicio(); //HECHO
-            if (user.AccesoPantalla("ACTIVIDADES INSCRITAS")) cargarActividadesInscritas(); //HECHO
 
             t.Abort();
         }
@@ -63,17 +43,183 @@ namespace APS.Interfaces
             Application.Run(new SplashLoading());
         }
 
+
+        //
+        // Carga Menú Inicial (También activa sus botones)
+        //
+        public void cargarInterfaz()
+        {
+
+            //Cargar Imagen
+            if (user.Imagen != null) pictureUser.Image = user.Imagen;
+
+            //Cargar Menús (con Programación Botones)
+            if (user.Rol.NombreRol.Equals("Estudiante"))
+            {
+                estudianteMenu.Visible = true;
+
+                FlowLayoutPanel flowP = (FlowLayoutPanel)estudianteMenu.Controls.Find("flowMain", false)[0];
+                PictureBox bMatch = (PictureBox)flowP.Controls.Find("pictMatch", false)[0];
+                PictureBox bTodas = (PictureBox)flowP.Controls.Find("pictTodas", false)[0];
+                PictureBox bEvaluacion = (PictureBox)flowP.Controls.Find("pictEvaluacion", false)[0];
+                PictureBox bProyectos = (PictureBox)flowP.Controls.Find("pictProyectos", false)[0];
+                PictureBox bActIns = (PictureBox)flowP.Controls.Find("pictActIns", false)[0];
+
+                bMatch.Click += (sender, EventArgs) => { bMatch_Click(sender, EventArgs); };
+                bTodas.Click += (sender, EventArgs) => { bTodas_Click(sender, EventArgs); };
+                bEvaluacion.Click += (sender, EventArgs) => { bEvaluacion_Click(sender, EventArgs); };
+                bProyectos.Click += (sender, EventArgs) => { bProyectos_Click(sender, EventArgs); };
+                bActIns.Click += (sender, EventArgs) => { bActividadesInscritas_Click(sender, EventArgs); };
+            }
+            else if (user.Rol.NombreRol.Equals("PDI"))
+            {
+                pdiMenu.Visible = true;
+
+                FlowLayoutPanel flowP = (FlowLayoutPanel)pdiMenu.Controls.Find("flowMain", false)[0];
+                PictureBox bMatch = (PictureBox)flowP.Controls.Find("pictMatch", false)[0];
+                PictureBox bTodas = (PictureBox)flowP.Controls.Find("pictTodas", false)[0];
+                PictureBox bEvaluacion = (PictureBox)flowP.Controls.Find("pictEvaluacion", false)[0];
+                PictureBox bProyectos = (PictureBox)flowP.Controls.Find("pictProyectos", false)[0];
+                PictureBox bActIns = (PictureBox)flowP.Controls.Find("pictActIns", false)[0];
+                PictureBox bMisActs = (PictureBox)flowP.Controls.Find("pictMisActs", false)[0];
+                PictureBox bRevision = (PictureBox)flowP.Controls.Find("pictRevision", false)[0];
+
+                bMatch.Click += (sender, EventArgs) => { bMatch_Click(sender, EventArgs); };
+                bTodas.Click += (sender, EventArgs) => { bTodas_Click(sender, EventArgs); };
+                bEvaluacion.Click += (sender, EventArgs) => { bEvaluacion_Click(sender, EventArgs); };
+                bProyectos.Click += (sender, EventArgs) => { bProyectos_Click(sender, EventArgs); };
+                bActIns.Click += (sender, EventArgs) => { bActividadesInscritas_Click(sender, EventArgs); };
+                bMisActs.Click += (sender, EventArgs) => { bMisActividades_Click(sender, EventArgs); };
+                bRevision.Click += (sender, EventArgs) => { bRevision_Click(sender, EventArgs); };
+
+            }
+            else if (user.Rol.NombreRol.Equals("PAS"))
+            {
+                pasMenu.Visible = true;
+
+                FlowLayoutPanel flowP = (FlowLayoutPanel)pasMenu.Controls.Find("flowMain", false)[0];
+                PictureBox bMatch = (PictureBox)flowP.Controls.Find("pictMatch", false)[0];
+                PictureBox bTodas = (PictureBox)flowP.Controls.Find("pictTodas", false)[0];
+                PictureBox bEvaluacion = (PictureBox)flowP.Controls.Find("pictEvaluacion", false)[0];
+                PictureBox bActIns = (PictureBox)flowP.Controls.Find("pictActIns", false)[0];
+
+                bMatch.Click += (sender, EventArgs) => { bMatch_Click(sender, EventArgs); };
+                bTodas.Click += (sender, EventArgs) => { bTodas_Click(sender, EventArgs); };
+                bEvaluacion.Click += (sender, EventArgs) => { bEvaluacion_Click(sender, EventArgs); };
+                bActIns.Click += (sender, EventArgs) => { bActividadesInscritas_Click(sender, EventArgs); };
+            }
+            else if (user.Rol.NombreRol.Equals("ONG"))
+            {
+                ongMenu.Visible = true;
+
+                FlowLayoutPanel flowP = (FlowLayoutPanel)ongMenu.Controls.Find("flowMain", false)[0];
+                PictureBox bEvaluacion = (PictureBox)flowP.Controls.Find("pictEvaluacion", false)[0];
+                PictureBox bMisActs = (PictureBox)flowP.Controls.Find("pictMisActs", false)[0];
+                PictureBox bRevision = (PictureBox)flowP.Controls.Find("pictRevision", false)[0];
+
+                bEvaluacion.Click += (sender, EventArgs) => { bEvaluacion_Click(sender, EventArgs); };
+                bMisActs.Click += (sender, EventArgs) => { bMisActividades_Click(sender, EventArgs); };
+                bRevision.Click += (sender, EventArgs) => { bRevision_Click(sender, EventArgs); };
+            }
+            else if (user.Rol.NombreRol.Equals("GESTOR"))
+            {
+                gestorMenu.Visible = true;
+
+                FlowLayoutPanel flowP = (FlowLayoutPanel)gestorMenu.Controls.Find("flowMain", false)[0];
+                PictureBox bTodas = (PictureBox)flowP.Controls.Find("pictTodas", false)[0];
+                PictureBox bProyectos = (PictureBox)flowP.Controls.Find("pictProyectos", false)[0];
+                PictureBox bPendientes = (PictureBox)flowP.Controls.Find("pictPendientes", false)[0];
+
+                bTodas.Click += (sender, EventArgs) => { bTodas_Click(sender, EventArgs); };
+                bProyectos.Click += (sender, EventArgs) => { bProyectos_Click(sender, EventArgs); };
+                bPendientes.Click += (sender, EventArgs) => { bPendientes_Click(sender, EventArgs); };
+            }
+
+            //Cargar Botones de Perfil
+            lActividad.Visible = user.InsertarPantalla("ACTIVIDADES");
+            pictActividad.Visible = user.InsertarPantalla("ACTIVIDADES");
+            lProyecto.Visible = user.InsertarPantalla("PROYECTOS");
+            pictProyectos.Visible = user.InsertarPantalla("PROYECTOS");
+
+            //Cargar Botón Ayuda Help
+            //Aún no está
+
+            //Primera Pestaña Cargada
+            if (user.AccesoPantalla("MATCH")) cargarMatchActividadesInicio();
+            else if (user.AccesoPantalla("TODAS")) cargarTodasActividadesInicio();
+            else if (user.AccesoPantalla("MIS ACTIVIDADES")) cargarMisActividadesInicio();
+            //CUANDO ESTÉ IMPLEMENTADO, QUITAR LA LÍNEA DE ARRIBA Y PONER ESTA DE ABAJO
+            //else if (user.AccesoPantalla("VALORACION")) tabUser.Controls.Remove(this.pValoracion);
+
+        }
+
+        private void bMatch_Click(object sender, EventArgs eventArgs)
+        {
+            if (!chargedWindow.Equals(PantallaCargada.MATCH))
+                cargarMatchActividadesInicio();
+        }
+
+        private void bTodas_Click(object sender, EventArgs eventArgs)
+        {
+            if (!chargedWindow.Equals(PantallaCargada.TODAS))
+                cargarTodasActividadesInicio();
+        }
+
+        private void bEvaluacion_Click(object sender, EventArgs eventArgs)
+        {
+            DialogResult emCierreDialog;
+            string mensaje = "Función No Implementada Aún.";
+            string caption = "¡AVISO!";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
+        }
+
+        private void bMisActividades_Click(object sender, EventArgs eventArgs)
+        {
+            if (!chargedWindow.Equals(PantallaCargada.MIS_ACTIVIDADES))
+                cargarMisActividadesInicio();
+        }
+
+        private void bActividadesInscritas_Click(object sender, EventArgs eventArgs)
+        {
+            if (!chargedWindow.Equals(PantallaCargada.ACTIVIDADES_INSCRITAS))
+                cargarActividadesInscritas();
+        }
+
+        private void bPendientes_Click(object sender, EventArgs eventArgs)
+        {
+            if (!chargedWindow.Equals(PantallaCargada.PENDIENTES))
+                cargarPendientesActividadesInicio();
+        }
+
+        private void bRevision_Click(object sender, EventArgs eventArgs)
+        {
+            if (!chargedWindow.Equals(PantallaCargada.REVISION))
+                cargarRevisionActividadesInicio();
+        }
+
+        private void bProyectos_Click(object sender, EventArgs eventArgs)
+        {
+            DialogResult emCierreDialog;
+            string mensaje = "Función No Implementada Aún.";
+            string caption = "¡AVISO!";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
+        }
+
         //
         // PESTAÑA MATCH
         //
         private void cargarMatchActividadesInicio()
         {
-            panelMatch.Controls.Clear();
-            panelMatch.AutoScroll = false;
-            panelMatch.AutoScroll = true;
-            panelMatch.RowCount = 1;
 
-            pMatch.Controls.Add(panelMatch);
+            chargedWindow = PantallaCargada.MATCH;
+            tablePP.Controls.Clear();
+            tablePP.RowCount = 1;
+            tablePP.AutoScroll = false;
+            panelPrincipal.AutoScroll = false;
+            panelPrincipal.AutoScroll = true;
+
             cargarFiltrosMatch();
 
             List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
@@ -86,18 +232,18 @@ namespace APS.Interfaces
                 bool encontrado = false;
                 int j = 0;
                 Asignatura asig = null;
-                while(!encontrado && j<asigs.Count)
+                while (!encontrado && j < asigs.Count)
                 {
                     asig = asigs[j];
                     if ((act.Asignatura != null && act.Asignatura.Equals(asig)) || act.TipoAct.Equals(Actividad.TipoActividadE.VOLUNTARIADO))
                     {
                         actsCarteles[c] = new CartelActividadesStandard(user, act);
-                        panelMatch.Controls.Add(actsCarteles[c], 0, c + 1);
-                        panelMatch.RowCount = panelMatch.RowCount + 1;
+                        tablePP.Controls.Add(actsCarteles[c], 0, c + 1);
+                        tablePP.RowCount = tablePP.RowCount + 1;
                         actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
 
                         //Programar Solicitar
-                        Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1",false)[0];
+                        Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
                         Button bSolicitar = (Button)panel.Controls.Find("bSolicitar", false)[0];
                         bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, act); };
 
@@ -145,10 +291,11 @@ namespace APS.Interfaces
 
         private void cargarFiltrosMatch()
         {
+
             //pMatch
             CartelFiltroMatch cFiltro = new CartelFiltroMatch(this.user);
-            panelMatch.Controls.Add(cFiltro, 0, 0);
-            panelMatch.RowCount = panelMatch.RowCount + 1;
+            tablePP.Controls.Add(cFiltro, 0, 0);
+            tablePP.RowCount = tablePP.RowCount + 1;
 
             //Pulsación Filtros // Recojo Botones
             Control panelFiltro = cFiltro.Controls.Find("panel1", false)[0]; //Panel de Filtros
@@ -251,10 +398,12 @@ namespace APS.Interfaces
 
         private void cargarMatchActividadesFiltro(List<Actividad> listAct)
         {
-            panelMatch.Controls.Clear();
-            panelMatch.AutoScroll = false;
-            panelMatch.AutoScroll = true;
-            panelMatch.RowCount = 1;
+            chargedWindow = PantallaCargada.MATCH;
+            tablePP.Controls.Clear();
+            tablePP.RowCount = 1;
+            tablePP.AutoScroll = false;
+            panelPrincipal.AutoScroll = false;
+            panelPrincipal.AutoScroll = true;
             cargarFiltrosMatch();
 
             CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[listAct.Count];
@@ -265,8 +414,8 @@ namespace APS.Interfaces
                 if (act.EstadoAct.ToString().Equals("ABIERTA"))
                 {
                     actsCarteles[c] = new CartelActividadesStandard(user, act);
-                    panelMatch.Controls.Add(actsCarteles[c], 0, c + 1);
-                    panelMatch.RowCount = panelMatch.RowCount + 1;
+                    tablePP.Controls.Add(actsCarteles[c], 0, c + 1);
+                    tablePP.RowCount = tablePP.RowCount + 1;
                     actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));                  
                     //BOTON SOLICITAR
                     Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
@@ -284,9 +433,12 @@ namespace APS.Interfaces
         private void cargarTodasActividadesInicio()
         {
 
-            pTodas.Controls.Add(panelTodas);
-            panelTodas.Controls.Clear();
-            panelTodas.RowCount = 1;
+            chargedWindow = PantallaCargada.TODAS;
+            tablePP.Controls.Clear();
+            tablePP.RowCount = 1;
+            tablePP.AutoScroll = false;
+            panelPrincipal.AutoScroll = false;
+            panelPrincipal.AutoScroll = true;
             cargarFiltrosTodas(Actividad.TurnoE.AMBAS,Actividad.TipoActividadE.TODAS,null,null,DateTime.Today,0);
 
             List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
@@ -295,17 +447,16 @@ namespace APS.Interfaces
             int c = 0;
             foreach (Actividad act in actividades)
             {
-                 actsCarteles[c] = new CartelActividadesStandard(user, act);
-                 panelTodas.Controls.Add(actsCarteles[c], 0, c + 1);
-                 panelTodas.RowCount = panelTodas.RowCount + 1;
-                 actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
+                actsCarteles[c] = new CartelActividadesStandard(user, act);   
+                tablePP.Controls.Add(actsCarteles[c], 0, c + 1);
+                tablePP.RowCount = tablePP.RowCount + 1;
+                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
+
                 //BOTON SOLICITAR
                 Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
                 Button bSolicitar = (Button)panel.Controls.Find("bSolicitar", false)[0];
-                if (user.Rol.NombreRol.Equals("GESTOR"))
-                {
-                    bSolicitar.Visible = false;
-                }
+                if (user.Rol.NombreRol.Equals("GESTOR")) bSolicitar.Visible = false;
+                
                 //PROGRAMACIÓN BOTONES
                 bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, act); };
                 c++;
@@ -316,10 +467,12 @@ namespace APS.Interfaces
         private void cargarTodasActividadesFiltro(List<Actividad> listAct,Actividad.TurnoE turno, Actividad.TipoActividadE tipoAct,
                                                     Asignatura asig, Grado g, DateTime date, int horas)
         {
-            panelTodas.Controls.Clear();
-            panelTodas.AutoScroll = false;
-            panelTodas.AutoScroll = true;
-            panelTodas.RowCount = 1;
+            chargedWindow = PantallaCargada.TODAS;
+            tablePP.Controls.Clear();
+            tablePP.RowCount = 1;
+            tablePP.AutoScroll = false;
+            panelPrincipal.AutoScroll = false;
+            panelPrincipal.AutoScroll = true;
             cargarFiltrosTodas(turno,tipoAct,asig,g,date,horas);
 
             CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[listAct.Count];
@@ -328,8 +481,8 @@ namespace APS.Interfaces
             foreach (Actividad act in listAct)
             {
                 actsCarteles[c] = new CartelActividadesStandard(user, act);
-                panelTodas.Controls.Add(actsCarteles[c], 0, c + 1);
-                panelTodas.RowCount = panelTodas.RowCount + 1;
+                tablePP.Controls.Add(actsCarteles[c], 0, c + 1);
+                tablePP.RowCount = tablePP.RowCount + 1;
                 actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
                 //Programar Solicitar
                 Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
@@ -339,44 +492,12 @@ namespace APS.Interfaces
             }
         }
 
-        private void cargarFiltrosTodas()
-        {
-            //pTodas
-            CartelFiltros cFiltro = new CartelFiltros(this.user);
-            panelTodas.Controls.Add(cFiltro, 0, 0);
-            panelTodas.RowCount = panelTodas.RowCount + 1;
-
-            //Pulsación Filtros
-            Control panelFiltro = cFiltro.Controls.Find("panel1", false)[0]; //Panel de Filtros
-            List<ComboBox> cBox = new List<ComboBox>(); //ComboBox de Filtros [Turno, TipoAct, Asig, Grado];
-            DateTimePicker dtIni = new DateTimePicker(); //DateTimePicker de Filtros
-            Button bFiltros = new Button(); //Button de Filtros -> Aplicar
-            NumericUpDown bHoras = new NumericUpDown();
-
-            //Recojo los Botones
-            foreach (Control cPanel in panelFiltro.Controls)
-            {
-                if (cPanel.GetType().ToString().Equals("System.Windows.Forms.ComboBox")) cBox.Add((ComboBox)cPanel);
-                if (cPanel.GetType().ToString().Equals("System.Windows.Forms.Button")) bFiltros = (Button)cPanel;
-                if (cPanel.GetType().ToString().Equals("System.Windows.Forms.DateTimePicker")) dtIni = (DateTimePicker)cPanel;
-                if (cPanel.GetType().ToString().Equals("System.Windows.Forms.NumericUpDown")) bHoras = (NumericUpDown)cPanel;
-            }
-
-            //Añadimos Parámetros para el Filtro
-            bFiltros.Click += (sender, EventArgs) => { bFiltros_Click(sender, EventArgs, cBox, dtIni, bHoras); };
-
-            //Valores predefinidos
-            cBox[0].SelectedItem = Actividad.TurnoE.AMBAS;
-            cBox[1].SelectedItem = Actividad.TipoActividadE.TODAS;
-            bHoras.Value = bHoras.Maximum;
-        }
-
         private void cargarFiltrosTodas(Actividad.TurnoE turno, Actividad.TipoActividadE tipoAct, Asignatura asig, Grado g, DateTime date, int horas)
         {
             //pTodas
             CartelFiltros cFiltro = new CartelFiltros(this.user);
-            panelTodas.Controls.Add(cFiltro, 0, 0);
-            panelTodas.RowCount = panelTodas.RowCount + 1;
+            tablePP.Controls.Add(cFiltro, 0, 0);
+            tablePP.RowCount = tablePP.RowCount + 1;
 
             //Pulsación Filtros
             Control panelFiltro = cFiltro.Controls.Find("panel1", false)[0]; //Panel de Filtros
@@ -489,12 +610,12 @@ namespace APS.Interfaces
         //
         private void cargarPendientesActividadesInicio()
         {
-            pPendientes.Controls.Clear();
-            panelPendientes.AutoScroll = false;
-            panelPendientes.AutoScroll = true;
-            pPendientes.Controls.Add(panelPendientes);
-            panelPendientes.RowCount = 1;
-            panelPendientes.Controls.Clear();
+            chargedWindow = PantallaCargada.PENDIENTES;
+            tablePP.Controls.Clear();
+            tablePP.RowCount = 1;
+            tablePP.AutoScroll = false;
+            panelPrincipal.AutoScroll = false;
+            panelPrincipal.AutoScroll = true;
 
             List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.PENDIENTE_ACEPTACION);
             CartelPendientes[] actsCarteles = new CartelPendientes[actividades.Count];
@@ -503,8 +624,8 @@ namespace APS.Interfaces
             foreach (Actividad act in actividades)
             {
                 actsCarteles[c] = new CartelPendientes(user, act);
-                panelPendientes.Controls.Add(actsCarteles[c], 0, c);
-                panelPendientes.RowCount = panelPendientes.RowCount + 1;
+                tablePP.Controls.Add(actsCarteles[c], 0, c);
+                tablePP.RowCount = tablePP.RowCount + 1;
                 actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
                 actsCarteles[c].BackColor = Color.DarkCyan;
                
@@ -538,7 +659,6 @@ namespace APS.Interfaces
             emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
 
             if (emCierreDialog == DialogResult.Yes) act.BorrarActividad();
-            cargarRevisionActividadesInicio();
             cargarPendientesActividadesInicio();
         }
 
@@ -551,12 +671,13 @@ namespace APS.Interfaces
         //
         private void cargarRevisionActividadesInicio()
         {
-            pRevision.Controls.Clear();
-            panelRevision.AutoScroll = false;
-            panelRevision.AutoScroll = true;
-            pRevision.Controls.Add(panelRevision);
-            panelRevision.RowCount = 1;
-            panelRevision.Controls.Clear();
+
+            chargedWindow = PantallaCargada.REVISION;
+            tablePP.Controls.Clear();
+            tablePP.RowCount = 1;
+            tablePP.AutoScroll = false;
+            panelPrincipal.AutoScroll = false;
+            panelPrincipal.AutoScroll = true;
 
             //ORDEN -> PRIMERO LAS QUE TIENE QUE DECIDIR SI ES VIABLE
             //      -> DESPUÉS, LAS QUE TIENE QUE REVISAR
@@ -564,7 +685,7 @@ namespace APS.Interfaces
 
             int c = 0;
             cargarAceptadasGestor(c); //Carga las Actividades recién aceptadas por el gestor
-            c = panelRevision.Controls.Count;
+            c = tablePP.Controls.Count;
 
             //Listas de Actividades en Negociación
             List<Actividad> actNegPDI = Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_PDI);
@@ -572,10 +693,7 @@ namespace APS.Interfaces
             List<Actividad> actNegCAN = Actividad.ListaActividades(Actividad.EstadoActividadE.NEGOCIACION_CANCELADA);
             List<Actividad> actPenGestor = Actividad.ListaActividades(Actividad.EstadoActividadE.PENDIENTE_ACEPTACION);
 
-            if (user.Rol.NombreRol.Equals("PDI"))
-            {
-                cargarRevisionPDI(c, actNegPDI, actNegONG);
-            }
+            if (user.Rol.NombreRol.Equals("PDI")) cargarRevisionPDI(c, actNegPDI, actNegONG);
             else
             { //ES ONG -> lo mismo que para el PDI, pero al contrario 
                 cargarRevisionONG(c, actNegPDI, actNegONG, actNegCAN, actPenGestor);
@@ -596,8 +714,8 @@ namespace APS.Interfaces
                     if (act.Responsable.Equals(user))
                     {
                         carAcGestor[c] = new CartelPendientes(user, act);
-                        panelRevision.Controls.Add(carAcGestor[c], 0, c);
-                        panelRevision.RowCount = panelRevision.RowCount + 1;
+                        tablePP.Controls.Add(carAcGestor[c], 0, c);
+                        tablePP.RowCount = tablePP.RowCount + 1;
                         carAcGestor[c].Location = new Point(carAcGestor[c].Location.X, (carAcGestor[c].Size.Height * c));
                         carAcGestor[c].BackColor = Color.Yellow;
 
@@ -628,8 +746,8 @@ namespace APS.Interfaces
                 {
                     
                     carNegPDI[c2] = new CartelPendientes(user, act);
-                    panelRevision.Controls.Add(carNegPDI[c2], 0, c);
-                    panelRevision.RowCount = panelRevision.RowCount + 1;
+                    tablePP.Controls.Add(carNegPDI[c2], 0, c);
+                    tablePP.RowCount = tablePP.RowCount + 1;
                     carNegPDI[c2].Location = new Point(carNegPDI[c2].Location.X, (carNegPDI[c2].Size.Height * c));
                     carNegPDI[c2].BackColor = Color.Green;
 
@@ -654,8 +772,8 @@ namespace APS.Interfaces
                 if (act.Responsable.Equals(user))
                 {
                     carNegONG[c2] = new CartelPendientes(user, act);
-                    panelRevision.Controls.Add(carNegONG[c2], 0, c);
-                    panelRevision.RowCount = panelRevision.RowCount + 1;
+                    tablePP.Controls.Add(carNegONG[c2], 0, c);
+                    tablePP.RowCount = tablePP.RowCount + 1;
                     carNegONG[c2].Location = new Point(carNegONG[c2].Location.X, (carNegONG[c2].Size.Height * c));
                     carNegONG[c2].BackColor = Color.Red;
 
@@ -689,8 +807,8 @@ namespace APS.Interfaces
                 if (act.Organizador.Equals(user))
                 {
                     carPenGestor[c2] = new CartelPendientes(user, act);
-                    panelRevision.Controls.Add(carPenGestor[c2], 0, c);
-                    panelRevision.RowCount = panelRevision.RowCount + 1;
+                    tablePP.Controls.Add(carPenGestor[c2], 0, c);
+                    tablePP.RowCount = tablePP.RowCount + 1;
                     carPenGestor[c2].Location = new Point(carPenGestor[c2].Location.X, (carPenGestor[c2].Size.Height * c));
                     carPenGestor[c2].BackColor = Color.Black;
 
@@ -716,8 +834,8 @@ namespace APS.Interfaces
                 if (act.Organizador.Equals(user))
                 {
                     carNegCancelada[c2] = new CartelPendientes(user, act);
-                    panelRevision.Controls.Add(carNegCancelada[c2], 0, c);
-                    panelRevision.RowCount = panelRevision.RowCount + 1;
+                    tablePP.Controls.Add(carNegCancelada[c2], 0, c);
+                    tablePP.RowCount = tablePP.RowCount + 1;
                     carNegCancelada[c2].Location = new Point(carNegCancelada[c2].Location.X, (carNegCancelada[c2].Size.Height * c));
                     carNegCancelada[c2].BackColor = Color.Yellow;
 
@@ -741,8 +859,8 @@ namespace APS.Interfaces
                 if (act.Organizador.Equals(user))
                 {
                     carNegONG[c2] = new CartelPendientes(user, act);
-                    panelRevision.Controls.Add(carNegONG[c2], 0, c);
-                    panelRevision.RowCount = panelRevision.RowCount + 1;
+                    tablePP.Controls.Add(carNegONG[c2], 0, c);
+                    tablePP.RowCount = tablePP.RowCount + 1;
                     carNegONG[c2].Location = new Point(carNegONG[c2].Location.X, (carNegONG[c2].Size.Height * c));
                     carNegONG[c2].BackColor = Color.Green;
 
@@ -767,8 +885,8 @@ namespace APS.Interfaces
                 if (act.Organizador.Equals(user))
                 {
                     carNegPDI[c2] = new CartelPendientes(user, act);
-                    panelPendientes.Controls.Add(carNegPDI[c2], 0, c);
-                    panelPendientes.RowCount = panelPendientes.RowCount + 1;
+                    tablePP.Controls.Add(carNegPDI[c2], 0, c);
+                    tablePP.RowCount = tablePP.RowCount + 1;
                     carNegPDI[c2].Location = new Point(carNegPDI[c2].Location.X, (carNegPDI[c2].Size.Height * c));
                     carNegPDI[c2].BackColor = Color.Red;
 
@@ -795,7 +913,6 @@ namespace APS.Interfaces
             act.TipoAct = Actividad.TipoActividadE.VOLUNTARIADO;
             act.Responsable = null;
             cargarRevisionActividadesInicio();
-            cargarTodasActividadesInicio();
         }
 
         private void bRevisarRevGestor_Click(object sender, EventArgs eventArgs, Actividad act)
@@ -803,8 +920,6 @@ namespace APS.Interfaces
             VerActividadRevision actRevision = new VerActividadRevision(user,act);
             actRevision.ShowDialog();
             cargarRevisionActividadesInicio();
-            cargarTodasActividadesInicio();
-            cargarMisActividadesInicio();
         }
 
         // -> PDI debe Aceptar/Rechazar Actividad en Negociación con ONG
@@ -821,8 +936,6 @@ namespace APS.Interfaces
             VerActividadRevision actRevision = new VerActividadRevision(user, act);
             actRevision.ShowDialog();
             cargarRevisionActividadesInicio();
-            cargarTodasActividadesInicio();
-            cargarMisActividadesInicio();
         }
 
         // -> ONG debe Aceptar/Rechazar Actividad en Negociación con PDI
@@ -847,8 +960,6 @@ namespace APS.Interfaces
             VerActividadRevision actRevision = new VerActividadRevision(user, act);
             actRevision.ShowDialog();
             cargarRevisionActividadesInicio();
-            cargarTodasActividadesInicio();
-            cargarMisActividadesInicio();
         }
 
 
@@ -857,12 +968,12 @@ namespace APS.Interfaces
         //
         private void cargarMisActividadesInicio()
         {
-            pMisActividades.Controls.Clear();
-            panelMisActs.AutoScroll = false;
-            panelMisActs.AutoScroll = true;
-            pMisActividades.Controls.Add(panelMisActs);
-            panelMisActs.RowCount = 1;
-            panelMisActs.Controls.Clear();
+            chargedWindow = PantallaCargada.MIS_ACTIVIDADES;
+            tablePP.Controls.Clear();
+            tablePP.RowCount = 1;
+            tablePP.AutoScroll = false;
+            panelPrincipal.AutoScroll = false;
+            panelPrincipal.AutoScroll = true;
 
             int c = 0;
             if (user.Rol.NombreRol.Equals("PDI"))
@@ -871,9 +982,9 @@ namespace APS.Interfaces
                 List<Actividad> actsCERPDI = Actividad.ListaActividades(Actividad.EstadoActividadE.CERRADA);
                 List<Actividad> actsPROPDI = Actividad.ListaActividades(Actividad.EstadoActividadE.EN_PROCESO);
                 cargarMisActsPDI(c,actsPDI);
-                c = panelMisActs.Controls.Count;
+                c = tablePP.Controls.Count;
                 cargarMisActsPDI(c,actsCERPDI);
-                c = panelMisActs.Controls.Count;
+                c = tablePP.Controls.Count;
                 cargarMisActsPDI(c,actsPROPDI);
                 
             }
@@ -883,9 +994,9 @@ namespace APS.Interfaces
                 List<Actividad> actsCERONG = Actividad.ListaActividades(Actividad.EstadoActividadE.CERRADA);
                 List<Actividad> actsPROONG = Actividad.ListaActividades(Actividad.EstadoActividadE.EN_PROCESO);
                 cargarMisActsONG(c,actsONG);
-                c = panelMisActs.Controls.Count;
+                c = tablePP.Controls.Count;
                 cargarMisActsONG(c,actsCERONG);
-                c = panelMisActs.Controls.Count;
+                c = tablePP.Controls.Count;
                 cargarMisActsONG(c,actsPROONG);
             }
         }
@@ -899,8 +1010,8 @@ namespace APS.Interfaces
                 if (act.Organizador.Equals(user))
                 {
                     carActsONG[c2] = new CartelPendientes(user, act);
-                    panelMisActs.Controls.Add(carActsONG[c2], 0, c);
-                    panelMisActs.RowCount = panelMisActs.RowCount + 1;
+                    tablePP.Controls.Add(carActsONG[c2], 0, c);
+                    tablePP.RowCount = tablePP.RowCount + 1;
                     carActsONG[c2].Location = new Point(carActsONG[c2].Location.X, (carActsONG[c2].Size.Height * c));
                     if(act.EstadoAct.ToString().Equals("ABIERTA")) carActsONG[c2].BackColor = Color.Blue;
                     if (act.EstadoAct.ToString().Equals("CERRADA")) carActsONG[c2].BackColor = Color.OrangeRed;
@@ -932,8 +1043,8 @@ namespace APS.Interfaces
                 if (act.Responsable != null && act.Responsable.Equals(user))
                 {
                     carActsPDI[c2] = new CartelPendientes(user, act);
-                    panelMisActs.Controls.Add(carActsPDI[c2], 0, c);
-                    panelMisActs.RowCount = panelMisActs.RowCount + 1;
+                    tablePP.Controls.Add(carActsPDI[c2], 0, c);
+                    tablePP.RowCount = tablePP.RowCount + 1;
                     carActsPDI[c2].Location = new Point(carActsPDI[c2].Location.X, (carActsPDI[c2].Size.Height * c));
                     if (act.EstadoAct.ToString().Equals("ABIERTA")) carActsPDI[c2].BackColor = Color.Blue;
                     if (act.EstadoAct.ToString().Equals("CERRADA")) carActsPDI[c2].BackColor = Color.OrangeRed;
@@ -962,8 +1073,6 @@ namespace APS.Interfaces
             this.Visible = false;
             verPar.ShowDialog();
             this.Visible = true;
-            cargarMatchActividadesInicio();
-            cargarTodasActividadesInicio();
             cargarMisActividadesInicio();
         }
 
@@ -981,12 +1090,12 @@ namespace APS.Interfaces
         //
         private void cargarActividadesInscritas()
         {
-            pActividadesInscritas.Controls.Clear();
-            panelActIns.AutoScroll = false;
-            panelActIns.AutoScroll = true;
-            pActividadesInscritas.Controls.Add(panelActIns);
-            panelActIns.RowCount = 1;
-            panelActIns.Controls.Clear();
+            chargedWindow = PantallaCargada.ACTIVIDADES_INSCRITAS;
+            tablePP.Controls.Clear();
+            tablePP.RowCount = 1;
+            tablePP.AutoScroll = false;
+            panelPrincipal.AutoScroll = false;
+            panelPrincipal.AutoScroll = true;
 
             int c = 0;
 
@@ -996,11 +1105,11 @@ namespace APS.Interfaces
             List<Actividad_Solicitud> actSolDenegada = Actividad_Solicitud.ListaActividadesSolicitudes(user, Actividad_Solicitud.EstadoActividadSolicitudE.DENEGADA);
 
             cargarSolicitudesAceptadas(actSolAceptada,c);
-            c = panelActIns.Controls.Count;
+            c = tablePP.Controls.Count;
             cargarSolicitudesEsperaPDI(actSolEsperaPDI,c);
-            c = panelActIns.Controls.Count;
+            c = tablePP.Controls.Count;
             cargarSolicitudesEsperaONG(actSolEsperaONG,c);
-            c = panelActIns.Controls.Count;
+            c = tablePP.Controls.Count;
             cargarSolicitudesDenegadas(actSolDenegada,c);
         }
 
@@ -1012,8 +1121,8 @@ namespace APS.Interfaces
             foreach (Actividad_Solicitud aS in actSolDenegada)
             {
                 carActInsDenegada[c2] = new CartelActividadesStandard(user, aS.Actividad);
-                panelActIns.Controls.Add(carActInsDenegada[c2], 0, c);
-                panelActIns.RowCount = panelActIns.RowCount + 1;
+                tablePP.Controls.Add(carActInsDenegada[c2], 0, c);
+                tablePP.RowCount = tablePP.RowCount + 1;
                 carActInsDenegada[c2].Location = new Point(carActInsDenegada[c2].Location.X, (carActInsDenegada[c2].Size.Height * c));
                 carActInsDenegada[c2].BackColor = Color.Red;
 
@@ -1039,8 +1148,8 @@ namespace APS.Interfaces
             foreach (Actividad_Solicitud aS in actSolEsperaONG)
             {
                 carActInsEsperaONG[c2] = new CartelActividadesStandard(user, aS.Actividad);
-                panelActIns.Controls.Add(carActInsEsperaONG[c2], 0, c);
-                panelActIns.RowCount = panelActIns.RowCount + 1;
+                tablePP.Controls.Add(carActInsEsperaONG[c2], 0, c);
+                tablePP.RowCount = tablePP.RowCount + 1;
                 carActInsEsperaONG[c2].Location = new Point(carActInsEsperaONG[c2].Location.X, (carActInsEsperaONG[c2].Size.Height * c));
                 carActInsEsperaONG[c2].BackColor = Color.Violet;
 
@@ -1068,8 +1177,8 @@ namespace APS.Interfaces
             foreach (Actividad_Solicitud aS in actSolEsperaPDI)
             {
                 carActInsEsperaPDI[c2] = new CartelActividadesStandard(user, aS.Actividad);
-                panelActIns.Controls.Add(carActInsEsperaPDI[c2], 0, c);
-                panelActIns.RowCount = panelActIns.RowCount + 1;
+                tablePP.Controls.Add(carActInsEsperaPDI[c2], 0, c);
+                tablePP.RowCount = tablePP.RowCount + 1;
                 carActInsEsperaPDI[c2].Location = new Point(carActInsEsperaPDI[c2].Location.X, (carActInsEsperaPDI[c2].Size.Height * c));
                 carActInsEsperaPDI[c2].BackColor = Color.Purple;
 
@@ -1114,8 +1223,8 @@ namespace APS.Interfaces
             foreach (Actividad_Solicitud aS in actSolAceptada)
             {
                 carActInsAceptada[c2] = new CartelActividadesStandard(user, aS.Actividad);
-                panelActIns.Controls.Add(carActInsAceptada[c2], 0, c);
-                panelActIns.RowCount = panelActIns.RowCount + 1;
+                tablePP.Controls.Add(carActInsAceptada[c2], 0, c);
+                tablePP.RowCount = tablePP.RowCount + 1;
                 carActInsAceptada[c2].Location = new Point(carActInsAceptada[c2].Location.X, (carActInsAceptada[c2].Size.Height * c));
                 carActInsAceptada[c2].BackColor = Color.Green;
 
