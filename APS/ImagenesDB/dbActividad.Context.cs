@@ -12,19 +12,19 @@ namespace APS.ImagenesDB
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+
     public partial class Entities : DbContext
     {
         public Entities()
             : base("Data Source=localhost;Initial Catalog=WePass;Persist Security Info=True;User ID=user1;Password=user1;MultipleActiveResultSets=True")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Actividades>().HasKey(e => e.ID_Actividad);
         }
-    
+
         public virtual DbSet<Actividades> Actividades { get; set; }
     }
 }

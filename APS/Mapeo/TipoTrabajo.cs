@@ -40,6 +40,15 @@ namespace APS.Mapeo
             this.tipoTrabajo = tupla[1].ToString();
         }
 
+        public TipoTrabajo(string tipoTrabajo, Boolean b)
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            string sel = "SELECT * FROM Tipo_Trabajo WHERE tipoTrabajo ='" + tipoTrabajo + "';";
+            Object[] tupla = miBD.Select(sel)[0];
+            this.id = int.Parse(tupla[0].ToString());
+            this.tipoTrabajo = tupla[1].ToString();
+        }
+
         public TipoTrabajo(string tipoTrabajo)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);

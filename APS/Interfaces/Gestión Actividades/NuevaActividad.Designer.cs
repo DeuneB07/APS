@@ -327,11 +327,11 @@ namespace APS.Interfaces
             // 
             // ambitoTrabajoEBindingSource
             // 
-            this.ambitoTrabajoEBindingSource.DataSource = typeof(APS.Mapeo.Actividad.AmbitoTrabajoE);
+            this.ambitoTrabajoEBindingSource.DataSource = typeof(APS.Mapeo.AmbitoTrabajo);
             // 
             // tipoTrabajoEBindingSource
             // 
-            this.tipoTrabajoEBindingSource.DataSource = typeof(APS.Mapeo.Actividad.TipoTrabajoE);
+            this.tipoTrabajoEBindingSource.DataSource = typeof(APS.Mapeo.TipoTrabajo);
             // 
             // btnExaminar
             // 

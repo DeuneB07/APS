@@ -31,8 +31,8 @@ namespace APS.Interfaces.Gestión_Actividades
             fechaFinNegociar.Text = actividad.FechaFin.ToShortDateString();
             tLugarNegociar.Text = actividad.Lugar;
             listTurnoNegociar.Text = actividad.Turno.ToString();
-            listAmbitoNegociar.Text = actividad.AmbitoTrabajo.ToString();
-            listTrabajoNegociar.Text = actividad.TipoTrabajo.ToString();
+            listAmbitoNegociar.Text = actividad.AmbitoTrabajo.Ambito_Trabajo;
+            listTrabajoNegociar.Text = actividad.TipoTrabajo.Tipo_Trabajo;
 
             cargarTurnos();
             cargarTipoTrabajo();
@@ -77,20 +77,24 @@ namespace APS.Interfaces.Gestión_Actividades
             }
         }
 
-        private void cargarTipoTrabajo()
-        {
-            foreach (TipoTrabajoE tTrab in Enum.GetValues(typeof(TipoTrabajoE)))
-            {
-                listTrabajoNegociar.Items.Add(tTrab);
-            }
-        }
-
         private void cargarAmbitoTrabajo()
         {
-            foreach (AmbitoTrabajoE tAmb in Enum.GetValues(typeof(AmbitoTrabajoE)))
+            listAmbitoNegociar.Items.Clear();
+            foreach (AmbitoTrabajo ambito in AmbitoTrabajo.ListaAmbitoTrabajo())
             {
-                listAmbitoNegociar.Items.Add(tAmb);
+                listAmbitoNegociar.Items.Add(ambito);
             }
+            listAmbitoNegociar.DisplayMember = "ambitoTrabajo";
+        }
+
+        private void cargarTipoTrabajo()
+        {
+            listTrabajoNegociar.Items.Clear();
+            foreach (TipoTrabajo tipo in TipoTrabajo.ListaTipoTrabajo())
+            {
+                listTrabajoNegociar.Items.Add(tipo);
+            }
+            listTrabajoNegociar.DisplayMember = "tipoTrabajo";
         }
     }
 }

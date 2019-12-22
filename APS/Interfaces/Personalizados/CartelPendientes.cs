@@ -28,18 +28,18 @@ namespace APS.Interfaces.Personalizados
             this.lShowIni.Text = a.FechaInicio.ToShortDateString() + " - " + a.FechaFin.ToShortDateString();
             this.lShowOrg.Text = a.Organizador.Nombre;
             
-            if (!a.TipoTrabajo2.Tipo_Trabajo.Equals(""))
+            if (!a.TipoTrabajo.Tipo_Trabajo.Equals(""))
             {
-                this.lShowTipoTrab.Text = a.TipoTrabajo2.Tipo_Trabajo;
+                this.lShowTipoTrab.Text = a.TipoTrabajo.Tipo_Trabajo;
             } else
             {
                 this.lShowTipoTrab.Visible = false;
                 this.lTipoTrab.Visible = false;
             }
 
-            if (!a.AmbitoTrabajo2.Ambito_Trabajo.Equals(""))
+            if (!a.AmbitoTrabajo.Ambito_Trabajo.Equals(""))
             {
-                this.lShowAmbito.Text = a.AmbitoTrabajo2.Ambito_Trabajo;
+                this.lShowAmbito.Text = a.AmbitoTrabajo.Ambito_Trabajo;
             }
             else
             {

@@ -42,6 +42,15 @@ namespace APS.Mapeo
             this.ambitoTrabajo = tupla[1].ToString();
         }
 
+        public AmbitoTrabajo(string ambitoTrabajo, Boolean b)
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            string sel = "SELECT * FROM Ambito_Trabajo WHERE ambitoTrabajo ='" + ambitoTrabajo + "';";
+            Object[] tupla = miBD.Select(sel)[0];
+            this.id = int.Parse(tupla[0].ToString());
+            this.ambitoTrabajo = tupla[1].ToString();
+        }
+
         public AmbitoTrabajo(string ambitoTrabajo)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);

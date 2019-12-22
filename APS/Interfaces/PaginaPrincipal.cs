@@ -309,8 +309,8 @@ namespace APS.Interfaces
                 Asignatura asig = ((Preferencia)cBox.SelectedItem).Asignatura;
                 Actividad.TurnoE turnoF = ((Preferencia)cBox.SelectedItem).Turno;
                 Actividad.TipoActividadE tipoActF = ((Preferencia)cBox.SelectedItem).TipoActividad;
-                Actividad.TipoTrabajoE tipoTrabF = ((Preferencia)cBox.SelectedItem).TipoTrabajo;
-                Actividad.AmbitoTrabajoE ambTrabF = ((Preferencia)cBox.SelectedItem).AmbitoTrabajo;
+                TipoTrabajo tipoTrabF = ((Preferencia)cBox.SelectedItem).TipoTrabajo;
+                AmbitoTrabajo ambTrabF = ((Preferencia)cBox.SelectedItem).AmbitoTrabajo;
                 int horas = 0;
 
                 if (!((Preferencia)cBox.SelectedItem).HorasPosibles.ToString().Equals("")) horas = ((Preferencia)cBox.SelectedItem).HorasPosibles;
@@ -355,7 +355,7 @@ namespace APS.Interfaces
                 }
 
                 //Filtro TipoTrab
-                if (!tipoTrabF.ToString().Equals(Actividad.TipoActividadE.TODAS.ToString()))
+                if (!tipoTrabF.Tipo_Trabajo.Equals("TODAS"))
                 {
                     foreach (Actividad a in Actividad.ListaActividades())
                     {
@@ -364,7 +364,7 @@ namespace APS.Interfaces
                 }
 
                 //Filtro AmbTrabajo
-                if (!ambTrabF.ToString().Equals(Actividad.TipoActividadE.TODAS.ToString()))
+                if (!ambTrabF.Ambito_Trabajo.Equals("TODAS"))
                 {
                     foreach (Actividad a in Actividad.ListaActividades())
                     {

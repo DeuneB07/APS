@@ -27,8 +27,8 @@
           <Property Name="notaMedia" Type="real" />
           <Property Name="estadoAct" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="imagen" Type="image" />
-          <Property Name="ambitoTrabajo" Type="varchar" MaxLength="50" />
-          <Property Name="tipoTrabajo" Type="varchar" MaxLength="50" />
+          <Property Name="idAmbitoTrabajo" Type="int" />
+          <Property Name="idTipoTrabajo" Type="int" />
         </EntityType>
         <EntityContainer Name="WePassModelStoreContainer">
           <EntitySet Name="Actividades" EntityType="Self.Actividades" Schema="dbo" store:Type="Tables" />
@@ -60,8 +60,8 @@
           <Property Name="notaMedia" Type="Single" />
           <Property Name="estadoAct" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="ambitoTrabajo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="tipoTrabajo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idAmbitoTrabajo" Type="Int32" />
+          <Property Name="idTipoTrabajo" Type="Int32" />
         </EntityType>
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Actividades" EntityType="Self.Actividades" />
@@ -93,8 +93,8 @@
                 <ScalarProperty Name="notaMedia" ColumnName="notaMedia" />
                 <ScalarProperty Name="estadoAct" ColumnName="estadoAct" />
                 <ScalarProperty Name="imagen" ColumnName="imagen" />
-                <ScalarProperty Name="ambitoTrabajo" ColumnName="ambitoTrabajo" />
-                <ScalarProperty Name="tipoTrabajo" ColumnName="tipoTrabajo" />
+                <ScalarProperty Name="idAmbitoTrabajo" ColumnName="idAmbitoTrabajo" />
+                <ScalarProperty Name="idTipoTrabajo" ColumnName="idTipoTrabajo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

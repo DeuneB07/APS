@@ -32,7 +32,7 @@ namespace APS.ImagenesDB
         public Nullable<float> notaMedia { get; set; }
         public string estadoAct { get; set; }
         public byte[] imagen { get; set; }
-        public string ambitoTrabajo { get; set; }
-        public string tipoTrabajo { get; set; }
+        public Nullable<int> idAmbitoTrabajo { get; set; }
+        public Nullable<int> idTipoTrabajo { get; set; }
     }
 }

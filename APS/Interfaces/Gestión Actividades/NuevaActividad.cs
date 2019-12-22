@@ -40,21 +40,14 @@ namespace APS.Interfaces
                 TurnoE turno;
                 Enum.TryParse<TurnoE>(listTurno.SelectedItem.ToString(), true, out turno);
 
-                //ANTIGUO
-                AmbitoTrabajoE ambito;
-                Enum.TryParse(listAmbito.Text, true, out ambito);
-                TipoTrabajoE trabajo;
-                Enum.TryParse<TipoTrabajoE>(listTrabajo.Text, true, out trabajo);
                 //NUEVO
                 if (listAmbito.SelectedItem.Equals(null)) throw new Exception("Ningún Ambito de trabajo seleccionado");
                 if (listTrabajo.SelectedItem.Equals(null)) throw new Exception("Ningún Tipo de trabajo seleccionado");
-                AmbitoTrabajo ambito2 = (AmbitoTrabajo)listAmbito.SelectedItem;
-                TipoTrabajo trabajo2 = (TipoTrabajo)listTrabajo.SelectedItem;
-                Console.WriteLine("idAmbito: " + ambito2.ID_AmbitoTrabajo + "; ambito: " + ambito2.Ambito_Trabajo);
-                Console.WriteLine("idTipo: " + trabajo2.ID_TipoTrabajo + "; tipo: " + trabajo2.Tipo_Trabajo);
+                AmbitoTrabajo ambito = (AmbitoTrabajo)listAmbito.SelectedItem;
+                TipoTrabajo trabajo = (TipoTrabajo)listTrabajo.SelectedItem;
 
                 Actividad a = new Actividad(tNombreAct.Text, tDescripcion.Text, int.Parse(tNumPlazas.Text), int.Parse(tNumHoras.Text), turno, dateTimePickerFechaIni.Value, dateTimePickerFechaFin.Value,
-                                            tLugar.Text, ong, EstadoActividadE.PENDIENTE_ACEPTACION, ambito, trabajo, ambito2, trabajo2);
+                                            tLugar.Text, ong, EstadoActividadE.PENDIENTE_ACEPTACION, ambito, trabajo);
 
                 if (!tURL.Text.Trim().Equals("")) a.Imagen = pictureBox.Image;
 
