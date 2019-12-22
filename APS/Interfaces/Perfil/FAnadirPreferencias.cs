@@ -57,20 +57,24 @@ namespace APS.Interfaces
             }
         }
 
-        private void cargarTipoTrabajo()
-        {
-            foreach (TipoTrabajoE tTrab in Enum.GetValues(typeof(TipoTrabajoE)))
-            {
-                comboTipoTrab.Items.Add(tTrab);
-            }
-        }
-
         private void cargarAmbitoTrabajo()
         {
-            foreach (AmbitoTrabajoE ambT in Enum.GetValues(typeof(AmbitoTrabajoE)))
+            comboAmbitoTrab.Items.Clear();
+            foreach (AmbitoTrabajo ambito in AmbitoTrabajo.ListaAmbitoTrabajo())
             {
-                comboAmbitoTrab.Items.Add(ambT);
+                comboAmbitoTrab.Items.Add(ambito);
             }
+            comboAmbitoTrab.DisplayMember = "ambitoTrabajo";
+        }
+
+        private void cargarTipoTrabajo()
+        {
+            comboTipoTrab.Items.Clear();
+            foreach (TipoTrabajo tipo in TipoTrabajo.ListaTipoTrabajo())
+            {
+                comboTipoTrab.Items.Add(tipo);
+            }
+            comboTipoTrab.DisplayMember = "tipoTrabajo";
         }
 
         private void cargarCompetencias()
@@ -126,8 +130,6 @@ namespace APS.Interfaces
 
                 TipoActividadE resTipo;
                 TurnoE resTurno;
-                TipoTrabajoE resTipoTrab;
-                AmbitoTrabajoE resAmbTrabajo;
 
                 Enum.TryParse<TurnoE>(comboTurno.Text, true, out resTurno);
                 if(!comboTurno.Text.Equals("")) p.Turno = resTurno;
@@ -135,11 +137,13 @@ namespace APS.Interfaces
                 Enum.TryParse<TipoActividadE>(comboTipo.Text, true, out resTipo);
                 if(!comboTipo.Text.Equals("")) p.TipoActividad = resTipo;
 
-                Enum.TryParse<TipoTrabajoE>(comboTipoTrab.Text, true, out resTipoTrab);
-                if (!comboTipoTrab.Text.Equals("")) p.TipoTrabajo = resTipoTrab;
-
-                Enum.TryParse<AmbitoTrabajoE>(comboAmbitoTrab.Text, true, out resAmbTrabajo);
-                if (!comboAmbitoTrab.Text.Equals("")) p.AmbitoTrabajo = resAmbTrabajo;
+                //
+                // NUEVO AMBITO TIPO
+                //
+                if (!comboAmbitoTrab.SelectedItem.Equals(null)) throw new Exception("Ámbito de Trabajo no puede ser Vacío");
+                else p.AmbitoTrabajo = (AmbitoTrabajo)comboAmbitoTrab.SelectedItem;
+                if (!comboTipoTrab.SelectedItem.Equals(null)) throw new Exception("Tipo de Trabajo no puede ser Vacío");
+                else p.TipoTrabajo = (TipoTrabajo)comboTipoTrab.SelectedItem;
 
                 p.HorasPosibles = decimal.ToInt32(numericUpDown.Value);
 

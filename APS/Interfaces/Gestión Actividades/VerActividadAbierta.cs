@@ -32,8 +32,8 @@ namespace APS.Interfaces.Gestión_Actividades
             dateTimePickerFechaFin.Value = actividad.FechaFin;
             tLugar.Text = actividad.Lugar;
             listTurno.Text = actividad.Turno.ToString();
-            listAmbito.Text = actividad.AmbitoTrabajo2.Ambito_Trabajo;
-            listTrabajo.Text = actividad.TipoTrabajo2.Tipo_Trabajo;
+            listAmbito.Text = actividad.AmbitoTrabajo.Ambito_Trabajo;
+            listTrabajo.Text = actividad.TipoTrabajo.Tipo_Trabajo;
 
             if (actividad.Imagen != null)
             {

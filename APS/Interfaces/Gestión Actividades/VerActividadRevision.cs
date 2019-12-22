@@ -31,8 +31,8 @@ namespace APS.Interfaces.Gestión_Actividades
             dateTimePickerFechaFinRevision.Value = actividad.FechaFin;
             tLugarRevision.Text = actividad.Lugar;
             listTurnoRevision.Text = actividad.Turno.ToString();
-            listAmbitoRevision.Text = actividad.AmbitoTrabajo.ToString();
-            listTrabajoRevision.Text = actividad.TipoTrabajo.ToString();
+            listAmbitoRevision.Text = actividad.AmbitoTrabajo.Ambito_Trabajo;
+            listTrabajoRevision.Text = actividad.TipoTrabajo.Tipo_Trabajo;
 
             //Mostrar Imagen
             if(actividad.Imagen != null)
@@ -97,20 +97,24 @@ namespace APS.Interfaces.Gestión_Actividades
             }
         }
 
-        private void cargarTipoTrabajo()
-        {
-            foreach (TipoTrabajoE tTrab in Enum.GetValues(typeof(TipoTrabajoE)))
-            {
-                listTrabajoRevision.Items.Add(tTrab);
-            }
-        }
-
         private void cargarAmbitoTrabajo()
         {
-            foreach (AmbitoTrabajoE tAmb in Enum.GetValues(typeof(AmbitoTrabajoE)))
+            listAmbitoRevision.Items.Clear();
+            foreach (AmbitoTrabajo ambito in AmbitoTrabajo.ListaAmbitoTrabajo())
             {
-                listAmbitoRevision.Items.Add(tAmb);
+                listAmbitoRevision.Items.Add(ambito);
             }
+            listAmbitoRevision.DisplayMember = "ambitoTrabajo";
+        }
+
+        private void cargarTipoTrabajo()
+        {
+            listTrabajoRevision.Items.Clear();
+            foreach (TipoTrabajo tipo in TipoTrabajo.ListaTipoTrabajo())
+            {
+                listTrabajoRevision.Items.Add(tipo);
+            }
+            listTrabajoRevision.DisplayMember = "tipoTrabajo";
         }
     }
 }

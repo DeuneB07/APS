@@ -221,8 +221,8 @@ namespace APS.Interfaces
             dateTimePickerFechaFin.Value = act.FechaFin;
             tLugar.Text = act.Lugar;
             listTurno.Text = act.Turno.ToString();
-            listAmbito.Text = act.AmbitoTrabajo2.Ambito_Trabajo;
-            listTrabajo.Text = act.TipoTrabajo2.Tipo_Trabajo;
+            listAmbito.Text = act.AmbitoTrabajo.Ambito_Trabajo;
+            listTrabajo.Text = act.TipoTrabajo.Tipo_Trabajo;
 
         }
 
