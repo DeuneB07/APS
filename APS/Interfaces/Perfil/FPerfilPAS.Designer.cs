@@ -86,7 +86,7 @@
             // 
             // bCancelarC
             // 
-            this.bCancelarC.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCancelarC.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCancelarC.Location = new System.Drawing.Point(130, 415);
             this.bCancelarC.Name = "bCancelarC";
             this.bCancelarC.Size = new System.Drawing.Size(125, 23);
@@ -97,7 +97,7 @@
             // 
             // bAtras
             // 
-            this.bAtras.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAtras.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAtras.Location = new System.Drawing.Point(277, 415);
             this.bAtras.Name = "bAtras";
             this.bAtras.Size = new System.Drawing.Size(98, 23);
@@ -118,7 +118,7 @@
             // 
             // bAceptarC
             // 
-            this.bAceptarC.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAceptarC.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAceptarC.Location = new System.Drawing.Point(130, 386);
             this.bAceptarC.Name = "bAceptarC";
             this.bAceptarC.Size = new System.Drawing.Size(125, 23);
@@ -129,7 +129,7 @@
             // 
             // bBaja
             // 
-            this.bBaja.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bBaja.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bBaja.Location = new System.Drawing.Point(12, 415);
             this.bBaja.Name = "bBaja";
             this.bBaja.Size = new System.Drawing.Size(98, 23);
@@ -140,7 +140,7 @@
             // 
             // bModPerfil
             // 
-            this.bModPerfil.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bModPerfil.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bModPerfil.Location = new System.Drawing.Point(12, 386);
             this.bModPerfil.Name = "bModPerfil";
             this.bModPerfil.Size = new System.Drawing.Size(98, 23);
@@ -203,7 +203,7 @@
             // 
             // bPreferencias
             // 
-            this.bPreferencias.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bPreferencias.Font = new System.Drawing.Font("Bahnschrift", 7.5F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bPreferencias.Location = new System.Drawing.Point(277, 386);
             this.bPreferencias.Name = "bPreferencias";
             this.bPreferencias.Size = new System.Drawing.Size(98, 23);
@@ -260,15 +260,16 @@
             // 
             // tURL
             // 
+            this.tURL.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tURL.Location = new System.Drawing.Point(130, 20);
             this.tURL.Name = "tURL";
-            this.tURL.Size = new System.Drawing.Size(100, 20);
+            this.tURL.Size = new System.Drawing.Size(100, 21);
             this.tURL.TabIndex = 61;
             this.tURL.Visible = false;
             // 
             // btnBorrarImagen
             // 
-            this.btnBorrarImagen.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarImagen.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarImagen.Location = new System.Drawing.Point(130, 86);
             this.btnBorrarImagen.Name = "btnBorrarImagen";
             this.btnBorrarImagen.Size = new System.Drawing.Size(98, 23);
@@ -280,7 +281,7 @@
             // 
             // btnCambiarImagen
             // 
-            this.btnCambiarImagen.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarImagen.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarImagen.Location = new System.Drawing.Point(130, 44);
             this.btnCambiarImagen.Name = "btnCambiarImagen";
             this.btnCambiarImagen.Size = new System.Drawing.Size(98, 23);

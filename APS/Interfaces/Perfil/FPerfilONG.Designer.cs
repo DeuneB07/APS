@@ -65,7 +65,7 @@
             // 
             // bCancelarC
             // 
-            this.bCancelarC.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCancelarC.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCancelarC.Location = new System.Drawing.Point(130, 415);
             this.bCancelarC.Name = "bCancelarC";
             this.bCancelarC.Size = new System.Drawing.Size(125, 23);
@@ -76,7 +76,7 @@
             // 
             // bAtras
             // 
-            this.bAtras.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAtras.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAtras.Location = new System.Drawing.Point(266, 415);
             this.bAtras.Name = "bAtras";
             this.bAtras.Size = new System.Drawing.Size(98, 23);
@@ -87,24 +87,25 @@
             // 
             // modiUser
             // 
-            this.modiUser.Location = new System.Drawing.Point(130, 215);
+            this.modiUser.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modiUser.Location = new System.Drawing.Point(133, 211);
             this.modiUser.Name = "modiUser";
-            this.modiUser.Size = new System.Drawing.Size(100, 20);
+            this.modiUser.Size = new System.Drawing.Size(100, 21);
             this.modiUser.TabIndex = 33;
             // 
             // lNombreUser
             // 
             this.lNombreUser.AutoSize = true;
-            this.lNombreUser.Font = new System.Drawing.Font("Calibri Light", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNombreUser.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNombreUser.Location = new System.Drawing.Point(19, 218);
             this.lNombreUser.Name = "lNombreUser";
-            this.lNombreUser.Size = new System.Drawing.Size(105, 14);
+            this.lNombreUser.Size = new System.Drawing.Size(98, 14);
             this.lNombreUser.TabIndex = 32;
             this.lNombreUser.Text = "Nombre Usuario:";
             // 
             // bAceptarC
             // 
-            this.bAceptarC.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAceptarC.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAceptarC.Location = new System.Drawing.Point(130, 386);
             this.bAceptarC.Name = "bAceptarC";
             this.bAceptarC.Size = new System.Drawing.Size(125, 23);
@@ -115,7 +116,7 @@
             // 
             // bBaja
             // 
-            this.bBaja.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bBaja.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bBaja.Location = new System.Drawing.Point(18, 415);
             this.bBaja.Name = "bBaja";
             this.bBaja.Size = new System.Drawing.Size(98, 23);
@@ -126,7 +127,7 @@
             // 
             // bModPerfil
             // 
-            this.bModPerfil.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bModPerfil.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bModPerfil.Location = new System.Drawing.Point(18, 386);
             this.bModPerfil.Name = "bModPerfil";
             this.bModPerfil.Size = new System.Drawing.Size(98, 23);
@@ -138,76 +139,76 @@
             // lShowMail
             // 
             this.lShowMail.AutoSize = true;
-            this.lShowMail.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lShowMail.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lShowMail.Location = new System.Drawing.Point(74, 286);
             this.lShowMail.Name = "lShowMail";
-            this.lShowMail.Size = new System.Drawing.Size(42, 14);
+            this.lShowMail.Size = new System.Drawing.Size(43, 14);
             this.lShowMail.TabIndex = 28;
             this.lShowMail.Text = "(email)";
             // 
             // lMail
             // 
             this.lMail.AutoSize = true;
-            this.lMail.Font = new System.Drawing.Font("Calibri Light", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lMail.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMail.Location = new System.Drawing.Point(19, 286);
             this.lMail.Name = "lMail";
-            this.lMail.Size = new System.Drawing.Size(48, 14);
+            this.lMail.Size = new System.Drawing.Size(44, 14);
             this.lMail.TabIndex = 27;
             this.lMail.Text = "e-mail:";
             // 
             // lShowNombre
             // 
             this.lShowNombre.AutoSize = true;
-            this.lShowNombre.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lShowNombre.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lShowNombre.Location = new System.Drawing.Point(81, 253);
             this.lShowNombre.Name = "lShowNombre";
-            this.lShowNombre.Size = new System.Drawing.Size(39, 14);
+            this.lShowNombre.Size = new System.Drawing.Size(43, 14);
             this.lShowNombre.TabIndex = 26;
             this.lShowNombre.Text = "(noun)";
             // 
             // lNombre
             // 
             this.lNombre.AutoSize = true;
-            this.lNombre.Font = new System.Drawing.Font("Calibri Light", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNombre.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNombre.Location = new System.Drawing.Point(19, 253);
             this.lNombre.Name = "lNombre";
-            this.lNombre.Size = new System.Drawing.Size(56, 14);
+            this.lNombre.Size = new System.Drawing.Size(53, 14);
             this.lNombre.TabIndex = 25;
             this.lNombre.Text = "Nombre:";
             // 
             // lShowUser
             // 
             this.lShowUser.AutoSize = true;
-            this.lShowUser.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lShowUser.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lShowUser.Location = new System.Drawing.Point(130, 215);
             this.lShowUser.Name = "lShowUser";
-            this.lShowUser.Size = new System.Drawing.Size(36, 14);
+            this.lShowUser.Size = new System.Drawing.Size(39, 14);
             this.lShowUser.TabIndex = 36;
             this.lShowUser.Text = "(user)";
             // 
             // lFechaIns
             // 
             this.lFechaIns.AutoSize = true;
-            this.lFechaIns.Font = new System.Drawing.Font("Calibri Light", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lFechaIns.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lFechaIns.Location = new System.Drawing.Point(19, 321);
             this.lFechaIns.Name = "lFechaIns";
-            this.lFechaIns.Size = new System.Drawing.Size(130, 14);
+            this.lFechaIns.Size = new System.Drawing.Size(120, 14);
             this.lFechaIns.TabIndex = 37;
             this.lFechaIns.Text = "Fecha de Inscripción:";
             // 
             // lShowFecha
             // 
             this.lShowFecha.AutoSize = true;
-            this.lShowFecha.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lShowFecha.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lShowFecha.Location = new System.Drawing.Point(155, 321);
             this.lShowFecha.Name = "lShowFecha";
-            this.lShowFecha.Size = new System.Drawing.Size(56, 14);
+            this.lShowFecha.Size = new System.Drawing.Size(60, 14);
             this.lShowFecha.TabIndex = 38;
             this.lShowFecha.Text = "(fechains)";
             // 
             // btnCambiarImagen
             // 
-            this.btnCambiarImagen.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarImagen.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarImagen.Location = new System.Drawing.Point(132, 37);
             this.btnCambiarImagen.Name = "btnCambiarImagen";
             this.btnCambiarImagen.Size = new System.Drawing.Size(98, 23);
@@ -219,7 +220,7 @@
             // 
             // btnBorrarImagen
             // 
-            this.btnBorrarImagen.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarImagen.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarImagen.Location = new System.Drawing.Point(132, 79);
             this.btnBorrarImagen.Name = "btnBorrarImagen";
             this.btnBorrarImagen.Size = new System.Drawing.Size(98, 23);
@@ -231,9 +232,10 @@
             // 
             // tURL
             // 
+            this.tURL.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tURL.Location = new System.Drawing.Point(132, 12);
             this.tURL.Name = "tURL";
-            this.tURL.Size = new System.Drawing.Size(100, 20);
+            this.tURL.Size = new System.Drawing.Size(100, 21);
             this.tURL.TabIndex = 41;
             this.tURL.Visible = false;
             // 

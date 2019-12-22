@@ -46,8 +46,9 @@
             this.tabSolicitudes.Controls.Add(this.pSolicitudesPendientes);
             this.tabSolicitudes.Controls.Add(this.pSolicitudesAceptadas);
             this.tabSolicitudes.Controls.Add(this.pSolicitudesEnEsperaONG);
+            this.tabSolicitudes.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabSolicitudes.Location = new System.Drawing.Point(11, 11);
-            this.tabSolicitudes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabSolicitudes.Margin = new System.Windows.Forms.Padding(2);
             this.tabSolicitudes.Name = "tabSolicitudes";
             this.tabSolicitudes.SelectedIndex = 0;
             this.tabSolicitudes.Size = new System.Drawing.Size(531, 344);
@@ -57,9 +58,9 @@
             // 
             this.pSolicitudesPendientes.Controls.Add(this.panelSolPendientes);
             this.pSolicitudesPendientes.Location = new System.Drawing.Point(4, 22);
-            this.pSolicitudesPendientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pSolicitudesPendientes.Margin = new System.Windows.Forms.Padding(2);
             this.pSolicitudesPendientes.Name = "pSolicitudesPendientes";
-            this.pSolicitudesPendientes.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pSolicitudesPendientes.Padding = new System.Windows.Forms.Padding(2);
             this.pSolicitudesPendientes.Size = new System.Drawing.Size(523, 318);
             this.pSolicitudesPendientes.TabIndex = 0;
             this.pSolicitudesPendientes.Text = "Solicitudes Pendientes";
@@ -81,9 +82,9 @@
             // 
             this.pSolicitudesAceptadas.Controls.Add(this.panelSolAceptadas);
             this.pSolicitudesAceptadas.Location = new System.Drawing.Point(4, 22);
-            this.pSolicitudesAceptadas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pSolicitudesAceptadas.Margin = new System.Windows.Forms.Padding(2);
             this.pSolicitudesAceptadas.Name = "pSolicitudesAceptadas";
-            this.pSolicitudesAceptadas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pSolicitudesAceptadas.Padding = new System.Windows.Forms.Padding(2);
             this.pSolicitudesAceptadas.Size = new System.Drawing.Size(523, 318);
             this.pSolicitudesAceptadas.TabIndex = 1;
             this.pSolicitudesAceptadas.Text = "Solicitudes Aceptadas";
@@ -105,9 +106,9 @@
             // 
             this.pSolicitudesEnEsperaONG.Controls.Add(this.panelSolicitudesEsperaONG);
             this.pSolicitudesEnEsperaONG.Location = new System.Drawing.Point(4, 22);
-            this.pSolicitudesEnEsperaONG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pSolicitudesEnEsperaONG.Margin = new System.Windows.Forms.Padding(2);
             this.pSolicitudesEnEsperaONG.Name = "pSolicitudesEnEsperaONG";
-            this.pSolicitudesEnEsperaONG.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pSolicitudesEnEsperaONG.Padding = new System.Windows.Forms.Padding(2);
             this.pSolicitudesEnEsperaONG.Size = new System.Drawing.Size(523, 318);
             this.pSolicitudesEnEsperaONG.TabIndex = 2;
             this.pSolicitudesEnEsperaONG.Text = "Solicitudes en Espera ONG";
@@ -129,9 +130,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 456);
+            this.ClientSize = new System.Drawing.Size(546, 408);
             this.Controls.Add(this.tabSolicitudes);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VerParticipantes";
             this.Text = "VerParticipantes";
             this.tabSolicitudes.ResumeLayout(false);

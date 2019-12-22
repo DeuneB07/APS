@@ -152,7 +152,7 @@
             // 
             // bModPerfil
             // 
-            this.bModPerfil.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bModPerfil.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bModPerfil.Location = new System.Drawing.Point(68, 361);
             this.bModPerfil.Name = "bModPerfil";
             this.bModPerfil.Size = new System.Drawing.Size(98, 23);
@@ -163,10 +163,10 @@
             // 
             // bPreferencias
             // 
-            this.bPreferencias.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bPreferencias.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bPreferencias.Location = new System.Drawing.Point(351, 361);
             this.bPreferencias.Name = "bPreferencias";
-            this.bPreferencias.Size = new System.Drawing.Size(98, 23);
+            this.bPreferencias.Size = new System.Drawing.Size(110, 23);
             this.bPreferencias.TabIndex = 11;
             this.bPreferencias.Text = "Ver Preferencias";
             this.bPreferencias.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@
             // 
             // bBaja
             // 
-            this.bBaja.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bBaja.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bBaja.Location = new System.Drawing.Point(663, 361);
             this.bBaja.Name = "bBaja";
             this.bBaja.Size = new System.Drawing.Size(98, 23);
@@ -235,7 +235,7 @@
             // 
             // bAceptarC
             // 
-            this.bAceptarC.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAceptarC.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAceptarC.Location = new System.Drawing.Point(192, 361);
             this.bAceptarC.Name = "bAceptarC";
             this.bAceptarC.Size = new System.Drawing.Size(125, 23);
@@ -274,7 +274,7 @@
             // 
             // bAtras
             // 
-            this.bAtras.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAtras.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAtras.Location = new System.Drawing.Point(662, 399);
             this.bAtras.Name = "bAtras";
             this.bAtras.Size = new System.Drawing.Size(98, 23);
@@ -285,7 +285,7 @@
             // 
             // bCancelarC
             // 
-            this.bCancelarC.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCancelarC.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCancelarC.Location = new System.Drawing.Point(491, 361);
             this.bCancelarC.Name = "bCancelarC";
             this.bCancelarC.Size = new System.Drawing.Size(125, 23);
@@ -296,15 +296,16 @@
             // 
             // tURL
             // 
+            this.tURL.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tURL.Location = new System.Drawing.Point(148, 10);
             this.tURL.Name = "tURL";
-            this.tURL.Size = new System.Drawing.Size(100, 20);
+            this.tURL.Size = new System.Drawing.Size(100, 21);
             this.tURL.TabIndex = 44;
             this.tURL.Visible = false;
             // 
             // btnBorrarImagen
             // 
-            this.btnBorrarImagen.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarImagen.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarImagen.Location = new System.Drawing.Point(148, 76);
             this.btnBorrarImagen.Name = "btnBorrarImagen";
             this.btnBorrarImagen.Size = new System.Drawing.Size(98, 23);
@@ -316,7 +317,7 @@
             // 
             // btnCambiarImagen
             // 
-            this.btnCambiarImagen.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarImagen.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarImagen.Location = new System.Drawing.Point(148, 34);
             this.btnCambiarImagen.Name = "btnCambiarImagen";
             this.btnCambiarImagen.Size = new System.Drawing.Size(98, 23);

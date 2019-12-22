@@ -64,11 +64,10 @@
             // 
             this.bConfirmar.BackColor = System.Drawing.Color.Aquamarine;
             this.bConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bConfirmar.Font = new System.Drawing.Font("Georgia", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bConfirmar.Location = new System.Drawing.Point(156, 522);
-            this.bConfirmar.Margin = new System.Windows.Forms.Padding(4);
+            this.bConfirmar.Font = new System.Drawing.Font("Bahnschrift", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bConfirmar.Location = new System.Drawing.Point(117, 424);
             this.bConfirmar.Name = "bConfirmar";
-            this.bConfirmar.Size = new System.Drawing.Size(215, 28);
+            this.bConfirmar.Size = new System.Drawing.Size(161, 23);
             this.bConfirmar.TabIndex = 16;
             this.bConfirmar.Text = "Confirmar";
             this.bConfirmar.UseVisualStyleBackColor = false;
@@ -78,11 +77,10 @@
             // 
             this.bCancelar.BackColor = System.Drawing.Color.IndianRed;
             this.bCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bCancelar.Font = new System.Drawing.Font("Georgia", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCancelar.Location = new System.Drawing.Point(424, 522);
-            this.bCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.bCancelar.Font = new System.Drawing.Font("Bahnschrift", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCancelar.Location = new System.Drawing.Point(318, 424);
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(205, 28);
+            this.bCancelar.Size = new System.Drawing.Size(154, 23);
             this.bCancelar.TabIndex = 17;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = false;
@@ -91,88 +89,81 @@
             // lComp
             // 
             this.lComp.AutoSize = true;
-            this.lComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lComp.Location = new System.Drawing.Point(29, 343);
-            this.lComp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lComp.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lComp.Location = new System.Drawing.Point(22, 279);
             this.lComp.Name = "lComp";
-            this.lComp.Size = new System.Drawing.Size(116, 18);
+            this.lComp.Size = new System.Drawing.Size(82, 14);
             this.lComp.TabIndex = 18;
             this.lComp.Text = "Competencias";
             // 
             // lTipo
             // 
             this.lTipo.AutoSize = true;
-            this.lTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTipo.Location = new System.Drawing.Point(29, 117);
-            this.lTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lTipo.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTipo.Location = new System.Drawing.Point(22, 95);
             this.lTipo.Name = "lTipo";
-            this.lTipo.Size = new System.Drawing.Size(143, 18);
+            this.lTipo.Size = new System.Drawing.Size(101, 14);
             this.lTipo.TabIndex = 19;
             this.lTipo.Text = "Tipo de Actividad*";
             // 
             // lTurno
             // 
             this.lTurno.AutoSize = true;
-            this.lTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTurno.Location = new System.Drawing.Point(535, 117);
-            this.lTurno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lTurno.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTurno.Location = new System.Drawing.Point(411, 95);
             this.lTurno.Name = "lTurno";
-            this.lTurno.Size = new System.Drawing.Size(59, 18);
+            this.lTurno.Size = new System.Drawing.Size(44, 14);
             this.lTurno.TabIndex = 20;
             this.lTurno.Text = "Turno*";
             // 
             // lGrado
             // 
             this.lGrado.AutoSize = true;
-            this.lGrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lGrado.Location = new System.Drawing.Point(61, 178);
-            this.lGrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lGrado.Font = new System.Drawing.Font("Bahnschrift", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lGrado.Location = new System.Drawing.Point(46, 145);
             this.lGrado.Name = "lGrado";
-            this.lGrado.Size = new System.Drawing.Size(55, 18);
+            this.lGrado.Size = new System.Drawing.Size(39, 14);
             this.lGrado.TabIndex = 21;
             this.lGrado.Text = "Grado";
             // 
             // lHoras
             // 
             this.lHoras.AutoSize = true;
-            this.lHoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lHoras.Location = new System.Drawing.Point(381, 277);
-            this.lHoras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lHoras.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lHoras.Location = new System.Drawing.Point(308, 225);
             this.lHoras.Name = "lHoras";
-            this.lHoras.Size = new System.Drawing.Size(213, 18);
+            this.lHoras.Size = new System.Drawing.Size(149, 14);
             this.lHoras.TabIndex = 22;
             this.lHoras.Text = "Número de Horas Máximo*";
             // 
             // lAsig
             // 
             this.lAsig.AutoSize = true;
-            this.lAsig.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAsig.Location = new System.Drawing.Point(29, 223);
-            this.lAsig.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lAsig.Font = new System.Drawing.Font("Bahnschrift", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAsig.Location = new System.Drawing.Point(22, 181);
             this.lAsig.Name = "lAsig";
-            this.lAsig.Size = new System.Drawing.Size(87, 18);
+            this.lAsig.Size = new System.Drawing.Size(65, 14);
             this.lAsig.TabIndex = 23;
             this.lAsig.Text = "Asignatura";
             // 
             // lNombrePref
             // 
             this.lNombrePref.AutoSize = true;
-            this.lNombrePref.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNombrePref.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNombrePref.ForeColor = System.Drawing.Color.Navy;
-            this.lNombrePref.Location = new System.Drawing.Point(13, 39);
-            this.lNombrePref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lNombrePref.Location = new System.Drawing.Point(10, 32);
             this.lNombrePref.Name = "lNombrePref";
-            this.lNombrePref.Size = new System.Drawing.Size(166, 18);
+            this.lNombrePref.Size = new System.Drawing.Size(119, 14);
             this.lNombrePref.TabIndex = 24;
             this.lNombrePref.Text = "Nombre Preferencia*";
             // 
             // comboGrado
             // 
+            this.comboGrado.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboGrado.FormattingEnabled = true;
-            this.comboGrado.Location = new System.Drawing.Point(139, 172);
-            this.comboGrado.Margin = new System.Windows.Forms.Padding(4);
+            this.comboGrado.Location = new System.Drawing.Point(104, 143);
             this.comboGrado.Name = "comboGrado";
-            this.comboGrado.Size = new System.Drawing.Size(256, 24);
+            this.comboGrado.Size = new System.Drawing.Size(193, 21);
             this.comboGrado.TabIndex = 25;
             this.comboGrado.SelectedIndexChanged += new System.EventHandler(this.comboGrado_SelectedIndexChanged);
             // 
@@ -193,50 +184,47 @@
             // 
             // comboAsig
             // 
-            this.comboAsig.Location = new System.Drawing.Point(139, 222);
-            this.comboAsig.Margin = new System.Windows.Forms.Padding(4);
+            this.comboAsig.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboAsig.Location = new System.Drawing.Point(104, 180);
             this.comboAsig.Name = "comboAsig";
-            this.comboAsig.Size = new System.Drawing.Size(256, 24);
+            this.comboAsig.Size = new System.Drawing.Size(193, 21);
             this.comboAsig.TabIndex = 26;
             // 
             // comboTurno
             // 
-            this.comboTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboTurno.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTurno.FormattingEnabled = true;
-            this.comboTurno.Location = new System.Drawing.Point(616, 114);
-            this.comboTurno.Margin = new System.Windows.Forms.Padding(4);
+            this.comboTurno.Location = new System.Drawing.Point(462, 92);
             this.comboTurno.Name = "comboTurno";
-            this.comboTurno.Size = new System.Drawing.Size(133, 26);
+            this.comboTurno.Size = new System.Drawing.Size(101, 22);
             this.comboTurno.TabIndex = 27;
             // 
             // comboTipo
             // 
+            this.comboTipo.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTipo.FormattingEnabled = true;
-            this.comboTipo.Location = new System.Drawing.Point(203, 117);
-            this.comboTipo.Margin = new System.Windows.Forms.Padding(4);
+            this.comboTipo.Location = new System.Drawing.Point(135, 93);
             this.comboTipo.Name = "comboTipo";
-            this.comboTipo.Size = new System.Drawing.Size(133, 24);
+            this.comboTipo.Size = new System.Drawing.Size(101, 21);
             this.comboTipo.TabIndex = 28;
             this.comboTipo.SelectedIndexChanged += new System.EventHandler(this.comboTipo_SelectedIndexChanged);
             // 
             // listCompetencias
             // 
+            this.listCompetencias.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listCompetencias.FormattingEnabled = true;
-            this.listCompetencias.ItemHeight = 16;
-            this.listCompetencias.Location = new System.Drawing.Point(156, 343);
-            this.listCompetencias.Margin = new System.Windows.Forms.Padding(4);
+            this.listCompetencias.Location = new System.Drawing.Point(117, 279);
             this.listCompetencias.Name = "listCompetencias";
             this.listCompetencias.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listCompetencias.Size = new System.Drawing.Size(473, 148);
+            this.listCompetencias.Size = new System.Drawing.Size(356, 121);
             this.listCompetencias.TabIndex = 30;
             // 
             // textNombreComp
             // 
-            this.textNombreComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNombreComp.Location = new System.Drawing.Point(203, 39);
-            this.textNombreComp.Margin = new System.Windows.Forms.Padding(4);
+            this.textNombreComp.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNombreComp.Location = new System.Drawing.Point(135, 29);
             this.textNombreComp.Name = "textNombreComp";
-            this.textNombreComp.Size = new System.Drawing.Size(546, 24);
+            this.textNombreComp.Size = new System.Drawing.Size(410, 22);
             this.textNombreComp.TabIndex = 31;
             // 
             // gradosTableAdapter
@@ -246,59 +234,56 @@
             // lTipoTrab
             // 
             this.lTipoTrab.AutoSize = true;
-            this.lTipoTrab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTipoTrab.Location = new System.Drawing.Point(461, 170);
-            this.lTipoTrab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lTipoTrab.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTipoTrab.Location = new System.Drawing.Point(362, 138);
             this.lTipoTrab.Name = "lTipoTrab";
-            this.lTipoTrab.Size = new System.Drawing.Size(133, 18);
+            this.lTipoTrab.Size = new System.Drawing.Size(93, 14);
             this.lTipoTrab.TabIndex = 32;
             this.lTipoTrab.Text = "Tipo de Trabajo*";
             // 
             // lAmbito
             // 
             this.lAmbito.AutoSize = true;
-            this.lAmbito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAmbito.Location = new System.Drawing.Point(442, 222);
-            this.lAmbito.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lAmbito.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAmbito.Location = new System.Drawing.Point(346, 182);
             this.lAmbito.Name = "lAmbito";
-            this.lAmbito.Size = new System.Drawing.Size(152, 18);
+            this.lAmbito.Size = new System.Drawing.Size(109, 14);
             this.lAmbito.TabIndex = 33;
             this.lAmbito.Text = "Ámbito de Trabajo*";
             // 
             // comboAmbitoTrab
             // 
-            this.comboAmbitoTrab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboAmbitoTrab.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboAmbitoTrab.FormattingEnabled = true;
-            this.comboAmbitoTrab.Location = new System.Drawing.Point(616, 217);
-            this.comboAmbitoTrab.Margin = new System.Windows.Forms.Padding(4);
+            this.comboAmbitoTrab.Location = new System.Drawing.Point(462, 178);
             this.comboAmbitoTrab.Name = "comboAmbitoTrab";
-            this.comboAmbitoTrab.Size = new System.Drawing.Size(133, 26);
+            this.comboAmbitoTrab.Size = new System.Drawing.Size(101, 22);
             this.comboAmbitoTrab.TabIndex = 34;
             // 
             // comboTipoTrab
             // 
-            this.comboTipoTrab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboTipoTrab.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTipoTrab.FormattingEnabled = true;
-            this.comboTipoTrab.Location = new System.Drawing.Point(616, 170);
-            this.comboTipoTrab.Margin = new System.Windows.Forms.Padding(4);
+            this.comboTipoTrab.Location = new System.Drawing.Point(462, 135);
             this.comboTipoTrab.Name = "comboTipoTrab";
-            this.comboTipoTrab.Size = new System.Drawing.Size(133, 26);
+            this.comboTipoTrab.Size = new System.Drawing.Size(101, 22);
             this.comboTipoTrab.TabIndex = 35;
             // 
             // numericUpDown
             // 
-            this.numericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown.Location = new System.Drawing.Point(616, 275);
+            this.numericUpDown.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown.Location = new System.Drawing.Point(462, 223);
+            this.numericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDown.Name = "numericUpDown";
-            this.numericUpDown.Size = new System.Drawing.Size(70, 24);
+            this.numericUpDown.Size = new System.Drawing.Size(52, 22);
             this.numericUpDown.TabIndex = 36;
             // 
             // FAnadirPreferencias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(788, 570);
+            this.ClientSize = new System.Drawing.Size(591, 463);
             this.Controls.Add(this.numericUpDown);
             this.Controls.Add(this.comboTipoTrab);
             this.Controls.Add(this.comboAmbitoTrab);
@@ -320,7 +305,6 @@
             this.Controls.Add(this.bCancelar);
             this.Controls.Add(this.bConfirmar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FAnadirPreferencias";
             this.Text = "Introduzca Preferencia";
             this.Load += new System.EventHandler(this.FAnadirPreferencias_Load);
