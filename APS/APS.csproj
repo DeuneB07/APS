@@ -315,6 +315,7 @@
     <Compile Include="Mapeo\Asignatura.cs" />
     <Compile Include="Mapeo\Actividad.cs" />
     <Compile Include="Mapeo\Competencia.cs" />
+    <Compile Include="Mapeo\Historial.cs" />
     <Compile Include="Mapeo\Mensaje.cs" />
     <Compile Include="Mapeo\Preferencia.cs" />
     <Compile Include="Mapeo\Grado.cs" />

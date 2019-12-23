@@ -26,6 +26,21 @@ namespace APS.Mapeo
         private String fechaValoracionProfesor;
         private String comentarioProfesor;
 
+        public static List<Actividad> ListaActividades(String emailUsuario)
+        {
+            // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Actividad> lista = new List<Actividad>();
+
+            foreach (Object[] tupla in miBD.Select("SELECT idAct FROM Actividades_Realizadas WHERE emailParticipante='"+emailUsuario+"';"))
+            {
+                int id = (int)tupla[0];
+                Actividad a = new Actividad(id);
+                lista.Add(a);
+            }
+            return lista;
+        }
+
         public static List<Actividad_Realizada> ListaActividadesRealizadas()
         {
             // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
