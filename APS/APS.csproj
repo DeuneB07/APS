@@ -185,6 +185,12 @@
     <Compile Include="Interfaces\Gestión Actividades\VerParticipantes.Designer.cs">
       <DependentUpon>VerParticipantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Historial\VerListaHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Historial\VerListaHistorial.Designer.cs">
+      <DependentUpon>VerListaHistorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Mensajes\BandejaMensajes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +329,12 @@
     <Compile Include="Interfaces\Personalizados\CartelActividadesStandard.Designer.cs">
       <DependentUpon>CartelActividadesStandard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelHistorial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelHistorial.Designer.cs">
+      <DependentUpon>CartelHistorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelSolicitantesActividad.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -420,6 +432,9 @@
     <EmbeddedResource Include="Interfaces\Gestión Actividades\VerParticipantes.resx">
       <DependentUpon>VerParticipantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Historial\VerListaHistorial.resx">
+      <DependentUpon>VerListaHistorial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Mensajes\BandejaMensajes.resx">
       <DependentUpon>BandejaMensajes.cs</DependentUpon>
     </EmbeddedResource>
@@ -488,6 +503,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelActividadesStandard.resx">
       <DependentUpon>CartelActividadesStandard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelHistorial.resx">
+      <DependentUpon>CartelHistorial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelSolicitantesActividad.resx">
       <DependentUpon>CartelSolicitantesActividad.cs</DependentUpon>

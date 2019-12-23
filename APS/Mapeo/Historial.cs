@@ -19,7 +19,7 @@ namespace APS.Mapeo
         private Usuario usuario;
         private DateTime fecha;
         
-        public List<Historial> ListaHistorial()
+        public static List<Historial> ListaHistorial()
         {
             // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
@@ -34,7 +34,7 @@ namespace APS.Mapeo
             return lista;
         }
 
-        public List<Historial> ListaHistorial(Usuario user)
+        public static List<Historial> ListaHistorial(Usuario user)
         {
             // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
@@ -59,8 +59,12 @@ namespace APS.Mapeo
             if(!tupla[2].ToString().Equals("")) this.actividad = new Actividad((int)tupla[2]);
             if (!tupla[3].ToString().Equals("")) this.usuario = new Usuario(tupla[3].ToString());
 
-            string[] fechaIn = tupla[5].ToString().Split('-',' ',':','.');
-            this.fecha = new DateTime(int.Parse(fechaIn[0]), int.Parse(fechaIn[1]), int.Parse(fechaIn[2]),int.Parse(fechaIn[3]),int.Parse(fechaIn[4]),int.Parse(fechaIn[5]),int.Parse(fechaIn[6]));
+            string[] fechaIn = tupla[4].ToString().Split('/','-',' ',':','.');
+            foreach (String f in fechaIn)
+            {
+                Console.WriteLine(f);
+            }
+            this.fecha = new DateTime(int.Parse(fechaIn[2]), int.Parse(fechaIn[1]), int.Parse(fechaIn[0]),int.Parse(fechaIn[3]),int.Parse(fechaIn[4]),int.Parse(fechaIn[5]));
         }
 
         public int ID_Historial
@@ -123,6 +127,22 @@ namespace APS.Mapeo
                 this.fecha = value;
             }
         }
+
+        public override string ToString()
+        {
+            return this.Comentario;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Historial && (((Historial)obj).ID_Historial.CompareTo(this.ID_Historial) == 0);
+        }
+
+        public override int GetHashCode()
+        {
+            return ID_Historial.GetHashCode();
+        }
+
 
     }
 }
