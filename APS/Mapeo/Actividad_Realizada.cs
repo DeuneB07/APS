@@ -73,16 +73,29 @@ namespace APS.Mapeo
             return lista;
         }
 
+        public static List<Actividad> ListaActividades(EstadoActividadR estado)
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Actividad> lista = new List<Actividad>();
+
+            foreach(Object[] tupla in miBD.Select("SELECT count(emailParticipante), idAct FROM Actividades_Realizadas WHERE estadoRealizacion = '" + estado.ToString() + "' group by idAct;"))
+            {
+                int id = (int)tupla[1];
+                Actividad aR = new Actividad(id);
+                lista.Add(aR);
+            }
+            return lista;
+        }
         public static List<Actividad_Realizada> ListaActividadesRealizadas(Actividad actividad, EstadoActividadR estado)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Actividad_Realizada> lista = new List<Actividad_Realizada>();
 
-            foreach(Object[] tupla in miBD.Select("SELECT emailParticipante, idAct FROM Actividades_Realizadas WHERE idAct = " + actividad.ID_Actividad + " and estadoRealizacion = '" + estado.ToString() + "';"))
+            foreach (Object[] tupla in miBD.Select("SELECT emailParticipante, idAct FROM Actividades_Realizadas WHERE estadoRealizacion = '" + estado.ToString() + "' and idAct = " + actividad.ID_Actividad + ";"))
             {
                 String emP = (String)tupla[0];
                 int id = (int)tupla[1];
-                Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), new Actividad(id));
+                Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), actividad);
                 lista.Add(aR);
             }
             return lista;
@@ -97,18 +110,17 @@ namespace APS.Mapeo
             this.participante = participante;
             actividad = act;
             Enum.TryParse<EstadoActividadR>(tupla[2].ToString(), true, out estadoRealizacion);
-            valoracionUsuario = (int)tupla[3];
-            fechaValoracionUsuario = (String)tupla[4];
-            comentarioUsuario = (String)tupla[5];
-            numHorasRealizadas = (int)tupla[6];
-            valoracionONG = (int)tupla[7];
-            fechaValoracionONG = (String)tupla[8];
-            comentarioONG = (String)tupla[9];
+            if (tupla[3] != null) valoracionUsuario = (int)tupla[3];
+            if (tupla[4] != null) fechaValoracionUsuario = (String)tupla[4];
+            if (tupla[5] != null) comentarioUsuario = (String)tupla[5];
+            if (tupla[6] != null) numHorasRealizadas = (int)tupla[6];
+            if (tupla[7] != null) valoracionONG = (int)tupla[7];
+            if (tupla[8] != null) fechaValoracionONG = (String)tupla[8];
+            if (tupla[9] != null) comentarioONG = (String)tupla[9];
             //archivoAdjuntoONG = (String)tupla[10];
-            valoracionProfesor = (int)tupla[11];
-            fechaValoracionProfesor = (String)tupla[12];
-            comentarioProfesor = (String)tupla[13];
-        
+            if (tupla[11] != null) valoracionProfesor = (int)tupla[11];
+            if (tupla[12] != null) fechaValoracionProfesor = (String)tupla[12];
+            if (tupla[13] != null) comentarioProfesor = (String)tupla[13];   
         }
 
         public Actividad_Realizada(Usuario participante, Actividad actividad, Boolean f)

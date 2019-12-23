@@ -18,7 +18,7 @@ namespace APS.Interfaces.Gestión_Actividades
         {
             InitializeComponent();
             this.actividad = actividad;
-            this.lParticipante.Text = actividad.Participante.ToString();
+            this.lParticipante.Text = actividad.Participante.Email;
             this.labelError.Text = "";
         }
 

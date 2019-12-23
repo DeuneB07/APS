@@ -33,6 +33,8 @@
             this.labelValoracion = new System.Windows.Forms.Label();
             this.labelComentario = new System.Windows.Forms.Label();
             this.textBoxValoracion = new System.Windows.Forms.TextBox();
+            this.textBoxComentario = new System.Windows.Forms.RichTextBox();
+            this.labelError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bAceptar
@@ -43,6 +45,7 @@
             this.bAceptar.TabIndex = 0;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
+            this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
             // 
             // bCancelar
             // 
@@ -52,6 +55,7 @@
             this.bCancelar.TabIndex = 1;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
+            this.bCancelar.Click += new System.EventHandler(this.bCancelar_Click);
             // 
             // labelValoracion
             // 
@@ -78,11 +82,36 @@
             this.textBoxValoracion.Size = new System.Drawing.Size(57, 31);
             this.textBoxValoracion.TabIndex = 4;
             // 
+            // textBoxComentario
+            // 
+            this.textBoxComentario.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxComentario.Location = new System.Drawing.Point(318, 305);
+            this.textBoxComentario.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxComentario.Name = "textBoxComentario";
+            this.textBoxComentario.Size = new System.Drawing.Size(332, 110);
+            this.textBoxComentario.TabIndex = 18;
+            this.textBoxComentario.Text = "";
+            // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.BackColor = System.Drawing.Color.Transparent;
+            this.labelError.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(32, 551);
+            this.labelError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(63, 27);
+            this.labelError.TabIndex = 29;
+            this.labelError.Text = "error";
+            // 
             // EvaluarUsuarioONG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 612);
+            this.ClientSize = new System.Drawing.Size(806, 617);
+            this.Controls.Add(this.labelError);
+            this.Controls.Add(this.textBoxComentario);
             this.Controls.Add(this.textBoxValoracion);
             this.Controls.Add(this.labelComentario);
             this.Controls.Add(this.labelValoracion);
@@ -102,5 +131,7 @@
         private System.Windows.Forms.Label labelValoracion;
         private System.Windows.Forms.Label labelComentario;
         private System.Windows.Forms.TextBox textBoxValoracion;
+        private System.Windows.Forms.RichTextBox textBoxComentario;
+        private System.Windows.Forms.Label labelError;
     }
 }
