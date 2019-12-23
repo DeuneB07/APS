@@ -5,15 +5,16 @@ using APS.BD;
 
 namespace APS.Mapeo
 {
-    class Actividad_Realizada
+    public class Actividad_Realizada
     {
+        public enum EstadoActividadR { EVALUACION_PARTICIPANTE, EVALUACION_ONG, EVALUACION_PDI, EVALUACION_FINALIZADA };
 
         private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
         private static string BD_NAME = Properties.Settings.Default.BD_NAME;
 
         private Usuario participante;
         private Actividad actividad;
-        private String estadoRealizacion;
+        private EstadoActividadR estadoRealizacion;
         private int valoracionUsuario;
         private String fechaValoracionUsuario;
         private String comentarioUsuario;
@@ -32,7 +33,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Actividad> lista = new List<Actividad>();
 
-            foreach (Object[] tupla in miBD.Select("SELECT idAct FROM Actividades_Realizadas WHERE emailParticipante='"+emailUsuario+"';"))
+            foreach (Object[] tupla in miBD.Select("SELECT idAct FROM Actividades_Realizadas WHERE emailParticipante='" + emailUsuario + "';"))
             {
                 int id = (int)tupla[0];
                 Actividad a = new Actividad(id);
@@ -40,7 +41,6 @@ namespace APS.Mapeo
             }
             return lista;
         }
-
         public static List<Actividad_Realizada> ListaActividadesRealizadas()
         {
             // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
@@ -48,6 +48,37 @@ namespace APS.Mapeo
             List<Actividad_Realizada> lista = new List<Actividad_Realizada>();
 
             foreach (Object[] tupla in miBD.Select("SELECT emailParticipante, idAct FROM Actividades_Realizadas;"))
+            {
+                String emP = (String)tupla[0];
+                int id = (int)tupla[1];
+                Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), new Actividad(id));
+                lista.Add(aR);
+            }
+            return lista;
+        }
+
+        public static List<Actividad_Realizada> ListaActividadesRealizadas(Usuario usuario, EstadoActividadR estado)
+        {
+            // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Actividad_Realizada> lista = new List<Actividad_Realizada>();
+
+            foreach (Object[] tupla in miBD.Select("SELECT emailParticipante, idAct FROM Actividades_Realizadas WHERE emailParticipante = '" + usuario.Email + "' and estadoRealizacion = '" + estado.ToString() + "';"))
+            {
+                String emP = (String)tupla[0];
+                int id = (int)tupla[1];
+                Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), new Actividad(id));
+                lista.Add(aR);
+            }
+            return lista;
+        }
+
+        public static List<Actividad_Realizada> ListaActividadesRealizadas(Actividad actividad, EstadoActividadR estado)
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Actividad_Realizada> lista = new List<Actividad_Realizada>();
+
+            foreach(Object[] tupla in miBD.Select("SELECT emailParticipante, idAct FROM Actividades_Realizadas WHERE idAct = " + actividad.ID_Actividad + " and estadoRealizacion = '" + estado.ToString() + "';"))
             {
                 String emP = (String)tupla[0];
                 int id = (int)tupla[1];
@@ -65,7 +96,7 @@ namespace APS.Mapeo
         
             this.participante = participante;
             actividad = act;
-            estadoRealizacion = (String)tupla[2];
+            Enum.TryParse<EstadoActividadR>(tupla[2].ToString(), true, out estadoRealizacion);
             valoracionUsuario = (int)tupla[3];
             fechaValoracionUsuario = (String)tupla[4];
             comentarioUsuario = (String)tupla[5];
@@ -80,18 +111,31 @@ namespace APS.Mapeo
         
         }
 
-        public Actividad_Realizada(Usuario participante, Actividad actividad, String estadoRealizacion, int valoracionUsuario,
+        public Actividad_Realizada(Usuario participante, Actividad actividad, Boolean f)
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            String ins = "INSERT INTO Actividades_Realizadas (emailParticipante,idAct) VALUES ('" 
+                    + participante.Email + "'," + actividad.ID_Actividad + ");";
+            miBD.Insert(ins);
+
+            this.participante = participante;
+            this.actividad = actividad;
+            this.estadoRealizacion = EstadoActividadR.EVALUACION_PARTICIPANTE;
+
+        }
+
+        public Actividad_Realizada(Usuario participante, Actividad actividad, EstadoActividadR estadoRealizacion, int valoracionUsuario,
                                     String fechaValoracionUsuario, String comentarioUsuario, int numHorasRealizadas, int valoracionONG,
                                     String fechaValoracionONG, String comentarioONG, /*File archivoAdjuntoONG,*/ int valoracionProfesor,
                                     String fechaValoracionProfesor, String comentarioProfesor)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             String ins = "INSERT INTO Actividades_Realizadas (emailParticipante,idAct,estadoRealizacion,valoracionUsuario, fechaValoracionUsuario,"
-                    + "comentarioUsuario, numHorasRealizadas, valoracionONG, fechaValoracionONG, comentarioONG, "+/*+archivoAdjuntoONG*/", valoracionProfesor, "
+                    + "comentarioUsuario, numHorasRealizadas, valoracionONG, fechaValoracionONG, comentarioONG, valoracionProfesor, "
                     + " fechaValoracionProfesor, comentarioProfesor) VALUES ('" + participante.Email + "',"
-                    + actividad.ID_Actividad + "," + estadoRealizacion + "," + valoracionUsuario + ",'" + fechaValoracionUsuario + "','"
+                    + actividad.ID_Actividad + ",'" + estadoRealizacion.ToString() + "'," + valoracionUsuario + ",'" + fechaValoracionUsuario + "','"
                     + comentarioUsuario + "'," + numHorasRealizadas + "," + valoracionONG + ",'" + fechaValoracionONG + "','"
-                    + comentarioONG + "','" /*+ archivoAdjuntoONG */+ "'," + valoracionProfesor + ",'" + fechaValoracionProfesor + "', '" + comentarioProfesor +"');";
+                    + comentarioONG + "'," + valoracionProfesor + ",'" + fechaValoracionProfesor + "', '" + comentarioProfesor +"');";
             miBD.Insert(ins);
             
 
@@ -138,13 +182,13 @@ namespace APS.Mapeo
             }
         }
 
-        public String EstadoRealizacion
+        public EstadoActividadR EstadoRealizacion
         {
             get{ return estadoRealizacion; }
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Actividades_Realizadas SET estadoRealizacion='" + value + "' "
+                String up = "UPDATE Actividades_Realizadas SET estadoRealizacion='" + value.ToString() + "' "
                         + "WHERE emailParticipante='" + this.participante.Email + "' and idAct=" + actividad.ID_Actividad + ";";
                 miBD.Update(up);
                 this.estadoRealizacion = value;
@@ -304,7 +348,6 @@ namespace APS.Mapeo
 
             this.participante = null;
             this.actividad = null;
-            this.estadoRealizacion = null;
             this.valoracionUsuario = -1;
             this.fechaValoracionUsuario = null;
             this.comentarioUsuario = null;

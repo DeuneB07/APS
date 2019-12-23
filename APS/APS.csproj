@@ -137,6 +137,12 @@
     <Compile Include="Interfaces\ControllersPP\PDIControllerPP.Designer.cs">
       <DependentUpon>PDIControllerPP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Gestión Actividades\EvaluarActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Gestión Actividades\EvaluarActividad.Designer.cs">
+      <DependentUpon>EvaluarActividad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Gestión Actividades\VerActividadAbierta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,12 @@
     </Compile>
     <Compile Include="Interfaces\Perfil\FPerfilPAS.Designer.cs">
       <DependentUpon>FPerfilPAS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelActividadesValoracion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelActividadesValoracion.Designer.cs">
+      <DependentUpon>CartelActividadesValoracion.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Personalizados\CartelFiltroMatch.cs">
       <SubType>UserControl</SubType>
@@ -360,6 +372,9 @@
     <EmbeddedResource Include="Interfaces\ControllersPP\PDIControllerPP.resx">
       <DependentUpon>PDIControllerPP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Gestión Actividades\EvaluarActividad.resx">
+      <DependentUpon>EvaluarActividad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Gestión Actividades\NegociarActividad.resx">
       <DependentUpon>NegociarActividad.cs</DependentUpon>
     </EmbeddedResource>
@@ -383,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Perfil\FPerfilPAS.resx">
       <DependentUpon>FPerfilPAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelActividadesValoracion.resx">
+      <DependentUpon>CartelActividadesValoracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelFiltroMatch.resx">
       <DependentUpon>CartelFiltroMatch.cs</DependentUpon>
