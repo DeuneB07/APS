@@ -137,6 +137,12 @@
     <Compile Include="Interfaces\ControllersPP\PDIControllerPP.Designer.cs">
       <DependentUpon>PDIControllerPP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelHistorial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelHistorial.Designer.cs">
+      <DependentUpon>CartelHistorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Valoracion\EvaluarActividad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -401,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\ControllersPP\PDIControllerPP.resx">
       <DependentUpon>PDIControllerPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelHistorial.resx">
+      <DependentUpon>CartelHistorial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Valoracion\EvaluarActividad.resx">
       <DependentUpon>EvaluarActividad.cs</DependentUpon>
