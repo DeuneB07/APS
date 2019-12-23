@@ -48,11 +48,11 @@ namespace APS.Mapeo
 
             //UPDATE EN_PROCESO
             miBD.Update("UPDATE Actividades SET estadoAct='" + EstadoActividadE.EN_PROCESO.ToString() + "' " +
-                "WHERE fechaInicio=CONVERT(date,SYSDATETIME()) "+
+                "WHERE fechaInicio<=CONVERT(date,SYSDATETIME()) "+
                 "AND (estadoAct like '"+EstadoActividadE.ABIERTA.ToString()+"' OR estadoAct like '"+EstadoActividadE.CERRADA.ToString()+"')");
             //UPDATE CONCLUIDA
             miBD.Update("UPDATE Actividades SET estadoAct='" + EstadoActividadE.CONCLUIDA.ToString() + "' " +
-                "WHERE fechaFin=CONVERT(date,SYSDATETIME()) "+
+                "WHERE fechaFin<=CONVERT(date,SYSDATETIME()) "+
                 "AND estadoAct like '"+EstadoActividadE.EN_PROCESO.ToString()+"'");
         }
 
