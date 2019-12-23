@@ -143,6 +143,24 @@
     <Compile Include="Interfaces\Gestión Actividades\EvaluarActividad.Designer.cs">
       <DependentUpon>EvaluarActividad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Gestión Actividades\EvaluarParticipantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Gestión Actividades\EvaluarParticipantes.Designer.cs">
+      <DependentUpon>EvaluarParticipantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Gestión Actividades\EvaluarUsuarioONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Gestión Actividades\EvaluarUsuarioONG.Designer.cs">
+      <DependentUpon>EvaluarUsuarioONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Gestión Actividades\EvaluarUsuarioPDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Gestión Actividades\EvaluarUsuarioPDI.Designer.cs">
+      <DependentUpon>EvaluarUsuarioPDI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Gestión Actividades\VerActividadAbierta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +238,12 @@
     </Compile>
     <Compile Include="Interfaces\Personalizados\CartelMensajes.Designer.cs">
       <DependentUpon>CartelMensajes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelParticipante.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelParticipante.Designer.cs">
+      <DependentUpon>CartelParticipante.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Personalizados\CartelPendientes.cs">
       <SubType>UserControl</SubType>
@@ -387,6 +411,15 @@
     <EmbeddedResource Include="Interfaces\Gestión Actividades\EvaluarActividad.resx">
       <DependentUpon>EvaluarActividad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Gestión Actividades\EvaluarParticipantes.resx">
+      <DependentUpon>EvaluarParticipantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Gestión Actividades\EvaluarUsuarioONG.resx">
+      <DependentUpon>EvaluarUsuarioONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Gestión Actividades\EvaluarUsuarioPDI.resx">
+      <DependentUpon>EvaluarUsuarioPDI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Gestión Actividades\NegociarActividad.resx">
       <DependentUpon>NegociarActividad.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,6 +458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelMensajes.resx">
       <DependentUpon>CartelMensajes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelParticipante.resx">
+      <DependentUpon>CartelParticipante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelPendientes.resx">
       <DependentUpon>CartelPendientes.cs</DependentUpon>

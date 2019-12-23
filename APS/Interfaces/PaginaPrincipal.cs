@@ -1000,12 +1000,21 @@ namespace APS.Interfaces
             panelPrincipal.AutoScroll = false;
             panelPrincipal.AutoScroll = true;
 
-            List<Actividad_Realizada> actRealizadas = Actividad_Realizada.ListaActividadesRealizadas(user, Actividad_Realizada.EstadoActividadR.EVALUACION_PARTICIPANTE);
-            List<Actividad> actividades = Actividad_Realizada.ListaActividades(user.Email);
-            CartelActividadesValoracion[] actsCarteles = new CartelActividadesValoracion[actRealizadas.Count];
+            List<Actividad_Realizada> actRealizadasPar = Actividad_Realizada.ListaActividadesRealizadas(user, Actividad_Realizada.EstadoActividadR.EVALUACION_PARTICIPANTE);
+            List<Actividad> actRealizadaONG = Actividad_Realizada.ListaActividades(Actividad_Realizada.EstadoActividadR.EVALUACION_ONG);
+            List<Actividad> actRealizadaPDI = Actividad_Realizada.ListaActividades(Actividad_Realizada.EstadoActividadR.EVALUACION_PDI);
+            if(user.Rol.NombreRol.Equals("Estudiante") || user.Rol.NombreRol.Equals("PDI") || user.Rol.NombreRol.Equals("PAS")) cargarEvaluacionParticipante(actRealizadasPar);
+            if(user.Rol.NombreRol.Equals("ONG")) cargarEvaluacionONG(actRealizadaONG);
+            if(user.Rol.NombreRol.Equals("PDI")) cargarEvaluacionPDI(actRealizadaPDI);
+            
+        }
 
+        private void cargarEvaluacionPDI(List<Actividad> lista)
+        {
+            CartelActividadesValoracion[] actsCarteles = new CartelActividadesValoracion[lista.Count];
             int c = 0;
-            foreach (Actividad act in actividades)
+
+            foreach (Actividad act in lista)
             {
                 actsCarteles[c] = new CartelActividadesValoracion(user, act);
                 tablePP.Controls.Add(actsCarteles[c], 0, c + 1);
@@ -1016,25 +1025,55 @@ namespace APS.Interfaces
                 //BOTON SOLICITAR
                 Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
                 Button bValorar = (Button)panel.Controls.Find("bValorar", false)[0];
-                if (user.Rol.NombreRol.Equals("GESTOR")) bValorar.Visible = false;
-                Boolean encontrada = false;
-                int j = 0;
-                while(!encontrada && j < actRealizadas.Count())
-                {
-                    if(act.ID_Actividad == actRealizadas[j].Actividad.ID_Actividad)
-                    {
-                        encontrada = true;
-                    } else
-                    {
-                        j++;
-                    }
-                }
-                Actividad_Realizada aR = actRealizadas[j];
-                if (!aR.EstadoRealizacion.ToString().Equals("EVALUACION_" + user.Rol.NombreRol.ToUpper()) &&
-                    !aR.EstadoRealizacion.ToString().Equals("EVALUACION_PARTICIPANTE"))
+                //PROGRAMACIÓN BOTONES
+                bValorar.Click += (sender, EventArgs) => { bValorarONG_Click(sender, EventArgs, act); };
+                c++;
+            }
+        }
+
+        private void cargarEvaluacionONG(List<Actividad> lista)
+        {
+            CartelActividadesValoracion[] actsCarteles = new CartelActividadesValoracion[lista.Count];
+            int c = 0;
+
+            foreach (Actividad act in lista)
+            {
+                actsCarteles[c] = new CartelActividadesValoracion(user, act);
+                tablePP.Controls.Add(actsCarteles[c], 0, c + 1);
+                tablePP.RowCount = tablePP.RowCount + 1;
+                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
+                actsCarteles[c].BackColor = Color.Aqua;
+
+                //BOTON SOLICITAR
+                Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
+                Button bValorar = (Button)panel.Controls.Find("bValorar", false)[0];
+                //PROGRAMACIÓN BOTONES
+                bValorar.Click += (sender, EventArgs) => { bValorarONG_Click(sender, EventArgs, act); };
+                c++;
+            }
+        }
+
+        private void cargarEvaluacionParticipante(List<Actividad_Realizada> lista)
+        {
+            CartelActividadesValoracion[] actsCarteles = new CartelActividadesValoracion[lista.Count];
+
+            int c = 0;
+            foreach (Actividad_Realizada act in lista)
+            {
+                actsCarteles[c] = new CartelActividadesValoracion(user, act.Actividad);
+                tablePP.Controls.Add(actsCarteles[c], 0, c + 1);
+                tablePP.RowCount = tablePP.RowCount + 1;
+                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
+                actsCarteles[c].BackColor = Color.Aqua;
+
+                //BOTON SOLICITAR
+                Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
+                Button bValorar = (Button)panel.Controls.Find("bValorar", false)[0];
+                if (!act.EstadoRealizacion.ToString().Equals("EVALUACION_" + user.Rol.NombreRol.ToUpper()) &&
+                    !act.EstadoRealizacion.ToString().Equals("EVALUACION_PARTICIPANTE"))
                     bValorar.Visible = false;
                 //PROGRAMACIÓN BOTONES
-                bValorar.Click += (sender, EventArgs) => { bValorar_Click(sender, EventArgs, aR); };
+                bValorar.Click += (sender, EventArgs) => { bValorar_Click(sender, EventArgs, act); };
                 c++;
             }
         }
@@ -1043,6 +1082,13 @@ namespace APS.Interfaces
         {
             EvaluarActividad evAct = new EvaluarActividad(act);
             evAct.ShowDialog();
+            cargarValoracionActividadesInicio();
+        }
+
+        private void bValorarONG_Click(object sender, EventArgs eventArgs, Actividad act)
+        {
+            EvaluarParticipantes evPar = new EvaluarParticipantes(user,act);
+            evPar.ShowDialog();
             cargarValoracionActividadesInicio();
         }
 
