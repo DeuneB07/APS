@@ -140,9 +140,9 @@ namespace APS.Interfaces
                 //
                 // NUEVO AMBITO TIPO
                 //
-                if (!comboAmbitoTrab.SelectedItem.Equals(null)) throw new Exception("Ámbito de Trabajo no puede ser Vacío");
+                if (comboAmbitoTrab.SelectedItem.Equals(null)) throw new Exception("Ámbito de Trabajo no puede ser Vacío");
                 else p.AmbitoTrabajo = (AmbitoTrabajo)comboAmbitoTrab.SelectedItem;
-                if (!comboTipoTrab.SelectedItem.Equals(null)) throw new Exception("Tipo de Trabajo no puede ser Vacío");
+                if (comboTipoTrab.SelectedItem.Equals(null)) throw new Exception("Tipo de Trabajo no puede ser Vacío");
                 else p.TipoTrabajo = (TipoTrabajo)comboTipoTrab.SelectedItem;
 
                 p.HorasPosibles = decimal.ToInt32(numericUpDown.Value);

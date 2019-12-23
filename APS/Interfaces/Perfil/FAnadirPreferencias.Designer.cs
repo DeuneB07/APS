@@ -273,7 +273,7 @@
             // 
             this.numericUpDown.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown.Location = new System.Drawing.Point(462, 223);
-            this.numericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown.Name = "numericUpDown";
             this.numericUpDown.Size = new System.Drawing.Size(52, 22);
             this.numericUpDown.TabIndex = 36;
