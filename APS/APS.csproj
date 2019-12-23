@@ -137,28 +137,28 @@
     <Compile Include="Interfaces\ControllersPP\PDIControllerPP.Designer.cs">
       <DependentUpon>PDIControllerPP.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Gestión Actividades\EvaluarActividad.cs">
+    <Compile Include="Interfaces\Valoracion\EvaluarActividad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Gestión Actividades\EvaluarActividad.Designer.cs">
+    <Compile Include="Interfaces\Valoracion\EvaluarActividad.Designer.cs">
       <DependentUpon>EvaluarActividad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Gestión Actividades\EvaluarParticipantes.cs">
+    <Compile Include="Interfaces\Valoracion\EvaluarParticipantes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Gestión Actividades\EvaluarParticipantes.Designer.cs">
+    <Compile Include="Interfaces\Valoracion\EvaluarParticipantes.Designer.cs">
       <DependentUpon>EvaluarParticipantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Gestión Actividades\EvaluarUsuarioONG.cs">
+    <Compile Include="Interfaces\Valoracion\EvaluarUsuarioONG.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Gestión Actividades\EvaluarUsuarioONG.Designer.cs">
+    <Compile Include="Interfaces\Valoracion\EvaluarUsuarioONG.Designer.cs">
       <DependentUpon>EvaluarUsuarioONG.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Gestión Actividades\EvaluarUsuarioPDI.cs">
+    <Compile Include="Interfaces\Valoracion\EvaluarUsuarioPDI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Gestión Actividades\EvaluarUsuarioPDI.Designer.cs">
+    <Compile Include="Interfaces\Valoracion\EvaluarUsuarioPDI.Designer.cs">
       <DependentUpon>EvaluarUsuarioPDI.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Gestión Actividades\VerActividadAbierta.cs">
@@ -215,10 +215,10 @@
     <Compile Include="Interfaces\Perfil\FPerfilPAS.Designer.cs">
       <DependentUpon>FPerfilPAS.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Personalizados\CartelActividadesValoracion.cs">
+    <Compile Include="Interfaces\Valoracion\CartelActividadesValoracion.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Interfaces\Personalizados\CartelActividadesValoracion.Designer.cs">
+    <Compile Include="Interfaces\Valoracion\CartelActividadesValoracion.Designer.cs">
       <DependentUpon>CartelActividadesValoracion.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Personalizados\CartelFiltroMatch.cs">
@@ -233,16 +233,16 @@
     <Compile Include="Interfaces\Personalizados\CartelFiltros.Designer.cs">
       <DependentUpon>CartelFiltros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Personalizados\CartelMensajes.cs">
+    <Compile Include="Interfaces\Mensajes\CartelMensajes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Interfaces\Personalizados\CartelMensajes.Designer.cs">
+    <Compile Include="Interfaces\Mensajes\CartelMensajes.Designer.cs">
       <DependentUpon>CartelMensajes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Personalizados\CartelParticipante.cs">
+    <Compile Include="Interfaces\Valoracion\CartelParticipante.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Interfaces\Personalizados\CartelParticipante.Designer.cs">
+    <Compile Include="Interfaces\Valoracion\CartelParticipante.Designer.cs">
       <DependentUpon>CartelParticipante.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Personalizados\CartelPendientes.cs">
@@ -329,12 +329,6 @@
     <Compile Include="Interfaces\Personalizados\CartelActividadesStandard.Designer.cs">
       <DependentUpon>CartelActividadesStandard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Personalizados\CartelHistorial.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Interfaces\Personalizados\CartelHistorial.Designer.cs">
-      <DependentUpon>CartelHistorial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelSolicitantesActividad.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -408,16 +402,16 @@
     <EmbeddedResource Include="Interfaces\ControllersPP\PDIControllerPP.resx">
       <DependentUpon>PDIControllerPP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Gestión Actividades\EvaluarActividad.resx">
+    <EmbeddedResource Include="Interfaces\Valoracion\EvaluarActividad.resx">
       <DependentUpon>EvaluarActividad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Gestión Actividades\EvaluarParticipantes.resx">
+    <EmbeddedResource Include="Interfaces\Valoracion\EvaluarParticipantes.resx">
       <DependentUpon>EvaluarParticipantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Gestión Actividades\EvaluarUsuarioONG.resx">
+    <EmbeddedResource Include="Interfaces\Valoracion\EvaluarUsuarioONG.resx">
       <DependentUpon>EvaluarUsuarioONG.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Gestión Actividades\EvaluarUsuarioPDI.resx">
+    <EmbeddedResource Include="Interfaces\Valoracion\EvaluarUsuarioPDI.resx">
       <DependentUpon>EvaluarUsuarioPDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Gestión Actividades\NegociarActividad.resx">
@@ -447,7 +441,7 @@
     <EmbeddedResource Include="Interfaces\Perfil\FPerfilPAS.resx">
       <DependentUpon>FPerfilPAS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Personalizados\CartelActividadesValoracion.resx">
+    <EmbeddedResource Include="Interfaces\Valoracion\CartelActividadesValoracion.resx">
       <DependentUpon>CartelActividadesValoracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelFiltroMatch.resx">
@@ -456,10 +450,10 @@
     <EmbeddedResource Include="Interfaces\Personalizados\CartelFiltros.resx">
       <DependentUpon>CartelFiltros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Personalizados\CartelMensajes.resx">
+    <EmbeddedResource Include="Interfaces\Mensajes\CartelMensajes.resx">
       <DependentUpon>CartelMensajes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Personalizados\CartelParticipante.resx">
+    <EmbeddedResource Include="Interfaces\Valoracion\CartelParticipante.resx">
       <DependentUpon>CartelParticipante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelPendientes.resx">
@@ -503,9 +497,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelActividadesStandard.resx">
       <DependentUpon>CartelActividadesStandard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Personalizados\CartelHistorial.resx">
-      <DependentUpon>CartelHistorial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelSolicitantesActividad.resx">
       <DependentUpon>CartelSolicitantesActividad.cs</DependentUpon>
@@ -565,6 +556,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Interfaces\ElementosAyuda\" />
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
