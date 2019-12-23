@@ -58,7 +58,7 @@ namespace APS.Interfaces.Gestión_Actividades
             foreach (Actividad_Realizada act in lista)
             {
                 cartParticipante[c] = new CartelParticipante(act.Participante);
-                panelPorEvaluar.Controls.Add(cartParticipante[c], 0, c + 1);
+                panelPorEvaluar.Controls.Add(cartParticipante[c], 0, c);
                 panelPorEvaluar.RowCount = panelPorEvaluar.RowCount + 1;
                 cartParticipante[c].Location = new Point(cartParticipante[c].Location.X, (cartParticipante[c].Size.Height * c));
                 cartParticipante[c].BackColor = Color.MistyRose;
@@ -89,7 +89,7 @@ namespace APS.Interfaces.Gestión_Actividades
             foreach (Actividad_Realizada act in lista)
             {
                 cartParticipante[c] = new CartelParticipante(act.Participante);
-                panelAusentes.Controls.Add(cartParticipante[c], 0, c + 1);
+                panelAusentes.Controls.Add(cartParticipante[c], 0, c);
                 panelAusentes.RowCount = panelAusentes.RowCount + 1;
                 cartParticipante[c].Location = new Point(cartParticipante[c].Location.X, (cartParticipante[c].Size.Height * c));
                 cartParticipante[c].BackColor = Color.LightGray;
@@ -119,7 +119,7 @@ namespace APS.Interfaces.Gestión_Actividades
             foreach (Actividad_Realizada act in lista)
             {
                 cartParticipante[c] = new CartelParticipante(act.Participante);
-                panelEnProceso.Controls.Add(cartParticipante[c], 0, c + 1);
+                panelEnProceso.Controls.Add(cartParticipante[c], 0, c);
                 panelEnProceso.RowCount = panelEnProceso.RowCount + 1;
                 cartParticipante[c].Location = new Point(cartParticipante[c].Location.X, (cartParticipante[c].Size.Height * c));
                 cartParticipante[c].BackColor = Color.Blue;
@@ -149,7 +149,7 @@ namespace APS.Interfaces.Gestión_Actividades
             foreach (Actividad_Realizada act in lista)
             {
                 cartParticipante[c] = new CartelParticipante(act.Participante);
-                panelEvaluados.Controls.Add(cartParticipante[c], 0, c + 1);
+                panelEvaluados.Controls.Add(cartParticipante[c], 0, c);
                 panelEvaluados.RowCount = panelEvaluados.RowCount + 1;
                 cartParticipante[c].Location = new Point(cartParticipante[c].Location.X, (cartParticipante[c].Size.Height * c));
                 cartParticipante[c].BackColor = Color.SpringGreen;
@@ -291,7 +291,7 @@ namespace APS.Interfaces.Gestión_Actividades
             foreach (Actividad_Realizada act in lista)
             {
                 cartParticipante[c] = new CartelParticipante(act.Participante);
-                panelEvaluados.Controls.Add(cartParticipante[c], 0, c + 1);
+                panelEvaluados.Controls.Add(cartParticipante[c], 0, c);
                 panelEvaluados.RowCount = panelEvaluados.RowCount + 1;
                 cartParticipante[c].Location = new Point(cartParticipante[c].Location.X, (cartParticipante[c].Size.Height * c));
                 cartParticipante[c].BackColor = Color.SpringGreen;

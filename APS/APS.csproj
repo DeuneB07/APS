@@ -565,6 +565,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Interfaces\ElementosAyuda\" />
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
