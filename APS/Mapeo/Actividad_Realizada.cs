@@ -111,6 +111,19 @@ namespace APS.Mapeo
         
         }
 
+        public Actividad_Realizada(Usuario participante, Actividad actividad, Boolean f)
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            String ins = "INSERT INTO Actividades_Realizadas (emailParticipante,idAct) VALUES ('" 
+                    + participante.Email + "'," + actividad.ID_Actividad + ");";
+            miBD.Insert(ins);
+
+            this.participante = participante;
+            this.actividad = actividad;
+            this.estadoRealizacion = EstadoActividadR.EVALUACION_PARTICIPANTE;
+
+        }
+
         public Actividad_Realizada(Usuario participante, Actividad actividad, EstadoActividadR estadoRealizacion, int valoracionUsuario,
                                     String fechaValoracionUsuario, String comentarioUsuario, int numHorasRealizadas, int valoracionONG,
                                     String fechaValoracionONG, String comentarioONG, /*File archivoAdjuntoONG,*/ int valoracionProfesor,

@@ -55,20 +55,18 @@
             this.panel1.Controls.Add(this.labelName);
             this.panel1.Controls.Add(this.lDescripcion);
             this.panel1.Controls.Add(this.pict);
-            this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1246, 327);
+            this.panel1.Size = new System.Drawing.Size(623, 170);
             this.panel1.TabIndex = 4;
             // 
             // lShowResp
             // 
             this.lShowResp.AutoSize = true;
             this.lShowResp.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lShowResp.Location = new System.Drawing.Point(210, 112);
-            this.lShowResp.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lShowResp.Location = new System.Drawing.Point(105, 58);
             this.lShowResp.Name = "lShowResp";
-            this.lShowResp.Size = new System.Drawing.Size(104, 27);
+            this.lShowResp.Size = new System.Drawing.Size(54, 13);
             this.lShowResp.TabIndex = 19;
             this.lShowResp.Text = "nounresp";
             // 
@@ -76,10 +74,9 @@
             // 
             this.lResp.AutoSize = true;
             this.lResp.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lResp.Location = new System.Drawing.Point(30, 112);
-            this.lResp.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lResp.Location = new System.Drawing.Point(15, 58);
             this.lResp.Name = "lResp";
-            this.lResp.Size = new System.Drawing.Size(143, 27);
+            this.lResp.Size = new System.Drawing.Size(73, 13);
             this.lResp.TabIndex = 18;
             this.lResp.Text = "Responsable:";
             // 
@@ -87,10 +84,9 @@
             // 
             this.lShowOrg.AutoSize = true;
             this.lShowOrg.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lShowOrg.Location = new System.Drawing.Point(166, 69);
-            this.lShowOrg.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lShowOrg.Location = new System.Drawing.Point(83, 36);
             this.lShowOrg.Name = "lShowOrg";
-            this.lShowOrg.Size = new System.Drawing.Size(93, 27);
+            this.lShowOrg.Size = new System.Drawing.Size(48, 13);
             this.lShowOrg.TabIndex = 17;
             this.lShowOrg.Text = "nounorg";
             // 
@@ -98,10 +94,9 @@
             // 
             this.lOrg.AutoSize = true;
             this.lOrg.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lOrg.Location = new System.Drawing.Point(30, 69);
-            this.lOrg.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lOrg.Location = new System.Drawing.Point(15, 36);
             this.lOrg.Name = "lOrg";
-            this.lOrg.Size = new System.Drawing.Size(105, 27);
+            this.lOrg.Size = new System.Drawing.Size(53, 13);
             this.lOrg.TabIndex = 13;
             this.lOrg.Text = "Organiza:";
             // 
@@ -112,10 +107,9 @@
             this.bValorar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.bValorar.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bValorar.ForeColor = System.Drawing.Color.Black;
-            this.bValorar.Location = new System.Drawing.Point(1112, 260);
-            this.bValorar.Margin = new System.Windows.Forms.Padding(6);
+            this.bValorar.Location = new System.Drawing.Point(556, 135);
             this.bValorar.Name = "bValorar";
-            this.bValorar.Size = new System.Drawing.Size(128, 62);
+            this.bValorar.Size = new System.Drawing.Size(64, 32);
             this.bValorar.TabIndex = 10;
             this.bValorar.Text = "Valorar";
             this.bValorar.UseVisualStyleBackColor = false;
@@ -125,50 +119,48 @@
             this.bVerMas.FlatAppearance.BorderSize = 0;
             this.bVerMas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVerMas.Image = ((System.Drawing.Image)(resources.GetObject("bVerMas.Image")));
-            this.bVerMas.Location = new System.Drawing.Point(1132, 6);
-            this.bVerMas.Margin = new System.Windows.Forms.Padding(6);
+            this.bVerMas.Location = new System.Drawing.Point(566, 3);
             this.bVerMas.Name = "bVerMas";
-            this.bVerMas.Size = new System.Drawing.Size(108, 106);
+            this.bVerMas.Size = new System.Drawing.Size(54, 55);
             this.bVerMas.TabIndex = 7;
             this.bVerMas.UseVisualStyleBackColor = true;
+            this.bVerMas.Click += new System.EventHandler(this.bVerMas_Click);
             // 
             // labelName
             // 
             this.labelName.Font = new System.Drawing.Font("Bahnschrift", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(6, 8);
-            this.labelName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelName.Location = new System.Drawing.Point(3, 4);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(814, 44);
+            this.labelName.Size = new System.Drawing.Size(407, 23);
             this.labelName.TabIndex = 4;
             this.labelName.Text = "Nombre";
             // 
             // lDescripcion
             // 
             this.lDescripcion.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDescripcion.Location = new System.Drawing.Point(282, 158);
-            this.lDescripcion.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lDescripcion.Location = new System.Drawing.Point(141, 82);
             this.lDescripcion.Name = "lDescripcion";
-            this.lDescripcion.Size = new System.Drawing.Size(532, 150);
+            this.lDescripcion.Size = new System.Drawing.Size(266, 78);
             this.lDescripcion.TabIndex = 5;
             this.lDescripcion.Text = "Descripción";
             // 
             // pict
             // 
-            this.pict.Location = new System.Drawing.Point(6, 158);
-            this.pict.Margin = new System.Windows.Forms.Padding(6);
+            this.pict.Location = new System.Drawing.Point(3, 82);
             this.pict.Name = "pict";
-            this.pict.Size = new System.Drawing.Size(264, 156);
+            this.pict.Size = new System.Drawing.Size(132, 81);
             this.pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pict.TabIndex = 6;
             this.pict.TabStop = false;
             // 
             // CartelActividadesValoracion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CartelActividadesValoracion";
-            this.Size = new System.Drawing.Size(1259, 341);
+            this.Size = new System.Drawing.Size(630, 177);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).EndInit();

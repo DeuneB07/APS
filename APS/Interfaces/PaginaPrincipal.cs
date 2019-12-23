@@ -988,7 +988,8 @@ namespace APS.Interfaces
         //
         //PESTAÑA VALORACION
         //
-
+        //LO SUYO, AHORA QUE FUNCIONA, ES ADAPTARLO PARA QUE CARGUE LAS ACTIVIDADES_REALIZADAS EN LUGAR DE HACERLO CON
+        //ACTIVIDADES (TE AHORRAS EL BUCLE DEL ENCONTRADO)
         private void cargarValoracionActividadesInicio()
         {
             chargedWindow = PantallaCargada.EVALUACION;
@@ -1028,6 +1029,9 @@ namespace APS.Interfaces
                     }
                 }
                 Actividad_Realizada aR = actRealizadas[j];
+                if (!aR.EstadoRealizacion.ToString().Equals("EVALUACION_" + user.Rol.NombreRol.ToUpper()) &&
+                    !aR.EstadoRealizacion.ToString().Equals("EVALUACION_PARTICIPANTE"))
+                    bValorar.Visible = false;
                 //PROGRAMACIÓN BOTONES
                 bValorar.Click += (sender, EventArgs) => { bValorar_Click(sender, EventArgs, aR); };
                 c++;
@@ -1037,9 +1041,8 @@ namespace APS.Interfaces
         private void bValorar_Click(object sender, EventArgs eventArgs, Actividad_Realizada act)
         {
             EvaluarActividad evAct = new EvaluarActividad(act);
-            this.Visible = false;
             evAct.ShowDialog();
-            this.Visible = true;
+            cargarValoracionActividadesInicio();
         }
 
 
