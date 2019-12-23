@@ -45,7 +45,7 @@
             this.panel1.Location = new System.Drawing.Point(4, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1067, 67);
+            this.panel1.Size = new System.Drawing.Size(1067, 82);
             this.panel1.TabIndex = 3;
             // 
             // lblFecha
@@ -53,7 +53,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.DimGray;
-            this.lblFecha.Location = new System.Drawing.Point(15, 41);
+            this.lblFecha.Location = new System.Drawing.Point(15, 54);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(44, 18);
             this.lblFecha.TabIndex = 19;
@@ -81,10 +81,10 @@
             // 
             this.lblComentario.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComentario.ForeColor = System.Drawing.Color.Navy;
-            this.lblComentario.Location = new System.Drawing.Point(14, 13);
+            this.lblComentario.Location = new System.Drawing.Point(14, 0);
             this.lblComentario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblComentario.Name = "lblComentario";
-            this.lblComentario.Size = new System.Drawing.Size(1005, 28);
+            this.lblComentario.Size = new System.Drawing.Size(986, 54);
             this.lblComentario.TabIndex = 4;
             this.lblComentario.Text = "Comentario";
             // 
@@ -96,7 +96,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CartelHistorial";
-            this.Size = new System.Drawing.Size(1078, 75);
+            this.Size = new System.Drawing.Size(1078, 90);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

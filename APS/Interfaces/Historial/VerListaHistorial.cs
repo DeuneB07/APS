@@ -36,12 +36,12 @@ namespace APS.Interfaces.Historial
                 panelHistorial.AutoScroll = true;
 
                 List<Mapeo.Historial> lista = Mapeo.Historial.ListaHistorial(user);
-                //CartelHistorial[] carteles = new CartelHistorial[lista.Count];
+                CartelHistorial[] carteles = new CartelHistorial[lista.Count];
 
                 int c = 0;
                 foreach (Mapeo.Historial h in lista)
                 {
-                    /*CartelHistorial cartel = new CartelHistorial(h);
+                    CartelHistorial cartel = new CartelHistorial(h);
                     if (c % 3 == 0) cartel.BackColor = System.Drawing.Color.DarkRed;
                     if (c % 3 == 1) cartel.BackColor = System.Drawing.Color.Firebrick;
                     if (c % 3 == 2) cartel.BackColor = System.Drawing.Color.IndianRed;
@@ -49,7 +49,7 @@ namespace APS.Interfaces.Historial
                     tablePP.Controls.Add(carteles[c], 0, c);
                     tablePP.RowCount = tablePP.RowCount + 1;
                     carteles[c].Location = new Point(carteles[c].Location.X, (carteles[c].Size.Height * c));
-                    */
+                    
                     //Programar verTodo
 
 

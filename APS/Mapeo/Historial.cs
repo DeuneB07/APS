@@ -60,10 +60,6 @@ namespace APS.Mapeo
             if (!tupla[3].ToString().Equals("")) this.usuario = new Usuario(tupla[3].ToString());
 
             string[] fechaIn = tupla[4].ToString().Split('/','-',' ',':','.');
-            foreach (String f in fechaIn)
-            {
-                Console.WriteLine(f);
-            }
             this.fecha = new DateTime(int.Parse(fechaIn[2]), int.Parse(fechaIn[1]), int.Parse(fechaIn[0]),int.Parse(fechaIn[3]),int.Parse(fechaIn[4]),int.Parse(fechaIn[5]));
         }
 
