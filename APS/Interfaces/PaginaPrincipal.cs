@@ -1,4 +1,5 @@
 ﻿using APS.Interfaces.Gestión_Actividades;
+using APS.Interfaces.Historial;
 using APS.Interfaces.Perfil;
 using APS.Interfaces.Personalizados;
 using APS.Mapeo;
@@ -1399,6 +1400,14 @@ namespace APS.Interfaces
             emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
 
             if (emCierreDialog == DialogResult.Yes) this.Close();
+        }
+
+        private void pictHistorial_Click(object sender, EventArgs e)
+        {
+            VerListaHistorial verHistorial = new VerListaHistorial(this.user);
+            this.Visible = false;
+            verHistorial.ShowDialog();
+            this.Visible = true;
         }
     }
 }
