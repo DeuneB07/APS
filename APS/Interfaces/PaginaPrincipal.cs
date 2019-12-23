@@ -1655,5 +1655,10 @@ namespace APS.Interfaces
             verHistorial.ShowDialog();
             this.Visible = true;
         }
+
+        private void pictDevelop_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("firefox.exe", "https://wepass502328605.wordpress.com/");
+        }
     }
 }
