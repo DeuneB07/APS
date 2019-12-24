@@ -16,15 +16,15 @@ namespace APS.Mapeo
         private Actividad actividad;
         private EstadoActividadR estadoRealizacion;
         private int valoracionUsuario;
-        private String fechaValoracionUsuario;
+        private DateTime fechaValoracionUsuario;
         private String comentarioUsuario;
         private int numHorasRealizadas;
         private int valoracionONG;
-        private String fechaValoracionONG;
+        private DateTime fechaValoracionONG;
         private String comentarioONG;
         //private File archivoAdjuntoONG;
         private int valoracionProfesor;
-        private String fechaValoracionProfesor;
+        private DateTime fechaValoracionProfesor;
         private String comentarioProfesor;
 
         public static List<Actividad> ListaActividades(String emailUsuario)
@@ -49,7 +49,7 @@ namespace APS.Mapeo
 
             foreach (Object[] tupla in miBD.Select("SELECT emailParticipante, idAct FROM Actividades_Realizadas;"))
             {
-                String emP = (String)tupla[0];
+                String emP = tupla[0].ToString();
                 int id = (int)tupla[1];
                 Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), new Actividad(id));
                 lista.Add(aR);
@@ -65,7 +65,7 @@ namespace APS.Mapeo
 
             foreach (Object[] tupla in miBD.Select("SELECT emailParticipante, idAct FROM Actividades_Realizadas WHERE emailParticipante = '" + usuario.Email + "' and estadoRealizacion = '" + estado.ToString() + "';"))
             {
-                String emP = (String)tupla[0];
+                String emP = tupla[0].ToString();
                 int id = (int)tupla[1];
                 Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), new Actividad(id));
                 lista.Add(aR);
@@ -93,7 +93,7 @@ namespace APS.Mapeo
 
             foreach (Object[] tupla in miBD.Select("SELECT emailParticipante, idAct FROM Actividades_Realizadas WHERE estadoRealizacion = '" + estado.ToString() + "' and idAct = " + actividad.ID_Actividad + ";"))
             {
-                String emP = (String)tupla[0];
+                String emP = tupla[0].ToString();
                 int id = (int)tupla[1];
                 Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), actividad);
                 lista.Add(aR);
@@ -110,17 +110,20 @@ namespace APS.Mapeo
             this.participante = participante;
             actividad = act;
             Enum.TryParse<EstadoActividadR>(tupla[2].ToString(), true, out estadoRealizacion);
-            if (tupla[3] != null) valoracionUsuario = (int)tupla[3];
-            if (tupla[4] != null) fechaValoracionUsuario = (String)tupla[4];
-            if (tupla[5] != null) comentarioUsuario = (String)tupla[5];
-            if (tupla[6] != null) numHorasRealizadas = (int)tupla[6];
-            if (tupla[7] != null) valoracionONG = (int)tupla[7];
-            if (tupla[8] != null) fechaValoracionONG = (String)tupla[8];
-            if (tupla[9] != null) comentarioONG = (String)tupla[9];
+            if (!tupla[3].ToString().Equals("")) valoracionUsuario = (int)tupla[3];
+            String[] fecha = (tupla[4].ToString()).Split('/', '-', ' ', ':', '.');
+            if (!tupla[4].ToString().Equals("")) fechaValoracionUsuario = new DateTime(int.Parse(fecha[2]),int.Parse(fecha[1]),int.Parse(fecha[0]),int.Parse(fecha[3]),int.Parse(fecha[4]),int.Parse(fecha[5]));
+            if (!tupla[5].ToString().Equals("")) comentarioUsuario = (String)tupla[5];
+            if (!tupla[6].ToString().Equals("")) numHorasRealizadas = (int)tupla[6];
+            if (!tupla[7].ToString().Equals("")) valoracionONG = (int)tupla[7];
+            fecha = (tupla[8].ToString()).Split('/', '-', ' ', ':', '.');
+            if (!tupla[8].ToString().Equals("")) fechaValoracionONG = new DateTime(int.Parse(fecha[2]), int.Parse(fecha[1]), int.Parse(fecha[0]), int.Parse(fecha[3]), int.Parse(fecha[4]), int.Parse(fecha[5]));
+            if (!tupla[9].ToString().Equals("")) comentarioONG = (String)tupla[9];
             //archivoAdjuntoONG = (String)tupla[10];
-            if (tupla[11] != null) valoracionProfesor = (int)tupla[11];
-            if (tupla[12] != null) fechaValoracionProfesor = (String)tupla[12];
-            if (tupla[13] != null) comentarioProfesor = (String)tupla[13];   
+            if (!tupla[11].ToString().Equals("")) valoracionProfesor = (int)tupla[11];
+            fecha = (tupla[12].ToString()).Split('/', '-', ' ', ':', '.');
+            if (!tupla[12].ToString().Equals("")) fechaValoracionProfesor = new DateTime(int.Parse(fecha[2]), int.Parse(fecha[1]), int.Parse(fecha[0]), int.Parse(fecha[3]), int.Parse(fecha[4]), int.Parse(fecha[5]));
+            if (!tupla[13].ToString().Equals("")) comentarioProfesor = (String)tupla[13];   
         }
 
         public Actividad_Realizada(Usuario participante, Actividad actividad, Boolean f)
@@ -137,17 +140,17 @@ namespace APS.Mapeo
         }
 
         public Actividad_Realizada(Usuario participante, Actividad actividad, EstadoActividadR estadoRealizacion, int valoracionUsuario,
-                                    String fechaValoracionUsuario, String comentarioUsuario, int numHorasRealizadas, int valoracionONG,
-                                    String fechaValoracionONG, String comentarioONG, /*File archivoAdjuntoONG,*/ int valoracionProfesor,
-                                    String fechaValoracionProfesor, String comentarioProfesor)
+                                    DateTime fechaValoracionUsuario, String comentarioUsuario, int numHorasRealizadas, int valoracionONG,
+                                    DateTime fechaValoracionONG, String comentarioONG, /*File archivoAdjuntoONG,*/ int valoracionProfesor,
+                                    DateTime fechaValoracionProfesor, String comentarioProfesor)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             String ins = "INSERT INTO Actividades_Realizadas (emailParticipante,idAct,estadoRealizacion,valoracionUsuario, fechaValoracionUsuario,"
                     + "comentarioUsuario, numHorasRealizadas, valoracionONG, fechaValoracionONG, comentarioONG, valoracionProfesor, "
                     + " fechaValoracionProfesor, comentarioProfesor) VALUES ('" + participante.Email + "',"
-                    + actividad.ID_Actividad + ",'" + estadoRealizacion.ToString() + "'," + valoracionUsuario + ",'" + fechaValoracionUsuario + "','"
-                    + comentarioUsuario + "'," + numHorasRealizadas + "," + valoracionONG + ",'" + fechaValoracionONG + "','"
-                    + comentarioONG + "'," + valoracionProfesor + ",'" + fechaValoracionProfesor + "', '" + comentarioProfesor +"');";
+                    + actividad.ID_Actividad + ",'" + estadoRealizacion.ToString() + "'," + valoracionUsuario + ",'" + fechaValoracionUsuario.ToString() + "','"
+                    + comentarioUsuario + "'," + numHorasRealizadas + "," + valoracionONG + ",'" + fechaValoracionONG.ToString() + "','"
+                    + comentarioONG + "'," + valoracionProfesor + ",'" + fechaValoracionProfesor.ToString() + "', '" + comentarioProfesor +"');";
             miBD.Insert(ins);
             
 
@@ -220,13 +223,13 @@ namespace APS.Mapeo
             }
         }
 
-        public String FechaValoracionUsuario
+        public DateTime FechaValoracionUsuario
         {
             get{ return fechaValoracionUsuario; }
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Actividades_Realizadas SET fechaValoracionUsuario='" + value + "' "
+                String up = "UPDATE Actividades_Realizadas SET fechaValoracionUsuario='" + value.ToString() + "' "
                         + "WHERE emailParticipante='" + this.participante.Email + "' and idAct=" + actividad.ID_Actividad + ";";
                 miBD.Update(up);
                 this.fechaValoracionUsuario = value;
@@ -272,13 +275,13 @@ namespace APS.Mapeo
             }
         }
 
-        public String FechaValoracionONG
+        public DateTime FechaValoracionONG
         {
             get{ return fechaValoracionONG; }
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Actividades_Realizadas SET fechaValoracionONG='" + value + "' "
+                String up = "UPDATE Actividades_Realizadas SET fechaValoracionONG='" + value.ToString() + "' "
                         + "WHERE emailParticipante='" + this.participante.Email + "' and idAct=" + actividad.ID_Actividad + ";";
                 miBD.Update(up);
                 this.fechaValoracionONG = value;
@@ -326,13 +329,13 @@ namespace APS.Mapeo
             }
         }
 
-        public String FechaValoracionProfesor
+        public DateTime FechaValoracionProfesor
         {
             get{ return fechaValoracionProfesor; }
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Actividades_Realizadas SET fechaValoracionProfesor='" + value + "' "
+                String up = "UPDATE Actividades_Realizadas SET fechaValoracionProfesor='" + value.ToString() + "' "
                         + "WHERE emailParticipante='" + this.participante.Email + "' and idAct=" + actividad.ID_Actividad + ";";
                 miBD.Update(up);
                 this.fechaValoracionProfesor = value;
@@ -361,15 +364,15 @@ namespace APS.Mapeo
             this.participante = null;
             this.actividad = null;
             this.valoracionUsuario = -1;
-            this.fechaValoracionUsuario = null;
+            this.fechaValoracionUsuario = DateTime.Today;
             this.comentarioUsuario = null;
             this.numHorasRealizadas = -1;
             this.valoracionONG = -1;
-            this.fechaValoracionONG = null;
+            this.fechaValoracionONG = DateTime.Today;
             this.comentarioONG = null;
             //this.archivoAdjuntoONG = null;
             this.valoracionProfesor = -1;
-            this.fechaValoracionProfesor = null;
+            this.fechaValoracionProfesor = DateTime.Today;
             this.comentarioProfesor = null;
         }
 

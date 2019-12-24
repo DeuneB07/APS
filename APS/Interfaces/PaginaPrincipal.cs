@@ -1148,7 +1148,7 @@ namespace APS.Interfaces
             int c2 = 0;
             foreach (Actividad act in actRealizadasP)
             {
-                if (act.Responsable.Equals(user))
+                if (act.Responsable!=null && act.Responsable.Equals(user))
                 {
                     actsCarteles[c2] = new CartelActividadesValoracion(user, act);
                     tablePP.Controls.Add(actsCarteles[c2], 0, c);

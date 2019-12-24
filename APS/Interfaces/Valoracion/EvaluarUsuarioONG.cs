@@ -30,8 +30,8 @@ namespace APS.Interfaces.Gestión_Actividades
 
                 act.ValoracionONG = int.Parse(textBoxValoracion.Text);
                 act.ComentarioONG = textBoxComentario.Text;
-                act.FechaValoracionONG = DateTime.Today.ToShortDateString();
-                if (act.Actividad.EstadoAct.Equals("VOLUNTARIADO")) act.EstadoRealizacion = Actividad_Realizada.EstadoActividadR.EVALUACION_FINALIZADA;
+                act.FechaValoracionONG = DateTime.Today;
+                if (act.Actividad.TipoAct.ToString().Equals(Actividad.TipoActividadE.VOLUNTARIADO.ToString())) act.EstadoRealizacion = Actividad_Realizada.EstadoActividadR.EVALUACION_FINALIZADA;
                 else act.EstadoRealizacion = Actividad_Realizada.EstadoActividadR.EVALUACION_PDI;
                 this.Close();
             } catch (Exception ex)
