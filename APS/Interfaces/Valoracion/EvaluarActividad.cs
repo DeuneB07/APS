@@ -33,7 +33,7 @@ namespace APS.Interfaces.Gestión_Actividades
 
                 actividad.EstadoRealizacion = Actividad_Realizada.EstadoActividadR.EVALUACION_ONG;
                 actividad.ValoracionUsuario = int.Parse(textBoxValoracion.Text);
-                actividad.FechaValoracionUsuario = DateTime.Today.ToShortDateString();
+                actividad.FechaValoracionUsuario = DateTime.Today;
                 actividad.ComentarioUsuario = textBoxComentario.Text;
                 actividad.NumHorasRealizadas = int.Parse(textBoxHoras.Text);
 
