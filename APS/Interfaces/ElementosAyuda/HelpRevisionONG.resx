@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lpMatch2.Text" xml:space="preserve">
+    <value>&gt;&gt; Tras ser aceptadas por el gestor, las actividades pueden tener asignado un Responsable (sólo si la actividad no es Voluntariado). Así pues, aquí se mostrarán las negociaciones entre PDI y ONG; así como los momentos en los que interviene el Gestor</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bOK.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -326,8 +329,5 @@
         1adMR99K+JRPHVOUJEm761NHd/+/BIDzH/Z3//IHkiRpN7Vdf/6/BoBjQoDfCZAkaTe1HX90+f9YAPjX
         wv9/TUB7cUB7haC/IihJ0jK1Hd52edvpV//4vp9O+X+9c9pCK7aDWwAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="lpMatch2.Text" xml:space="preserve">
-    <value>&gt;&gt; Tras ser aceptadas por el gestor, las actividades pueden tener asignado un Responsable (sólo si la actividad no es Voluntariado). Así pues, aquí se mostrarán las negociaciones entre PDI y ONG; así como los momentos en los que interviene el Gestor</value>
   </data>
 </root>
