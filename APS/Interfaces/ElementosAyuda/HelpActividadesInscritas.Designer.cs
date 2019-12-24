@@ -53,9 +53,10 @@
             this.lAceptadas.BackColor = System.Drawing.Color.Transparent;
             this.lAceptadas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lAceptadas.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAceptadas.Location = new System.Drawing.Point(65, 83);
+            this.lAceptadas.Location = new System.Drawing.Point(87, 102);
+            this.lAceptadas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lAceptadas.Name = "lAceptadas";
-            this.lAceptadas.Size = new System.Drawing.Size(123, 14);
+            this.lAceptadas.Size = new System.Drawing.Size(155, 18);
             this.lAceptadas.TabIndex = 0;
             this.lAceptadas.Text = "Solicitudes Aceptadas";
             // 
@@ -65,9 +66,10 @@
             this.lEsperaONG.BackColor = System.Drawing.Color.Transparent;
             this.lEsperaONG.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lEsperaONG.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lEsperaONG.Location = new System.Drawing.Point(337, 83);
+            this.lEsperaONG.Location = new System.Drawing.Point(449, 102);
+            this.lEsperaONG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lEsperaONG.Name = "lEsperaONG";
-            this.lEsperaONG.Size = new System.Drawing.Size(163, 14);
+            this.lEsperaONG.Size = new System.Drawing.Size(207, 18);
             this.lEsperaONG.TabIndex = 1;
             this.lEsperaONG.Text = "Solicitudes en Espera de ONG";
             // 
@@ -77,9 +79,10 @@
             this.lEsperaPDI.BackColor = System.Drawing.Color.Transparent;
             this.lEsperaPDI.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lEsperaPDI.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lEsperaPDI.Location = new System.Drawing.Point(65, 143);
+            this.lEsperaPDI.Location = new System.Drawing.Point(87, 176);
+            this.lEsperaPDI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lEsperaPDI.Name = "lEsperaPDI";
-            this.lEsperaPDI.Size = new System.Drawing.Size(157, 14);
+            this.lEsperaPDI.Size = new System.Drawing.Size(199, 18);
             this.lEsperaPDI.TabIndex = 2;
             this.lEsperaPDI.Text = "Solicitudes en Espera de PDI";
             // 
@@ -88,9 +91,10 @@
             this.lAceptadas2.BackColor = System.Drawing.Color.Transparent;
             this.lAceptadas2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lAceptadas2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAceptadas2.Location = new System.Drawing.Point(80, 97);
+            this.lAceptadas2.Location = new System.Drawing.Point(107, 119);
+            this.lAceptadas2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lAceptadas2.Name = "lAceptadas2";
-            this.lAceptadas2.Size = new System.Drawing.Size(204, 18);
+            this.lAceptadas2.Size = new System.Drawing.Size(272, 22);
             this.lAceptadas2.TabIndex = 3;
             this.lAceptadas2.Text = ">> Actividad donde has sido aceptado";
             // 
@@ -99,9 +103,10 @@
             this.lEsperaPDI2.BackColor = System.Drawing.Color.Transparent;
             this.lEsperaPDI2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lEsperaPDI2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lEsperaPDI2.Location = new System.Drawing.Point(80, 157);
+            this.lEsperaPDI2.Location = new System.Drawing.Point(107, 193);
+            this.lEsperaPDI2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lEsperaPDI2.Name = "lEsperaPDI2";
-            this.lEsperaPDI2.Size = new System.Drawing.Size(204, 31);
+            this.lEsperaPDI2.Size = new System.Drawing.Size(272, 38);
             this.lEsperaPDI2.TabIndex = 4;
             this.lEsperaPDI2.Text = ">> El PDI responsable debe manejar su solicitud para esta actividad";
             // 
@@ -110,34 +115,38 @@
             this.lEsperaONG2.BackColor = System.Drawing.Color.Transparent;
             this.lEsperaONG2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lEsperaONG2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lEsperaONG2.Location = new System.Drawing.Point(352, 97);
+            this.lEsperaONG2.Location = new System.Drawing.Point(469, 119);
+            this.lEsperaONG2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lEsperaONG2.Name = "lEsperaONG2";
-            this.lEsperaONG2.Size = new System.Drawing.Size(204, 33);
+            this.lEsperaONG2.Size = new System.Drawing.Size(272, 41);
             this.lEsperaONG2.TabIndex = 5;
             this.lEsperaONG2.Text = ">> La ONG responsable debe manejar su solicitud para esta actividad";
             // 
             // pAceptadas
             // 
             this.pAceptadas.BackColor = System.Drawing.Color.Green;
-            this.pAceptadas.Location = new System.Drawing.Point(24, 83);
+            this.pAceptadas.Location = new System.Drawing.Point(32, 102);
+            this.pAceptadas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pAceptadas.Name = "pAceptadas";
-            this.pAceptadas.Size = new System.Drawing.Size(40, 40);
+            this.pAceptadas.Size = new System.Drawing.Size(53, 49);
             this.pAceptadas.TabIndex = 6;
             // 
             // pEsperaONG
             // 
             this.pEsperaONG.BackColor = System.Drawing.Color.Violet;
-            this.pEsperaONG.Location = new System.Drawing.Point(296, 83);
+            this.pEsperaONG.Location = new System.Drawing.Point(395, 102);
+            this.pEsperaONG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pEsperaONG.Name = "pEsperaONG";
-            this.pEsperaONG.Size = new System.Drawing.Size(40, 40);
+            this.pEsperaONG.Size = new System.Drawing.Size(53, 49);
             this.pEsperaONG.TabIndex = 7;
             // 
             // pEsperaPDI
             // 
             this.pEsperaPDI.BackColor = System.Drawing.Color.Purple;
-            this.pEsperaPDI.Location = new System.Drawing.Point(24, 143);
+            this.pEsperaPDI.Location = new System.Drawing.Point(32, 176);
+            this.pEsperaPDI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pEsperaPDI.Name = "pEsperaPDI";
-            this.pEsperaPDI.Size = new System.Drawing.Size(40, 40);
+            this.pEsperaPDI.Size = new System.Drawing.Size(53, 49);
             this.pEsperaPDI.TabIndex = 7;
             // 
             // bOK
@@ -147,9 +156,10 @@
             this.bOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bOK.FlatAppearance.BorderSize = 0;
             this.bOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bOK.Location = new System.Drawing.Point(516, 12);
+            this.bOK.Location = new System.Drawing.Point(688, 15);
+            this.bOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bOK.Name = "bOK";
-            this.bOK.Size = new System.Drawing.Size(40, 40);
+            this.bOK.Size = new System.Drawing.Size(53, 49);
             this.bOK.TabIndex = 8;
             this.bOK.UseVisualStyleBackColor = false;
             this.bOK.Click += new System.EventHandler(this.bOK_Click);
@@ -160,18 +170,20 @@
             this.lOK.BackColor = System.Drawing.Color.Transparent;
             this.lOK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lOK.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lOK.Location = new System.Drawing.Point(506, 55);
+            this.lOK.Location = new System.Drawing.Point(675, 68);
+            this.lOK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lOK.Name = "lOK";
-            this.lOK.Size = new System.Drawing.Size(60, 14);
+            this.lOK.Size = new System.Drawing.Size(74, 18);
             this.lOK.TabIndex = 9;
             this.lOK.Text = "¡Entiendo!";
             // 
             // pRechazada
             // 
             this.pRechazada.BackColor = System.Drawing.Color.Red;
-            this.pRechazada.Location = new System.Drawing.Point(296, 143);
+            this.pRechazada.Location = new System.Drawing.Point(395, 176);
+            this.pRechazada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pRechazada.Name = "pRechazada";
-            this.pRechazada.Size = new System.Drawing.Size(40, 40);
+            this.pRechazada.Size = new System.Drawing.Size(53, 49);
             this.pRechazada.TabIndex = 12;
             // 
             // lRechazada2
@@ -179,9 +191,10 @@
             this.lRechazada2.BackColor = System.Drawing.Color.Transparent;
             this.lRechazada2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lRechazada2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lRechazada2.Location = new System.Drawing.Point(352, 157);
+            this.lRechazada2.Location = new System.Drawing.Point(469, 193);
+            this.lRechazada2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lRechazada2.Name = "lRechazada2";
-            this.lRechazada2.Size = new System.Drawing.Size(204, 35);
+            this.lRechazada2.Size = new System.Drawing.Size(272, 43);
             this.lRechazada2.TabIndex = 11;
             this.lRechazada2.Text = ">> Su solicitud para esta actividad ha sido rechazada";
             // 
@@ -191,9 +204,10 @@
             this.lRechazada.BackColor = System.Drawing.Color.Transparent;
             this.lRechazada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lRechazada.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lRechazada.Location = new System.Drawing.Point(337, 143);
+            this.lRechazada.Location = new System.Drawing.Point(449, 176);
+            this.lRechazada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lRechazada.Name = "lRechazada";
-            this.lRechazada.Size = new System.Drawing.Size(109, 14);
+            this.lRechazada.Size = new System.Drawing.Size(137, 18);
             this.lRechazada.TabIndex = 10;
             this.lRechazada.Text = "Solicitud Cancelada";
             // 
@@ -202,9 +216,10 @@
             this.lpActIns2.BackColor = System.Drawing.Color.Transparent;
             this.lpActIns2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lpActIns2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lpActIns2.Location = new System.Drawing.Point(11, 25);
+            this.lpActIns2.Location = new System.Drawing.Point(15, 31);
+            this.lpActIns2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lpActIns2.Name = "lpActIns2";
-            this.lpActIns2.Size = new System.Drawing.Size(460, 44);
+            this.lpActIns2.Size = new System.Drawing.Size(613, 54);
             this.lpActIns2.TabIndex = 16;
             this.lpActIns2.Text = ">> Actividades en las que hemos solicitado participar. Se verán aquí el estado de" +
     " las solicitudes que hemos enviado.";
@@ -215,18 +230,20 @@
             this.lpActIns.BackColor = System.Drawing.Color.Transparent;
             this.lpActIns.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lpActIns.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lpActIns.Location = new System.Drawing.Point(11, 9);
+            this.lpActIns.Location = new System.Drawing.Point(15, 11);
+            this.lpActIns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lpActIns.Name = "lpActIns";
-            this.lpActIns.Size = new System.Drawing.Size(116, 14);
+            this.lpActIns.Size = new System.Drawing.Size(148, 18);
             this.lpActIns.TabIndex = 15;
             this.lpActIns.Text = "Actividades Inscritas";
             // 
             // HelpActividadesInscritas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(579, 199);
+            this.BackColor = System.Drawing.Color.PowderBlue;
+            this.ClientSize = new System.Drawing.Size(772, 245);
+            this.ControlBox = false;
             this.Controls.Add(this.lpActIns2);
             this.Controls.Add(this.lpActIns);
             this.Controls.Add(this.pRechazada);
@@ -243,10 +260,10 @@
             this.Controls.Add(this.lEsperaPDI);
             this.Controls.Add(this.lEsperaONG);
             this.Controls.Add(this.lAceptadas);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HelpActividadesInscritas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HelpActividadesInscritas";
             this.ResumeLayout(false);
             this.PerformLayout();
 
