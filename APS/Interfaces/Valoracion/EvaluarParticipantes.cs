@@ -61,7 +61,7 @@ namespace APS.Interfaces.Gestión_Actividades
                 panelPorEvaluar.Controls.Add(cartParticipante[c], 0, c);
                 panelPorEvaluar.RowCount = panelPorEvaluar.RowCount + 1;
                 cartParticipante[c].Location = new Point(cartParticipante[c].Location.X, (cartParticipante[c].Size.Height * c));
-                cartParticipante[c].BackColor = Color.MistyRose;
+                cartParticipante[c].BackColor = Color.DeepPink;
 
                 //BOTON SOLICITAR
                 Panel panel = (Panel)cartParticipante[c].Controls.Find("panel1", false)[0];
@@ -264,7 +264,7 @@ namespace APS.Interfaces.Gestión_Actividades
                 panelEnProceso.Controls.Add(cartParticipante[c], 0, c);
                 panelEnProceso.RowCount = panelEnProceso.RowCount + 1;
                 cartParticipante[c].Location = new Point(cartParticipante[c].Location.X, (cartParticipante[c].Size.Height * c));
-                cartParticipante[c].BackColor = Color.MistyRose;
+                cartParticipante[c].BackColor = Color.DeepPink;
 
                 //BOTON SOLICITAR
                 Panel panel = (Panel)cartParticipante[c].Controls.Find("panel1", false)[0];

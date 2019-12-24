@@ -1070,7 +1070,7 @@ namespace APS.Interfaces
                 tablePP.Controls.Add(actsCarteles[c2], 0, c);
                 tablePP.RowCount = tablePP.RowCount + 1;
                 actsCarteles[c2].Location = new Point(actsCarteles[c2].Location.X, (actsCarteles[c2].Size.Height * c));
-                actsCarteles[c2].BackColor = Color.MistyRose;
+                actsCarteles[c2].BackColor = Color.DeepPink;
 
                 //BOTON SOLICITAR
                 Panel panel = (Panel)actsCarteles[c2].Controls.Find("panel1", false)[0];
@@ -1186,7 +1186,7 @@ namespace APS.Interfaces
                     tablePP.Controls.Add(actsCarteles[c], 0, c);
                     tablePP.RowCount = tablePP.RowCount + 1;
                     actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
-                    actsCarteles[c].BackColor = Color.MistyRose;
+                    actsCarteles[c].BackColor = Color.DeepPink;
 
                     //BOTON SOLICITAR
                     Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
