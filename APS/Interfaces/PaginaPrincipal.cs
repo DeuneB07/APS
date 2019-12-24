@@ -641,32 +641,28 @@ namespace APS.Interfaces
             int c = 0;
             foreach (Actividad act in actividades)
             {
-                Console.WriteLine("hola entro");
                 actsCarteles[c] = new CartelPendientes(user, act);
                 tablePP.Controls.Add(actsCarteles[c], 0, c);
                 tablePP.RowCount = tablePP.RowCount + 1;
                 actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
                 actsCarteles[c].BackColor = Color.DarkCyan;
 
-                Console.WriteLine("hola prebotones");
                 //BOTONES GESTOR
                 Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
                 Button bAceptar = (Button)panel.Controls.Find("bRevisar", false)[0];
                 Button bRechazar = (Button)panel.Controls.Find("bRechazar", false)[0];
-                Console.WriteLine("hola postbotones");
+                
                 //PROGRAMACIÓN BOTONES
                 bAceptar.Click += (sender, EventArgs) => { bRevisar_Click(sender, EventArgs, act); };
                 bRechazar.Click += (sender, EventArgs) => { bRechazar_Click(sender, EventArgs, act); };
                 c++;
-                Console.WriteLine("hola postprogr");
             }
-            Console.WriteLine("hola fin");
+            
         }
 
         private void bRevisar_Click(object sender, EventArgs eventArgs, Actividad act)
         {
             GestorGestionaActividad gestorGestionaActividad = new GestorGestionaActividad(user, act);
-            //this.Visible = false;
             gestorGestionaActividad.ShowDialog();
             this.Visible = true;
             cargarPendientesActividadesInicio();
@@ -1013,11 +1009,12 @@ namespace APS.Interfaces
                 cargarEvaluacionPDI(tablePP.Controls.Count);    //Evaluaciones como PDI
                 cargarEvaluacionPorONG(tablePP.Controls.Count); //Evaluaciones como Participante (Espera ONG)
                 cargarEvaluacionPorPDI(tablePP.Controls.Count); //Evaluaciones como Participante (Espera PDI)
+                cargarEvaluacionFinalizadas(tablePP.Controls.Count); //Evaluaciones que ya han transitado completamente
             }
             if (user.Rol.NombreRol.Equals("Estudiante") || user.Rol.NombreRol.Equals("PAS")) cargarEvaluacionParticipante();
             else cargarEvaluacionONG();                         //Evaluaciones como ONG
 
-            cargarEvaluacionFinalizadas(tablePP.Controls.Count); //Evaluaciones que ya han transitado completamente
+            
         }
 
         private void cargarEvaluacionParticipante() //Carga Para Evaluar Individualmente una Actividad
@@ -1025,6 +1022,7 @@ namespace APS.Interfaces
             cargarEvaluacionPorHacer();
             cargarEvaluacionPorONG(tablePP.Controls.Count);
             cargarEvaluacionPorPDI(tablePP.Controls.Count);
+            cargarEvaluacionFinalizadas(tablePP.Controls.Count); //Evaluaciones que ya han transitado completamente
         }
 
         private void cargarEvaluacionPorHacer()
