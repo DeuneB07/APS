@@ -86,6 +86,21 @@ namespace APS.Mapeo
             }
             return lista;
         }
+
+        public static List<Actividad> ListaActividades()    //Devuelve las actividades, sin tener en cuenta Estado
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Actividad> lista = new List<Actividad>();
+
+            foreach (Object[] tupla in miBD.Select("SELECT count(emailParticipante), idAct FROM Actividades_Realizadas group by idAct;"))
+            {
+                int id = (int)tupla[1];
+                Actividad aR = new Actividad(id);
+                lista.Add(aR);
+            }
+            return lista;
+        }
+
         public static List<Actividad_Realizada> ListaActividadesRealizadas(Actividad actividad, EstadoActividadR estado)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);

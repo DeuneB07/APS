@@ -143,6 +143,24 @@
     <Compile Include="Interfaces\ElementosAyuda\HelpActividadesInscritas.Designer.cs">
       <DependentUpon>HelpActividadesInscritas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpEvaluacionEstudiantePAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpEvaluacionEstudiantePAS.Designer.cs">
+      <DependentUpon>HelpEvaluacionEstudiantePAS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpEvaluacionONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpEvaluacionONG.Designer.cs">
+      <DependentUpon>HelpEvaluacionONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpEvaluacionPDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpEvaluacionPDI.Designer.cs">
+      <DependentUpon>HelpEvaluacionPDI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\ElementosAyuda\HelpMatch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -452,6 +470,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpActividadesInscritas.resx">
       <DependentUpon>HelpActividadesInscritas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpEvaluacionEstudiantePAS.resx">
+      <DependentUpon>HelpEvaluacionEstudiantePAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpEvaluacionONG.resx">
+      <DependentUpon>HelpEvaluacionONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpEvaluacionPDI.resx">
+      <DependentUpon>HelpEvaluacionPDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpMatch.resx">
       <DependentUpon>HelpMatch.cs</DependentUpon>

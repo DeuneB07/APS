@@ -1143,7 +1143,7 @@ namespace APS.Interfaces
 
         private void cargarEvaluacionPDI(int c) //Carga para el PDI las que tiene que valorar como Responsable
         {
-            List<Actividad> actRealizadasP = Actividad_Realizada.ListaActividades(Actividad_Realizada.EstadoActividadR.EVALUACION_PDI);
+            List<Actividad> actRealizadasP = Actividad_Realizada.ListaActividades();
             CartelActividadesValoracion[] actsCarteles = new CartelActividadesValoracion[actRealizadasP.Count];
 
             int c2 = 0;
@@ -1173,7 +1173,7 @@ namespace APS.Interfaces
 
         private void cargarEvaluacionONG()
         {
-            List<Actividad> actRealizadasP = Actividad_Realizada.ListaActividades(Actividad_Realizada.EstadoActividadR.EVALUACION_ONG);
+            List<Actividad> actRealizadasP = Actividad_Realizada.ListaActividades();
             CartelActividadesValoracion[] actsCarteles = new CartelActividadesValoracion[actRealizadasP.Count];
 
             int c = 0;
@@ -1636,7 +1636,7 @@ namespace APS.Interfaces
             cargarRevisionActividadesInicio();
         }
 
-        private void pictCerrarSesion_Click(object sender, EventArgs e)
+        private void pictCerrarSesion_Click(object sender, EventArgs e) //Cerrar Sesión
         {
             DialogResult emCierreDialog;
             string mensaje = "¿Quieres cerrar la sesión actual?";
@@ -1647,7 +1647,7 @@ namespace APS.Interfaces
             if (emCierreDialog == DialogResult.Yes) this.Close();
         }
 
-        private void pictHistorial_Click(object sender, EventArgs e)
+        private void pictHistorial_Click(object sender, EventArgs e) //Abrir Historial
         {
             VerListaHistorial verHistorial = new VerListaHistorial(this.user);
             this.Visible = false;
@@ -1655,12 +1655,12 @@ namespace APS.Interfaces
             this.Visible = true;
         }
 
-        private void pictDevelop_Click(object sender, EventArgs e)
+        private void pictDevelop_Click(object sender, EventArgs e) //Botón Web Developer
         {
             System.Diagnostics.Process.Start("firefox.exe", "https://wepass502328605.wordpress.com/");
         }
 
-        private void bDuda_Click(object sender, EventArgs e)
+        private void bDuda_Click(object sender, EventArgs e) //Botón Duda Help
         {
 
             if (chargedWindow.Equals(PantallaCargada.MATCH))
@@ -1703,7 +1703,25 @@ namespace APS.Interfaces
                     help.ShowDialog();
                 }
             }
-            else
+            else if (chargedWindow.Equals(PantallaCargada.EVALUACION))
+            {
+                if (user.Rol.NombreRol.Equals("PDI"))
+                {
+                    HelpEvaluacionPDI help = new HelpEvaluacionPDI();
+                    help.ShowDialog();
+                }
+                else if (user.Rol.NombreRol.Equals("ONG"))
+                {
+                    HelpEvaluacionONG help = new HelpEvaluacionONG();
+                    help.ShowDialog();
+                }
+                else
+                {
+                    HelpEvaluacionEstudiantePAS help = new HelpEvaluacionEstudiantePAS();
+                    help.ShowDialog();
+                }
+            }
+            else if(chargedWindow.Equals(PantallaCargada.PROYECTOS))
             {
                 DialogResult emCierreDialog;
                 string mensaje = "Función No Implementada Aún.";
