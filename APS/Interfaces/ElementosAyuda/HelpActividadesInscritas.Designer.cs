@@ -271,3 +271,4 @@
         private System.Windows.Forms.Label lpActIns2;
         private System.Windows.Forms.Label lpActIns;
     }
+}
