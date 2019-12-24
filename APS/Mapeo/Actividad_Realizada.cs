@@ -127,17 +127,17 @@ namespace APS.Mapeo
             Enum.TryParse<EstadoActividadR>(tupla[2].ToString(), true, out estadoRealizacion);
             if (!tupla[3].ToString().Equals("")) valoracionUsuario = (int)tupla[3];
             String[] fecha = (tupla[4].ToString()).Split('/', '-', ' ', ':', '.');
-            if (!tupla[4].ToString().Equals("")) fechaValoracionUsuario = new DateTime(int.Parse(fecha[2]),int.Parse(fecha[1]),int.Parse(fecha[0]),int.Parse(fecha[3]),int.Parse(fecha[4]),int.Parse(fecha[5]));
+            if (!tupla[4].ToString().Equals("")) fechaValoracionUsuario = new DateTime(int.Parse(fecha[0]),int.Parse(fecha[1]),int.Parse(fecha[2]));
             if (!tupla[5].ToString().Equals("")) comentarioUsuario = (String)tupla[5];
             if (!tupla[6].ToString().Equals("")) numHorasRealizadas = (int)tupla[6];
             if (!tupla[7].ToString().Equals("")) valoracionONG = (int)tupla[7];
             fecha = (tupla[8].ToString()).Split('/', '-', ' ', ':', '.');
-            if (!tupla[8].ToString().Equals("")) fechaValoracionONG = new DateTime(int.Parse(fecha[2]), int.Parse(fecha[1]), int.Parse(fecha[0]), int.Parse(fecha[3]), int.Parse(fecha[4]), int.Parse(fecha[5]));
+            if (!tupla[8].ToString().Equals("")) fechaValoracionONG = new DateTime(int.Parse(fecha[0]), int.Parse(fecha[1]), int.Parse(fecha[2]));
             if (!tupla[9].ToString().Equals("")) comentarioONG = (String)tupla[9];
             //archivoAdjuntoONG = (String)tupla[10];
             if (!tupla[11].ToString().Equals("")) valoracionProfesor = (int)tupla[11];
             fecha = (tupla[12].ToString()).Split('/', '-', ' ', ':', '.');
-            if (!tupla[12].ToString().Equals("")) fechaValoracionProfesor = new DateTime(int.Parse(fecha[2]), int.Parse(fecha[1]), int.Parse(fecha[0]), int.Parse(fecha[3]), int.Parse(fecha[4]), int.Parse(fecha[5]));
+            if (!tupla[12].ToString().Equals("")) fechaValoracionProfesor = new DateTime(int.Parse(fecha[0]), int.Parse(fecha[1]), int.Parse(fecha[2]));
             if (!tupla[13].ToString().Equals("")) comentarioProfesor = (String)tupla[13];   
         }
 
