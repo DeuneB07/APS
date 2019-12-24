@@ -1,4 +1,5 @@
-﻿using APS.Interfaces.Gestión_Actividades;
+﻿using APS.Interfaces.ElementosAyuda;
+using APS.Interfaces.Gestión_Actividades;
 using APS.Interfaces.Historial;
 using APS.Interfaces.Perfil;
 using APS.Interfaces.Personalizados;
@@ -1657,6 +1658,60 @@ namespace APS.Interfaces
         private void pictDevelop_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("firefox.exe", "https://wepass502328605.wordpress.com/");
+        }
+
+        private void bDuda_Click(object sender, EventArgs e)
+        {
+
+            if (chargedWindow.Equals(PantallaCargada.MATCH))
+            {
+
+                HelpMatch help = new HelpMatch();
+                help.ShowDialog();
+
+            } 
+            else if (chargedWindow.Equals(PantallaCargada.TODAS))
+            {
+                HelpTodas help = new HelpTodas();
+                help.ShowDialog();
+            }
+            else if(chargedWindow.Equals(PantallaCargada.PENDIENTES))
+            {
+                HelpPendientes help = new HelpPendientes();
+                help.ShowDialog();
+            } 
+            else if (chargedWindow.Equals(PantallaCargada.ACTIVIDADES_INSCRITAS))
+            {
+                HelpActividadesInscritas help = new HelpActividadesInscritas();
+                help.ShowDialog();
+            }
+            else if (chargedWindow.Equals(PantallaCargada.MIS_ACTIVIDADES))
+            {
+                HelpMisActividades help = new HelpMisActividades();
+                help.ShowDialog();
+            }
+            else if (chargedWindow.Equals(PantallaCargada.REVISION))
+            {
+                if (user.Rol.NombreRol.Equals("PDI"))
+                {
+                    HelpRevisionPDI help = new HelpRevisionPDI();
+                    help.ShowDialog();
+                }
+                else
+                {
+                    HelpRevisionONG help = new HelpRevisionONG();
+                    help.ShowDialog();
+                }
+            }
+            else
+            {
+                DialogResult emCierreDialog;
+                string mensaje = "Función No Implementada Aún.";
+                string caption = "¡AVISO!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
+            }
+
         }
     }
 }

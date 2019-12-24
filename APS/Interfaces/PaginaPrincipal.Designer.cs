@@ -402,6 +402,7 @@
             this.bDuda.Size = new System.Drawing.Size(25, 25);
             this.bDuda.TabIndex = 50;
             this.bDuda.UseVisualStyleBackColor = false;
+            this.bDuda.Click += new System.EventHandler(this.bDuda_Click);
             // 
             // PaginaPrincipal
             // 

@@ -137,6 +137,48 @@
     <Compile Include="Interfaces\ControllersPP\PDIControllerPP.Designer.cs">
       <DependentUpon>PDIControllerPP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpActividadesInscritas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpActividadesInscritas.Designer.cs">
+      <DependentUpon>HelpActividadesInscritas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpMatch.Designer.cs">
+      <DependentUpon>HelpMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpMisActividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpMisActividades.Designer.cs">
+      <DependentUpon>HelpMisActividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpPendientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpPendientes.Designer.cs">
+      <DependentUpon>HelpPendientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpRevisionONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpRevisionONG.Designer.cs">
+      <DependentUpon>HelpRevisionONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpRevisionPDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpRevisionPDI.Designer.cs">
+      <DependentUpon>HelpRevisionPDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpTodas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpTodas.Designer.cs">
+      <DependentUpon>HelpTodas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelHistorial.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -408,6 +450,27 @@
     <EmbeddedResource Include="Interfaces\ControllersPP\PDIControllerPP.resx">
       <DependentUpon>PDIControllerPP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpActividadesInscritas.resx">
+      <DependentUpon>HelpActividadesInscritas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpMatch.resx">
+      <DependentUpon>HelpMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpMisActividades.resx">
+      <DependentUpon>HelpMisActividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpPendientes.resx">
+      <DependentUpon>HelpPendientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpRevisionONG.resx">
+      <DependentUpon>HelpRevisionONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpRevisionPDI.resx">
+      <DependentUpon>HelpRevisionPDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpTodas.resx">
+      <DependentUpon>HelpTodas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelHistorial.resx">
       <DependentUpon>CartelHistorial.cs</DependentUpon>
     </EmbeddedResource>
@@ -565,7 +628,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\ElementosAyuda\" />
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
