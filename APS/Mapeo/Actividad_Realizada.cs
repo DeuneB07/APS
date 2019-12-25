@@ -34,13 +34,13 @@ namespace APS.Mapeo
             return lista.Count == 1;
         }
 
-        public static List<Actividad> ListaActividades(String emailUsuario)
+        public static List<Actividad> ListaActividades(Usuario user)
         {
             // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Actividad> lista = new List<Actividad>();
 
-            foreach (Object[] tupla in miBD.Select("SELECT idAct FROM Actividades_Realizadas WHERE emailParticipante='" + emailUsuario + "';"))
+            foreach (Object[] tupla in miBD.Select("SELECT idAct FROM Actividades_Realizadas WHERE emailParticipante='" + user.Email + "';"))
             {
                 int id = (int)tupla[0];
                 Actividad a = new Actividad(id);
@@ -48,6 +48,7 @@ namespace APS.Mapeo
             }
             return lista;
         }
+
         public static List<Actividad_Realizada> ListaActividadesRealizadas()
         {
             // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
@@ -55,6 +56,43 @@ namespace APS.Mapeo
             List<Actividad_Realizada> lista = new List<Actividad_Realizada>();
 
             foreach (Object[] tupla in miBD.Select("SELECT emailParticipante, idAct FROM Actividades_Realizadas;"))
+            {
+                String emP = tupla[0].ToString();
+                int id = (int)tupla[1];
+                Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), new Actividad(id));
+                lista.Add(aR);
+            }
+            return lista;
+        }
+
+        public static List<Actividad_Realizada> ListaActividadesRealizadasAscendente(Usuario user)
+        {
+            // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Actividad_Realizada> lista = new List<Actividad_Realizada>();
+
+            foreach (Object[] tupla in miBD.Select("SELECT aR.emailParticipante, aR.idAct " +
+                                    "FROM Actividades_Realizadas aR, Actividades act " +
+                                    "WHERE aR.idAct = act.ID_Actividad AND aR.emailParticipante = '" + user.Email + "' " +
+                                    "ORDER BY act.fechaFin ASC;")) {
+                String emP = tupla[0].ToString();
+                int id = (int)tupla[1];
+                Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), new Actividad(id));
+                lista.Add(aR);
+            }
+            return lista;
+        }
+
+        public static List<Actividad_Realizada> ListaActividadesRealizadasDescendente(Usuario user)
+        {
+            // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Actividad_Realizada> lista = new List<Actividad_Realizada>();
+
+            foreach (Object[] tupla in miBD.Select("SELECT aR.emailParticipante, aR.idAct " +
+                                    "FROM Actividades_Realizadas aR, Actividades act " +
+                                    "WHERE aR.idAct = act.ID_Actividad AND aR.emailParticipante = '" + user.Email + "' " +
+                                    "ORDER BY act.fechaFin DESC;"))
             {
                 String emP = tupla[0].ToString();
                 int id = (int)tupla[1];

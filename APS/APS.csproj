@@ -227,6 +227,12 @@
     <Compile Include="Interfaces\Gestión Actividades\VerActividadRealizada.Designer.cs">
       <DependentUpon>VerActividadRealizada.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelActividadesRealizada.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelActividadesRealizada.Designer.cs">
+      <DependentUpon>CartelActividadesRealizada.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelHistorial.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -531,6 +537,9 @@
     <EmbeddedResource Include="Interfaces\Gestión Actividades\VerActividadRealizada.resx">
       <DependentUpon>VerActividadRealizada.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelActividadesRealizada.resx">
+      <DependentUpon>CartelActividadesRealizada.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelHistorial.resx">
       <DependentUpon>CartelHistorial.cs</DependentUpon>
     </EmbeddedResource>
@@ -727,6 +736,8 @@
       <DependentUpon>dbUsuario.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\uparrow_arriba_10286.png" />
+    <None Include="Resources\downarrow_abajo_10289.png" />
     <None Include="Resources\cerrarsesion.png" />
     <None Include="Resources\historialicon1.png" />
     <None Include="Resources\proyectoicon.png" />

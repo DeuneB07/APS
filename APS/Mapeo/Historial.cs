@@ -34,13 +34,28 @@ namespace APS.Mapeo
             return lista;
         }
 
-        public static List<Historial> ListaHistorial(Usuario user)
+        public static List<Historial> ListaHistorialDesc(Usuario user)
         {
             // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Historial> lista = new List<Historial>();
 
             foreach (Object[] tupla in miBD.Select("SELECT ID_Historial FROM Historial WHERE emailUsuario='"+ user.Email +"' ORDER BY fecha DESC;"))
+            {
+                int id = (int)tupla[0];
+                Historial h = new Historial(id);
+                lista.Add(h);
+            }
+            return lista;
+        }
+
+        public static List<Historial> ListaHistorialAsc(Usuario user)
+        {
+            // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Historial> lista = new List<Historial>();
+
+            foreach (Object[] tupla in miBD.Select("SELECT ID_Historial FROM Historial WHERE emailUsuario='" + user.Email + "' ORDER BY fecha ASC;"))
             {
                 int id = (int)tupla[0];
                 Historial h = new Historial(id);
