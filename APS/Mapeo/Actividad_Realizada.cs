@@ -15,17 +15,24 @@ namespace APS.Mapeo
         private Usuario participante;
         private Actividad actividad;
         private EstadoActividadR estadoRealizacion;
-        private int valoracionUsuario;
-        private DateTime fechaValoracionUsuario;
+        private float valoracionUsuario;
+        private DateTime fechaValoracionUsuario= DateTime.MinValue;
         private String comentarioUsuario;
         private int numHorasRealizadas;
-        private int valoracionONG;
-        private DateTime fechaValoracionONG;
+        private float valoracionONG;
+        private DateTime fechaValoracionONG = DateTime.MinValue;
         private String comentarioONG;
         //private File archivoAdjuntoONG;
-        private int valoracionProfesor;
-        private DateTime fechaValoracionProfesor;
+        private float valoracionProfesor;
+        private DateTime fechaValoracionProfesor = DateTime.MinValue;
         private String comentarioProfesor;
+
+        public static Boolean Contains(Usuario user, Actividad act)
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Object[]> lista = miBD.Select("SELECT * FROM Actividades_Realizadas WHERE emailParticipante='" + user.Email + "' AND idAct=" + act.ID_Actividad + ";");
+            return lista.Count == 1;
+        }
 
         public static List<Actividad> ListaActividades(String emailUsuario)
         {
@@ -125,19 +132,19 @@ namespace APS.Mapeo
             this.participante = participante;
             actividad = act;
             Enum.TryParse<EstadoActividadR>(tupla[2].ToString(), true, out estadoRealizacion);
-            if (!tupla[3].ToString().Equals("")) valoracionUsuario = (int)tupla[3];
-            String[] fecha = (tupla[4].ToString()).Split('/', '-', ' ', ':', '.');
-            if (!tupla[4].ToString().Equals("")) fechaValoracionUsuario = new DateTime(int.Parse(fecha[0]),int.Parse(fecha[1]),int.Parse(fecha[2]));
+            if (!tupla[3].ToString().Equals("")) valoracionUsuario = float.Parse(tupla[3].ToString());
+            String[] fecha = tupla[4].ToString().Split('/', '-', ' ', ':', '.');
+            if (!tupla[4].ToString().Equals("")) fechaValoracionUsuario = new DateTime(int.Parse(fecha[2]),int.Parse(fecha[1]),int.Parse(fecha[0]),int.Parse(fecha[3]),int.Parse(fecha[4]),int.Parse(fecha[5]));
             if (!tupla[5].ToString().Equals("")) comentarioUsuario = (String)tupla[5];
             if (!tupla[6].ToString().Equals("")) numHorasRealizadas = (int)tupla[6];
-            if (!tupla[7].ToString().Equals("")) valoracionONG = (int)tupla[7];
+            if (!tupla[7].ToString().Equals("")) valoracionONG = float.Parse(tupla[7].ToString());
             fecha = (tupla[8].ToString()).Split('/', '-', ' ', ':', '.');
-            if (!tupla[8].ToString().Equals("")) fechaValoracionONG = new DateTime(int.Parse(fecha[0]), int.Parse(fecha[1]), int.Parse(fecha[2]));
+            if (!tupla[8].ToString().Equals("")) fechaValoracionONG = new DateTime(int.Parse(fecha[2]), int.Parse(fecha[1]), int.Parse(fecha[0]), int.Parse(fecha[3]), int.Parse(fecha[4]), int.Parse(fecha[5]));
             if (!tupla[9].ToString().Equals("")) comentarioONG = (String)tupla[9];
             //archivoAdjuntoONG = (String)tupla[10];
-            if (!tupla[11].ToString().Equals("")) valoracionProfesor = (int)tupla[11];
+            if (!tupla[11].ToString().Equals("")) valoracionProfesor = float.Parse(tupla[11].ToString());
             fecha = (tupla[12].ToString()).Split('/', '-', ' ', ':', '.');
-            if (!tupla[12].ToString().Equals("")) fechaValoracionProfesor = new DateTime(int.Parse(fecha[0]), int.Parse(fecha[1]), int.Parse(fecha[2]));
+            if (!tupla[12].ToString().Equals("")) fechaValoracionProfesor = new DateTime(int.Parse(fecha[2]), int.Parse(fecha[1]), int.Parse(fecha[0]), int.Parse(fecha[3]), int.Parse(fecha[4]), int.Parse(fecha[5]));
             if (!tupla[13].ToString().Equals("")) comentarioProfesor = (String)tupla[13];   
         }
 
@@ -154,9 +161,9 @@ namespace APS.Mapeo
 
         }
 
-        public Actividad_Realizada(Usuario participante, Actividad actividad, EstadoActividadR estadoRealizacion, int valoracionUsuario,
-                                    DateTime fechaValoracionUsuario, String comentarioUsuario, int numHorasRealizadas, int valoracionONG,
-                                    DateTime fechaValoracionONG, String comentarioONG, /*File archivoAdjuntoONG,*/ int valoracionProfesor,
+        public Actividad_Realizada(Usuario participante, Actividad actividad, EstadoActividadR estadoRealizacion, float valoracionUsuario,
+                                    DateTime fechaValoracionUsuario, String comentarioUsuario, int numHorasRealizadas, float valoracionONG,
+                                    DateTime fechaValoracionONG, String comentarioONG, /*File archivoAdjuntoONG,*/ float valoracionProfesor,
                                     DateTime fechaValoracionProfesor, String comentarioProfesor)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
@@ -225,7 +232,7 @@ namespace APS.Mapeo
             }
         }
 
-        public int ValoracionUsuario
+        public float ValoracionUsuario
         {
             get{ return valoracionUsuario; }
             set
@@ -277,7 +284,7 @@ namespace APS.Mapeo
             }
         }
 
-        public int ValoracionONG
+        public float ValoracionONG
         {
             get{ return valoracionONG; }
             set
@@ -331,7 +338,7 @@ namespace APS.Mapeo
         }
          */
 
-        public int ValoracionProfesor
+        public float ValoracionProfesor
         {
             get{ return valoracionProfesor; }
             set

@@ -69,10 +69,10 @@
             this.bVerTodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVerTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bVerTodo.ForeColor = System.Drawing.Color.Black;
-            this.bVerTodo.Location = new System.Drawing.Point(1008, 13);
+            this.bVerTodo.Location = new System.Drawing.Point(997, 16);
             this.bVerTodo.Margin = new System.Windows.Forms.Padding(4);
             this.bVerTodo.Name = "bVerTodo";
-            this.bVerTodo.Size = new System.Drawing.Size(41, 37);
+            this.bVerTodo.Size = new System.Drawing.Size(53, 47);
             this.bVerTodo.TabIndex = 18;
             this.bVerTodo.UseVisualStyleBackColor = false;
             this.bVerTodo.Visible = false;

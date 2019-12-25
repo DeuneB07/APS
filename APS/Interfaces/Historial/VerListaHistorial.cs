@@ -1,4 +1,5 @@
-﻿using APS.Interfaces.Personalizados;
+﻿using APS.Interfaces.Gestión_Actividades;
+using APS.Interfaces.Personalizados;
 using APS.Mapeo;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,8 @@ namespace APS.Interfaces.Historial
         {
             InitializeComponent();
             this.user = user;
+            if (user.NombreUser!=null && !user.NombreUser.Equals("")) this.labelTitulo.Text = "HISTORIAL " + user.NombreUser;
+            else this.labelTitulo.Text = "HISTORIAL " + user.Nombre;
 
             cargarHistorial();
         }
@@ -49,9 +52,26 @@ namespace APS.Interfaces.Historial
                     tablePP.Controls.Add(carteles[c], 0, c);
                     tablePP.RowCount = tablePP.RowCount + 1;
                     carteles[c].Location = new Point(carteles[c].Location.X, (carteles[c].Size.Height * c));
-                    
-                    //Programar verTodo
 
+                    //Programar verTodo
+                    Panel panel = (Panel)carteles[c].Controls.Find("panel1", false)[0];
+                    Button bVerTodo = (Button)panel.Controls.Find("bVerTodo", false)[0];
+
+                    if (h.Actividad != null)
+                    {
+                        if (Actividad_Realizada.Contains(h.Usuario, h.Actividad))
+                        {
+                            Actividad_Realizada actRealizada = new Actividad_Realizada(h.Usuario, h.Actividad);
+                            //MOSTRAR VISTA DE LA ACTIVIDAD_REALIZADA
+                            bVerTodo.Click += (sender, EventArgs) => { bVerTodo_Click(sender, EventArgs, actRealizada); };
+                        }
+                        else
+                        {
+                            //MOSTRAR VISTA DE SÓLO LA ACTIVIDAD
+                            bVerTodo.Click += (sender, EventArgs) => { bVerTodo_Click(sender, EventArgs, h.Actividad); };
+                        }
+                        
+                    }
 
                     c++;
                 }
@@ -63,5 +83,25 @@ namespace APS.Interfaces.Historial
 
         }
 
+        private void bVerTodo_Click(object sender, EventArgs eventArgs, Actividad_Realizada actRealizada)
+        {
+            VerActividadRealizada verActividad = new VerActividadRealizada(user, actRealizada);
+            this.Visible = false;
+            verActividad.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void bVerTodo_Click(object sender, EventArgs eventArgs, Actividad actividad)
+        {
+            VerActividadAbierta verActividad = new VerActividadAbierta(user,actividad);
+            this.Visible = false;
+            verActividad.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

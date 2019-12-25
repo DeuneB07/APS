@@ -33,7 +33,7 @@ namespace APS.Interfaces.Gestión_Actividades
 
                 act.ValoracionProfesor = int.Parse(textBoxValoracionPDI.Text);
                 act.ComentarioProfesor = textBoxComentarioPDI.Text;
-                act.FechaValoracionProfesor = DateTime.Today;
+                act.FechaValoracionProfesor = DateTime.Now;
                 act.EstadoRealizacion = Actividad_Realizada.EstadoActividadR.EVALUACION_FINALIZADA;
                 this.Close();
             }

@@ -31,11 +31,11 @@ namespace APS.Interfaces.Gestión_Actividades
                 if (int.Parse(textBoxHoras.Text) < 0) throw new Exception("Las horas invertidas tienen que ser mayores o iguales a 0");
                 if (int.Parse(textBoxValoracion.Text) < 0 || int.Parse(textBoxValoracion.Text) > 10) throw new Exception("La valoración debe estar comprendida entre 0 y 10");
 
-                actividad.EstadoRealizacion = Actividad_Realizada.EstadoActividadR.EVALUACION_ONG;
-                actividad.ValoracionUsuario = int.Parse(textBoxValoracion.Text);
-                actividad.FechaValoracionUsuario = DateTime.Today;
+                actividad.ValoracionUsuario = float.Parse(textBoxValoracion.Text);
+                actividad.FechaValoracionUsuario = DateTime.Now;
                 actividad.ComentarioUsuario = textBoxComentario.Text;
                 actividad.NumHorasRealizadas = int.Parse(textBoxHoras.Text);
+                actividad.EstadoRealizacion = Actividad_Realizada.EstadoActividadR.EVALUACION_ONG;
 
                 this.Close();
             }
