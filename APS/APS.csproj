@@ -245,11 +245,89 @@
     <Compile Include="Interfaces\Gestión Actividades\VerActividadRealizada.Designer.cs">
       <DependentUpon>VerActividadRealizada.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CAmbTrab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CAmbTrab.Designer.cs">
+      <DependentUpon>CAmbTrab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CAsignatura.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CAsignatura.Designer.cs">
+      <DependentUpon>CAsignatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CCompetencia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CCompetencia.Designer.cs">
+      <DependentUpon>CCompetencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CGrado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CGrado.Designer.cs">
+      <DependentUpon>CGrado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\GestorExclusive\ControlesGestor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaces\GestorExclusive\ControlesGestor.Designer.cs">
       <DependentUpon>ControlesGestor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CSolicitudes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CSolicitudes.Designer.cs">
+      <DependentUpon>CSolicitudes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CTipoTrab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CTipoTrab.Designer.cs">
+      <DependentUpon>CTipoTrab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CUsuario.Designer.cs">
+      <DependentUpon>CUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\InsertarAmbito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\InsertarAmbito.Designer.cs">
+      <DependentUpon>InsertarAmbito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\InsertarAsig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\InsertarAsig.Designer.cs">
+      <DependentUpon>InsertarAsig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\InsertarCompetencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\InsertarCompetencia.Designer.cs">
+      <DependentUpon>InsertarCompetencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\InsertarGrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\InsertarGrados.Designer.cs">
+      <DependentUpon>InsertarGrados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\InsertarTipoTrab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\InsertarTipoTrab.Designer.cs">
+      <DependentUpon>InsertarTipoTrab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\InsertarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\InsertarUsuarios.Designer.cs">
+      <DependentUpon>InsertarUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Personalizados\CartelActividadesRealizada.cs">
       <SubType>UserControl</SubType>
@@ -561,8 +639,41 @@
     <EmbeddedResource Include="Interfaces\Gestión Actividades\VerActividadRealizada.resx">
       <DependentUpon>VerActividadRealizada.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\CAmbTrab.resx">
+      <DependentUpon>CAmbTrab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\CAsignatura.resx">
+      <DependentUpon>CAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\CCompetencia.resx">
+      <DependentUpon>CCompetencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\CGrado.resx">
+      <DependentUpon>CGrado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\GestorExclusive\ControlesGestor.resx">
       <DependentUpon>ControlesGestor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\CTipoTrab.resx">
+      <DependentUpon>CTipoTrab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\CUsuario.resx">
+      <DependentUpon>CUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\InsertarAmbito.resx">
+      <DependentUpon>InsertarAmbito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\InsertarAsig.resx">
+      <DependentUpon>InsertarAsig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\InsertarCompetencia.resx">
+      <DependentUpon>InsertarCompetencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\InsertarGrados.resx">
+      <DependentUpon>InsertarGrados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\InsertarTipoTrab.resx">
+      <DependentUpon>InsertarTipoTrab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelActividadesRealizada.resx">
       <DependentUpon>CartelActividadesRealizada.cs</DependentUpon>

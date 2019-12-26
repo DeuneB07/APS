@@ -80,6 +80,19 @@ namespace APS.Mapeo
             }
         }
 
+        /*
+        public void BorrarTipoTrabajo()
+        {
+            // Actualiza el atributo en memoria y en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            miBD.Delete("DELETE FROM Tipo_Trabajo WHERE ID_TipoTrabajo =" + this.ID_TipoTrabajo + ";");
+
+            this.ID_TipoTrabajo= -1;
+            this.Tipo_Trabajo = "";
+
+        }
+        */
+
         public override string ToString()
         {
             return tipoTrabajo;

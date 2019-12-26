@@ -163,6 +163,20 @@ namespace APS.Mapeo
             }
         }
 
+        public void BorraCompetencia()
+        {
+            // Actualiza el atributo en memoria y en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            miBD.Delete("DELETE FROM Competencias WHERE idCompetencia =" + this.ID_Competencia + ";");
+
+            foreach (Preferencia pref in this.Preferencias) pref.RemoveCompetencia(this);
+            foreach (Actividad act in this.Actividades) act.RemoveCompetencia(this);
+            this.idCompetencia = -1;
+            this.DescComp = "";
+            this.NombreComp = "";
+            
+        }
+
         public override string ToString()
         {
             return "Competencia [" + ID_Competencia + "; " + this.NombreComp + "; " + this.DescComp + "]";

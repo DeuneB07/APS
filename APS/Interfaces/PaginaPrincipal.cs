@@ -149,15 +149,10 @@ namespace APS.Interfaces
             lGestor.Visible = user.Rol.NombreRol.Equals("GESTOR");
             pictGestor.Visible = user.Rol.NombreRol.Equals("GESTOR");
 
-            //Cargar Botón Ayuda Help
-            //Aún no está
-
             //Primera Pestaña Cargada
             if (user.AccesoPantalla("MATCH")) cargarMatchActividadesInicio();
             else if (user.AccesoPantalla("TODAS")) cargarTodasActividadesInicio();
-            else if (user.AccesoPantalla("MIS ACTIVIDADES")) cargarMisActividadesInicio();
-            //CUANDO ESTÉ IMPLEMENTADO, QUITAR LA LÍNEA DE ARRIBA Y PONER ESTA DE ABAJO
-            //else if (user.AccesoPantalla("VALORACION")) tabUser.Controls.Remove(this.pValoracion);
+            else if (user.AccesoPantalla("VALORACION")) cargarValoracionActividadesInicio();
 
         }
 

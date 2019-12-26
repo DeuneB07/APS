@@ -30,6 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlesGestor));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lInsertar = new System.Windows.Forms.Label();
+            this.bInsertar = new System.Windows.Forms.Button();
+            this.pictExit = new System.Windows.Forms.PictureBox();
+            this.lExit = new System.Windows.Forms.Label();
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.panelUtil = new System.Windows.Forms.Panel();
+            this.panelElements = new System.Windows.Forms.TableLayoutPanel();
             this.lPresentacion = new System.Windows.Forms.Label();
             this.lAsignaturas = new System.Windows.Forms.Label();
             this.lCompetencias = new System.Windows.Forms.Label();
@@ -45,17 +52,10 @@
             this.pictTipoTrab = new System.Windows.Forms.PictureBox();
             this.pictAmbTrab = new System.Windows.Forms.PictureBox();
             this.pictGrados = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.listElements = new System.Windows.Forms.ListBox();
-            this.bVer = new System.Windows.Forms.Button();
-            this.pictExit = new System.Windows.Forms.PictureBox();
-            this.lExit = new System.Windows.Forms.Label();
-            this.bInsertar = new System.Windows.Forms.Button();
-            this.bBorrar = new System.Windows.Forms.Button();
-            this.lVer = new System.Windows.Forms.Label();
-            this.lInsertar = new System.Windows.Forms.Label();
-            this.lBorrar = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictExit)).BeginInit();
+            this.panelContainer.SuspendLayout();
+            this.panelUtil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictSolicitudes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictAsignatura)).BeginInit();
@@ -63,22 +63,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictTipoTrab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictAmbTrab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictGrados)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictExit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lBorrar);
             this.panel1.Controls.Add(this.lInsertar);
-            this.panel1.Controls.Add(this.lVer);
-            this.panel1.Controls.Add(this.bBorrar);
-            this.panel1.Controls.Add(this.bVer);
             this.panel1.Controls.Add(this.bInsertar);
             this.panel1.Controls.Add(this.pictExit);
             this.panel1.Controls.Add(this.lExit);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panelContainer);
             this.panel1.Controls.Add(this.lPresentacion);
             this.panel1.Controls.Add(this.lAsignaturas);
             this.panel1.Controls.Add(this.lCompetencias);
@@ -96,8 +90,91 @@
             this.panel1.Controls.Add(this.pictGrados);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(782, 462);
+            this.panel1.Size = new System.Drawing.Size(797, 462);
             this.panel1.TabIndex = 0;
+            // 
+            // lInsertar
+            // 
+            this.lInsertar.AutoSize = true;
+            this.lInsertar.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lInsertar.Location = new System.Drawing.Point(189, 441);
+            this.lInsertar.Name = "lInsertar";
+            this.lInsertar.Size = new System.Drawing.Size(42, 14);
+            this.lInsertar.TabIndex = 40;
+            this.lInsertar.Text = "Añadir";
+            this.lInsertar.Visible = false;
+            // 
+            // bInsertar
+            // 
+            this.bInsertar.BackColor = System.Drawing.Color.Transparent;
+            this.bInsertar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bInsertar.BackgroundImage")));
+            this.bInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bInsertar.FlatAppearance.BorderSize = 0;
+            this.bInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bInsertar.Location = new System.Drawing.Point(186, 392);
+            this.bInsertar.Name = "bInsertar";
+            this.bInsertar.Size = new System.Drawing.Size(45, 44);
+            this.bInsertar.TabIndex = 36;
+            this.bInsertar.UseVisualStyleBackColor = false;
+            this.bInsertar.Visible = false;
+            this.bInsertar.Click += new System.EventHandler(this.bInsertar_Click);
+            // 
+            // pictExit
+            // 
+            this.pictExit.BackColor = System.Drawing.Color.Transparent;
+            this.pictExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictExit.BackgroundImage")));
+            this.pictExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictExit.Location = new System.Drawing.Point(733, 392);
+            this.pictExit.Name = "pictExit";
+            this.pictExit.Size = new System.Drawing.Size(50, 50);
+            this.pictExit.TabIndex = 37;
+            this.pictExit.TabStop = false;
+            this.pictExit.Click += new System.EventHandler(this.pictExit_Click);
+            // 
+            // lExit
+            // 
+            this.lExit.AutoSize = true;
+            this.lExit.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lExit.Location = new System.Drawing.Point(742, 442);
+            this.lExit.Name = "lExit";
+            this.lExit.Size = new System.Drawing.Size(31, 14);
+            this.lExit.TabIndex = 36;
+            this.lExit.Text = "Salir";
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.BackColor = System.Drawing.Color.PaleGreen;
+            this.panelContainer.Controls.Add(this.panelUtil);
+            this.panelContainer.Location = new System.Drawing.Point(183, 41);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(605, 345);
+            this.panelContainer.TabIndex = 34;
+            this.panelContainer.Visible = false;
+            // 
+            // panelUtil
+            // 
+            this.panelUtil.AutoScroll = true;
+            this.panelUtil.BackColor = System.Drawing.Color.White;
+            this.panelUtil.Controls.Add(this.panelElements);
+            this.panelUtil.Location = new System.Drawing.Point(3, 3);
+            this.panelUtil.Name = "panelUtil";
+            this.panelUtil.Size = new System.Drawing.Size(597, 328);
+            this.panelUtil.TabIndex = 33;
+            // 
+            // panelElements
+            // 
+            this.panelElements.AutoSize = true;
+            this.panelElements.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelElements.BackColor = System.Drawing.Color.Transparent;
+            this.panelElements.ColumnCount = 1;
+            this.panelElements.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 586F));
+            this.panelElements.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelElements.Location = new System.Drawing.Point(0, 0);
+            this.panelElements.Name = "panelElements";
+            this.panelElements.RowCount = 1;
+            this.panelElements.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.panelElements.Size = new System.Drawing.Size(597, 0);
+            this.panelElements.TabIndex = 21;
             // 
             // lPresentacion
             // 
@@ -264,140 +341,25 @@
             this.pictGrados.TabStop = false;
             this.pictGrados.Click += new System.EventHandler(this.pictGrados_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.PaleGreen;
-            this.panel2.Controls.Add(this.listElements);
-            this.panel2.Location = new System.Drawing.Point(183, 41);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(581, 301);
-            this.panel2.TabIndex = 34;
-            this.panel2.Visible = false;
-            // 
-            // listElements
-            // 
-            this.listElements.FormattingEnabled = true;
-            this.listElements.Location = new System.Drawing.Point(3, 3);
-            this.listElements.Name = "listElements";
-            this.listElements.Size = new System.Drawing.Size(575, 290);
-            this.listElements.TabIndex = 0;
-            // 
-            // bVer
-            // 
-            this.bVer.BackColor = System.Drawing.Color.Transparent;
-            this.bVer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bVer.BackgroundImage")));
-            this.bVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bVer.FlatAppearance.BorderSize = 0;
-            this.bVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVer.Location = new System.Drawing.Point(338, 348);
-            this.bVer.Name = "bVer";
-            this.bVer.Size = new System.Drawing.Size(51, 52);
-            this.bVer.TabIndex = 35;
-            this.bVer.UseVisualStyleBackColor = false;
-            this.bVer.Visible = false;
-            this.bVer.Click += new System.EventHandler(this.bVer_Click);
-            // 
-            // pictExit
-            // 
-            this.pictExit.BackColor = System.Drawing.Color.Transparent;
-            this.pictExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictExit.BackgroundImage")));
-            this.pictExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictExit.Location = new System.Drawing.Point(709, 364);
-            this.pictExit.Name = "pictExit";
-            this.pictExit.Size = new System.Drawing.Size(55, 55);
-            this.pictExit.TabIndex = 37;
-            this.pictExit.TabStop = false;
-            this.pictExit.Click += new System.EventHandler(this.pictExit_Click);
-            // 
-            // lExit
-            // 
-            this.lExit.AutoSize = true;
-            this.lExit.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lExit.Location = new System.Drawing.Point(720, 422);
-            this.lExit.Name = "lExit";
-            this.lExit.Size = new System.Drawing.Size(31, 14);
-            this.lExit.TabIndex = 36;
-            this.lExit.Text = "Salir";
-            // 
-            // bInsertar
-            // 
-            this.bInsertar.BackColor = System.Drawing.Color.Transparent;
-            this.bInsertar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bInsertar.BackgroundImage")));
-            this.bInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bInsertar.FlatAppearance.BorderSize = 0;
-            this.bInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bInsertar.Location = new System.Drawing.Point(186, 348);
-            this.bInsertar.Name = "bInsertar";
-            this.bInsertar.Size = new System.Drawing.Size(51, 52);
-            this.bInsertar.TabIndex = 36;
-            this.bInsertar.UseVisualStyleBackColor = false;
-            this.bInsertar.Visible = false;
-            this.bInsertar.Click += new System.EventHandler(this.bInsertar_Click);
-            // 
-            // bBorrar
-            // 
-            this.bBorrar.BackColor = System.Drawing.Color.Transparent;
-            this.bBorrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bBorrar.BackgroundImage")));
-            this.bBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bBorrar.FlatAppearance.BorderSize = 0;
-            this.bBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bBorrar.Location = new System.Drawing.Point(261, 348);
-            this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(51, 52);
-            this.bBorrar.TabIndex = 38;
-            this.bBorrar.UseVisualStyleBackColor = false;
-            this.bBorrar.Visible = false;
-            this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
-            // 
-            // lVer
-            // 
-            this.lVer.AutoSize = true;
-            this.lVer.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lVer.Location = new System.Drawing.Point(335, 405);
-            this.lVer.Name = "lVer";
-            this.lVer.Size = new System.Drawing.Size(59, 14);
-            this.lVer.TabIndex = 39;
-            this.lVer.Text = "Consultar";
-            this.lVer.Visible = false;
-            // 
-            // lInsertar
-            // 
-            this.lInsertar.AutoSize = true;
-            this.lInsertar.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lInsertar.Location = new System.Drawing.Point(189, 405);
-            this.lInsertar.Name = "lInsertar";
-            this.lInsertar.Size = new System.Drawing.Size(42, 14);
-            this.lInsertar.TabIndex = 40;
-            this.lInsertar.Text = "Añadir";
-            this.lInsertar.Visible = false;
-            // 
-            // lBorrar
-            // 
-            this.lBorrar.AutoSize = true;
-            this.lBorrar.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lBorrar.Location = new System.Drawing.Point(261, 405);
-            this.lBorrar.Name = "lBorrar";
-            this.lBorrar.Size = new System.Drawing.Size(51, 14);
-            this.lBorrar.TabIndex = 41;
-            this.lBorrar.Text = "Eliminar";
-            this.lBorrar.Visible = false;
-            // 
             // ControlesGestor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCoral;
-            this.ClientSize = new System.Drawing.Size(806, 486);
+            this.ClientSize = new System.Drawing.Size(821, 486);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "ControlesGestor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Controles Gestor";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictExit)).EndInit();
+            this.panelContainer.ResumeLayout(false);
+            this.panelUtil.ResumeLayout(false);
+            this.panelUtil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictSolicitudes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictAsignatura)).EndInit();
@@ -405,8 +367,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictTipoTrab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictAmbTrab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictGrados)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -414,16 +374,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lBorrar;
         private System.Windows.Forms.Label lInsertar;
-        private System.Windows.Forms.Label lVer;
-        private System.Windows.Forms.Button bBorrar;
-        private System.Windows.Forms.Button bVer;
         private System.Windows.Forms.Button bInsertar;
         private System.Windows.Forms.PictureBox pictExit;
         private System.Windows.Forms.Label lExit;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ListBox listElements;
+        private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Label lPresentacion;
         private System.Windows.Forms.Label lAsignaturas;
         private System.Windows.Forms.Label lCompetencias;
@@ -439,5 +394,7 @@
         private System.Windows.Forms.PictureBox pictTipoTrab;
         private System.Windows.Forms.PictureBox pictAmbTrab;
         private System.Windows.Forms.PictureBox pictGrados;
+        private System.Windows.Forms.Panel panelUtil;
+        private System.Windows.Forms.TableLayoutPanel panelElements;
     }
 }

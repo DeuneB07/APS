@@ -82,6 +82,19 @@ namespace APS.Mapeo
             }
         }
 
+        /*
+        public void BorraAmbitoTrabajo()
+        {
+            // Actualiza el atributo en memoria y en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            miBD.Delete("DELETE FROM Ambito_Trabajo WHERE ID_AmbitoTrabajo =" + this.ID_AmbitoTrabajo + ";");
+
+            this.ID_AmbitoTrabajo = -1;
+            this.Ambito_Trabajo = "";
+
+        }
+        */
+
         public override string ToString()
         {
             return Ambito_Trabajo;

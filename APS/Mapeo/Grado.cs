@@ -42,6 +42,30 @@ namespace APS.Mapeo
             return lista;
         }
 
+        public static int ListaAsignaturas(Grado g)
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            int num = 0;
+
+            foreach (Object[] tupla in miBD.Select("Select count(ID_Asignatura) from Asignaturas WHERE idGrado = "+g.ID_Grado+"GROUP BY idGrado; "))
+            {
+                if (!tupla[0].ToString().Equals("")) num = (int)tupla[0];
+            }
+            return num;
+        }
+
+        public static int AlumnosPorGrado(Grado g)
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            int num = 0;
+
+            foreach (Object[] tupla in miBD.Select("Select count(emailUser) from Grados g JOIN Rel_User_Grado r ON r.ID_Grado = g.ID_Grado WHERE r.ID_Grado = "+ g.ID_grado +" GROUP BY r.ID_Grado; "))
+            {
+                if(!tupla[0].ToString().Equals("")) num = (int)tupla[0];
+            }
+            return num;
+        }
+
         public Grado(int id)
         {
             // Crea el objeto cargando sus valores de la base de datos
@@ -92,6 +116,20 @@ namespace APS.Mapeo
                 nombreGrado = value;
             }
         }
+
+        /*
+        public void BorrarGrado()
+        {
+            // Actualiza el atributo en memoria y en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            miBD.Delete("DELETE FROM Grados WHERE ID_Grado =" + this.ID_Grado + ";");
+
+            //foreach (Asignatura a in Asignatura.ListaAsignaturas(this)) a.BorrarAsignatura();
+            this.ID_Grado = -1;
+            this.NombreGrado = "";
+
+        }
+        */
 
         public override string ToString()
         {
