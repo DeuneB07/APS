@@ -55,5 +55,10 @@ namespace APS.Interfaces.Gestión_Actividades
             }
             textEstadoAct.Text = actividad.EstadoAct.ToString();
         }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
