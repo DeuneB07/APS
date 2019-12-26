@@ -245,6 +245,12 @@
     <Compile Include="Interfaces\Gestión Actividades\VerActividadRealizada.Designer.cs">
       <DependentUpon>VerActividadRealizada.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\GestorExclusive\ControlesGestor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\ControlesGestor.Designer.cs">
+      <DependentUpon>ControlesGestor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelActividadesRealizada.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -554,6 +560,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Gestión Actividades\VerActividadRealizada.resx">
       <DependentUpon>VerActividadRealizada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\ControlesGestor.resx">
+      <DependentUpon>ControlesGestor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelActividadesRealizada.resx">
       <DependentUpon>CartelActividadesRealizada.cs</DependentUpon>
