@@ -62,6 +62,8 @@
             this.pictDuda1 = new System.Windows.Forms.PictureBox();
             this.lHelpy = new System.Windows.Forms.Label();
             this.bDuda = new System.Windows.Forms.Button();
+            this.pictGestor = new System.Windows.Forms.PictureBox();
+            this.lGestor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gradosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSet)).BeginInit();
@@ -76,6 +78,7 @@
             this.panelPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictDevelop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictDuda1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictGestor)).BeginInit();
             this.SuspendLayout();
             // 
             // gradosBindingSource
@@ -404,12 +407,38 @@
             this.bDuda.UseVisualStyleBackColor = false;
             this.bDuda.Click += new System.EventHandler(this.bDuda_Click);
             // 
+            // pictGestor
+            // 
+            this.pictGestor.BackColor = System.Drawing.Color.Transparent;
+            this.pictGestor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictGestor.BackgroundImage")));
+            this.pictGestor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictGestor.Location = new System.Drawing.Point(864, 387);
+            this.pictGestor.Name = "pictGestor";
+            this.pictGestor.Size = new System.Drawing.Size(60, 60);
+            this.pictGestor.TabIndex = 52;
+            this.pictGestor.TabStop = false;
+            this.pictGestor.Click += new System.EventHandler(this.pictGestor_Click);
+            // 
+            // lGestor
+            // 
+            this.lGestor.AutoSize = true;
+            this.lGestor.BackColor = System.Drawing.Color.Transparent;
+            this.lGestor.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lGestor.ForeColor = System.Drawing.Color.Black;
+            this.lGestor.Location = new System.Drawing.Point(846, 450);
+            this.lGestor.Name = "lGestor";
+            this.lGestor.Size = new System.Drawing.Size(96, 13);
+            this.lGestor.TabIndex = 51;
+            this.lGestor.Text = "Añadir Elementos";
+            // 
             // PaginaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(955, 634);
+            this.Controls.Add(this.pictGestor);
+            this.Controls.Add(this.lGestor);
             this.Controls.Add(this.bDuda);
             this.Controls.Add(this.lHelpy);
             this.Controls.Add(this.pictDuda1);
@@ -455,6 +484,7 @@
             this.panelPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictDevelop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictDuda1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictGestor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,5 +523,7 @@
         private System.Windows.Forms.PictureBox pictDuda1;
         private System.Windows.Forms.Label lHelpy;
         private System.Windows.Forms.Button bDuda;
+        private System.Windows.Forms.PictureBox pictGestor;
+        private System.Windows.Forms.Label lGestor;
     }
 }

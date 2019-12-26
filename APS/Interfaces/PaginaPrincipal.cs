@@ -1,5 +1,6 @@
 ﻿using APS.Interfaces.ElementosAyuda;
 using APS.Interfaces.Gestión_Actividades;
+using APS.Interfaces.GestorExclusive;
 using APS.Interfaces.Historial;
 using APS.Interfaces.Perfil;
 using APS.Interfaces.Personalizados;
@@ -145,6 +146,8 @@ namespace APS.Interfaces
             pictActividad.Visible = user.InsertarPantalla("ACTIVIDADES");
             lProyecto.Visible = user.InsertarPantalla("PROYECTOS");
             pictProyectos.Visible = user.InsertarPantalla("PROYECTOS");
+            lGestor.Visible = user.Rol.NombreRol.Equals("GESTOR");
+            pictGestor.Visible = user.Rol.NombreRol.Equals("GESTOR");
 
             //Cargar Botón Ayuda Help
             //Aún no está
@@ -1730,6 +1733,12 @@ namespace APS.Interfaces
                 emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
             }
 
+        }
+
+        private void pictGestor_Click(object sender, EventArgs e)
+        {
+            ControlesGestor contGestor = new ControlesGestor();
+            contGestor.ShowDialog();
         }
     }
 }
