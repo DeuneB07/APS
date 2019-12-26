@@ -19,6 +19,7 @@ namespace APS.Interfaces.Historial
 
         public VerListaHistorial(Usuario user)
         {
+            
             InitializeComponent();
             this.user = user;
             if (user.NombreUser!=null && !user.NombreUser.Equals("")) this.labelTitulo.Text = "HISTORIAL " + user.NombreUser;
@@ -123,10 +124,19 @@ namespace APS.Interfaces.Historial
             int c = 0;
             foreach (Actividad_Realizada act in lista)
             {
-                CartelActividadesRealizadas cartel = new CartelActividadesRealizadas(user,act);
-                if (c % 3 == 0) cartel.BackColor = System.Drawing.Color.DarkBlue;
-                if (c % 3 == 1) cartel.BackColor = System.Drawing.Color.DarkCyan;
-                if (c % 3 == 2) cartel.BackColor = System.Drawing.Color.LightBlue;
+                CartelActividadesRealizadas cartel = new CartelActividadesRealizadas(act.Participante,act);
+                if (!user.Rol.NombreRol.Equals("ONG"))
+                {
+                    if (c % 3 == 0) cartel.BackColor = System.Drawing.Color.DarkBlue;
+                    if (c % 3 == 1) cartel.BackColor = System.Drawing.Color.DarkCyan;
+                    if (c % 3 == 2) cartel.BackColor = System.Drawing.Color.LightBlue;
+                }
+                else
+                {
+                    if (c % 3 == 0) cartel.BackColor = System.Drawing.Color.DarkGreen;
+                    if (c % 3 == 1) cartel.BackColor = System.Drawing.Color.SeaGreen;
+                    if (c % 3 == 2) cartel.BackColor = System.Drawing.Color.LimeGreen;
+                }
                 carteles[c] = cartel;
                 tablePP.Controls.Add(carteles[c], 0, c);
                 tablePP.RowCount = tablePP.RowCount + 1;

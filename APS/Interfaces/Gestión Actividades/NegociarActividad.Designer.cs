@@ -86,11 +86,11 @@
             // 
             // tDescripcionNegociar
             // 
-            this.tDescripcionNegociar.Enabled = false;
             this.tDescripcionNegociar.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tDescripcionNegociar.Location = new System.Drawing.Point(211, 89);
             this.tDescripcionNegociar.Margin = new System.Windows.Forms.Padding(2);
             this.tDescripcionNegociar.Name = "tDescripcionNegociar";
+            this.tDescripcionNegociar.ReadOnly = true;
             this.tDescripcionNegociar.Size = new System.Drawing.Size(168, 59);
             this.tDescripcionNegociar.TabIndex = 65;
             this.tDescripcionNegociar.Text = "";

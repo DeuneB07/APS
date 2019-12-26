@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerActividadRealizada));
-            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection10 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
-            Syncfusion.Windows.Forms.Tools.ResetButton resetButton10 = new Syncfusion.Windows.Forms.Tools.ResetButton();
-            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection11 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
-            Syncfusion.Windows.Forms.Tools.ResetButton resetButton11 = new Syncfusion.Windows.Forms.Tools.ResetButton();
-            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection12 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
-            Syncfusion.Windows.Forms.Tools.ResetButton resetButton12 = new Syncfusion.Windows.Forms.Tools.ResetButton();
+            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection1 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
+            Syncfusion.Windows.Forms.Tools.ResetButton resetButton1 = new Syncfusion.Windows.Forms.Tools.ResetButton();
+            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection2 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
+            Syncfusion.Windows.Forms.Tools.ResetButton resetButton2 = new Syncfusion.Windows.Forms.Tools.ResetButton();
+            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection3 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
+            Syncfusion.Windows.Forms.Tools.ResetButton resetButton3 = new Syncfusion.Windows.Forms.Tools.ResetButton();
             this.listTrabajo = new System.Windows.Forms.ComboBox();
             this.listAmbito = new System.Windows.Forms.ComboBox();
             this.listTurno = new System.Windows.Forms.ComboBox();
@@ -79,6 +79,9 @@
             this.lblPDI = new System.Windows.Forms.Label();
             this.lblEvaluacionPDI = new System.Windows.Forms.Label();
             this.panelEvONG = new System.Windows.Forms.Panel();
+            this.lHoras = new System.Windows.Forms.Label();
+            this.lblArchivo = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblFechaONG = new System.Windows.Forms.Label();
             this.txtComentarioONG = new System.Windows.Forms.RichTextBox();
             this.lblComentarioONG = new System.Windows.Forms.Label();
@@ -88,9 +91,6 @@
             this.lblONG = new System.Windows.Forms.Label();
             this.lblEvaluacionONG = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblArchivo = new System.Windows.Forms.Label();
-            this.lHoras = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -210,11 +210,11 @@
             // 
             // tDescripcion
             // 
-            this.tDescripcion.Enabled = false;
             this.tDescripcion.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tDescripcion.Location = new System.Drawing.Point(173, 96);
             this.tDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tDescripcion.Name = "tDescripcion";
+            this.tDescripcion.ReadOnly = true;
             this.tDescripcion.Size = new System.Drawing.Size(217, 88);
             this.tDescripcion.TabIndex = 72;
             this.tDescripcion.Text = "";
@@ -412,9 +412,9 @@
             // txtComentarioUsuario
             // 
             this.txtComentarioUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtComentarioUsuario.Enabled = false;
             this.txtComentarioUsuario.Location = new System.Drawing.Point(467, 34);
             this.txtComentarioUsuario.Name = "txtComentarioUsuario";
+            this.txtComentarioUsuario.ReadOnly = true;
             this.txtComentarioUsuario.Size = new System.Drawing.Size(273, 66);
             this.txtComentarioUsuario.TabIndex = 89;
             this.txtComentarioUsuario.Text = "";
@@ -432,14 +432,14 @@
             // ratingUsuario
             // 
             this.ratingUsuario.Enabled = false;
-            this.ratingUsuario.Images = customImageCollection10;
+            this.ratingUsuario.Images = customImageCollection1;
             this.ratingUsuario.ItemBackColor = System.Drawing.Color.White;
             this.ratingUsuario.ItemBorderColor = System.Drawing.Color.Black;
             this.ratingUsuario.ItemSize = new System.Drawing.Size(20, 20);
             this.ratingUsuario.Location = new System.Drawing.Point(101, 82);
             this.ratingUsuario.Name = "ratingUsuario";
             this.ratingUsuario.Precision = Syncfusion.Windows.Forms.Tools.PrecisionMode.Half;
-            this.ratingUsuario.ResetButton = resetButton10;
+            this.ratingUsuario.ResetButton = resetButton1;
             this.ratingUsuario.Size = new System.Drawing.Size(234, 28);
             this.ratingUsuario.TabIndex = 87;
             this.ratingUsuario.Text = "ratingControl1";
@@ -516,9 +516,9 @@
             // txtComentarioPDI
             // 
             this.txtComentarioPDI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtComentarioPDI.Enabled = false;
             this.txtComentarioPDI.Location = new System.Drawing.Point(467, 44);
             this.txtComentarioPDI.Name = "txtComentarioPDI";
+            this.txtComentarioPDI.ReadOnly = true;
             this.txtComentarioPDI.Size = new System.Drawing.Size(273, 66);
             this.txtComentarioPDI.TabIndex = 89;
             this.txtComentarioPDI.Text = "";
@@ -536,14 +536,14 @@
             // ratingPDI
             // 
             this.ratingPDI.Enabled = false;
-            this.ratingPDI.Images = customImageCollection11;
+            this.ratingPDI.Images = customImageCollection2;
             this.ratingPDI.ItemBackColor = System.Drawing.Color.White;
             this.ratingPDI.ItemBorderColor = System.Drawing.Color.Black;
             this.ratingPDI.ItemSize = new System.Drawing.Size(20, 20);
             this.ratingPDI.Location = new System.Drawing.Point(101, 82);
             this.ratingPDI.Name = "ratingPDI";
             this.ratingPDI.Precision = Syncfusion.Windows.Forms.Tools.PrecisionMode.Half;
-            this.ratingPDI.ResetButton = resetButton11;
+            this.ratingPDI.ResetButton = resetButton2;
             this.ratingPDI.Size = new System.Drawing.Size(234, 28);
             this.ratingPDI.TabIndex = 87;
             this.ratingPDI.Text = "ratingControl1";
@@ -609,6 +609,41 @@
             this.panelEvONG.Size = new System.Drawing.Size(793, 158);
             this.panelEvONG.TabIndex = 90;
             // 
+            // lHoras
+            // 
+            this.lHoras.AutoSize = true;
+            this.lHoras.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lHoras.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lHoras.Location = new System.Drawing.Point(152, 124);
+            this.lHoras.Name = "lHoras";
+            this.lHoras.Size = new System.Drawing.Size(42, 18);
+            this.lHoras.TabIndex = 94;
+            this.lHoras.Text = "horas";
+            // 
+            // lblArchivo
+            // 
+            this.lblArchivo.AutoSize = true;
+            this.lblArchivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblArchivo.Enabled = false;
+            this.lblArchivo.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArchivo.Location = new System.Drawing.Point(326, 123);
+            this.lblArchivo.Name = "lblArchivo";
+            this.lblArchivo.Size = new System.Drawing.Size(101, 18);
+            this.lblArchivo.TabIndex = 93;
+            this.lblArchivo.Text = "Archivo Adjunto";
+            this.lblArchivo.Visible = false;
+            this.lblArchivo.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 18);
+            this.label1.TabIndex = 92;
+            this.label1.Text = "Horas Invertidas:";
+            // 
             // lblFechaONG
             // 
             this.lblFechaONG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -624,9 +659,9 @@
             // txtComentarioONG
             // 
             this.txtComentarioONG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtComentarioONG.Enabled = false;
             this.txtComentarioONG.Location = new System.Drawing.Point(467, 44);
             this.txtComentarioONG.Name = "txtComentarioONG";
+            this.txtComentarioONG.ReadOnly = true;
             this.txtComentarioONG.Size = new System.Drawing.Size(273, 66);
             this.txtComentarioONG.TabIndex = 89;
             this.txtComentarioONG.Text = "";
@@ -644,14 +679,14 @@
             // ratingONG
             // 
             this.ratingONG.Enabled = false;
-            this.ratingONG.Images = customImageCollection12;
+            this.ratingONG.Images = customImageCollection3;
             this.ratingONG.ItemBackColor = System.Drawing.Color.White;
             this.ratingONG.ItemBorderColor = System.Drawing.Color.Black;
             this.ratingONG.ItemSize = new System.Drawing.Size(20, 20);
             this.ratingONG.Location = new System.Drawing.Point(101, 82);
             this.ratingONG.Name = "ratingONG";
             this.ratingONG.Precision = Syncfusion.Windows.Forms.Tools.PrecisionMode.Half;
-            this.ratingONG.ResetButton = resetButton12;
+            this.ratingONG.ResetButton = resetButton3;
             this.ratingONG.Size = new System.Drawing.Size(234, 28);
             this.ratingONG.TabIndex = 87;
             this.ratingONG.Text = "ratingControl1";
@@ -709,48 +744,13 @@
             this.label6.Text = "VALORACIONES";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 124);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 18);
-            this.label1.TabIndex = 92;
-            this.label1.Text = "Horas Invertidas:";
-            // 
-            // lblArchivo
-            // 
-            this.lblArchivo.AutoSize = true;
-            this.lblArchivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblArchivo.Enabled = false;
-            this.lblArchivo.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArchivo.Location = new System.Drawing.Point(326, 123);
-            this.lblArchivo.Name = "lblArchivo";
-            this.lblArchivo.Size = new System.Drawing.Size(101, 18);
-            this.lblArchivo.TabIndex = 93;
-            this.lblArchivo.Text = "Archivo Adjunto";
-            this.lblArchivo.Visible = false;
-            this.lblArchivo.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // lHoras
-            // 
-            this.lHoras.AutoSize = true;
-            this.lHoras.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lHoras.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lHoras.Location = new System.Drawing.Point(152, 124);
-            this.lHoras.Name = "lHoras";
-            this.lHoras.Size = new System.Drawing.Size(42, 18);
-            this.lHoras.TabIndex = 94;
-            this.lHoras.Text = "horas";
-            // 
             // VerActividadRealizada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(829, 937);
+            this.ClientSize = new System.Drawing.Size(829, 949);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panelEvONG);
             this.Controls.Add(this.panelEvPDI);

@@ -30,9 +30,14 @@ namespace APS.Mapeo
 
         public static Boolean Contains(Usuario user, Actividad act)
         {
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            List<Object[]> lista = miBD.Select("SELECT * FROM Actividades_Realizadas WHERE emailParticipante='" + user.Email + "' AND idAct=" + act.ID_Actividad + ";");
-            return lista.Count == 1;
+            if(user!=null && act!= null){
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                List<Object[]> lista = miBD.Select("SELECT * FROM Actividades_Realizadas WHERE emailParticipante='" + user.Email + "' AND idAct=" + act.ID_Actividad + ";");
+                return lista.Count == 1;
+            }else{
+                return false;
+            }
+
         }
 
         public static List<Actividad> ListaActividades(Usuario user)
@@ -71,15 +76,29 @@ namespace APS.Mapeo
             // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Actividad_Realizada> lista = new List<Actividad_Realizada>();
-
-            foreach (Object[] tupla in miBD.Select("SELECT aR.emailParticipante, aR.idAct " +
-                                    "FROM Actividades_Realizadas aR, Actividades act " +
-                                    "WHERE aR.idAct = act.ID_Actividad AND aR.emailParticipante = '" + user.Email + "' " +
-                                    "ORDER BY act.fechaFin ASC;")) {
-                String emP = tupla[0].ToString();
-                int id = (int)tupla[1];
-                Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), new Actividad(id));
-                lista.Add(aR);
+            if (!user.Rol.NombreRol.Equals("ONG")) {
+                foreach (Object[] tupla in miBD.Select("SELECT aR.emailParticipante, aR.idAct " +
+                                        "FROM Actividades_Realizadas aR, Actividades act " +
+                                        "WHERE aR.idAct = act.ID_Actividad AND aR.emailParticipante = '" + user.Email + "' " +
+                                        "ORDER BY act.fechaFin ASC;")) {
+                    String emP = tupla[0].ToString();
+                    int id = (int)tupla[1];
+                    Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), new Actividad(id));
+                    lista.Add(aR);
+                }
+            }
+            else
+            {
+                foreach (Object[] tupla in miBD.Select("SELECT aR.emailParticipante, aR.idAct " +
+                        "FROM Actividades_Realizadas aR, Actividades act " +
+                        "WHERE aR.idAct = act.ID_Actividad AND act.emailOrganizador = '" + user.Email + "' " +
+                        "ORDER BY act.fechaFin ASC;"))
+                {
+                    String emP = tupla[0].ToString();
+                    int id = (int)tupla[1];
+                    Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), new Actividad(id));
+                    lista.Add(aR);
+                }
             }
             return lista;
         }
@@ -90,15 +109,32 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Actividad_Realizada> lista = new List<Actividad_Realizada>();
 
-            foreach (Object[] tupla in miBD.Select("SELECT aR.emailParticipante, aR.idAct " +
-                                    "FROM Actividades_Realizadas aR, Actividades act " +
-                                    "WHERE aR.idAct = act.ID_Actividad AND aR.emailParticipante = '" + user.Email + "' " +
-                                    "ORDER BY act.fechaFin DESC;"))
+            if (!user.Rol.NombreRol.Equals("ONG"))
             {
-                String emP = tupla[0].ToString();
-                int id = (int)tupla[1];
-                Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), new Actividad(id));
-                lista.Add(aR);
+                foreach (Object[] tupla in miBD.Select("SELECT aR.emailParticipante, aR.idAct " +
+                                        "FROM Actividades_Realizadas aR, Actividades act " +
+                                        "WHERE aR.idAct = act.ID_Actividad AND aR.emailParticipante = '" + user.Email + "' " +
+                                        "ORDER BY act.fechaFin DESC;"))
+                {
+                    String emP = tupla[0].ToString();
+                    int id = (int)tupla[1];
+                    Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), new Actividad(id));
+                    lista.Add(aR);
+                }
+
+            }
+            else
+            {
+                foreach (Object[] tupla in miBD.Select("SELECT aR.emailParticipante, aR.idAct " +
+                                                        "FROM Actividades_Realizadas aR, Actividades act " +
+                                                         "WHERE aR.idAct = act.ID_Actividad AND act.emailOrganizador = '" + user.Email + "' " +
+                                                          "ORDER BY act.fechaFin DESC;"))
+                {
+                    String emP = tupla[0].ToString();
+                    int id = (int)tupla[1];
+                    Actividad_Realizada aR = new Actividad_Realizada(new Usuario(emP), new Actividad(id));
+                    lista.Add(aR);
+                }
             }
             return lista;
         }
