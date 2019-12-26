@@ -98,6 +98,9 @@
     <Compile Include="ImagenesDB\Actividades.cs">
       <DependentUpon>dbActividad.tt</DependentUpon>
     </Compile>
+    <Compile Include="ImagenesDB\Actividades_Realizadas.cs">
+      <DependentUpon>dbActividadesRealizadas.tt</DependentUpon>
+    </Compile>
     <Compile Include="ImagenesDB\dbActividad.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -112,6 +115,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbActividad.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ImagenesDB\dbActividadesRealizadas.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbActividadesRealizadas.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImagenesDB\dbActividadesRealizadas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbActividadesRealizadas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImagenesDB\dbActividadesRealizadas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbActividadesRealizadas.edmx</DependentUpon>
     </Compile>
     <Compile Include="ImagenesDB\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -667,6 +685,13 @@
     <None Include="ImagenesDB\dbActividad.edmx.diagram">
       <DependentUpon>dbActividad.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="ImagenesDB\dbActividadesRealizadas.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbActividadesRealizadas.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ImagenesDB\dbActividadesRealizadas.edmx.diagram">
+      <DependentUpon>dbActividadesRealizadas.edmx</DependentUpon>
+    </None>
     <None Include="ImagenesDB\dbUsuario.edmx.diagram">
       <DependentUpon>dbUsuario.edmx</DependentUpon>
     </None>
@@ -725,6 +750,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>dbActividad.edmx</DependentUpon>
       <LastGenOutput>dbActividad.cs</LastGenOutput>
+    </Content>
+    <Content Include="ImagenesDB\dbActividadesRealizadas.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbActividadesRealizadas.edmx</DependentUpon>
+      <LastGenOutput>dbActividadesRealizadas.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ImagenesDB\dbActividadesRealizadas.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbActividadesRealizadas.edmx</DependentUpon>
+      <LastGenOutput>dbActividadesRealizadas.cs</LastGenOutput>
     </Content>
     <Content Include="ImagenesDB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using BDLibrary;
 using APS.BD;
+using System.IO;
 
 namespace APS.Mapeo
 {
@@ -22,7 +23,7 @@ namespace APS.Mapeo
         private float valoracionONG;
         private DateTime fechaValoracionONG = DateTime.MinValue;
         private String comentarioONG;
-        //private File archivoAdjuntoONG;
+        private byte[] archivoAdjuntoONG;   //lazy
         private float valoracionProfesor;
         private DateTime fechaValoracionProfesor = DateTime.MinValue;
         private String comentarioProfesor;
@@ -179,7 +180,6 @@ namespace APS.Mapeo
             fecha = (tupla[8].ToString()).Split('/', '-', ' ', ':', '.');
             if (!tupla[8].ToString().Equals("")) fechaValoracionONG = new DateTime(int.Parse(fecha[2]), int.Parse(fecha[1]), int.Parse(fecha[0]), int.Parse(fecha[3]), int.Parse(fecha[4]), int.Parse(fecha[5]));
             if (!tupla[9].ToString().Equals("")) comentarioONG = (String)tupla[9];
-            //archivoAdjuntoONG = (String)tupla[10];
             if (!tupla[11].ToString().Equals("")) valoracionProfesor = float.Parse(tupla[11].ToString());
             fecha = (tupla[12].ToString()).Split('/', '-', ' ', ':', '.');
             if (!tupla[12].ToString().Equals("")) fechaValoracionProfesor = new DateTime(int.Parse(fecha[2]), int.Parse(fecha[1]), int.Parse(fecha[0]), int.Parse(fecha[3]), int.Parse(fecha[4]), int.Parse(fecha[5]));
@@ -275,11 +275,16 @@ namespace APS.Mapeo
             get{ return valoracionUsuario; }
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Actividades_Realizadas SET valoracionUsuario=" + value + " "
-                        + "WHERE emailParticipante='" + this.participante.Email + "' and idAct=" + actividad.ID_Actividad + ";";
-                miBD.Update(up);
-                this.valoracionUsuario = value;
+                using (var db = new ImagenesDB.WePassEntities2())
+                {
+                    int id = this.Actividad.ID_Actividad;
+                    String email = this.Participante.Email;
+                    var obj = db.Actividades_Realizadas.Find(email, id);
+
+                    obj.valoracionUsuario = value;
+                    db.SaveChanges();
+                }
+                valoracionUsuario = value;
             }
         }
 
@@ -327,11 +332,16 @@ namespace APS.Mapeo
             get{ return valoracionONG; }
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Actividades_Realizadas SET valoracionONG=" + value + " "
-                        + "WHERE emailParticipante='" + this.participante.Email + "' and idAct=" + actividad.ID_Actividad + ";";
-                miBD.Update(up);
-                this.valoracionONG = value;
+                using (var db = new ImagenesDB.WePassEntities2())
+                {
+                    int id = this.Actividad.ID_Actividad;
+                    String email = this.Participante.Email;
+                    var obj = db.Actividades_Realizadas.Find(email, id);
+
+                    obj.valoracionONG = value;
+                    db.SaveChanges();
+                }
+                valoracionONG = value;
             }
         }
 
@@ -361,31 +371,55 @@ namespace APS.Mapeo
             }
         }
 
-        /*
-        public String ArchivoAdjuntoONG
+        
+        public byte[] ArchivoAdjuntoONG
         {
-            get{ return archivoAdjuntoONG; }
+            get {
+                if (archivoAdjuntoONG == null)
+                {
+                    using (var db = new ImagenesDB.WePassEntities2())
+                    {
+                        int id = this.Actividad.ID_Actividad;
+                        String email = this.Participante.Email;
+                        var obj = db.Actividades_Realizadas.Find(email, id);
+
+                        archivoAdjuntoONG = obj.archivoAdjuntoONG;
+                    }
+                }
+                return archivoAdjuntoONG;
+            }
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Actividades_Realizadas SET archivoAdjuntoONG='" + value + "' "
-                        + "WHERE emailParticipante='" + this.participante.Email + "' and idAct=" + actividad.ID_Actividad + ";";
-                miBD.Update(up);
+                using (var db = new ImagenesDB.WePassEntities2())
+                {
+                    int id = this.Actividad.ID_Actividad;
+                    String email = this.Participante.Email;
+                    var obj = db.Actividades_Realizadas.Find(email,id);
+
+                    obj.archivoAdjuntoONG = value;
+                    db.SaveChanges();
+
+                }
                 this.archivoAdjuntoONG = value;
             }
         }
-         */
+         
 
         public float ValoracionProfesor
         {
             get{ return valoracionProfesor; }
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Actividades_Realizadas SET valoracionProfesor=" + value + " "
-                        + "WHERE emailParticipante='" + this.participante.Email + "' and idAct=" + actividad.ID_Actividad + ";";
-                miBD.Update(up);
-                this.valoracionProfesor = value;
+                using (var db = new ImagenesDB.WePassEntities2())
+                {
+                    int id = this.Actividad.ID_Actividad;
+                    String email = this.Participante.Email;
+                    var obj = db.Actividades_Realizadas.Find(email, id);
+
+                    obj.valoracionProfesor = value;
+                    db.SaveChanges();
+                }
+                valoracionProfesor = value;
             }
         }
 

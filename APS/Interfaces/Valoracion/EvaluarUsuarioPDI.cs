@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,20 @@ namespace APS.Interfaces.Gestión_Actividades
         {
             InitializeComponent();
             this.act = act;
+            lblTitulo.Text = "¿CUÁL ES LA NOTA DEL USUARIO " + act.Participante.Nombre.ToUpper() + " EN ESTA ACTIVIDAD?";
+            lNombreOrganizador.Text = act.Actividad.Organizador.Nombre;
             lHoras.Text = act.NumHorasRealizadas.ToString();
-            lValoracion.Text = act.ValoracionONG.ToString();
+            ratingONG.Value = act.ValoracionONG;
             textBoxComentarioONG.Text = act.ComentarioONG;
+            lUserEvaluado.Text = act.Participante.Nombre + " " + act.Participante.Apellido1 + " " + act.Participante.Apellido2;
+            lNombreActividad.Text = act.Actividad.NombreAct;
+
+            if (act.ArchivoAdjuntoONG != null)
+            {
+                btnDescargar.Enabled = true;
+                txtNombreArchivo.Text = "Archivo.pdf";
+            }
+
             labelError.Text = "";
         }
 
@@ -28,10 +40,8 @@ namespace APS.Interfaces.Gestión_Actividades
         {
             try
             {
-                if (textBoxValoracionPDI.Text.Equals("")) throw new Exception("El campo valoración es obligatorio rellenarlo.");
-                if (int.Parse(textBoxValoracionPDI.Text) < 0 || int.Parse(textBoxValoracionPDI.Text) > 10) throw new Exception("La valoracion tiene que estar comprendidad entre 0 y 10.");
 
-                act.ValoracionProfesor = int.Parse(textBoxValoracionPDI.Text);
+                act.ValoracionProfesor = ratingPDI.Value;
                 act.ComentarioProfesor = textBoxComentarioPDI.Text;
                 act.FechaValoracionProfesor = DateTime.Now;
                 act.EstadoRealizacion = Actividad_Realizada.EstadoActividadR.EVALUACION_FINALIZADA;
@@ -48,6 +58,16 @@ namespace APS.Interfaces.Gestión_Actividades
         private void bCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnDescargar_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Filter = "Archivos pdf (*.pdf)|*.pdf";
+            saveFileDialog1.Title = "Save a PDF File";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllBytes(saveFileDialog1.FileName, act.ArchivoAdjuntoONG);
+            }
         }
     }
 }
