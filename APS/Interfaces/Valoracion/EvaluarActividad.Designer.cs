@@ -28,24 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection1 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
+            Syncfusion.Windows.Forms.Tools.ResetButton resetButton1 = new Syncfusion.Windows.Forms.Tools.ResetButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EvaluarActividad));
             this.bAceptarEvaluacion = new System.Windows.Forms.Button();
             this.bCancelarEvaluacion = new System.Windows.Forms.Button();
-            this.labelParticipante = new System.Windows.Forms.Label();
-            this.lParticipante = new System.Windows.Forms.Label();
             this.labelValoracion = new System.Windows.Forms.Label();
-            this.labelHoras = new System.Windows.Forms.Label();
             this.labelComentario = new System.Windows.Forms.Label();
-            this.textBoxValoracion = new System.Windows.Forms.TextBox();
-            this.textBoxHoras = new System.Windows.Forms.TextBox();
             this.textBoxComentario = new System.Windows.Forms.RichTextBox();
             this.labelError = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.ratingValoracion = new Syncfusion.Windows.Forms.Tools.RatingControl();
             this.SuspendLayout();
             // 
             // bAceptarEvaluacion
             // 
-            this.bAceptarEvaluacion.Location = new System.Drawing.Point(611, 694);
+            this.bAceptarEvaluacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bAceptarEvaluacion.Font = new System.Drawing.Font("Modern No. 20", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAceptarEvaluacion.Location = new System.Drawing.Point(273, 404);
+            this.bAceptarEvaluacion.Margin = new System.Windows.Forms.Padding(2);
             this.bAceptarEvaluacion.Name = "bAceptarEvaluacion";
-            this.bAceptarEvaluacion.Size = new System.Drawing.Size(114, 46);
+            this.bAceptarEvaluacion.Size = new System.Drawing.Size(91, 29);
             this.bAceptarEvaluacion.TabIndex = 0;
             this.bAceptarEvaluacion.Text = "Aceptar";
             this.bAceptarEvaluacion.UseVisualStyleBackColor = true;
@@ -53,80 +56,45 @@
             // 
             // bCancelarEvaluacion
             // 
-            this.bCancelarEvaluacion.Location = new System.Drawing.Point(759, 694);
+            this.bCancelarEvaluacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bCancelarEvaluacion.Font = new System.Drawing.Font("Modern No. 20", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCancelarEvaluacion.Location = new System.Drawing.Point(381, 404);
+            this.bCancelarEvaluacion.Margin = new System.Windows.Forms.Padding(2);
             this.bCancelarEvaluacion.Name = "bCancelarEvaluacion";
-            this.bCancelarEvaluacion.Size = new System.Drawing.Size(137, 46);
+            this.bCancelarEvaluacion.Size = new System.Drawing.Size(98, 29);
             this.bCancelarEvaluacion.TabIndex = 1;
             this.bCancelarEvaluacion.Text = "Cancelar";
             this.bCancelarEvaluacion.UseVisualStyleBackColor = true;
             this.bCancelarEvaluacion.Click += new System.EventHandler(this.bCancelarEvaluacion_Click_1);
             // 
-            // labelParticipante
-            // 
-            this.labelParticipante.AutoSize = true;
-            this.labelParticipante.Location = new System.Drawing.Point(229, 202);
-            this.labelParticipante.Name = "labelParticipante";
-            this.labelParticipante.Size = new System.Drawing.Size(132, 25);
-            this.labelParticipante.TabIndex = 2;
-            this.labelParticipante.Text = "Participante:";
-            // 
-            // lParticipante
-            // 
-            this.lParticipante.AutoSize = true;
-            this.lParticipante.Location = new System.Drawing.Point(409, 202);
-            this.lParticipante.Name = "lParticipante";
-            this.lParticipante.Size = new System.Drawing.Size(177, 25);
-            this.lParticipante.TabIndex = 3;
-            this.lParticipante.Text = "emailParticipante";
-            // 
             // labelValoracion
             // 
             this.labelValoracion.AutoSize = true;
-            this.labelValoracion.Location = new System.Drawing.Point(229, 311);
+            this.labelValoracion.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelValoracion.Location = new System.Drawing.Point(41, 180);
+            this.labelValoracion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelValoracion.Name = "labelValoracion";
-            this.labelValoracion.Size = new System.Drawing.Size(120, 25);
+            this.labelValoracion.Size = new System.Drawing.Size(93, 21);
             this.labelValoracion.TabIndex = 4;
-            this.labelValoracion.Text = "Valoracion:";
-            // 
-            // labelHoras
-            // 
-            this.labelHoras.AutoSize = true;
-            this.labelHoras.Location = new System.Drawing.Point(229, 412);
-            this.labelHoras.Name = "labelHoras";
-            this.labelHoras.Size = new System.Drawing.Size(174, 25);
-            this.labelHoras.TabIndex = 5;
-            this.labelHoras.Text = "Horas Invertidas:";
+            this.labelValoracion.Text = "Valoración:";
             // 
             // labelComentario
             // 
             this.labelComentario.AutoSize = true;
-            this.labelComentario.Location = new System.Drawing.Point(233, 507);
+            this.labelComentario.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelComentario.Location = new System.Drawing.Point(28, 259);
+            this.labelComentario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelComentario.Name = "labelComentario";
-            this.labelComentario.Size = new System.Drawing.Size(128, 25);
+            this.labelComentario.Size = new System.Drawing.Size(102, 21);
             this.labelComentario.TabIndex = 6;
             this.labelComentario.Text = "Comentario:";
-            // 
-            // textBoxValoracion
-            // 
-            this.textBoxValoracion.Location = new System.Drawing.Point(414, 311);
-            this.textBoxValoracion.Name = "textBoxValoracion";
-            this.textBoxValoracion.Size = new System.Drawing.Size(64, 31);
-            this.textBoxValoracion.TabIndex = 7;
-            // 
-            // textBoxHoras
-            // 
-            this.textBoxHoras.Location = new System.Drawing.Point(437, 409);
-            this.textBoxHoras.Name = "textBoxHoras";
-            this.textBoxHoras.Size = new System.Drawing.Size(64, 31);
-            this.textBoxHoras.TabIndex = 8;
             // 
             // textBoxComentario
             // 
             this.textBoxComentario.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxComentario.Location = new System.Drawing.Point(407, 500);
-            this.textBoxComentario.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxComentario.Location = new System.Drawing.Point(143, 259);
             this.textBoxComentario.Name = "textBoxComentario";
-            this.textBoxComentario.Size = new System.Drawing.Size(332, 110);
+            this.textBoxComentario.Size = new System.Drawing.Size(305, 107);
             this.textBoxComentario.TabIndex = 17;
             this.textBoxComentario.Text = "";
             // 
@@ -136,29 +104,53 @@
             this.labelError.BackColor = System.Drawing.Color.Transparent;
             this.labelError.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(42, 713);
-            this.labelError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelError.Location = new System.Drawing.Point(28, 404);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(63, 27);
+            this.labelError.Size = new System.Drawing.Size(42, 17);
             this.labelError.TabIndex = 28;
             this.labelError.Text = "error";
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblTitulo.Location = new System.Drawing.Point(12, 9);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(487, 72);
+            this.lblTitulo.TabIndex = 29;
+            this.lblTitulo.Text = "¿QUÉ TAL TE HA PARECIDO LA ACTIVIDAD\r\nNOMBRE_ACTIVIDAD? ¡PUNTÚALA!";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // ratingValoracion
+            // 
+            this.ratingValoracion.Images = customImageCollection1;
+            this.ratingValoracion.ItemBackColor = System.Drawing.Color.White;
+            this.ratingValoracion.ItemBorderColor = System.Drawing.Color.Black;
+            this.ratingValoracion.Location = new System.Drawing.Point(156, 173);
+            this.ratingValoracion.Name = "ratingValoracion";
+            this.ratingValoracion.Precision = Syncfusion.Windows.Forms.Tools.PrecisionMode.Half;
+            this.ratingValoracion.ResetButton = resetButton1;
+            this.ratingValoracion.Size = new System.Drawing.Size(292, 33);
+            this.ratingValoracion.TabIndex = 31;
+            this.ratingValoracion.Text = "ratingControl1";
+            // 
             // EvaluarActividad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 788);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(517, 470);
+            this.Controls.Add(this.ratingValoracion);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.textBoxComentario);
-            this.Controls.Add(this.textBoxHoras);
-            this.Controls.Add(this.textBoxValoracion);
             this.Controls.Add(this.labelComentario);
-            this.Controls.Add(this.labelHoras);
             this.Controls.Add(this.labelValoracion);
-            this.Controls.Add(this.lParticipante);
-            this.Controls.Add(this.labelParticipante);
             this.Controls.Add(this.bCancelarEvaluacion);
             this.Controls.Add(this.bAceptarEvaluacion);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EvaluarActividad";
             this.Text = "EvaluarActividad";
             this.ResumeLayout(false);
@@ -170,14 +162,11 @@
 
         private System.Windows.Forms.Button bAceptarEvaluacion;
         private System.Windows.Forms.Button bCancelarEvaluacion;
-        private System.Windows.Forms.Label labelParticipante;
-        private System.Windows.Forms.Label lParticipante;
         private System.Windows.Forms.Label labelValoracion;
-        private System.Windows.Forms.Label labelHoras;
         private System.Windows.Forms.Label labelComentario;
-        private System.Windows.Forms.TextBox textBoxValoracion;
-        private System.Windows.Forms.TextBox textBoxHoras;
         private System.Windows.Forms.RichTextBox textBoxComentario;
         private System.Windows.Forms.Label labelError;
+        private System.Windows.Forms.Label lblTitulo;
+        private Syncfusion.Windows.Forms.Tools.RatingControl ratingValoracion;
     }
 }

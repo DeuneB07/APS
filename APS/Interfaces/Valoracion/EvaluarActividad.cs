@@ -18,7 +18,7 @@ namespace APS.Interfaces.Gestión_Actividades
         {
             InitializeComponent();
             this.actividad = actividad;
-            this.lParticipante.Text = actividad.Participante.Email;
+            lblTitulo.Text = "¿QUÉ TAL TE HA PARECIDO LA ACTIVIDAD\n" + actividad.Actividad.NombreAct.ToUpper() + "? ¡PUNTÚALA!";
             this.labelError.Text = "";
         }
 
@@ -26,15 +26,12 @@ namespace APS.Interfaces.Gestión_Actividades
         {
             try
             {
-                if (textBoxValoracion.Text.Equals("")) throw new Exception("El campo valoración es obligatorio rellenarlo");
-                if (textBoxHoras.Text.Equals("")) throw new Exception("El campo horas es obligatorio rellenarlo");
-                if (int.Parse(textBoxHoras.Text) < 0) throw new Exception("Las horas invertidas tienen que ser mayores o iguales a 0");
-                if (int.Parse(textBoxValoracion.Text) < 0 || int.Parse(textBoxValoracion.Text) > 10) throw new Exception("La valoración debe estar comprendida entre 0 y 10");
+               // if (numericHoras.Value < 0) throw new Exception("Las horas invertidas tienen que ser mayores o iguales a 0");
 
-                actividad.ValoracionUsuario = float.Parse(textBoxValoracion.Text);
+                actividad.ValoracionUsuario = ratingValoracion.Value;
                 actividad.FechaValoracionUsuario = DateTime.Now;
                 actividad.ComentarioUsuario = textBoxComentario.Text;
-                actividad.NumHorasRealizadas = int.Parse(textBoxHoras.Text);
+                //actividad.NumHorasRealizadas = decimal.ToInt32(numericHoras.Value);
                 actividad.EstadoRealizacion = Actividad_Realizada.EstadoActividadR.EVALUACION_ONG;
 
                 this.Close();
@@ -50,5 +47,6 @@ namespace APS.Interfaces.Gestión_Actividades
         {
             this.Close();
         }
+
     }
 }
