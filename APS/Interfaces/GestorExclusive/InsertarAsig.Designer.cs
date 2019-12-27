@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsertarAsig));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tAsig = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.comboGrado = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictOK = new System.Windows.Forms.PictureBox();
             this.pictCancelar = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboGrado = new System.Windows.Forms.ComboBox();
+            this.tAsig = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictOK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictCancelar)).BeginInit();
@@ -55,23 +55,23 @@
             this.panel1.Size = new System.Drawing.Size(436, 126);
             this.panel1.TabIndex = 3;
             // 
-            // tAsig
+            // comboGrado
             // 
-            this.tAsig.Font = new System.Drawing.Font("Bahnschrift", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tAsig.Location = new System.Drawing.Point(36, 27);
-            this.tAsig.Name = "tAsig";
-            this.tAsig.Size = new System.Drawing.Size(375, 21);
-            this.tAsig.TabIndex = 1;
+            this.comboGrado.FormattingEnabled = true;
+            this.comboGrado.Location = new System.Drawing.Point(36, 78);
+            this.comboGrado.Name = "comboGrado";
+            this.comboGrado.Size = new System.Drawing.Size(325, 21);
+            this.comboGrado.TabIndex = 5;
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 14);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Introduzca Asignatura";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(15, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(152, 14);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Elija grado al que pertenece";
             // 
             // pictOK
             // 
@@ -95,23 +95,23 @@
             this.pictCancelar.TabStop = false;
             this.pictCancelar.Click += new System.EventHandler(this.pictCancelar_Click);
             // 
-            // label2
+            // tAsig
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 14);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Elija grado al que pertenece";
+            this.tAsig.Font = new System.Drawing.Font("Bahnschrift", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tAsig.Location = new System.Drawing.Point(36, 27);
+            this.tAsig.Name = "tAsig";
+            this.tAsig.Size = new System.Drawing.Size(375, 21);
+            this.tAsig.TabIndex = 1;
             // 
-            // comboGrado
+            // label1
             // 
-            this.comboGrado.FormattingEnabled = true;
-            this.comboGrado.Location = new System.Drawing.Point(36, 78);
-            this.comboGrado.Name = "comboGrado";
-            this.comboGrado.Size = new System.Drawing.Size(325, 21);
-            this.comboGrado.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 14);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Introduzca Asignatura";
             // 
             // InsertarAsig
             // 

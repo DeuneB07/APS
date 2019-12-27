@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsertarCompetencia));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tDesc = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictOK = new System.Windows.Forms.PictureBox();
             this.pictCancelar = new System.Windows.Forms.PictureBox();
             this.tNoun = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tDesc = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictOK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictCancelar)).BeginInit();
@@ -54,6 +54,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(559, 148);
             this.panel1.TabIndex = 2;
+            // 
+            // tDesc
+            // 
+            this.tDesc.Enabled = false;
+            this.tDesc.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tDesc.Location = new System.Drawing.Point(44, 65);
+            this.tDesc.Margin = new System.Windows.Forms.Padding(2);
+            this.tDesc.Name = "tDesc";
+            this.tDesc.Size = new System.Drawing.Size(430, 69);
+            this.tDesc.TabIndex = 66;
+            this.tDesc.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(15, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 14);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Descripción";
             // 
             // pictOK
             // 
@@ -94,27 +115,6 @@
             this.label1.Size = new System.Drawing.Size(197, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "Introduzca Nombre de Competencia";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 14);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Descripción";
-            // 
-            // tDesc
-            // 
-            this.tDesc.Enabled = false;
-            this.tDesc.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tDesc.Location = new System.Drawing.Point(44, 65);
-            this.tDesc.Margin = new System.Windows.Forms.Padding(2);
-            this.tDesc.Name = "tDesc";
-            this.tDesc.Size = new System.Drawing.Size(430, 69);
-            this.tDesc.TabIndex = 66;
-            this.tDesc.Text = "";
             // 
             // InsertarCompetencia
             // 

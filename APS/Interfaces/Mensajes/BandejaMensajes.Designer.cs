@@ -241,7 +241,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BandejaMensajes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Bandeja de Entrada";
+            this.Text = "Bandeja de Mensajes";
             ((System.ComponentModel.ISupportInitialize)(this.pictEnviados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictCont3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictEscribir)).EndInit();

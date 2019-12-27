@@ -52,7 +52,7 @@
             this.panelHistorial.AutoScroll = true;
             this.panelHistorial.Controls.Add(this.tablePP);
             this.panelHistorial.Location = new System.Drawing.Point(9, 83);
-            this.panelHistorial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelHistorial.Margin = new System.Windows.Forms.Padding(2);
             this.panelHistorial.Name = "panelHistorial";
             this.panelHistorial.Size = new System.Drawing.Size(835, 460);
             this.panelHistorial.TabIndex = 0;
@@ -171,7 +171,7 @@
             this.pictOrden.BackgroundImage = global::APS.Properties.Resources.downarrow_abajo_10289;
             this.pictOrden.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictOrden.Location = new System.Drawing.Point(804, 53);
-            this.pictOrden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictOrden.Margin = new System.Windows.Forms.Padding(2);
             this.pictOrden.Name = "pictOrden";
             this.pictOrden.Size = new System.Drawing.Size(29, 28);
             this.pictOrden.TabIndex = 12;
@@ -186,7 +186,7 @@
             this.btnEventos.FlatAppearance.BorderSize = 0;
             this.btnEventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEventos.Location = new System.Drawing.Point(858, 83);
-            this.btnEventos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEventos.Margin = new System.Windows.Forms.Padding(2);
             this.btnEventos.Name = "btnEventos";
             this.btnEventos.Size = new System.Drawing.Size(59, 65);
             this.btnEventos.TabIndex = 7;
@@ -201,7 +201,7 @@
             this.btnActRealizadas.FlatAppearance.BorderSize = 0;
             this.btnActRealizadas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActRealizadas.Location = new System.Drawing.Point(861, 212);
-            this.btnActRealizadas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnActRealizadas.Margin = new System.Windows.Forms.Padding(2);
             this.btnActRealizadas.Name = "btnActRealizadas";
             this.btnActRealizadas.Size = new System.Drawing.Size(47, 45);
             this.btnActRealizadas.TabIndex = 4;
@@ -216,7 +216,7 @@
             this.btnAtras.FlatAppearance.BorderSize = 0;
             this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtras.Location = new System.Drawing.Point(861, 480);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(2);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(47, 44);
             this.btnAtras.TabIndex = 2;
@@ -244,7 +244,7 @@
             this.Controls.Add(this.panelHistorial);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VerListaHistorial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Historial";

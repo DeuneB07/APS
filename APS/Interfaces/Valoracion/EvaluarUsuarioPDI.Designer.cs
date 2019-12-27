@@ -82,7 +82,7 @@
             // 
             this.textBoxComentarioPDI.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxComentarioPDI.Location = new System.Drawing.Point(144, 195);
-            this.textBoxComentarioPDI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxComentarioPDI.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxComentarioPDI.Name = "textBoxComentarioPDI";
             this.textBoxComentarioPDI.Size = new System.Drawing.Size(180, 59);
             this.textBoxComentarioPDI.TabIndex = 35;
@@ -156,7 +156,7 @@
             this.textBoxComentarioONG.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxComentarioONG.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.textBoxComentarioONG.Location = new System.Drawing.Point(135, 194);
-            this.textBoxComentarioONG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxComentarioONG.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxComentarioONG.Name = "textBoxComentarioONG";
             this.textBoxComentarioONG.ReadOnly = true;
             this.textBoxComentarioONG.Size = new System.Drawing.Size(168, 59);
@@ -216,7 +216,7 @@
             this.btnDescargar.Enabled = false;
             this.btnDescargar.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDescargar.Location = new System.Drawing.Point(248, 282);
-            this.btnDescargar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDescargar.Margin = new System.Windows.Forms.Padding(2);
             this.btnDescargar.Name = "btnDescargar";
             this.btnDescargar.Size = new System.Drawing.Size(76, 19);
             this.btnDescargar.TabIndex = 51;
@@ -229,7 +229,7 @@
             this.txtNombreArchivo.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreArchivo.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombreArchivo.Location = new System.Drawing.Point(136, 282);
-            this.txtNombreArchivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreArchivo.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreArchivo.Name = "txtNombreArchivo";
             this.txtNombreArchivo.ReadOnly = true;
             this.txtNombreArchivo.Size = new System.Drawing.Size(104, 22);
@@ -242,7 +242,7 @@
             this.ratingONG.ItemBackColor = System.Drawing.Color.White;
             this.ratingONG.ItemBorderColor = System.Drawing.Color.Black;
             this.ratingONG.Location = new System.Drawing.Point(135, 140);
-            this.ratingONG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ratingONG.Margin = new System.Windows.Forms.Padding(2);
             this.ratingONG.Name = "ratingONG";
             this.ratingONG.Precision = Syncfusion.Windows.Forms.Tools.PrecisionMode.Half;
             this.ratingONG.ResetButton = resetButton1;
@@ -265,7 +265,7 @@
             this.panel1.Controls.Add(this.labelComentarioONG);
             this.panel1.Controls.Add(this.labelValoracionONG);
             this.panel1.Location = new System.Drawing.Point(13, 55);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(338, 329);
             this.panel1.TabIndex = 53;
@@ -320,7 +320,7 @@
             this.panel2.Controls.Add(this.textBoxComentarioPDI);
             this.panel2.Controls.Add(this.labelComentario);
             this.panel2.Location = new System.Drawing.Point(350, 55);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(351, 329);
             this.panel2.TabIndex = 54;
@@ -379,7 +379,7 @@
             this.ratingPDI.ItemBackColor = System.Drawing.Color.White;
             this.ratingPDI.ItemBorderColor = System.Drawing.Color.Black;
             this.ratingPDI.Location = new System.Drawing.Point(144, 141);
-            this.ratingPDI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ratingPDI.Margin = new System.Windows.Forms.Padding(2);
             this.ratingPDI.Name = "ratingPDI";
             this.ratingPDI.Precision = Syncfusion.Windows.Forms.Tools.PrecisionMode.Half;
             this.ratingPDI.ResetButton = resetButton2;
@@ -427,7 +427,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EvaluarUsuarioPDI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "EvaluarUsuarioPDI";
+            this.Text = "Evaluar al Participante";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

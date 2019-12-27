@@ -19,9 +19,13 @@ namespace APS.Interfaces.GestorExclusive
             InitializeComponent();
             this.u = u;
 
-            lShowMail.Text = u.Email;
-            lShowRol.Text = u.Rol.NombreRol;
-            lShowNoun.Text = u.Nombre + " " + u.Apellido1 + " " + u.Apellido2;
+            if (u.Email.Equals("")) lShowMail.Text = u.Email;
+            if (u.Rol.NombreRol.Equals("")) lShowRol.Text = u.Rol.NombreRol;
+            if (u.Nombre.Equals("")) lShowNoun.Text = u.Nombre + " " + u.Apellido1 + " " + u.Apellido2;
+            if (u.DNI.Equals("")) lShowDNI.Text = u.DNI;
+            if (u.FechaNac.ToShortDateString().Equals("")) lShowFecha.Text = u.FechaNac.ToShortDateString();
+            if (u.Imagen != null) pictImagen.Image = u.Imagen;
+
         }
     }
 }

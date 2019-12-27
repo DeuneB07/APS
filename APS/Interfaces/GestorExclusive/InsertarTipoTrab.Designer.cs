@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsertarTipoTrab));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictCancelar = new System.Windows.Forms.PictureBox();
             this.pictOK = new System.Windows.Forms.PictureBox();
+            this.pictCancelar = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictOK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictCancelar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -51,23 +51,16 @@
             this.panel1.Size = new System.Drawing.Size(341, 79);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // pictOK
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 14);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Introduzca Nombre del Nuevo Tipo de Trabajo";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Bahnschrift", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(32, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 21);
-            this.textBox1.TabIndex = 1;
+            this.pictOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictOK.BackgroundImage")));
+            this.pictOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictOK.Location = new System.Drawing.Point(272, 46);
+            this.pictOK.Name = "pictOK";
+            this.pictOK.Size = new System.Drawing.Size(30, 30);
+            this.pictOK.TabIndex = 3;
+            this.pictOK.TabStop = false;
+            this.pictOK.Click += new System.EventHandler(this.pictOK_Click);
             // 
             // pictCancelar
             // 
@@ -80,16 +73,23 @@
             this.pictCancelar.TabStop = false;
             this.pictCancelar.Click += new System.EventHandler(this.pictCancelar_Click);
             // 
-            // pictOK
+            // textBox1
             // 
-            this.pictOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictOK.BackgroundImage")));
-            this.pictOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictOK.Location = new System.Drawing.Point(272, 46);
-            this.pictOK.Name = "pictOK";
-            this.pictOK.Size = new System.Drawing.Size(30, 30);
-            this.pictOK.TabIndex = 3;
-            this.pictOK.TabStop = false;
-            this.pictOK.Click += new System.EventHandler(this.pictOK_Click);
+            this.textBox1.Font = new System.Drawing.Font("Bahnschrift", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(32, 39);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 21);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(249, 14);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Introduzca Nombre del Nuevo Tipo de Trabajo";
             // 
             // InsertarTipoTrab
             // 
@@ -105,8 +105,8 @@
             this.Text = "Nuevo Tipo de Trabajo";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictOK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictCancelar)).EndInit();
             this.ResumeLayout(false);
 
         }

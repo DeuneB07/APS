@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EvaluarParticipantes));
             this.tabValoraciones = new System.Windows.Forms.TabControl();
             this.pPorEvaluar = new System.Windows.Forms.TabPage();
             this.panelPorEvaluar = new System.Windows.Forms.TableLayoutPanel();
@@ -159,10 +160,11 @@
             this.ClientSize = new System.Drawing.Size(546, 379);
             this.Controls.Add(this.tabValoraciones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EvaluarParticipantes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "EvaluarParticipantes";
+            this.Text = "Lista de Participantes";
             this.tabValoraciones.ResumeLayout(false);
             this.pPorEvaluar.ResumeLayout(false);
             this.pEnProceso.ResumeLayout(false);

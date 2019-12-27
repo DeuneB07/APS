@@ -158,7 +158,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EvaluarActividad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "EvaluarActividad";
+            this.Text = "Evaluar Actividad";
             this.ResumeLayout(false);
             this.PerformLayout();
 
