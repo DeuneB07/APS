@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaginaInicio));
             this.bPersonalUMA = new System.Windows.Forms.Button();
             this.bPersonalExt = new System.Windows.Forms.Button();
+            this.bExit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bPersonalUMA
@@ -57,19 +59,46 @@
             this.bPersonalExt.UseVisualStyleBackColor = true;
             this.bPersonalExt.Click += new System.EventHandler(this.bPersonalExt_Click);
             // 
+            // bExit
+            // 
+            this.bExit.BackColor = System.Drawing.Color.Transparent;
+            this.bExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bExit.BackgroundImage")));
+            this.bExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bExit.FlatAppearance.BorderSize = 0;
+            this.bExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bExit.Location = new System.Drawing.Point(606, 11);
+            this.bExit.Name = "bExit";
+            this.bExit.Size = new System.Drawing.Size(50, 50);
+            this.bExit.TabIndex = 9;
+            this.bExit.UseVisualStyleBackColor = false;
+            this.bExit.Click += new System.EventHandler(this.bExit_Click);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(603, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 28);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Cerrar Aplicación";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // PaginaInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(668, 369);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.bExit);
             this.Controls.Add(this.bPersonalExt);
             this.Controls.Add(this.bPersonalUMA);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Verdana Pro Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "PaginaInicio";
@@ -82,5 +111,7 @@
         #endregion
         private System.Windows.Forms.Button bPersonalUMA;
         private System.Windows.Forms.Button bPersonalExt;
+        private System.Windows.Forms.Button bExit;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -237,8 +237,10 @@
             this.Controls.Add(this.pictSobres);
             this.Controls.Add(this.lMensajes);
             this.Controls.Add(this.pictCont2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BandejaMensajes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Bandeja de Entrada";
             ((System.ComponentModel.ISupportInitialize)(this.pictEnviados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictCont3)).EndInit();

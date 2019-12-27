@@ -64,60 +64,60 @@ namespace APS.Interfaces.Gestión_Actividades
             // 
             this.tLugar.Enabled = false;
             this.tLugar.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tLugar.Location = new System.Drawing.Point(173, 289);
-            this.tLugar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tLugar.Location = new System.Drawing.Point(130, 235);
+            this.tLugar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tLugar.Name = "tLugar";
-            this.tLugar.Size = new System.Drawing.Size(217, 23);
+            this.tLugar.Size = new System.Drawing.Size(164, 20);
             this.tLugar.TabIndex = 46;
             // 
             // dateTimePickerFechaFin
             // 
             this.dateTimePickerFechaFin.Enabled = false;
             this.dateTimePickerFechaFin.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerFechaFin.Location = new System.Drawing.Point(529, 247);
-            this.dateTimePickerFechaFin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePickerFechaFin.Location = new System.Drawing.Point(397, 201);
+            this.dateTimePickerFechaFin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerFechaFin.Name = "dateTimePickerFechaFin";
-            this.dateTimePickerFechaFin.Size = new System.Drawing.Size(287, 26);
+            this.dateTimePickerFechaFin.Size = new System.Drawing.Size(216, 22);
             this.dateTimePickerFechaFin.TabIndex = 45;
             // 
             // dateTimePickerFechaIni
             // 
             this.dateTimePickerFechaIni.Enabled = false;
             this.dateTimePickerFechaIni.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerFechaIni.Location = new System.Drawing.Point(529, 209);
-            this.dateTimePickerFechaIni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePickerFechaIni.Location = new System.Drawing.Point(397, 170);
+            this.dateTimePickerFechaIni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerFechaIni.Name = "dateTimePickerFechaIni";
-            this.dateTimePickerFechaIni.Size = new System.Drawing.Size(287, 26);
+            this.dateTimePickerFechaIni.Size = new System.Drawing.Size(216, 22);
             this.dateTimePickerFechaIni.TabIndex = 44;
             // 
             // tNumHoras
             // 
             this.tNumHoras.Enabled = false;
             this.tNumHoras.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tNumHoras.Location = new System.Drawing.Point(173, 246);
-            this.tNumHoras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tNumHoras.Location = new System.Drawing.Point(130, 200);
+            this.tNumHoras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tNumHoras.Name = "tNumHoras";
-            this.tNumHoras.Size = new System.Drawing.Size(56, 23);
+            this.tNumHoras.Size = new System.Drawing.Size(43, 20);
             this.tNumHoras.TabIndex = 43;
             // 
             // tNumPlazas
             // 
             this.tNumPlazas.Enabled = false;
             this.tNumPlazas.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tNumPlazas.Location = new System.Drawing.Point(173, 209);
-            this.tNumPlazas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tNumPlazas.Location = new System.Drawing.Point(130, 170);
+            this.tNumPlazas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tNumPlazas.Name = "tNumPlazas";
-            this.tNumPlazas.Size = new System.Drawing.Size(56, 23);
+            this.tNumPlazas.Size = new System.Drawing.Size(43, 20);
             this.tNumPlazas.TabIndex = 42;
             // 
             // tDescripcion
             // 
             this.tDescripcion.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tDescripcion.Location = new System.Drawing.Point(173, 103);
-            this.tDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tDescripcion.Location = new System.Drawing.Point(130, 84);
+            this.tDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tDescripcion.Name = "tDescripcion";
             this.tDescripcion.ReadOnly = true;
-            this.tDescripcion.Size = new System.Drawing.Size(217, 88);
+            this.tDescripcion.Size = new System.Drawing.Size(164, 72);
             this.tDescripcion.TabIndex = 41;
             this.tDescripcion.Text = "";
             // 
@@ -125,29 +125,30 @@ namespace APS.Interfaces.Gestión_Actividades
             // 
             this.tNombreAct.Enabled = false;
             this.tNombreAct.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tNombreAct.Location = new System.Drawing.Point(173, 63);
-            this.tNombreAct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tNombreAct.Location = new System.Drawing.Point(130, 51);
+            this.tNombreAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tNombreAct.Name = "tNombreAct";
-            this.tNombreAct.Size = new System.Drawing.Size(217, 23);
+            this.tNombreAct.Size = new System.Drawing.Size(164, 20);
             this.tNombreAct.TabIndex = 40;
             // 
             // tOrganizador
             // 
             this.tOrganizador.Enabled = false;
             this.tOrganizador.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tOrganizador.Location = new System.Drawing.Point(173, 17);
-            this.tOrganizador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tOrganizador.Location = new System.Drawing.Point(130, 14);
+            this.tOrganizador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tOrganizador.Name = "tOrganizador";
-            this.tOrganizador.Size = new System.Drawing.Size(217, 23);
+            this.tOrganizador.Size = new System.Drawing.Size(164, 20);
             this.tOrganizador.TabIndex = 39;
             // 
             // labelTipo
             // 
             this.labelTipo.AutoSize = true;
             this.labelTipo.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTipo.Location = new System.Drawing.Point(511, 343);
+            this.labelTipo.Location = new System.Drawing.Point(383, 279);
+            this.labelTipo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTipo.Name = "labelTipo";
-            this.labelTipo.Size = new System.Drawing.Size(90, 18);
+            this.labelTipo.Size = new System.Drawing.Size(76, 14);
             this.labelTipo.TabIndex = 38;
             this.labelTipo.Text = "Tipo Trabajo:";
             // 
@@ -155,9 +156,10 @@ namespace APS.Interfaces.Gestión_Actividades
             // 
             this.labelAmbito.AutoSize = true;
             this.labelAmbito.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAmbito.Location = new System.Drawing.Point(489, 293);
+            this.labelAmbito.Location = new System.Drawing.Point(367, 238);
+            this.labelAmbito.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAmbito.Name = "labelAmbito";
-            this.labelAmbito.Size = new System.Drawing.Size(111, 18);
+            this.labelAmbito.Size = new System.Drawing.Size(92, 14);
             this.labelAmbito.TabIndex = 37;
             this.labelAmbito.Text = "Ambito Trabajo:";
             // 
@@ -165,9 +167,10 @@ namespace APS.Interfaces.Gestión_Actividades
             // 
             this.labelTurno.AutoSize = true;
             this.labelTurno.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTurno.Location = new System.Drawing.Point(111, 341);
+            this.labelTurno.Location = new System.Drawing.Point(83, 277);
+            this.labelTurno.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTurno.Name = "labelTurno";
-            this.labelTurno.Size = new System.Drawing.Size(47, 18);
+            this.labelTurno.Size = new System.Drawing.Size(42, 14);
             this.labelTurno.TabIndex = 35;
             this.labelTurno.Text = "Turno:";
             // 
@@ -175,9 +178,10 @@ namespace APS.Interfaces.Gestión_Actividades
             // 
             this.labelLugar.AutoSize = true;
             this.labelLugar.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLugar.Location = new System.Drawing.Point(115, 290);
+            this.labelLugar.Location = new System.Drawing.Point(86, 236);
+            this.labelLugar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLugar.Name = "labelLugar";
-            this.labelLugar.Size = new System.Drawing.Size(49, 18);
+            this.labelLugar.Size = new System.Drawing.Size(40, 14);
             this.labelLugar.TabIndex = 34;
             this.labelLugar.Text = "Lugar:";
             // 
@@ -185,9 +189,10 @@ namespace APS.Interfaces.Gestión_Actividades
             // 
             this.labelFechaFin.AutoSize = true;
             this.labelFechaFin.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFechaFin.Location = new System.Drawing.Point(441, 254);
+            this.labelFechaFin.Location = new System.Drawing.Point(331, 206);
+            this.labelFechaFin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFechaFin.Name = "labelFechaFin";
-            this.labelFechaFin.Size = new System.Drawing.Size(74, 18);
+            this.labelFechaFin.Size = new System.Drawing.Size(62, 14);
             this.labelFechaFin.TabIndex = 33;
             this.labelFechaFin.Text = "Fecha Fin:";
             // 
@@ -195,9 +200,10 @@ namespace APS.Interfaces.Gestión_Actividades
             // 
             this.labelFechaInicio.AutoSize = true;
             this.labelFechaInicio.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFechaInicio.Location = new System.Drawing.Point(425, 217);
+            this.labelFechaInicio.Location = new System.Drawing.Point(319, 176);
+            this.labelFechaInicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFechaInicio.Name = "labelFechaInicio";
-            this.labelFechaInicio.Size = new System.Drawing.Size(89, 18);
+            this.labelFechaInicio.Size = new System.Drawing.Size(74, 14);
             this.labelFechaInicio.TabIndex = 32;
             this.labelFechaInicio.Text = "Fecha Inicio:";
             // 
@@ -205,9 +211,10 @@ namespace APS.Interfaces.Gestión_Actividades
             // 
             this.labelNumHoras.AutoSize = true;
             this.labelNumHoras.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumHoras.Location = new System.Drawing.Point(51, 247);
+            this.labelNumHoras.Location = new System.Drawing.Point(38, 201);
+            this.labelNumHoras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNumHoras.Name = "labelNumHoras";
-            this.labelNumHoras.Size = new System.Drawing.Size(109, 18);
+            this.labelNumHoras.Size = new System.Drawing.Size(88, 14);
             this.labelNumHoras.TabIndex = 31;
             this.labelNumHoras.Text = "Número Horas:";
             // 
@@ -215,9 +222,10 @@ namespace APS.Interfaces.Gestión_Actividades
             // 
             this.labelNumPlazas.AutoSize = true;
             this.labelNumPlazas.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumPlazas.Location = new System.Drawing.Point(48, 209);
+            this.labelNumPlazas.Location = new System.Drawing.Point(36, 170);
+            this.labelNumPlazas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNumPlazas.Name = "labelNumPlazas";
-            this.labelNumPlazas.Size = new System.Drawing.Size(113, 18);
+            this.labelNumPlazas.Size = new System.Drawing.Size(90, 14);
             this.labelNumPlazas.TabIndex = 30;
             this.labelNumPlazas.Text = "Número Plazas:";
             // 
@@ -225,9 +233,10 @@ namespace APS.Interfaces.Gestión_Actividades
             // 
             this.labelDescripcion.AutoSize = true;
             this.labelDescripcion.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescripcion.Location = new System.Drawing.Point(1, 103);
+            this.labelDescripcion.Location = new System.Drawing.Point(1, 84);
+            this.labelDescripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDescripcion.Name = "labelDescripcion";
-            this.labelDescripcion.Size = new System.Drawing.Size(155, 18);
+            this.labelDescripcion.Size = new System.Drawing.Size(125, 14);
             this.labelDescripcion.TabIndex = 29;
             this.labelDescripcion.Text = "Descripción Actividad:";
             // 
@@ -235,9 +244,10 @@ namespace APS.Interfaces.Gestión_Actividades
             // 
             this.labelNombreAct.AutoSize = true;
             this.labelNombreAct.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombreAct.Location = new System.Drawing.Point(32, 64);
+            this.labelNombreAct.Location = new System.Drawing.Point(24, 52);
+            this.labelNombreAct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNombreAct.Name = "labelNombreAct";
-            this.labelNombreAct.Size = new System.Drawing.Size(131, 18);
+            this.labelNombreAct.Size = new System.Drawing.Size(104, 14);
             this.labelNombreAct.TabIndex = 28;
             this.labelNombreAct.Text = "Nombre Actividad:";
             // 
@@ -245,19 +255,20 @@ namespace APS.Interfaces.Gestión_Actividades
             // 
             this.labelOrganizador.AutoSize = true;
             this.labelOrganizador.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOrganizador.Location = new System.Drawing.Point(72, 18);
+            this.labelOrganizador.Location = new System.Drawing.Point(54, 15);
+            this.labelOrganizador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelOrganizador.Name = "labelOrganizador";
-            this.labelOrganizador.Size = new System.Drawing.Size(91, 18);
+            this.labelOrganizador.Size = new System.Drawing.Size(74, 14);
             this.labelOrganizador.TabIndex = 27;
             this.labelOrganizador.Text = "Organizador:";
             // 
             // btnGestionar
             // 
             this.btnGestionar.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionar.Location = new System.Drawing.Point(443, 412);
-            this.btnGestionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGestionar.Location = new System.Drawing.Point(332, 335);
+            this.btnGestionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGestionar.Name = "btnGestionar";
-            this.btnGestionar.Size = new System.Drawing.Size(101, 31);
+            this.btnGestionar.Size = new System.Drawing.Size(76, 25);
             this.btnGestionar.TabIndex = 51;
             this.btnGestionar.Text = "Gestionar";
             this.btnGestionar.UseVisualStyleBackColor = true;
@@ -266,10 +277,10 @@ namespace APS.Interfaces.Gestión_Actividades
             // btnRechazar
             // 
             this.btnRechazar.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRechazar.Location = new System.Drawing.Point(576, 412);
-            this.btnRechazar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRechazar.Location = new System.Drawing.Point(432, 335);
+            this.btnRechazar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRechazar.Name = "btnRechazar";
-            this.btnRechazar.Size = new System.Drawing.Size(101, 31);
+            this.btnRechazar.Size = new System.Drawing.Size(76, 25);
             this.btnRechazar.TabIndex = 52;
             this.btnRechazar.Text = "Rechazar";
             this.btnRechazar.UseVisualStyleBackColor = true;
@@ -278,10 +289,10 @@ namespace APS.Interfaces.Gestión_Actividades
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(707, 412);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelar.Location = new System.Drawing.Point(530, 335);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(91, 31);
+            this.btnCancelar.Size = new System.Drawing.Size(68, 25);
             this.btnCancelar.TabIndex = 53;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -292,10 +303,10 @@ namespace APS.Interfaces.Gestión_Actividades
             this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(549, 18);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox.Location = new System.Drawing.Point(412, 15);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(267, 158);
+            this.pictureBox.Size = new System.Drawing.Size(201, 129);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 55;
             this.pictureBox.TabStop = false;
@@ -305,10 +316,9 @@ namespace APS.Interfaces.Gestión_Actividades
             this.listTurno.Enabled = false;
             this.listTurno.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listTurno.FormattingEnabled = true;
-            this.listTurno.Location = new System.Drawing.Point(173, 338);
-            this.listTurno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listTurno.Location = new System.Drawing.Point(130, 275);
             this.listTurno.Name = "listTurno";
-            this.listTurno.Size = new System.Drawing.Size(160, 25);
+            this.listTurno.Size = new System.Drawing.Size(121, 21);
             this.listTurno.TabIndex = 56;
             // 
             // listAmbito
@@ -316,10 +326,9 @@ namespace APS.Interfaces.Gestión_Actividades
             this.listAmbito.Enabled = false;
             this.listAmbito.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listAmbito.FormattingEnabled = true;
-            this.listAmbito.Location = new System.Drawing.Point(619, 290);
-            this.listAmbito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listAmbito.Location = new System.Drawing.Point(464, 236);
             this.listAmbito.Name = "listAmbito";
-            this.listAmbito.Size = new System.Drawing.Size(160, 25);
+            this.listAmbito.Size = new System.Drawing.Size(121, 21);
             this.listAmbito.TabIndex = 57;
             // 
             // listTrabajo
@@ -327,18 +336,17 @@ namespace APS.Interfaces.Gestión_Actividades
             this.listTrabajo.Enabled = false;
             this.listTrabajo.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listTrabajo.FormattingEnabled = true;
-            this.listTrabajo.Location = new System.Drawing.Point(619, 341);
-            this.listTrabajo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listTrabajo.Location = new System.Drawing.Point(464, 277);
             this.listTrabajo.Name = "listTrabajo";
-            this.listTrabajo.Size = new System.Drawing.Size(160, 25);
+            this.listTrabajo.Size = new System.Drawing.Size(121, 21);
             this.listTrabajo.TabIndex = 58;
             // 
             // VerActividadGestor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(881, 473);
+            this.ClientSize = new System.Drawing.Size(661, 384);
             this.Controls.Add(this.listTrabajo);
             this.Controls.Add(this.listAmbito);
             this.Controls.Add(this.listTurno);
@@ -365,8 +373,11 @@ namespace APS.Interfaces.Gestión_Actividades
             this.Controls.Add(this.labelDescripcion);
             this.Controls.Add(this.labelNombreAct);
             this.Controls.Add(this.labelOrganizador);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "VerActividadGestor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ver Actividad";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);

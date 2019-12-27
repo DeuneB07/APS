@@ -134,8 +134,10 @@
             this.Controls.Add(this.bRegistrar);
             this.Controls.Add(this.bIniciar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InicioPersExterno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cooperación Internacional";
             this.ResumeLayout(false);
             this.PerformLayout();

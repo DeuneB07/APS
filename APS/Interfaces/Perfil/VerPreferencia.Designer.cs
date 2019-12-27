@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerPreferencia));
             this.listCompetencias = new System.Windows.Forms.ListBox();
             this.lNombrePref = new System.Windows.Forms.Label();
             this.lAsig = new System.Windows.Forms.Label();
@@ -395,7 +396,10 @@
             this.Controls.Add(this.lTipo);
             this.Controls.Add(this.lComp);
             this.Controls.Add(this.bConfirmar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VerPreferencia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ver Preferencia";
             this.ResumeLayout(false);
             this.PerformLayout();

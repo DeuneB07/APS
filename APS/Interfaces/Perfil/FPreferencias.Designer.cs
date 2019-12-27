@@ -100,8 +100,10 @@
             this.Controls.Add(this.bBorrarPref);
             this.Controls.Add(this.bRetornar);
             this.Controls.Add(this.bAnadirPref);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FPreferencias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Tus Preferencias";
             this.ResumeLayout(false);
 

@@ -167,7 +167,7 @@
             this.panelElements.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelElements.BackColor = System.Drawing.Color.Transparent;
             this.panelElements.ColumnCount = 1;
-            this.panelElements.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 586F));
+            this.panelElements.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 597F));
             this.panelElements.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelElements.Location = new System.Drawing.Point(0, 0);
             this.panelElements.Name = "panelElements";
@@ -353,7 +353,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ControlesGestor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Controles Gestor";
+            this.Text = "Controlador";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictExit)).EndInit();

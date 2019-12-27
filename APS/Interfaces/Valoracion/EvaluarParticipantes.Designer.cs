@@ -31,17 +31,17 @@
             this.tabValoraciones = new System.Windows.Forms.TabControl();
             this.pPorEvaluar = new System.Windows.Forms.TabPage();
             this.panelPorEvaluar = new System.Windows.Forms.TableLayoutPanel();
-            this.pEvaluados = new System.Windows.Forms.TabPage();
-            this.panelEvaluados = new System.Windows.Forms.TableLayoutPanel();
-            this.pAusente = new System.Windows.Forms.TabPage();
-            this.panelAusentes = new System.Windows.Forms.TableLayoutPanel();
             this.pEnProceso = new System.Windows.Forms.TabPage();
             this.panelEnProceso = new System.Windows.Forms.TableLayoutPanel();
+            this.pAusente = new System.Windows.Forms.TabPage();
+            this.panelAusentes = new System.Windows.Forms.TableLayoutPanel();
+            this.pEvaluados = new System.Windows.Forms.TabPage();
+            this.panelEvaluados = new System.Windows.Forms.TableLayoutPanel();
             this.tabValoraciones.SuspendLayout();
             this.pPorEvaluar.SuspendLayout();
-            this.pEvaluados.SuspendLayout();
-            this.pAusente.SuspendLayout();
             this.pEnProceso.SuspendLayout();
+            this.pAusente.SuspendLayout();
+            this.pEvaluados.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabValoraciones
@@ -82,29 +82,27 @@
             this.panelPorEvaluar.Size = new System.Drawing.Size(523, 318);
             this.panelPorEvaluar.TabIndex = 3;
             // 
-            // pEvaluados
+            // pEnProceso
             // 
-            this.pEvaluados.Controls.Add(this.panelEvaluados);
-            this.pEvaluados.Location = new System.Drawing.Point(4, 22);
-            this.pEvaluados.Margin = new System.Windows.Forms.Padding(2);
-            this.pEvaluados.Name = "pEvaluados";
-            this.pEvaluados.Padding = new System.Windows.Forms.Padding(2);
-            this.pEvaluados.Size = new System.Drawing.Size(523, 318);
-            this.pEvaluados.TabIndex = 1;
-            this.pEvaluados.Text = "Evaluados";
-            this.pEvaluados.UseVisualStyleBackColor = true;
+            this.pEnProceso.Controls.Add(this.panelEnProceso);
+            this.pEnProceso.Location = new System.Drawing.Point(4, 22);
+            this.pEnProceso.Name = "pEnProceso";
+            this.pEnProceso.Size = new System.Drawing.Size(523, 318);
+            this.pEnProceso.TabIndex = 3;
+            this.pEnProceso.Text = "En Proceso";
+            this.pEnProceso.UseVisualStyleBackColor = true;
             // 
-            // panelEvaluados
+            // panelEnProceso
             // 
-            this.panelEvaluados.AutoScroll = true;
-            this.panelEvaluados.ColumnCount = 1;
-            this.panelEvaluados.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelEvaluados.Location = new System.Drawing.Point(0, 0);
-            this.panelEvaluados.Name = "panelEvaluados";
-            this.panelEvaluados.RowCount = 1;
-            this.panelEvaluados.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.panelEvaluados.Size = new System.Drawing.Size(523, 318);
-            this.panelEvaluados.TabIndex = 3;
+            this.panelEnProceso.AutoScroll = true;
+            this.panelEnProceso.ColumnCount = 1;
+            this.panelEnProceso.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelEnProceso.Location = new System.Drawing.Point(0, 0);
+            this.panelEnProceso.Name = "panelEnProceso";
+            this.panelEnProceso.RowCount = 1;
+            this.panelEnProceso.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.panelEnProceso.Size = new System.Drawing.Size(523, 318);
+            this.panelEnProceso.TabIndex = 4;
             // 
             // pAusente
             // 
@@ -130,27 +128,29 @@
             this.panelAusentes.Size = new System.Drawing.Size(523, 318);
             this.panelAusentes.TabIndex = 4;
             // 
-            // pEnProceso
+            // pEvaluados
             // 
-            this.pEnProceso.Controls.Add(this.panelEnProceso);
-            this.pEnProceso.Location = new System.Drawing.Point(4, 22);
-            this.pEnProceso.Name = "pEnProceso";
-            this.pEnProceso.Size = new System.Drawing.Size(523, 318);
-            this.pEnProceso.TabIndex = 3;
-            this.pEnProceso.Text = "En Proceso";
-            this.pEnProceso.UseVisualStyleBackColor = true;
+            this.pEvaluados.Controls.Add(this.panelEvaluados);
+            this.pEvaluados.Location = new System.Drawing.Point(4, 22);
+            this.pEvaluados.Margin = new System.Windows.Forms.Padding(2);
+            this.pEvaluados.Name = "pEvaluados";
+            this.pEvaluados.Padding = new System.Windows.Forms.Padding(2);
+            this.pEvaluados.Size = new System.Drawing.Size(523, 318);
+            this.pEvaluados.TabIndex = 1;
+            this.pEvaluados.Text = "Evaluados";
+            this.pEvaluados.UseVisualStyleBackColor = true;
             // 
-            // panelEnProceso
+            // panelEvaluados
             // 
-            this.panelEnProceso.AutoScroll = true;
-            this.panelEnProceso.ColumnCount = 1;
-            this.panelEnProceso.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelEnProceso.Location = new System.Drawing.Point(0, 0);
-            this.panelEnProceso.Name = "panelEnProceso";
-            this.panelEnProceso.RowCount = 1;
-            this.panelEnProceso.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.panelEnProceso.Size = new System.Drawing.Size(523, 318);
-            this.panelEnProceso.TabIndex = 4;
+            this.panelEvaluados.AutoScroll = true;
+            this.panelEvaluados.ColumnCount = 1;
+            this.panelEvaluados.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelEvaluados.Location = new System.Drawing.Point(0, 0);
+            this.panelEvaluados.Name = "panelEvaluados";
+            this.panelEvaluados.RowCount = 1;
+            this.panelEvaluados.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.panelEvaluados.Size = new System.Drawing.Size(523, 318);
+            this.panelEvaluados.TabIndex = 3;
             // 
             // EvaluarParticipantes
             // 
@@ -158,14 +158,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(546, 379);
             this.Controls.Add(this.tabValoraciones);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EvaluarParticipantes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EvaluarParticipantes";
             this.tabValoraciones.ResumeLayout(false);
             this.pPorEvaluar.ResumeLayout(false);
-            this.pEvaluados.ResumeLayout(false);
-            this.pAusente.ResumeLayout(false);
             this.pEnProceso.ResumeLayout(false);
+            this.pAusente.ResumeLayout(false);
+            this.pEvaluados.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

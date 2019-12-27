@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerParticipantes));
             this.tabSolicitudes = new System.Windows.Forms.TabControl();
             this.pSolicitudesPendientes = new System.Windows.Forms.TabPage();
             this.panelSolPendientes = new System.Windows.Forms.TableLayoutPanel();
@@ -134,9 +135,12 @@
             this.ClientSize = new System.Drawing.Size(546, 408);
             this.Controls.Add(this.tabSolicitudes);
             this.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VerParticipantes";
-            this.Text = "VerParticipantes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Participantes";
             this.tabSolicitudes.ResumeLayout(false);
             this.pSolicitudesPendientes.ResumeLayout(false);
             this.pSolicitudesAceptadas.ResumeLayout(false);

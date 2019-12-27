@@ -57,11 +57,12 @@
             this.ratingValoracion.Images = customImageCollection1;
             this.ratingValoracion.ItemBackColor = System.Drawing.Color.White;
             this.ratingValoracion.ItemBorderColor = System.Drawing.Color.Black;
-            this.ratingValoracion.Location = new System.Drawing.Point(155, 218);
+            this.ratingValoracion.Location = new System.Drawing.Point(116, 177);
+            this.ratingValoracion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ratingValoracion.Name = "ratingValoracion";
             this.ratingValoracion.Precision = Syncfusion.Windows.Forms.Tools.PrecisionMode.Half;
             this.ratingValoracion.ResetButton = resetButton1;
-            this.ratingValoracion.Size = new System.Drawing.Size(292, 33);
+            this.ratingValoracion.Size = new System.Drawing.Size(219, 27);
             this.ratingValoracion.TabIndex = 41;
             this.ratingValoracion.Text = "ratingControl1";
             // 
@@ -70,9 +71,10 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblTitulo.Location = new System.Drawing.Point(59, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(44, 7);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(428, 72);
+            this.lblTitulo.Size = new System.Drawing.Size(347, 58);
             this.lblTitulo.TabIndex = 39;
             this.lblTitulo.Text = "¿CÓMO HA TRABAJADO EL USUARIO \r\nNOMBRE_USUARIO? ¡PUNTÚALO!";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -80,9 +82,10 @@
             // textBoxComentario
             // 
             this.textBoxComentario.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxComentario.Location = new System.Drawing.Point(155, 273);
+            this.textBoxComentario.Location = new System.Drawing.Point(116, 222);
+            this.textBoxComentario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxComentario.Name = "textBoxComentario";
-            this.textBoxComentario.Size = new System.Drawing.Size(296, 107);
+            this.textBoxComentario.Size = new System.Drawing.Size(223, 88);
             this.textBoxComentario.TabIndex = 37;
             this.textBoxComentario.Text = "";
             // 
@@ -90,10 +93,10 @@
             // 
             this.labelComentario.AutoSize = true;
             this.labelComentario.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelComentario.Location = new System.Drawing.Point(39, 273);
+            this.labelComentario.Location = new System.Drawing.Point(29, 222);
             this.labelComentario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelComentario.Name = "labelComentario";
-            this.labelComentario.Size = new System.Drawing.Size(102, 21);
+            this.labelComentario.Size = new System.Drawing.Size(86, 17);
             this.labelComentario.TabIndex = 36;
             this.labelComentario.Text = "Comentario:";
             // 
@@ -101,10 +104,10 @@
             // 
             this.labelValoracion.AutoSize = true;
             this.labelValoracion.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelValoracion.Location = new System.Drawing.Point(49, 218);
+            this.labelValoracion.Location = new System.Drawing.Point(37, 177);
             this.labelValoracion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelValoracion.Name = "labelValoracion";
-            this.labelValoracion.Size = new System.Drawing.Size(93, 21);
+            this.labelValoracion.Size = new System.Drawing.Size(78, 17);
             this.labelValoracion.TabIndex = 34;
             this.labelValoracion.Text = "Valoración:";
             // 
@@ -112,10 +115,10 @@
             // 
             this.bCancelarEvaluacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bCancelarEvaluacion.Font = new System.Drawing.Font("Modern No. 20", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCancelarEvaluacion.Location = new System.Drawing.Point(392, 508);
+            this.bCancelarEvaluacion.Location = new System.Drawing.Point(294, 413);
             this.bCancelarEvaluacion.Margin = new System.Windows.Forms.Padding(2);
             this.bCancelarEvaluacion.Name = "bCancelarEvaluacion";
-            this.bCancelarEvaluacion.Size = new System.Drawing.Size(98, 29);
+            this.bCancelarEvaluacion.Size = new System.Drawing.Size(74, 24);
             this.bCancelarEvaluacion.TabIndex = 33;
             this.bCancelarEvaluacion.Text = "Cancelar";
             this.bCancelarEvaluacion.UseVisualStyleBackColor = true;
@@ -125,10 +128,10 @@
             // 
             this.bAceptarEvaluacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bAceptarEvaluacion.Font = new System.Drawing.Font("Modern No. 20", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAceptarEvaluacion.Location = new System.Drawing.Point(279, 508);
+            this.bAceptarEvaluacion.Location = new System.Drawing.Point(209, 413);
             this.bAceptarEvaluacion.Margin = new System.Windows.Forms.Padding(2);
             this.bAceptarEvaluacion.Name = "bAceptarEvaluacion";
-            this.bAceptarEvaluacion.Size = new System.Drawing.Size(91, 29);
+            this.bAceptarEvaluacion.Size = new System.Drawing.Size(68, 24);
             this.bAceptarEvaluacion.TabIndex = 32;
             this.bAceptarEvaluacion.Text = "Aceptar";
             this.bAceptarEvaluacion.UseVisualStyleBackColor = true;
@@ -138,10 +141,10 @@
             // 
             this.lblArchivoAdjunto.AutoSize = true;
             this.lblArchivoAdjunto.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArchivoAdjunto.Location = new System.Drawing.Point(39, 417);
+            this.lblArchivoAdjunto.Location = new System.Drawing.Point(29, 339);
             this.lblArchivoAdjunto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblArchivoAdjunto.Name = "lblArchivoAdjunto";
-            this.lblArchivoAdjunto.Size = new System.Drawing.Size(134, 21);
+            this.lblArchivoAdjunto.Size = new System.Drawing.Size(114, 17);
             this.lblArchivoAdjunto.TabIndex = 42;
             this.lblArchivoAdjunto.Text = "Archivo Adjunto:";
             // 
@@ -151,18 +154,20 @@
             // 
             // txtURL
             // 
-            this.txtURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtURL.Location = new System.Drawing.Point(194, 418);
+            this.txtURL.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtURL.Location = new System.Drawing.Point(146, 340);
+            this.txtURL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtURL.Name = "txtURL";
-            this.txtURL.Size = new System.Drawing.Size(200, 24);
+            this.txtURL.Size = new System.Drawing.Size(151, 22);
             this.txtURL.TabIndex = 43;
             // 
             // btnExaminar
             // 
             this.btnExaminar.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExaminar.Location = new System.Drawing.Point(405, 418);
+            this.btnExaminar.Location = new System.Drawing.Point(304, 340);
+            this.btnExaminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExaminar.Name = "btnExaminar";
-            this.btnExaminar.Size = new System.Drawing.Size(98, 23);
+            this.btnExaminar.Size = new System.Drawing.Size(74, 19);
             this.btnExaminar.TabIndex = 44;
             this.btnExaminar.Text = "Examinar";
             this.btnExaminar.UseVisualStyleBackColor = true;
@@ -179,33 +184,35 @@
             this.labelError.BackColor = System.Drawing.Color.Transparent;
             this.labelError.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(38, 508);
+            this.labelError.Location = new System.Drawing.Point(28, 413);
+            this.labelError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(42, 17);
+            this.labelError.Size = new System.Drawing.Size(34, 13);
             this.labelError.TabIndex = 45;
             this.labelError.Text = "error";
             // 
             // numericHoras
             // 
-            this.numericHoras.Font = new System.Drawing.Font("Modern No. 20", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericHoras.Location = new System.Drawing.Point(194, 161);
+            this.numericHoras.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericHoras.Location = new System.Drawing.Point(146, 131);
+            this.numericHoras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericHoras.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.numericHoras.Name = "numericHoras";
-            this.numericHoras.Size = new System.Drawing.Size(120, 24);
+            this.numericHoras.Size = new System.Drawing.Size(90, 22);
             this.numericHoras.TabIndex = 47;
             // 
             // labelHoras
             // 
             this.labelHoras.AutoSize = true;
             this.labelHoras.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHoras.Location = new System.Drawing.Point(39, 159);
+            this.labelHoras.Location = new System.Drawing.Point(29, 129);
             this.labelHoras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHoras.Name = "labelHoras";
-            this.labelHoras.Size = new System.Drawing.Size(141, 21);
+            this.labelHoras.Size = new System.Drawing.Size(117, 17);
             this.labelHoras.TabIndex = 46;
             this.labelHoras.Text = "Horas Invertidas:";
             // 
@@ -213,30 +220,31 @@
             // 
             this.userEvaluado.AutoSize = true;
             this.userEvaluado.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userEvaluado.Location = new System.Drawing.Point(39, 118);
+            this.userEvaluado.Location = new System.Drawing.Point(29, 96);
             this.userEvaluado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userEvaluado.Name = "userEvaluado";
-            this.userEvaluado.Size = new System.Drawing.Size(146, 21);
+            this.userEvaluado.Size = new System.Drawing.Size(121, 17);
             this.userEvaluado.TabIndex = 48;
             this.userEvaluado.Text = "Usuario Evaluado:";
             // 
             // lUserEvaluado
             // 
             this.lUserEvaluado.AutoSize = true;
-            this.lUserEvaluado.Font = new System.Drawing.Font("Modern No. 20", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lUserEvaluado.Font = new System.Drawing.Font("Bahnschrift", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserEvaluado.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lUserEvaluado.Location = new System.Drawing.Point(204, 122);
+            this.lUserEvaluado.Location = new System.Drawing.Point(153, 99);
+            this.lUserEvaluado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lUserEvaluado.Name = "lUserEvaluado";
-            this.lUserEvaluado.Size = new System.Drawing.Size(59, 17);
+            this.lUserEvaluado.Size = new System.Drawing.Size(49, 14);
             this.lUserEvaluado.TabIndex = 49;
             this.lUserEvaluado.Text = "nombre";
             // 
             // EvaluarUsuarioONG
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(537, 565);
+            this.ClientSize = new System.Drawing.Size(403, 459);
             this.Controls.Add(this.lUserEvaluado);
             this.Controls.Add(this.userEvaluado);
             this.Controls.Add(this.numericHoras);
@@ -252,9 +260,11 @@
             this.Controls.Add(this.labelValoracion);
             this.Controls.Add(this.bCancelarEvaluacion);
             this.Controls.Add(this.bAceptarEvaluacion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EvaluarUsuarioONG";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EvaluarUsuarioONG";
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericHoras)).EndInit();

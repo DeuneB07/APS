@@ -44,7 +44,7 @@
             // bAceptarEvaluacion
             // 
             this.bAceptarEvaluacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bAceptarEvaluacion.Font = new System.Drawing.Font("Modern No. 20", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAceptarEvaluacion.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAceptarEvaluacion.Location = new System.Drawing.Point(205, 328);
             this.bAceptarEvaluacion.Margin = new System.Windows.Forms.Padding(2);
             this.bAceptarEvaluacion.Name = "bAceptarEvaluacion";
@@ -57,7 +57,7 @@
             // bCancelarEvaluacion
             // 
             this.bCancelarEvaluacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bCancelarEvaluacion.Font = new System.Drawing.Font("Modern No. 20", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCancelarEvaluacion.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCancelarEvaluacion.Location = new System.Drawing.Point(286, 328);
             this.bCancelarEvaluacion.Margin = new System.Windows.Forms.Padding(2);
             this.bCancelarEvaluacion.Name = "bCancelarEvaluacion";
@@ -93,7 +93,7 @@
             // 
             this.textBoxComentario.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxComentario.Location = new System.Drawing.Point(107, 210);
-            this.textBoxComentario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxComentario.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxComentario.Name = "textBoxComentario";
             this.textBoxComentario.Size = new System.Drawing.Size(230, 88);
             this.textBoxComentario.TabIndex = 17;
@@ -131,7 +131,7 @@
             this.ratingValoracion.ItemBackColor = System.Drawing.Color.White;
             this.ratingValoracion.ItemBorderColor = System.Drawing.Color.Black;
             this.ratingValoracion.Location = new System.Drawing.Point(117, 141);
-            this.ratingValoracion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ratingValoracion.Margin = new System.Windows.Forms.Padding(2);
             this.ratingValoracion.Name = "ratingValoracion";
             this.ratingValoracion.Precision = Syncfusion.Windows.Forms.Tools.PrecisionMode.Half;
             this.ratingValoracion.ResetButton = resetButton1;
@@ -153,9 +153,11 @@
             this.Controls.Add(this.labelValoracion);
             this.Controls.Add(this.bCancelarEvaluacion);
             this.Controls.Add(this.bAceptarEvaluacion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EvaluarActividad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EvaluarActividad";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -208,7 +208,7 @@ namespace APS.Interfaces
             // 
             this.bAceptar.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAceptar.Location = new System.Drawing.Point(510, 354);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(91, 22);
             this.bAceptar.TabIndex = 12;
@@ -220,7 +220,7 @@ namespace APS.Interfaces
             // 
             this.bCancelar.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCancelar.Location = new System.Drawing.Point(610, 354);
-            this.bCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(83, 22);
             this.bCancelar.TabIndex = 13;
@@ -233,7 +233,7 @@ namespace APS.Interfaces
             this.tOrganizador.Enabled = false;
             this.tOrganizador.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tOrganizador.Location = new System.Drawing.Point(156, 30);
-            this.tOrganizador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tOrganizador.Margin = new System.Windows.Forms.Padding(2);
             this.tOrganizador.Name = "tOrganizador";
             this.tOrganizador.Size = new System.Drawing.Size(168, 22);
             this.tOrganizador.TabIndex = 14;
@@ -242,7 +242,7 @@ namespace APS.Interfaces
             // 
             this.tNombreAct.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tNombreAct.Location = new System.Drawing.Point(156, 71);
-            this.tNombreAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tNombreAct.Margin = new System.Windows.Forms.Padding(2);
             this.tNombreAct.Name = "tNombreAct";
             this.tNombreAct.Size = new System.Drawing.Size(168, 22);
             this.tNombreAct.TabIndex = 15;
@@ -251,7 +251,7 @@ namespace APS.Interfaces
             // 
             this.tDescripcion.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tDescripcion.Location = new System.Drawing.Point(156, 104);
-            this.tDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.tDescripcion.Name = "tDescripcion";
             this.tDescripcion.Size = new System.Drawing.Size(168, 59);
             this.tDescripcion.TabIndex = 16;
@@ -261,7 +261,7 @@ namespace APS.Interfaces
             // 
             this.tNumPlazas.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tNumPlazas.Location = new System.Drawing.Point(156, 181);
-            this.tNumPlazas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tNumPlazas.Margin = new System.Windows.Forms.Padding(2);
             this.tNumPlazas.Name = "tNumPlazas";
             this.tNumPlazas.Size = new System.Drawing.Size(43, 22);
             this.tNumPlazas.TabIndex = 18;
@@ -270,7 +270,7 @@ namespace APS.Interfaces
             // 
             this.tNumHoras.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tNumHoras.Location = new System.Drawing.Point(156, 211);
-            this.tNumHoras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tNumHoras.Margin = new System.Windows.Forms.Padding(2);
             this.tNumHoras.Name = "tNumHoras";
             this.tNumHoras.Size = new System.Drawing.Size(43, 22);
             this.tNumHoras.TabIndex = 19;
@@ -279,7 +279,7 @@ namespace APS.Interfaces
             // 
             this.dateTimePickerFechaIni.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerFechaIni.Location = new System.Drawing.Point(414, 214);
-            this.dateTimePickerFechaIni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFechaIni.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFechaIni.Name = "dateTimePickerFechaIni";
             this.dateTimePickerFechaIni.Size = new System.Drawing.Size(230, 22);
             this.dateTimePickerFechaIni.TabIndex = 20;
@@ -288,7 +288,7 @@ namespace APS.Interfaces
             // 
             this.dateTimePickerFechaFin.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerFechaFin.Location = new System.Drawing.Point(414, 246);
-            this.dateTimePickerFechaFin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFechaFin.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFechaFin.Name = "dateTimePickerFechaFin";
             this.dateTimePickerFechaFin.Size = new System.Drawing.Size(230, 22);
             this.dateTimePickerFechaFin.TabIndex = 21;
@@ -297,7 +297,7 @@ namespace APS.Interfaces
             // 
             this.tLugar.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tLugar.Location = new System.Drawing.Point(156, 243);
-            this.tLugar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tLugar.Margin = new System.Windows.Forms.Padding(2);
             this.tLugar.Name = "tLugar";
             this.tLugar.Size = new System.Drawing.Size(168, 22);
             this.tLugar.TabIndex = 22;
@@ -306,7 +306,7 @@ namespace APS.Interfaces
             // 
             this.tURL.Enabled = false;
             this.tURL.Location = new System.Drawing.Point(423, 37);
-            this.tURL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tURL.Margin = new System.Windows.Forms.Padding(2);
             this.tURL.Name = "tURL";
             this.tURL.Size = new System.Drawing.Size(178, 20);
             this.tURL.TabIndex = 23;
@@ -337,7 +337,7 @@ namespace APS.Interfaces
             // 
             this.btnExaminar.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExaminar.Location = new System.Drawing.Point(423, 167);
-            this.btnExaminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExaminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnExaminar.Name = "btnExaminar";
             this.btnExaminar.Size = new System.Drawing.Size(82, 20);
             this.btnExaminar.TabIndex = 28;
@@ -394,7 +394,7 @@ namespace APS.Interfaces
             // 
             this.btnReset.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.Location = new System.Drawing.Point(532, 167);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(86, 20);
             this.btnReset.TabIndex = 33;
@@ -442,9 +442,11 @@ namespace APS.Interfaces
             this.Controls.Add(this.labelDescripcion);
             this.Controls.Add(this.labelNombreAct);
             this.Controls.Add(this.labelOrganizador);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NuevaActividad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nueva Actividad";
             this.Load += new System.EventHandler(this.NuevaActividad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ambitoTrabajoEBindingSource)).EndInit();

@@ -46,5 +46,10 @@ namespace APS.Interfaces
             pagina.ShowDialog();
             this.Visible = true;
         }
+
+        private void bExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

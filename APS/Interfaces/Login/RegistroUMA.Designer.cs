@@ -454,9 +454,11 @@
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.b_cancelarReg);
             this.Controls.Add(this.b_aceptarReg);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegistroUMA";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registro";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

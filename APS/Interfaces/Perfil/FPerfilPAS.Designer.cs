@@ -324,7 +324,10 @@
             this.Controls.Add(this.lShowNombre);
             this.Controls.Add(this.lNombre);
             this.Controls.Add(this.picPerfil);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FPerfilPAS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Perfil";
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
             this.ResumeLayout(false);

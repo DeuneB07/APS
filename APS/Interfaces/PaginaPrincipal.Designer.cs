@@ -464,6 +464,7 @@
             this.Controls.Add(this.pictureUser);
             this.Controls.Add(this.lWelcome);
             this.Controls.Add(this.pictHistorial);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PaginaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

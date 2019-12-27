@@ -304,8 +304,10 @@
             this.Controls.Add(this.lComp);
             this.Controls.Add(this.bCancelar);
             this.Controls.Add(this.bConfirmar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FAnadirPreferencias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Introduzca Preferencia";
             this.Load += new System.EventHandler(this.FAnadirPreferencias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gradosBindingSource)).EndInit();
