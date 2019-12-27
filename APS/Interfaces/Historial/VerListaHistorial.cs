@@ -124,7 +124,7 @@ namespace APS.Interfaces.Historial
             int c = 0;
             foreach (Actividad_Realizada act in lista)
             {
-                CartelActividadesRealizadas cartel = new CartelActividadesRealizadas(act.Participante,act);
+                CartelActividadesRealizadas cartel = new CartelActividadesRealizadas(user,act);
                 if (!user.Rol.NombreRol.Equals("ONG"))
                 {
                     if (c % 3 == 0) cartel.BackColor = System.Drawing.Color.DarkBlue;

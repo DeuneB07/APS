@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection1 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
-            Syncfusion.Windows.Forms.Tools.ResetButton resetButton1 = new Syncfusion.Windows.Forms.Tools.ResetButton();
-            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection2 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
-            Syncfusion.Windows.Forms.Tools.ResetButton resetButton2 = new Syncfusion.Windows.Forms.Tools.ResetButton();
-            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection3 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
-            Syncfusion.Windows.Forms.Tools.ResetButton resetButton3 = new Syncfusion.Windows.Forms.Tools.ResetButton();
+            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection4 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
+            Syncfusion.Windows.Forms.Tools.ResetButton resetButton4 = new Syncfusion.Windows.Forms.Tools.ResetButton();
+            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection5 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
+            Syncfusion.Windows.Forms.Tools.ResetButton resetButton5 = new Syncfusion.Windows.Forms.Tools.ResetButton();
+            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection6 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
+            Syncfusion.Windows.Forms.Tools.ResetButton resetButton6 = new Syncfusion.Windows.Forms.Tools.ResetButton();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartelActividadesRealizadas));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lHorasHechas = new System.Windows.Forms.Label();
+            this.lblHorasRealizadas = new System.Windows.Forms.Label();
             this.ratingPDI = new Syncfusion.Windows.Forms.Tools.RatingControl();
             this.ratingONG = new Syncfusion.Windows.Forms.Tools.RatingControl();
             this.ratingUser = new Syncfusion.Windows.Forms.Tools.RatingControl();
@@ -61,8 +63,8 @@
             this.bVerMas = new System.Windows.Forms.Button();
             this.labelName = new System.Windows.Forms.Label();
             this.pict = new System.Windows.Forms.PictureBox();
-            this.lblHorasRealizadas = new System.Windows.Forms.Label();
-            this.lHorasHechas = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lUsuario = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +72,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lUsuario);
+            this.panel1.Controls.Add(this.lblUsuario);
             this.panel1.Controls.Add(this.lHorasHechas);
             this.panel1.Controls.Add(this.lblHorasRealizadas);
             this.panel1.Controls.Add(this.ratingPDI);
@@ -103,16 +107,39 @@
             this.panel1.Size = new System.Drawing.Size(1070, 209);
             this.panel1.TabIndex = 3;
             // 
+            // lHorasHechas
+            // 
+            this.lHorasHechas.AutoSize = true;
+            this.lHorasHechas.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lHorasHechas.Location = new System.Drawing.Point(795, 174);
+            this.lHorasHechas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lHorasHechas.Name = "lHorasHechas";
+            this.lHorasHechas.Size = new System.Drawing.Size(36, 17);
+            this.lHorasHechas.TabIndex = 35;
+            this.lHorasHechas.Text = "num";
+            // 
+            // lblHorasRealizadas
+            // 
+            this.lblHorasRealizadas.AutoSize = true;
+            this.lblHorasRealizadas.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHorasRealizadas.Location = new System.Drawing.Point(672, 172);
+            this.lblHorasRealizadas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHorasRealizadas.Name = "lblHorasRealizadas";
+            this.lblHorasRealizadas.Size = new System.Drawing.Size(115, 17);
+            this.lblHorasRealizadas.TabIndex = 34;
+            this.lblHorasRealizadas.Text = "NºHoras Hechas:";
+            // 
             // ratingPDI
             // 
-            this.ratingPDI.Images = customImageCollection1;
+            this.ratingPDI.Enabled = false;
+            this.ratingPDI.Images = customImageCollection4;
             this.ratingPDI.ItemBackColor = System.Drawing.Color.White;
             this.ratingPDI.ItemBorderColor = System.Drawing.Color.Black;
             this.ratingPDI.ItemSize = new System.Drawing.Size(18, 18);
             this.ratingPDI.Location = new System.Drawing.Point(325, 172);
             this.ratingPDI.Name = "ratingPDI";
             this.ratingPDI.Precision = Syncfusion.Windows.Forms.Tools.PrecisionMode.Half;
-            this.ratingPDI.ResetButton = resetButton1;
+            this.ratingPDI.ResetButton = resetButton4;
             this.ratingPDI.Size = new System.Drawing.Size(307, 30);
             this.ratingPDI.TabIndex = 33;
             this.ratingPDI.Text = "ratingControl3";
@@ -120,28 +147,30 @@
             // 
             // ratingONG
             // 
-            this.ratingONG.Images = customImageCollection2;
+            this.ratingONG.Enabled = false;
+            this.ratingONG.Images = customImageCollection5;
             this.ratingONG.ItemBackColor = System.Drawing.Color.White;
             this.ratingONG.ItemBorderColor = System.Drawing.Color.Black;
             this.ratingONG.ItemSize = new System.Drawing.Size(18, 18);
             this.ratingONG.Location = new System.Drawing.Point(325, 131);
             this.ratingONG.Name = "ratingONG";
             this.ratingONG.Precision = Syncfusion.Windows.Forms.Tools.PrecisionMode.Half;
-            this.ratingONG.ResetButton = resetButton2;
+            this.ratingONG.ResetButton = resetButton5;
             this.ratingONG.Size = new System.Drawing.Size(326, 27);
             this.ratingONG.TabIndex = 32;
             this.ratingONG.Text = "ratingControl2";
             // 
             // ratingUser
             // 
-            this.ratingUser.Images = customImageCollection3;
+            this.ratingUser.Enabled = false;
+            this.ratingUser.Images = customImageCollection6;
             this.ratingUser.ItemBackColor = System.Drawing.Color.White;
             this.ratingUser.ItemBorderColor = System.Drawing.Color.Black;
             this.ratingUser.ItemSize = new System.Drawing.Size(18, 18);
             this.ratingUser.Location = new System.Drawing.Point(325, 94);
             this.ratingUser.Name = "ratingUser";
             this.ratingUser.Precision = Syncfusion.Windows.Forms.Tools.PrecisionMode.Half;
-            this.ratingUser.ResetButton = resetButton3;
+            this.ratingUser.ResetButton = resetButton6;
             this.ratingUser.Size = new System.Drawing.Size(297, 25);
             this.ratingUser.TabIndex = 31;
             this.ratingUser.Text = "ratingControl1";
@@ -390,27 +419,29 @@
             this.pict.TabIndex = 6;
             this.pict.TabStop = false;
             // 
-            // lblHorasRealizadas
+            // lblUsuario
             // 
-            this.lblHorasRealizadas.AutoSize = true;
-            this.lblHorasRealizadas.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHorasRealizadas.Location = new System.Drawing.Point(672, 172);
-            this.lblHorasRealizadas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHorasRealizadas.Name = "lblHorasRealizadas";
-            this.lblHorasRealizadas.Size = new System.Drawing.Size(115, 17);
-            this.lblHorasRealizadas.TabIndex = 34;
-            this.lblHorasRealizadas.Text = "NºHoras Hechas:";
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(227, 131);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(60, 17);
+            this.lblUsuario.TabIndex = 36;
+            this.lblUsuario.Text = "Usuario:";
+            this.lblUsuario.Visible = false;
             // 
-            // lHorasHechas
+            // lUsuario
             // 
-            this.lHorasHechas.AutoSize = true;
-            this.lHorasHechas.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lHorasHechas.Location = new System.Drawing.Point(795, 174);
-            this.lHorasHechas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lHorasHechas.Name = "lHorasHechas";
-            this.lHorasHechas.Size = new System.Drawing.Size(36, 17);
-            this.lHorasHechas.TabIndex = 35;
-            this.lHorasHechas.Text = "num";
+            this.lUsuario.AutoSize = true;
+            this.lUsuario.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lUsuario.Location = new System.Drawing.Point(339, 131);
+            this.lUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lUsuario.Name = "lUsuario";
+            this.lUsuario.Size = new System.Drawing.Size(69, 17);
+            this.lUsuario.TabIndex = 37;
+            this.lUsuario.Text = "nounresp";
+            this.lUsuario.Visible = false;
             // 
             // CartelActividadesRealizadas
             // 
@@ -457,5 +488,7 @@
         private System.Windows.Forms.Label lValoracionONG;
         private System.Windows.Forms.Label lblHorasRealizadas;
         private System.Windows.Forms.Label lHorasHechas;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lUsuario;
     }
 }

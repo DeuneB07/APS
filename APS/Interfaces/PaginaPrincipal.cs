@@ -1655,7 +1655,7 @@ namespace APS.Interfaces
 
         private void pictDevelop_Click(object sender, EventArgs e) //Botón Web Developer
         {
-            System.Diagnostics.Process.Start("firefox.exe", "https://wepass502328605.wordpress.com/");
+            System.Diagnostics.Process.Start("chrome.exe", "https://wepass502328605.wordpress.com/");
         }
 
         private void bDuda_Click(object sender, EventArgs e) //Botón Duda Help
