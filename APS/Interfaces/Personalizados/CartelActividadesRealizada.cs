@@ -24,6 +24,19 @@ namespace APS.Interfaces.Personalizados
             this.actRealizada = actRealizada;
             Actividad a = actRealizada.Actividad;
             this.user = user;
+            if (user.Rol.NombreRol.Equals("ONG"))
+            {
+                lTuValoracion.Text = "Valoración:";
+                lValoracionONG.Visible = false;
+                ratingONG.Visible = false;
+                bVerMas.Visible = false;
+                lValoracionPDI.Visible = false;
+                ratingPDI.Visible = false;
+                lblUsuario.Visible = true;
+                lUsuario.Text = actRealizada.Participante.Nombre + " " + actRealizada.Participante.Apellido1 + " " + actRealizada.Participante.Apellido2;
+                lUsuario.Visible = true;
+            }
+
             this.labelName.Text = a.NombreAct;
             this.lTipoActividad.Text = a.TipoAct.ToString();
             this.lShowIni.Text = a.FechaInicio.ToShortDateString();
@@ -36,13 +49,17 @@ namespace APS.Interfaces.Personalizados
 
             if (a.Responsable != null)
             {
-                this.lShowResp.Text = a.Responsable.Nombre + " " + a.Responsable.Apellido1 + " " + a.Responsable.Apellido2;
-                lValoracionPDI.Visible = true;
-                ratingPDI.Visible = true;
-            } else
+               this.lShowResp.Text = a.Responsable.Nombre + " " + a.Responsable.Apellido1 + " " + a.Responsable.Apellido2;
+                if (!user.Rol.NombreRol.Equals("ONG"))
+                {
+                    lValoracionPDI.Visible = true;
+                    ratingPDI.Visible = true;
+                }
+            }
+            else
             {
-                lResp.Visible = false;
-                lShowResp.Visible = false;
+               lResp.Visible = false;
+               lShowResp.Visible = false;
             }
 
             if (actRealizada.FechaValoracionUsuario != DateTime.MinValue)
@@ -56,23 +73,25 @@ namespace APS.Interfaces.Personalizados
                 ratingUser.ItemBackColor = Color.Silver;
             }
 
+            if (!user.Rol.NombreRol.Equals("ONG"))
+            {
+                if (actRealizada.FechaValoracionONG != DateTime.MinValue)
+                {
+                    ratingONG.Value = actRealizada.ValoracionONG;
+                }
+                else
+                {
+                    ratingONG.ItemBackColor = Color.Silver;
+                }
 
-            if(actRealizada.FechaValoracionONG != DateTime.MinValue)
-            {
-                ratingONG.Value = actRealizada.ValoracionONG;
-            }
-            else
-            {
-                ratingONG.ItemBackColor = Color.Silver;
-            }
-
-            if (actRealizada.FechaValoracionProfesor != DateTime.MinValue)
-            {
-                ratingPDI.Value = actRealizada.ValoracionProfesor;
-            }
-            else
-            {
-                ratingPDI.ItemBackColor = Color.Silver;
+                if (actRealizada.FechaValoracionProfesor != DateTime.MinValue)
+                {
+                    ratingPDI.Value = actRealizada.ValoracionProfesor;
+                }
+                else
+                {
+                    ratingPDI.ItemBackColor = Color.Silver;
+                }
             }
 
         }
