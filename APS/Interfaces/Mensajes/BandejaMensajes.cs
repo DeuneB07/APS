@@ -46,7 +46,6 @@ namespace APS.Interfaces.Perfil
             int c = 0;
             foreach (Mensaje msg in mensajes)
             {
-                Console.WriteLine(msg.ToString());
                 carMensajes[c] = new CartelMensajes(msg);
                 panelMensajes.Controls.Add(carMensajes[c], 0, c);
                 panelMensajes.RowCount = panelMensajes.RowCount + 1;
@@ -80,7 +79,6 @@ namespace APS.Interfaces.Perfil
             int c = 0;
             foreach (Mensaje msg in mensajes)
             {
-                //Console.WriteLine("FOREACH MENSAJES ENVIADOS: " + msg.Emisor.Email + " // " + msg.Receptor.Email);
                 carMensajes[c] = new CartelMensajes(msg);
                 panelMensajes.Controls.Add(carMensajes[c], 0, c);
                 panelMensajes.RowCount = panelMensajes.RowCount + 1;
@@ -89,6 +87,8 @@ namespace APS.Interfaces.Perfil
                 Panel panel = (Panel)carMensajes[c].Controls.Find("panel1", false)[0];
                 Button bResponder = (Button)panel.Controls.Find("bResponder", false)[0];
                 Button bEliminar = (Button)panel.Controls.Find("bEliminar", false)[0];
+                PictureBox pictNovedad = (PictureBox)panel.Controls.Find("pictNovedad", false)[0];
+                pictNovedad.Visible = false;
 
                 //PROGRAMACIÓN BOTONES
                 bResponder.Visible = false;
@@ -189,6 +189,7 @@ namespace APS.Interfaces.Perfil
         //
         private void bSalir_Click(object sender, EventArgs e)
         {
+            foreach(Mensaje m in user.MensajesRecibidos) m.Leido = true;
             this.Close();
         }
     }

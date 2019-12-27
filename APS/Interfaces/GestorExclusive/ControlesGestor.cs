@@ -407,6 +407,7 @@ namespace APS.Interfaces.GestorExclusive
                 //BOTON SOLICITAR
                 Panel panel = (Panel)usrC[c].Controls.Find("panel1", false)[0];
                 Button bBorrar = (Button)panel.Controls.Find("bBorrar", false)[0];
+                if (u.Rol.NombreRol.Equals("GESTOR")) bBorrar.Visible = false;
 
                 //PROGRAMACIÓN BOTONES
                 bBorrar.Click += (sender, EventArgs) => { bBorrarUsuario_Click(sender, EventArgs, u); };
@@ -437,6 +438,7 @@ namespace APS.Interfaces.GestorExclusive
                 //BOTON SOLICITAR
                 Panel panel = (Panel)usrC[c].Controls.Find("panel1", false)[0];
                 Button bBorrar = (Button)panel.Controls.Find("bBorrar", false)[0];
+                if (u.Rol.NombreRol.Equals("GESTOR")) bBorrar.Visible = false;
 
                 //PROGRAMACIÓN BOTONES
                 bBorrar.Click += (sender, EventArgs) => { bBorrarUsuario_Click(sender, EventArgs, u); };

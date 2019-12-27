@@ -19,6 +19,7 @@ namespace APS.Mapeo
         private Usuario receptor;
         private Boolean borradoEmisor;
         private Boolean borradoReceptor;
+        private Boolean leido;
         
         public static List<Mensaje> ListaMensajes()
         {
@@ -43,7 +44,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Mensaje> lista = new List<Mensaje>();
 
-            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje, emailEmisor, emailReceptor FROM Mensajes WHERE emailEmisor = '" + emisor.Email + "' and borradoEmisor = "+ 0 +";"))
+            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje, emailEmisor, emailReceptor FROM Mensajes WHERE emailEmisor = '" + emisor.Email + "' and borradoEmisor = "+ 0 + " ORDER BY fecha desc;"))
             {
                 String emailE = tupla[1].ToString();
                 String emailR = tupla[2].ToString();
@@ -60,7 +61,7 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Mensaje> lista = new List<Mensaje>();
 
-            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje, emailEmisor, emailReceptor FROM Mensajes WHERE emailReceptor = '" + receptor.Email + "' and borradoReceptor = "+ 0 +";"))
+            foreach (object[] tupla in miBD.Select("SELECT ID_Mensaje, emailEmisor, emailReceptor FROM Mensajes WHERE emailReceptor = '" + receptor.Email + "' and borradoReceptor = "+ 0 + " ORDER BY fecha desc;"))
             {
                 String emailE = tupla[1].ToString();
                 String emailR = tupla[2].ToString();
@@ -69,6 +70,18 @@ namespace APS.Mapeo
                 lista.Add(m);
             }
             return lista;
+        }
+
+        public static int ListaMensajesNoLeidos(Usuario receptor)
+        {
+            // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Mensaje> lista = new List<Mensaje>();
+
+            int num = 0;
+            object[] tupla = miBD.Select("SELECT count(ID_Mensaje) FROM Mensajes WHERE emailReceptor = '" + receptor.Email + "' and leido = " + 0 + ";")[0];
+            if (tupla[0] != null) num = (int)tupla[0];
+            return num;
         }
 
         public Mensaje(int id ,Usuario emisor, Usuario receptor)
@@ -88,14 +101,15 @@ namespace APS.Mapeo
 
             this.borradoEmisor = (Boolean) tupla[6];
             this.borradoReceptor = (Boolean) tupla[7];
+            this.leido = (Boolean)tupla[8];
         }
 
         public Mensaje(String asunto, String texto, DateTime date, Usuario emisor, Usuario receptor)
         {
             // Crea el objeto y lo inserta en la base de datos
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Insert("INSERT INTO Mensajes (asunto,texto,fecha,emailEmisor, emailReceptor, borradoEmisor, borradoReceptor) VALUES("
-                    + "'" + asunto + "', '" + texto + "', '" + date.ToShortDateString() + "', '" + emisor.Email + "', '" + receptor.Email + "', " + 0 + ", " + 0 +");");
+            miBD.Insert("INSERT INTO Mensajes (asunto,texto,fecha,emailEmisor, emailReceptor, borradoEmisor, borradoReceptor, leido) VALUES("
+                    + "'" + asunto + "', '" + texto + "', '" + date.ToShortDateString() + "', '" + emisor.Email + "', '" + receptor.Email + "', " + 0 + ", " + 0 +", " + 0 + ");");
             this.asunto = asunto;
             this.texto = texto;
             this.date = date;
@@ -103,6 +117,7 @@ namespace APS.Mapeo
             this.receptor = receptor;
             this.borradoEmisor = false;
             this.borradoReceptor = false;
+            this.leido = false;
             ID_mensaje = (int)miBD.SelectScalar("SELECT max(ID_Mensaje) FROM Mensajes;");
         }
 
@@ -196,6 +211,18 @@ namespace APS.Mapeo
             }
         }
 
+        public Boolean Leido
+        {
+            get { return leido; }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                miBD.Update("UPDATE Mensajes SET leido = " + (value ? 1 : 0)
+                + " WHERE ID_Mensaje =" + this.ID_Mensaje + ";");
+                leido = value;
+            }
+        }
+
         public void BorraMensaje()
         {
             // Actualiza el atributo en memoria y en la base de datos
@@ -206,6 +233,7 @@ namespace APS.Mapeo
             date = DateTime.Today;
             borradoEmisor = borradoReceptor = false;
             ID_mensaje = -1;
+            leido = false;
         }
 
 

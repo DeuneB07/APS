@@ -21,7 +21,8 @@ namespace APS.Interfaces.Personalizados
             InitializeComponent();
             this.m = m;
 
-            if (m.Asunto.Equals("")) lShowAsunto.Text = m.Asunto;
+            if (m.Leido) pictNovedad.Visible = false;
+            if (m.Asunto != null && !m.Asunto.Equals("")) lShowAsunto.Text = m.Asunto;
             lShowMensaje.Text = m.Texto;
             lShowRemite.Text = m.Emisor.Email;
             lShowDest.Text = m.Receptor.Email;

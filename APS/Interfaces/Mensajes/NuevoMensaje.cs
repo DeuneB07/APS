@@ -52,5 +52,11 @@ namespace APS.Interfaces.Mensajes
         {
             this.Close();
         }
+
+        private void pictUtil_Click(object sender, EventArgs e)
+        {
+            CorreosUtiles mailU = new CorreosUtiles();
+            mailU.ShowDialog();
+        }
     }
 }

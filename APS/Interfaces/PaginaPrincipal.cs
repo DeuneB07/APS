@@ -156,6 +156,21 @@ namespace APS.Interfaces
             else if (user.AccesoPantalla("TODAS")) cargarTodasActividadesInicio();
             else if (user.AccesoPantalla("VALORACION")) cargarValoracionActividadesInicio();
 
+            //Notificacion Mensajes
+            cargarNotificaciones();
+
+        }
+
+        private void cargarNotificaciones()
+        {
+            int sinLeer = Mensaje.ListaMensajesNoLeidos(user);
+            if (sinLeer > 0)
+            {
+                bNotis.Visible = true;
+                if (sinLeer < 10) bNotis.Text = sinLeer + "";
+                else bNotis.Text = "+";
+            }
+            else bNotis.Visible = false;
         }
 
         private void bMatch_Click(object sender, EventArgs eventArgs)
@@ -1625,6 +1640,7 @@ namespace APS.Interfaces
             this.Visible = false;
             msg.ShowDialog();
             this.Visible = true;
+            cargarNotificaciones();
         }
 
         private void pictActividad_Click(object sender, EventArgs e) //Abrir Actividad

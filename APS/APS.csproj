@@ -329,6 +329,12 @@
     <Compile Include="Interfaces\GestorExclusive\InsertarUsuarios.Designer.cs">
       <DependentUpon>InsertarUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Mensajes\CorreosUtiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Mensajes\CorreosUtiles.Designer.cs">
+      <DependentUpon>CorreosUtiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelActividadesRealizada.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -680,6 +686,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\GestorExclusive\InsertarUsuarios.resx">
       <DependentUpon>InsertarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Mensajes\CorreosUtiles.resx">
+      <DependentUpon>CorreosUtiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelActividadesRealizada.resx">
       <DependentUpon>CartelActividadesRealizada.cs</DependentUpon>

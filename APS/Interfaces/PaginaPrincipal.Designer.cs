@@ -64,6 +64,7 @@
             this.bDuda = new System.Windows.Forms.Button();
             this.pictGestor = new System.Windows.Forms.PictureBox();
             this.lGestor = new System.Windows.Forms.Label();
+            this.bNotis = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gradosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSet)).BeginInit();
@@ -431,12 +432,30 @@
             this.lGestor.TabIndex = 51;
             this.lGestor.Text = "Añadir Elementos";
             // 
+            // bNotis
+            // 
+            this.bNotis.BackColor = System.Drawing.Color.Transparent;
+            this.bNotis.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bNotis.BackgroundImage")));
+            this.bNotis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bNotis.FlatAppearance.BorderSize = 0;
+            this.bNotis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bNotis.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bNotis.ForeColor = System.Drawing.Color.Black;
+            this.bNotis.Location = new System.Drawing.Point(918, 186);
+            this.bNotis.Name = "bNotis";
+            this.bNotis.Size = new System.Drawing.Size(29, 29);
+            this.bNotis.TabIndex = 53;
+            this.bNotis.Text = "+";
+            this.bNotis.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bNotis.UseVisualStyleBackColor = false;
+            // 
             // PaginaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(955, 634);
+            this.Controls.Add(this.bNotis);
             this.Controls.Add(this.pictGestor);
             this.Controls.Add(this.lGestor);
             this.Controls.Add(this.bDuda);
@@ -452,7 +471,6 @@
             this.Controls.Add(this.estudianteMenu);
             this.Controls.Add(this.lCerrarSesion);
             this.Controls.Add(this.pictCerrarSesion);
-            this.Controls.Add(this.pictMensajes);
             this.Controls.Add(this.pictActividad);
             this.Controls.Add(this.pictProyectos);
             this.Controls.Add(this.pictPerfil);
@@ -464,6 +482,7 @@
             this.Controls.Add(this.pictureUser);
             this.Controls.Add(this.lWelcome);
             this.Controls.Add(this.pictHistorial);
+            this.Controls.Add(this.pictMensajes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PaginaPrincipal";
@@ -526,5 +545,6 @@
         private System.Windows.Forms.Button bDuda;
         private System.Windows.Forms.PictureBox pictGestor;
         private System.Windows.Forms.Label lGestor;
+        private System.Windows.Forms.Button bNotis;
     }
 }
