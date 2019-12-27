@@ -412,7 +412,7 @@
             this.pictGestor.BackColor = System.Drawing.Color.Transparent;
             this.pictGestor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictGestor.BackgroundImage")));
             this.pictGestor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictGestor.Location = new System.Drawing.Point(864, 387);
+            this.pictGestor.Location = new System.Drawing.Point(864, 295);
             this.pictGestor.Name = "pictGestor";
             this.pictGestor.Size = new System.Drawing.Size(60, 60);
             this.pictGestor.TabIndex = 52;
@@ -425,7 +425,7 @@
             this.lGestor.BackColor = System.Drawing.Color.Transparent;
             this.lGestor.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lGestor.ForeColor = System.Drawing.Color.Black;
-            this.lGestor.Location = new System.Drawing.Point(846, 450);
+            this.lGestor.Location = new System.Drawing.Point(847, 358);
             this.lGestor.Name = "lGestor";
             this.lGestor.Size = new System.Drawing.Size(96, 13);
             this.lGestor.TabIndex = 51;

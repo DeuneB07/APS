@@ -47,6 +47,9 @@ namespace APS.Interfaces.Perfil
             this.modiUser.Visible = true;
             this.btnBorrarImagen.Visible = true;
             this.btnCambiarImagen.Visible = true;
+            this.lPass2.Visible = false;
+            this.textPass.Visible = true;
+            this.textPass.Text = usr.Password;
         }
 
         private void bBaja_Click(object sender, EventArgs e)
@@ -64,6 +67,9 @@ namespace APS.Interfaces.Perfil
                 lShowUser.Text = usr.NombreUser;
             }
 
+            if (!textPass.Text.Equals(usr.Password) && textPass.Text.Equals(""))
+                usr.Password = textPass.Text;
+
             if (!this.tURL.Text.Trim().Equals("")) usr.Imagen = pictureBoxPerfil.Image;
 
             this.bBaja.Visible = true;
@@ -75,6 +81,8 @@ namespace APS.Interfaces.Perfil
             this.modiUser.Visible = false;
             this.btnCambiarImagen.Visible = false;
             this.btnBorrarImagen.Visible = false;
+            this.lPass2.Visible = true;
+            this.textPass.Visible = false;
         }
 
         private void bCancelarC_Click(object sender, EventArgs e)
@@ -88,6 +96,8 @@ namespace APS.Interfaces.Perfil
             this.modiUser.Visible = false;
             this.btnCambiarImagen.Visible = false;
             this.btnBorrarImagen.Visible = false;
+            this.lPass2.Visible = true;
+            this.textPass.Visible = false;
         }
 
         private void bAtras_Click(object sender, EventArgs e)

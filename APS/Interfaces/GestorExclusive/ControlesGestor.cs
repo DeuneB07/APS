@@ -30,6 +30,7 @@ namespace APS.Interfaces.GestorExclusive
             {
                 panelContainer.Visible = true;
                 bInsertar.Visible = true;
+                lInsertar.Visible = true;
                 charged = opcion.COMPETENCIAS;
                 cargarCompetencias();
             }
@@ -41,6 +42,7 @@ namespace APS.Interfaces.GestorExclusive
             {
                 panelContainer.Visible = true;
                 bInsertar.Visible = true;
+                lInsertar.Visible = true;
                 charged = opcion.AMBITO_TRABAJO;
                 cargarAmbitosTrabajo();
             }
@@ -52,6 +54,7 @@ namespace APS.Interfaces.GestorExclusive
             {
                 panelContainer.Visible = true;
                 bInsertar.Visible = true;
+                lInsertar.Visible = true;
                 charged = opcion.TIPO_TRABAJO;
                 cargarTiposTrabajo();
             }
@@ -63,6 +66,7 @@ namespace APS.Interfaces.GestorExclusive
             {
                 panelContainer.Visible = true;
                 bInsertar.Visible = false;
+                lInsertar.Visible = false;
                 charged = opcion.SOLICITUDES;
                 cargarSolicitudes();
             }
@@ -74,6 +78,7 @@ namespace APS.Interfaces.GestorExclusive
             {
                 panelContainer.Visible = true;
                 bInsertar.Visible = true;
+                lInsertar.Visible = true;
                 charged = opcion.ASIGNATURAS;
                 cargarAsignaturas();
             }
@@ -85,6 +90,7 @@ namespace APS.Interfaces.GestorExclusive
             {
                 panelContainer.Visible = true;
                 bInsertar.Visible = true;
+                lInsertar.Visible = true;
                 charged = opcion.GRADOS;
                 cargarGrados();
             }
@@ -95,7 +101,8 @@ namespace APS.Interfaces.GestorExclusive
             if (!charged.Equals(opcion.USUARIOS))
             {
                 panelContainer.Visible = true;
-                bInsertar.Visible = true;
+                bInsertar.Visible = false;
+                lInsertar.Visible = false;
                 charged = opcion.USUARIOS;
                 cargarUsuarios();
             }
@@ -121,7 +128,6 @@ namespace APS.Interfaces.GestorExclusive
                 panelElements.Controls.Add(compC[c], 0, c);
                 panelElements.RowCount = panelElements.RowCount + 1;
                 compC[c].Location = new Point(compC[c].Location.X, (compC[c].Size.Height * c));
-                compC[c].BackColor = Color.DeepPink;
 
                 //BOTON SOLICITAR
                 Panel panel = (Panel)compC[c].Controls.Find("panel1", false)[0];
@@ -151,9 +157,66 @@ namespace APS.Interfaces.GestorExclusive
 
         private void cargarSolicitudes()
         {
+            panelElements.Controls.Clear();
+            panelElements.RowCount = 1;
+            panelElements.AutoScroll = false;
+            panelUtil.AutoScroll = false;
+            panelUtil.AutoScroll = true;
 
+            List<Usuario> solicitudes = Usuario.ListaUsuarios();
+            CSolicitudes[] solC = new CSolicitudes[solicitudes.Count];
+            int c = 0;
+
+            foreach (Usuario usr in solicitudes)
+            {
+                solC[c] = new CSolicitudes(usr);
+                panelElements.Controls.Add(solC[c], 0, c);
+                panelElements.RowCount = panelElements.RowCount + 1;
+                solC[c].Location = new Point(solC[c].Location.X, (solC[c].Size.Height * c));
+
+                //BOTONES
+                Panel panel = (Panel)solC[c].Controls.Find("panel1", false)[0];
+                Button bCancelar = (Button)panel.Controls.Find("bCancelar", false)[0];
+                Button bAceptar = (Button)panel.Controls.Find("bAceptar", false)[0];
+
+                //PROGRAMACIÓN BOTONES
+                bCancelar.Click += (sender, EventArgs) => { bCancelarSolicitud_Click(sender, EventArgs, usr); };
+                bAceptar.Click += (sender, EventArgs) => { bAceptarSolicitud_Click(sender, EventArgs, usr); };
+
+                c++;
+            }
         }
-        
+
+        private void bAceptarSolicitud_Click(object sender, EventArgs eventArgs, Usuario usr)
+        {
+            DialogResult emCierreDialog;
+            string mensaje = "¿Está seguro de que quiere aceptar?";
+            string caption = "¡AVISO!";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
+
+            if (emCierreDialog == DialogResult.Yes)
+            {
+                //usr.BorraUsuario();
+                cargarSolicitudes();
+            }
+        }
+
+        private void bCancelarSolicitud_Click(object sender, EventArgs eventArgs, Usuario usr)
+        {
+            DialogResult emCierreDialog;
+            string mensaje = "¿Está seguro de que quiere cancelar?";
+            string caption = "¡AVISO!";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
+
+            if (emCierreDialog == DialogResult.Yes)
+            {
+                usr.BorraUsuario();
+                cargarSolicitudes();
+            }
+        }
+
         private void cargarAmbitosTrabajo()
         {
             panelElements.Controls.Clear();
@@ -172,7 +235,6 @@ namespace APS.Interfaces.GestorExclusive
                 panelElements.Controls.Add(ambC[c], 0, c);
                 panelElements.RowCount = panelElements.RowCount + 1;
                 ambC[c].Location = new Point(ambC[c].Location.X, (ambC[c].Size.Height * c));
-                ambC[c].BackColor = Color.DeepPink;
 
                 //BOTON SOLICITAR
                 Panel panel = (Panel)ambC[c].Controls.Find("panel1", false)[0];
@@ -218,7 +280,6 @@ namespace APS.Interfaces.GestorExclusive
                 panelElements.Controls.Add(tipC[c], 0, c);
                 panelElements.RowCount = panelElements.RowCount + 1;
                 tipC[c].Location = new Point(tipC[c].Location.X, (tipC[c].Size.Height * c));
-                tipC[c].BackColor = Color.DeepPink;
 
                 //BOTON SOLICITAR
                 Panel panel = (Panel)tipC[c].Controls.Find("panel1", false)[0];
@@ -264,7 +325,6 @@ namespace APS.Interfaces.GestorExclusive
                 panelElements.Controls.Add(gradoC[c], 0, c);
                 panelElements.RowCount = panelElements.RowCount + 1;
                 gradoC[c].Location = new Point(gradoC[c].Location.X, (gradoC[c].Size.Height * c));
-                gradoC[c].BackColor = Color.DeepPink;
 
                 //BOTON SOLICITAR
                 Panel panel = (Panel)gradoC[c].Controls.Find("panel1", false)[0];
@@ -310,7 +370,6 @@ namespace APS.Interfaces.GestorExclusive
                 panelElements.Controls.Add(asigsC[c], 0, c);
                 panelElements.RowCount = panelElements.RowCount + 1;
                 asigsC[c].Location = new Point(asigsC[c].Location.X, (asigsC[c].Size.Height * c));
-                asigsC[c].BackColor = Color.DeepPink;
 
                 //BOTON SOLICITAR
                 Panel panel = (Panel)asigsC[c].Controls.Find("panel1", false)[0];
@@ -356,7 +415,6 @@ namespace APS.Interfaces.GestorExclusive
                 panelElements.Controls.Add(usrC[c], 0, c);
                 panelElements.RowCount = panelElements.RowCount + 1;
                 usrC[c].Location = new Point(usrC[c].Location.X, (usrC[c].Size.Height * c));
-                usrC[c].BackColor = Color.DeepPink;
 
                 //BOTON SOLICITAR
                 Panel panel = (Panel)usrC[c].Controls.Find("panel1", false)[0];
@@ -412,11 +470,11 @@ namespace APS.Interfaces.GestorExclusive
                 InsertarGrados insGrados = new InsertarGrados();
                 insGrados.ShowDialog();
             }
-            else if (charged.Equals(opcion.USUARIOS))
+            /*else if (charged.Equals(opcion.USUARIOS))
             {
                 InsertarUsuarios insUsr = new InsertarUsuarios();
                 insUsr.ShowDialog();
-            }
+            }*/
         }
 
         private void pictExit_Click(object sender, EventArgs e)

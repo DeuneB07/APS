@@ -19,11 +19,22 @@ namespace APS.Interfaces.GestorExclusive
             InitializeComponent();
             this.u = u;
 
-            if (u.Email.Equals("")) lShowMail.Text = u.Email;
-            if (u.Rol.NombreRol.Equals("")) lShowRol.Text = u.Rol.NombreRol;
-            if (u.Nombre.Equals("")) lShowNoun.Text = u.Nombre + " " + u.Apellido1 + " " + u.Apellido2;
-            if (u.DNI.Equals("")) lShowDNI.Text = u.DNI;
-            if (u.FechaNac.ToShortDateString().Equals("")) lShowFecha.Text = u.FechaNac.ToShortDateString();
+            if (!u.Email.Equals("")) lShowMail.Text = u.Email;
+            if (u.Rol != null) lShowRol.Text = u.Rol.NombreRol;
+
+            if(u.Nombre != null && !u.Nombre.Equals(""))
+            {
+                lShowNoun.Text = u.Nombre;
+                if (u.Apellido1 != null && !u.Apellido1.Equals(""))
+                {
+                    lShowNoun.Text = lShowNoun.Text + " " +u.Apellido1;
+                    if (u.Apellido2 != null && !u.Apellido2.Equals("")) 
+                        lShowNoun.Text = lShowNoun.Text + " " + u.Apellido2;
+                }
+            }
+
+            if (u.DNI != null && !u.DNI.Equals("")) lShowDNI.Text = u.DNI;
+            if (u.FechaNac != null && !u.FechaNac.ToShortDateString().Equals("")) lShowFecha.Text = u.FechaNac.ToShortDateString();
             if (u.Imagen != null) pictImagen.Image = u.Imagen;
 
         }

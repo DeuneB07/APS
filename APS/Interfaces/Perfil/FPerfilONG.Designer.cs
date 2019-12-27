@@ -48,6 +48,9 @@
             this.btnBorrarImagen = new System.Windows.Forms.Button();
             this.tURL = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.lPass2 = new System.Windows.Forms.Label();
+            this.lPass = new System.Windows.Forms.Label();
+            this.textPass = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPerfil)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +91,7 @@
             // modiUser
             // 
             this.modiUser.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modiUser.Location = new System.Drawing.Point(133, 211);
+            this.modiUser.Location = new System.Drawing.Point(130, 213);
             this.modiUser.Name = "modiUser";
             this.modiUser.Size = new System.Drawing.Size(100, 21);
             this.modiUser.TabIndex = 33;
@@ -142,9 +145,9 @@
             this.lShowMail.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lShowMail.Location = new System.Drawing.Point(74, 286);
             this.lShowMail.Name = "lShowMail";
-            this.lShowMail.Size = new System.Drawing.Size(43, 14);
+            this.lShowMail.Size = new System.Drawing.Size(62, 14);
             this.lShowMail.TabIndex = 28;
-            this.lShowMail.Text = "(email)";
+            this.lShowMail.Text = "Sin Añadir";
             // 
             // lMail
             // 
@@ -162,9 +165,9 @@
             this.lShowNombre.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lShowNombre.Location = new System.Drawing.Point(81, 253);
             this.lShowNombre.Name = "lShowNombre";
-            this.lShowNombre.Size = new System.Drawing.Size(43, 14);
+            this.lShowNombre.Size = new System.Drawing.Size(62, 14);
             this.lShowNombre.TabIndex = 26;
-            this.lShowNombre.Text = "(noun)";
+            this.lShowNombre.Text = "Sin Añadir";
             // 
             // lNombre
             // 
@@ -182,9 +185,9 @@
             this.lShowUser.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lShowUser.Location = new System.Drawing.Point(130, 215);
             this.lShowUser.Name = "lShowUser";
-            this.lShowUser.Size = new System.Drawing.Size(39, 14);
+            this.lShowUser.Size = new System.Drawing.Size(62, 14);
             this.lShowUser.TabIndex = 36;
-            this.lShowUser.Text = "(user)";
+            this.lShowUser.Text = "Sin Añadir";
             // 
             // lFechaIns
             // 
@@ -202,9 +205,9 @@
             this.lShowFecha.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lShowFecha.Location = new System.Drawing.Point(155, 321);
             this.lShowFecha.Name = "lShowFecha";
-            this.lShowFecha.Size = new System.Drawing.Size(60, 14);
+            this.lShowFecha.Size = new System.Drawing.Size(62, 14);
             this.lShowFecha.TabIndex = 38;
-            this.lShowFecha.Text = "(fechains)";
+            this.lShowFecha.Text = "Sin Añadir";
             // 
             // btnCambiarImagen
             // 
@@ -243,12 +246,44 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // lPass2
+            // 
+            this.lPass2.AutoSize = true;
+            this.lPass2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPass2.Location = new System.Drawing.Point(87, 350);
+            this.lPass2.Name = "lPass2";
+            this.lPass2.Size = new System.Drawing.Size(42, 14);
+            this.lPass2.TabIndex = 43;
+            this.lPass2.Text = "*******";
+            // 
+            // lPass
+            // 
+            this.lPass.AutoSize = true;
+            this.lPass.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPass.Location = new System.Drawing.Point(19, 350);
+            this.lPass.Name = "lPass";
+            this.lPass.Size = new System.Drawing.Size(62, 14);
+            this.lPass.TabIndex = 42;
+            this.lPass.Text = "Password:";
+            // 
+            // textPass
+            // 
+            this.textPass.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPass.Location = new System.Drawing.Point(92, 348);
+            this.textPass.Name = "textPass";
+            this.textPass.Size = new System.Drawing.Size(100, 21);
+            this.textPass.TabIndex = 44;
+            this.textPass.Visible = false;
+            // 
             // FPerfilONG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(376, 450);
+            this.Controls.Add(this.textPass);
+            this.Controls.Add(this.lPass2);
+            this.Controls.Add(this.lPass);
             this.Controls.Add(this.tURL);
             this.Controls.Add(this.btnBorrarImagen);
             this.Controls.Add(this.btnCambiarImagen);
@@ -299,5 +334,8 @@
         private System.Windows.Forms.Button btnBorrarImagen;
         private System.Windows.Forms.TextBox tURL;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label lPass2;
+        private System.Windows.Forms.Label lPass;
+        private System.Windows.Forms.TextBox textPass;
     }
 }

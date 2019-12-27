@@ -143,7 +143,7 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.BackColor = System.Drawing.Color.PaleGreen;
+            this.panelContainer.BackColor = System.Drawing.Color.LightSkyBlue;
             this.panelContainer.Controls.Add(this.panelUtil);
             this.panelContainer.Location = new System.Drawing.Point(183, 41);
             this.panelContainer.Name = "panelContainer";
@@ -345,7 +345,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightCoral;
+            this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(821, 486);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

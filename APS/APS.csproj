@@ -654,6 +654,9 @@
     <EmbeddedResource Include="Interfaces\GestorExclusive\ControlesGestor.resx">
       <DependentUpon>ControlesGestor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\CSolicitudes.resx">
+      <DependentUpon>CSolicitudes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\GestorExclusive\CTipoTrab.resx">
       <DependentUpon>CTipoTrab.cs</DependentUpon>
     </EmbeddedResource>
@@ -674,6 +677,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\GestorExclusive\InsertarTipoTrab.resx">
       <DependentUpon>InsertarTipoTrab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\InsertarUsuarios.resx">
+      <DependentUpon>InsertarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelActividadesRealizada.resx">
       <DependentUpon>CartelActividadesRealizada.cs</DependentUpon>

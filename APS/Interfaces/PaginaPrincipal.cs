@@ -148,6 +148,8 @@ namespace APS.Interfaces
             pictProyectos.Visible = user.InsertarPantalla("PROYECTOS");
             lGestor.Visible = user.Rol.NombreRol.Equals("GESTOR");
             pictGestor.Visible = user.Rol.NombreRol.Equals("GESTOR");
+            lHistorial.Visible = !user.Rol.NombreRol.Equals("GESTOR");
+            pictHistorial.Visible = !user.Rol.NombreRol.Equals("GESTOR");
 
             //Primera Pestaña Cargada
             if (user.AccesoPantalla("MATCH")) cargarMatchActividadesInicio();

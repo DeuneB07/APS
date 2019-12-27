@@ -86,9 +86,9 @@
             this.lDNI2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lDNI2.Location = new System.Drawing.Point(123, 198);
             this.lDNI2.Name = "lDNI2";
-            this.lDNI2.Size = new System.Drawing.Size(31, 14);
+            this.lDNI2.Size = new System.Drawing.Size(62, 14);
             this.lDNI2.TabIndex = 3;
-            this.lDNI2.Text = "(dni)";
+            this.lDNI2.Text = "Sin Añadir";
             // 
             // lNombre2
             // 
@@ -96,9 +96,9 @@
             this.lNombre2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNombre2.Location = new System.Drawing.Point(123, 158);
             this.lNombre2.Name = "lNombre2";
-            this.lNombre2.Size = new System.Drawing.Size(43, 14);
+            this.lNombre2.Size = new System.Drawing.Size(62, 14);
             this.lNombre2.TabIndex = 4;
-            this.lNombre2.Text = "(noun)";
+            this.lNombre2.Text = "Sin Añadir";
             // 
             // lFecha
             // 
@@ -136,9 +136,9 @@
             this.lMail2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMail2.Location = new System.Drawing.Point(123, 238);
             this.lMail2.Name = "lMail2";
-            this.lMail2.Size = new System.Drawing.Size(43, 14);
+            this.lMail2.Size = new System.Drawing.Size(62, 14);
             this.lMail2.TabIndex = 8;
-            this.lMail2.Text = "(email)";
+            this.lMail2.Text = "Sin Añadir";
             // 
             // lFecha2
             // 
@@ -146,9 +146,9 @@
             this.lFecha2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lFecha2.Location = new System.Drawing.Point(172, 277);
             this.lFecha2.Name = "lFecha2";
-            this.lFecha2.Size = new System.Drawing.Size(64, 14);
+            this.lFecha2.Size = new System.Drawing.Size(62, 14);
             this.lFecha2.TabIndex = 9;
-            this.lFecha2.Text = "(fechaNac)";
+            this.lFecha2.Text = "Sin Añadir";
             // 
             // bModPerfil
             // 
@@ -219,16 +219,16 @@
             this.lGradosUno.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lGradosUno.Location = new System.Drawing.Point(464, 138);
             this.lGradosUno.Name = "lGradosUno";
-            this.lGradosUno.Size = new System.Drawing.Size(83, 14);
+            this.lGradosUno.Size = new System.Drawing.Size(62, 14);
             this.lGradosUno.TabIndex = 16;
-            this.lGradosUno.Text = "(gradosSiUno)";
+            this.lGradosUno.Text = "Sin Añadir";
             // 
             // listGrados
             // 
             this.listGrados.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listGrados.FormattingEnabled = true;
             this.listGrados.HorizontalScrollbar = true;
-            this.listGrados.Location = new System.Drawing.Point(466, 134);
+            this.listGrados.Location = new System.Drawing.Point(467, 134);
             this.listGrados.Name = "listGrados";
             this.listGrados.Size = new System.Drawing.Size(294, 69);
             this.listGrados.TabIndex = 17;
@@ -260,9 +260,9 @@
             this.lUserNoun2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserNoun2.Location = new System.Drawing.Point(172, 122);
             this.lUserNoun2.Name = "lUserNoun2";
-            this.lUserNoun2.Size = new System.Drawing.Size(67, 14);
+            this.lUserNoun2.Size = new System.Drawing.Size(62, 14);
             this.lUserNoun2.TabIndex = 21;
-            this.lUserNoun2.Text = "(usernoun)";
+            this.lUserNoun2.Text = "Sin Añadir";
             // 
             // textNombreUser
             // 

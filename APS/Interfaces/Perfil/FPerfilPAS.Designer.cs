@@ -62,9 +62,9 @@
             this.lShowFecha.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lShowFecha.Location = new System.Drawing.Point(155, 321);
             this.lShowFecha.Name = "lShowFecha";
-            this.lShowFecha.Size = new System.Drawing.Size(60, 14);
+            this.lShowFecha.Size = new System.Drawing.Size(62, 14);
             this.lShowFecha.TabIndex = 52;
-            this.lShowFecha.Text = "(fechains)";
+            this.lShowFecha.Text = "Sin Añadir";
             // 
             // lFechaNac
             // 
@@ -79,7 +79,7 @@
             // modiUser
             // 
             this.modiUser.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modiUser.Location = new System.Drawing.Point(128, 170);
+            this.modiUser.Location = new System.Drawing.Point(133, 170);
             this.modiUser.Name = "modiUser";
             this.modiUser.Size = new System.Drawing.Size(100, 21);
             this.modiUser.TabIndex = 48;
@@ -155,9 +155,9 @@
             this.lShowMail.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lShowMail.Location = new System.Drawing.Point(73, 283);
             this.lShowMail.Name = "lShowMail";
-            this.lShowMail.Size = new System.Drawing.Size(43, 14);
+            this.lShowMail.Size = new System.Drawing.Size(62, 14);
             this.lShowMail.TabIndex = 43;
-            this.lShowMail.Text = "(email)";
+            this.lShowMail.Text = "Sin Añadir";
             // 
             // lMail
             // 
@@ -175,9 +175,9 @@
             this.lShowNombre.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lShowNombre.Location = new System.Drawing.Point(81, 212);
             this.lShowNombre.Name = "lShowNombre";
-            this.lShowNombre.Size = new System.Drawing.Size(43, 14);
+            this.lShowNombre.Size = new System.Drawing.Size(62, 14);
             this.lShowNombre.TabIndex = 41;
-            this.lShowNombre.Text = "(noun)";
+            this.lShowNombre.Text = "Sin Añadir";
             // 
             // lNombre
             // 
@@ -228,9 +228,9 @@
             this.lShowDNI.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lShowDNI.Location = new System.Drawing.Point(57, 244);
             this.lShowDNI.Name = "lShowDNI";
-            this.lShowDNI.Size = new System.Drawing.Size(31, 14);
+            this.lShowDNI.Size = new System.Drawing.Size(62, 14);
             this.lShowDNI.TabIndex = 55;
-            this.lShowDNI.Text = "(dni)";
+            this.lShowDNI.Text = "Sin Añadir";
             // 
             // lShowUser
             // 
@@ -238,14 +238,14 @@
             this.lShowUser.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lShowUser.Location = new System.Drawing.Point(130, 172);
             this.lShowUser.Name = "lShowUser";
-            this.lShowUser.Size = new System.Drawing.Size(39, 14);
+            this.lShowUser.Size = new System.Drawing.Size(62, 14);
             this.lShowUser.TabIndex = 56;
-            this.lShowUser.Text = "(user)";
+            this.lShowUser.Text = "Sin Añadir";
             // 
             // modiDNI
             // 
             this.modiDNI.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modiDNI.Location = new System.Drawing.Point(54, 242);
+            this.modiDNI.Location = new System.Drawing.Point(60, 242);
             this.modiDNI.Name = "modiDNI";
             this.modiDNI.Size = new System.Drawing.Size(100, 21);
             this.modiDNI.TabIndex = 57;
