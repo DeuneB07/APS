@@ -31,6 +31,10 @@ namespace APS.Interfaces.GestorExclusive
                 panelContainer.Visible = true;
                 bInsertar.Visible = true;
                 lInsertar.Visible = true;
+                lBusqRol.Visible = false;
+                comboBusqRol.Visible = false;
+                lBusqAsig.Visible = false;
+                combBusqAsig.Visible = false;
                 charged = opcion.COMPETENCIAS;
                 cargarCompetencias();
             }
@@ -43,6 +47,10 @@ namespace APS.Interfaces.GestorExclusive
                 panelContainer.Visible = true;
                 bInsertar.Visible = true;
                 lInsertar.Visible = true;
+                lBusqRol.Visible = false;
+                comboBusqRol.Visible = false;
+                lBusqAsig.Visible = false;
+                combBusqAsig.Visible = false;
                 charged = opcion.AMBITO_TRABAJO;
                 cargarAmbitosTrabajo();
             }
@@ -55,6 +63,10 @@ namespace APS.Interfaces.GestorExclusive
                 panelContainer.Visible = true;
                 bInsertar.Visible = true;
                 lInsertar.Visible = true;
+                lBusqRol.Visible = false;
+                comboBusqRol.Visible = false;
+                lBusqAsig.Visible = false;
+                combBusqAsig.Visible = false;
                 charged = opcion.TIPO_TRABAJO;
                 cargarTiposTrabajo();
             }
@@ -67,6 +79,10 @@ namespace APS.Interfaces.GestorExclusive
                 panelContainer.Visible = true;
                 bInsertar.Visible = false;
                 lInsertar.Visible = false;
+                lBusqRol.Visible = false;
+                comboBusqRol.Visible = false;
+                lBusqAsig.Visible = false;
+                combBusqAsig.Visible = false;
                 charged = opcion.SOLICITUDES;
                 cargarSolicitudes();
             }
@@ -79,6 +95,11 @@ namespace APS.Interfaces.GestorExclusive
                 panelContainer.Visible = true;
                 bInsertar.Visible = true;
                 lInsertar.Visible = true;
+                lBusqRol.Visible = false;
+                comboBusqRol.Visible = false;
+                lBusqAsig.Visible = true;
+                combBusqAsig.Visible = true;
+                if (combBusqAsig.Items.Count == 0) cargarComboGrados();
                 charged = opcion.ASIGNATURAS;
                 cargarAsignaturas();
             }
@@ -91,6 +112,10 @@ namespace APS.Interfaces.GestorExclusive
                 panelContainer.Visible = true;
                 bInsertar.Visible = true;
                 lInsertar.Visible = true;
+                lBusqRol.Visible = false;
+                comboBusqRol.Visible = false;
+                lBusqAsig.Visible = false;
+                combBusqAsig.Visible = false;
                 charged = opcion.GRADOS;
                 cargarGrados();
             }
@@ -103,9 +128,34 @@ namespace APS.Interfaces.GestorExclusive
                 panelContainer.Visible = true;
                 bInsertar.Visible = false;
                 lInsertar.Visible = false;
+                lBusqAsig.Visible = false;
+                combBusqAsig.Visible = false;
+                lBusqRol.Visible = true;
+                comboBusqRol.Visible = true;
+                if(comboBusqRol.Items.Count == 0) cargarRoles();
                 charged = opcion.USUARIOS;
                 cargarUsuarios();
             }
+        }
+
+        private void cargarRoles()
+        {
+            comboBusqRol.Items.Add("TODOS");
+            foreach(Rol r in Rol.ListaRoles())
+            {
+                comboBusqRol.Items.Add(r);
+            }
+            comboBusqRol.DisplayMember = "nombreRol";
+        }
+
+        private void cargarComboGrados()
+        {
+            combBusqAsig.Items.Add("TODOS");
+            foreach (Grado g in Grado.ListaGrados())
+            {
+                combBusqAsig.Items.Add(g);
+            }
+            combBusqAsig.DisplayMember = "nombreGrado";
         }
 
         //CARGAR ELEMENTOS
@@ -236,29 +286,7 @@ namespace APS.Interfaces.GestorExclusive
                 panelElements.RowCount = panelElements.RowCount + 1;
                 ambC[c].Location = new Point(ambC[c].Location.X, (ambC[c].Size.Height * c));
 
-                //BOTON SOLICITAR
-                Panel panel = (Panel)ambC[c].Controls.Find("panel1", false)[0];
-                //Button bBorrar = (Button)panel.Controls.Find("bBorrar", false)[0];
-
-                //PROGRAMACIÓN BOTONES
-                //bBorrar.Click += (sender, EventArgs) => { bBorrarAmbTrab_Click(sender, EventArgs, amb); };
-
                 c++;
-            }
-        }
-
-        private void bBorrarAmbTrab_Click(object sender, EventArgs eventArgs, AmbitoTrabajo amb)
-        {
-            DialogResult emCierreDialog;
-            string mensaje = "¿Está seguro de que quiere eliminarlo?";
-            string caption = "¡AVISO!";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
-
-            if (emCierreDialog == DialogResult.Yes)
-            {
-                //amb.BorraAmbitoTrabajo();
-                cargarAmbitosTrabajo();
             }
         }
 
@@ -281,29 +309,7 @@ namespace APS.Interfaces.GestorExclusive
                 panelElements.RowCount = panelElements.RowCount + 1;
                 tipC[c].Location = new Point(tipC[c].Location.X, (tipC[c].Size.Height * c));
 
-                //BOTON SOLICITAR
-                Panel panel = (Panel)tipC[c].Controls.Find("panel1", false)[0];
-                //Button bBorrar = (Button)panel.Controls.Find("bBorrar", false)[0];
-
-                //PROGRAMACIÓN BOTONES
-                //bBorrar.Click += (sender, EventArgs) => { bBorrarTipoTrab_Click(sender, EventArgs, t); };
-
                 c++;
-            }
-        }
-
-        private void bBorrarTipoTrab_Click(object sender, EventArgs eventArgs, TipoTrabajo t)
-        {
-            DialogResult emCierreDialog;
-            string mensaje = "¿Está seguro de que quiere eliminarlo?";
-            string caption = "¡AVISO!";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
-
-            if (emCierreDialog == DialogResult.Yes)
-            {
-                //t.BorrarTipoTrabajo();
-                cargarTiposTrabajo();
             }
         }
 
@@ -326,29 +332,7 @@ namespace APS.Interfaces.GestorExclusive
                 panelElements.RowCount = panelElements.RowCount + 1;
                 gradoC[c].Location = new Point(gradoC[c].Location.X, (gradoC[c].Size.Height * c));
 
-                //BOTON SOLICITAR
-                Panel panel = (Panel)gradoC[c].Controls.Find("panel1", false)[0];
-                //Button bBorrar = (Button)panel.Controls.Find("bBorrar", false)[0];
-
-                //PROGRAMACIÓN BOTONES
-                //bBorrar.Click += (sender, EventArgs) => { bBorrarGrado_Click(sender, EventArgs, g); };
-
                 c++;
-            }
-        }
-
-        private void bBorrarGrado_Click(object sender, EventArgs eventArgs, Grado g)
-        {
-            DialogResult emCierreDialog;
-            string mensaje = "¿Está seguro de que quiere eliminarlo?";
-            string caption = "¡AVISO!";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
-
-            if (emCierreDialog == DialogResult.Yes)
-            {
-                //g.BorrarGrado();
-                cargarGrados();
             }
         }
 
@@ -373,27 +357,31 @@ namespace APS.Interfaces.GestorExclusive
 
                 //BOTON SOLICITAR
                 Panel panel = (Panel)asigsC[c].Controls.Find("panel1", false)[0];
-                //Button bBorrar = (Button)panel.Controls.Find("bBorrar", false)[0];
-
-                //PROGRAMACIÓN BOTONES
-                //bBorrar.Click += (sender, EventArgs) => { bBorrarAsig_Click(sender, EventArgs, a); };
 
                 c++;
             }
         }
 
-        private void bBorrarAsig_Click(object sender, EventArgs eventArgs, Asignatura a)
+        private void cargarAsignaturas(Grado g)
         {
-            DialogResult emCierreDialog;
-            string mensaje = "¿Está seguro de que quiere eliminarlo?";
-            string caption = "¡AVISO!";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
+            panelElements.Controls.Clear();
+            panelElements.RowCount = 1;
+            panelElements.AutoScroll = false;
+            panelUtil.AutoScroll = false;
+            panelUtil.AutoScroll = true;
 
-            if (emCierreDialog == DialogResult.Yes)
+            List<Asignatura> asignaturas = Asignatura.ListaAsignaturas(g);
+            CAsignatura[] asigsC = new CAsignatura[asignaturas.Count];
+
+            int c = 0;
+            foreach (Asignatura a in asignaturas)
             {
-                //a.BorrarAsignatura();
-                cargarAsignaturas();
+                asigsC[c] = new CAsignatura(a);
+                panelElements.Controls.Add(asigsC[c], 0, c);
+                panelElements.RowCount = panelElements.RowCount + 1;
+                asigsC[c].Location = new Point(asigsC[c].Location.X, (asigsC[c].Size.Height * c));
+
+                c++;
             }
         }
 
@@ -406,6 +394,36 @@ namespace APS.Interfaces.GestorExclusive
             panelUtil.AutoScroll = true;
 
             List<Usuario> usuarios = Usuario.ListaUsuarios();
+            CUsuario[] usrC = new CUsuario[usuarios.Count];
+
+            int c = 0;
+            foreach (Usuario u in usuarios)
+            {
+                usrC[c] = new CUsuario(u);
+                panelElements.Controls.Add(usrC[c], 0, c);
+                panelElements.RowCount = panelElements.RowCount + 1;
+                usrC[c].Location = new Point(usrC[c].Location.X, (usrC[c].Size.Height * c));
+
+                //BOTON SOLICITAR
+                Panel panel = (Panel)usrC[c].Controls.Find("panel1", false)[0];
+                Button bBorrar = (Button)panel.Controls.Find("bBorrar", false)[0];
+
+                //PROGRAMACIÓN BOTONES
+                bBorrar.Click += (sender, EventArgs) => { bBorrarUsuario_Click(sender, EventArgs, u); };
+
+                c++;
+            }
+        }
+
+        private void cargarUsuarios(Rol r)
+        {
+            panelElements.Controls.Clear();
+            panelElements.RowCount = 1;
+            panelElements.AutoScroll = false;
+            panelUtil.AutoScroll = false;
+            panelUtil.AutoScroll = true;
+
+            List<Usuario> usuarios = Usuario.ListaUsuarios(r);
             CUsuario[] usrC = new CUsuario[usuarios.Count];
 
             int c = 0;
@@ -470,11 +488,6 @@ namespace APS.Interfaces.GestorExclusive
                 InsertarGrados insGrados = new InsertarGrados();
                 insGrados.ShowDialog();
             }
-            /*else if (charged.Equals(opcion.USUARIOS))
-            {
-                InsertarUsuarios insUsr = new InsertarUsuarios();
-                insUsr.ShowDialog();
-            }*/
         }
 
         private void pictExit_Click(object sender, EventArgs e)
@@ -482,5 +495,18 @@ namespace APS.Interfaces.GestorExclusive
             this.Close();
         }
 
+
+        //Métodos Filtros
+        private void comboBusqRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBusqRol.SelectedItem.ToString().Equals("TODOS")) cargarUsuarios();
+            else cargarUsuarios((Rol)comboBusqRol.SelectedItem);
+        }
+
+        private void combBusqAsig_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (combBusqAsig.SelectedItem.ToString().Equals("TODOS")) cargarAsignaturas();
+            else cargarAsignaturas((Grado)combBusqAsig.SelectedItem);
+        }
     }
 }

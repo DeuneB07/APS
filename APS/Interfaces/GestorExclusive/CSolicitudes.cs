@@ -34,7 +34,6 @@ namespace APS.Interfaces.GestorExclusive
             String newNoun = usr.Nombre.Replace(" ", "+");
             String url = "http://www.google.com/search?q=" + newNoun;
             System.Diagnostics.Process.Start("firefox.exe", url);
-        
         }
     }
 }

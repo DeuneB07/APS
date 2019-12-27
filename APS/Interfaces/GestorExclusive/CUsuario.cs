@@ -19,6 +19,12 @@ namespace APS.Interfaces.GestorExclusive
             InitializeComponent();
             this.u = u;
 
+            if (!u.Rol.NombreRol.Equals("ONG") || u.Nombre == null || u.Nombre.Equals(""))
+            {
+                lBuscar.Visible = false;
+                bBuscar.Visible = false;
+            }
+
             if (!u.Email.Equals("")) lShowMail.Text = u.Email;
             if (u.Rol != null) lShowRol.Text = u.Rol.NombreRol;
 
@@ -37,6 +43,13 @@ namespace APS.Interfaces.GestorExclusive
             if (u.FechaNac != null && !u.FechaNac.ToShortDateString().Equals("")) lShowFecha.Text = u.FechaNac.ToShortDateString();
             if (u.Imagen != null) pictImagen.Image = u.Imagen;
 
+        }
+
+        private void bBuscar_Click(object sender, EventArgs e)
+        {
+            String newNoun = u.Nombre.Replace(" ", "+");
+            String url = "http://www.google.com/search?q=" + newNoun;
+            System.Diagnostics.Process.Start("firefox.exe", url);
         }
     }
 }

@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CUsuario));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bBorrar = new System.Windows.Forms.Button();
-            this.pictImagen = new System.Windows.Forms.PictureBox();
             this.lShowFecha = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lShowDNI = new System.Windows.Forms.Label();
@@ -42,6 +40,10 @@
             this.lEmail = new System.Windows.Forms.Label();
             this.lShowNoun = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictImagen = new System.Windows.Forms.PictureBox();
+            this.bBorrar = new System.Windows.Forms.Button();
+            this.lBuscar = new System.Windows.Forms.Label();
+            this.bBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictImagen)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +51,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lBuscar);
+            this.panel1.Controls.Add(this.bBuscar);
             this.panel1.Controls.Add(this.lShowFecha);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lShowDNI);
@@ -65,28 +69,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(569, 94);
             this.panel1.TabIndex = 3;
-            // 
-            // bBorrar
-            // 
-            this.bBorrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bBorrar.BackgroundImage")));
-            this.bBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bBorrar.FlatAppearance.BorderSize = 0;
-            this.bBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bBorrar.Location = new System.Drawing.Point(538, 3);
-            this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(28, 28);
-            this.bBorrar.TabIndex = 4;
-            this.bBorrar.UseVisualStyleBackColor = true;
-            // 
-            // pictImagen
-            // 
-            this.pictImagen.Image = ((System.Drawing.Image)(resources.GetObject("pictImagen.Image")));
-            this.pictImagen.Location = new System.Drawing.Point(3, 3);
-            this.pictImagen.Name = "pictImagen";
-            this.pictImagen.Size = new System.Drawing.Size(92, 88);
-            this.pictImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictImagen.TabIndex = 13;
-            this.pictImagen.TabStop = false;
             // 
             // lShowFecha
             // 
@@ -188,6 +170,53 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Nombre:";
             // 
+            // pictImagen
+            // 
+            this.pictImagen.Image = ((System.Drawing.Image)(resources.GetObject("pictImagen.Image")));
+            this.pictImagen.Location = new System.Drawing.Point(3, 3);
+            this.pictImagen.Name = "pictImagen";
+            this.pictImagen.Size = new System.Drawing.Size(92, 88);
+            this.pictImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictImagen.TabIndex = 13;
+            this.pictImagen.TabStop = false;
+            // 
+            // bBorrar
+            // 
+            this.bBorrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bBorrar.BackgroundImage")));
+            this.bBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bBorrar.FlatAppearance.BorderSize = 0;
+            this.bBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bBorrar.Location = new System.Drawing.Point(538, 3);
+            this.bBorrar.Name = "bBorrar";
+            this.bBorrar.Size = new System.Drawing.Size(28, 28);
+            this.bBorrar.TabIndex = 4;
+            this.bBorrar.UseVisualStyleBackColor = true;
+            // 
+            // lBuscar
+            // 
+            this.lBuscar.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBuscar.Location = new System.Drawing.Point(498, 40);
+            this.lBuscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lBuscar.Name = "lBuscar";
+            this.lBuscar.Size = new System.Drawing.Size(68, 17);
+            this.lBuscar.TabIndex = 39;
+            this.lBuscar.Text = "↓Buscar↓";
+            this.lBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bBuscar
+            // 
+            this.bBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.bBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bBuscar.BackgroundImage")));
+            this.bBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bBuscar.FlatAppearance.BorderSize = 0;
+            this.bBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bBuscar.Location = new System.Drawing.Point(519, 60);
+            this.bBuscar.Name = "bBuscar";
+            this.bBuscar.Size = new System.Drawing.Size(30, 30);
+            this.bBuscar.TabIndex = 38;
+            this.bBuscar.UseVisualStyleBackColor = false;
+            this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
+            // 
             // CUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,5 +247,7 @@
         private System.Windows.Forms.Label lShowNoun;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictImagen;
+        private System.Windows.Forms.Label lBuscar;
+        private System.Windows.Forms.Button bBuscar;
     }
 }

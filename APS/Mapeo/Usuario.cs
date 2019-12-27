@@ -64,6 +64,21 @@ namespace APS.Mapeo
             return lista;
         }
 
+        public static List<Usuario> ListaUsuarios(Rol r)
+        {
+            // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Usuario> lista = new List<Usuario>();
+
+            foreach (object[] tupla in miBD.Select("SELECT email FROM Usuario WHERE nombreRol='" + r.NombreRol + "';"))
+            {
+                String email = (String)tupla[0];
+                Usuario u = new Usuario(email);
+                lista.Add(u);
+            }
+            return lista;
+        }
+
         public static List<Usuario> ListaResponsables(Asignatura a)
         {
             // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
