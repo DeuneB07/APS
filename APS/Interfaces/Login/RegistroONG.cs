@@ -41,7 +41,7 @@ namespace APS.Interfaces
                 if (pwd.Equals("")) throw new Exception("La contraseña no puede estar vacía");
                 if (!pwd.Equals(pwd2)) throw new Exception("Las contraseñas no coinciden");
                 if (tNombreONG.Text.Trim().Equals("")) throw new Exception("El campo nombre completo ONG no puede estar vacío");
-                Usuario nuevoUser = new Usuario(correo, pwd, tUsuario.Text, new Rol("ONG"));
+                Usuario nuevoUser = new Usuario(correo, pwd, tUsuario.Text, new Rol("ONG"), false);
                 nuevoUser.Nombre = tNombreONG.Text;
 
                 if (!tUsuario.Text.Trim().Equals("")) nuevoUser.NombreUser = tUsuario.Text;

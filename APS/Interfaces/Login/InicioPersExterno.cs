@@ -30,16 +30,28 @@ namespace APS.Interfaces
                 Usuario user = new Usuario(email);
                 labelError.Text = "";
 
-                if (user.Rol.NombreRol == "GESTOR" || user.Rol.NombreRol == "ONG")
+                if(user.Aceptado)
                 {
-                    //Comprobar contraseña con nuestra BBDD
-                    user = new Usuario(email, pwd);
-                }
-                else
+                    if (user.Rol.NombreRol == "GESTOR" || user.Rol.NombreRol == "ONG")
+                    {
+                        //Comprobar contraseña con nuestra BBDD
+                        user = new Usuario(email, pwd);
+                    }
+                    else
+                    {
+                        throw new Exception("Usuario y/o contraseña incorrectos");
+
+                    }
+                } else
                 {
-                    throw new Exception("Usuario y/o contraseña incorrectos");
-                    
+                    DialogResult emCierreDialog;
+                    string mensaje = "Lo sentimos, pero su solicitud está siendo tramitada \n por el Gestor. Intente de nuevo más tarde.";
+                    string caption = "Lo sentimos...";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
+                    this.Close();
                 }
+                
 
                 this.GoPaginaPrincipal(user);
             }

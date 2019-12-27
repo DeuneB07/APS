@@ -163,7 +163,7 @@ namespace APS.Interfaces.GestorExclusive
             panelUtil.AutoScroll = false;
             panelUtil.AutoScroll = true;
 
-            List<Usuario> solicitudes = Usuario.ListaUsuarios();
+            List<Usuario> solicitudes = Usuario.ListaSolicitudes();
             CSolicitudes[] solC = new CSolicitudes[solicitudes.Count];
             int c = 0;
 
@@ -197,7 +197,7 @@ namespace APS.Interfaces.GestorExclusive
 
             if (emCierreDialog == DialogResult.Yes)
             {
-                //usr.BorraUsuario();
+                usr.Aceptado = true;
                 cargarSolicitudes();
             }
         }

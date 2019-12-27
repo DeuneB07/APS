@@ -23,6 +23,7 @@ namespace APS.Mapeo
         private String apellido1;
         private String apellido2;
         private String situacion;
+        private Boolean aceptado;
         private Image imagen;         //Lazy
         private List<Grado> grados;   //Lazy
         private List<Preferencia> preferencias; //Lazy
@@ -39,7 +40,22 @@ namespace APS.Mapeo
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Usuario> lista = new List<Usuario>();
 
-            foreach (object[] tupla in miBD.Select("SELECT email FROM Usuario;"))
+            foreach (object[] tupla in miBD.Select("SELECT email FROM Usuario WHERE solicitud = " + 1 + ";"))
+            {
+                String email = (String)tupla[0];
+                Usuario u = new Usuario(email);
+                lista.Add(u);
+            }
+            return lista;
+        }
+
+        public static List<Usuario> ListaSolicitudes()
+        {
+            // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Usuario> lista = new List<Usuario>();
+
+            foreach (object[] tupla in miBD.Select("SELECT email FROM Usuario WHERE solicitud = " + 0 + ";"))
             {
                 String email = (String)tupla[0];
                 Usuario u = new Usuario(email);
@@ -111,6 +127,7 @@ namespace APS.Mapeo
                 if (tupla[8].ToString() != "") apellido1 = (String)tupla[8];
                 if (tupla[9].ToString() != "") apellido2 = (String)tupla[9];
                 if (tupla[10].ToString() != "") situacion = (String)tupla[10];
+                aceptado = (Boolean)tupla[11];
             }
         }
 
@@ -151,6 +168,7 @@ namespace APS.Mapeo
                 if (tupla[8].ToString() != "") apellido1 = (String)tupla[8];
                 if (tupla[9].ToString() != "") apellido2 = (String)tupla[9];
                 if (tupla[10].ToString() != "") situacion = (String)tupla[10];
+                aceptado = (Boolean)tupla[11];
             }
             catch (Exception ex)
             {
@@ -173,14 +191,15 @@ namespace APS.Mapeo
             preferencias = null;
             asignaturas = null;
             grados = null;
+            aceptado = true;
         }
 
-        public Usuario(String e, String p, String name, Rol r)
+        public Usuario(String e, String p, String name, Rol r, Boolean aceptado)
         {
             // Crea el objeto y lo inserta en la base de datos
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Insert("INSERT INTO Usuario (email,password,nombreUser,nombreRol) VALUES("
-                    + "'" + e + "', '" + p + "', '" + name + "', '" + r.NombreRol + "');");
+            miBD.Insert("INSERT INTO Usuario (email,password,nombreUser,nombreRol, solicitud) VALUES("
+                    + "'" + e + "', '" + p + "', '" + name + "', '" + r.NombreRol + "', " + (aceptado ? 1 : 0) + " );");
             email = e;
             password = p;
             nombreUser = name;
@@ -188,6 +207,7 @@ namespace APS.Mapeo
             preferencias = null;
             asignaturas = null;
             grados = null;
+            this.aceptado = aceptado;
         }
 
         public String Email
@@ -281,6 +301,18 @@ namespace APS.Mapeo
             }
         }
 
+        public Boolean Aceptado
+        {
+            get { return aceptado; }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                miBD.Update("UPDATE Usuario SET solicitud = " + (value? 1 : 0)
+                     + " WHERE email ='" + this.email + "';");
+                aceptado = value;
+            }
+        }
+
         public DateTime FechaNac
         {
             get { return fechaNac; }
@@ -297,7 +329,7 @@ namespace APS.Mapeo
         {
             // Actualiza el atributo en memoria y en la base de datos
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Delete("DELETE FROM  Usuario WHERE email ='" + this.email + "';");
+            miBD.Delete("DELETE FROM Usuario WHERE email ='" + this.email + "';");
             email = password = null;
             DNI = nombreUser = null;
             fechaNac = DateTime.Today;
