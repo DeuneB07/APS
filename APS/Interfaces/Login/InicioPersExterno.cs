@@ -29,6 +29,7 @@ namespace APS.Interfaces
                 string pwd = tPassword.Text;
                 Usuario user = new Usuario(email);
                 labelError.Text = "";
+                if (user.Email == null) throw new Exception("Usuario y/o contraseña incorrectos");
 
                 if(user.Aceptado)
                 {
@@ -36,6 +37,7 @@ namespace APS.Interfaces
                     {
                         //Comprobar contraseña con nuestra BBDD
                         user = new Usuario(email, pwd);
+                        this.GoPaginaPrincipal(user);
                     }
                     else
                     {
@@ -51,9 +53,7 @@ namespace APS.Interfaces
                     emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
                     this.Close();
                 }
-                
-
-                this.GoPaginaPrincipal(user);
+               
             }
             catch (Exception ex)
             {

@@ -49,7 +49,8 @@ namespace APS.Interfaces
             }
             //AÑADIR USUARIO A LA BD
             user = new Usuario(userJSON.UserEmail, new Rol(userJSON.CategoryName), userJSON.Nombre, userJSON.PrimerApellido, userJSON.SegundoApellido, userJSON.Situation);
-            foreach(Grado g in grados)
+            user.Aceptado = true;
+            foreach (Grado g in grados)
             {
                 user.AddGrado(g);
             }

@@ -23,6 +23,8 @@ namespace APS.Interfaces
         Usuario user;
         private enum PantallaCargada { MATCH, TODAS, REVISION, PENDIENTES, ACTIVIDADES_INSCRITAS, MIS_ACTIVIDADES, PROYECTOS, EVALUACION};
         private PantallaCargada chargedWindow;
+        private PictureBox seleccionada = null;
+        private FlowLayoutPanel flowP;
 
         public PaginaPrincipal(Usuario user)
         {
@@ -64,12 +66,15 @@ namespace APS.Interfaces
             {
                 estudianteMenu.Visible = true;
 
-                FlowLayoutPanel flowP = (FlowLayoutPanel)estudianteMenu.Controls.Find("flowMain", false)[0];
+                flowP = (FlowLayoutPanel)estudianteMenu.Controls.Find("flowMain", false)[0];
                 PictureBox bMatch = (PictureBox)flowP.Controls.Find("pictMatch", false)[0];
                 PictureBox bTodas = (PictureBox)flowP.Controls.Find("pictTodas", false)[0];
                 PictureBox bEvaluacion = (PictureBox)flowP.Controls.Find("pictEvaluacion", false)[0];
                 PictureBox bProyectos = (PictureBox)flowP.Controls.Find("pictProyectos", false)[0];
                 PictureBox bActIns = (PictureBox)flowP.Controls.Find("pictActIns", false)[0];
+
+                seleccionada = bMatch;
+                lTituloPanel.Text = "MATCH";
 
                 bMatch.Click += (sender, EventArgs) => { bMatch_Click(sender, EventArgs); };
                 bTodas.Click += (sender, EventArgs) => { bTodas_Click(sender, EventArgs); };
@@ -81,7 +86,7 @@ namespace APS.Interfaces
             {
                 pdiMenu.Visible = true;
 
-                FlowLayoutPanel flowP = (FlowLayoutPanel)pdiMenu.Controls.Find("flowMain", false)[0];
+                flowP = (FlowLayoutPanel)pdiMenu.Controls.Find("flowMain", false)[0];
                 PictureBox bMatch = (PictureBox)flowP.Controls.Find("pictMatch", false)[0];
                 PictureBox bTodas = (PictureBox)flowP.Controls.Find("pictTodas", false)[0];
                 PictureBox bEvaluacion = (PictureBox)flowP.Controls.Find("pictEvaluacion", false)[0];
@@ -89,6 +94,9 @@ namespace APS.Interfaces
                 PictureBox bActIns = (PictureBox)flowP.Controls.Find("pictActIns", false)[0];
                 PictureBox bMisActs = (PictureBox)flowP.Controls.Find("pictMisActs", false)[0];
                 PictureBox bRevision = (PictureBox)flowP.Controls.Find("pictRevision", false)[0];
+
+                seleccionada = bMatch;
+                lTituloPanel.Text = "MATCH";
 
                 bMatch.Click += (sender, EventArgs) => { bMatch_Click(sender, EventArgs); };
                 bTodas.Click += (sender, EventArgs) => { bTodas_Click(sender, EventArgs); };
@@ -103,11 +111,14 @@ namespace APS.Interfaces
             {
                 pasMenu.Visible = true;
 
-                FlowLayoutPanel flowP = (FlowLayoutPanel)pasMenu.Controls.Find("flowMain", false)[0];
+                flowP = (FlowLayoutPanel)pasMenu.Controls.Find("flowMain", false)[0];
                 PictureBox bMatch = (PictureBox)flowP.Controls.Find("pictMatch", false)[0];
                 PictureBox bTodas = (PictureBox)flowP.Controls.Find("pictTodas", false)[0];
                 PictureBox bEvaluacion = (PictureBox)flowP.Controls.Find("pictEvaluacion", false)[0];
                 PictureBox bActIns = (PictureBox)flowP.Controls.Find("pictActIns", false)[0];
+
+                seleccionada = bMatch;
+                lTituloPanel.Text = "MATCHING";
 
                 bMatch.Click += (sender, EventArgs) => { bMatch_Click(sender, EventArgs); };
                 bTodas.Click += (sender, EventArgs) => { bTodas_Click(sender, EventArgs); };
@@ -118,10 +129,13 @@ namespace APS.Interfaces
             {
                 ongMenu.Visible = true;
 
-                FlowLayoutPanel flowP = (FlowLayoutPanel)ongMenu.Controls.Find("flowMain", false)[0];
+                flowP = (FlowLayoutPanel)ongMenu.Controls.Find("flowMain", false)[0];
                 PictureBox bEvaluacion = (PictureBox)flowP.Controls.Find("pictEvaluacion", false)[0];
                 PictureBox bMisActs = (PictureBox)flowP.Controls.Find("pictMisActs", false)[0];
                 PictureBox bRevision = (PictureBox)flowP.Controls.Find("pictRevision", false)[0];
+
+                seleccionada = bEvaluacion;
+                lTituloPanel.Text = "VALORACIONES";
 
                 bEvaluacion.Click += (sender, EventArgs) => { bEvaluacion_Click(sender, EventArgs); };
                 bMisActs.Click += (sender, EventArgs) => { bMisActividades_Click(sender, EventArgs); };
@@ -131,15 +145,19 @@ namespace APS.Interfaces
             {
                 gestorMenu.Visible = true;
 
-                FlowLayoutPanel flowP = (FlowLayoutPanel)gestorMenu.Controls.Find("flowMain", false)[0];
+                flowP = (FlowLayoutPanel)gestorMenu.Controls.Find("flowMain", false)[0];
                 PictureBox bTodas = (PictureBox)flowP.Controls.Find("pictTodas", false)[0];
                 PictureBox bProyectos = (PictureBox)flowP.Controls.Find("pictProyectos", false)[0];
                 PictureBox bPendientes = (PictureBox)flowP.Controls.Find("pictPendientes", false)[0];
+
+                seleccionada = bTodas;
+                lTituloPanel.Text = "TODAS LAS ACTIVIDADES";
 
                 bTodas.Click += (sender, EventArgs) => { bTodas_Click(sender, EventArgs); };
                 bProyectos.Click += (sender, EventArgs) => { bProyectos_Click(sender, EventArgs); };
                 bPendientes.Click += (sender, EventArgs) => { bPendientes_Click(sender, EventArgs); };
             }
+            seleccionada.BackColor = SystemColors.ActiveCaption;
 
             //Cargar Botones de Perfil
             lActividad.Visible = user.InsertarPantalla("ACTIVIDADES");
@@ -152,7 +170,7 @@ namespace APS.Interfaces
             pictHistorial.Visible = !user.Rol.NombreRol.Equals("GESTOR");
 
             //Primera Pestaña Cargada
-            if (user.AccesoPantalla("MATCH")) cargarMatchActividadesInicio();
+            if (user.AccesoPantalla("MATCH")) cargarMatchActividadesInicio(); 
             else if (user.AccesoPantalla("TODAS")) cargarTodasActividadesInicio();
             else if (user.AccesoPantalla("VALORACION")) cargarValoracionActividadesInicio();
 
@@ -176,43 +194,85 @@ namespace APS.Interfaces
         private void bMatch_Click(object sender, EventArgs eventArgs)
         {
             if (!chargedWindow.Equals(PantallaCargada.MATCH))
+            {
+                seleccionada.BackColor = Color.Transparent;
+                seleccionada = (PictureBox)flowP.Controls.Find("pictMatch", false)[0];
+                seleccionada.BackColor = SystemColors.ActiveCaption;
+                lTituloPanel.Text = "MATCHING";
                 cargarMatchActividadesInicio();
+            }
         }
 
         private void bTodas_Click(object sender, EventArgs eventArgs)
         {
             if (!chargedWindow.Equals(PantallaCargada.TODAS))
+            {
+                seleccionada.BackColor = Color.Transparent;
+                seleccionada = (PictureBox)flowP.Controls.Find("pictTodas", false)[0];
+                seleccionada.BackColor = SystemColors.ActiveCaption;
+                lTituloPanel.Text = "TODAS LAS ACTIVIDADES";
                 cargarTodasActividadesInicio();
+            }
         }
 
         private void bEvaluacion_Click(object sender, EventArgs eventArgs)
         {
             if (!chargedWindow.Equals(PantallaCargada.EVALUACION))
+            {
+                seleccionada.BackColor = Color.Transparent;
+                seleccionada = (PictureBox)flowP.Controls.Find("pictEvaluacion", false)[0];
+                seleccionada.BackColor = SystemColors.ActiveCaption;
+                lTituloPanel.Text = "VALORACIONES";
                 cargarValoracionActividadesInicio();
+            }
         }
 
         private void bMisActividades_Click(object sender, EventArgs eventArgs)
         {
             if (!chargedWindow.Equals(PantallaCargada.MIS_ACTIVIDADES))
+            {
+                seleccionada.BackColor = Color.Transparent;
+                seleccionada = (PictureBox)flowP.Controls.Find("pictMisActs", false)[0];
+                seleccionada.BackColor = SystemColors.ActiveCaption;
+                lTituloPanel.Text = "MIS ACTIVIDADES";
                 cargarMisActividadesInicio();
+            }
         }
 
         private void bActividadesInscritas_Click(object sender, EventArgs eventArgs)
         {
             if (!chargedWindow.Equals(PantallaCargada.ACTIVIDADES_INSCRITAS))
+            {
+                seleccionada.BackColor = Color.Transparent;
+                seleccionada = (PictureBox)flowP.Controls.Find("pictActIns", false)[0];
+                seleccionada.BackColor = SystemColors.ActiveCaption;
+                lTituloPanel.Text = "ACTIVIDADES INSCRITAS";
                 cargarActividadesInscritas();
+            }
         }
 
         private void bPendientes_Click(object sender, EventArgs eventArgs)
         {
             if (!chargedWindow.Equals(PantallaCargada.PENDIENTES))
+            {
+                seleccionada.BackColor = Color.Transparent;
+                seleccionada = (PictureBox)flowP.Controls.Find("pictPendientes", false)[0];
+                seleccionada.BackColor = SystemColors.ActiveCaption;
+                lTituloPanel.Text = "ACTIVIDADES PENDIENTES";
                 cargarPendientesActividadesInicio();
+            }
         }
 
         private void bRevision_Click(object sender, EventArgs eventArgs)
         {
             if (!chargedWindow.Equals(PantallaCargada.REVISION))
+            {
+                seleccionada.BackColor = Color.Transparent;
+                seleccionada = (PictureBox)flowP.Controls.Find("pictRevision", false)[0];
+                seleccionada.BackColor = SystemColors.ActiveCaption;
+                lTituloPanel.Text = "REVISIÓN ACTIVIDADES";
                 cargarRevisionActividadesInicio();
+            }
         }
 
         private void bProyectos_Click(object sender, EventArgs eventArgs)

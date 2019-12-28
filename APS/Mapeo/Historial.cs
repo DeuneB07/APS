@@ -147,7 +147,7 @@ namespace APS.Mapeo
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                String up = "UPDATE Historial SET fecha='" + value.ToLongDateString() + "' "
+                String up = "UPDATE Historial SET fecha='" + value.ToString() + "' "
                         + "WHERE ID_Historial=" + this.id + ";";
                 miBD.Update(up);
                 this.fecha = value;

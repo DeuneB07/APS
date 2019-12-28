@@ -49,7 +49,7 @@ namespace APS.Interfaces.GestorExclusive
         {
             String newNoun = u.Nombre.Replace(" ", "+");
             String url = "http://www.google.com/search?q=" + newNoun;
-            System.Diagnostics.Process.Start("firefox.exe", url);
+            System.Diagnostics.Process.Start("chrome.exe", url);
         }
     }
 }

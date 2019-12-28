@@ -39,8 +39,16 @@ namespace APS.Interfaces.Personalizados
 
         private void bVerMas_Click(object sender, EventArgs e)
         {
-            VerActividadGestor vAct = new VerActividadGestor(this.user, this.actividad);
-            vAct.ShowDialog();
+            if (Actividad_Realizada.Contains(user, actividad))
+            {
+                VerActividadRealizada vAct = new VerActividadRealizada(user, new Actividad_Realizada(user, actividad));
+                vAct.ShowDialog();
+            }
+            else
+            {
+                VerActividadAbierta vAct = new VerActividadAbierta(this.user, this.actividad);
+                vAct.ShowDialog();
+            }
         }
     }
 }

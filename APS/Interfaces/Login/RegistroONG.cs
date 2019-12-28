@@ -46,7 +46,7 @@ namespace APS.Interfaces
 
                 if (!tUsuario.Text.Trim().Equals("")) nuevoUser.NombreUser = tUsuario.Text;
                 nuevoUser.FechaNac = dateTimePickerFechNacimiento.Value;
-                //if (!tURL.Text.Trim().Equals("")) nuevoUser.Imagen = pictureBoxPerfil.Image;
+                if (!tURL.Text.Trim().Equals("")) nuevoUser.Imagen = pictureBoxPerfil.Image;
                 
                 MessageBox.Show("Usuario creado correctamente");
 
