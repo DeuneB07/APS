@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartelFiltros2));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flowShowFiltro = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelFiltro = new System.Windows.Forms.Panel();
+            this.pictFiltro = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.bAplicar = new System.Windows.Forms.Button();
             this.filtroAmb = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -54,13 +60,9 @@
             this.filtroTipoAct = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panelFiltro = new System.Windows.Forms.Panel();
-            this.pictFiltro = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
-            this.bAplicar = new System.Windows.Forms.Button();
-            this.flowShowFiltro = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
+            this.panelFiltro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictFiltro)).BeginInit();
             this.filtroAmb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.filtroTipoTrab.SuspendLayout();
@@ -77,8 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.filtroTipoAct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelFiltro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictFiltro)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,6 +93,78 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(799, 115);
             this.panel1.TabIndex = 3;
+            // 
+            // flowShowFiltro
+            // 
+            this.flowShowFiltro.Location = new System.Drawing.Point(92, 69);
+            this.flowShowFiltro.Name = "flowShowFiltro";
+            this.flowShowFiltro.Size = new System.Drawing.Size(704, 42);
+            this.flowShowFiltro.TabIndex = 41;
+            // 
+            // panelFiltro
+            // 
+            this.panelFiltro.Controls.Add(this.pictFiltro);
+            this.panelFiltro.Controls.Add(this.label1);
+            this.panelFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelFiltro.Location = new System.Drawing.Point(626, 24);
+            this.panelFiltro.Name = "panelFiltro";
+            this.panelFiltro.Size = new System.Drawing.Size(144, 39);
+            this.panelFiltro.TabIndex = 31;
+            this.panelFiltro.Click += new System.EventHandler(this.panelFiltro_Click);
+            // 
+            // pictFiltro
+            // 
+            this.pictFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictFiltro.Image = ((System.Drawing.Image)(resources.GetObject("pictFiltro.Image")));
+            this.pictFiltro.Location = new System.Drawing.Point(3, 0);
+            this.pictFiltro.Name = "pictFiltro";
+            this.pictFiltro.Size = new System.Drawing.Size(43, 36);
+            this.pictFiltro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictFiltro.TabIndex = 28;
+            this.pictFiltro.TabStop = false;
+            this.pictFiltro.Click += new System.EventHandler(this.pictFiltro_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(52, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 29);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Filtrar";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtBusqueda.Location = new System.Drawing.Point(106, 33);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(489, 30);
+            this.txtBusqueda.TabIndex = 30;
+            this.txtBusqueda.Text = "Buscador de actividades...";
+            this.txtBusqueda.Click += new System.EventHandler(this.txtBusqueda_Click);
+            this.txtBusqueda.Leave += new System.EventHandler(this.txtBusqueda_Leave);
+            // 
+            // bAplicar
+            // 
+            this.bAplicar.BackColor = System.Drawing.Color.Transparent;
+            this.bAplicar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bAplicar.BackgroundImage")));
+            this.bAplicar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bAplicar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bAplicar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.bAplicar.FlatAppearance.BorderSize = 0;
+            this.bAplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bAplicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAplicar.ForeColor = System.Drawing.Color.Black;
+            this.bAplicar.Location = new System.Drawing.Point(24, 22);
+            this.bAplicar.Margin = new System.Windows.Forms.Padding(4);
+            this.bAplicar.Name = "bAplicar";
+            this.bAplicar.Size = new System.Drawing.Size(61, 52);
+            this.bAplicar.TabIndex = 10;
+            this.bAplicar.UseVisualStyleBackColor = false;
             // 
             // filtroAmb
             // 
@@ -124,6 +196,7 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 5;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // filtroTipoTrab
             // 
@@ -155,6 +228,7 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 6;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // filtroFecha
             // 
@@ -186,6 +260,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 4;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // filtroHoras
             // 
@@ -217,6 +292,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 3;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // filtroTurno
             // 
@@ -248,6 +324,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // filtroComp
             // 
@@ -269,6 +346,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // label4
             // 
@@ -310,6 +388,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // filtroTipoAct
             // 
@@ -341,73 +420,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
-            // 
-            // panelFiltro
-            // 
-            this.panelFiltro.Controls.Add(this.pictFiltro);
-            this.panelFiltro.Controls.Add(this.label1);
-            this.panelFiltro.Location = new System.Drawing.Point(665, 33);
-            this.panelFiltro.Name = "panelFiltro";
-            this.panelFiltro.Size = new System.Drawing.Size(105, 32);
-            this.panelFiltro.TabIndex = 31;
-            this.panelFiltro.Click += new System.EventHandler(this.panelFiltro_Click);
-            // 
-            // pictFiltro
-            // 
-            this.pictFiltro.Image = ((System.Drawing.Image)(resources.GetObject("pictFiltro.Image")));
-            this.pictFiltro.Location = new System.Drawing.Point(-3, 3);
-            this.pictFiltro.Name = "pictFiltro";
-            this.pictFiltro.Size = new System.Drawing.Size(31, 29);
-            this.pictFiltro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictFiltro.TabIndex = 28;
-            this.pictFiltro.TabStop = false;
-            this.pictFiltro.Click += new System.EventHandler(this.pictFiltro_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 24);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Filtrar";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtBusqueda.Location = new System.Drawing.Point(106, 33);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(489, 30);
-            this.txtBusqueda.TabIndex = 30;
-            this.txtBusqueda.Text = "Buscador de actividades...";
-            // 
-            // bAplicar
-            // 
-            this.bAplicar.BackColor = System.Drawing.Color.Transparent;
-            this.bAplicar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bAplicar.BackgroundImage")));
-            this.bAplicar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bAplicar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bAplicar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.bAplicar.FlatAppearance.BorderSize = 0;
-            this.bAplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bAplicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAplicar.ForeColor = System.Drawing.Color.Black;
-            this.bAplicar.Location = new System.Drawing.Point(24, 33);
-            this.bAplicar.Margin = new System.Windows.Forms.Padding(4);
-            this.bAplicar.Name = "bAplicar";
-            this.bAplicar.Size = new System.Drawing.Size(61, 52);
-            this.bAplicar.TabIndex = 10;
-            this.bAplicar.UseVisualStyleBackColor = false;
-            // 
-            // flowShowFiltro
-            // 
-            this.flowShowFiltro.Location = new System.Drawing.Point(92, 69);
-            this.flowShowFiltro.Name = "flowShowFiltro";
-            this.flowShowFiltro.Size = new System.Drawing.Size(689, 31);
-            this.flowShowFiltro.TabIndex = 41;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // CartelFiltros2
             // 
@@ -428,6 +441,9 @@
             this.Size = new System.Drawing.Size(839, 160);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelFiltro.ResumeLayout(false);
+            this.panelFiltro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictFiltro)).EndInit();
             this.filtroAmb.ResumeLayout(false);
             this.filtroAmb.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -452,9 +468,6 @@
             this.filtroTipoAct.ResumeLayout(false);
             this.filtroTipoAct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panelFiltro.ResumeLayout(false);
-            this.panelFiltro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictFiltro)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -464,7 +477,6 @@
         private System.Windows.Forms.Button bAplicar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictFiltro;
-        private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Panel panelFiltro;
         public System.Windows.Forms.Panel filtroAmb;
         public System.Windows.Forms.Panel filtroTipoTrab;
@@ -491,5 +503,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.FlowLayoutPanel flowShowFiltro;
+        public System.Windows.Forms.TextBox txtBusqueda;
     }
 }

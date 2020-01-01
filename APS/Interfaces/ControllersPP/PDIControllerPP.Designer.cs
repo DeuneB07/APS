@@ -65,9 +65,9 @@
             this.pictTodas.BackColor = System.Drawing.Color.Transparent;
             this.pictTodas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictTodas.BackgroundImage")));
             this.pictTodas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictTodas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictTodas.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictTodas.Location = new System.Drawing.Point(105, 32);
-            this.pictTodas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictTodas.Margin = new System.Windows.Forms.Padding(4);
             this.pictTodas.Name = "pictTodas";
             this.pictTodas.Size = new System.Drawing.Size(93, 86);
             this.pictTodas.TabIndex = 1;
@@ -125,9 +125,9 @@
             this.pictProyectos.BackColor = System.Drawing.Color.Transparent;
             this.pictProyectos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictProyectos.BackgroundImage")));
             this.pictProyectos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictProyectos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictProyectos.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictProyectos.Location = new System.Drawing.Point(4, 178);
-            this.pictProyectos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictProyectos.Margin = new System.Windows.Forms.Padding(4);
             this.pictProyectos.Name = "pictProyectos";
             this.pictProyectos.Size = new System.Drawing.Size(93, 86);
             this.pictProyectos.TabIndex = 5;
@@ -150,9 +150,9 @@
             this.pictRevision.BackColor = System.Drawing.Color.Transparent;
             this.pictRevision.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictRevision.BackgroundImage")));
             this.pictRevision.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictRevision.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictRevision.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictRevision.Location = new System.Drawing.Point(56, 489);
-            this.pictRevision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictRevision.Margin = new System.Windows.Forms.Padding(4);
             this.pictRevision.Name = "pictRevision";
             this.pictRevision.Size = new System.Drawing.Size(93, 86);
             this.pictRevision.TabIndex = 7;
@@ -175,9 +175,9 @@
             this.pictEvaluacion.BackColor = System.Drawing.Color.Transparent;
             this.pictEvaluacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictEvaluacion.BackgroundImage")));
             this.pictEvaluacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictEvaluacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictEvaluacion.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictEvaluacion.Location = new System.Drawing.Point(105, 178);
-            this.pictEvaluacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictEvaluacion.Margin = new System.Windows.Forms.Padding(4);
             this.pictEvaluacion.Name = "pictEvaluacion";
             this.pictEvaluacion.Size = new System.Drawing.Size(93, 86);
             this.pictEvaluacion.TabIndex = 9;
@@ -188,9 +188,9 @@
             this.pictMatch.BackColor = System.Drawing.Color.Transparent;
             this.pictMatch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictMatch.BackgroundImage")));
             this.pictMatch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictMatch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictMatch.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictMatch.Location = new System.Drawing.Point(4, 32);
-            this.pictMatch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictMatch.Margin = new System.Windows.Forms.Padding(4);
             this.pictMatch.Name = "pictMatch";
             this.pictMatch.Size = new System.Drawing.Size(93, 86);
             this.pictMatch.TabIndex = 0;
@@ -220,7 +220,7 @@
             this.flowMain.Controls.Add(this.panel1);
             this.flowMain.Controls.Add(this.lRevision);
             this.flowMain.Location = new System.Drawing.Point(4, 17);
-            this.flowMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowMain.Margin = new System.Windows.Forms.Padding(4);
             this.flowMain.Name = "flowMain";
             this.flowMain.Size = new System.Drawing.Size(209, 603);
             this.flowMain.TabIndex = 11;
@@ -228,7 +228,7 @@
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(4, 143);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(199, 27);
             this.panel2.TabIndex = 13;
@@ -236,7 +236,7 @@
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(4, 289);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(199, 27);
             this.panel3.TabIndex = 14;
@@ -246,9 +246,9 @@
             this.pictMisActs.BackColor = System.Drawing.Color.Transparent;
             this.pictMisActs.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictMisActs.BackgroundImage")));
             this.pictMisActs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictMisActs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictMisActs.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictMisActs.Location = new System.Drawing.Point(4, 324);
-            this.pictMisActs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictMisActs.Margin = new System.Windows.Forms.Padding(4);
             this.pictMisActs.Name = "pictMisActs";
             this.pictMisActs.Size = new System.Drawing.Size(93, 86);
             this.pictMisActs.TabIndex = 16;
@@ -259,9 +259,9 @@
             this.pictActIns.BackColor = System.Drawing.Color.Transparent;
             this.pictActIns.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictActIns.BackgroundImage")));
             this.pictActIns.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictActIns.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictActIns.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictActIns.Location = new System.Drawing.Point(105, 324);
-            this.pictActIns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictActIns.Margin = new System.Windows.Forms.Padding(4);
             this.pictActIns.Name = "pictActIns";
             this.pictActIns.Size = new System.Drawing.Size(93, 86);
             this.pictActIns.TabIndex = 18;
@@ -294,7 +294,7 @@
             // panel5
             // 
             this.panel5.Location = new System.Drawing.Point(4, 454);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(199, 27);
             this.panel5.TabIndex = 20;
@@ -302,7 +302,7 @@
             // panel6
             // 
             this.panel6.Location = new System.Drawing.Point(4, 489);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(44, 86);
             this.panel6.TabIndex = 22;
@@ -310,7 +310,7 @@
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(157, 489);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(44, 86);
             this.panel1.TabIndex = 21;
@@ -321,7 +321,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.Controls.Add(this.flowMain);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PDIControllerPP";
             this.Size = new System.Drawing.Size(217, 626);
             ((System.ComponentModel.ISupportInitialize)(this.pictTodas)).EndInit();

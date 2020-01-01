@@ -57,7 +57,6 @@ namespace APS.Mapeo
                 lista.Add(a);
             }
             return lista;
-
         }
 
         public Asignatura(int id)

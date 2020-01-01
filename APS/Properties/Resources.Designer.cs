@@ -63,6 +63,16 @@ namespace APS.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cooperacion_Internacional {
+            get {
+                object obj = ResourceManager.GetObject("Cooperacion_Internacional", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap downarrow_abajo_10289 {
             get {
                 object obj = ResourceManager.GetObject("downarrow_abajo_10289", resourceCulture);
@@ -86,6 +96,16 @@ namespace APS.Properties {
         internal static System.Drawing.Bitmap escribir {
             get {
                 object obj = ResourceManager.GetObject("escribir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estudiantes_UMA {
+            get {
+                object obj = ResourceManager.GetObject("Estudiantes_UMA", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +146,16 @@ namespace APS.Properties {
         internal static System.Drawing.Bitmap no_image {
             get {
                 object obj = ResourceManager.GetObject("no_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Personal_UMA_PDI_PAS {
+            get {
+                object obj = ResourceManager.GetObject("Personal_UMA_PDI_PAS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

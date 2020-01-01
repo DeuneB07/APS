@@ -67,18 +67,20 @@
             this.panel1.Controls.Add(this.labelName);
             this.panel1.Controls.Add(this.lDescripcion);
             this.panel1.Controls.Add(this.pict);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(623, 170);
+            this.panel1.Size = new System.Drawing.Size(831, 209);
             this.panel1.TabIndex = 3;
             // 
             // lShowResp
             // 
             this.lShowResp.AutoSize = true;
             this.lShowResp.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lShowResp.Location = new System.Drawing.Point(105, 58);
+            this.lShowResp.Location = new System.Drawing.Point(140, 71);
+            this.lShowResp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lShowResp.Name = "lShowResp";
-            this.lShowResp.Size = new System.Drawing.Size(54, 13);
+            this.lShowResp.Size = new System.Drawing.Size(69, 17);
             this.lShowResp.TabIndex = 19;
             this.lShowResp.Text = "nounresp";
             // 
@@ -86,9 +88,10 @@
             // 
             this.lResp.AutoSize = true;
             this.lResp.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lResp.Location = new System.Drawing.Point(15, 58);
+            this.lResp.Location = new System.Drawing.Point(20, 71);
+            this.lResp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lResp.Name = "lResp";
-            this.lResp.Size = new System.Drawing.Size(73, 13);
+            this.lResp.Size = new System.Drawing.Size(93, 17);
             this.lResp.TabIndex = 18;
             this.lResp.Text = "Responsable:";
             // 
@@ -96,9 +99,10 @@
             // 
             this.lShowOrg.AutoSize = true;
             this.lShowOrg.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lShowOrg.Location = new System.Drawing.Point(83, 36);
+            this.lShowOrg.Location = new System.Drawing.Point(111, 44);
+            this.lShowOrg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lShowOrg.Name = "lShowOrg";
-            this.lShowOrg.Size = new System.Drawing.Size(48, 13);
+            this.lShowOrg.Size = new System.Drawing.Size(62, 17);
             this.lShowOrg.TabIndex = 17;
             this.lShowOrg.Text = "nounorg";
             // 
@@ -106,9 +110,10 @@
             // 
             this.lShowIni.AutoSize = true;
             this.lShowIni.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lShowIni.Location = new System.Drawing.Point(452, 83);
+            this.lShowIni.Location = new System.Drawing.Point(603, 102);
+            this.lShowIni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lShowIni.Name = "lShowIni";
-            this.lShowIni.Size = new System.Drawing.Size(19, 13);
+            this.lShowIni.Size = new System.Drawing.Size(24, 17);
             this.lShowIni.TabIndex = 16;
             this.lShowIni.Text = "ini";
             // 
@@ -116,9 +121,10 @@
             // 
             this.lFecha.AutoSize = true;
             this.lFecha.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lFecha.Location = new System.Drawing.Point(408, 82);
+            this.lFecha.Location = new System.Drawing.Point(544, 101);
+            this.lFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lFecha.Name = "lFecha";
-            this.lFecha.Size = new System.Drawing.Size(38, 13);
+            this.lFecha.Size = new System.Drawing.Size(49, 17);
             this.lFecha.TabIndex = 14;
             this.lFecha.Text = "Fecha:";
             // 
@@ -126,9 +132,10 @@
             // 
             this.lOrg.AutoSize = true;
             this.lOrg.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lOrg.Location = new System.Drawing.Point(15, 36);
+            this.lOrg.Location = new System.Drawing.Point(20, 44);
+            this.lOrg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lOrg.Name = "lOrg";
-            this.lOrg.Size = new System.Drawing.Size(53, 13);
+            this.lOrg.Size = new System.Drawing.Size(67, 17);
             this.lOrg.TabIndex = 13;
             this.lOrg.Text = "Organiza:";
             // 
@@ -136,9 +143,10 @@
             // 
             this.lTipoActividad.AutoSize = true;
             this.lTipoActividad.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTipoActividad.Location = new System.Drawing.Point(507, 58);
+            this.lTipoActividad.Location = new System.Drawing.Point(676, 71);
+            this.lTipoActividad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lTipoActividad.Name = "lTipoActividad";
-            this.lTipoActividad.Size = new System.Drawing.Size(41, 13);
+            this.lTipoActividad.Size = new System.Drawing.Size(52, 17);
             this.lTipoActividad.TabIndex = 12;
             this.lTipoActividad.Text = "tipoact";
             // 
@@ -146,9 +154,10 @@
             // 
             this.lTipoA.AutoSize = true;
             this.lTipoA.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTipoA.Location = new System.Drawing.Point(408, 58);
+            this.lTipoA.Location = new System.Drawing.Point(544, 71);
+            this.lTipoA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lTipoA.Name = "lTipoA";
-            this.lTipoA.Size = new System.Drawing.Size(93, 13);
+            this.lTipoA.Size = new System.Drawing.Size(121, 17);
             this.lTipoA.TabIndex = 11;
             this.lTipoA.Text = "Tipo de Actividad:";
             // 
@@ -159,9 +168,10 @@
             this.bSolicitar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.bSolicitar.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bSolicitar.ForeColor = System.Drawing.Color.Black;
-            this.bSolicitar.Location = new System.Drawing.Point(556, 135);
+            this.bSolicitar.Location = new System.Drawing.Point(741, 166);
+            this.bSolicitar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bSolicitar.Name = "bSolicitar";
-            this.bSolicitar.Size = new System.Drawing.Size(64, 32);
+            this.bSolicitar.Size = new System.Drawing.Size(85, 39);
             this.bSolicitar.TabIndex = 10;
             this.bSolicitar.Text = "Solicitar";
             this.bSolicitar.UseVisualStyleBackColor = false;
@@ -171,9 +181,10 @@
             this.lNumPlazas.AutoSize = true;
             this.lNumPlazas.BackColor = System.Drawing.Color.Transparent;
             this.lNumPlazas.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lNumPlazas.Location = new System.Drawing.Point(511, 108);
+            this.lNumPlazas.Location = new System.Drawing.Point(681, 133);
+            this.lNumPlazas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lNumPlazas.Name = "lNumPlazas";
-            this.lNumPlazas.Size = new System.Drawing.Size(28, 13);
+            this.lNumPlazas.Size = new System.Drawing.Size(36, 17);
             this.lNumPlazas.TabIndex = 9;
             this.lNumPlazas.Text = "num";
             // 
@@ -181,9 +192,10 @@
             // 
             this.lPlazas.AutoSize = true;
             this.lPlazas.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lPlazas.Location = new System.Drawing.Point(408, 108);
+            this.lPlazas.Location = new System.Drawing.Point(544, 133);
+            this.lPlazas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lPlazas.Name = "lPlazas";
-            this.lPlazas.Size = new System.Drawing.Size(106, 13);
+            this.lPlazas.Size = new System.Drawing.Size(135, 17);
             this.lPlazas.TabIndex = 8;
             this.lPlazas.Text = "Plazas Disponibles: ";
             // 
@@ -192,9 +204,10 @@
             this.bVerMas.FlatAppearance.BorderSize = 0;
             this.bVerMas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVerMas.Image = ((System.Drawing.Image)(resources.GetObject("bVerMas.Image")));
-            this.bVerMas.Location = new System.Drawing.Point(566, 3);
+            this.bVerMas.Location = new System.Drawing.Point(755, 4);
+            this.bVerMas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bVerMas.Name = "bVerMas";
-            this.bVerMas.Size = new System.Drawing.Size(54, 55);
+            this.bVerMas.Size = new System.Drawing.Size(72, 68);
             this.bVerMas.TabIndex = 7;
             this.bVerMas.UseVisualStyleBackColor = true;
             this.bVerMas.Click += new System.EventHandler(this.bVerMas_Click);
@@ -202,38 +215,44 @@
             // labelName
             // 
             this.labelName.Font = new System.Drawing.Font("Bahnschrift", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(3, 4);
+            this.labelName.Location = new System.Drawing.Point(4, 5);
+            this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(407, 23);
+            this.labelName.Size = new System.Drawing.Size(543, 28);
             this.labelName.TabIndex = 4;
             this.labelName.Text = "Nombre";
             // 
             // lDescripcion
             // 
             this.lDescripcion.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDescripcion.Location = new System.Drawing.Point(141, 82);
+            this.lDescripcion.Location = new System.Drawing.Point(188, 101);
+            this.lDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lDescripcion.Name = "lDescripcion";
-            this.lDescripcion.Size = new System.Drawing.Size(266, 78);
+            this.lDescripcion.Size = new System.Drawing.Size(355, 96);
             this.lDescripcion.TabIndex = 5;
             this.lDescripcion.Text = "Descripción";
             // 
             // pict
             // 
-            this.pict.Location = new System.Drawing.Point(3, 82);
+            this.pict.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pict.Image = global::APS.Properties.Resources.no_image;
+            this.pict.Location = new System.Drawing.Point(4, 101);
+            this.pict.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pict.Name = "pict";
-            this.pict.Size = new System.Drawing.Size(132, 81);
+            this.pict.Size = new System.Drawing.Size(176, 100);
             this.pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pict.TabIndex = 6;
             this.pict.TabStop = false;
             // 
             // CartelActividadesStandard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CartelActividadesStandard";
-            this.Size = new System.Drawing.Size(629, 176);
+            this.Size = new System.Drawing.Size(839, 217);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).EndInit();

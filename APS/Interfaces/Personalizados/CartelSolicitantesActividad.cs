@@ -26,6 +26,43 @@ namespace APS.Interfaces.Personalizados
             this.lShowMail.Text = usrShow.Email;
             this.lShowRol.Text = usrShow.Rol.NombreRol;
             this.lShowNac.Text = usrShow.FechaNac.ToShortDateString();
+            if (usrShow.Imagen != null) pict.Image = usrShow.Imagen;
+            if (usrShow.Grados.Count > 0)
+            {
+                Grado g = usrShow.Grados[0];
+                lblGrado.Visible = true;
+                lGrado.Visible = true;
+                lGrado.Text = g.NombreGrado;
+                lblAsignaturas.Visible = true;
+                listAsig.Visible = true;
+                foreach(Asignatura a in usrShow.Asignaturas)
+                {
+                    Console.WriteLine(a.NombreAsig);
+                    listAsig.Items.Add(a.NombreAsig);
+                }
+                
+            }
+
+            if (usrLogin.Rol.NombreRol.Equals("ONG"))
+            {
+                labelName.Text = "ANÓNIMO";
+                lShowNick.Text = "Anónimo";
+                lMail.Visible = false;
+                lShowMail.Visible = false;
+                lShowNac.Visible = false;
+                lNacimiento.Visible = false;
+                if (usrShow.Rol.NombreRol.Equals("Estudiante"))
+                {
+                    pict.Image = Properties.Resources.Estudiantes_UMA;
+                }else if (usrShow.Rol.NombreRol.Equals("ONG"))
+                {
+                    pict.Image = Properties.Resources.Cooperacion_Internacional;
+                }
+                else
+                {
+                    pict.Image = Properties.Resources.Personal_UMA_PDI_PAS;
+                }
+            }
         }
 
         #region Properties
@@ -84,6 +121,14 @@ namespace APS.Interfaces.Personalizados
         {
             //VerUsuario vUsr = new VerUsuario(this.usrLogin, this.usrShow);
             //vUsr.ShowDialog();
+        }
+
+        private void listAsig_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listAsig.SelectedItem = null;
+            listAsig.SelectedText = "";
+            listAsig.SelectedValue = null;
+            listAsig.Text = "";
         }
     }
 }

@@ -171,7 +171,7 @@ namespace APS.Interfaces
 
             //Primera Pestaña Cargada
             if (user.AccesoPantalla("MATCH")) cargarMatchActividadesInicio(); 
-            else if (user.AccesoPantalla("TODAS")) cargarTodasActividadesInicio();
+            else if (user.AccesoPantalla("TODAS")) cargarTodasActividadesInicio2();
             else if (user.AccesoPantalla("VALORACION")) cargarValoracionActividadesInicio();
 
             //Notificacion Mensajes
@@ -211,7 +211,7 @@ namespace APS.Interfaces
                 seleccionada = (PictureBox)flowP.Controls.Find("pictTodas", false)[0];
                 seleccionada.BackColor = SystemColors.ActiveCaption;
                 lTituloPanel.Text = "TODAS LAS ACTIVIDADES";
-                cargarTodasActividadesInicio();
+                cargarTodasActividadesInicio2();
             }
         }
 
@@ -349,7 +349,12 @@ namespace APS.Interfaces
 
             if(act.TipoAct.ToString().Equals("VOLUNTARIADO")) user.AddActividadSolicitada(act, Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_ONG);
             else user.AddActividadSolicitada(act, Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_PDI);
-            
+
+            seleccionada.BackColor = Color.Transparent;
+            seleccionada = (PictureBox)flowP.Controls.Find("pictActIns", false)[0];
+            seleccionada.BackColor = SystemColors.ActiveCaption;
+            lTituloPanel.Text = "ACTIVIDADES INSCRITAS";
+
             cargarActividadesInscritas();
             DialogResult emCierreDialog;
             string mensaje = "Actividad solicitada";
@@ -555,7 +560,56 @@ namespace APS.Interfaces
                 bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, act); };
                 c++;
             }
+        }
 
+        private void cargarTodasActividadesInicio2()
+        {
+            chargedWindow = PantallaCargada.TODAS;
+            tablePP.Controls.Clear();
+            tablePP.RowCount = 1;
+            tablePP.AutoScroll = false;
+            panelPrincipal.AutoScroll = false;
+            panelPrincipal.AutoScroll = true;
+            cargarFiltrosTodas2();
+
+            List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
+            cargarActividadesTodas2(actividades);
+        }
+
+        private void cargarActividadesTodas2(List<Actividad> actividades)
+        {
+            List<Actividad_Solicitud> lista = Actividad_Solicitud.ListaActividadesSolicitudes(user);
+            CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
+
+            int c = 0;
+            foreach (Actividad act in actividades)
+            {
+                actsCarteles[c] = new CartelActividadesStandard(user, act);
+                tablePP.Controls.Add(actsCarteles[c], 0, c + 1);
+                tablePP.RowCount = tablePP.RowCount + 1;
+                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
+
+                //BOTON SOLICITAR
+                Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
+                Button bSolicitar = (Button)panel.Controls.Find("bSolicitar", false)[0];
+                if (user.Rol.NombreRol.Equals("GESTOR")) bSolicitar.Visible = false;
+
+
+                Boolean encontrada = false;
+                int contador = 0;
+                while (!encontrada && lista.Count > contador)
+                {
+                    if (lista[contador].Actividad.Equals(act)) encontrada = true;
+                    contador++;
+                }
+                if (encontrada)
+                {
+                    bSolicitar.Visible = false;
+                }
+                //PROGRAMACIÓN BOTONES
+                bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, act); };
+                c++;
+            }
         }
 
         private void cargarTodasActividadesFiltro(List<Actividad> listAct,Actividad.TurnoE turno, Actividad.TipoActividadE tipoAct,
@@ -584,6 +638,56 @@ namespace APS.Interfaces
                 bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, act); };
                 c++;
             }
+        }
+
+        private void cargarFiltrosTodas2()
+        {
+            //pTodas
+            CartelFiltros2 cFiltro = new CartelFiltros2(this.user);
+            tablePP.Controls.Add(cFiltro, 0, 0);
+            tablePP.RowCount = tablePP.RowCount + 1;
+
+            //Pulsación Filtros
+            Control panelFiltro = cFiltro.Controls.Find("panel1", false)[0]; //Panel de Filtros
+            Control panelFiltro2 = panelFiltro.Controls.Find("panelFiltro", false)[0];
+            Button bFiltros = new Button(); //Button de Filtros -> Aplicar
+
+            //Recojo los Botones
+            foreach (Control cPanel in panelFiltro.Controls)
+            {
+                if (cPanel.Name.Equals("bAplicar")) bFiltros = (Button)cPanel;
+            }
+
+            //Añadimos Parámetros para el Filtro
+            bFiltros.Click += (sender, EventArgs) => { bFiltros_Click2(sender, EventArgs, cFiltro); };
+        }
+
+
+        private void bFiltros_Click2(object sender, EventArgs eventArgs, CartelFiltros2 cFiltro)
+        {
+            chargedWindow = PantallaCargada.TODAS;
+            tablePP.Controls.Clear();
+            tablePP.RowCount = 1;
+            tablePP.AutoScroll = false;
+            panelPrincipal.AutoScroll = false;
+            panelPrincipal.AutoScroll = true;
+            tablePP.Controls.Add(cFiltro, 0, 0);
+            tablePP.RowCount = tablePP.RowCount + 1;
+
+            cFiltro.filtros.ActualizarFiltro();
+
+            if (cFiltro.txtBusqueda.ForeColor.Equals(Color.Black))
+            {
+                var query = from act in Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA)
+                            where !act.NombreAct.ToUpper().Contains(cFiltro.txtBusqueda.Text.Trim().ToUpper())
+                            select act;
+                foreach(Actividad act in query)
+                {
+                    cFiltro.filtros.listaFiltrada.Remove(act);
+                }
+            }
+
+            cargarActividadesTodas2(cFiltro.filtros.listaFiltrada);
         }
 
         private void cargarFiltrosTodas(Actividad.TurnoE turno, Actividad.TipoActividadE tipoAct, Asignatura asig, Grado g, DateTime date, int horas)

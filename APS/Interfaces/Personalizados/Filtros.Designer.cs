@@ -88,10 +88,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 18);
+            this.label1.Size = new System.Drawing.Size(89, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Filtrar Por";
             // 
@@ -109,7 +109,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Location = new System.Drawing.Point(26, 30);
+            this.panel1.Location = new System.Drawing.Point(26, 36);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(704, 7);
             this.panel1.TabIndex = 2;
@@ -128,35 +128,38 @@
             // checkVoluntariado
             // 
             this.checkVoluntariado.AutoSize = true;
+            this.checkVoluntariado.BackColor = System.Drawing.Color.White;
             this.checkVoluntariado.Font = new System.Drawing.Font("Cambria", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkVoluntariado.Location = new System.Drawing.Point(307, 82);
             this.checkVoluntariado.Name = "checkVoluntariado";
             this.checkVoluntariado.Size = new System.Drawing.Size(111, 20);
             this.checkVoluntariado.TabIndex = 7;
             this.checkVoluntariado.Text = "Voluntariado";
-            this.checkVoluntariado.UseVisualStyleBackColor = true;
+            this.checkVoluntariado.UseVisualStyleBackColor = false;
             // 
             // checkInvestigacion
             // 
             this.checkInvestigacion.AutoSize = true;
+            this.checkInvestigacion.BackColor = System.Drawing.Color.White;
             this.checkInvestigacion.Font = new System.Drawing.Font("Cambria", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkInvestigacion.Location = new System.Drawing.Point(164, 82);
             this.checkInvestigacion.Name = "checkInvestigacion";
             this.checkInvestigacion.Size = new System.Drawing.Size(113, 20);
             this.checkInvestigacion.TabIndex = 8;
             this.checkInvestigacion.Text = "Investigación";
-            this.checkInvestigacion.UseVisualStyleBackColor = true;
+            this.checkInvestigacion.UseVisualStyleBackColor = false;
             // 
             // checkFormacion
             // 
             this.checkFormacion.AutoSize = true;
+            this.checkFormacion.BackColor = System.Drawing.Color.White;
             this.checkFormacion.Font = new System.Drawing.Font("Cambria", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkFormacion.Location = new System.Drawing.Point(26, 82);
             this.checkFormacion.Name = "checkFormacion";
             this.checkFormacion.Size = new System.Drawing.Size(97, 20);
             this.checkFormacion.TabIndex = 9;
             this.checkFormacion.Text = "Formación";
-            this.checkFormacion.UseVisualStyleBackColor = true;
+            this.checkFormacion.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -275,6 +278,7 @@
             // 
             // txtNumHoras
             // 
+            this.txtNumHoras.BackColor = System.Drawing.Color.White;
             this.txtNumHoras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNumHoras.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumHoras.Location = new System.Drawing.Point(730, 510);
@@ -579,6 +583,7 @@
             // 
             // btnAñadirComp
             // 
+            this.btnAñadirComp.BackColor = System.Drawing.Color.White;
             this.btnAñadirComp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAñadirComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAñadirComp.Location = new System.Drawing.Point(323, 270);
@@ -586,11 +591,12 @@
             this.btnAñadirComp.Size = new System.Drawing.Size(119, 23);
             this.btnAñadirComp.TabIndex = 46;
             this.btnAñadirComp.Text = "Añadir";
-            this.btnAñadirComp.UseVisualStyleBackColor = true;
+            this.btnAñadirComp.UseVisualStyleBackColor = false;
             this.btnAñadirComp.Click += new System.EventHandler(this.btnAñadirComp_Click);
             // 
             // btnQuitarComp
             // 
+            this.btnQuitarComp.BackColor = System.Drawing.Color.White;
             this.btnQuitarComp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuitarComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitarComp.Location = new System.Drawing.Point(323, 310);
@@ -598,11 +604,12 @@
             this.btnQuitarComp.Size = new System.Drawing.Size(119, 23);
             this.btnQuitarComp.TabIndex = 47;
             this.btnQuitarComp.Text = "Quitar";
-            this.btnQuitarComp.UseVisualStyleBackColor = true;
+            this.btnQuitarComp.UseVisualStyleBackColor = false;
             this.btnQuitarComp.Click += new System.EventHandler(this.btnQuitarComp_Click);
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.Location = new System.Drawing.Point(745, 12);
             this.btnCerrar.Name = "btnCerrar";
@@ -618,7 +625,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(878, 446);
+            this.ClientSize = new System.Drawing.Size(826, 466);
             this.ControlBox = false;
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnQuitarComp);
@@ -672,7 +679,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.trackBarHoras);
             this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Filtros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.trackBarHoras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
@@ -683,56 +693,56 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TrackBar trackBarHoras;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkVoluntariado;
-        private System.Windows.Forms.CheckBox checkInvestigacion;
-        private System.Windows.Forms.CheckBox checkFormacion;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboGrado;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboAsig;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox checkTarde;
-        private System.Windows.Forms.CheckBox checkMañana;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtNumHoras;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePickerInicio;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePickerFin;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.CheckBox checkInmigracion;
-        private System.Windows.Forms.CheckBox checkSinHogar;
-        private System.Windows.Forms.CheckBox checkPobreza;
-        private System.Windows.Forms.CheckBox checkDiscapacidad;
-        private System.Windows.Forms.CheckBox checkTerceraEdad;
-        private System.Windows.Forms.CheckBox checkNiños;
-        private System.Windows.Forms.CheckBox checkAnimales;
-        private System.Windows.Forms.CheckBox checkOtrosAmb;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.CheckBox checkInvestigacionTrabajo;
-        private System.Windows.Forms.CheckBox checkViaje;
-        private System.Windows.Forms.CheckBox checkEvento;
-        private System.Windows.Forms.CheckBox checkSalud;
-        private System.Windows.Forms.CheckBox checkAdministracion;
-        private System.Windows.Forms.CheckBox checkOtrosTipo;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ListBox listComp1;
-        private System.Windows.Forms.ListBox listComp2;
         private System.Windows.Forms.Button btnAñadirComp;
         private System.Windows.Forms.Button btnQuitarComp;
         private System.Windows.Forms.PictureBox btnCerrar;
+        public System.Windows.Forms.TrackBar trackBarHoras;
+        public System.Windows.Forms.CheckBox checkVoluntariado;
+        public System.Windows.Forms.CheckBox checkInvestigacion;
+        public System.Windows.Forms.CheckBox checkFormacion;
+        public System.Windows.Forms.ComboBox comboGrado;
+        public System.Windows.Forms.ComboBox comboAsig;
+        public System.Windows.Forms.CheckBox checkTarde;
+        public System.Windows.Forms.CheckBox checkMañana;
+        public System.Windows.Forms.TextBox txtNumHoras;
+        public System.Windows.Forms.DateTimePicker dateTimePickerInicio;
+        public System.Windows.Forms.DateTimePicker dateTimePickerFin;
+        public System.Windows.Forms.CheckBox checkInmigracion;
+        public System.Windows.Forms.CheckBox checkSinHogar;
+        public System.Windows.Forms.CheckBox checkPobreza;
+        public System.Windows.Forms.CheckBox checkDiscapacidad;
+        public System.Windows.Forms.CheckBox checkTerceraEdad;
+        public System.Windows.Forms.CheckBox checkNiños;
+        public System.Windows.Forms.CheckBox checkAnimales;
+        public System.Windows.Forms.CheckBox checkOtrosAmb;
+        public System.Windows.Forms.CheckBox checkInvestigacionTrabajo;
+        public System.Windows.Forms.CheckBox checkViaje;
+        public System.Windows.Forms.CheckBox checkEvento;
+        public System.Windows.Forms.CheckBox checkSalud;
+        public System.Windows.Forms.CheckBox checkAdministracion;
+        public System.Windows.Forms.CheckBox checkOtrosTipo;
+        public System.Windows.Forms.ListBox listComp1;
+        public System.Windows.Forms.ListBox listComp2;
     }
 }

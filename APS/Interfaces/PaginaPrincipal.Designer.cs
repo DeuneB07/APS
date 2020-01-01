@@ -194,7 +194,7 @@
             this.pictCerrarSesion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictCerrarSesion.BackgroundImage")));
             this.pictCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictCerrarSesion.Location = new System.Drawing.Point(1152, 585);
-            this.pictCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.pictCerrarSesion.Name = "pictCerrarSesion";
             this.pictCerrarSesion.Size = new System.Drawing.Size(80, 74);
             this.pictCerrarSesion.TabIndex = 37;
@@ -207,7 +207,7 @@
             this.pictMensajes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictMensajes.BackgroundImage")));
             this.pictMensajes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictMensajes.Location = new System.Drawing.Point(1152, 249);
-            this.pictMensajes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictMensajes.Margin = new System.Windows.Forms.Padding(4);
             this.pictMensajes.Name = "pictMensajes";
             this.pictMensajes.Size = new System.Drawing.Size(80, 74);
             this.pictMensajes.TabIndex = 36;
@@ -220,7 +220,7 @@
             this.pictActividad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictActividad.BackgroundImage")));
             this.pictActividad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictActividad.Location = new System.Drawing.Point(1152, 476);
-            this.pictActividad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictActividad.Margin = new System.Windows.Forms.Padding(4);
             this.pictActividad.Name = "pictActividad";
             this.pictActividad.Size = new System.Drawing.Size(80, 74);
             this.pictActividad.TabIndex = 35;
@@ -233,7 +233,7 @@
             this.pictProyectos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictProyectos.BackgroundImage")));
             this.pictProyectos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictProyectos.Location = new System.Drawing.Point(1152, 476);
-            this.pictProyectos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictProyectos.Margin = new System.Windows.Forms.Padding(4);
             this.pictProyectos.Name = "pictProyectos";
             this.pictProyectos.Size = new System.Drawing.Size(80, 74);
             this.pictProyectos.TabIndex = 34;
@@ -245,7 +245,7 @@
             this.pictPerfil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictPerfil.BackgroundImage")));
             this.pictPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictPerfil.Location = new System.Drawing.Point(1152, 139);
-            this.pictPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.pictPerfil.Name = "pictPerfil";
             this.pictPerfil.Size = new System.Drawing.Size(80, 74);
             this.pictPerfil.TabIndex = 32;
@@ -257,7 +257,7 @@
             this.pictureUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureUser.Image = ((System.Drawing.Image)(resources.GetObject("pictureUser.Image")));
             this.pictureUser.Location = new System.Drawing.Point(1148, 25);
-            this.pictureUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureUser.Margin = new System.Windows.Forms.Padding(4);
             this.pictureUser.Name = "pictureUser";
             this.pictureUser.Size = new System.Drawing.Size(93, 86);
             this.pictureUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -270,7 +270,7 @@
             this.pictHistorial.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictHistorial.BackgroundImage")));
             this.pictHistorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictHistorial.Location = new System.Drawing.Point(1152, 363);
-            this.pictHistorial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictHistorial.Margin = new System.Windows.Forms.Padding(4);
             this.pictHistorial.Name = "pictHistorial";
             this.pictHistorial.Size = new System.Drawing.Size(80, 74);
             this.pictHistorial.TabIndex = 33;
@@ -295,7 +295,7 @@
             this.panelPrincipal.AutoScroll = true;
             this.panelPrincipal.Controls.Add(this.tablePP);
             this.panelPrincipal.Location = new System.Drawing.Point(245, 97);
-            this.panelPrincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelPrincipal.Margin = new System.Windows.Forms.Padding(4);
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(876, 603);
             this.panelPrincipal.TabIndex = 44;
@@ -309,7 +309,7 @@
             this.tablePP.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tablePP.Dock = System.Windows.Forms.DockStyle.Top;
             this.tablePP.Location = new System.Drawing.Point(0, 0);
-            this.tablePP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tablePP.Margin = new System.Windows.Forms.Padding(4);
             this.tablePP.Name = "tablePP";
             this.tablePP.RowCount = 1;
             this.tablePP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -322,7 +322,7 @@
             this.pictDevelop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictDevelop.BackgroundImage")));
             this.pictDevelop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictDevelop.Location = new System.Drawing.Point(1105, 726);
-            this.pictDevelop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictDevelop.Margin = new System.Windows.Forms.Padding(4);
             this.pictDevelop.Name = "pictDevelop";
             this.pictDevelop.Size = new System.Drawing.Size(164, 50);
             this.pictDevelop.TabIndex = 45;
@@ -347,7 +347,7 @@
             this.pictDuda1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictDuda1.BackgroundImage")));
             this.pictDuda1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictDuda1.Location = new System.Drawing.Point(767, 63);
-            this.pictDuda1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictDuda1.Margin = new System.Windows.Forms.Padding(4);
             this.pictDuda1.Name = "pictDuda1";
             this.pictDuda1.Size = new System.Drawing.Size(33, 31);
             this.pictDuda1.TabIndex = 48;
@@ -370,10 +370,11 @@
             this.bDuda.BackColor = System.Drawing.Color.Transparent;
             this.bDuda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bDuda.BackgroundImage")));
             this.bDuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bDuda.Cursor = System.Windows.Forms.Cursors.Help;
             this.bDuda.FlatAppearance.BorderSize = 0;
             this.bDuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bDuda.Location = new System.Drawing.Point(1088, 63);
-            this.bDuda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bDuda.Margin = new System.Windows.Forms.Padding(4);
             this.bDuda.Name = "bDuda";
             this.bDuda.Size = new System.Drawing.Size(33, 31);
             this.bDuda.TabIndex = 50;
@@ -386,7 +387,7 @@
             this.pictGestor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictGestor.BackgroundImage")));
             this.pictGestor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictGestor.Location = new System.Drawing.Point(1152, 363);
-            this.pictGestor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictGestor.Margin = new System.Windows.Forms.Padding(4);
             this.pictGestor.Name = "pictGestor";
             this.pictGestor.Size = new System.Drawing.Size(80, 74);
             this.pictGestor.TabIndex = 52;
@@ -416,7 +417,7 @@
             this.bNotis.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bNotis.ForeColor = System.Drawing.Color.Black;
             this.bNotis.Location = new System.Drawing.Point(1224, 229);
-            this.bNotis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bNotis.Margin = new System.Windows.Forms.Padding(4);
             this.bNotis.Name = "bNotis";
             this.bNotis.Size = new System.Drawing.Size(39, 36);
             this.bNotis.TabIndex = 53;
@@ -522,7 +523,7 @@
             this.Controls.Add(this.pictMensajes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PaginaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pagina Principal";

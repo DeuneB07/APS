@@ -151,4 +151,13 @@
   <data name="uparrow_arriba_10286" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\uparrow_arriba_10286.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Cooperacion_Internacional" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cooperacion Internacional.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Estudiantes_UMA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Estudiantes UMA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Personal_UMA_PDI_PAS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Personal UMA PDI-PAS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

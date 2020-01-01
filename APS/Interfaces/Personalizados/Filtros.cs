@@ -110,29 +110,33 @@ namespace APS.Interfaces.Personalizados
 
         private void Cerrar_Click(object sender, EventArgs e)
         {
-            Panel last = null;
-            listaFiltrada = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
-            cartel.flowShowFiltro
-
-            Filtrar_TipoActividad(last);
-            Filtrar_Asignatura(last);
-            Filtrar_Competencias(last);
-            Filtrar_Turno(last);
-            Filtrar_Horas(last);
-            Filtrar_Fecha(last);
-            Filtrar_AmbitoTrabajo(last);
-            Filtrar_TipoTrabajo(last);
-
+            ActualizarFiltro();
             this.Hide();
         }
 
-        private void Filtrar_TipoActividad(Panel last)
+        public void ActualizarFiltro()
+        {
+            listaFiltrada = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
+            cartel.flowShowFiltro.Controls.Clear();
+
+            Filtrar_TipoActividad();
+            Filtrar_Asignatura();
+            Filtrar_Competencias();
+            Filtrar_Turno();
+            Filtrar_Horas();
+            Filtrar_Fecha();
+            Filtrar_AmbitoTrabajo();
+            Filtrar_TipoTrabajo();
+        }
+
+        private void Filtrar_TipoActividad()
         {
             cartel.filtroTipoAct.Visible = false;
             if(checkFormacion.Checked || checkInvestigacion.Checked || checkVoluntariado.Checked)
             {
                 cartel.filtroTipoAct.Visible = true;
-                last = cartel.filtroTipoAct;
+                cartel.flowShowFiltro.Controls.Add(cartel.filtroTipoAct);
+
                 List<Actividad> aux = new List<Actividad>();
                 if (checkFormacion.Checked)
                 {
@@ -159,15 +163,13 @@ namespace APS.Interfaces.Personalizados
             }
         }
 
-        private void Filtrar_Asignatura(Panel last)
+        private void Filtrar_Asignatura()
         {
             cartel.filtroAsig.Visible = false;
             if(comboAsig.SelectedItem != null)
             {
-               // if (last == null) cartel.filtroAsig.Location = cartel.filtroTipoAct.Location;
-               // else cartel.filtroAsig.Location = new Point(last.Location.X + 87, last.Location.Y);
                 cartel.filtroAsig.Visible = true;
-                last = cartel.filtroAsig;
+                cartel.flowShowFiltro.Controls.Add(cartel.filtroAsig);
 
                 Asignatura asig = (Asignatura) comboAsig.SelectedItem;
 
@@ -182,15 +184,13 @@ namespace APS.Interfaces.Personalizados
             }
         }
 
-        private void Filtrar_Competencias(Panel last)
+        private void Filtrar_Competencias()
         {
             cartel.filtroComp.Visible = false;
             if (listComp2.Items.Count > 0)
             {
-                //if (last == null) cartel.filtroComp.Location = cartel.filtroTipoAct.Location;
-                //else cartel.filtroComp.Location = new Point(last.Location.X + 87, last.Location.Y);
                 cartel.filtroComp.Visible = true;
-                last = cartel.filtroComp;
+                cartel.flowShowFiltro.Controls.Add(cartel.filtroComp);
 
                 List<Actividad> aux = new List<Actividad>();
                 List<Competencia> competencias = new List<Competencia>();
@@ -214,15 +214,13 @@ namespace APS.Interfaces.Personalizados
             }
         }
 
-        private void Filtrar_Turno(Panel last)
+        private void Filtrar_Turno()
         {
             cartel.filtroTurno.Visible = false;
             if(checkTarde.Checked || checkMañana.Checked)
             {
-                //if (last == null) cartel.filtroTurno.Location = cartel.filtroTipoAct.Location;
-                //else cartel.filtroTurno.Location = new Point(last.Location.X + 87, last.Location.Y);
                 cartel.filtroTurno.Visible = true;
-                last = cartel.filtroTurno;
+                cartel.flowShowFiltro.Controls.Add(cartel.filtroTurno);
 
                 List<Actividad> aux = new List<Actividad>();
                 if (checkTarde.Checked && !checkMañana.Checked)
@@ -250,15 +248,13 @@ namespace APS.Interfaces.Personalizados
         }
 
 
-        private void Filtrar_Horas(Panel last)
+        private void Filtrar_Horas()
         {
             cartel.filtroHoras.Visible = false;
             if (!txtNumHoras.Text.Equals("0"))
             {
-                //if (last == null) cartel.filtroHoras.Location = cartel.filtroTipoAct.Location;
-                //else cartel.filtroHoras.Location = new Point(last.Location.X + 87, last.Location.Y);
                 cartel.filtroHoras.Visible = true;
-                last = cartel.filtroHoras;
+                cartel.flowShowFiltro.Controls.Add(cartel.filtroHoras);
 
                 int horas = int.Parse(txtNumHoras.Text);
 
@@ -274,15 +270,13 @@ namespace APS.Interfaces.Personalizados
             }
         }
 
-        private void Filtrar_Fecha(Panel last)
+        private void Filtrar_Fecha()
         {
             cartel.filtroFecha.Visible = false;
             if(dateTimePickerInicio.Value != DateTimePicker.MinimumDateTime || dateTimePickerFin.Value != DateTimePicker.MaximumDateTime)
             {
-                //if (last == null) cartel.filtroFecha.Location = cartel.filtroTipoAct.Location;
-                //else cartel.filtroFecha.Location = new Point(last.Location.X + 87, last.Location.Y);
                 cartel.filtroFecha.Visible = true;
-                last = cartel.filtroFecha;
+                cartel.flowShowFiltro.Controls.Add(cartel.filtroFecha);
 
                 List<Actividad> aux = new List<Actividad>();
                 if(dateTimePickerInicio.Value!= DateTimePicker.MinimumDateTime)
@@ -308,16 +302,14 @@ namespace APS.Interfaces.Personalizados
             }
         }
 
-        private void Filtrar_AmbitoTrabajo(Panel last)
+        private void Filtrar_AmbitoTrabajo()
         {
             cartel.filtroAmb.Visible = false;
             if(checkInmigracion.Checked || checkSinHogar.Checked || checkPobreza.Checked || checkDiscapacidad.Checked ||
                 checkTerceraEdad.Checked || checkNiños.Checked || checkAnimales.Checked || checkOtrosAmb.Checked)
             {
-               // if (last == null) cartel.filtroAmb.Location = cartel.filtroTipoAct.Location;
-               // else cartel.filtroAmb.Location = new Point(last.Location.X + 87, last.Location.Y);
                 cartel.filtroAmb.Visible = true;
-                last = cartel.filtroAmb;
+                cartel.flowShowFiltro.Controls.Add(cartel.filtroAmb);
 
                 List<Actividad> aux = new List<Actividad>();
                 foreach(Actividad act in listaFiltrada)
@@ -343,16 +335,14 @@ namespace APS.Interfaces.Personalizados
             }
         }
 
-        private void Filtrar_TipoTrabajo(Panel last)
+        private void Filtrar_TipoTrabajo()
         {
             cartel.filtroTipoTrab.Visible = false;
             if (checkSalud.Checked || checkEvento.Checked || checkViaje.Checked || checkInvestigacionTrabajo.Checked ||
                      checkAdministracion.Checked || checkOtrosTipo.Checked)
             {
-              //  if (last == null) cartel.filtroTipoTrab.Location = cartel.filtroTipoAct.Location;
-              //  else cartel.filtroTipoTrab.Location = new Point(last.Location.X + 87, last.Location.Y);
                 cartel.filtroTipoTrab.Visible = true;
-                last = cartel.filtroTipoTrab;
+                cartel.flowShowFiltro.Controls.Add(cartel.filtroTipoTrab);
 
                 List<Actividad> aux = new List<Actividad>();
                 foreach (Actividad act in listaFiltrada)

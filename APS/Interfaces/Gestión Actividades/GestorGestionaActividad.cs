@@ -163,7 +163,6 @@ namespace APS.Interfaces
                     act.EstadoAct = EstadoActividadE.ACEPTADA_GESTOR;
                     MessageBox.Show("Actividad gestionada correctamente.\n La actividad pasará a ser revisada por el profesor responsable.");
                 }
-                MessageBox.Show("tipo: " + act.TipoAct.ToString());
                 this.Close();
 
             }

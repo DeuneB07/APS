@@ -341,11 +341,23 @@
     <Compile Include="Interfaces\Personalizados\CartelActividadesRealizada.Designer.cs">
       <DependentUpon>CartelActividadesRealizada.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelFiltros2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelFiltros2.Designer.cs">
+      <DependentUpon>CartelFiltros2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelHistorial.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Interfaces\Personalizados\CartelHistorial.Designer.cs">
       <DependentUpon>CartelHistorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\Filtros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\Filtros.Designer.cs">
+      <DependentUpon>Filtros.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Valoracion\EvaluarActividad.cs">
       <SubType>Form</SubType>
@@ -693,8 +705,14 @@
     <EmbeddedResource Include="Interfaces\Personalizados\CartelActividadesRealizada.resx">
       <DependentUpon>CartelActividadesRealizada.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelFiltros2.resx">
+      <DependentUpon>CartelFiltros2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelHistorial.resx">
       <DependentUpon>CartelHistorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\Filtros.resx">
+      <DependentUpon>Filtros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Valoracion\EvaluarActividad.resx">
       <DependentUpon>EvaluarActividad.cs</DependentUpon>
@@ -906,6 +924,9 @@
       <DependentUpon>dbUsuario.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Cooperacion Internacional.png" />
+    <None Include="Resources\Personal UMA PDI-PAS.png" />
+    <None Include="Resources\Estudiantes UMA.png" />
     <None Include="Resources\uparrow_arriba_10286.png" />
     <None Include="Resources\downarrow_abajo_10289.png" />
     <None Include="Resources\cerrarsesion.png" />

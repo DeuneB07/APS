@@ -47,13 +47,7 @@ namespace APS.Interfaces
         {
             foreach(TipoActividadE tAct in Enum.GetValues(typeof(TipoActividadE)))
             {
-                if (tAct.ToString().Equals("VOLUNTARIADO"))
-                {
-                    comboTipo.Items.Add(tAct);
-                } else if (user.Rol.NombreRol.Equals("Estudiante"))
-                {
-                    comboTipo.Items.Add(tAct);
-                }
+                comboTipo.Items.Add(tAct);
             }
         }
 
