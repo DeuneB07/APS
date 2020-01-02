@@ -245,6 +245,12 @@
     <Compile Include="Interfaces\Gestión Actividades\VerActividadRealizada.Designer.cs">
       <DependentUpon>VerActividadRealizada.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Gestión Proyectos\NuevoProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Gestión Proyectos\NuevoProyecto.Designer.cs">
+      <DependentUpon>NuevoProyecto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\GestorExclusive\CAmbTrab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -340,6 +346,12 @@
     </Compile>
     <Compile Include="Interfaces\Personalizados\CartelActividadesRealizada.Designer.cs">
       <DependentUpon>CartelActividadesRealizada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Gestión Proyectos\CartelProyecto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Gestión Proyectos\CartelProyecto.Designer.cs">
+      <DependentUpon>CartelProyecto.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Personalizados\CartelFiltros2.cs">
       <SubType>UserControl</SubType>
@@ -657,6 +669,9 @@
     <EmbeddedResource Include="Interfaces\Gestión Actividades\VerActividadRealizada.resx">
       <DependentUpon>VerActividadRealizada.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Gestión Proyectos\NuevoProyecto.resx">
+      <DependentUpon>NuevoProyecto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\GestorExclusive\CAmbTrab.resx">
       <DependentUpon>CAmbTrab.cs</DependentUpon>
     </EmbeddedResource>
@@ -704,6 +719,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelActividadesRealizada.resx">
       <DependentUpon>CartelActividadesRealizada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Gestión Proyectos\CartelProyecto.resx">
+      <DependentUpon>CartelProyecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelFiltros2.resx">
       <DependentUpon>CartelFiltros2.cs</DependentUpon>

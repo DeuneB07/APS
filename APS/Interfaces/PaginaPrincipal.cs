@@ -1,5 +1,6 @@
 ﻿using APS.Interfaces.ElementosAyuda;
 using APS.Interfaces.Gestión_Actividades;
+using APS.Interfaces.Gestión_Proyectos;
 using APS.Interfaces.GestorExclusive;
 using APS.Interfaces.Historial;
 using APS.Interfaces.Perfil;
@@ -195,10 +196,6 @@ namespace APS.Interfaces
         {
             if (!chargedWindow.Equals(PantallaCargada.MATCH))
             {
-                seleccionada.BackColor = Color.Transparent;
-                seleccionada = (PictureBox)flowP.Controls.Find("pictMatch", false)[0];
-                seleccionada.BackColor = SystemColors.ActiveCaption;
-                lTituloPanel.Text = "MATCHING";
                 cargarMatchActividadesInicio();
             }
         }
@@ -207,10 +204,6 @@ namespace APS.Interfaces
         {
             if (!chargedWindow.Equals(PantallaCargada.TODAS))
             {
-                seleccionada.BackColor = Color.Transparent;
-                seleccionada = (PictureBox)flowP.Controls.Find("pictTodas", false)[0];
-                seleccionada.BackColor = SystemColors.ActiveCaption;
-                lTituloPanel.Text = "TODAS LAS ACTIVIDADES";
                 cargarTodasActividadesInicio2();
             }
         }
@@ -219,10 +212,6 @@ namespace APS.Interfaces
         {
             if (!chargedWindow.Equals(PantallaCargada.EVALUACION))
             {
-                seleccionada.BackColor = Color.Transparent;
-                seleccionada = (PictureBox)flowP.Controls.Find("pictEvaluacion", false)[0];
-                seleccionada.BackColor = SystemColors.ActiveCaption;
-                lTituloPanel.Text = "VALORACIONES";
                 cargarValoracionActividadesInicio();
             }
         }
@@ -231,10 +220,6 @@ namespace APS.Interfaces
         {
             if (!chargedWindow.Equals(PantallaCargada.MIS_ACTIVIDADES))
             {
-                seleccionada.BackColor = Color.Transparent;
-                seleccionada = (PictureBox)flowP.Controls.Find("pictMisActs", false)[0];
-                seleccionada.BackColor = SystemColors.ActiveCaption;
-                lTituloPanel.Text = "MIS ACTIVIDADES";
                 cargarMisActividadesInicio();
             }
         }
@@ -243,10 +228,6 @@ namespace APS.Interfaces
         {
             if (!chargedWindow.Equals(PantallaCargada.ACTIVIDADES_INSCRITAS))
             {
-                seleccionada.BackColor = Color.Transparent;
-                seleccionada = (PictureBox)flowP.Controls.Find("pictActIns", false)[0];
-                seleccionada.BackColor = SystemColors.ActiveCaption;
-                lTituloPanel.Text = "ACTIVIDADES INSCRITAS";
                 cargarActividadesInscritas();
             }
         }
@@ -255,10 +236,6 @@ namespace APS.Interfaces
         {
             if (!chargedWindow.Equals(PantallaCargada.PENDIENTES))
             {
-                seleccionada.BackColor = Color.Transparent;
-                seleccionada = (PictureBox)flowP.Controls.Find("pictPendientes", false)[0];
-                seleccionada.BackColor = SystemColors.ActiveCaption;
-                lTituloPanel.Text = "ACTIVIDADES PENDIENTES";
                 cargarPendientesActividadesInicio();
             }
         }
@@ -267,21 +244,16 @@ namespace APS.Interfaces
         {
             if (!chargedWindow.Equals(PantallaCargada.REVISION))
             {
-                seleccionada.BackColor = Color.Transparent;
-                seleccionada = (PictureBox)flowP.Controls.Find("pictRevision", false)[0];
-                seleccionada.BackColor = SystemColors.ActiveCaption;
-                lTituloPanel.Text = "REVISIÓN ACTIVIDADES";
                 cargarRevisionActividadesInicio();
             }
         }
 
         private void bProyectos_Click(object sender, EventArgs eventArgs)
         {
-            DialogResult emCierreDialog;
-            string mensaje = "Función No Implementada Aún.";
-            string caption = "¡AVISO!";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
+            if (!chargedWindow.Equals(PantallaCargada.PROYECTOS))
+            {
+                cargarProyectos();
+            }
         }
 
         //
@@ -289,6 +261,11 @@ namespace APS.Interfaces
         //
         private void cargarMatchActividadesInicio()
         {
+
+            seleccionada.BackColor = Color.Transparent;
+            seleccionada = (PictureBox)flowP.Controls.Find("pictMatch", false)[0];
+            seleccionada.BackColor = SystemColors.ActiveCaption;
+            lTituloPanel.Text = "MATCHING";
 
             chargedWindow = PantallaCargada.MATCH;
             tablePP.Controls.Clear();
@@ -349,11 +326,6 @@ namespace APS.Interfaces
 
             if(act.TipoAct.ToString().Equals("VOLUNTARIADO")) user.AddActividadSolicitada(act, Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_ONG);
             else user.AddActividadSolicitada(act, Actividad_Solicitud.EstadoActividadSolicitudE.EN_ESPERA_PDI);
-
-            seleccionada.BackColor = Color.Transparent;
-            seleccionada = (PictureBox)flowP.Controls.Find("pictActIns", false)[0];
-            seleccionada.BackColor = SystemColors.ActiveCaption;
-            lTituloPanel.Text = "ACTIVIDADES INSCRITAS";
 
             cargarActividadesInscritas();
             DialogResult emCierreDialog;
@@ -564,6 +536,12 @@ namespace APS.Interfaces
 
         private void cargarTodasActividadesInicio2()
         {
+
+            seleccionada.BackColor = Color.Transparent;
+            seleccionada = (PictureBox)flowP.Controls.Find("pictTodas", false)[0];
+            seleccionada.BackColor = SystemColors.ActiveCaption;
+            lTituloPanel.Text = "TODAS LAS ACTIVIDADES";
+
             chargedWindow = PantallaCargada.TODAS;
             tablePP.Controls.Clear();
             tablePP.RowCount = 1;
@@ -804,10 +782,50 @@ namespace APS.Interfaces
         }
 
         //
+        //PESTAÑA PROYECTOS
+        //
+
+        private void cargarProyectos()
+        {
+            seleccionada.BackColor = Color.Transparent;
+            seleccionada = (PictureBox)flowP.Controls.Find("pictProyectos", false)[0];
+            seleccionada.BackColor = SystemColors.ActiveCaption;
+            lTituloPanel.Text = "PROYECTOS";
+
+            chargedWindow = PantallaCargada.PROYECTOS;
+            tablePP.Controls.Clear();
+            tablePP.RowCount = 1;
+            tablePP.AutoScroll = false;
+            panelPrincipal.AutoScroll = false;
+            panelPrincipal.AutoScroll = true;
+
+            List<Proyecto> proyectos = Proyecto.ListaProyectos();
+            CartelProyecto[] proyCarteles = new CartelProyecto[proyectos.Count];
+
+            int c = 0;
+            foreach (Proyecto proy in proyectos)
+            {
+                proyCarteles[c] = new CartelProyecto(user, proy);
+                tablePP.Controls.Add(proyCarteles[c], 0, c);
+                tablePP.RowCount = tablePP.RowCount + 1;
+                proyCarteles[c].Location = new Point(proyCarteles[c].Location.X, (proyCarteles[c].Size.Height * c));
+                proyCarteles[c].BackColor = Color.DarkCyan;
+
+                c++;
+            }
+
+        }
+
+        //
         // PESTAÑA PENDIENTES -> estado= 'PENDIENTE_ACEPTACION' (SÓLO GESTOR)
         //
         private void cargarPendientesActividadesInicio()
         {
+            seleccionada.BackColor = Color.Transparent;
+            seleccionada = (PictureBox)flowP.Controls.Find("pictPendientes", false)[0];
+            seleccionada.BackColor = SystemColors.ActiveCaption;
+            lTituloPanel.Text = "ACTIVIDADES PENDIENTES";
+
             chargedWindow = PantallaCargada.PENDIENTES;
             tablePP.Controls.Clear();
             tablePP.RowCount = 1;
@@ -872,6 +890,10 @@ namespace APS.Interfaces
         //
         private void cargarRevisionActividadesInicio()
         {
+            seleccionada.BackColor = Color.Transparent;
+            seleccionada = (PictureBox)flowP.Controls.Find("pictRevision", false)[0];
+            seleccionada.BackColor = SystemColors.ActiveCaption;
+            lTituloPanel.Text = "REVISIÓN ACTIVIDADES";
 
             chargedWindow = PantallaCargada.REVISION;
             tablePP.Controls.Clear();
@@ -1167,6 +1189,11 @@ namespace APS.Interfaces
         //
         private void cargarValoracionActividadesInicio()
         {
+            seleccionada.BackColor = Color.Transparent;
+            seleccionada = (PictureBox)flowP.Controls.Find("pictEvaluacion", false)[0];
+            seleccionada.BackColor = SystemColors.ActiveCaption;
+            lTituloPanel.Text = "VALORACIONES";
+
             chargedWindow = PantallaCargada.EVALUACION;
             tablePP.Controls.Clear();
             tablePP.RowCount = 1;
@@ -1477,6 +1504,11 @@ namespace APS.Interfaces
         //
         private void cargarMisActividadesInicio()
         {
+            seleccionada.BackColor = Color.Transparent;
+            seleccionada = (PictureBox)flowP.Controls.Find("pictMisActs", false)[0];
+            seleccionada.BackColor = SystemColors.ActiveCaption;
+            lTituloPanel.Text = "MIS ACTIVIDADES";
+
             chargedWindow = PantallaCargada.MIS_ACTIVIDADES;
             tablePP.Controls.Clear();
             tablePP.RowCount = 1;
@@ -1599,6 +1631,11 @@ namespace APS.Interfaces
         //
         private void cargarActividadesInscritas()
         {
+            seleccionada.BackColor = Color.Transparent;
+            seleccionada = (PictureBox)flowP.Controls.Find("pictActIns", false)[0];
+            seleccionada.BackColor = SystemColors.ActiveCaption;
+            lTituloPanel.Text = "ACTIVIDADES INSCRITAS";
+
             chargedWindow = PantallaCargada.ACTIVIDADES_INSCRITAS;
             tablePP.Controls.Clear();
             tablePP.RowCount = 1;
@@ -1916,6 +1953,13 @@ namespace APS.Interfaces
         {
             ControlesGestor contGestor = new ControlesGestor();
             contGestor.ShowDialog();
+        }
+
+        private void pictProyectos_Click(object sender, EventArgs e)
+        {
+            NuevoProyecto nuevoProy = new NuevoProyecto(user);
+            nuevoProy.ShowDialog();
+            cargarProyectos();
         }
     }
 }

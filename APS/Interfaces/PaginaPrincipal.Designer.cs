@@ -42,45 +42,45 @@
             this.lActividad = new System.Windows.Forms.Label();
             this.lPerfil = new System.Windows.Forms.Label();
             this.lMensajes = new System.Windows.Forms.Label();
-            this.pictCerrarSesion = new System.Windows.Forms.PictureBox();
-            this.pictMensajes = new System.Windows.Forms.PictureBox();
-            this.pictActividad = new System.Windows.Forms.PictureBox();
-            this.pictProyectos = new System.Windows.Forms.PictureBox();
-            this.pictPerfil = new System.Windows.Forms.PictureBox();
-            this.pictureUser = new System.Windows.Forms.PictureBox();
-            this.pictHistorial = new System.Windows.Forms.PictureBox();
             this.lCerrarSesion = new System.Windows.Forms.Label();
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.tablePP = new System.Windows.Forms.TableLayoutPanel();
-            this.pictDevelop = new System.Windows.Forms.PictureBox();
             this.lDevelop = new System.Windows.Forms.Label();
-            this.pictDuda1 = new System.Windows.Forms.PictureBox();
             this.lHelpy = new System.Windows.Forms.Label();
-            this.bDuda = new System.Windows.Forms.Button();
-            this.pictGestor = new System.Windows.Forms.PictureBox();
             this.lGestor = new System.Windows.Forms.Label();
-            this.bNotis = new System.Windows.Forms.Button();
             this.lTituloPanel = new System.Windows.Forms.Label();
             this.pdiMenu = new APS.Interfaces.ControllersPP.PDIControllerPP();
             this.pasMenu = new APS.Interfaces.ControllersPP.PASControllerPP();
             this.ongMenu = new APS.Interfaces.ControllersPP.ONGControllerPP();
             this.gestorMenu = new APS.Interfaces.ControllersPP.GestorControllerPP();
             this.estudianteMenu = new APS.Interfaces.EstudianteControllerPP();
+            this.bNotis = new System.Windows.Forms.Button();
+            this.pictGestor = new System.Windows.Forms.PictureBox();
+            this.bDuda = new System.Windows.Forms.Button();
+            this.pictDuda1 = new System.Windows.Forms.PictureBox();
+            this.pictDevelop = new System.Windows.Forms.PictureBox();
+            this.pictCerrarSesion = new System.Windows.Forms.PictureBox();
+            this.pictActividad = new System.Windows.Forms.PictureBox();
+            this.pictProyectos = new System.Windows.Forms.PictureBox();
+            this.pictPerfil = new System.Windows.Forms.PictureBox();
+            this.pictureUser = new System.Windows.Forms.PictureBox();
+            this.pictHistorial = new System.Windows.Forms.PictureBox();
+            this.pictMensajes = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gradosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).BeginInit();
+            this.panelPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictGestor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictDuda1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictDevelop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictCerrarSesion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictMensajes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictActividad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictProyectos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictHistorial)).BeginInit();
-            this.panelPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictDevelop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictDuda1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictGestor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictMensajes)).BeginInit();
             this.SuspendLayout();
             // 
             // gradosBindingSource
@@ -188,95 +188,6 @@
             this.lMensajes.TabIndex = 31;
             this.lMensajes.Text = "Mensajes";
             // 
-            // pictCerrarSesion
-            // 
-            this.pictCerrarSesion.BackColor = System.Drawing.Color.Transparent;
-            this.pictCerrarSesion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictCerrarSesion.BackgroundImage")));
-            this.pictCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictCerrarSesion.Location = new System.Drawing.Point(1152, 585);
-            this.pictCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
-            this.pictCerrarSesion.Name = "pictCerrarSesion";
-            this.pictCerrarSesion.Size = new System.Drawing.Size(80, 74);
-            this.pictCerrarSesion.TabIndex = 37;
-            this.pictCerrarSesion.TabStop = false;
-            this.pictCerrarSesion.Click += new System.EventHandler(this.pictCerrarSesion_Click);
-            // 
-            // pictMensajes
-            // 
-            this.pictMensajes.BackColor = System.Drawing.Color.Transparent;
-            this.pictMensajes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictMensajes.BackgroundImage")));
-            this.pictMensajes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictMensajes.Location = new System.Drawing.Point(1152, 249);
-            this.pictMensajes.Margin = new System.Windows.Forms.Padding(4);
-            this.pictMensajes.Name = "pictMensajes";
-            this.pictMensajes.Size = new System.Drawing.Size(80, 74);
-            this.pictMensajes.TabIndex = 36;
-            this.pictMensajes.TabStop = false;
-            this.pictMensajes.Click += new System.EventHandler(this.pictMensajes_Click);
-            // 
-            // pictActividad
-            // 
-            this.pictActividad.BackColor = System.Drawing.Color.Transparent;
-            this.pictActividad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictActividad.BackgroundImage")));
-            this.pictActividad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictActividad.Location = new System.Drawing.Point(1152, 476);
-            this.pictActividad.Margin = new System.Windows.Forms.Padding(4);
-            this.pictActividad.Name = "pictActividad";
-            this.pictActividad.Size = new System.Drawing.Size(80, 74);
-            this.pictActividad.TabIndex = 35;
-            this.pictActividad.TabStop = false;
-            this.pictActividad.Click += new System.EventHandler(this.pictActividad_Click);
-            // 
-            // pictProyectos
-            // 
-            this.pictProyectos.BackColor = System.Drawing.Color.Transparent;
-            this.pictProyectos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictProyectos.BackgroundImage")));
-            this.pictProyectos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictProyectos.Location = new System.Drawing.Point(1152, 476);
-            this.pictProyectos.Margin = new System.Windows.Forms.Padding(4);
-            this.pictProyectos.Name = "pictProyectos";
-            this.pictProyectos.Size = new System.Drawing.Size(80, 74);
-            this.pictProyectos.TabIndex = 34;
-            this.pictProyectos.TabStop = false;
-            // 
-            // pictPerfil
-            // 
-            this.pictPerfil.BackColor = System.Drawing.Color.Transparent;
-            this.pictPerfil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictPerfil.BackgroundImage")));
-            this.pictPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictPerfil.Location = new System.Drawing.Point(1152, 139);
-            this.pictPerfil.Margin = new System.Windows.Forms.Padding(4);
-            this.pictPerfil.Name = "pictPerfil";
-            this.pictPerfil.Size = new System.Drawing.Size(80, 74);
-            this.pictPerfil.TabIndex = 32;
-            this.pictPerfil.TabStop = false;
-            this.pictPerfil.Click += new System.EventHandler(this.pictPerfil_Click);
-            // 
-            // pictureUser
-            // 
-            this.pictureUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureUser.Image = ((System.Drawing.Image)(resources.GetObject("pictureUser.Image")));
-            this.pictureUser.Location = new System.Drawing.Point(1148, 25);
-            this.pictureUser.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureUser.Name = "pictureUser";
-            this.pictureUser.Size = new System.Drawing.Size(93, 86);
-            this.pictureUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureUser.TabIndex = 2;
-            this.pictureUser.TabStop = false;
-            // 
-            // pictHistorial
-            // 
-            this.pictHistorial.BackColor = System.Drawing.Color.Transparent;
-            this.pictHistorial.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictHistorial.BackgroundImage")));
-            this.pictHistorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictHistorial.Location = new System.Drawing.Point(1152, 363);
-            this.pictHistorial.Margin = new System.Windows.Forms.Padding(4);
-            this.pictHistorial.Name = "pictHistorial";
-            this.pictHistorial.Size = new System.Drawing.Size(80, 74);
-            this.pictHistorial.TabIndex = 33;
-            this.pictHistorial.TabStop = false;
-            this.pictHistorial.Click += new System.EventHandler(this.pictHistorial_Click);
-            // 
             // lCerrarSesion
             // 
             this.lCerrarSesion.AutoSize = true;
@@ -316,19 +227,6 @@
             this.tablePP.Size = new System.Drawing.Size(876, 0);
             this.tablePP.TabIndex = 45;
             // 
-            // pictDevelop
-            // 
-            this.pictDevelop.BackColor = System.Drawing.Color.Transparent;
-            this.pictDevelop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictDevelop.BackgroundImage")));
-            this.pictDevelop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictDevelop.Location = new System.Drawing.Point(1105, 726);
-            this.pictDevelop.Margin = new System.Windows.Forms.Padding(4);
-            this.pictDevelop.Name = "pictDevelop";
-            this.pictDevelop.Size = new System.Drawing.Size(164, 50);
-            this.pictDevelop.TabIndex = 45;
-            this.pictDevelop.TabStop = false;
-            this.pictDevelop.Click += new System.EventHandler(this.pictDevelop_Click);
-            // 
             // lDevelop
             // 
             this.lDevelop.BackColor = System.Drawing.Color.Transparent;
@@ -340,18 +238,6 @@
             this.lDevelop.TabIndex = 46;
             this.lDevelop.Text = "Desarrollado por:";
             this.lDevelop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pictDuda1
-            // 
-            this.pictDuda1.BackColor = System.Drawing.Color.Transparent;
-            this.pictDuda1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictDuda1.BackgroundImage")));
-            this.pictDuda1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictDuda1.Location = new System.Drawing.Point(767, 63);
-            this.pictDuda1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictDuda1.Name = "pictDuda1";
-            this.pictDuda1.Size = new System.Drawing.Size(33, 31);
-            this.pictDuda1.TabIndex = 48;
-            this.pictDuda1.TabStop = false;
             // 
             // lHelpy
             // 
@@ -365,35 +251,6 @@
             this.lHelpy.TabIndex = 49;
             this.lHelpy.Text = "¿Qué significa cada color? Averígualo >>";
             // 
-            // bDuda
-            // 
-            this.bDuda.BackColor = System.Drawing.Color.Transparent;
-            this.bDuda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bDuda.BackgroundImage")));
-            this.bDuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bDuda.Cursor = System.Windows.Forms.Cursors.Help;
-            this.bDuda.FlatAppearance.BorderSize = 0;
-            this.bDuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bDuda.Location = new System.Drawing.Point(1088, 63);
-            this.bDuda.Margin = new System.Windows.Forms.Padding(4);
-            this.bDuda.Name = "bDuda";
-            this.bDuda.Size = new System.Drawing.Size(33, 31);
-            this.bDuda.TabIndex = 50;
-            this.bDuda.UseVisualStyleBackColor = false;
-            this.bDuda.Click += new System.EventHandler(this.bDuda_Click);
-            // 
-            // pictGestor
-            // 
-            this.pictGestor.BackColor = System.Drawing.Color.Transparent;
-            this.pictGestor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictGestor.BackgroundImage")));
-            this.pictGestor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictGestor.Location = new System.Drawing.Point(1152, 363);
-            this.pictGestor.Margin = new System.Windows.Forms.Padding(4);
-            this.pictGestor.Name = "pictGestor";
-            this.pictGestor.Size = new System.Drawing.Size(80, 74);
-            this.pictGestor.TabIndex = 52;
-            this.pictGestor.TabStop = false;
-            this.pictGestor.Click += new System.EventHandler(this.pictGestor_Click);
-            // 
             // lGestor
             // 
             this.lGestor.AutoSize = true;
@@ -406,24 +263,6 @@
             this.lGestor.Size = new System.Drawing.Size(122, 17);
             this.lGestor.TabIndex = 51;
             this.lGestor.Text = "Añadir Elementos";
-            // 
-            // bNotis
-            // 
-            this.bNotis.BackColor = System.Drawing.Color.Transparent;
-            this.bNotis.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bNotis.BackgroundImage")));
-            this.bNotis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bNotis.FlatAppearance.BorderSize = 0;
-            this.bNotis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bNotis.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bNotis.ForeColor = System.Drawing.Color.Black;
-            this.bNotis.Location = new System.Drawing.Point(1224, 229);
-            this.bNotis.Margin = new System.Windows.Forms.Padding(4);
-            this.bNotis.Name = "bNotis";
-            this.bNotis.Size = new System.Drawing.Size(39, 36);
-            this.bNotis.TabIndex = 53;
-            this.bNotis.Text = "+";
-            this.bNotis.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bNotis.UseVisualStyleBackColor = false;
             // 
             // lTituloPanel
             // 
@@ -486,6 +325,168 @@
             this.estudianteMenu.TabIndex = 39;
             this.estudianteMenu.Visible = false;
             // 
+            // bNotis
+            // 
+            this.bNotis.BackColor = System.Drawing.Color.Transparent;
+            this.bNotis.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bNotis.BackgroundImage")));
+            this.bNotis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bNotis.FlatAppearance.BorderSize = 0;
+            this.bNotis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bNotis.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bNotis.ForeColor = System.Drawing.Color.Black;
+            this.bNotis.Location = new System.Drawing.Point(1224, 229);
+            this.bNotis.Margin = new System.Windows.Forms.Padding(4);
+            this.bNotis.Name = "bNotis";
+            this.bNotis.Size = new System.Drawing.Size(39, 36);
+            this.bNotis.TabIndex = 53;
+            this.bNotis.Text = "+";
+            this.bNotis.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bNotis.UseVisualStyleBackColor = false;
+            // 
+            // pictGestor
+            // 
+            this.pictGestor.BackColor = System.Drawing.Color.Transparent;
+            this.pictGestor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictGestor.BackgroundImage")));
+            this.pictGestor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictGestor.Location = new System.Drawing.Point(1152, 363);
+            this.pictGestor.Margin = new System.Windows.Forms.Padding(4);
+            this.pictGestor.Name = "pictGestor";
+            this.pictGestor.Size = new System.Drawing.Size(80, 74);
+            this.pictGestor.TabIndex = 52;
+            this.pictGestor.TabStop = false;
+            this.pictGestor.Click += new System.EventHandler(this.pictGestor_Click);
+            // 
+            // bDuda
+            // 
+            this.bDuda.BackColor = System.Drawing.Color.Transparent;
+            this.bDuda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bDuda.BackgroundImage")));
+            this.bDuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bDuda.Cursor = System.Windows.Forms.Cursors.Help;
+            this.bDuda.FlatAppearance.BorderSize = 0;
+            this.bDuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bDuda.Location = new System.Drawing.Point(1088, 63);
+            this.bDuda.Margin = new System.Windows.Forms.Padding(4);
+            this.bDuda.Name = "bDuda";
+            this.bDuda.Size = new System.Drawing.Size(33, 31);
+            this.bDuda.TabIndex = 50;
+            this.bDuda.UseVisualStyleBackColor = false;
+            this.bDuda.Click += new System.EventHandler(this.bDuda_Click);
+            // 
+            // pictDuda1
+            // 
+            this.pictDuda1.BackColor = System.Drawing.Color.Transparent;
+            this.pictDuda1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictDuda1.BackgroundImage")));
+            this.pictDuda1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictDuda1.Location = new System.Drawing.Point(767, 63);
+            this.pictDuda1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictDuda1.Name = "pictDuda1";
+            this.pictDuda1.Size = new System.Drawing.Size(33, 31);
+            this.pictDuda1.TabIndex = 48;
+            this.pictDuda1.TabStop = false;
+            // 
+            // pictDevelop
+            // 
+            this.pictDevelop.BackColor = System.Drawing.Color.Transparent;
+            this.pictDevelop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictDevelop.BackgroundImage")));
+            this.pictDevelop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictDevelop.Location = new System.Drawing.Point(1105, 726);
+            this.pictDevelop.Margin = new System.Windows.Forms.Padding(4);
+            this.pictDevelop.Name = "pictDevelop";
+            this.pictDevelop.Size = new System.Drawing.Size(164, 50);
+            this.pictDevelop.TabIndex = 45;
+            this.pictDevelop.TabStop = false;
+            this.pictDevelop.Click += new System.EventHandler(this.pictDevelop_Click);
+            // 
+            // pictCerrarSesion
+            // 
+            this.pictCerrarSesion.BackColor = System.Drawing.Color.Transparent;
+            this.pictCerrarSesion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictCerrarSesion.BackgroundImage")));
+            this.pictCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictCerrarSesion.Location = new System.Drawing.Point(1152, 585);
+            this.pictCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
+            this.pictCerrarSesion.Name = "pictCerrarSesion";
+            this.pictCerrarSesion.Size = new System.Drawing.Size(80, 74);
+            this.pictCerrarSesion.TabIndex = 37;
+            this.pictCerrarSesion.TabStop = false;
+            this.pictCerrarSesion.Click += new System.EventHandler(this.pictCerrarSesion_Click);
+            // 
+            // pictActividad
+            // 
+            this.pictActividad.BackColor = System.Drawing.Color.Transparent;
+            this.pictActividad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictActividad.BackgroundImage")));
+            this.pictActividad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictActividad.Location = new System.Drawing.Point(1152, 476);
+            this.pictActividad.Margin = new System.Windows.Forms.Padding(4);
+            this.pictActividad.Name = "pictActividad";
+            this.pictActividad.Size = new System.Drawing.Size(80, 74);
+            this.pictActividad.TabIndex = 35;
+            this.pictActividad.TabStop = false;
+            this.pictActividad.Click += new System.EventHandler(this.pictActividad_Click);
+            // 
+            // pictProyectos
+            // 
+            this.pictProyectos.BackColor = System.Drawing.Color.Transparent;
+            this.pictProyectos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictProyectos.BackgroundImage")));
+            this.pictProyectos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictProyectos.Location = new System.Drawing.Point(1152, 476);
+            this.pictProyectos.Margin = new System.Windows.Forms.Padding(4);
+            this.pictProyectos.Name = "pictProyectos";
+            this.pictProyectos.Size = new System.Drawing.Size(80, 74);
+            this.pictProyectos.TabIndex = 34;
+            this.pictProyectos.TabStop = false;
+            this.pictProyectos.Click += new System.EventHandler(this.pictProyectos_Click);
+            // 
+            // pictPerfil
+            // 
+            this.pictPerfil.BackColor = System.Drawing.Color.Transparent;
+            this.pictPerfil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictPerfil.BackgroundImage")));
+            this.pictPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictPerfil.Location = new System.Drawing.Point(1152, 139);
+            this.pictPerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.pictPerfil.Name = "pictPerfil";
+            this.pictPerfil.Size = new System.Drawing.Size(80, 74);
+            this.pictPerfil.TabIndex = 32;
+            this.pictPerfil.TabStop = false;
+            this.pictPerfil.Click += new System.EventHandler(this.pictPerfil_Click);
+            // 
+            // pictureUser
+            // 
+            this.pictureUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureUser.Image = ((System.Drawing.Image)(resources.GetObject("pictureUser.Image")));
+            this.pictureUser.Location = new System.Drawing.Point(1148, 25);
+            this.pictureUser.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureUser.Name = "pictureUser";
+            this.pictureUser.Size = new System.Drawing.Size(93, 86);
+            this.pictureUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureUser.TabIndex = 2;
+            this.pictureUser.TabStop = false;
+            // 
+            // pictHistorial
+            // 
+            this.pictHistorial.BackColor = System.Drawing.Color.Transparent;
+            this.pictHistorial.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictHistorial.BackgroundImage")));
+            this.pictHistorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictHistorial.Location = new System.Drawing.Point(1152, 363);
+            this.pictHistorial.Margin = new System.Windows.Forms.Padding(4);
+            this.pictHistorial.Name = "pictHistorial";
+            this.pictHistorial.Size = new System.Drawing.Size(80, 74);
+            this.pictHistorial.TabIndex = 33;
+            this.pictHistorial.TabStop = false;
+            this.pictHistorial.Click += new System.EventHandler(this.pictHistorial_Click);
+            // 
+            // pictMensajes
+            // 
+            this.pictMensajes.BackColor = System.Drawing.Color.Transparent;
+            this.pictMensajes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictMensajes.BackgroundImage")));
+            this.pictMensajes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictMensajes.Location = new System.Drawing.Point(1152, 249);
+            this.pictMensajes.Margin = new System.Windows.Forms.Padding(4);
+            this.pictMensajes.Name = "pictMensajes";
+            this.pictMensajes.Size = new System.Drawing.Size(80, 74);
+            this.pictMensajes.TabIndex = 36;
+            this.pictMensajes.TabStop = false;
+            this.pictMensajes.Click += new System.EventHandler(this.pictMensajes_Click);
+            // 
             // PaginaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -532,18 +533,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wePassDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).EndInit();
+            this.panelPrincipal.ResumeLayout(false);
+            this.panelPrincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictGestor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictDuda1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictDevelop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictCerrarSesion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictMensajes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictActividad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictProyectos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictPerfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictHistorial)).EndInit();
-            this.panelPrincipal.ResumeLayout(false);
-            this.panelPrincipal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictDevelop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictDuda1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictGestor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictMensajes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
