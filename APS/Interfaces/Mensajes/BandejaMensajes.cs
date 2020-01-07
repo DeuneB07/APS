@@ -103,6 +103,8 @@ namespace APS.Interfaces.Perfil
         private void bResponder_Click(object sender, EventArgs eventArgs, Mensaje msg)
         {
             NuevoMensaje newMsg = new NuevoMensaje(user, msg.Emisor);
+            newMsg.tAsunto.Text = msg.Asunto;
+            newMsg.tAsunto.Enabled = false;
             newMsg.ShowDialog();
             if (envRec == 0) cargarMensajesEnviados();
             else cargarMensajesRecibidos(); //Se pueden enviar mensajes a uno mismo
@@ -112,14 +114,15 @@ namespace APS.Interfaces.Perfil
         {
 
             msg.BorradoReceptor = true;
+            msg.Leido = true;
             user.RemoveMensajeRecibido(msg);
 
             if (msg.BorradoEmisor == true) msg.BorraMensaje();
-            if (msg.Emisor.Equals(msg.Receptor))
+            /*if (msg.Emisor.Equals(msg.Receptor))
             {
                 user.RemoveMensajeEnviado(msg);
                 msg.BorraMensaje();
-            }
+            }*/
 
             cargarMensajesRecibidos();
 
@@ -127,18 +130,23 @@ namespace APS.Interfaces.Perfil
 
         private void bEliminarEnviado_Click(object sender, EventArgs eventArgs, Mensaje msg)
         {
-
-            msg.BorradoEmisor = true;
-            user.RemoveMensajeEnviado(msg);
-
-            if (msg.BorradoReceptor == true) msg.BorraMensaje();
-            if (msg.Emisor.Equals(msg.Receptor))
+            try
             {
-                user.RemoveMensajeRecibido(msg);
-                msg.BorraMensaje();
-            }
+                msg.BorradoEmisor = true;
+                user.RemoveMensajeEnviado(msg);
 
-            cargarMensajesEnviados();
+                if (msg.BorradoReceptor == true) msg.BorraMensaje();
+                /*if (msg.Emisor.Equals(msg.Receptor))
+                {
+                    user.RemoveMensajeRecibido(msg);
+                    msg.BorraMensaje();
+                }*/
+
+                cargarMensajesEnviados();
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+            }
         }
 
         //
@@ -191,6 +199,11 @@ namespace APS.Interfaces.Perfil
         {
             foreach(Mensaje m in user.MensajesRecibidos) m.Leido = true;
             this.Close();
+        }
+
+        private void BandejaMensajes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            foreach (Mensaje m in user.MensajesRecibidos) m.Leido = true;
         }
     }
 }

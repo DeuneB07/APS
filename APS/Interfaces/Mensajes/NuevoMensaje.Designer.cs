@@ -50,7 +50,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(286, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 0;
             // 
             // tReceptor
@@ -58,7 +58,7 @@
             this.tReceptor.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tReceptor.Location = new System.Drawing.Point(90, 44);
             this.tReceptor.Name = "tReceptor";
-            this.tReceptor.Size = new System.Drawing.Size(172, 21);
+            this.tReceptor.Size = new System.Drawing.Size(172, 24);
             this.tReceptor.TabIndex = 4;
             // 
             // tAsunto
@@ -66,7 +66,7 @@
             this.tAsunto.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tAsunto.Location = new System.Drawing.Point(89, 77);
             this.tAsunto.Name = "tAsunto";
-            this.tAsunto.Size = new System.Drawing.Size(172, 21);
+            this.tAsunto.Size = new System.Drawing.Size(172, 24);
             this.tAsunto.TabIndex = 5;
             // 
             // tTexto
@@ -100,7 +100,7 @@
             this.lTexto.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lTexto.Location = new System.Drawing.Point(16, 114);
             this.lTexto.Name = "lTexto";
-            this.lTexto.Size = new System.Drawing.Size(49, 13);
+            this.lTexto.Size = new System.Drawing.Size(61, 17);
             this.lTexto.TabIndex = 11;
             this.lTexto.Text = "Mensaje";
             // 
@@ -110,7 +110,7 @@
             this.lDestino.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lDestino.Location = new System.Drawing.Point(33, 47);
             this.lDestino.Name = "lDestino";
-            this.lDestino.Size = new System.Drawing.Size(51, 13);
+            this.lDestino.Size = new System.Drawing.Size(62, 17);
             this.lDestino.TabIndex = 12;
             this.lDestino.Text = "Enviar a:";
             // 
@@ -120,7 +120,7 @@
             this.lAsunto.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lAsunto.Location = new System.Drawing.Point(39, 80);
             this.lAsunto.Name = "lAsunto";
-            this.lAsunto.Size = new System.Drawing.Size(44, 13);
+            this.lAsunto.Size = new System.Drawing.Size(56, 17);
             this.lAsunto.TabIndex = 13;
             this.lAsunto.Text = "Asunto:";
             // 
@@ -146,7 +146,7 @@
             this.lExit.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lExit.Location = new System.Drawing.Point(242, 331);
             this.lExit.Name = "lExit";
-            this.lExit.Size = new System.Drawing.Size(35, 13);
+            this.lExit.Size = new System.Drawing.Size(42, 17);
             this.lExit.TabIndex = 14;
             this.lExit.Text = "Atrás";
             // 
@@ -157,7 +157,7 @@
             this.lEnviar.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lEnviar.Location = new System.Drawing.Point(87, 331);
             this.lEnviar.Name = "lEnviar";
-            this.lEnviar.Size = new System.Drawing.Size(40, 13);
+            this.lEnviar.Size = new System.Drawing.Size(48, 17);
             this.lEnviar.TabIndex = 15;
             this.lEnviar.Text = "Enviar";
             // 
@@ -185,7 +185,7 @@
             // 
             // NuevoMensaje
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(345, 355);
@@ -218,7 +218,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tReceptor;
-        private System.Windows.Forms.TextBox tAsunto;
         private System.Windows.Forms.TextBox tTexto;
         private System.Windows.Forms.Button bEnviar;
         private System.Windows.Forms.Button bAtras;
@@ -229,5 +228,6 @@
         private System.Windows.Forms.Label lEnviar;
         private System.Windows.Forms.PictureBox pictUtil;
         private System.Windows.Forms.Label lUtil;
+        public System.Windows.Forms.TextBox tAsunto;
     }
 }

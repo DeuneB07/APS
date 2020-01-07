@@ -21,6 +21,72 @@ namespace APS.Mapeo
         private String descProy;
         private List<Actividad> actividades;    //Lazy
 
+        public Actividad PrimeraActividadProyecto()
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            String sel = "SELECT r.idAct " +
+              "FROM Proyectos p INNER JOIN Rel_Proyecto_Actividades r ON r.idProy = p.ID_Proyecto " +
+              "INNER JOIN Actividades a ON r.idAct = a.ID_Actividad " +
+              "WHERE p.ID_Proyecto = " + this.ID_Proyecto + " " +
+              "ORDER BY a.fechaInicio;";
+            Object[] tupla = miBD.Select(sel)[0];
+            Actividad primeraAct = new Actividad((int)tupla[0]);
+            return primeraAct;
+        }
+
+        public Actividad UltimaActividadProyecto()
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            String sel = "SELECT r.idAct " +
+                            "FROM Proyectos p INNER JOIN Rel_Proyecto_Actividades r ON r.idProy = p.ID_Proyecto " +
+                            "INNER JOIN Actividades a ON r.idAct = a.ID_Actividad " +
+                            "WHERE p.ID_Proyecto = " + this.ID_Proyecto + " " +
+                            "ORDER BY a.fechaFin DESC;";
+            Object[] tupla = miBD.Select(sel)[0];
+            Actividad ultimaAct = new Actividad((int)tupla[0]);
+            return ultimaAct;
+        }
+
+        public static void ActualizarEstadoProyectos()
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            foreach(Proyecto p in ListaProyectos())
+            {
+                if (p.Actividades.Count > 0)
+                {
+                    String sel = "SELECT r.idAct " +
+                                  "FROM Proyectos p INNER JOIN Rel_Proyecto_Actividades r ON r.idProy = p.ID_Proyecto " +
+                                  "INNER JOIN Actividades a ON r.idAct = a.ID_Actividad " +
+                                  "WHERE p.ID_Proyecto = " + p.ID_Proyecto + " " +
+                                  "ORDER BY a.fechaInicio;";
+                    Object[] tupla = miBD.Select(sel)[0];
+                    Actividad primeraAct = new Actividad((int)tupla[0]);
+
+                    //EN_CURSO
+                    if (primeraAct.EstadoAct.ToString().Equals("EN_PROCESO") && !p.EstadoProy.ToString().Equals("EN_CURSO"))
+                    {
+                        miBD.Update("UPDATE Proyectos SET estadoProy='" + EstadoProyectoE.EN_CURSO.ToString() + "' " +
+                                    "WHERE ID_Proyecto= " + p.ID_Proyecto + ";");
+                    }
+
+                    sel = "SELECT r.idAct " +
+                  "FROM Proyectos p INNER JOIN Rel_Proyecto_Actividades r ON r.idProy = p.ID_Proyecto " +
+                  "INNER JOIN Actividades a ON r.idAct = a.ID_Actividad " +
+                  "WHERE p.ID_Proyecto = " + p.ID_Proyecto + " " +
+                  "ORDER BY a.fechaFin DESC;";
+                    tupla = miBD.Select(sel)[0];
+                    Actividad ultimaAct = new Actividad((int)tupla[0]);
+
+                    //FINALIZADO
+                    if (ultimaAct.EstadoAct.ToString().Equals("CONCLUIDA") && !p.EstadoProy.ToString().Equals("FINALIZADO"))
+                    {
+                        miBD.Update("UPDATE Proyectos SET estadoProy='" + EstadoProyectoE.FINALIZADO.ToString() + "' " +
+                                    "WHERE ID_Proyecto= " + p.ID_Proyecto + ";");
+                    }
+                }
+            }
+        }
+
         public static List<Proyecto> ListaProyectos()
         {
             // Retorna una lista con todos los obejtos de la clase almacenados en la base de datos

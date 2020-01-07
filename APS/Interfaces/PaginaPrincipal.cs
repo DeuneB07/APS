@@ -43,6 +43,7 @@ namespace APS.Interfaces
 
             //UPDATES SQL
             Actividad.ActualizarEstadoActividades();
+            Proyecto.ActualizarEstadoProyectos();
 
             t.Abort();
         }
@@ -1611,18 +1612,14 @@ namespace APS.Interfaces
         private void bVerSolicitantesONG_Click(object sender, EventArgs eventArgs, Actividad act)
         {
             VerParticipantes verPar = new VerParticipantes(act,user);
-            this.Visible = false;
             verPar.ShowDialog();
-            this.Visible = true;
             cargarMisActividadesInicio();
         }
 
         private void bVerSolicitantesPDI_Click(object sender, EventArgs eventArgs, Actividad act)
         {
             VerParticipantes verPar = new VerParticipantes(act, user);
-            this.Visible = false;
             verPar.ShowDialog();
-            this.Visible = true;
         }
 
 
@@ -1801,38 +1798,45 @@ namespace APS.Interfaces
 
         private void pictPerfil_Click(object sender, EventArgs e) //Abrir Perfil
         {
-            if (user.Rol.NombreRol.Equals("ONG"))
+            try
             {
-                FPerfilONG pagONG = new FPerfilONG(user);
-                this.Visible = false;
-                pagONG.ShowDialog();
-            }
-            else if (user.Rol.NombreRol.Equals("PAS"))
-            {
-                FPerfilPAS pagPAS = new FPerfilPAS(user);
-                this.Visible = false;
-                pagPAS.ShowDialog();
-            }
-            else
-            {
-                FPerfilUsuario pagina = new FPerfilUsuario(user);
-                this.Visible = false;
-                pagina.ShowDialog();
-            }
+                if (user.Rol.NombreRol.Equals("ONG"))
+                {
+                    FPerfilONG pagONG = new FPerfilONG(user);
+                    this.Visible = false;
+                    pagONG.ShowDialog();
+                }
+                else if (user.Rol.NombreRol.Equals("PAS"))
+                {
+                    FPerfilPAS pagPAS = new FPerfilPAS(user);
+                    this.Visible = false;
+                    pagPAS.ShowDialog();
+                    cargarMatchActividadesInicio();
+                }
+                else
+                {
+                    FPerfilUsuario pagina = new FPerfilUsuario(user);
+                    this.Visible = false;
+                    pagina.ShowDialog();
+                    if (!user.Rol.NombreRol.Equals("GESTOR")) cargarMatchActividadesInicio();
+                }
 
-            if (user.Email.Trim().Equals(""))
-            {
-                this.Close();
-            }
-            else
-            {
-                this.Visible = true;
-            }
+                if (user.Email.Trim().Equals(""))
+                {
+                    this.Close();
+                }
+                else
+                {
+                    this.Visible = true;
+                }
 
-            //Extra
-            if (user.Imagen != null) pictureUser.Image = user.Imagen;
-            else pictureUser.Image = global::APS.Properties.Resources.userDefault;
-            cargarMatchActividadesInicio();
+                //Extra
+                if (user.Imagen != null) pictureUser.Image = user.Imagen;
+                else pictureUser.Image = global::APS.Properties.Resources.userDefault;
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+            }
         }
 
         private void pictMensajes_Click(object sender, EventArgs e) //Abrir Mensajes

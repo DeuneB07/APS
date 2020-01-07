@@ -88,25 +88,26 @@
             this.panel1.Controls.Add(this.panelFiltro);
             this.panel1.Controls.Add(this.txtBusqueda);
             this.panel1.Controls.Add(this.bAplicar);
-            this.panel1.Location = new System.Drawing.Point(20, 20);
+            this.panel1.Location = new System.Drawing.Point(7, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(799, 115);
+            this.panel1.Size = new System.Drawing.Size(828, 126);
             this.panel1.TabIndex = 3;
             // 
             // flowShowFiltro
             // 
-            this.flowShowFiltro.Location = new System.Drawing.Point(92, 69);
+            this.flowShowFiltro.Location = new System.Drawing.Point(62, 69);
             this.flowShowFiltro.Name = "flowShowFiltro";
-            this.flowShowFiltro.Size = new System.Drawing.Size(704, 42);
+            this.flowShowFiltro.Size = new System.Drawing.Size(734, 28);
             this.flowShowFiltro.TabIndex = 41;
             // 
             // panelFiltro
             // 
+            this.panelFiltro.BackColor = System.Drawing.Color.White;
             this.panelFiltro.Controls.Add(this.pictFiltro);
             this.panelFiltro.Controls.Add(this.label1);
             this.panelFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelFiltro.Location = new System.Drawing.Point(626, 24);
+            this.panelFiltro.Location = new System.Drawing.Point(652, 24);
             this.panelFiltro.Name = "panelFiltro";
             this.panelFiltro.Size = new System.Drawing.Size(144, 39);
             this.panelFiltro.TabIndex = 31;
@@ -140,9 +141,9 @@
             // 
             this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusqueda.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtBusqueda.Location = new System.Drawing.Point(106, 33);
+            this.txtBusqueda.Location = new System.Drawing.Point(62, 33);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(489, 30);
+            this.txtBusqueda.Size = new System.Drawing.Size(570, 30);
             this.txtBusqueda.TabIndex = 30;
             this.txtBusqueda.Text = "Buscador de actividades...";
             this.txtBusqueda.Click += new System.EventHandler(this.txtBusqueda_Click);
@@ -159,10 +160,10 @@
             this.bAplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAplicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAplicar.ForeColor = System.Drawing.Color.Black;
-            this.bAplicar.Location = new System.Drawing.Point(24, 22);
+            this.bAplicar.Location = new System.Drawing.Point(4, 23);
             this.bAplicar.Margin = new System.Windows.Forms.Padding(4);
             this.bAplicar.Name = "bAplicar";
-            this.bAplicar.Size = new System.Drawing.Size(61, 52);
+            this.bAplicar.Size = new System.Drawing.Size(50, 50);
             this.bAplicar.TabIndex = 10;
             this.bAplicar.UseVisualStyleBackColor = false;
             // 
@@ -426,7 +427,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tomato;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.filtroAmb);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.filtroTurno);
@@ -438,7 +439,7 @@
             this.Controls.Add(this.filtroComp);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CartelFiltros2";
-            this.Size = new System.Drawing.Size(839, 160);
+            this.Size = new System.Drawing.Size(839, 136);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelFiltro.ResumeLayout(false);

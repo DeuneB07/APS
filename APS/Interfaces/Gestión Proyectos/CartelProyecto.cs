@@ -33,6 +33,9 @@ namespace APS.Interfaces.Gestión_Proyectos
             this.lShowNumActividades.Text = proy.Actividades.Count.ToString();
             i = -1;
 
+            this.lShowIni.Text = proy.PrimeraActividadProyecto().FechaInicio.ToShortDateString() + " - " +
+                                    proy.UltimaActividadProyecto().FechaFin.ToShortDateString();
+
             CargarPrimeraImagen();
         }
 
@@ -128,6 +131,12 @@ namespace APS.Interfaces.Gestión_Proyectos
             set { _description = value; lDescripcion.Text = value; }
         }
 
+        private void pict_DoubleClick(object sender, EventArgs e)
+        {
+            Actividad act = proy.Actividades[i];
+            VerActividadAbierta verAct = new VerActividadAbierta(this.user, act);
+            verAct.ShowDialog();
+        }
     }
 
         #endregion

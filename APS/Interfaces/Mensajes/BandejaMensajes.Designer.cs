@@ -59,9 +59,10 @@
             this.lMensajes.BackColor = System.Drawing.Color.Transparent;
             this.lMensajes.Font = new System.Drawing.Font("Bahnschrift", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMensajes.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.lMensajes.Location = new System.Drawing.Point(71, 12);
+            this.lMensajes.Location = new System.Drawing.Point(95, 15);
+            this.lMensajes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lMensajes.Name = "lMensajes";
-            this.lMensajes.Size = new System.Drawing.Size(128, 33);
+            this.lMensajes.Size = new System.Drawing.Size(162, 41);
             this.lMensajes.TabIndex = 0;
             this.lMensajes.Text = "Mensajes";
             // 
@@ -71,9 +72,10 @@
             this.lEscribir.BackColor = System.Drawing.Color.Transparent;
             this.lEscribir.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lEscribir.ForeColor = System.Drawing.Color.Black;
-            this.lEscribir.Location = new System.Drawing.Point(37, 161);
+            this.lEscribir.Location = new System.Drawing.Point(49, 198);
+            this.lEscribir.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lEscribir.Name = "lEscribir";
-            this.lEscribir.Size = new System.Drawing.Size(52, 13);
+            this.lEscribir.Size = new System.Drawing.Size(65, 17);
             this.lEscribir.TabIndex = 26;
             this.lEscribir.Text = "Redactar";
             // 
@@ -83,9 +85,10 @@
             this.lSend.BackColor = System.Drawing.Color.Transparent;
             this.lSend.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lSend.ForeColor = System.Drawing.Color.Black;
-            this.lSend.Location = new System.Drawing.Point(26, 271);
+            this.lSend.Location = new System.Drawing.Point(35, 334);
+            this.lSend.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lSend.Name = "lSend";
-            this.lSend.Size = new System.Drawing.Size(73, 13);
+            this.lSend.Size = new System.Drawing.Size(90, 17);
             this.lSend.TabIndex = 27;
             this.lSend.Text = "Ver Enviados";
             // 
@@ -95,9 +98,10 @@
             this.lReceived.BackColor = System.Drawing.Color.Transparent;
             this.lReceived.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lReceived.ForeColor = System.Drawing.Color.Black;
-            this.lReceived.Location = new System.Drawing.Point(24, 380);
+            this.lReceived.Location = new System.Drawing.Point(32, 468);
+            this.lReceived.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lReceived.Name = "lReceived";
-            this.lReceived.Size = new System.Drawing.Size(75, 13);
+            this.lReceived.Size = new System.Drawing.Size(96, 17);
             this.lReceived.TabIndex = 30;
             this.lReceived.Text = "Ver Recibidos";
             // 
@@ -106,11 +110,13 @@
             this.bSalir.BackColor = System.Drawing.Color.Transparent;
             this.bSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bSalir.BackgroundImage")));
             this.bSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bSalir.FlatAppearance.BorderSize = 0;
             this.bSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bSalir.Location = new System.Drawing.Point(638, 6);
+            this.bSalir.Location = new System.Drawing.Point(851, 7);
+            this.bSalir.Margin = new System.Windows.Forms.Padding(4);
             this.bSalir.Name = "bSalir";
-            this.bSalir.Size = new System.Drawing.Size(55, 53);
+            this.bSalir.Size = new System.Drawing.Size(73, 65);
             this.bSalir.TabIndex = 31;
             this.bSalir.UseVisualStyleBackColor = false;
             this.bSalir.Click += new System.EventHandler(this.bSalir_Click);
@@ -120,9 +126,10 @@
             this.pictEnviados.BackColor = System.Drawing.Color.Transparent;
             this.pictEnviados.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictEnviados.BackgroundImage")));
             this.pictEnviados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictEnviados.Location = new System.Drawing.Point(44, 216);
+            this.pictEnviados.Location = new System.Drawing.Point(59, 266);
+            this.pictEnviados.Margin = new System.Windows.Forms.Padding(4);
             this.pictEnviados.Name = "pictEnviados";
-            this.pictEnviados.Size = new System.Drawing.Size(37, 37);
+            this.pictEnviados.Size = new System.Drawing.Size(49, 46);
             this.pictEnviados.TabIndex = 29;
             this.pictEnviados.TabStop = false;
             this.pictEnviados.Click += new System.EventHandler(this.pictEnviados_Click);
@@ -131,9 +138,10 @@
             // 
             this.pictCont3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictCont3.BackgroundImage")));
             this.pictCont3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictCont3.Location = new System.Drawing.Point(27, 310);
+            this.pictCont3.Location = new System.Drawing.Point(36, 382);
+            this.pictCont3.Margin = new System.Windows.Forms.Padding(4);
             this.pictCont3.Name = "pictCont3";
-            this.pictCont3.Size = new System.Drawing.Size(68, 67);
+            this.pictCont3.Size = new System.Drawing.Size(91, 82);
             this.pictCont3.TabIndex = 28;
             this.pictCont3.TabStop = false;
             this.pictCont3.Click += new System.EventHandler(this.pictCont3_Click);
@@ -143,9 +151,10 @@
             this.pictEscribir.BackColor = System.Drawing.Color.Transparent;
             this.pictEscribir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictEscribir.BackgroundImage")));
             this.pictEscribir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictEscribir.Location = new System.Drawing.Point(44, 109);
+            this.pictEscribir.Location = new System.Drawing.Point(59, 134);
+            this.pictEscribir.Margin = new System.Windows.Forms.Padding(4);
             this.pictEscribir.Name = "pictEscribir";
-            this.pictEscribir.Size = new System.Drawing.Size(37, 33);
+            this.pictEscribir.Size = new System.Drawing.Size(49, 41);
             this.pictEscribir.TabIndex = 24;
             this.pictEscribir.TabStop = false;
             this.pictEscribir.Click += new System.EventHandler(this.pictEscribir_Click);
@@ -154,9 +163,10 @@
             // 
             this.pictCont1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictCont1.BackgroundImage")));
             this.pictCont1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictCont1.Location = new System.Drawing.Point(27, 91);
+            this.pictCont1.Location = new System.Drawing.Point(36, 112);
+            this.pictCont1.Margin = new System.Windows.Forms.Padding(4);
             this.pictCont1.Name = "pictCont1";
-            this.pictCont1.Size = new System.Drawing.Size(68, 67);
+            this.pictCont1.Size = new System.Drawing.Size(91, 82);
             this.pictCont1.TabIndex = 22;
             this.pictCont1.TabStop = false;
             this.pictCont1.Click += new System.EventHandler(this.pictCont1_Click);
@@ -166,9 +176,10 @@
             this.pictRecibidos.BackColor = System.Drawing.Color.Transparent;
             this.pictRecibidos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictRecibidos.BackgroundImage")));
             this.pictRecibidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictRecibidos.Location = new System.Drawing.Point(44, 326);
+            this.pictRecibidos.Location = new System.Drawing.Point(59, 401);
+            this.pictRecibidos.Margin = new System.Windows.Forms.Padding(4);
             this.pictRecibidos.Name = "pictRecibidos";
-            this.pictRecibidos.Size = new System.Drawing.Size(37, 35);
+            this.pictRecibidos.Size = new System.Drawing.Size(49, 43);
             this.pictRecibidos.TabIndex = 25;
             this.pictRecibidos.TabStop = false;
             this.pictRecibidos.Click += new System.EventHandler(this.pictRecibidos_Click);
@@ -177,9 +188,10 @@
             // 
             this.pictSobres.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictSobres.BackgroundImage")));
             this.pictSobres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictSobres.Location = new System.Drawing.Point(12, 12);
+            this.pictSobres.Location = new System.Drawing.Point(16, 15);
+            this.pictSobres.Margin = new System.Windows.Forms.Padding(4);
             this.pictSobres.Name = "pictSobres";
-            this.pictSobres.Size = new System.Drawing.Size(53, 50);
+            this.pictSobres.Size = new System.Drawing.Size(71, 62);
             this.pictSobres.TabIndex = 21;
             this.pictSobres.TabStop = false;
             // 
@@ -187,9 +199,10 @@
             // 
             this.pictCont2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictCont2.BackgroundImage")));
             this.pictCont2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictCont2.Location = new System.Drawing.Point(27, 201);
+            this.pictCont2.Location = new System.Drawing.Point(36, 247);
+            this.pictCont2.Margin = new System.Windows.Forms.Padding(4);
             this.pictCont2.Name = "pictCont2";
-            this.pictCont2.Size = new System.Drawing.Size(68, 67);
+            this.pictCont2.Size = new System.Drawing.Size(91, 82);
             this.pictCont2.TabIndex = 24;
             this.pictCont2.TabStop = false;
             this.pictCont2.Click += new System.EventHandler(this.pictCont2_Click);
@@ -198,9 +211,10 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.panelMensajes);
-            this.panel1.Location = new System.Drawing.Point(120, 65);
+            this.panel1.Location = new System.Drawing.Point(160, 80);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(581, 328);
+            this.panel1.Size = new System.Drawing.Size(775, 404);
             this.panel1.TabIndex = 32;
             // 
             // panelMensajes
@@ -209,21 +223,23 @@
             this.panelMensajes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelMensajes.BackColor = System.Drawing.Color.Transparent;
             this.panelMensajes.ColumnCount = 1;
-            this.panelMensajes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 586F));
+            this.panelMensajes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 781F));
             this.panelMensajes.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMensajes.Location = new System.Drawing.Point(0, 0);
+            this.panelMensajes.Margin = new System.Windows.Forms.Padding(4);
             this.panelMensajes.Name = "panelMensajes";
             this.panelMensajes.RowCount = 1;
             this.panelMensajes.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.panelMensajes.Size = new System.Drawing.Size(581, 0);
+            this.panelMensajes.Size = new System.Drawing.Size(775, 0);
             this.panelMensajes.TabIndex = 21;
             // 
             // BandejaMensajes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(713, 407);
+            this.CancelButton = this.bSalir;
+            this.ClientSize = new System.Drawing.Size(951, 501);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictEnviados);
             this.Controls.Add(this.pictRecibidos);
@@ -239,9 +255,11 @@
             this.Controls.Add(this.pictCont2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BandejaMensajes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Bandeja de Mensajes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BandejaMensajes_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictEnviados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictCont3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictEscribir)).EndInit();

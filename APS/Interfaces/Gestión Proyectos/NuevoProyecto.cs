@@ -103,6 +103,7 @@ namespace APS.Interfaces.Gestión_Proyectos
             {
                 if (tNombreProy.Text.Trim().Equals("")) throw new Exception("Faltan parámetros: Nombre Proyecto");
                 if (comboTipoProy.Text.Trim().Equals("")) throw new Exception("Faltan parámetros: Tipo Proyecto");
+                if (listBox2.Items.Count == 0) throw new Exception("El proyecto debe contener al menos una actividad");
 
                 Proyecto.TipoProyectoE tipoProy;
                 Enum.TryParse<Proyecto.TipoProyectoE>(comboTipoProy.Text, true, out tipoProy);

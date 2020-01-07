@@ -28,5 +28,6 @@ namespace APS.Interfaces.Personalizados
             lShowDest.Text = m.Receptor.Email;
             lShowFecha.Text = m.Date.ToShortDateString();
         }
+
     }
 }

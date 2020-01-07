@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartelProyecto));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.lNombreAct = new System.Windows.Forms.Label();
             this.pictAtras = new System.Windows.Forms.PictureBox();
             this.pictAlante = new System.Windows.Forms.PictureBox();
@@ -45,7 +44,6 @@
             this.lResp = new System.Windows.Forms.Label();
             this.lShowIni = new System.Windows.Forms.Label();
             this.lFecha = new System.Windows.Forms.Label();
-            this.bVerMas = new System.Windows.Forms.Button();
             this.labelName = new System.Windows.Forms.Label();
             this.lDescripcion = new System.Windows.Forms.Label();
             this.pict = new System.Windows.Forms.PictureBox();
@@ -59,7 +57,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lNombreAct);
             this.panel1.Controls.Add(this.pictAtras);
             this.panel1.Controls.Add(this.pictAlante);
@@ -73,7 +70,6 @@
             this.panel1.Controls.Add(this.lResp);
             this.panel1.Controls.Add(this.lShowIni);
             this.panel1.Controls.Add(this.lFecha);
-            this.panel1.Controls.Add(this.bVerMas);
             this.panel1.Controls.Add(this.labelName);
             this.panel1.Controls.Add(this.lDescripcion);
             this.panel1.Controls.Add(this.pict);
@@ -82,19 +78,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(831, 209);
             this.panel1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(67, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 63);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "NO CONTIENE\r\nACTIVIDADES\r\nTODAVÍA";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Visible = false;
             // 
             // lNombreAct
             // 
@@ -134,7 +117,7 @@
             // 
             this.lShowNumActividades.AutoSize = true;
             this.lShowNumActividades.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lShowNumActividades.Location = new System.Drawing.Point(739, 148);
+            this.lShowNumActividades.Location = new System.Drawing.Point(714, 147);
             this.lShowNumActividades.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lShowNumActividades.Name = "lShowNumActividades";
             this.lShowNumActividades.Size = new System.Drawing.Size(36, 17);
@@ -145,7 +128,7 @@
             // 
             this.lblNumAct.AutoSize = true;
             this.lblNumAct.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumAct.Location = new System.Drawing.Point(627, 148);
+            this.lblNumAct.Location = new System.Drawing.Point(602, 147);
             this.lblNumAct.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumAct.Name = "lblNumAct";
             this.lblNumAct.Size = new System.Drawing.Size(104, 17);
@@ -156,7 +139,7 @@
             // 
             this.lShowEstadoProy.AutoSize = true;
             this.lShowEstadoProy.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lShowEstadoProy.Location = new System.Drawing.Point(694, 113);
+            this.lShowEstadoProy.Location = new System.Drawing.Point(669, 112);
             this.lShowEstadoProy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lShowEstadoProy.Name = "lShowEstadoProy";
             this.lShowEstadoProy.Size = new System.Drawing.Size(51, 17);
@@ -167,7 +150,7 @@
             // 
             this.lblEstadoProy.AutoSize = true;
             this.lblEstadoProy.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoProy.Location = new System.Drawing.Point(627, 113);
+            this.lblEstadoProy.Location = new System.Drawing.Point(602, 112);
             this.lblEstadoProy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEstadoProy.Name = "lblEstadoProy";
             this.lblEstadoProy.Size = new System.Drawing.Size(54, 17);
@@ -178,7 +161,7 @@
             // 
             this.lShowTipoProy.AutoSize = true;
             this.lShowTipoProy.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lShowTipoProy.Location = new System.Drawing.Point(689, 54);
+            this.lShowTipoProy.Location = new System.Drawing.Point(679, 51);
             this.lShowTipoProy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lShowTipoProy.Name = "lShowTipoProy";
             this.lShowTipoProy.Size = new System.Drawing.Size(33, 17);
@@ -189,7 +172,7 @@
             // 
             this.lblTipoProy.AutoSize = true;
             this.lblTipoProy.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoProy.Location = new System.Drawing.Point(581, 55);
+            this.lblTipoProy.Location = new System.Drawing.Point(571, 52);
             this.lblTipoProy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTipoProy.Name = "lblTipoProy";
             this.lblTipoProy.Size = new System.Drawing.Size(100, 17);
@@ -222,7 +205,7 @@
             // 
             this.lShowIni.AutoSize = true;
             this.lShowIni.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lShowIni.Location = new System.Drawing.Point(694, 81);
+            this.lShowIni.Location = new System.Drawing.Point(669, 80);
             this.lShowIni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lShowIni.Name = "lShowIni";
             this.lShowIni.Size = new System.Drawing.Size(24, 17);
@@ -233,25 +216,12 @@
             // 
             this.lFecha.AutoSize = true;
             this.lFecha.Font = new System.Drawing.Font("Bahnschrift", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lFecha.Location = new System.Drawing.Point(627, 81);
+            this.lFecha.Location = new System.Drawing.Point(602, 80);
             this.lFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lFecha.Name = "lFecha";
             this.lFecha.Size = new System.Drawing.Size(49, 17);
             this.lFecha.TabIndex = 14;
             this.lFecha.Text = "Fecha:";
-            // 
-            // bVerMas
-            // 
-            this.bVerMas.FlatAppearance.BorderSize = 0;
-            this.bVerMas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVerMas.Image = ((System.Drawing.Image)(resources.GetObject("bVerMas.Image")));
-            this.bVerMas.Location = new System.Drawing.Point(755, 4);
-            this.bVerMas.Margin = new System.Windows.Forms.Padding(4);
-            this.bVerMas.Name = "bVerMas";
-            this.bVerMas.Size = new System.Drawing.Size(72, 68);
-            this.bVerMas.TabIndex = 7;
-            this.bVerMas.UseVisualStyleBackColor = true;
-            this.bVerMas.Visible = false;
             // 
             // labelName
             // 
@@ -269,7 +239,7 @@
             this.lDescripcion.Location = new System.Drawing.Point(259, 70);
             this.lDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lDescripcion.Name = "lDescripcion";
-            this.lDescripcion.Size = new System.Drawing.Size(339, 119);
+            this.lDescripcion.Size = new System.Drawing.Size(313, 119);
             this.lDescripcion.TabIndex = 5;
             this.lDescripcion.Text = "Descripción";
             // 
@@ -284,6 +254,7 @@
             this.pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pict.TabIndex = 6;
             this.pict.TabStop = false;
+            this.pict.DoubleClick += new System.EventHandler(this.pict_DoubleClick);
             // 
             // timer1
             // 
@@ -315,7 +286,6 @@
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label lDescripcion;
         private System.Windows.Forms.PictureBox pict;
-        private System.Windows.Forms.Button bVerMas;
         private System.Windows.Forms.Label lShowIni;
         private System.Windows.Forms.Label lFecha;
         private System.Windows.Forms.Label lShowResp;
@@ -329,7 +299,6 @@
         private System.Windows.Forms.PictureBox pictAlante;
         private System.Windows.Forms.PictureBox pictAtras;
         private System.Windows.Forms.Label lNombreAct;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
     }
 }
