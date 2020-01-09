@@ -15,6 +15,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
 
 namespace APS.Interfaces
 {
@@ -1251,6 +1254,8 @@ namespace APS.Interfaces
                 //BOTON SOLICITAR
                 Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
                 Button bValorar = (Button)panel.Controls.Find("bValorar", false)[0];
+                Button bExpedir = (Button)panel.Controls.Find("bExpedir", false)[0];
+                bExpedir.Visible = false;
 
                 //PROGRAMACIÓN BOTONES
                 bValorar.Click += (sender, EventArgs) => { bValorar_Click(sender, EventArgs, act); };
@@ -1263,6 +1268,24 @@ namespace APS.Interfaces
             EvaluarActividad evAct = new EvaluarActividad(act);
             evAct.ShowDialog();
             cargarValoracionActividadesInicio();
+        }
+
+        private void bExpedirPDF_Click(object sender, EventArgs eventArgs, Actividad_Realizada act)
+        {
+            var exportFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var exportFile = System.IO.Path.Combine(exportFolder, "Certificado.pdf");
+            var writer = new PdfWriter(exportFile);
+            var pdf = new PdfDocument(writer);
+            var doc = new Document(pdf);
+
+            doc.Add(new Paragraph(act.Actividad.Organizador.NombreUser));
+            doc.Add(new Paragraph("Certifica que"));
+            doc.Add(new Paragraph(user.Nombre + " " + user.Apellido1 + " " + user.Apellido2));
+            doc.Add(new Paragraph("ha completado con éxito la actividad"));
+            doc.Add(new Paragraph(act.Actividad.NombreAct));
+            doc.Add(new Paragraph("que se celebró del " + act.Actividad.FechaInicio.ToShortDateString() + " a " + act.Actividad.FechaFin.ToShortDateString()));
+            doc.Add(new Paragraph("con un trabajo de " + act.NumHorasRealizadas.ToString()));
+            doc.Close();
         }
 
         private void cargarEvaluacionPorONG(int c)
@@ -1282,7 +1305,9 @@ namespace APS.Interfaces
                 //BOTON SOLICITAR
                 Panel panel = (Panel)actsCarteles[c2].Controls.Find("panel1", false)[0];
                 Button bValorar = (Button)panel.Controls.Find("bValorar", false)[0];
+                Button bExpedir = (Button)panel.Controls.Find("bExpedir", false)[0];
                 bValorar.Visible = false;
+                bExpedir.Visible = false;
 
                 c++;
                 c2++;
@@ -1306,7 +1331,9 @@ namespace APS.Interfaces
                 //BOTON SOLICITAR
                 Panel panel = (Panel)actsCarteles[c2].Controls.Find("panel1", false)[0];
                 Button bValorar = (Button)panel.Controls.Find("bValorar", false)[0];
+                Button bExpedir = (Button)panel.Controls.Find("bExpedir", false)[0];
                 bValorar.Visible = false;
+                bExpedir.Visible = false;
 
                 c++;
                 c2++;
@@ -1331,10 +1358,15 @@ namespace APS.Interfaces
                 Panel panel = (Panel)actsCarteles[c2].Controls.Find("panel1", false)[0];
                 Button bValorar = (Button)panel.Controls.Find("bValorar", false)[0];
                 bValorar.Text = "Opinión";
-
+                Button bExpedir = (Button)panel.Controls.Find("bExpedir", false)[0];
+                bExpedir.Visible = false;
+                if(act.ValoracionProfesor >= 2.5)
+                {
+                    bExpedir.Visible = true;
+                }
                 //PROGRAMACIÓN BOTONES
                 bValorar.Click += (sender, EventArgs) => { bValorarFinal_Click(sender, EventArgs, act); };
-
+                bExpedir.Click += (sender, EventArgs) => { bExpedirPDF_Click(sender, EventArgs, act); };
                 c++;
                 c2++;
             }
@@ -1368,7 +1400,9 @@ namespace APS.Interfaces
                     //BOTON SOLICITAR
                     Panel panel = (Panel)actsCarteles[c2].Controls.Find("panel1", false)[0];
                     Button bEvaluar = (Button)panel.Controls.Find("bValorar", false)[0];
+                    Button bExpedir = (Button)panel.Controls.Find("bExpedir", false)[0];
                     bEvaluar.Text = "Evaluar";
+                    bExpedir.Visible = false;
 
                     //PROGRAMACIÓN BOTONES
                     bEvaluar.Click += (sender, EventArgs) => { bEvaluar_Click(sender, EventArgs, act); };
@@ -1398,7 +1432,9 @@ namespace APS.Interfaces
                     //BOTON SOLICITAR
                     Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
                     Button bEvaluar = (Button)panel.Controls.Find("bValorar", false)[0];
+                    Button bExpedir = (Button)panel.Controls.Find("bExpedir", false)[0];
                     bEvaluar.Text = "Evaluar";
+                    bExpedir.Visible = false;
 
                     //PROGRAMACIÓN BOTONES
                     bEvaluar.Click += (sender, EventArgs) => { bEvaluar_Click(sender, EventArgs, act); };
