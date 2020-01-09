@@ -131,6 +131,7 @@
   <ItemGroup>
     <Compile Include="BD\BDException.cs" />
     <Compile Include="BD\BDLibrary.cs" />
+    <Compile Include="Certificados\PlantillaCertificado.cs" />
     <Compile Include="ImagenesDB\Actividades.cs">
       <DependentUpon>dbActividad.tt</DependentUpon>
     </Compile>

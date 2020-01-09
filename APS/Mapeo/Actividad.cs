@@ -448,7 +448,6 @@ namespace APS.Mapeo
 
                     obj.imagen = m_imagen;
                     db.SaveChanges();
-                    
                 }
                 this.imagen = value;
             }

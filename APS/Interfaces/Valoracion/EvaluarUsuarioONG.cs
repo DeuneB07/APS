@@ -43,7 +43,8 @@ namespace APS.Interfaces.Gestión_Actividades
                     act.ArchivoAdjuntoONG = File.ReadAllBytes(txtURL.Text);
                 }
       
-                if (act.Actividad.TipoAct.ToString().Equals(Actividad.TipoActividadE.VOLUNTARIADO.ToString())) act.EstadoRealizacion = Actividad_Realizada.EstadoActividadR.EVALUACION_FINALIZADA;
+                if (act.Actividad.TipoAct.ToString().Equals(Actividad.TipoActividadE.VOLUNTARIADO.ToString()) || !act.Participante.Rol.NombreRol.Equals("Estudiante"))
+                    act.EstadoRealizacion = Actividad_Realizada.EstadoActividadR.EVALUACION_FINALIZADA;
                 else act.EstadoRealizacion = Actividad_Realizada.EstadoActividadR.EVALUACION_PDI;
                 this.Close();
             }catch(Exception ex)
