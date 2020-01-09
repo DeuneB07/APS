@@ -1285,6 +1285,7 @@ namespace APS.Interfaces
             doc.Add(new Paragraph(act.Actividad.NombreAct));
             doc.Add(new Paragraph("que se celebró del " + act.Actividad.FechaInicio.ToShortDateString() + " a " + act.Actividad.FechaFin.ToShortDateString()));
             doc.Add(new Paragraph("con un trabajo de " + act.NumHorasRealizadas.ToString()));
+            doc.Close();
         }
 
         private void cargarEvaluacionPorONG(int c)
