@@ -99,8 +99,8 @@ namespace APS.Interfaces.Personalizados
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            filtros.dateTimePickerInicio.Value = DateTimePicker.MinimumDateTime;
-            filtros.dateTimePickerFin.Value = DateTimePicker.MaximumDateTime;
+            filtros.dateTimePickerInicio.Value = Filtros.dateDefault;
+            filtros.dateTimePickerFin.Value = Filtros.dateDefault;
             filtros.ActualizarFiltro();
         }
 

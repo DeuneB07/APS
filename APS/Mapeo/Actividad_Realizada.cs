@@ -27,6 +27,8 @@ namespace APS.Mapeo
         private float valoracionProfesor;
         private DateTime fechaValoracionProfesor = DateTime.MinValue;
         private String comentarioProfesor;
+        private DateTime fechaInicialUsuario;
+        private DateTime fechaFinalUsuario;
 
         public static Boolean Contains(Usuario user, Actividad act)
         {
@@ -219,7 +221,11 @@ namespace APS.Mapeo
             if (!tupla[11].ToString().Equals("")) valoracionProfesor = float.Parse(tupla[11].ToString());
             fecha = (tupla[12].ToString()).Split('/', '-', ' ', ':', '.');
             if (!tupla[12].ToString().Equals("")) fechaValoracionProfesor = new DateTime(int.Parse(fecha[2]), int.Parse(fecha[1]), int.Parse(fecha[0]), int.Parse(fecha[3]), int.Parse(fecha[4]), int.Parse(fecha[5]));
-            if (!tupla[13].ToString().Equals("")) comentarioProfesor = (String)tupla[13];   
+            if (!tupla[13].ToString().Equals("")) comentarioProfesor = (String)tupla[13];
+            fecha = (tupla[14].ToString()).Split('/', '-', ' ', ':', '.');
+            if (!tupla[14].ToString().Equals("")) fechaInicialUsuario = new DateTime(int.Parse(fecha[0]), int.Parse(fecha[1]), int.Parse(fecha[2]));
+            fecha = (tupla[15].ToString()).Split('/', '-', ' ', ':', '.');
+            if (!tupla[15].ToString().Equals("")) fechaFinalUsuario = new DateTime(int.Parse(fecha[0]), int.Parse(fecha[1]), int.Parse(fecha[2]));
         }
 
         public Actividad_Realizada(Usuario participante, Actividad actividad, Boolean f)
@@ -482,6 +488,32 @@ namespace APS.Mapeo
                         + "WHERE emailParticipante='" + this.participante.Email + "' and idAct=" + actividad.ID_Actividad + ";";
                 miBD.Update(up);
                 this.comentarioProfesor = value;
+            }
+        }
+
+        public DateTime FechaInicialUsuario
+        {
+            get { return fechaInicialUsuario; }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                String up = "UPDATE Actividades_Realizadas SET fechaInicioUsuario='" + value.ToShortDateString() + "' "
+                        + "WHERE emailParticipante='" + this.participante.Email + "' and idAct=" + actividad.ID_Actividad + ";";
+                miBD.Update(up);
+                this.fechaInicialUsuario = value;
+            }
+        }
+
+        public DateTime FechaFinalUsuario
+        {
+            get { return fechaFinalUsuario; }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                String up = "UPDATE Actividades_Realizadas SET fechaFinalUsuario='" + value.ToShortDateString() + "' "
+                        + "WHERE emailParticipante='" + this.participante.Email + "' and idAct=" + actividad.ID_Actividad + ";";
+                miBD.Update(up);
+                this.fechaFinalUsuario = value;
             }
         }
 

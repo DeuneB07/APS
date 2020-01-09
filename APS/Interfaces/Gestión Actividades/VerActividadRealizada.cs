@@ -71,6 +71,8 @@ namespace APS.Interfaces.Gestión_Actividades
                     lblArchivo.Visible = true;
                 }
                 lblFechaONG.Text = "Evaluado: " + actRealizada.FechaValoracionONG.ToString();
+                lShowFechaRealizacion.Text = actRealizada.FechaInicialUsuario.ToShortDateString() + "-" 
+                                                + actRealizada.FechaFinalUsuario.ToShortDateString();
             }
             else
             {

@@ -92,6 +92,8 @@
             this.lblEvaluacionONG = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.lblFechaRealizacion = new System.Windows.Forms.Label();
+            this.lShowFechaRealizacion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelEvUsuario.SuspendLayout();
@@ -105,7 +107,7 @@
             this.listTrabajo.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listTrabajo.FormattingEnabled = true;
             this.listTrabajo.Location = new System.Drawing.Point(555, 326);
-            this.listTrabajo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listTrabajo.Margin = new System.Windows.Forms.Padding(4);
             this.listTrabajo.Name = "listTrabajo";
             this.listTrabajo.Size = new System.Drawing.Size(160, 25);
             this.listTrabajo.TabIndex = 84;
@@ -116,7 +118,7 @@
             this.listAmbito.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listAmbito.FormattingEnabled = true;
             this.listAmbito.Location = new System.Drawing.Point(555, 286);
-            this.listAmbito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listAmbito.Margin = new System.Windows.Forms.Padding(4);
             this.listAmbito.Name = "listAmbito";
             this.listAmbito.Size = new System.Drawing.Size(160, 25);
             this.listAmbito.TabIndex = 83;
@@ -127,7 +129,7 @@
             this.listTurno.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listTurno.FormattingEnabled = true;
             this.listTurno.Location = new System.Drawing.Point(175, 332);
-            this.listTurno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listTurno.Margin = new System.Windows.Forms.Padding(4);
             this.listTurno.Name = "listTurno";
             this.listTurno.Size = new System.Drawing.Size(160, 25);
             this.listTurno.TabIndex = 82;
@@ -500,7 +502,7 @@
             this.panelEvPDI.Controls.Add(this.txtPDI);
             this.panelEvPDI.Controls.Add(this.lblPDI);
             this.panelEvPDI.Controls.Add(this.lblEvaluacionPDI);
-            this.panelEvPDI.Location = new System.Drawing.Point(12, 740);
+            this.panelEvPDI.Location = new System.Drawing.Point(12, 748);
             this.panelEvPDI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelEvPDI.Name = "panelEvPDI";
             this.panelEvPDI.Size = new System.Drawing.Size(793, 134);
@@ -601,6 +603,8 @@
             // 
             this.panelEvONG.BackColor = System.Drawing.Color.White;
             this.panelEvONG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelEvONG.Controls.Add(this.lShowFechaRealizacion);
+            this.panelEvONG.Controls.Add(this.lblFechaRealizacion);
             this.panelEvONG.Controls.Add(this.lHoras);
             this.panelEvONG.Controls.Add(this.lblArchivo);
             this.panelEvONG.Controls.Add(this.label1);
@@ -615,7 +619,7 @@
             this.panelEvONG.Location = new System.Drawing.Point(12, 576);
             this.panelEvONG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelEvONG.Name = "panelEvONG";
-            this.panelEvONG.Size = new System.Drawing.Size(793, 158);
+            this.panelEvONG.Size = new System.Drawing.Size(793, 168);
             this.panelEvONG.TabIndex = 90;
             // 
             // lHoras
@@ -623,7 +627,7 @@
             this.lHoras.AutoSize = true;
             this.lHoras.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lHoras.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lHoras.Location = new System.Drawing.Point(152, 124);
+            this.lHoras.Location = new System.Drawing.Point(153, 136);
             this.lHoras.Name = "lHoras";
             this.lHoras.Size = new System.Drawing.Size(42, 18);
             this.lHoras.TabIndex = 94;
@@ -647,7 +651,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 124);
+            this.label1.Location = new System.Drawing.Point(14, 136);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 18);
             this.label1.TabIndex = 92;
@@ -659,7 +663,7 @@
             this.lblFechaONG.AutoSize = true;
             this.lblFechaONG.Font = new System.Drawing.Font("Modern No. 20", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaONG.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblFechaONG.Location = new System.Drawing.Point(604, 126);
+            this.lblFechaONG.Location = new System.Drawing.Point(604, 136);
             this.lblFechaONG.Name = "lblFechaONG";
             this.lblFechaONG.Size = new System.Drawing.Size(94, 16);
             this.lblFechaONG.TabIndex = 91;
@@ -756,6 +760,27 @@
             this.label6.Text = "VALORACIONES";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // lblFechaRealizacion
+            // 
+            this.lblFechaRealizacion.AutoSize = true;
+            this.lblFechaRealizacion.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaRealizacion.Location = new System.Drawing.Point(13, 112);
+            this.lblFechaRealizacion.Name = "lblFechaRealizacion";
+            this.lblFechaRealizacion.Size = new System.Drawing.Size(130, 18);
+            this.lblFechaRealizacion.TabIndex = 95;
+            this.lblFechaRealizacion.Text = "Fecha Realización:";
+            // 
+            // lShowFechaRealizacion
+            // 
+            this.lShowFechaRealizacion.AutoSize = true;
+            this.lShowFechaRealizacion.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lShowFechaRealizacion.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lShowFechaRealizacion.Location = new System.Drawing.Point(153, 112);
+            this.lShowFechaRealizacion.Name = "lShowFechaRealizacion";
+            this.lShowFechaRealizacion.Size = new System.Drawing.Size(116, 18);
+            this.lShowFechaRealizacion.TabIndex = 96;
+            this.lShowFechaRealizacion.Text = "fechaIni - fechaFin";
+            // 
             // VerActividadRealizada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -847,5 +872,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lHoras;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label lblFechaRealizacion;
+        private System.Windows.Forms.Label lShowFechaRealizacion;
     }
 }

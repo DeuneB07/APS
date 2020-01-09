@@ -20,6 +20,8 @@ namespace APS.Interfaces.Gestión_Actividades
             InitializeComponent();
             lUserEvaluado.Text = act.Participante.Nombre + " " + act.Participante.Apellido1 + " " + act.Participante.Apellido2;
             this.act = act;
+            dateTimePickerIni.Value = act.Actividad.FechaInicio;
+            dateTimePickerFin.Value = act.Actividad.FechaFin;
             labelError.Text = "";
             lblTitulo.Text = "¿CÓMO HA TRABAJADO EL USUARIO\n" + act.Participante.Nombre.ToUpper() + "? ¡PUNTÚALO!";
         }
@@ -33,6 +35,8 @@ namespace APS.Interfaces.Gestión_Actividades
                 act.ValoracionONG = ratingValoracion.Value;
                 act.NumHorasRealizadas = decimal.ToInt32(numericHoras.Value);
                 act.ComentarioONG = textBoxComentario.Text;
+                act.FechaInicialUsuario = dateTimePickerIni.Value;
+                act.FechaFinalUsuario = dateTimePickerFin.Value;
                 act.FechaValoracionONG = DateTime.Now;
                 if (!txtURL.Text.Trim().Equals(""))
                 {

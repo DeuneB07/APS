@@ -131,6 +131,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbActividadesRealizadas.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ImagenesDB\dbNoticia.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbNoticia.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImagenesDB\dbNoticia.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbNoticia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImagenesDB\dbNoticia.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbNoticia.edmx</DependentUpon>
+    </Compile>
     <Compile Include="ImagenesDB\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,6 +160,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbUsuario.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ImagenesDB\Noticias.cs">
+      <DependentUpon>dbNoticia.tt</DependentUpon>
     </Compile>
     <Compile Include="ImagenesDB\Usuario.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -863,6 +881,13 @@
     <None Include="ImagenesDB\dbActividadesRealizadas.edmx.diagram">
       <DependentUpon>dbActividadesRealizadas.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="ImagenesDB\dbNoticia.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbNoticia.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ImagenesDB\dbNoticia.edmx.diagram">
+      <DependentUpon>dbNoticia.edmx</DependentUpon>
+    </None>
     <None Include="ImagenesDB\dbUsuario.edmx.diagram">
       <DependentUpon>dbUsuario.edmx</DependentUpon>
     </None>
@@ -931,6 +956,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>dbActividadesRealizadas.edmx</DependentUpon>
       <LastGenOutput>dbActividadesRealizadas.cs</LastGenOutput>
+    </Content>
+    <Content Include="ImagenesDB\dbNoticia.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbNoticia.edmx</DependentUpon>
+      <LastGenOutput>dbNoticia.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ImagenesDB\dbNoticia.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbNoticia.edmx</DependentUpon>
+      <LastGenOutput>dbNoticia.cs</LastGenOutput>
     </Content>
     <Content Include="ImagenesDB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -15,6 +15,7 @@ namespace APS.Interfaces.Personalizados
     {
         CartelFiltros2 cartel;
         public List<Actividad> listaFiltrada;
+        public static DateTime dateDefault = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
 
         public Filtros(CartelFiltros2 cartel)
         {
@@ -23,8 +24,8 @@ namespace APS.Interfaces.Personalizados
             CargarGrados();
             CargarCompetencias();
             listaFiltrada = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
-            dateTimePickerInicio.Value = DateTimePicker.MinimumDateTime;
-            dateTimePickerFin.Value = DateTimePicker.MaximumDateTime;
+            dateTimePickerInicio.Value = dateDefault;
+            dateTimePickerFin.Value = dateDefault;
             listComp1.DisplayMember = "nombreComp";
             listComp2.DisplayMember = "nombreComp";
         }
@@ -273,20 +274,20 @@ namespace APS.Interfaces.Personalizados
         private void Filtrar_Fecha()
         {
             cartel.filtroFecha.Visible = false;
-            if(dateTimePickerInicio.Value != DateTimePicker.MinimumDateTime || dateTimePickerFin.Value != DateTimePicker.MaximumDateTime)
+            if(dateTimePickerInicio.Value != dateDefault || dateTimePickerFin.Value != dateDefault)
             {
                 cartel.filtroFecha.Visible = true;
                 cartel.flowShowFiltro.Controls.Add(cartel.filtroFecha);
 
                 List<Actividad> aux = new List<Actividad>();
-                if(dateTimePickerInicio.Value!= DateTimePicker.MinimumDateTime)
+                if(dateTimePickerInicio.Value!= dateDefault)
                 {
                     foreach(Actividad act in listaFiltrada)
                     {
                         if (act.FechaInicio < dateTimePickerInicio.Value) aux.Add(act);
                     }
                 }
-                if (dateTimePickerFin.Value != DateTimePicker.MaximumDateTime)
+                if (dateTimePickerFin.Value != dateDefault)
                 {
                     foreach (Actividad act in listaFiltrada)
                     {
