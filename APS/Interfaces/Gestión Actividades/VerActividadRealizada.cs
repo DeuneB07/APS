@@ -81,7 +81,7 @@ namespace APS.Interfaces.Gestión_Actividades
             }
 
             //Panel PDI
-            if (actividad.TipoAct.ToString().Equals("VOLUNTARIADO"))
+            if (actividad.TipoAct.ToString().Equals("VOLUNTARIADO") || !actRealizada.Participante.Rol.NombreRol.Equals("Estudiante"))
             {
                 panelEvPDI.Visible = false;
                 //btnAtras.Location = new Point(714, 725);
