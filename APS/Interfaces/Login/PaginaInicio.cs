@@ -1,4 +1,5 @@
 ﻿using APS.BD;
+using APS.Interfaces.Personalizados;
 using APS.JSON;
 using APS.Mapeo;
 using System;
@@ -16,9 +17,14 @@ namespace APS.Interfaces
     public partial class PaginaInicio : Form
     {
 
+        private int i = -1;
+        private List<ImagenesDB.Noticias> noticias;
         public PaginaInicio()
         {
             InitializeComponent();
+            panel1.Controls.Add(table);
+            
+            CargarNoticias();
         }
 
         private void bPersonalUMA_Click(object sender, EventArgs e)
@@ -50,6 +56,34 @@ namespace APS.Interfaces
         private void bExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            i = (i + 1) % noticias.Count;
+            CargarImagen();
+        }
+
+        private void CargarImagen()
+        {
+            table.Controls.Clear();
+            ImagenesDB.Noticias n = noticias[i];
+            CartelNoticias cartel = new CartelNoticias(n);
+            table.Controls.Add(cartel, 0, 0);
+            //table.RowCount = table.RowCount + 1;
+        }
+
+        private void CargarNoticias()
+        {
+            noticias = new List<ImagenesDB.Noticias>();
+            ImagenesDB.WePassEntities1 contexto = new ImagenesDB.WePassEntities1();
+            noticias = contexto.Noticias.ToList();
+            if (noticias.Count > 1)
+            {
+                i = 0;
+                timer1.Start();
+                CargarImagen();
+            }
         }
     }
 }

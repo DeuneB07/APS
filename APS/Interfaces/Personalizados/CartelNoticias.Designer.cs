@@ -28,47 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lNoticia = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lTitular = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lNoticia
-            // 
-            this.lNoticia.Font = new System.Drawing.Font("Bahnschrift", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lNoticia.Location = new System.Drawing.Point(3, 9);
-            this.lNoticia.Name = "lNoticia";
-            this.lNoticia.Size = new System.Drawing.Size(544, 96);
-            this.lNoticia.TabIndex = 5;
-            this.lNoticia.Text = "noticia";
-            this.lNoticia.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(550, 118);
-            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.Size = new System.Drawing.Size(742, 170);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // lTitular
+            // 
+            this.lTitular.BackColor = System.Drawing.Color.Transparent;
+            this.lTitular.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTitular.Location = new System.Drawing.Point(16, 10);
+            this.lTitular.Name = "lTitular";
+            this.lTitular.Size = new System.Drawing.Size(710, 144);
+            this.lTitular.TabIndex = 2;
+            this.lTitular.Text = "Titular";
+            this.lTitular.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CartelNoticias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.lNoticia);
+            this.Controls.Add(this.lTitular);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CartelNoticias";
-            this.Size = new System.Drawing.Size(550, 118);
+            this.Size = new System.Drawing.Size(742, 170);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lNoticia;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lTitular;
     }
 }

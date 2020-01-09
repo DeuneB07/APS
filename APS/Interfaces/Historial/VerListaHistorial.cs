@@ -24,7 +24,7 @@ namespace APS.Interfaces.Historial
             this.user = user;
             if (user.NombreUser!=null && !user.NombreUser.Equals("")) this.labelTitulo.Text = "HISTORIAL " + user.NombreUser;
             else this.labelTitulo.Text = "HISTORIAL " + user.Nombre;
-
+            
             cargarHistorialEventosDescendente();
         }
 

@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsertarNoticia));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lTitular = new System.Windows.Forms.Label();
-            this.textTitular = new System.Windows.Forms.TextBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.tURL = new System.Windows.Forms.Label();
+            this.btnExaminar = new System.Windows.Forms.Button();
+            this.pict = new System.Windows.Forms.PictureBox();
             this.pictOK = new System.Windows.Forms.PictureBox();
             this.pictCancelar = new System.Windows.Forms.PictureBox();
-            this.pict = new System.Windows.Forms.PictureBox();
-            this.btnExaminar = new System.Windows.Forms.Button();
+            this.textTitular = new System.Windows.Forms.TextBox();
+            this.lTitular = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.tURL = new System.Windows.Forms.Label();
-            this.btnReset = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pict)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictOK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictCancelar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pict)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,23 +61,49 @@
             this.panel1.Size = new System.Drawing.Size(794, 114);
             this.panel1.TabIndex = 0;
             // 
-            // lTitular
+            // btnReset
             // 
-            this.lTitular.AutoSize = true;
-            this.lTitular.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTitular.Location = new System.Drawing.Point(292, 11);
-            this.lTitular.Name = "lTitular";
-            this.lTitular.Size = new System.Drawing.Size(40, 13);
-            this.lTitular.TabIndex = 0;
-            this.lTitular.Text = "Titular:";
+            this.btnReset.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(336, 38);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(82, 20);
+            this.btnReset.TabIndex = 34;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // textTitular
+            // tURL
             // 
-            this.textTitular.Location = new System.Drawing.Point(338, 11);
-            this.textTitular.Multiline = true;
-            this.textTitular.Name = "textTitular";
-            this.textTitular.Size = new System.Drawing.Size(452, 65);
-            this.textTitular.TabIndex = 1;
+            this.tURL.AutoSize = true;
+            this.tURL.Location = new System.Drawing.Point(169, 26);
+            this.tURL.Name = "tURL";
+            this.tURL.Size = new System.Drawing.Size(0, 17);
+            this.tURL.TabIndex = 30;
+            this.tURL.Visible = false;
+            // 
+            // btnExaminar
+            // 
+            this.btnExaminar.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExaminar.Location = new System.Drawing.Point(336, 14);
+            this.btnExaminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExaminar.Name = "btnExaminar";
+            this.btnExaminar.Size = new System.Drawing.Size(82, 20);
+            this.btnExaminar.TabIndex = 29;
+            this.btnExaminar.Text = "Examinar";
+            this.btnExaminar.UseVisualStyleBackColor = true;
+            this.btnExaminar.Click += new System.EventHandler(this.btnExaminar_Click);
+            // 
+            // pict
+            // 
+            this.pict.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pict.Image = global::APS.Properties.Resources.no_image;
+            this.pict.Location = new System.Drawing.Point(3, 3);
+            this.pict.Name = "pict";
+            this.pict.Size = new System.Drawing.Size(328, 108);
+            this.pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pict.TabIndex = 6;
+            this.pict.TabStop = false;
             // 
             // pictOK
             // 
@@ -101,57 +127,31 @@
             this.pictCancelar.TabStop = false;
             this.pictCancelar.Click += new System.EventHandler(this.pictCancelar_Click);
             // 
-            // pict
+            // textTitular
             // 
-            this.pict.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pict.Image = global::APS.Properties.Resources.no_image;
-            this.pict.Location = new System.Drawing.Point(3, 3);
-            this.pict.Name = "pict";
-            this.pict.Size = new System.Drawing.Size(160, 108);
-            this.pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pict.TabIndex = 6;
-            this.pict.TabStop = false;
+            this.textTitular.Location = new System.Drawing.Point(493, 11);
+            this.textTitular.Multiline = true;
+            this.textTitular.Name = "textTitular";
+            this.textTitular.Size = new System.Drawing.Size(297, 63);
+            this.textTitular.TabIndex = 1;
             // 
-            // btnExaminar
+            // lTitular
             // 
-            this.btnExaminar.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExaminar.Location = new System.Drawing.Point(168, 4);
-            this.btnExaminar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExaminar.Name = "btnExaminar";
-            this.btnExaminar.Size = new System.Drawing.Size(82, 20);
-            this.btnExaminar.TabIndex = 29;
-            this.btnExaminar.Text = "Examinar";
-            this.btnExaminar.UseVisualStyleBackColor = true;
-            this.btnExaminar.Click += new System.EventHandler(this.btnExaminar_Click);
+            this.lTitular.AutoSize = true;
+            this.lTitular.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTitular.Location = new System.Drawing.Point(436, 14);
+            this.lTitular.Name = "lTitular";
+            this.lTitular.Size = new System.Drawing.Size(51, 17);
+            this.lTitular.TabIndex = 0;
+            this.lTitular.Text = "Titular:";
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // tURL
-            // 
-            this.tURL.AutoSize = true;
-            this.tURL.Location = new System.Drawing.Point(169, 26);
-            this.tURL.Name = "tURL";
-            this.tURL.Size = new System.Drawing.Size(0, 13);
-            this.tURL.TabIndex = 30;
-            this.tURL.Visible = false;
-            // 
-            // btnReset
-            // 
-            this.btnReset.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(168, 28);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(82, 20);
-            this.btnReset.TabIndex = 34;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // InsertarNoticia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(800, 141);
@@ -163,9 +163,9 @@
             this.Text = "Insertar Noticia";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pict)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictOK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictCancelar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pict)).EndInit();
             this.ResumeLayout(false);
 
         }

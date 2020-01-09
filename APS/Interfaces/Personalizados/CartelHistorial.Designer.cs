@@ -79,6 +79,7 @@
             // 
             // lblComentario
             // 
+            this.lblComentario.BackColor = System.Drawing.Color.White;
             this.lblComentario.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComentario.ForeColor = System.Drawing.Color.Navy;
             this.lblComentario.Location = new System.Drawing.Point(14, 0);
