@@ -810,8 +810,9 @@ namespace APS.Interfaces
                 tablePP.Controls.Add(proyCarteles[c], 0, c);
                 tablePP.RowCount = tablePP.RowCount + 1;
                 proyCarteles[c].Location = new Point(proyCarteles[c].Location.X, (proyCarteles[c].Size.Height * c));
-                proyCarteles[c].BackColor = Color.DarkCyan;
-
+                if(proy.EstadoProy.Equals(Proyecto.EstadoProyectoE.PREINICIO)) proyCarteles[c].BackColor = Color.GreenYellow;
+                if (proy.EstadoProy.Equals(Proyecto.EstadoProyectoE.EN_CURSO)) proyCarteles[c].BackColor = Color.CornflowerBlue;
+                if (proy.EstadoProy.Equals(Proyecto.EstadoProyectoE.FINALIZADO)) proyCarteles[c].BackColor = Color.DarkRed;
                 c++;
             }
 
@@ -1414,92 +1415,6 @@ namespace APS.Interfaces
             cargarValoracionActividadesInicio();
         }
 
-        /*
-        private void cargarEvaluacionPDI(List<Actividad> lista)
-        {
-            CartelActividadesValoracion[] actsCarteles = new CartelActividadesValoracion[lista.Count];
-            int c = 0;
-
-            foreach (Actividad act in lista)
-            {
-                actsCarteles[c] = new CartelActividadesValoracion(user, act);
-                tablePP.Controls.Add(actsCarteles[c], 0, c + 1);
-                tablePP.RowCount = tablePP.RowCount + 1;
-                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
-                actsCarteles[c].BackColor = Color.Aqua;
-
-                //BOTON SOLICITAR
-                Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
-                Button bValorar = (Button)panel.Controls.Find("bValorar", false)[0];
-                //PROGRAMACIÓN BOTONES
-                bValorar.Click += (sender, EventArgs) => { bValorarONG_Click(sender, EventArgs, act); };
-                c++;
-            }
-        }
-
-        private void cargarEvaluacionONG(List<Actividad> lista)
-        {
-            CartelActividadesValoracion[] actsCarteles = new CartelActividadesValoracion[lista.Count];
-            int c = 0;
-
-            foreach (Actividad act in lista)
-            {
-                actsCarteles[c] = new CartelActividadesValoracion(user, act);
-                tablePP.Controls.Add(actsCarteles[c], 0, c + 1);
-                tablePP.RowCount = tablePP.RowCount + 1;
-                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
-                actsCarteles[c].BackColor = Color.Aqua;
-
-                //BOTON SOLICITAR
-                Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
-                Button bValorar = (Button)panel.Controls.Find("bValorar", false)[0];
-                //PROGRAMACIÓN BOTONES
-                bValorar.Click += (sender, EventArgs) => { bValorarONG_Click(sender, EventArgs, act); };
-                c++;
-            }
-        }
-
-        private void cargarEvaluacionParticipante(List<Actividad_Realizada> lista)
-        {
-            CartelActividadesValoracion[] actsCarteles = new CartelActividadesValoracion[lista.Count];
-
-            int c = 0;
-            foreach (Actividad_Realizada act in lista)
-            {
-                actsCarteles[c] = new CartelActividadesValoracion(user, act.Actividad);
-                tablePP.Controls.Add(actsCarteles[c], 0, c + 1);
-                tablePP.RowCount = tablePP.RowCount + 1;
-                actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
-                actsCarteles[c].BackColor = Color.Aqua;
-
-                //BOTON SOLICITAR
-                Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
-                Button bValorar = (Button)panel.Controls.Find("bValorar", false)[0];
-                if (!act.EstadoRealizacion.ToString().Equals("EVALUACION_" + user.Rol.NombreRol.ToUpper()) &&
-                    !act.EstadoRealizacion.ToString().Equals("EVALUACION_PARTICIPANTE"))
-                    bValorar.Visible = false;
-                //PROGRAMACIÓN BOTONES
-                bValorar.Click += (sender, EventArgs) => { bValorar_Click(sender, EventArgs, act); };
-                c++;
-            }
-        }
-
-        private void bValorar_Click(object sender, EventArgs eventArgs, Actividad_Realizada act)
-        {
-            EvaluarActividad evAct = new EvaluarActividad(act);
-            evAct.ShowDialog();
-            cargarValoracionActividadesInicio();
-        }
-
-        private void bValorarONG_Click(object sender, EventArgs eventArgs, Actividad act)
-        {
-            EvaluarParticipantes evPar = new EvaluarParticipantes(user,act);
-            evPar.ShowDialog();
-            cargarValoracionActividadesInicio();
-        }
-
-    */
-
         //
         // PESTAÑA MIS ACTIVIDADES -> Sólo ONG (organizador) y PDI (responsable) // Sólo Actividades Abiertas y Publicadas
         //
@@ -1944,11 +1859,8 @@ namespace APS.Interfaces
             }
             else if(chargedWindow.Equals(PantallaCargada.PROYECTOS))
             {
-                DialogResult emCierreDialog;
-                string mensaje = "Función No Implementada Aún.";
-                string caption = "¡AVISO!";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
+                HelpProyectos helpProyectos = new HelpProyectos();
+                helpProyectos.ShowDialog();
             }
 
         }

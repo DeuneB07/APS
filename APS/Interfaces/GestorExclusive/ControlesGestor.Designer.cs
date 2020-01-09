@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlesGestor));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lBusqAsig = new System.Windows.Forms.Label();
+            this.combBusqAsig = new System.Windows.Forms.ComboBox();
+            this.lBusqRol = new System.Windows.Forms.Label();
+            this.comboBusqRol = new System.Windows.Forms.ComboBox();
             this.lInsertar = new System.Windows.Forms.Label();
             this.bInsertar = new System.Windows.Forms.Button();
             this.pictExit = new System.Windows.Forms.PictureBox();
@@ -52,10 +56,8 @@
             this.pictTipoTrab = new System.Windows.Forms.PictureBox();
             this.pictAmbTrab = new System.Windows.Forms.PictureBox();
             this.pictGrados = new System.Windows.Forms.PictureBox();
-            this.comboBusqRol = new System.Windows.Forms.ComboBox();
-            this.lBusqRol = new System.Windows.Forms.Label();
-            this.lBusqAsig = new System.Windows.Forms.Label();
-            this.combBusqAsig = new System.Windows.Forms.ComboBox();
+            this.lNoticias = new System.Windows.Forms.Label();
+            this.pictNoticias = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictExit)).BeginInit();
             this.panelContainer.SuspendLayout();
@@ -67,11 +69,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictTipoTrab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictAmbTrab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictGrados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictNoticias)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lNoticias);
+            this.panel1.Controls.Add(this.pictNoticias);
             this.panel1.Controls.Add(this.lBusqAsig);
             this.panel1.Controls.Add(this.combBusqAsig);
             this.panel1.Controls.Add(this.lBusqRol);
@@ -100,6 +105,48 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(797, 462);
             this.panel1.TabIndex = 0;
+            // 
+            // lBusqAsig
+            // 
+            this.lBusqAsig.AutoSize = true;
+            this.lBusqAsig.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBusqAsig.Location = new System.Drawing.Point(444, 19);
+            this.lBusqAsig.Name = "lBusqAsig";
+            this.lBusqAsig.Size = new System.Drawing.Size(100, 14);
+            this.lBusqAsig.TabIndex = 44;
+            this.lBusqAsig.Text = "Filtrar por Grado:";
+            this.lBusqAsig.Visible = false;
+            // 
+            // combBusqAsig
+            // 
+            this.combBusqAsig.FormattingEnabled = true;
+            this.combBusqAsig.Location = new System.Drawing.Point(550, 17);
+            this.combBusqAsig.Name = "combBusqAsig";
+            this.combBusqAsig.Size = new System.Drawing.Size(223, 21);
+            this.combBusqAsig.TabIndex = 43;
+            this.combBusqAsig.Visible = false;
+            this.combBusqAsig.SelectedIndexChanged += new System.EventHandler(this.combBusqAsig_SelectedIndexChanged);
+            // 
+            // lBusqRol
+            // 
+            this.lBusqRol.AutoSize = true;
+            this.lBusqRol.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBusqRol.Location = new System.Drawing.Point(570, 19);
+            this.lBusqRol.Name = "lBusqRol";
+            this.lBusqRol.Size = new System.Drawing.Size(76, 14);
+            this.lBusqRol.TabIndex = 42;
+            this.lBusqRol.Text = "Rol Deseado:";
+            this.lBusqRol.Visible = false;
+            // 
+            // comboBusqRol
+            // 
+            this.comboBusqRol.FormattingEnabled = true;
+            this.comboBusqRol.Location = new System.Drawing.Point(652, 17);
+            this.comboBusqRol.Name = "comboBusqRol";
+            this.comboBusqRol.Size = new System.Drawing.Size(121, 21);
+            this.comboBusqRol.TabIndex = 41;
+            this.comboBusqRol.Visible = false;
+            this.comboBusqRol.SelectedIndexChanged += new System.EventHandler(this.comboBusqRol_SelectedIndexChanged);
             // 
             // lInsertar
             // 
@@ -349,47 +396,27 @@
             this.pictGrados.TabStop = false;
             this.pictGrados.Click += new System.EventHandler(this.pictGrados_Click);
             // 
-            // comboBusqRol
+            // lNoticias
             // 
-            this.comboBusqRol.FormattingEnabled = true;
-            this.comboBusqRol.Location = new System.Drawing.Point(652, 17);
-            this.comboBusqRol.Name = "comboBusqRol";
-            this.comboBusqRol.Size = new System.Drawing.Size(121, 21);
-            this.comboBusqRol.TabIndex = 41;
-            this.comboBusqRol.Visible = false;
-            this.comboBusqRol.SelectedIndexChanged += new System.EventHandler(this.comboBusqRol_SelectedIndexChanged);
+            this.lNoticias.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNoticias.Location = new System.Drawing.Point(99, 408);
+            this.lNoticias.Name = "lNoticias";
+            this.lNoticias.Size = new System.Drawing.Size(60, 18);
+            this.lNoticias.TabIndex = 46;
+            this.lNoticias.Text = "Noticias";
+            this.lNoticias.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lBusqRol
+            // pictNoticias
             // 
-            this.lBusqRol.AutoSize = true;
-            this.lBusqRol.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lBusqRol.Location = new System.Drawing.Point(570, 19);
-            this.lBusqRol.Name = "lBusqRol";
-            this.lBusqRol.Size = new System.Drawing.Size(76, 14);
-            this.lBusqRol.TabIndex = 42;
-            this.lBusqRol.Text = "Rol Deseado:";
-            this.lBusqRol.Visible = false;
-            // 
-            // lBusqAsig
-            // 
-            this.lBusqAsig.AutoSize = true;
-            this.lBusqAsig.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lBusqAsig.Location = new System.Drawing.Point(444, 19);
-            this.lBusqAsig.Name = "lBusqAsig";
-            this.lBusqAsig.Size = new System.Drawing.Size(100, 14);
-            this.lBusqAsig.TabIndex = 44;
-            this.lBusqAsig.Text = "Filtrar por Grado:";
-            this.lBusqAsig.Visible = false;
-            // 
-            // combBusqAsig
-            // 
-            this.combBusqAsig.FormattingEnabled = true;
-            this.combBusqAsig.Location = new System.Drawing.Point(550, 17);
-            this.combBusqAsig.Name = "combBusqAsig";
-            this.combBusqAsig.Size = new System.Drawing.Size(223, 21);
-            this.combBusqAsig.TabIndex = 43;
-            this.combBusqAsig.Visible = false;
-            this.combBusqAsig.SelectedIndexChanged += new System.EventHandler(this.combBusqAsig_SelectedIndexChanged);
+            this.pictNoticias.BackColor = System.Drawing.Color.Transparent;
+            this.pictNoticias.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictNoticias.BackgroundImage")));
+            this.pictNoticias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictNoticias.Location = new System.Drawing.Point(99, 345);
+            this.pictNoticias.Name = "pictNoticias";
+            this.pictNoticias.Size = new System.Drawing.Size(60, 60);
+            this.pictNoticias.TabIndex = 45;
+            this.pictNoticias.TabStop = false;
+            this.pictNoticias.Click += new System.EventHandler(this.pictNoticias_Click);
             // 
             // ControlesGestor
             // 
@@ -417,6 +444,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictTipoTrab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictAmbTrab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictGrados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictNoticias)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -450,5 +478,7 @@
         private System.Windows.Forms.ComboBox comboBusqRol;
         private System.Windows.Forms.Label lBusqAsig;
         private System.Windows.Forms.ComboBox combBusqAsig;
+        private System.Windows.Forms.Label lNoticias;
+        private System.Windows.Forms.PictureBox pictNoticias;
     }
 }

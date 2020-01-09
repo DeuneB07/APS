@@ -14,7 +14,7 @@ namespace APS.Interfaces.GestorExclusive
     public partial class ControlesGestor : Form
     {
 
-        private enum opcion { TIPO_TRABAJO, AMBITO_TRABAJO, GRADOS, ASIGNATURAS, USUARIOS, SOLICITUDES, COMPETENCIAS, NOTHING};
+        private enum opcion { TIPO_TRABAJO, AMBITO_TRABAJO, GRADOS, ASIGNATURAS, USUARIOS, SOLICITUDES, COMPETENCIAS, NOTICIAS, NOTHING};
         private opcion charged;
 
         public ControlesGestor()
@@ -135,6 +135,22 @@ namespace APS.Interfaces.GestorExclusive
                 if(comboBusqRol.Items.Count == 0) cargarRoles();
                 charged = opcion.USUARIOS;
                 cargarUsuarios();
+            }
+        }
+
+        private void pictNoticias_Click(object sender, EventArgs e)
+        {
+            if (!charged.Equals(opcion.NOTICIAS))
+            {
+                panelContainer.Visible = true;
+                bInsertar.Visible = true;
+                lInsertar.Visible = true;
+                lBusqAsig.Visible = false;
+                combBusqAsig.Visible = false;
+                lBusqRol.Visible = false;
+                comboBusqRol.Visible = false;
+                charged = opcion.NOTICIAS;
+                cargarNoticias();
             }
         }
 
@@ -462,6 +478,56 @@ namespace APS.Interfaces.GestorExclusive
             }
         }
 
+        private void cargarNoticias()
+        {
+            panelElements.Controls.Clear();
+            panelElements.RowCount = 1;
+            panelElements.AutoScroll = false;
+            panelUtil.AutoScroll = false;
+            panelUtil.AutoScroll = true;
+
+            var noticias = (new ImagenesDB.WePassEntities1()).Noticias;
+            CNoticia[] notC = new CNoticia[noticias.Count()];
+
+            int c = 0;
+            foreach (var n in noticias)
+            {
+                notC[c] = new CNoticia(n);
+                panelElements.Controls.Add(notC[c], 0, c);
+                panelElements.RowCount = panelElements.RowCount + 1;
+                notC[c].Location = new Point(notC[c].Location.X, (notC[c].Size.Height * c));
+
+                //BOTON SOLICITAR
+                Panel panel = (Panel)notC[c].Controls.Find("panel1", false)[0];
+                Button bBorrar = (Button)panel.Controls.Find("bBorrar", false)[0];
+
+                //PROGRAMACIÓN BOTONES
+                bBorrar.Click += (sender, EventArgs) => { bBorrarNoticia_Click(sender, EventArgs, n); };
+
+                c++;
+            }
+        }
+
+        private void bBorrarNoticia_Click(object sender, EventArgs eventArgs, ImagenesDB.Noticias n)
+        {
+            DialogResult emCierreDialog;
+            string mensaje = "¿Está seguro de que quiere eliminarla?";
+            string caption = "¡AVISO!";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            emCierreDialog = MessageBox.Show(mensaje, caption, buttons);
+
+            if (emCierreDialog == DialogResult.Yes)
+            {
+                ImagenesDB.WePassEntities1 contexto = new ImagenesDB.WePassEntities1();
+                var listaNoticias = contexto.Noticias;
+                n = contexto.Noticias.First(x => x.idNoticia == n.idNoticia);
+                listaNoticias.Remove(n);
+                contexto.SaveChanges();
+                cargarNoticias();
+
+            }
+        }
+
         //BOTONES
         private void bInsertar_Click(object sender, EventArgs e)
         {
@@ -490,6 +556,12 @@ namespace APS.Interfaces.GestorExclusive
                 InsertarGrados insGrados = new InsertarGrados();
                 insGrados.ShowDialog();
             }
+            else if (charged.Equals(opcion.NOTICIAS))
+            {
+                InsertarNoticia insNotice = new InsertarNoticia();
+                insNotice.ShowDialog();
+                cargarNoticias();
+            }
         }
 
         private void pictExit_Click(object sender, EventArgs e)
@@ -510,5 +582,7 @@ namespace APS.Interfaces.GestorExclusive
             if (combBusqAsig.SelectedItem.ToString().Equals("TODOS")) cargarAsignaturas();
             else cargarAsignaturas((Grado)combBusqAsig.SelectedItem);
         }
+
+        
     }
 }
