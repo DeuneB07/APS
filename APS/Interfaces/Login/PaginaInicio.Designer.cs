@@ -66,7 +66,7 @@
             this.bExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bExit.FlatAppearance.BorderSize = 0;
             this.bExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bExit.Location = new System.Drawing.Point(606, 11);
+            this.bExit.Location = new System.Drawing.Point(634, 12);
             this.bExit.Name = "bExit";
             this.bExit.Size = new System.Drawing.Size(50, 50);
             this.bExit.TabIndex = 9;
@@ -76,7 +76,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(603, 55);
+            this.label1.Location = new System.Drawing.Point(631, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 28);
             this.label1.TabIndex = 10;
@@ -90,7 +90,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(668, 369);
+            this.ClientSize = new System.Drawing.Size(696, 358);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bExit);
             this.Controls.Add(this.bPersonalExt);

@@ -239,6 +239,12 @@
     <Compile Include="Interfaces\ElementosAyuda\HelpPendientes.Designer.cs">
       <DependentUpon>HelpPendientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpProyectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ElementosAyuda\HelpProyectos.Designer.cs">
+      <DependentUpon>HelpProyectos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\ElementosAyuda\HelpRevisionONG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +299,12 @@
     <Compile Include="Interfaces\GestorExclusive\CGrado.Designer.cs">
       <DependentUpon>CGrado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CNoticia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\CNoticia.Designer.cs">
+      <DependentUpon>CNoticia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\GestorExclusive\ControlesGestor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +353,12 @@
     <Compile Include="Interfaces\GestorExclusive\InsertarGrados.Designer.cs">
       <DependentUpon>InsertarGrados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\GestorExclusive\InsertarNoticia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\GestorExclusive\InsertarNoticia.Designer.cs">
+      <DependentUpon>InsertarNoticia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\GestorExclusive\InsertarTipoTrab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +406,12 @@
     </Compile>
     <Compile Include="Interfaces\Personalizados\Filtros.Designer.cs">
       <DependentUpon>Filtros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelNoticias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelNoticias.Designer.cs">
+      <DependentUpon>CartelNoticias.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Valoracion\EvaluarActividad.cs">
       <SubType>Form</SubType>
@@ -675,6 +699,9 @@
     <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpPendientes.resx">
       <DependentUpon>HelpPendientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpProyectos.resx">
+      <DependentUpon>HelpProyectos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\ElementosAyuda\HelpRevisionONG.resx">
       <DependentUpon>HelpRevisionONG.cs</DependentUpon>
     </EmbeddedResource>
@@ -702,6 +729,9 @@
     <EmbeddedResource Include="Interfaces\GestorExclusive\CGrado.resx">
       <DependentUpon>CGrado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\CNoticia.resx">
+      <DependentUpon>CNoticia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\GestorExclusive\ControlesGestor.resx">
       <DependentUpon>ControlesGestor.cs</DependentUpon>
     </EmbeddedResource>
@@ -726,6 +756,9 @@
     <EmbeddedResource Include="Interfaces\GestorExclusive\InsertarGrados.resx">
       <DependentUpon>InsertarGrados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\GestorExclusive\InsertarNoticia.resx">
+      <DependentUpon>InsertarNoticia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\GestorExclusive\InsertarTipoTrab.resx">
       <DependentUpon>InsertarTipoTrab.cs</DependentUpon>
     </EmbeddedResource>
@@ -749,6 +782,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\Filtros.resx">
       <DependentUpon>Filtros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelNoticias.resx">
+      <DependentUpon>CartelNoticias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Valoracion\EvaluarActividad.resx">
       <DependentUpon>EvaluarActividad.cs</DependentUpon>
