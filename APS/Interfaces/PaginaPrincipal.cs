@@ -1270,7 +1270,7 @@ namespace APS.Interfaces
             cargarValoracionActividadesInicio();
         }
 
-        private void bExpedirPDF_Click(object sender, EventArgs eventArgs, Actividad_Realizada act)
+        /*private void bExpedirPDF_Click(object sender, EventArgs eventArgs, Actividad_Realizada act)
         {
             var exportFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             var exportFile = System.IO.Path.Combine(exportFolder, "Certificado.pdf");
@@ -1286,7 +1286,7 @@ namespace APS.Interfaces
             doc.Add(new Paragraph("que se celebró del " + act.Actividad.FechaInicio.ToShortDateString() + " a " + act.Actividad.FechaFin.ToShortDateString()));
             doc.Add(new Paragraph("con un trabajo de " + act.NumHorasRealizadas.ToString()));
             doc.Close();
-        }
+        }*/
 
         private void cargarEvaluacionPorONG(int c)
         {
@@ -1357,7 +1357,8 @@ namespace APS.Interfaces
                 //BOTON SOLICITAR
                 Panel panel = (Panel)actsCarteles[c2].Controls.Find("panel1", false)[0];
                 Button bValorar = (Button)panel.Controls.Find("bValorar", false)[0];
-                bValorar.Text = "Opinión";
+                //bValorar.Text = "Opinión";
+                bValorar.Visible = false;
                 Button bExpedir = (Button)panel.Controls.Find("bExpedir", false)[0];
                 bExpedir.Visible = false;
                 if(act.ValoracionProfesor >= 2.5)
@@ -1365,8 +1366,7 @@ namespace APS.Interfaces
                     bExpedir.Visible = true;
                 }
                 //PROGRAMACIÓN BOTONES
-                bValorar.Click += (sender, EventArgs) => { bValorarFinal_Click(sender, EventArgs, act); };
-                bExpedir.Click += (sender, EventArgs) => { bExpedirPDF_Click(sender, EventArgs, act); };
+                //bExpedir.Click += (sender, EventArgs) => { bExpedirPDF_Click(sender, EventArgs, act); };
                 c++;
                 c2++;
             }

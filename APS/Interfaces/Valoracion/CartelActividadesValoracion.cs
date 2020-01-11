@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using APS.Mapeo;
 using APS.Interfaces.Gestión_Actividades;
+using System.IO;
 
 namespace APS.Interfaces.Personalizados
 {
@@ -49,6 +50,22 @@ namespace APS.Interfaces.Personalizados
                 VerActividadAbierta vAct = new VerActividadAbierta(this.user, this.actividad);
                 vAct.ShowDialog();
             }
+        }
+
+        private void bExpedir_Click(object sender, EventArgs e)
+        {
+            
+            saveFileDialog1.Filter = "Archivos pdf (*.pdf)|*.pdf";
+            openFileDialog1.Filter = "Archivos pdf (*.pdf)|*.pdf";
+            saveFileDialog1.Title = "Save a PDF File";
+            String urlDestino = null;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                urlDestino = saveFileDialog1.FileName;
+            }
+            Actividad_Realizada actRealizada = new Actividad_Realizada(user, actividad);
+            Certificados.PlantillaCertificado.CrearCertificado(urlDestino, actRealizada);
+            MessageBox.Show("Se ha creado el certificado correctamente");
         }
     }
 }
