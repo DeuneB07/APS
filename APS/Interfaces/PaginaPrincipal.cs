@@ -282,47 +282,43 @@ namespace APS.Interfaces
 
             List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
             List<Actividad_Solicitud> lista = Actividad_Solicitud.ListaActividadesSolicitudes(user);
-            CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[actividades.Count];
+            var query = from act in lista
+                        select act.Actividad;
+            List<Actividad> solicitadas = query.ToList<Actividad>();
+            List < CartelActividadesStandardMatching > actsCarteles = new List<CartelActividadesStandardMatching>();
 
-            List<Asignatura> asigs = user.Asignaturas;
-            int c = 0;
-            foreach (Actividad act in actividades)
+            foreach(Actividad act in actividades)
             {
-                bool encontrado = false;
-                int j = 0;
-                Asignatura asig = null;
-                while (!encontrado && j < asigs.Count)
+                actsCarteles.Add(new CartelActividadesStandardMatching(user, act));
+            }
+
+            int c = 0;
+            foreach(CartelActividadesStandardMatching cartel in actsCarteles.OrderByDescending(x => x.Compatibilidad))
+            {
+                if (cartel.Compatibilidad > 20)
                 {
-                    asig = asigs[j];
-                    if ((act.Asignatura != null && act.Asignatura.Equals(asig)) || act.TipoAct.Equals(Actividad.TipoActividadE.VOLUNTARIADO))
+                    Console.WriteLine(cartel.Compatibilidad);
+                    tablePP.Controls.Add(cartel, 0, c + 1);
+                    //tablePP.RowCount = tablePP.RowCount + 1;
+                    //cartel.Location = new Point(cartel.Location.X, (cartel.Size.Height * c));
+
+                    //BOTON SOLICITAR
+                    Panel panel = (Panel)cartel.Controls.Find("panel1", false)[0];
+                    Button bSolicitar = (Button)panel.Controls.Find("bSolicitar", false)[0];
+                    if (user.Rol.NombreRol.Equals("GESTOR")) bSolicitar.Visible = false;
+
+                    if (solicitadas.Contains(cartel.Actividad))
                     {
-                        actsCarteles[c] = new CartelActividadesStandard(user, act);
-                        tablePP.Controls.Add(actsCarteles[c], 0, c + 1);
-                        tablePP.RowCount = tablePP.RowCount + 1;
-                        actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));
-
-                        //Programar Solicitar
-                        Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
-                        Button bSolicitar = (Button)panel.Controls.Find("bSolicitar", false)[0];
-                        Boolean encontrada = false;
-                        int contador = 0;
-                        while (!encontrada && lista.Count > contador)
-                        {
-                            if (lista[contador].Actividad.Equals(act)) encontrada = true;
-                            contador++;
-                        }
-                        if (encontrada)
-                        {
-                            bSolicitar.Visible = false;
-                        }
-                        bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, act); };
-
-                        encontrado = true;
-                        c++;
+                        bSolicitar.Visible = false;
+                        cartel.Solicitada.Visible = true;
                     }
-                    j++;
+
+                    //PROGRAMACIÓN BOTONES
+                    bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, cartel.Actividad); };
+                    c++;
                 }
             }
+
         }
 
         private void bSolicitar_Click(object sender, EventArgs eventArgs, Actividad act)
@@ -348,7 +344,7 @@ namespace APS.Interfaces
             tablePP.RowCount = tablePP.RowCount + 1;
 
             //Pulsación Filtros // Recojo Botones
-            Control panelFiltro = cFiltro.Controls.Find("panel1", false)[0]; //Panel de Filtros
+            Control panelFiltro = cFiltro.Controls.Find("panel1", true)[0]; //Panel de Filtros
             ComboBox cBox = (ComboBox) panelFiltro.Controls.Find("cPreferencia", false)[0]; //ComboBox de Preferencias
             Button bFiltros = (Button)panelFiltro.Controls.Find("bAplicar", false)[0]; //Button de Filtros -> Aplicar
 
@@ -358,87 +354,11 @@ namespace APS.Interfaces
 
         private void bFiltrosMatch_Click(object sender, EventArgs e, ComboBox cBox)
         {
-            List<Actividad> lAct = Actividad.ListaActividades();
-
             if(cBox.SelectedItem != null)
             {
                 Preferencia pref = (Preferencia)cBox.SelectedItem;
-                Grado g = ((Preferencia)cBox.SelectedItem).Grado;
-                Asignatura asig = ((Preferencia)cBox.SelectedItem).Asignatura;
-                Actividad.TurnoE turnoF = ((Preferencia)cBox.SelectedItem).Turno;
-                Actividad.TipoActividadE tipoActF = ((Preferencia)cBox.SelectedItem).TipoActividad;
-                TipoTrabajo tipoTrabF = ((Preferencia)cBox.SelectedItem).TipoTrabajo;
-                AmbitoTrabajo ambTrabF = ((Preferencia)cBox.SelectedItem).AmbitoTrabajo;
-                int horas = 0;
 
-                if (!((Preferencia)cBox.SelectedItem).HorasPosibles.ToString().Equals("")) horas = ((Preferencia)cBox.SelectedItem).HorasPosibles;
-
-                //Filtro Grado
-                if (g != null)
-                {
-                    foreach (Actividad a in Actividad.ListaActividades())
-                    {
-                        if (a.Grado == null || !a.Grado.Equals(g))
-                        {
-                            lAct.Remove(a);
-                        }
-                    }
-                }
-
-                //Filtro Asignatura
-                if (asig != null)
-                {
-                    foreach (Actividad a in Actividad.ListaActividades())
-                    {
-                        if (a.Asignatura == null || !a.Asignatura.Equals(asig)) lAct.Remove(a);
-                    }
-                }
-
-                //Filtro Turno
-                if (!turnoF.Equals(Actividad.TurnoE.AMBAS))
-                {
-                    foreach (Actividad a in Actividad.ListaActividades())
-                    {
-                        if (!a.Turno.Equals(turnoF)) lAct.Remove(a);
-                    }
-                }
-
-                //Filtro TipoActividad
-                if (!tipoActF.ToString().Equals(Actividad.TipoActividadE.TODAS.ToString()))
-                {
-                    foreach (Actividad a in Actividad.ListaActividades())
-                    {
-                        if (!a.TipoAct.Equals(tipoActF)) lAct.Remove(a);
-                    }
-                }
-
-                //Filtro TipoTrab
-                if (!tipoTrabF.Tipo_Trabajo.Equals("TODAS"))
-                {
-                    foreach (Actividad a in Actividad.ListaActividades())
-                    {
-                        if (!a.TipoAct.Equals(tipoTrabF)) lAct.Remove(a);
-                    }
-                }
-
-                //Filtro AmbTrabajo
-                if (!ambTrabF.Ambito_Trabajo.Equals("TODAS"))
-                {
-                    foreach (Actividad a in Actividad.ListaActividades())
-                    {
-                        if (!a.TipoAct.Equals(ambTrabF)) lAct.Remove(a);
-                    }
-                }
-
-                //Filtro Horas
-                if (horas != 0)
-                {
-                    foreach (Actividad a in Actividad.ListaActividades())
-                    {
-                        if (a.NumHoras>horas) lAct.Remove(a);
-                    }
-                }
-                cargarMatchActividadesFiltro(lAct);
+                cargarMatchActividadesFiltro(pref);
             }
             else
             {
@@ -446,7 +366,7 @@ namespace APS.Interfaces
             }
         }
 
-        private void cargarMatchActividadesFiltro(List<Actividad> listAct)
+        private void cargarMatchActividadesFiltro(Preferencia pref)
         {
             chargedWindow = PantallaCargada.MATCH;
             tablePP.Controls.Clear();
@@ -455,35 +375,44 @@ namespace APS.Interfaces
             panelPrincipal.AutoScroll = false;
             panelPrincipal.AutoScroll = true;
             cargarFiltrosMatch();
+            CartelFiltroMatch cartelFiltros = (CartelFiltroMatch) tablePP.Controls[0];
+            cartelFiltros.ComboPreferencia.SelectedItem = pref;
 
-            CartelActividadesStandard[] actsCarteles = new CartelActividadesStandard[listAct.Count];
+            List<Actividad> actividades = Actividad.ListaActividades(Actividad.EstadoActividadE.ABIERTA);
+            List<CartelActividadesStandardMatching> actsCarteles = new List<CartelActividadesStandardMatching>();
             List<Actividad_Solicitud> lista = Actividad_Solicitud.ListaActividadesSolicitudes(user);
+            var query = from act in lista
+                        select act.Actividad;
+            List<Actividad> solicitadas = query.ToList<Actividad>();
+
+            foreach (Actividad act in actividades)
+            {
+                actsCarteles.Add(new CartelActividadesStandardMatching(pref, user, act));
+            }
 
             int c = 0;
-            foreach (Actividad act in listAct)
+            foreach (CartelActividadesStandardMatching cartel in actsCarteles.OrderByDescending(x => x.Compatibilidad))
             {
-                if (act.EstadoAct.ToString().Equals("ABIERTA"))
+                if (cartel.Compatibilidad > 20)
                 {
-                    actsCarteles[c] = new CartelActividadesStandard(user, act);
-                    tablePP.Controls.Add(actsCarteles[c], 0, c + 1);
-                    tablePP.RowCount = tablePP.RowCount + 1;
-                    actsCarteles[c].Location = new Point(actsCarteles[c].Location.X, (actsCarteles[c].Size.Height * c));                  
+                    Console.WriteLine(cartel.Compatibilidad);
+                    tablePP.Controls.Add(cartel, 0, c + 1);
+                    //tablePP.RowCount = tablePP.RowCount + 1;
+                    //cartel.Location = new Point(cartel.Location.X, (cartel.Size.Height * c));
+
                     //BOTON SOLICITAR
-                    Panel panel = (Panel)actsCarteles[c].Controls.Find("panel1", false)[0];
+                    Panel panel = (Panel)cartel.Controls.Find("panel1", false)[0];
                     Button bSolicitar = (Button)panel.Controls.Find("bSolicitar", false)[0];
-                    Boolean encontrada = false;
-                    int contador = 0;
-                    while (!encontrada && lista.Count > contador)
-                    {
-                        if (lista[contador].Actividad.Equals(act)) encontrada = true;
-                        contador++;
-                    }
-                    if (encontrada)
+                    if (user.Rol.NombreRol.Equals("GESTOR")) bSolicitar.Visible = false;
+
+                    if (solicitadas.Contains(cartel.Actividad))
                     {
                         bSolicitar.Visible = false;
+                        cartel.Solicitada.Visible = true;
                     }
+
                     //PROGRAMACIÓN BOTONES
-                    bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, act); };
+                    bSolicitar.Click += (sender, EventArgs) => { bSolicitar_Click(sender, EventArgs, cartel.Actividad); };
                     c++;
                 }
             }

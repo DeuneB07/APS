@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVerActividad = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblCompatibilidad = new System.Windows.Forms.Label();
             this.lShowResp = new System.Windows.Forms.Label();
             this.lResp = new System.Windows.Forms.Label();
             this.lShowOrg = new System.Windows.Forms.Label();
@@ -43,6 +46,7 @@
             this.labelName = new System.Windows.Forms.Label();
             this.lDescripcion = new System.Windows.Forms.Label();
             this.pict = new System.Windows.Forms.PictureBox();
+            this.lblSolicitada = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +54,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblSolicitada);
+            this.panel1.Controls.Add(this.btnVerActividad);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblCompatibilidad);
             this.panel1.Controls.Add(this.lShowResp);
             this.panel1.Controls.Add(this.lResp);
             this.panel1.Controls.Add(this.lShowOrg);
@@ -69,6 +77,44 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(831, 209);
             this.panel1.TabIndex = 3;
+            // 
+            // btnVerActividad
+            // 
+            this.btnVerActividad.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnVerActividad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVerActividad.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerActividad.ForeColor = System.Drawing.Color.White;
+            this.btnVerActividad.Location = new System.Drawing.Point(559, 166);
+            this.btnVerActividad.Name = "btnVerActividad";
+            this.btnVerActividad.Size = new System.Drawing.Size(158, 39);
+            this.btnVerActividad.TabIndex = 22;
+            this.btnVerActividad.Text = "Ver Actividad";
+            this.btnVerActividad.UseVisualStyleBackColor = false;
+            this.btnVerActividad.Click += new System.EventHandler(this.btnVerActividad_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label1.Location = new System.Drawing.Point(602, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 21);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Compatibilidad:";
+            // 
+            // lblCompatibilidad
+            // 
+            this.lblCompatibilidad.AutoSize = true;
+            this.lblCompatibilidad.Font = new System.Drawing.Font("Modern No. 20", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompatibilidad.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblCompatibilidad.Location = new System.Drawing.Point(757, 5);
+            this.lblCompatibilidad.Name = "lblCompatibilidad";
+            this.lblCompatibilidad.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblCompatibilidad.Size = new System.Drawing.Size(69, 30);
+            this.lblCompatibilidad.TabIndex = 20;
+            this.lblCompatibilidad.Text = "100%";
+            this.lblCompatibilidad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lShowResp
             // 
@@ -160,15 +206,16 @@
             // 
             // bSolicitar
             // 
-            this.bSolicitar.BackColor = System.Drawing.Color.Transparent;
+            this.bSolicitar.BackColor = System.Drawing.Color.DarkCyan;
             this.bSolicitar.Cursor = System.Windows.Forms.Cursors.Default;
             this.bSolicitar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.bSolicitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bSolicitar.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bSolicitar.ForeColor = System.Drawing.Color.Black;
-            this.bSolicitar.Location = new System.Drawing.Point(741, 166);
+            this.bSolicitar.ForeColor = System.Drawing.Color.White;
+            this.bSolicitar.Location = new System.Drawing.Point(724, 166);
             this.bSolicitar.Margin = new System.Windows.Forms.Padding(4);
             this.bSolicitar.Name = "bSolicitar";
-            this.bSolicitar.Size = new System.Drawing.Size(85, 39);
+            this.bSolicitar.Size = new System.Drawing.Size(102, 39);
             this.bSolicitar.TabIndex = 10;
             this.bSolicitar.Text = "Solicitar";
             this.bSolicitar.UseVisualStyleBackColor = false;
@@ -228,6 +275,18 @@
             this.pict.TabIndex = 6;
             this.pict.TabStop = false;
             // 
+            // lblSolicitada
+            // 
+            this.lblSolicitada.AutoSize = true;
+            this.lblSolicitada.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSolicitada.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblSolicitada.Location = new System.Drawing.Point(739, 179);
+            this.lblSolicitada.Name = "lblSolicitada";
+            this.lblSolicitada.Size = new System.Drawing.Size(73, 18);
+            this.lblSolicitada.TabIndex = 23;
+            this.lblSolicitada.Text = "Solicitada";
+            this.lblSolicitada.Visible = false;
+            // 
             // CartelActividadesStandardMatching
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -260,5 +319,9 @@
         private System.Windows.Forms.Label lOrg;
         private System.Windows.Forms.Label lShowResp;
         private System.Windows.Forms.Label lResp;
+        private System.Windows.Forms.Label lblCompatibilidad;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnVerActividad;
+        private System.Windows.Forms.Label lblSolicitada;
     }
 }

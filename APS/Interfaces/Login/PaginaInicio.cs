@@ -37,6 +37,7 @@ namespace APS.Interfaces
             iDumaInicio panel = new iDumaInicio();
             this.Visible = false;
             panel.ShowDialog();
+            CargarNoticias();
             this.Visible = true;
         }
 
@@ -50,6 +51,7 @@ namespace APS.Interfaces
             InicioPersExterno pagina = new InicioPersExterno();
             this.Visible = false;
             pagina.ShowDialog();
+            CargarNoticias();
             this.Visible = true;
         }
 
@@ -77,7 +79,11 @@ namespace APS.Interfaces
         {
             noticias = new List<ImagenesDB.Noticias>();
             ImagenesDB.WePassEntities1 contexto = new ImagenesDB.WePassEntities1();
-            noticias = contexto.Noticias.ToList();
+            //noticias = contexto.Noticias.ToList();
+            var query = from n in contexto.Noticias
+                           orderby n.fechaPublicacion
+                           select n;
+            noticias = query.ToList<ImagenesDB.Noticias>();
             if (noticias.Count > 1)
             {
                 i = 0;

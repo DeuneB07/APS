@@ -31,5 +31,18 @@ namespace APS.Interfaces.Personalizados
             }
             cPreferencia.DisplayMember = "nombre_preferencia"; // grado.nombreGrado // asig.nombreAsig";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FAnadirPreferencias ventana = new FAnadirPreferencias(this.usr);
+            ventana.ShowDialog();
+            cargarPreferencias();
+            cPreferencia.SelectedItem = cPreferencia.Items[cPreferencia.Items.Count - 1];
+        }
+
+        public ComboBox ComboPreferencia
+        {
+            get { return cPreferencia; }
+        }
     }
 }

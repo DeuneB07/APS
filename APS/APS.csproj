@@ -429,6 +429,12 @@
     <Compile Include="Interfaces\Gestión Proyectos\CartelProyecto.Designer.cs">
       <DependentUpon>CartelProyecto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelActividadesStandardMatching.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\CartelActividadesStandardMatching.Designer.cs">
+      <DependentUpon>CartelActividadesStandardMatching.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\CartelFiltros2.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -813,6 +819,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Gestión Proyectos\CartelProyecto.resx">
       <DependentUpon>CartelProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\CartelActividadesStandardMatching.resx">
+      <DependentUpon>CartelActividadesStandardMatching.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\CartelFiltros2.resx">
       <DependentUpon>CartelFiltros2.cs</DependentUpon>

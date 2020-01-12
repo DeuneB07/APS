@@ -45,7 +45,8 @@
             // lTitular
             // 
             this.lTitular.BackColor = System.Drawing.Color.Transparent;
-            this.lTitular.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTitular.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTitular.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lTitular.Location = new System.Drawing.Point(16, 10);
             this.lTitular.Name = "lTitular";
             this.lTitular.Size = new System.Drawing.Size(710, 144);

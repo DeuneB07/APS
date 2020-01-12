@@ -26,7 +26,7 @@ namespace APS.Interfaces.GestorExclusive
         {
             try
             {
-                if (textTitular.Text.Equals("")) throw new Exception("Campo Titular Incompleto.");
+                //if (textTitular.Text.Equals("")) throw new Exception("Campo Titular Incompleto.");
                 if (tURL.Text.Trim().Equals("")) throw new Exception("Imagen Requerida.");
                 String titular = textTitular.Text;
 
