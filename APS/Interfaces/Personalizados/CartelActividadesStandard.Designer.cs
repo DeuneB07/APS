@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartelActividadesStandard));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lDescripcion = new System.Windows.Forms.RichTextBox();
             this.lShowResp = new System.Windows.Forms.Label();
             this.lResp = new System.Windows.Forms.Label();
             this.lShowOrg = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.lPlazas = new System.Windows.Forms.Label();
             this.bVerMas = new System.Windows.Forms.Button();
             this.labelName = new System.Windows.Forms.Label();
-            this.lDescripcion = new System.Windows.Forms.Label();
             this.pict = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).BeginInit();
@@ -52,6 +52,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lDescripcion);
             this.panel1.Controls.Add(this.lShowResp);
             this.panel1.Controls.Add(this.lResp);
             this.panel1.Controls.Add(this.lShowOrg);
@@ -65,13 +66,24 @@
             this.panel1.Controls.Add(this.lPlazas);
             this.panel1.Controls.Add(this.bVerMas);
             this.panel1.Controls.Add(this.labelName);
-            this.panel1.Controls.Add(this.lDescripcion);
             this.panel1.Controls.Add(this.pict);
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(831, 209);
             this.panel1.TabIndex = 3;
+            // 
+            // lDescripcion
+            // 
+            this.lDescripcion.BackColor = System.Drawing.Color.White;
+            this.lDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lDescripcion.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDescripcion.Location = new System.Drawing.Point(205, 99);
+            this.lDescripcion.Name = "lDescripcion";
+            this.lDescripcion.ReadOnly = true;
+            this.lDescripcion.Size = new System.Drawing.Size(314, 97);
+            this.lDescripcion.TabIndex = 20;
+            this.lDescripcion.Text = "";
             // 
             // lShowResp
             // 
@@ -163,15 +175,16 @@
             // 
             // bSolicitar
             // 
-            this.bSolicitar.BackColor = System.Drawing.Color.Transparent;
+            this.bSolicitar.BackColor = System.Drawing.Color.DarkCyan;
             this.bSolicitar.Cursor = System.Windows.Forms.Cursors.Default;
             this.bSolicitar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.bSolicitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bSolicitar.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bSolicitar.ForeColor = System.Drawing.Color.Black;
-            this.bSolicitar.Location = new System.Drawing.Point(741, 166);
-            this.bSolicitar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bSolicitar.ForeColor = System.Drawing.Color.White;
+            this.bSolicitar.Location = new System.Drawing.Point(731, 166);
+            this.bSolicitar.Margin = new System.Windows.Forms.Padding(4);
             this.bSolicitar.Name = "bSolicitar";
-            this.bSolicitar.Size = new System.Drawing.Size(85, 39);
+            this.bSolicitar.Size = new System.Drawing.Size(95, 39);
             this.bSolicitar.TabIndex = 10;
             this.bSolicitar.Text = "Solicitar";
             this.bSolicitar.UseVisualStyleBackColor = false;
@@ -205,7 +218,7 @@
             this.bVerMas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVerMas.Image = ((System.Drawing.Image)(resources.GetObject("bVerMas.Image")));
             this.bVerMas.Location = new System.Drawing.Point(755, 4);
-            this.bVerMas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bVerMas.Margin = new System.Windows.Forms.Padding(4);
             this.bVerMas.Name = "bVerMas";
             this.bVerMas.Size = new System.Drawing.Size(72, 68);
             this.bVerMas.TabIndex = 7;
@@ -222,22 +235,12 @@
             this.labelName.TabIndex = 4;
             this.labelName.Text = "Nombre";
             // 
-            // lDescripcion
-            // 
-            this.lDescripcion.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDescripcion.Location = new System.Drawing.Point(188, 101);
-            this.lDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lDescripcion.Name = "lDescripcion";
-            this.lDescripcion.Size = new System.Drawing.Size(355, 96);
-            this.lDescripcion.TabIndex = 5;
-            this.lDescripcion.Text = "Descripción";
-            // 
             // pict
             // 
             this.pict.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pict.Image = global::APS.Properties.Resources.no_image;
             this.pict.Location = new System.Drawing.Point(4, 101);
-            this.pict.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pict.Margin = new System.Windows.Forms.Padding(4);
             this.pict.Name = "pict";
             this.pict.Size = new System.Drawing.Size(176, 100);
             this.pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -250,7 +253,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CartelActividadesStandard";
             this.Size = new System.Drawing.Size(839, 217);
             this.panel1.ResumeLayout(false);
@@ -263,7 +266,6 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.Label lDescripcion;
         private System.Windows.Forms.PictureBox pict;
         private System.Windows.Forms.Button bVerMas;
         private System.Windows.Forms.Label lNumPlazas;
@@ -277,5 +279,6 @@
         private System.Windows.Forms.Label lOrg;
         private System.Windows.Forms.Label lShowResp;
         private System.Windows.Forms.Label lResp;
+        private System.Windows.Forms.RichTextBox lDescripcion;
     }
 }

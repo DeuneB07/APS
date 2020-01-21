@@ -71,20 +71,19 @@
             this.labelError.BackColor = System.Drawing.Color.Transparent;
             this.labelError.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(26, 287);
-            this.labelError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelError.Location = new System.Drawing.Point(35, 353);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(34, 13);
+            this.labelError.Size = new System.Drawing.Size(42, 17);
             this.labelError.TabIndex = 36;
             this.labelError.Text = "error";
             // 
             // textBoxComentarioPDI
             // 
             this.textBoxComentarioPDI.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxComentarioPDI.Location = new System.Drawing.Point(144, 195);
-            this.textBoxComentarioPDI.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxComentarioPDI.Location = new System.Drawing.Point(192, 240);
+            this.textBoxComentarioPDI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxComentarioPDI.Name = "textBoxComentarioPDI";
-            this.textBoxComentarioPDI.Size = new System.Drawing.Size(180, 59);
+            this.textBoxComentarioPDI.Size = new System.Drawing.Size(239, 72);
             this.textBoxComentarioPDI.TabIndex = 35;
             this.textBoxComentarioPDI.Text = "";
             // 
@@ -93,10 +92,9 @@
             this.labelComentario.AutoSize = true;
             this.labelComentario.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelComentario.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelComentario.Location = new System.Drawing.Point(25, 195);
-            this.labelComentario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelComentario.Location = new System.Drawing.Point(33, 240);
             this.labelComentario.Name = "labelComentario";
-            this.labelComentario.Size = new System.Drawing.Size(118, 17);
+            this.labelComentario.Size = new System.Drawing.Size(141, 21);
             this.labelComentario.TabIndex = 33;
             this.labelComentario.Text = "Comentario ONG:";
             // 
@@ -104,10 +102,10 @@
             // 
             this.bCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bCancelar.Font = new System.Drawing.Font("Modern No. 20", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCancelar.Location = new System.Drawing.Point(621, 394);
-            this.bCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.bCancelar.Location = new System.Drawing.Point(828, 485);
+            this.bCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(79, 27);
+            this.bCancelar.Size = new System.Drawing.Size(105, 33);
             this.bCancelar.TabIndex = 31;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
@@ -117,10 +115,10 @@
             // 
             this.bAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bAceptar.Font = new System.Drawing.Font("Modern No. 20", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAceptar.Location = new System.Drawing.Point(520, 394);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(2);
+            this.bAceptar.Location = new System.Drawing.Point(693, 485);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(82, 27);
+            this.bAceptar.Size = new System.Drawing.Size(109, 33);
             this.bAceptar.TabIndex = 30;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -131,10 +129,9 @@
             this.labelValoracionONG.AutoSize = true;
             this.labelValoracionONG.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelValoracionONG.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelValoracionONG.Location = new System.Drawing.Point(16, 140);
-            this.labelValoracionONG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelValoracionONG.Location = new System.Drawing.Point(21, 172);
             this.labelValoracionONG.Name = "labelValoracionONG";
-            this.labelValoracionONG.Size = new System.Drawing.Size(110, 17);
+            this.labelValoracionONG.Size = new System.Drawing.Size(132, 21);
             this.labelValoracionONG.TabIndex = 37;
             this.labelValoracionONG.Text = "Valoracion ONG:";
             // 
@@ -143,10 +140,9 @@
             this.labelComentarioONG.AutoSize = true;
             this.labelComentarioONG.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelComentarioONG.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelComentarioONG.Location = new System.Drawing.Point(16, 194);
-            this.labelComentarioONG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelComentarioONG.Location = new System.Drawing.Point(21, 239);
             this.labelComentarioONG.Name = "labelComentarioONG";
-            this.labelComentarioONG.Size = new System.Drawing.Size(118, 17);
+            this.labelComentarioONG.Size = new System.Drawing.Size(141, 21);
             this.labelComentarioONG.TabIndex = 38;
             this.labelComentarioONG.Text = "Comentario ONG:";
             // 
@@ -155,11 +151,11 @@
             this.textBoxComentarioONG.Enabled = false;
             this.textBoxComentarioONG.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxComentarioONG.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBoxComentarioONG.Location = new System.Drawing.Point(135, 194);
-            this.textBoxComentarioONG.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxComentarioONG.Location = new System.Drawing.Point(180, 239);
+            this.textBoxComentarioONG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxComentarioONG.Name = "textBoxComentarioONG";
             this.textBoxComentarioONG.ReadOnly = true;
-            this.textBoxComentarioONG.Size = new System.Drawing.Size(168, 59);
+            this.textBoxComentarioONG.Size = new System.Drawing.Size(223, 72);
             this.textBoxComentarioONG.TabIndex = 39;
             this.textBoxComentarioONG.Text = "";
             // 
@@ -168,10 +164,9 @@
             this.labelValoracionPDI.AutoSize = true;
             this.labelValoracionPDI.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelValoracionPDI.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelValoracionPDI.Location = new System.Drawing.Point(25, 141);
-            this.labelValoracionPDI.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelValoracionPDI.Location = new System.Drawing.Point(33, 174);
             this.labelValoracionPDI.Name = "labelValoracionPDI";
-            this.labelValoracionPDI.Size = new System.Drawing.Size(104, 17);
+            this.labelValoracionPDI.Size = new System.Drawing.Size(125, 21);
             this.labelValoracionPDI.TabIndex = 40;
             this.labelValoracionPDI.Text = "Valoracion PDI:";
             // 
@@ -180,10 +175,9 @@
             this.lHoras.AutoSize = true;
             this.lHoras.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lHoras.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lHoras.Location = new System.Drawing.Point(133, 98);
-            this.lHoras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lHoras.Location = new System.Drawing.Point(177, 121);
             this.lHoras.Name = "lHoras";
-            this.lHoras.Size = new System.Drawing.Size(92, 17);
+            this.lHoras.Size = new System.Drawing.Size(108, 21);
             this.lHoras.TabIndex = 42;
             this.lHoras.Text = "horasParticipante";
             // 
@@ -192,10 +186,9 @@
             this.lblHorasInvertidas.AutoSize = true;
             this.lblHorasInvertidas.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHorasInvertidas.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblHorasInvertidas.Location = new System.Drawing.Point(14, 96);
-            this.lblHorasInvertidas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHorasInvertidas.Location = new System.Drawing.Point(19, 118);
             this.lblHorasInvertidas.Name = "lblHorasInvertidas";
-            this.lblHorasInvertidas.Size = new System.Drawing.Size(117, 17);
+            this.lblHorasInvertidas.Size = new System.Drawing.Size(141, 21);
             this.lblHorasInvertidas.TabIndex = 48;
             this.lblHorasInvertidas.Text = "Horas Invertidas:";
             // 
@@ -204,10 +197,9 @@
             this.lblArchivoAdjunto.AutoSize = true;
             this.lblArchivoAdjunto.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArchivoAdjunto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblArchivoAdjunto.Location = new System.Drawing.Point(16, 280);
-            this.lblArchivoAdjunto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblArchivoAdjunto.Location = new System.Drawing.Point(21, 345);
             this.lblArchivoAdjunto.Name = "lblArchivoAdjunto";
-            this.lblArchivoAdjunto.Size = new System.Drawing.Size(114, 17);
+            this.lblArchivoAdjunto.Size = new System.Drawing.Size(134, 21);
             this.lblArchivoAdjunto.TabIndex = 49;
             this.lblArchivoAdjunto.Text = "Archivo Adjunto:";
             // 
@@ -215,10 +207,10 @@
             // 
             this.btnDescargar.Enabled = false;
             this.btnDescargar.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDescargar.Location = new System.Drawing.Point(248, 282);
-            this.btnDescargar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDescargar.Location = new System.Drawing.Point(331, 347);
+            this.btnDescargar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDescargar.Name = "btnDescargar";
-            this.btnDescargar.Size = new System.Drawing.Size(76, 19);
+            this.btnDescargar.Size = new System.Drawing.Size(101, 23);
             this.btnDescargar.TabIndex = 51;
             this.btnDescargar.Text = "Descargar";
             this.btnDescargar.UseVisualStyleBackColor = true;
@@ -228,11 +220,11 @@
             // 
             this.txtNombreArchivo.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreArchivo.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.txtNombreArchivo.Location = new System.Drawing.Point(136, 282);
-            this.txtNombreArchivo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreArchivo.Location = new System.Drawing.Point(181, 347);
+            this.txtNombreArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreArchivo.Name = "txtNombreArchivo";
             this.txtNombreArchivo.ReadOnly = true;
-            this.txtNombreArchivo.Size = new System.Drawing.Size(104, 22);
+            this.txtNombreArchivo.Size = new System.Drawing.Size(137, 26);
             this.txtNombreArchivo.TabIndex = 50;
             // 
             // ratingONG
@@ -241,12 +233,12 @@
             this.ratingONG.Images = customImageCollection1;
             this.ratingONG.ItemBackColor = System.Drawing.Color.White;
             this.ratingONG.ItemBorderColor = System.Drawing.Color.Black;
-            this.ratingONG.Location = new System.Drawing.Point(135, 140);
-            this.ratingONG.Margin = new System.Windows.Forms.Padding(2);
+            this.ratingONG.Location = new System.Drawing.Point(180, 172);
+            this.ratingONG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ratingONG.Name = "ratingONG";
             this.ratingONG.Precision = Syncfusion.Windows.Forms.Tools.PrecisionMode.Half;
             this.ratingONG.ResetButton = resetButton1;
-            this.ratingONG.Size = new System.Drawing.Size(167, 27);
+            this.ratingONG.Size = new System.Drawing.Size(223, 33);
             this.ratingONG.TabIndex = 52;
             // 
             // panel1
@@ -264,10 +256,10 @@
             this.panel1.Controls.Add(this.textBoxComentarioONG);
             this.panel1.Controls.Add(this.labelComentarioONG);
             this.panel1.Controls.Add(this.labelValoracionONG);
-            this.panel1.Location = new System.Drawing.Point(13, 55);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(17, 68);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(338, 329);
+            this.panel1.Size = new System.Drawing.Size(450, 404);
             this.panel1.TabIndex = 53;
             // 
             // lNombreOrganizador
@@ -275,10 +267,9 @@
             this.lNombreOrganizador.AutoSize = true;
             this.lNombreOrganizador.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNombreOrganizador.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lNombreOrganizador.Location = new System.Drawing.Point(132, 61);
-            this.lNombreOrganizador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lNombreOrganizador.Location = new System.Drawing.Point(176, 75);
             this.lNombreOrganizador.Name = "lNombreOrganizador";
-            this.lNombreOrganizador.Size = new System.Drawing.Size(43, 17);
+            this.lNombreOrganizador.Size = new System.Drawing.Size(53, 21);
             this.lNombreOrganizador.TabIndex = 58;
             this.lNombreOrganizador.Text = "nombre";
             // 
@@ -287,10 +278,9 @@
             this.lblOrganizador.AutoSize = true;
             this.lblOrganizador.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrganizador.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblOrganizador.Location = new System.Drawing.Point(37, 61);
-            this.lblOrganizador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblOrganizador.Location = new System.Drawing.Point(49, 75);
             this.lblOrganizador.Name = "lblOrganizador";
-            this.lblOrganizador.Size = new System.Drawing.Size(88, 17);
+            this.lblOrganizador.Size = new System.Drawing.Size(104, 21);
             this.lblOrganizador.TabIndex = 57;
             this.lblOrganizador.Text = "Organizador:";
             // 
@@ -299,10 +289,9 @@
             this.lblTitONG.AutoSize = true;
             this.lblTitONG.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitONG.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblTitONG.Location = new System.Drawing.Point(14, 7);
-            this.lblTitONG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitONG.Location = new System.Drawing.Point(19, 9);
             this.lblTitONG.Name = "lblTitONG";
-            this.lblTitONG.Size = new System.Drawing.Size(120, 19);
+            this.lblTitONG.Size = new System.Drawing.Size(146, 24);
             this.lblTitONG.TabIndex = 53;
             this.lblTitONG.Text = "VALORACIÓN ONG";
             // 
@@ -319,10 +308,10 @@
             this.panel2.Controls.Add(this.labelError);
             this.panel2.Controls.Add(this.textBoxComentarioPDI);
             this.panel2.Controls.Add(this.labelComentario);
-            this.panel2.Location = new System.Drawing.Point(350, 55);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(467, 68);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(351, 329);
+            this.panel2.Size = new System.Drawing.Size(467, 404);
             this.panel2.TabIndex = 54;
             // 
             // lNombreActividad
@@ -330,10 +319,9 @@
             this.lNombreActividad.AutoSize = true;
             this.lNombreActividad.Font = new System.Drawing.Font("Bahnschrift", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNombreActividad.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lNombreActividad.Location = new System.Drawing.Point(149, 90);
-            this.lNombreActividad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lNombreActividad.Location = new System.Drawing.Point(199, 111);
             this.lNombreActividad.Name = "lNombreActividad";
-            this.lNombreActividad.Size = new System.Drawing.Size(49, 14);
+            this.lNombreActividad.Size = new System.Drawing.Size(59, 18);
             this.lNombreActividad.TabIndex = 58;
             this.lNombreActividad.Text = "nombre";
             // 
@@ -342,10 +330,9 @@
             this.lblActividad.AutoSize = true;
             this.lblActividad.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActividad.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblActividad.Location = new System.Drawing.Point(15, 88);
-            this.lblActividad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblActividad.Location = new System.Drawing.Point(20, 108);
             this.lblActividad.Name = "lblActividad";
-            this.lblActividad.Size = new System.Drawing.Size(130, 17);
+            this.lblActividad.Size = new System.Drawing.Size(157, 21);
             this.lblActividad.TabIndex = 57;
             this.lblActividad.Text = "Actividad Evaluada:";
             // 
@@ -354,10 +341,9 @@
             this.lUserEvaluado.AutoSize = true;
             this.lUserEvaluado.Font = new System.Drawing.Font("Bahnschrift", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserEvaluado.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lUserEvaluado.Location = new System.Drawing.Point(149, 53);
-            this.lUserEvaluado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lUserEvaluado.Location = new System.Drawing.Point(199, 65);
             this.lUserEvaluado.Name = "lUserEvaluado";
-            this.lUserEvaluado.Size = new System.Drawing.Size(49, 14);
+            this.lUserEvaluado.Size = new System.Drawing.Size(59, 18);
             this.lUserEvaluado.TabIndex = 56;
             this.lUserEvaluado.Text = "nombre";
             // 
@@ -366,10 +352,9 @@
             this.userEvaluado.AutoSize = true;
             this.userEvaluado.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userEvaluado.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.userEvaluado.Location = new System.Drawing.Point(26, 50);
-            this.userEvaluado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.userEvaluado.Location = new System.Drawing.Point(35, 62);
             this.userEvaluado.Name = "userEvaluado";
-            this.userEvaluado.Size = new System.Drawing.Size(121, 17);
+            this.userEvaluado.Size = new System.Drawing.Size(146, 21);
             this.userEvaluado.TabIndex = 55;
             this.userEvaluado.Text = "Usuario Evaluado:";
             // 
@@ -378,12 +363,12 @@
             this.ratingPDI.Images = customImageCollection2;
             this.ratingPDI.ItemBackColor = System.Drawing.Color.White;
             this.ratingPDI.ItemBorderColor = System.Drawing.Color.Black;
-            this.ratingPDI.Location = new System.Drawing.Point(144, 141);
-            this.ratingPDI.Margin = new System.Windows.Forms.Padding(2);
+            this.ratingPDI.Location = new System.Drawing.Point(192, 174);
+            this.ratingPDI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ratingPDI.Name = "ratingPDI";
             this.ratingPDI.Precision = Syncfusion.Windows.Forms.Tools.PrecisionMode.Half;
             this.ratingPDI.ResetButton = resetButton2;
-            this.ratingPDI.Size = new System.Drawing.Size(167, 27);
+            this.ratingPDI.Size = new System.Drawing.Size(223, 33);
             this.ratingPDI.TabIndex = 54;
             // 
             // lblTitPDI
@@ -391,10 +376,9 @@
             this.lblTitPDI.AutoSize = true;
             this.lblTitPDI.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitPDI.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblTitPDI.Location = new System.Drawing.Point(14, 8);
-            this.lblTitPDI.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitPDI.Location = new System.Drawing.Point(19, 10);
             this.lblTitPDI.Name = "lblTitPDI";
-            this.lblTitPDI.Size = new System.Drawing.Size(114, 19);
+            this.lblTitPDI.Size = new System.Drawing.Size(140, 24);
             this.lblTitPDI.TabIndex = 54;
             this.lblTitPDI.Text = "VALORACIÓN PDI";
             // 
@@ -403,20 +387,20 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblTitulo.Location = new System.Drawing.Point(9, 7);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(12, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(636, 29);
+            this.lblTitulo.Size = new System.Drawing.Size(784, 36);
             this.lblTitulo.TabIndex = 55;
             this.lblTitulo.Text = "¿CUÁL ES LA NOTA DEL USUARIO nombreUser EN ESTA ACTIVIDAD?";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // EvaluarUsuarioPDI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(721, 446);
+            this.ClientSize = new System.Drawing.Size(961, 549);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -424,7 +408,7 @@
             this.Controls.Add(this.bAceptar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EvaluarUsuarioPDI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Evaluar al Participante";

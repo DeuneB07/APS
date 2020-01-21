@@ -36,6 +36,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>paloma.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.8.1.3\lib\net40\BouncyCastle.Crypto.dll</HintPath>
@@ -453,6 +456,12 @@
     <Compile Include="Interfaces\Personalizados\CartelHistorial.Designer.cs">
       <DependentUpon>CartelHistorial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Personalizados\VerCompatibilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Personalizados\VerCompatibilidad.Designer.cs">
+      <DependentUpon>VerCompatibilidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Personalizados\Filtros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -832,6 +841,9 @@
     <EmbeddedResource Include="Interfaces\Personalizados\CartelHistorial.resx">
       <DependentUpon>CartelHistorial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Personalizados\VerCompatibilidad.resx">
+      <DependentUpon>VerCompatibilidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Personalizados\Filtros.resx">
       <DependentUpon>Filtros.cs</DependentUpon>
     </EmbeddedResource>
@@ -1062,6 +1074,7 @@
       <DependentUpon>dbUsuario.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="paloma.ico" />
     <None Include="Resources\Cooperacion Internacional.png" />
     <None Include="Resources\Personal UMA PDI-PAS.png" />
     <None Include="Resources\Estudiantes UMA.png" />

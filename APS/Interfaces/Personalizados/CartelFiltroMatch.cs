@@ -25,6 +25,7 @@ namespace APS.Interfaces.Personalizados
 
         private void cargarPreferencias()
         {
+            cPreferencia.Items.Clear();
             foreach(Preferencia p in usr.Preferencias)
             {
                 cPreferencia.Items.Add(p);

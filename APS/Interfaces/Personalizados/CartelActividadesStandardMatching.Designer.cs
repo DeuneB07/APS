@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lDescripcion = new System.Windows.Forms.RichTextBox();
+            this.lblSolicitada = new System.Windows.Forms.Label();
             this.btnVerActividad = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCompatibilidad = new System.Windows.Forms.Label();
@@ -44,9 +46,7 @@
             this.lNumPlazas = new System.Windows.Forms.Label();
             this.lPlazas = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
-            this.lDescripcion = new System.Windows.Forms.Label();
             this.pict = new System.Windows.Forms.PictureBox();
-            this.lblSolicitada = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +54,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lDescripcion);
             this.panel1.Controls.Add(this.lblSolicitada);
             this.panel1.Controls.Add(this.btnVerActividad);
             this.panel1.Controls.Add(this.label1);
@@ -70,13 +71,36 @@
             this.panel1.Controls.Add(this.lNumPlazas);
             this.panel1.Controls.Add(this.lPlazas);
             this.panel1.Controls.Add(this.labelName);
-            this.panel1.Controls.Add(this.lDescripcion);
             this.panel1.Controls.Add(this.pict);
             this.panel1.Location = new System.Drawing.Point(4, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(831, 209);
             this.panel1.TabIndex = 3;
+            // 
+            // lDescripcion
+            // 
+            this.lDescripcion.BackColor = System.Drawing.Color.White;
+            this.lDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lDescripcion.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDescripcion.Location = new System.Drawing.Point(187, 99);
+            this.lDescripcion.Name = "lDescripcion";
+            this.lDescripcion.ReadOnly = true;
+            this.lDescripcion.Size = new System.Drawing.Size(334, 102);
+            this.lDescripcion.TabIndex = 24;
+            this.lDescripcion.Text = "";
+            // 
+            // lblSolicitada
+            // 
+            this.lblSolicitada.AutoSize = true;
+            this.lblSolicitada.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSolicitada.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblSolicitada.Location = new System.Drawing.Point(739, 179);
+            this.lblSolicitada.Name = "lblSolicitada";
+            this.lblSolicitada.Size = new System.Drawing.Size(73, 18);
+            this.lblSolicitada.TabIndex = 23;
+            this.lblSolicitada.Text = "Solicitada";
+            this.lblSolicitada.Visible = false;
             // 
             // btnVerActividad
             // 
@@ -115,6 +139,8 @@
             this.lblCompatibilidad.TabIndex = 20;
             this.lblCompatibilidad.Text = "100%";
             this.lblCompatibilidad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCompatibilidad.MouseLeave += new System.EventHandler(this.lblCompatibilidad_MouseLeave);
+            this.lblCompatibilidad.MouseHover += new System.EventHandler(this.lblCompatibilidad_MouseHover);
             // 
             // lShowResp
             // 
@@ -253,16 +279,6 @@
             this.labelName.TabIndex = 4;
             this.labelName.Text = "Nombre";
             // 
-            // lDescripcion
-            // 
-            this.lDescripcion.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDescripcion.Location = new System.Drawing.Point(188, 101);
-            this.lDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lDescripcion.Name = "lDescripcion";
-            this.lDescripcion.Size = new System.Drawing.Size(355, 96);
-            this.lDescripcion.TabIndex = 5;
-            this.lDescripcion.Text = "Descripción";
-            // 
             // pict
             // 
             this.pict.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -274,18 +290,6 @@
             this.pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pict.TabIndex = 6;
             this.pict.TabStop = false;
-            // 
-            // lblSolicitada
-            // 
-            this.lblSolicitada.AutoSize = true;
-            this.lblSolicitada.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSolicitada.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblSolicitada.Location = new System.Drawing.Point(739, 179);
-            this.lblSolicitada.Name = "lblSolicitada";
-            this.lblSolicitada.Size = new System.Drawing.Size(73, 18);
-            this.lblSolicitada.TabIndex = 23;
-            this.lblSolicitada.Text = "Solicitada";
-            this.lblSolicitada.Visible = false;
             // 
             // CartelActividadesStandardMatching
             // 
@@ -306,7 +310,6 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.Label lDescripcion;
         private System.Windows.Forms.PictureBox pict;
         private System.Windows.Forms.Label lNumPlazas;
         private System.Windows.Forms.Label lPlazas;
@@ -323,5 +326,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnVerActividad;
         private System.Windows.Forms.Label lblSolicitada;
+        private System.Windows.Forms.RichTextBox lDescripcion;
     }
 }

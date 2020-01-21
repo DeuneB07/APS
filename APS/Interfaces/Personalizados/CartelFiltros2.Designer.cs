@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartelFiltros2));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowShowFiltro = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelFiltro = new System.Windows.Forms.Panel();
-            this.pictFiltro = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
-            this.bAplicar = new System.Windows.Forms.Button();
             this.filtroAmb = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -60,9 +53,13 @@
             this.filtroTipoAct = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            this.panelFiltro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictFiltro)).BeginInit();
+            this.panel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            this.flowShowFiltro = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelFiltro = new System.Windows.Forms.Panel();
+            this.pictFiltro = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.bAplicar = new System.Windows.Forms.Button();
             this.filtroAmb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.filtroTipoTrab.SuspendLayout();
@@ -79,93 +76,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.filtroTipoAct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panel1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panelFiltro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictFiltro)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.flowShowFiltro);
-            this.panel1.Controls.Add(this.panelFiltro);
-            this.panel1.Controls.Add(this.txtBusqueda);
-            this.panel1.Controls.Add(this.bAplicar);
-            this.panel1.Location = new System.Drawing.Point(7, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(828, 126);
-            this.panel1.TabIndex = 3;
-            // 
-            // flowShowFiltro
-            // 
-            this.flowShowFiltro.Location = new System.Drawing.Point(62, 69);
-            this.flowShowFiltro.Name = "flowShowFiltro";
-            this.flowShowFiltro.Size = new System.Drawing.Size(734, 28);
-            this.flowShowFiltro.TabIndex = 41;
-            // 
-            // panelFiltro
-            // 
-            this.panelFiltro.BackColor = System.Drawing.Color.White;
-            this.panelFiltro.Controls.Add(this.pictFiltro);
-            this.panelFiltro.Controls.Add(this.label1);
-            this.panelFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelFiltro.Location = new System.Drawing.Point(652, 24);
-            this.panelFiltro.Name = "panelFiltro";
-            this.panelFiltro.Size = new System.Drawing.Size(144, 39);
-            this.panelFiltro.TabIndex = 31;
-            this.panelFiltro.Click += new System.EventHandler(this.panelFiltro_Click);
-            // 
-            // pictFiltro
-            // 
-            this.pictFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictFiltro.Image = ((System.Drawing.Image)(resources.GetObject("pictFiltro.Image")));
-            this.pictFiltro.Location = new System.Drawing.Point(3, 0);
-            this.pictFiltro.Name = "pictFiltro";
-            this.pictFiltro.Size = new System.Drawing.Size(43, 36);
-            this.pictFiltro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictFiltro.TabIndex = 28;
-            this.pictFiltro.TabStop = false;
-            this.pictFiltro.Click += new System.EventHandler(this.pictFiltro_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 29);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Filtrar";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtBusqueda.Location = new System.Drawing.Point(62, 33);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(570, 30);
-            this.txtBusqueda.TabIndex = 30;
-            this.txtBusqueda.Text = "Buscador de actividades...";
-            this.txtBusqueda.Click += new System.EventHandler(this.txtBusqueda_Click);
-            this.txtBusqueda.Leave += new System.EventHandler(this.txtBusqueda_Leave);
-            // 
-            // bAplicar
-            // 
-            this.bAplicar.BackColor = System.Drawing.Color.Transparent;
-            this.bAplicar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bAplicar.BackgroundImage")));
-            this.bAplicar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bAplicar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bAplicar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.bAplicar.FlatAppearance.BorderSize = 0;
-            this.bAplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bAplicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAplicar.ForeColor = System.Drawing.Color.Black;
-            this.bAplicar.Location = new System.Drawing.Point(4, 23);
-            this.bAplicar.Margin = new System.Windows.Forms.Padding(4);
-            this.bAplicar.Name = "bAplicar";
-            this.bAplicar.Size = new System.Drawing.Size(50, 50);
-            this.bAplicar.TabIndex = 10;
-            this.bAplicar.UseVisualStyleBackColor = false;
             // 
             // filtroAmb
             // 
@@ -423,13 +338,109 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Horizontal, new System.Drawing.Color[] {
+            System.Drawing.SystemColors.Window,
+            System.Drawing.Color.White,
+            System.Drawing.Color.LightGray,
+            System.Drawing.Color.White,
+            System.Drawing.Color.LightGray,
+            System.Drawing.Color.White,
+            System.Drawing.SystemColors.ControlLight,
+            System.Drawing.Color.Gainsboro});
+            this.panel1.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.panel1.Controls.Add(this.flowShowFiltro);
+            this.panel1.Controls.Add(this.panelFiltro);
+            this.panel1.Controls.Add(this.txtBusqueda);
+            this.panel1.Controls.Add(this.bAplicar);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(839, 139);
+            this.panel1.TabIndex = 40;
+            // 
+            // flowShowFiltro
+            // 
+            this.flowShowFiltro.BackColor = System.Drawing.Color.Transparent;
+            this.flowShowFiltro.Location = new System.Drawing.Point(81, 78);
+            this.flowShowFiltro.Name = "flowShowFiltro";
+            this.flowShowFiltro.Size = new System.Drawing.Size(734, 28);
+            this.flowShowFiltro.TabIndex = 45;
+            // 
+            // panelFiltro
+            // 
+            this.panelFiltro.BackColor = System.Drawing.Color.Transparent;
+            this.panelFiltro.Controls.Add(this.pictFiltro);
+            this.panelFiltro.Controls.Add(this.label1);
+            this.panelFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelFiltro.Location = new System.Drawing.Point(671, 33);
+            this.panelFiltro.Name = "panelFiltro";
+            this.panelFiltro.Size = new System.Drawing.Size(144, 39);
+            this.panelFiltro.TabIndex = 44;
+            this.panelFiltro.Click += new System.EventHandler(this.panelFiltro_Click);
+            // 
+            // pictFiltro
+            // 
+            this.pictFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictFiltro.Image = ((System.Drawing.Image)(resources.GetObject("pictFiltro.Image")));
+            this.pictFiltro.Location = new System.Drawing.Point(3, 0);
+            this.pictFiltro.Name = "pictFiltro";
+            this.pictFiltro.Size = new System.Drawing.Size(43, 36);
+            this.pictFiltro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictFiltro.TabIndex = 28;
+            this.pictFiltro.TabStop = false;
+            this.pictFiltro.Click += new System.EventHandler(this.pictFiltro_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(52, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 29);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Filtrar";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtBusqueda.Location = new System.Drawing.Point(81, 42);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(570, 30);
+            this.txtBusqueda.TabIndex = 43;
+            this.txtBusqueda.Text = "Buscador de actividades...";
+            this.txtBusqueda.Click += new System.EventHandler(this.txtBusqueda_Click);
+            this.txtBusqueda.Leave += new System.EventHandler(this.txtBusqueda_Leave);
+            // 
+            // bAplicar
+            // 
+            this.bAplicar.BackColor = System.Drawing.Color.Transparent;
+            this.bAplicar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bAplicar.BackgroundImage")));
+            this.bAplicar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bAplicar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bAplicar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.bAplicar.FlatAppearance.BorderSize = 0;
+            this.bAplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bAplicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAplicar.ForeColor = System.Drawing.Color.Black;
+            this.bAplicar.Location = new System.Drawing.Point(23, 32);
+            this.bAplicar.Margin = new System.Windows.Forms.Padding(4);
+            this.bAplicar.Name = "bAplicar";
+            this.bAplicar.Size = new System.Drawing.Size(50, 50);
+            this.bAplicar.TabIndex = 42;
+            this.bAplicar.UseVisualStyleBackColor = false;
+            // 
             // CartelFiltros2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.filtroAmb);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.filtroAmb);
             this.Controls.Add(this.filtroTurno);
             this.Controls.Add(this.filtroTipoTrab);
             this.Controls.Add(this.filtroAsig);
@@ -440,11 +451,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CartelFiltros2";
             this.Size = new System.Drawing.Size(839, 136);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panelFiltro.ResumeLayout(false);
-            this.panelFiltro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictFiltro)).EndInit();
             this.filtroAmb.ResumeLayout(false);
             this.filtroAmb.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -469,16 +475,17 @@
             this.filtroTipoAct.ResumeLayout(false);
             this.filtroTipoAct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panel1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panelFiltro.ResumeLayout(false);
+            this.panelFiltro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictFiltro)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button bAplicar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictFiltro;
-        private System.Windows.Forms.Panel panelFiltro;
         public System.Windows.Forms.Panel filtroAmb;
         public System.Windows.Forms.Panel filtroTipoTrab;
         public System.Windows.Forms.Panel filtroFecha;
@@ -503,7 +510,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private Syncfusion.Windows.Forms.Tools.GradientPanel panel1;
         public System.Windows.Forms.FlowLayoutPanel flowShowFiltro;
+        private System.Windows.Forms.Panel panelFiltro;
+        private System.Windows.Forms.PictureBox pictFiltro;
+        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Button bAplicar;
     }
 }

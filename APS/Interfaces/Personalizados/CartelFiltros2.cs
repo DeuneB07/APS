@@ -127,5 +127,6 @@ namespace APS.Interfaces.Personalizados
             filtros.checkOtrosTipo.Checked = false;
             filtros.ActualizarFiltro();
         }
+
     }
 }

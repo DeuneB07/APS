@@ -63,9 +63,12 @@ namespace APS.Interfaces.Personalizados
             {
                 urlDestino = saveFileDialog1.FileName;
             }
-            Actividad_Realizada actRealizada = new Actividad_Realizada(user, actividad);
-            Certificados.PlantillaCertificado.CrearCertificado(urlDestino, actRealizada);
-            MessageBox.Show("Se ha creado el certificado correctamente");
+            if (urlDestino != null)
+            {
+                Actividad_Realizada actRealizada = new Actividad_Realizada(user, actividad);
+                Certificados.PlantillaCertificado.CrearCertificado(urlDestino, actRealizada);
+                MessageBox.Show("Se ha creado el certificado correctamente");
+            }
         }
     }
 }

@@ -52,17 +52,17 @@
             this.tabSolicitudes.Margin = new System.Windows.Forms.Padding(2);
             this.tabSolicitudes.Name = "tabSolicitudes";
             this.tabSolicitudes.SelectedIndex = 0;
-            this.tabSolicitudes.Size = new System.Drawing.Size(531, 344);
+            this.tabSolicitudes.Size = new System.Drawing.Size(562, 344);
             this.tabSolicitudes.TabIndex = 0;
             // 
             // pSolicitudesPendientes
             // 
             this.pSolicitudesPendientes.Controls.Add(this.panelSolPendientes);
-            this.pSolicitudesPendientes.Location = new System.Drawing.Point(4, 22);
+            this.pSolicitudesPendientes.Location = new System.Drawing.Point(4, 26);
             this.pSolicitudesPendientes.Margin = new System.Windows.Forms.Padding(2);
             this.pSolicitudesPendientes.Name = "pSolicitudesPendientes";
             this.pSolicitudesPendientes.Padding = new System.Windows.Forms.Padding(2);
-            this.pSolicitudesPendientes.Size = new System.Drawing.Size(523, 318);
+            this.pSolicitudesPendientes.Size = new System.Drawing.Size(554, 314);
             this.pSolicitudesPendientes.TabIndex = 0;
             this.pSolicitudesPendientes.Text = "Solicitudes Pendientes";
             this.pSolicitudesPendientes.UseVisualStyleBackColor = true;
@@ -76,17 +76,17 @@
             this.panelSolPendientes.Name = "panelSolPendientes";
             this.panelSolPendientes.RowCount = 1;
             this.panelSolPendientes.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.panelSolPendientes.Size = new System.Drawing.Size(523, 318);
+            this.panelSolPendientes.Size = new System.Drawing.Size(554, 318);
             this.panelSolPendientes.TabIndex = 3;
             // 
             // pSolicitudesAceptadas
             // 
             this.pSolicitudesAceptadas.Controls.Add(this.panelSolAceptadas);
-            this.pSolicitudesAceptadas.Location = new System.Drawing.Point(4, 22);
+            this.pSolicitudesAceptadas.Location = new System.Drawing.Point(4, 26);
             this.pSolicitudesAceptadas.Margin = new System.Windows.Forms.Padding(2);
             this.pSolicitudesAceptadas.Name = "pSolicitudesAceptadas";
             this.pSolicitudesAceptadas.Padding = new System.Windows.Forms.Padding(2);
-            this.pSolicitudesAceptadas.Size = new System.Drawing.Size(523, 318);
+            this.pSolicitudesAceptadas.Size = new System.Drawing.Size(523, 314);
             this.pSolicitudesAceptadas.TabIndex = 1;
             this.pSolicitudesAceptadas.Text = "Solicitudes Aceptadas";
             this.pSolicitudesAceptadas.UseVisualStyleBackColor = true;
@@ -106,11 +106,11 @@
             // pSolicitudesEnEsperaONG
             // 
             this.pSolicitudesEnEsperaONG.Controls.Add(this.panelSolicitudesEsperaONG);
-            this.pSolicitudesEnEsperaONG.Location = new System.Drawing.Point(4, 22);
+            this.pSolicitudesEnEsperaONG.Location = new System.Drawing.Point(4, 26);
             this.pSolicitudesEnEsperaONG.Margin = new System.Windows.Forms.Padding(2);
             this.pSolicitudesEnEsperaONG.Name = "pSolicitudesEnEsperaONG";
             this.pSolicitudesEnEsperaONG.Padding = new System.Windows.Forms.Padding(2);
-            this.pSolicitudesEnEsperaONG.Size = new System.Drawing.Size(523, 318);
+            this.pSolicitudesEnEsperaONG.Size = new System.Drawing.Size(523, 314);
             this.pSolicitudesEnEsperaONG.TabIndex = 2;
             this.pSolicitudesEnEsperaONG.Text = "Solicitudes en Espera ONG";
             this.pSolicitudesEnEsperaONG.UseVisualStyleBackColor = true;
@@ -129,10 +129,11 @@
             // 
             // VerParticipantes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(546, 408);
+            this.ClientSize = new System.Drawing.Size(589, 408);
             this.Controls.Add(this.tabSolicitudes);
             this.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lDescripcion = new System.Windows.Forms.RichTextBox();
             this.lShowEstado = new System.Windows.Forms.Label();
             this.lEstado = new System.Windows.Forms.Label();
             this.bVerParts = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.lNumPlazas = new System.Windows.Forms.Label();
             this.lPlazas = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
-            this.lDescripcion = new System.Windows.Forms.Label();
             this.pict = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict)).BeginInit();
@@ -60,6 +60,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lDescripcion);
             this.panel1.Controls.Add(this.lShowEstado);
             this.panel1.Controls.Add(this.lEstado);
             this.panel1.Controls.Add(this.bVerParts);
@@ -82,13 +83,24 @@
             this.panel1.Controls.Add(this.lNumPlazas);
             this.panel1.Controls.Add(this.lPlazas);
             this.panel1.Controls.Add(this.labelName);
-            this.panel1.Controls.Add(this.lDescripcion);
             this.panel1.Controls.Add(this.pict);
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(831, 201);
             this.panel1.TabIndex = 3;
+            // 
+            // lDescripcion
+            // 
+            this.lDescripcion.BackColor = System.Drawing.Color.White;
+            this.lDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lDescripcion.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDescripcion.Location = new System.Drawing.Point(187, 91);
+            this.lDescripcion.Name = "lDescripcion";
+            this.lDescripcion.ReadOnly = true;
+            this.lDescripcion.Size = new System.Drawing.Size(276, 100);
+            this.lDescripcion.TabIndex = 31;
+            this.lDescripcion.Text = "";
             // 
             // lShowEstado
             // 
@@ -120,7 +132,7 @@
             this.bVerParts.Font = new System.Drawing.Font("Calibri Light", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bVerParts.ForeColor = System.Drawing.Color.Black;
             this.bVerParts.Location = new System.Drawing.Point(727, 158);
-            this.bVerParts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bVerParts.Margin = new System.Windows.Forms.Padding(4);
             this.bVerParts.Name = "bVerParts";
             this.bVerParts.Size = new System.Drawing.Size(100, 39);
             this.bVerParts.TabIndex = 28;
@@ -180,7 +192,7 @@
             this.bRechazar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bRechazar.ForeColor = System.Drawing.Color.Black;
             this.bRechazar.Location = new System.Drawing.Point(741, 156);
-            this.bRechazar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bRechazar.Margin = new System.Windows.Forms.Padding(4);
             this.bRechazar.Name = "bRechazar";
             this.bRechazar.Size = new System.Drawing.Size(85, 39);
             this.bRechazar.TabIndex = 23;
@@ -195,7 +207,7 @@
             this.bRevisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bRevisar.ForeColor = System.Drawing.Color.Black;
             this.bRevisar.Location = new System.Drawing.Point(741, 110);
-            this.bRevisar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bRevisar.Margin = new System.Windows.Forms.Padding(4);
             this.bRevisar.Name = "bRevisar";
             this.bRevisar.Size = new System.Drawing.Size(85, 39);
             this.bRevisar.TabIndex = 22;
@@ -347,22 +359,12 @@
             this.labelName.TabIndex = 4;
             this.labelName.Text = "Nombre";
             // 
-            // lDescripcion
-            // 
-            this.lDescripcion.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDescripcion.Location = new System.Drawing.Point(188, 97);
-            this.lDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lDescripcion.Name = "lDescripcion";
-            this.lDescripcion.Size = new System.Drawing.Size(312, 100);
-            this.lDescripcion.TabIndex = 5;
-            this.lDescripcion.Text = "Descripción";
-            // 
             // pict
             // 
             this.pict.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pict.Image = global::APS.Properties.Resources.no_image;
             this.pict.Location = new System.Drawing.Point(4, 97);
-            this.pict.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pict.Margin = new System.Windows.Forms.Padding(4);
             this.pict.Name = "pict";
             this.pict.Size = new System.Drawing.Size(176, 100);
             this.pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -375,7 +377,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CartelPendientes";
             this.Size = new System.Drawing.Size(839, 209);
             this.panel1.ResumeLayout(false);
@@ -388,7 +390,6 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.Label lDescripcion;
         private System.Windows.Forms.PictureBox pict;
         private System.Windows.Forms.Label lNumPlazas;
         private System.Windows.Forms.Label lPlazas;
@@ -411,5 +412,6 @@
         private System.Windows.Forms.Button bVerParts;
         private System.Windows.Forms.Label lShowEstado;
         private System.Windows.Forms.Label lEstado;
+        private System.Windows.Forms.RichTextBox lDescripcion;
     }
 }

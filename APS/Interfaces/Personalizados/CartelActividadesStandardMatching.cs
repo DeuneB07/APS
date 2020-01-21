@@ -18,6 +18,7 @@ namespace APS.Interfaces.Personalizados
         private Actividad a;
         private Usuario user;
         private Preferencia preferencia;
+        private VerCompatibilidad verComp;
 
         public CartelActividadesStandardMatching(Preferencia preferencia, Usuario user, Actividad a)
         {
@@ -25,6 +26,7 @@ namespace APS.Interfaces.Personalizados
             this.a = a;
             this.user = user;
             this.preferencia = preferencia;
+
             this.labelName.Text = a.NombreAct;
             this.lDescripcion.Text = a.DescAct;
             this.lNumPlazas.Text = a.NumPlazas.ToString();
@@ -93,7 +95,7 @@ namespace APS.Interfaces.Personalizados
             if (user.Rol.NombreRol.Equals("Estudiante") || user.Rol.NombreRol.Equals("PDI"))
             {
                 if (a.Grado == null || !user.Grados.Contains(a.Grado)) porcentaje -= 100 / 4;
-                if (a.Asignatura != null || !user.Asignaturas.Contains(a.Asignatura)) porcentaje -= 100 / 4;
+                if (a.Asignatura == null || !user.Asignaturas.Contains(a.Asignatura)) porcentaje -= 100 / 4;
             }
             else
             {
@@ -274,6 +276,21 @@ namespace APS.Interfaces.Personalizados
         {
             VerActividadAbierta ventana = new VerActividadAbierta(user, a);
             ventana.ShowDialog();
+        }
+
+        private void lblCompatibilidad_MouseHover(object sender, EventArgs e)
+        {
+            this.verComp = new VerCompatibilidad(preferencia, a, user);
+            verComp.Show();
+        }
+
+        private void lblCompatibilidad_MouseLeave(object sender, EventArgs e)
+        {
+            if (verComp != null)
+            {
+                verComp.Close();
+                verComp = null;
+            }
         }
     }
 }
